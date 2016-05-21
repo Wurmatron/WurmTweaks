@@ -1,0 +1,14 @@
+[{
+	"modid": "wurmtweaks",
+	"name": "WurmTweaks",
+	"description": "Tweaks all the recipes in the game along with adding quite a few diffrent items.",
+	"version": "${version}",
+	"mcversion": "${mcversion}",
+	"url": "https://github.com/Wurmcraft/WurmTweaks",
+	"updateUrl": "",
+	"authorList": ["Wurmatron"],
+	"credits": "",
+	"logoFile": "",
+	"screenshots": [],
+	"dependencies": []
+}]
