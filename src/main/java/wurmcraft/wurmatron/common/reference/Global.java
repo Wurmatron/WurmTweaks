@@ -6,7 +6,7 @@ public class Global {
 		public static final String NAME = "WurmTweaks";
 		public static final String VERSION = "@VERSION@";
 		public static final String GUIFACTORY = "wurmcraft.wurmatron.common.config.GuiFactory";
-		public static final String DEPENDENCIES = "";
+		public static final String DEPENDENCIES = "required-after:terrafirmacraft";
 		// Proxy
 		public static final String COMMONPROXY = "wurmcraft.wurmatron.common.proxy.CommonProxy";
 		public static final String CLIENTPROXY = "wurmcraft.wurmatron.client.proxy.ClientProxy";

@@ -14,6 +14,8 @@ import java.util.List;
 
 public class RecipeHelper {
 
+		public static RecipeHelper instance;
+
 		/**
 		 * Used to add a Shaped Recipe
 		 * (Supports OreDict)
