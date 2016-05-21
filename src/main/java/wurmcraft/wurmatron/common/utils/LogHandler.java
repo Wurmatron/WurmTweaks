@@ -3,6 +3,7 @@ package wurmcraft.wurmatron.common.utils;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import wurmcraft.wurmatron.common.config.Settings;
 import wurmcraft.wurmatron.common.reference.Global;
 
 public class LogHandler {
@@ -27,5 +28,10 @@ public class LogHandler {
 
 		public static void error (String msg) {
 				log(Level.ERROR, msg);
+		}
+
+		public static void debug (String msg) {
+				if (Settings.debug)
+						log(Level.INFO, msg);
 		}
 }
