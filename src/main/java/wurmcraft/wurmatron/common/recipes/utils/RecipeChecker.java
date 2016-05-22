@@ -51,19 +51,16 @@ public class RecipeChecker {
 						for (Object input : recipe.getInput()) {
 								if (input instanceof ItemStack) {
 										if (!checkStack((ItemStack) input)) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
 								if (input instanceof Item) {
 										if (!checkStack(new ItemStack((Item) input))) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
 								if (input instanceof Block) {
 										if (!checkStack(new ItemStack((Block) input))) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
@@ -75,23 +72,20 @@ public class RecipeChecker {
 
 		@Optional.Method (modid = "Avaritia")
 		public static boolean check9x (ExtremeShapelessRecipe recipe) {
-				if (checkStack(recipe.getRecipeOutput())) {
+				if (checkStack(recipe.func_77571_b())) {
 						for (Object input : recipe.recipeItems) {
 								if (input instanceof ItemStack) {
 										if (!checkStack((ItemStack) input)) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
 								if (input instanceof Item) {
 										if (!checkStack(new ItemStack((Item) input))) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
 								if (input instanceof Block) {
 										if (!checkStack(new ItemStack((Block) input))) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
@@ -103,23 +97,20 @@ public class RecipeChecker {
 
 		@Optional.Method (modid = "Avaritia")
 		public static boolean check9x (ExtremeShapedOreRecipe recipe) {
-				if (checkStack(recipe.getRecipeOutput())) {
+				if (checkStack(recipe.func_77571_b())) {
 						for (Object input : recipe.getInput()) {
 								if (input instanceof ItemStack) {
 										if (!checkStack((ItemStack) input)) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
 								if (input instanceof Item) {
 										if (!checkStack(new ItemStack((Item) input))) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
 								if (input instanceof Block) {
 										if (!checkStack(new ItemStack((Block) input))) {
-												LogHandler.debug("Error with recipe for " + recipe.getRecipeOutput().getItem().getUnlocalizedName());
 												return false;
 										}
 								}
@@ -162,7 +153,7 @@ public class RecipeChecker {
 				return false;
 		}
 
-		private static boolean modExists (String name) {
+		public static boolean modExists (String name) {
 				return Settings.isModEnabled(name) && mods.contains(name);
 		}
 }

@@ -289,6 +289,10 @@ public class RecipeHelper {
 				addShaped(output, "III", "III", "III", 'I', input);
 		}
 
+		public void add3x (Block output, Object input) {
+				addShaped(output, "III", "III", "III", 'I', input);
+		}
+
 		public void add2x (Block output, Object input) {
 				addShaped(output, "II", "II", 'I', input);
 		}
@@ -367,6 +371,41 @@ public class RecipeHelper {
 				addShaped(leggs, "III", "I I", "I I", 'I', material);
 				addShaped(boots, "I I", "I I", 'I', material);
 		}
+
+		public void addAnvilRecipe (ItemStack output, ItemStack material) {
+				addShaped(output, "MMM", " M ", "MMM", 'M', material);
+		}
+
+		public void addBasicMachineRecipe (ItemStack output, Object corner, Object horizonal, Object vertical, Object center) {
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', horizonal, 'V', vertical, 'X', center);
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', vertical, 'V', horizonal, 'X', center);
+		}
+
+		public void addBasicMachineRecipe (Block output, Object corner, Object horizonal, Object vertical, Object center) {
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', horizonal, 'V', vertical, 'X', center);
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', vertical, 'V', horizonal, 'X', center);
+		}
+
+		public void addBasicMachineRecipe (Item output, Object corner, Object horizonal, Object vertical, Object center) {
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', horizonal, 'V', vertical, 'X', center);
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', vertical, 'V', horizonal, 'X', center);
+		}
+
+		public void addBasicMachineRecipe (ItemStack output, Object corner, Object horizonal, Object vertical, Object center, boolean flip) {
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', horizonal, 'V', vertical, 'X', center);
+				if(flip) addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', vertical, 'V', horizonal, 'X', center);
+		}
+
+		public void addBasicMachineRecipe (Block output, Object corner, Object horizonal, Object vertical, Object center, boolean flip) {
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', horizonal, 'V', vertical, 'X', center);
+				if(flip) addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', vertical, 'V', horizonal, 'X', center);
+		}
+
+		public void addBasicMachineRecipe (Item output, Object corner, Object horizonal, Object vertical, Object center, boolean flip) {
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', horizonal, 'V', vertical, 'X', center);
+				if(flip) addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'H', vertical, 'V', horizonal, 'X', center);
+		}
+
 
 		@Optional.Method (modid = "Avaritia")
 		public void addCheckeredHigh (ItemStack output, Object partA, Object partB) {
