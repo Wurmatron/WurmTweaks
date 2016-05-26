@@ -13,6 +13,10 @@ public class ConfigHandler {
 		private static Property debug;
 		// Mods
 		private static Property Avaritia;
+		private static Property AdvancedSolarPanels;
+		private static Property AM2;
+		private static Property AE2;
+		private static Property EnderIO;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -25,6 +29,14 @@ public class ConfigHandler {
 				// Mods
 				Avaritia = config.get(Global.CATEGORY_MODS,"Avaritia", true);
 				Settings.Avaritia = Avaritia.getBoolean();
+				AdvancedSolarPanels = config.get(Global.CATEGORY_MODS,"AdvancedSolarPanels", true);
+				Settings.AdvancedSolarPanels = AdvancedSolarPanels.getBoolean();
+				AM2 = config.get(Global.CATEGORY_MODS,"ArsMagica2", true);
+				Settings.AM2 = AM2.getBoolean();
+				AE2 = config.get(Global.CATEGORY_MODS,"AppliedEnergistics", true);
+				Settings.AE2 = AE2.getBoolean();
+				EnderIO = config.get(Global.CATEGORY_MODS,"EnderIO", true);
+				Settings.EnderIO = EnderIO.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

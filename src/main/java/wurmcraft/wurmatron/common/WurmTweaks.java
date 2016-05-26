@@ -6,7 +6,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
+import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.proxy.CommonProxy;
 import wurmcraft.wurmatron.common.recipes.Recipes;
 import wurmcraft.wurmatron.common.reference.Global;
@@ -29,7 +31,10 @@ public class WurmTweaks {
 		}
 
 		@Mod.EventHandler
-		public void init (FMLInitializationEvent e) {}
+		public void init (FMLInitializationEvent e) {
+				WTItems.registerItems();
+				WurmTweaksBlocks.registerBlocks();
+		}
 
 		@Mod.EventHandler
 		public void postInit (FMLPostInitializationEvent e) {

@@ -4,6 +4,7 @@ import am2.items.ItemsCommonProxy;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
+import crazypants.enderio.EnderIO;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -12,7 +13,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
-import wurmcraft.wurmatron.common.recipes.utils.RecipeChecker;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
@@ -182,7 +182,7 @@ public class OreDict {
 				add("packIngot", TFCItems.bismuthIngot);
 				add("packIngot", TFCItems.blackBronzeIngot);
 				add("packIngot", TFCItems.blackSteelIngot);
-				add("packIngot", TFCItems.brassIngot2x);
+				add("packIngot", TFCItems.brassIngot);
 				add("packIngot", TFCItems.blueSteelIngot);
 				add("packIngot", TFCItems.bronzeIngot);
 				add("packIngot", TFCItems.copperIngot);
@@ -213,19 +213,20 @@ public class OreDict {
 				// Crafting Table
 				add("packCraftingTable", Blocks.crafting_table);
 				add("packCraftingTable", TFCBlocks.workbench);
-				add("packCraftingTable", LudicrousBlocks.dire_crafting);
-				add("packCraftingTable", LudicrousBlocks.double_craft);
-				add("packCraftingTable", LudicrousBlocks.triple_craft);
 				// Door
 				add("packDoor", Blocks.iron_door);
 				add("packDoor", Blocks.wooden_door);
-				for(Block door : TFCBlocks.doors)
+				for (Block door : TFCBlocks.doors)
 						add("packDoor", door);
 				// TODO Add Gem Block Ore Dict "packGemBlock"
 				// Logs
-				add("packLog", new ItemStack(TFCItems.logs,1,OreDictionary.WILDCARD_VALUE));
+				add("packLog", new ItemStack(TFCItems.logs, 1, OreDictionary.WILDCARD_VALUE));
 				if (RecipeChecker.modExists("arsmagica2"))
 						addAM2();
+				if (RecipeChecker.modExists("Avaritia"))
+						addAvaritia();
+				if (RecipeChecker.modExists("EnderIO"))
+						addEnderIO();
 		}
 
 		@Optional.Method (modid = "arsmagica2")
@@ -233,18 +234,27 @@ public class OreDict {
 				add("packRune", new ItemStack(ItemsCommonProxy.rune, 1, OreDictionary.WILDCARD_VALUE));
 		}
 
+		@Optional.Method (modid = "Avaritia")
+		private static void addAvaritia () {
+				add("packCraftingTable", LudicrousBlocks.dire_crafting);
+				add("packCraftingTable", LudicrousBlocks.double_craft);
+				add("packCraftingTable", LudicrousBlocks.triple_craft);
+		}
+
+		@Optional.Method (modid = "EnderIO")
+		private static void addEnderIO () {
+				add("packGlass", EnderIO.blockFusedQuartz);
+		}
+
 		private static void add (String name, ItemStack stack) {
-				if (RecipeChecker.checkStack(stack))
-						OreDictionary.registerOre(name, stack);
+				OreDictionary.registerOre(name, stack);
 		}
 
 		private static void add (String name, Item stack) {
-				if (RecipeChecker.checkStack(new ItemStack(stack)))
-						OreDictionary.registerOre(name, stack);
+				OreDictionary.registerOre(name, stack);
 		}
 
 		private static void add (String name, Block stack) {
-				if (RecipeChecker.checkStack(new ItemStack(stack)))
-						OreDictionary.registerOre(name, stack);
+				OreDictionary.registerOre(name, stack);
 		}
 }

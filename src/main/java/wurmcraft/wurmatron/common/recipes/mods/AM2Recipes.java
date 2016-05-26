@@ -14,8 +14,8 @@ import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.common.config.ConfigItems;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
-import wurmcraft.wurmatron.common.recipes.utils.RecipeChecker;
-import wurmcraft.wurmatron.common.recipes.utils.RecipeHelper;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
 public class AM2Recipes {
@@ -24,16 +24,16 @@ public class AM2Recipes {
 
 		@Optional.Method (modid = "arsmagica2")
 		public static void addRecipes () {
-				r.addBasicMachineRecipe(BlocksCommonProxy.essenceRefiner, "packPlanks", WurmTweaksItems.ingotRainbowSteel, Items.nether_star, new ItemStack(BlocksCommonProxy.AMOres, 1, 6));
+								r.addBasicMachineRecipe(BlocksCommonProxy.essenceRefiner, "packPlanks", WurmTweaksItems.ingotRainbowSteel, Items.nether_star, new ItemStack(BlocksCommonProxy.AMOres, 1, 6));
 				r.addShaped(BlocksCommonProxy.essenceConduit, " T ", "XSX", "SSS", 'T', new ItemStack(EnderIO.itemMaterial, 1, 8), 'X', "packSmoothStone", 'S', WurmTweaksItems.ingotOrangeSteel);
-				r.addCrossWithCenter(BlocksCommonProxy.obelisk, "dustVintium", WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
-				r.add3x(BlocksCommonProxy.astralBarrier, WurmTweaksItems.itemMagicChunk);
+				r.addCrossWCenter(BlocksCommonProxy.obelisk, "dustVintium", WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
+				r.add3X(BlocksCommonProxy.astralBarrier, WurmTweaksItems.itemMagicChunk);
 				r.addShaped(BlocksCommonProxy.seerStone, " E ", "SSS", "BBB", 'E', WurmTweaksItems.itemMagicChunk, 'S', "packSmoothStone", 'B', Blocks.lapis_block);
 				//TODO AM2 Block Compressor Recipes
 				//TODO AM2 Flower Recipes
-				r.addCrossWithCenter(BlocksCommonProxy.keystoneChest, "packPlanks", "packRune", "packDoor");
+				r.addCrossWCenter(BlocksCommonProxy.keystoneChest, "packPlanks", "packRune", "packDoor");
 				r.addShaped(BlocksCommonProxy.blockLectern, "BBB", "XXX", "PPP", 'P', "packPlanks", 'B', WurmTweaksItems.ingotBrownSteel, 'X', WurmTweaksItems.itemMagicChunk);
-				r.addCrossWithCenter(BlocksCommonProxy.manaBattery, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, "dustVintium");
+				r.addCrossWCenter(BlocksCommonProxy.manaBattery, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, "dustVintium");
 				r.addShapeless(BlocksCommonProxy.magicWall, "dustVintium", WurmTweaksItems.itemMagicChunk, WurmTweaksBlocks.blockWroughtIron);
 				r.addShaped(BlocksCommonProxy.occulus, "XAX", " N ", "BAB", 'N', Items.nether_star, 'X', WurmTweaksItems.itemMagicChunk, 'A', "packRune", 'B', WurmTweaksBlocks.blockPlatinum);
 				r.addShapeless(BlocksCommonProxy.craftingAltar, "packGemBlock", "dustVintium", BlocksCommonProxy.magicWall);
@@ -42,15 +42,15 @@ public class AM2Recipes {
 				r.addShaped(BlocksCommonProxy.inscriptionTable, "ABC", "SSS", "L L", 'L', "packLog", 'S', "packPlanks", 'A', WurmTweaksBlocks.blockSterlingSilver, 'B', WurmTweaksItems.itemMagicChunk, 'C', Items.feather);
 				r.addShapeless(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 3), BlocksCommonProxy.witchwoodLog);
 				//TODO SawMill Witchwood Log
-				r.addCircleWithCenter(new ItemStack(BlocksCommonProxy.redstoneInlay, 8), Blocks.redstone_block, WurmTweaksItems.itemMagicChunk);
-				r.addCircleWithCenter(new ItemStack(BlocksCommonProxy.ironInlay, 8), WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
-				r.addCircleWithCenter(new ItemStack(BlocksCommonProxy.goldInlay, 8), WurmTweaksBlocks.blockGold, WurmTweaksItems.itemMagicChunk);
+				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.redstoneInlay, 8), Blocks.redstone_block, WurmTweaksItems.itemMagicChunk);
+				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.ironInlay, 8), WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
+				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.goldInlay, 8), WurmTweaksBlocks.blockGold, WurmTweaksItems.itemMagicChunk);
 				r.addStairs(new ItemStack(BlocksCommonProxy.witchwoodStairs, 4), BlocksCommonProxy.witchwoodPlanks);
 				r.addSlabs(new ItemStack(BlocksCommonProxy.witchwoodSingleSlab, 12), BlocksCommonProxy.witchwoodPlanks);
 				r.addShaped(BlocksCommonProxy.magiciansWorkbench, "BAB", "PCP", "PPP", 'B', WurmTweaksBlocks.blockGold, 'A', WurmTweaksItems.itemMagicChunk, 'P', "packPlanks", 'C', "packCraftingTable");
 				r.addShapeless(BlocksCommonProxy.everstone, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, new ItemStack(LudicrousItems.beesource, 1, 4));
-				r.addCrossWithCenter(BlocksCommonProxy.keystoneTrapDoor, WurmTweaksItems.itemMagicChunk, "packPlanks", "packTrapDoor");
-				r.addCrossWithCenter(BlocksCommonProxy.elementalAttuner, WurmTweaksItems.itemMagicChunk, "dustVintium", WurmTweaksItems.itemCraftingCore);
+				r.addCrossWCenter(BlocksCommonProxy.keystoneTrapDoor, WurmTweaksItems.itemMagicChunk, "packPlanks", "packTrapDoor");
+				r.addCrossWCenter(BlocksCommonProxy.elementalAttuner, WurmTweaksItems.itemMagicChunk, "dustVintium", WurmTweaksItems.itemCraftingCore);
 				r.addBasicMachineRecipe(BlocksCommonProxy.flickerLure, WurmTweaksItems.itemMagicChunk, WurmTweaksBlocks.blockSilver, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.ingotOrangeSteel);
 				r.addShapeless(BlocksCommonProxy.illusionBlock, "packSmoothStone", WurmTweaksItems.ingotRainbowSteel);
 				r.addShapeless(new ItemStack(BlocksCommonProxy.crystalMarker, 1, 0), WurmTweaksItems.itemMagicChunk, Blocks.piston);
@@ -127,7 +127,7 @@ public class AM2Recipes {
 						for (ItemStack fruit : OreDictionary.getOres("packFruid"))
 								r.addShapeless(ItemsCommonProxy.manaCake, grain, fruit, WurmTweaksItems.itemMagicChunk);
 				r.addShapeless(ItemsCommonProxy.manaFocus, ItemsCommonProxy.standardFocus, WurmTweaksItems.itemMagicChunk);
-				r.addCircleWithCenter(ItemsCommonProxy.lesserFocus, Blocks.glass, TFCItems.platinumSheet);
+				r.addCircleWCenter(ItemsCommonProxy.lesserFocus, Blocks.glass, TFCItems.platinumSheet);
 				r.addShapeless(ItemsCommonProxy.playerjournal, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, Items.book);
 				r.addShaped(ItemsCommonProxy.runeBag, "LWL", "LCL", "LLL", 'L', TFCItems.leather, 'W', new ItemStack(ItemsCommonProxy.rune, 1, OreDictionary.WILDCARD_VALUE), 'C', "packChest");
 				r.addShapeless(ItemsCommonProxy.spellParchment, Items.paper, "dye", "packStick");

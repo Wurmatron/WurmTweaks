@@ -31,7 +31,7 @@ public class ItemMaterial extends Item {
 
 		@Override
 		public void registerIcons (IIconRegister iicon) {
-				for (int m = 0; m < (itemNames.size() + 1); m++)
+				for (int m = 0; m < itemNames.size(); m++)
 						icons[m] = iicon.registerIcon(Global.MODID + ":" + itemNames.get(m));
 		}
 
