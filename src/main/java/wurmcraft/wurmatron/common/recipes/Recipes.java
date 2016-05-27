@@ -4,10 +4,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import wurmcraft.wurmatron.common.recipes.mods.AERecipes;
-import wurmcraft.wurmatron.common.recipes.mods.AM2Recipes;
-import wurmcraft.wurmatron.common.recipes.mods.AdvancedSolarPanelRecipes;
-import wurmcraft.wurmatron.common.recipes.mods.TerrafirmacraftRecipes;
+import wurmcraft.wurmatron.common.recipes.mods.*;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
 import java.util.ArrayList;
@@ -24,12 +21,15 @@ public class Recipes {
 				OreDict.init();
 				LogHandler.info("Adding custom recipes");
 				TerrafirmacraftRecipes.addRecipes();
+				WurmTweaksRecipes.addRecipes();
 				if (RecipeChecker.modExists("AdvancedSolarPanel"))
 						AdvancedSolarPanelRecipes.addRecipes();
 				if (RecipeChecker.modExists("arsmagica2"))
 						AM2Recipes.addRecipes();
 				if (RecipeChecker.modExists("appliedenergistics2"))
 						AERecipes.addRecipes();
+				if(RecipeChecker.modExists("Avaritia"))
+						AvaritiaRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

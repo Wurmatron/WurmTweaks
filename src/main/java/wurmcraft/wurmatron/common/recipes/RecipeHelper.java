@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class RecipeHelper {
 
-		public static RecipeHelper instance = new RecipeHelper();
+		public static final RecipeHelper instance = new RecipeHelper();
 
 		public static ArrayList<String> dye = new ArrayList<String>();
 
