@@ -8,6 +8,7 @@ public class Settings {
 		public static boolean AM2;
 		public static boolean AE2;
 		public static boolean EnderIO;
+		public static boolean BigReactors;
 
 		public static boolean isModEnabled(String modid) {
 				if(modid.equalsIgnoreCase("Minecraft")) return true;
@@ -16,6 +17,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("arsmagica2")) return AM2;
 				if(modid.equalsIgnoreCase("appliedenergistics2")) return AE2;
 				if(modid.equalsIgnoreCase("EnderIO")) return EnderIO;
+				if(modid.equalsIgnoreCase("BigReactors")) return BigReactors;
 				return false;
 		}
 }

@@ -33,6 +33,7 @@ public class WTItems {
 				itemMaterialNames.add("titanium");
 				itemMaterialNames.add("francium");
 				itemMaterialNames.add("autocore");
+				itemMaterialNames.add("radiationShielding");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 		}
 

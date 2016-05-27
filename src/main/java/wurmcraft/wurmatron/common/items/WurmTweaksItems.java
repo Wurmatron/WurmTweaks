@@ -24,4 +24,5 @@ public class WurmTweaksItems {
 		public static final ItemStack ingotTitanium = new ItemStack(WTItems.itemMaterial,1,18);
 		public static final ItemStack ingotFrancium = new ItemStack(WTItems.itemMaterial,1,19);
 		public static final ItemStack itemAutoCore = new ItemStack(WTItems.itemMaterial,1,20);
+		public static final ItemStack itemRadiationShielding = new ItemStack(WTItems.itemMaterial,1,21);
 }

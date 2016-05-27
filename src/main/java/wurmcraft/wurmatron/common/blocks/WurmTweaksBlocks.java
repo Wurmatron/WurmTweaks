@@ -12,6 +12,7 @@ public class WurmTweaksBlocks {
 		public static Block blockGold;
 		public static Block blockSterlingSilver;
 		public static Block blockSilver;
+		public static Block blockBlueSteel;
 
 		public static void registerBlocks () {
 				blockWroughtIron = new BlockBasic("blockWroughtIron", Material.iron);
@@ -20,6 +21,7 @@ public class WurmTweaksBlocks {
 				blockSterlingSilver = new BlockBasic("blockSterlingSilver", Material.iron);
 				blockSilver = new BlockBasic("blockSilver", Material.iron);
 				blockCompressedRedstone = new BlockBasic("blockCompressedRedstone", Material.iron);
+				blockBlueSteel = new BlockBasic("blockBlueSteel", Material.iron);
 		}
 
 		private static void registerBlock (Block block, String name) {

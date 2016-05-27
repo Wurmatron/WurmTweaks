@@ -17,6 +17,7 @@ public class ConfigHandler {
 		private static Property AM2;
 		private static Property AE2;
 		private static Property EnderIO;
+		private static Property BigReactors;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -37,6 +38,8 @@ public class ConfigHandler {
 				Settings.AE2 = AE2.getBoolean();
 				EnderIO = config.get(Global.CATEGORY_MODS,"EnderIO", true);
 				Settings.EnderIO = EnderIO.getBoolean();
+				BigReactors = config.get(Global.CATEGORY_MODS,"BigReactors", true);
+				Settings.BigReactors = BigReactors.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

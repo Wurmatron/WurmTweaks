@@ -30,6 +30,8 @@ public class Recipes {
 						AERecipes.addRecipes();
 				if(RecipeChecker.modExists("Avaritia"))
 						AvaritiaRecipes.addRecipes();
+				if(RecipeChecker.modExists("BigReactors"))
+						BigReactorRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
