@@ -26,6 +26,13 @@ public class WTItems {
 				itemMaterialNames.add("graySteel");
 				itemMaterialNames.add("rainbowSteel");
 				itemMaterialNames.add("magicChunk");
+				itemMaterialNames.add("quantumCore");
+				itemMaterialNames.add("quantumSingularity");
+				itemMaterialNames.add("quantumFoam");
+				itemMaterialNames.add("halfium");
+				itemMaterialNames.add("titanium");
+				itemMaterialNames.add("francium");
+				itemMaterialNames.add("autocore");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 		}
 

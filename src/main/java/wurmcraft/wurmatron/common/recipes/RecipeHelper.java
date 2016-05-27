@@ -8,9 +8,32 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import java.util.ArrayList;
+
 public class RecipeHelper {
 
 		public static RecipeHelper instance = new RecipeHelper();
+
+		public static ArrayList<String> dye = new ArrayList<String>();
+
+		public RecipeHelper() {
+				dye.add(0,"dyeWhite");
+				dye.add(1,"dyeOrange");
+				dye.add(2, "dyeMagenta");
+				dye.add(3,"dyeLightBlue");
+				dye.add(4,"dyeYellow");
+				dye.add(5,"dyeLime");
+				dye.add(6,"dyePink");
+				dye.add(7,"dyeGray");
+				dye.add(8,"dyeLightGray");
+				dye.add(9,"dyeCyan");
+				dye.add(10,"dyePurple");
+				dye.add(11,"dyeBlue");
+				dye.add(12,"dyeBrown");
+				dye.add(13,"dyeGreen");
+				dye.add(14,"dyeRed");
+				dye.add(15, "dyeBlack");
+		}
 
 		/**
 		 * Adds a shaped recipe to the game

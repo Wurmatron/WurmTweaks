@@ -17,4 +17,11 @@ public class WurmTweaksItems {
 		public static final ItemStack ingotGraySteel = new ItemStack(WTItems.itemMaterial,1,11);
 		public static final ItemStack ingotRainbowSteel = new ItemStack(WTItems.itemMaterial,1,12);
 		public static final ItemStack itemMagicChunk = new ItemStack(WTItems.itemMaterial,1,13);
+		public static final ItemStack itemQuantumCore = new ItemStack(WTItems.itemMaterial,1,14);
+		public static final ItemStack itemQuantumSingularity = new ItemStack(WTItems.itemMaterial,1,15);
+		public static final ItemStack itemQuantumFoam = new ItemStack(WTItems.itemMaterial,1,16);
+		public static final ItemStack ingotHalfium = new ItemStack(WTItems.itemMaterial,1,17);
+		public static final ItemStack ingotTitanium = new ItemStack(WTItems.itemMaterial,1,18);
+		public static final ItemStack ingotFrancium = new ItemStack(WTItems.itemMaterial,1,19);
+		public static final ItemStack itemAutoCore = new ItemStack(WTItems.itemMaterial,1,20);
 }

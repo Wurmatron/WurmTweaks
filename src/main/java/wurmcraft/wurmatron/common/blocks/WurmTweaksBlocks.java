@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material;
 
 public class WurmTweaksBlocks {
 
+		public static Block blockCompressedRedstone;
 		public static Block blockWroughtIron;
 		public static Block blockPlatinum;
 		public static Block blockGold;
@@ -18,6 +19,7 @@ public class WurmTweaksBlocks {
 				blockGold = new BlockBasic("blockGold", Material.iron);
 				blockSterlingSilver = new BlockBasic("blockSterlingSilver", Material.iron);
 				blockSilver = new BlockBasic("blockSilver", Material.iron);
+				blockCompressedRedstone = new BlockBasic("blockCompressedRedstone", Material.iron);
 		}
 
 		private static void registerBlock (Block block, String name) {
