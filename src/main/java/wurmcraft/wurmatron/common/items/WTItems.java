@@ -34,6 +34,8 @@ public class WTItems {
 				itemMaterialNames.add("francium");
 				itemMaterialNames.add("autocore");
 				itemMaterialNames.add("radiationShielding");
+				itemMaterialNames.add("stableMagicEssence");
+				itemMaterialNames.add("bloodInfused");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 		}
 

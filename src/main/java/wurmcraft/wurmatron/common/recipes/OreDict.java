@@ -221,6 +221,9 @@ public class OreDict {
 				// TODO Add Gem Block Ore Dict "packGemBlock"
 				// Logs
 				add("packLog", new ItemStack(TFCItems.logs, 1, OreDictionary.WILDCARD_VALUE));
+				// Anvil
+				add("packAnvil", new ItemStack(TFCBlocks.anvil,1,OreDictionary.WILDCARD_VALUE));
+				add("packAnvil", new ItemStack(TFCBlocks.anvil2,1,OreDictionary.WILDCARD_VALUE));
 				if (RecipeChecker.modExists("arsmagica2"))
 						addAM2();
 				if (RecipeChecker.modExists("Avaritia"))

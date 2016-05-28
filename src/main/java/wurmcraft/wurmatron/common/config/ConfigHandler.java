@@ -18,6 +18,7 @@ public class ConfigHandler {
 		private static Property AE2;
 		private static Property EnderIO;
 		private static Property BigReactors;
+		private static Property BloodMagic;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -40,6 +41,8 @@ public class ConfigHandler {
 				Settings.EnderIO = EnderIO.getBoolean();
 				BigReactors = config.get(Global.CATEGORY_MODS,"BigReactors", true);
 				Settings.BigReactors = BigReactors.getBoolean();
+				BloodMagic = config.get(Global.CATEGORY_MODS,"BloodMagic", true);
+				Settings.BloodMagic = BloodMagic.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

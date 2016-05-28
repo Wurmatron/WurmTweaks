@@ -28,10 +28,12 @@ public class Recipes {
 						AM2Recipes.addRecipes();
 				if (RecipeChecker.modExists("appliedenergistics2"))
 						AERecipes.addRecipes();
-				if(RecipeChecker.modExists("Avaritia"))
+				if (RecipeChecker.modExists("Avaritia"))
 						AvaritiaRecipes.addRecipes();
-				if(RecipeChecker.modExists("BigReactors"))
+				if (RecipeChecker.modExists("BigReactors"))
 						BigReactorRecipes.addRecipes();
+				if (RecipeChecker.modExists("BloodMagic"))
+						BloodMagicRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

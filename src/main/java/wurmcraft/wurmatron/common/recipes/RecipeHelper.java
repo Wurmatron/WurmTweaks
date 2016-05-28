@@ -97,7 +97,15 @@ public class RecipeHelper {
 				addShaped(output, "OOO", "OCO", "OOO", 'O', outer, 'C', center);
 		}
 
-		public void addCircle (ItemStack output, ItemStack outer) {
+		public void addCircle (ItemStack output, Object outer) {
+				addShaped(output, "OOO", "O O", "OOO", 'O', outer);
+		}
+
+		public void addCircle (Item output, Object outer) {
+				addShaped(output, "OOO", "O O", "OOO", 'O', outer);
+		}
+
+		public void addCircle (Block output, Object outer) {
 				addShaped(output, "OOO", "O O", "OOO", 'O', outer);
 		}
 
@@ -128,10 +136,8 @@ public class RecipeHelper {
 				addShaped(output, "III", "III", "III", 'I', input);
 		}
 
-		public void add2X (ItemStack output, ItemStack input, boolean shaped) {
-				if (shaped)
+		public void add2X (ItemStack output, Object input) {
 						addShaped(output, "II", "II", 'I', input);
-				else
 						addShapeless(output, input, input, input, input);
 		}
 
