@@ -12,6 +12,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import vazkii.botania.common.block.ModBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
@@ -222,14 +223,16 @@ public class OreDict {
 				// Logs
 				add("packLog", new ItemStack(TFCItems.logs, 1, OreDictionary.WILDCARD_VALUE));
 				// Anvil
-				add("packAnvil", new ItemStack(TFCBlocks.anvil,1,OreDictionary.WILDCARD_VALUE));
-				add("packAnvil", new ItemStack(TFCBlocks.anvil2,1,OreDictionary.WILDCARD_VALUE));
+				add("packAnvil", new ItemStack(TFCBlocks.anvil, 1, OreDictionary.WILDCARD_VALUE));
+				add("packAnvil", new ItemStack(TFCBlocks.anvil2, 1, OreDictionary.WILDCARD_VALUE));
 				if (RecipeChecker.modExists("arsmagica2"))
 						addAM2();
 				if (RecipeChecker.modExists("Avaritia"))
 						addAvaritia();
 				if (RecipeChecker.modExists("EnderIO"))
 						addEnderIO();
+				if (RecipeChecker.modExists("Botania"))
+						addBotania();
 		}
 
 		@Optional.Method (modid = "arsmagica2")
@@ -242,6 +245,18 @@ public class OreDict {
 				add("packCraftingTable", LudicrousBlocks.dire_crafting);
 				add("packCraftingTable", LudicrousBlocks.double_craft);
 				add("packCraftingTable", LudicrousBlocks.triple_craft);
+		}
+
+		@Optional.Method (modid = "Botania")
+		private static void addBotania () {
+				add("packLog", ModBlocks.livingwood);
+				add("packLog", ModBlocks.dreamwood);
+				add("packPlanks", new ItemStack(ModBlocks.livingwood, 1, 1));
+				add("packPlanks", new ItemStack(ModBlocks.dreamwood, 1, 1));
+				add("packSmoothStone", ModBlocks.livingrock);
+				add("packSmoothStone", ModBlocks.shimmerrock);
+				add("packGlass", ModBlocks.manaGlass);
+				add("packGlass", ModBlocks.elfGlass);
 		}
 
 		@Optional.Method (modid = "EnderIO")

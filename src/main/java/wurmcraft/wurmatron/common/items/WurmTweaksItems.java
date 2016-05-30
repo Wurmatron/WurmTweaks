@@ -27,4 +27,13 @@ public class WurmTweaksItems {
 		public static final ItemStack itemRadiationShielding = new ItemStack(WTItems.itemMaterial, 1, 21);
 		public static final ItemStack stableMagicEssence = new ItemStack(WTItems.itemMaterial, 1, 22);
 		public static final ItemStack itemBloodInfused = new ItemStack(WTItems.itemMaterial, 1, 23);
+		public static final ItemStack itemNatureCore = new ItemStack(WTItems.itemMaterial, 1, 24);
+		public static final ItemStack itemNatureCoreMK2 = new ItemStack(WTItems.itemMaterial, 1, 25);
+		public static final ItemStack itemAntiMatter = new ItemStack(WTItems.itemMaterial, 1, 26);
+		public static final ItemStack itemEngineCoil = new ItemStack(WTItems.itemMaterial, 1, 27);
+		public static final ItemStack itemQuarryCore = new ItemStack(WTItems.itemMaterial, 1, 28);
+		public static final ItemStack gearMixedSheet = new ItemStack(WTItems.itemMaterial, 1, 29);
+		public static final ItemStack itemMiningCore = new ItemStack(WTItems.itemMaterial, 1, 30);
+		public static final ItemStack itemRefiningModule = new ItemStack(WTItems.itemMaterial, 1, 31);
+		public static final ItemStack itemComputationalCore = new ItemStack(WTItems.itemMaterial, 1, 32);
 }

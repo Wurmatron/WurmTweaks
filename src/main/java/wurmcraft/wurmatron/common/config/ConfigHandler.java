@@ -19,6 +19,12 @@ public class ConfigHandler {
 		private static Property EnderIO;
 		private static Property BigReactors;
 		private static Property BloodMagic;
+		private static Property Botania;
+		private static Property BuildCraft;
+		private static Property CarpentersBlocks;
+		private static Property Chisel;
+		private static Property ComputerCraft;
+		private static Property CraftHeraldry;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -29,20 +35,32 @@ public class ConfigHandler {
 				debug = config.get(Configuration.CATEGORY_GENERAL, Global.DEBUG, Defaults.DEBUG, "Enable debug mode");
 				Settings.debug = debug.getBoolean();
 				// Mods
-				Avaritia = config.get(Global.CATEGORY_MODS,"Avaritia", true);
+				Avaritia = config.get(Global.CATEGORY_MODS, "Avaritia", true);
 				Settings.Avaritia = Avaritia.getBoolean();
-				AdvancedSolarPanels = config.get(Global.CATEGORY_MODS,"AdvancedSolarPanels", true);
+				AdvancedSolarPanels = config.get(Global.CATEGORY_MODS, "AdvancedSolarPanels", true);
 				Settings.AdvancedSolarPanels = AdvancedSolarPanels.getBoolean();
-				AM2 = config.get(Global.CATEGORY_MODS,"ArsMagica2", true);
+				AM2 = config.get(Global.CATEGORY_MODS, "ArsMagica2", true);
 				Settings.AM2 = AM2.getBoolean();
-				AE2 = config.get(Global.CATEGORY_MODS,"AppliedEnergistics", true);
+				AE2 = config.get(Global.CATEGORY_MODS, "AppliedEnergistics", true);
 				Settings.AE2 = AE2.getBoolean();
-				EnderIO = config.get(Global.CATEGORY_MODS,"EnderIO", true);
+				EnderIO = config.get(Global.CATEGORY_MODS, "EnderIO", true);
 				Settings.EnderIO = EnderIO.getBoolean();
-				BigReactors = config.get(Global.CATEGORY_MODS,"BigReactors", true);
+				BigReactors = config.get(Global.CATEGORY_MODS, "BigReactors", true);
 				Settings.BigReactors = BigReactors.getBoolean();
-				BloodMagic = config.get(Global.CATEGORY_MODS,"BloodMagic", true);
+				BloodMagic = config.get(Global.CATEGORY_MODS, "BloodMagic", true);
 				Settings.BloodMagic = BloodMagic.getBoolean();
+				Botania = config.get(Global.CATEGORY_MODS, "Botania", true);
+				Settings.Botania = Botania.getBoolean();
+				BuildCraft = config.get(Global.CATEGORY_MODS, "Buildcraft", true);
+				Settings.BuildCraft = BuildCraft.getBoolean();
+				CarpentersBlocks = config.get(Global.CATEGORY_MODS, "CarpentersBlocks", true);
+				Settings.CarpentersBlocks = CarpentersBlocks.getBoolean();
+				Chisel = config.get(Global.CATEGORY_MODS, "Chisel", true);
+				Settings.Chisel = Chisel.getBoolean();
+				ComputerCraft = config.get(Global.CATEGORY_MODS, "ComputerCraft", true);
+				Settings.ComputerCraft = ComputerCraft.getBoolean();
+				CraftHeraldry = config.get(Global.CATEGORY_MODS, "CraftHeraldry", true);
+				Settings.CraftHeraldry = CraftHeraldry.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

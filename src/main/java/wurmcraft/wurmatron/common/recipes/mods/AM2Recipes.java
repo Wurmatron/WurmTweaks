@@ -12,19 +12,18 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.common.config.ConfigItems;
+import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
-import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
-public class AM2Recipes {
-
-		private static RecipeHelper r = RecipeHelper.instance;
+public class AM2Recipes implements IModRecipes {
 
 		@Optional.Method (modid = "arsmagica2")
-		public static void addRecipes () {
-								r.addBasicMachineRecipe(BlocksCommonProxy.essenceRefiner, "packPlanks", WurmTweaksItems.ingotRainbowSteel, Items.nether_star, new ItemStack(BlocksCommonProxy.AMOres, 1, 6));
+		@Override
+		public void addRecipes () {
+				r.addBasicMachineRecipe(BlocksCommonProxy.essenceRefiner, "packPlanks", WurmTweaksItems.ingotRainbowSteel, Items.nether_star, new ItemStack(BlocksCommonProxy.AMOres, 1, 6));
 				r.addShaped(BlocksCommonProxy.essenceConduit, " T ", "XSX", "SSS", 'T', new ItemStack(EnderIO.itemMaterial, 1, 8), 'X', "packSmoothStone", 'S', WurmTweaksItems.ingotOrangeSteel);
 				r.addCrossWCenter(BlocksCommonProxy.obelisk, "dustVintium", WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
 				r.add3X(BlocksCommonProxy.astralBarrier, WurmTweaksItems.itemMagicChunk);

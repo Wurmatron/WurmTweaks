@@ -7,7 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class TFCHelper {
 
-		@Optional.Method(modid = "terrafirmacraft")
+		@Optional.Method (modid = "terrafirmacraft")
 		public static ItemStack getFood (Item item, float size) {
 				ItemStack food = new ItemStack(item, 1, 0);
 				food.stackTagCompound = new NBTTagCompound();

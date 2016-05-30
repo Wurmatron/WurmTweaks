@@ -19,21 +19,34 @@ public class Recipes {
 				CraftingManager.getInstance().getRecipeList().clear();
 				FurnaceRecipes.smelting().getSmeltingList().clear();
 				OreDict.init();
+				SmeltingRecipes.init();
 				LogHandler.info("Adding custom recipes");
-				TerrafirmacraftRecipes.addRecipes();
-				WurmTweaksRecipes.addRecipes();
+				new TerrafirmacraftRecipes().addRecipes();
+				new WurmTweaksRecipes().addRecipes();
 				if (RecipeChecker.modExists("AdvancedSolarPanel"))
-						AdvancedSolarPanelRecipes.addRecipes();
+						new AdvancedSolarPanelRecipes().addRecipes();
 				if (RecipeChecker.modExists("arsmagica2"))
-						AM2Recipes.addRecipes();
+						new AM2Recipes().addRecipes();
 				if (RecipeChecker.modExists("appliedenergistics2"))
-						AERecipes.addRecipes();
+						new AERecipes().addRecipes();
 				if (RecipeChecker.modExists("Avaritia"))
-						AvaritiaRecipes.addRecipes();
+						new AvaritiaRecipes().addRecipes();
 				if (RecipeChecker.modExists("BigReactors"))
-						BigReactorRecipes.addRecipes();
+						new BigReactorRecipes().addRecipes();
 				if (RecipeChecker.modExists("BloodMagic"))
-						BloodMagicRecipes.addRecipes();
+						new BloodMagicRecipes().addRecipes();
+				if (RecipeChecker.modExists("botania"))
+						new BotaniaRecipes().addRecipes();
+				if (RecipeChecker.modExists("Buildcraft|Core"))
+						new BuildcraftRecipes().addRecipes();
+				if (RecipeChecker.modExists("chisel"))
+						new Chisel2Recipies().addRecipes();
+				if (RecipeChecker.modExists("ComputerCraft"))
+						new ComputerCraftRecipes().addRecipes();
+				if (RecipeChecker.modExists("CraftHeraldry"))
+						new CraftHeraldryRecipies().addRecipes();
+				if (RecipeChecker.modExists("props"))
+						new DecoCraftRecipes().addRecipes();
 		}
 
 		public static void checkSettings () {

@@ -2,11 +2,13 @@ package wurmcraft.wurmatron.common.recipes.mods;
 
 import com.bioxx.tfc.Core.Recipes;
 import cpw.mods.fml.common.Optional;
+import wurmcraft.wurmatron.api.IModRecipes;
 
-public class TerrafirmacraftRecipes {
+public class TerrafirmacraftRecipes implements IModRecipes {
 
-		@Optional.Method(modid = "terrafirmacraft")
-		public static void addRecipes() {
+		@Optional.Method (modid = "terrafirmacraft")
+		@Override
+		public void addRecipes () {
 				Recipes.registerRecipes();
 		}
 }

@@ -11,7 +11,7 @@ public class WTItems {
 
 		public static Item itemMaterial;
 
-		public static void registerItems() {
+		public static void registerItems () {
 				itemMaterialNames.add("solarCore");
 				itemMaterialNames.add("craftingCore");
 				itemMaterialNames.add("greenSteel");
@@ -36,10 +36,19 @@ public class WTItems {
 				itemMaterialNames.add("radiationShielding");
 				itemMaterialNames.add("stableMagicEssence");
 				itemMaterialNames.add("bloodInfused");
+				itemMaterialNames.add("natureCore");
+				itemMaterialNames.add("natureCoreMK2");
+				itemMaterialNames.add("antimatter");
+				itemMaterialNames.add("engineCoil");
+				itemMaterialNames.add("quarryCore");
+				itemMaterialNames.add("geatMixedSheet");
+				itemMaterialNames.add("miningCore");
+				itemMaterialNames.add("refiningModule");
+				itemMaterialNames.add("computationalCore");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 		}
 
-		private static void registerItem(Item item, String name) {
-				GameRegistry.registerItem(item,name);
+		private static void registerItem (Item item, String name) {
+				GameRegistry.registerItem(item, name);
 		}
 }

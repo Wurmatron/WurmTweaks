@@ -9,16 +9,15 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
-import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class AdvancedSolarPanelRecipes {
-
-		private static RecipeHelper r = RecipeHelper.instance;
+public class AdvancedSolarPanelRecipes implements IModRecipes {
 
 		@Optional.Method (modid = "AdvancedSolarPanel")
-		public static void addRecipes () {
+		@Override
+		public void addRecipes () {
 				LogHandler.info("Adding recipes for Advanced solar panels");
 				r.addShaped(new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 0), "GGG", "BCB", "XSX", 'G', AdvancedSolarPanel.itemIrradiantGlassPane, 'B', IC2Items.getItem("advancedMachine"), 'C', WurmTweaksItems.itemSolarCore, 'X', IC2Items.getItem("advancedCircuit"), 'S', IC2Items.getItem("solarPanel"));
 				r.addShaped(new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 1), "SXS", "BCB", "PGP", 'S', TFCItems.platinumSheet2x, 'X', AdvancedSolarPanel.itemIrradiantReinforcedPlate, 'B', IC2Items.getItem("advancedMachine"), 'C', new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 0), 'P', WurmTweaksItems.itemCraftingCore, 'G', WurmTweaksItems.ingotGreenSteel);
@@ -28,7 +27,7 @@ public class AdvancedSolarPanelRecipes {
 				r.addShapeless(new ItemStack(AdvancedSolarPanel.advancedSolarHelmet), new ItemStack(IC2Items.getItem("nanoHelmet").getItem(), 1, OreDictionary.WILDCARD_VALUE), new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 0));
 				r.addShapeless(new ItemStack(AdvancedSolarPanel.hybridSolarHelmet), new ItemStack(IC2Items.getItem("quantumHelmet").getItem(), 1, OreDictionary.WILDCARD_VALUE), new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 1));
 				r.addShapeless(new ItemStack(AdvancedSolarPanel.ultimateSolarHelmet), new ItemStack(IC2Items.getItem("quantumHelmet").getItem(), 1, OreDictionary.WILDCARD_VALUE), new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 2));
-				r.addShaped(AdvancedSolarPanel.itemIrradiantGlassPane, "GGG", "IXI", "GGG", 'G', "packGlass", 'I', AdvancedSolarPanel.itemIrradiantUranium,'X', IC2Items.getItem("advancedAlloy"));
+				r.addShaped(AdvancedSolarPanel.itemIrradiantGlassPane, "GGG", "IXI", "GGG", 'G', "packGlass", 'I', AdvancedSolarPanel.itemIrradiantUranium, 'X', IC2Items.getItem("advancedAlloy"));
 				r.addShaped(AdvancedSolarPanel.itemIrradiantGlassPane, "GGG", "IXI", "GGG", 'G', IC2Items.getItem("reinforcedGlass").getItem(), 'I', AdvancedSolarPanel.itemIrradiantUranium, 'X', IC2Items.getItem("advancedAlloy"));
 				r.addCrossWCenter(AdvancedSolarPanel.itemQuantumCore, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.ingotGreenSteel, new ItemStack(TFCItems.unknownIngot));
 				r.addCross(AdvancedSolarPanel.itemMTCore, IC2Items.getItem("advancedAlloy"), AdvancedSolarPanel.itemQuantumCore);
@@ -45,7 +44,7 @@ public class AdvancedSolarPanelRecipes {
 				MTRecipeManager.instance.addMTRecipe(new ItemStack(Items.glowstone_dust), AdvancedSolarPanel.itemSunnariumPart, 1000000);
 				MTRecipeManager.instance.addMTRecipe(new ItemStack(Blocks.glowstone), AdvancedSolarPanel.itemSunnarium, 9000000);
 				MTRecipeManager.instance.addMTOreDict("packIngot", AdvancedSolarPanel.itemIrradiantUranium, 10000000);
-				MTRecipeManager.instance.addMTRecipe(WurmTweaksItems.ingotGreenSteel, new ItemStack(Items.skull, 1,1), 1000000000);
+				MTRecipeManager.instance.addMTRecipe(WurmTweaksItems.ingotGreenSteel, new ItemStack(Items.skull, 1, 1), 1000000000);
 				MTRecipeManager.instance.addMTRecipe(new ItemStack(TFCItems.platinumIngot), new ItemStack(TFCItems.nickelIngot, 2), 100000);
 		}
 }

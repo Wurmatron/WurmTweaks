@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 
 import java.util.ArrayList;
 
@@ -16,22 +17,22 @@ public class RecipeHelper {
 
 		public static ArrayList<String> dye = new ArrayList<String>();
 
-		public RecipeHelper() {
-				dye.add(0,"dyeWhite");
-				dye.add(1,"dyeOrange");
+		public RecipeHelper () {
+				dye.add(0, "dyeWhite");
+				dye.add(1, "dyeOrange");
 				dye.add(2, "dyeMagenta");
-				dye.add(3,"dyeLightBlue");
-				dye.add(4,"dyeYellow");
-				dye.add(5,"dyeLime");
-				dye.add(6,"dyePink");
-				dye.add(7,"dyeGray");
-				dye.add(8,"dyeLightGray");
-				dye.add(9,"dyeCyan");
-				dye.add(10,"dyePurple");
-				dye.add(11,"dyeBlue");
-				dye.add(12,"dyeBrown");
-				dye.add(13,"dyeGreen");
-				dye.add(14,"dyeRed");
+				dye.add(3, "dyeLightBlue");
+				dye.add(4, "dyeYellow");
+				dye.add(5, "dyeLime");
+				dye.add(6, "dyePink");
+				dye.add(7, "dyeGray");
+				dye.add(8, "dyeLightGray");
+				dye.add(9, "dyeCyan");
+				dye.add(10, "dyePurple");
+				dye.add(11, "dyeBlue");
+				dye.add(12, "dyeBrown");
+				dye.add(13, "dyeGreen");
+				dye.add(14, "dyeRed");
 				dye.add(15, "dyeBlack");
 		}
 
@@ -137,8 +138,8 @@ public class RecipeHelper {
 		}
 
 		public void add2X (ItemStack output, Object input) {
-						addShaped(output, "II", "II", 'I', input);
-						addShapeless(output, input, input, input, input);
+				addShaped(output, "II", "II", 'I', input);
+				addShapeless(output, input, input, input, input);
 		}
 
 		public void addCrossWCenter (ItemStack output, Object partA, Object partB, Object center) {
@@ -175,17 +176,30 @@ public class RecipeHelper {
 				addShaped(output, "III", "III", 'I', input);
 		}
 
+		public void addSlabs (Item output, Object input) {
+				addShaped(output, "III", "III", 'I', input);
+		}
+
+		public void addSlabs (Block output, Object input) {
+				addShaped(output, "III", "III", 'I', input);
+		}
+
 		public void addSimpleCirc (ItemStack output, ItemStack outer, ItemStack center) {
 				addShaped(output, " O ", "OCO", " O ", 'O', outer, 'C', center);
 		}
 
-		public void addPressurePlate (ItemStack output, ItemStack input) {
+		public void addPressurePlate (ItemStack output, Object input) {
 				addShaped(output, "PP", 'P', input);
 		}
 
-		public void addPressurePlate (ItemStack output, String input) {
+		public void addPressurePlate (Item output, Object input) {
 				addShaped(output, "PP", 'P', input);
 		}
+
+		public void addPressurePlate (Block output, Object input) {
+				addShaped(output, "PP", 'P', input);
+		}
+
 
 		public void addBasicMachineRecipe (ItemStack output, Object corner, Object hor, Object ver, Object center) {
 				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver, 'X', center);
@@ -197,6 +211,30 @@ public class RecipeHelper {
 
 		public void addBasicMachineRecipe (Block output, Object corner, Object hor, Object ver, Object center) {
 				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver, 'X', center, 'H', hor);
+		}
+
+		public void addEngineRecipe (ItemStack output, Object gear, Object material) {
+				addShaped(output, "MMM", " X ", "GMG", 'M', material, 'X', WurmTweaksItems.itemEngineCoil, 'G', gear);
+		}
+
+		public void addEngineRecipe (Item output, Object gear, Object material) {
+				addShaped(output, "MMM", " X ", "GMG", 'M', material, 'X', WurmTweaksItems.itemEngineCoil, 'G', gear);
+		}
+
+		public void addEngineRecipe (Block output, Object gear, Object material) {
+				addShaped(output, "MMM", " X ", "GMG", 'M', material, 'X', WurmTweaksItems.itemEngineCoil, 'G', gear);
+		}
+
+		public void addWrenchRecipe (ItemStack output, Object material) {
+				addShaped(output, "M M", "MMM", " M ", 'M', material);
+		}
+
+		public void addWrenchRecipe (Item output, Object material) {
+				addShaped(output, "M M", "MMM", " M ", 'M', material);
+		}
+
+		public void addWrenchRecipe (Block output, Object material) {
+				addShaped(output, "M M", "MMM", " M ", 'M', material);
 		}
 
 		@Optional.Method (modid = "Avaritia")
@@ -219,7 +257,14 @@ public class RecipeHelper {
 				ExtremeCraftingManager.getInstance().addShapelessOreRecipe(output, input);
 		}
 
-		public void addArmorRecipes (ItemStack helmet, ItemStack chest, ItemStack leggs, ItemStack boots, ItemStack material) {
+		public void addArmorRecipes (ItemStack helmet, ItemStack chest, ItemStack leggs, ItemStack boots, Object material) {
+				addShaped(helmet, "III", "I I", 'I', material);
+				addShaped(chest, "I I", "III", "III", 'I', material);
+				addShaped(leggs, "III", "I I", "I I", 'I', material);
+				addShaped(boots, "I I", "I I", 'I', material);
+		}
+
+		public void addArmorRecipes (Item helmet, Item chest, Item leggs, Item boots, Object material) {
 				addShaped(helmet, "III", "I I", 'I', material);
 				addShaped(chest, "I I", "III", "III", 'I', material);
 				addShaped(leggs, "III", "I I", "I I", 'I', material);

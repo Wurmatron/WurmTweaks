@@ -9,16 +9,15 @@ import dan200.computercraft.ComputerCraft;
 import erogenousbeef.bigreactors.common.BigReactors;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.item.ItemStack;
+import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
-import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 
-public class BigReactorRecipes {
+public class BigReactorRecipes implements IModRecipes {
 
-		private static RecipeHelper r = RecipeHelper.instance;
-
-		@Optional.Method(modid = "BigReactors")
-		public static void addRecipes () {
+		@Optional.Method (modid = "BigReactors")
+		@Override
+		public void addRecipes () {
 				r.addShaped(new ItemStack(BigReactors.blockYelloriumFuelRod, 2), "SXS", "SXS", "SXS", 'S', WurmTweaksItems.itemRadiationShielding, 'X', WurmTweaksItems.ingotYellowSteel);
 				r.addShaped(new ItemStack(BigReactors.blockReactorPart, 6, 0), "SSS", "XAX", "SSS", 'S', WurmTweaksItems.itemRadiationShielding, 'X', WurmTweaksItems.ingotYellowSteel, 'A', WurmTweaksBlocks.blockBlueSteel);
 				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockReactorPart, 6, 1), WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.ingotYellowSteel, WurmTweaksBlocks.blockCompressedRedstone);
@@ -32,14 +31,14 @@ public class BigReactorRecipes {
 				r.addShaped(new ItemStack(BigReactors.blockMultiblockGlass, 6, 1), "GGG", "XAX", "GGG", 'G', new ItemStack(BigReactors.blockMultiblockGlass, 6, 0), 'X', WurmTweaksItems.ingotBrownSteel, 'A', WurmTweaksItems.itemRadiationShielding);
 				r.addCrossWCenter(new ItemStack(BigReactors.blockReactorRedstonePort, 1, 0), WurmTweaksItems.ingotYellowSteel, WurmTweaksBlocks.blockCompressedRedstone, WurmTweaksItems.ingotRainbowSteel);
 				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 4, 0), WurmTweaksItems.itemRadiationShielding, new ItemStack(BigReactors.ingotGeneric, 1, 8), WurmTweaksItems.ingotGraySteel, WurmTweaksBlocks.blockCompressedRedstone);
-				r.addCrossWCenter(new ItemStack(BigReactors.blockTurbinePart, 1, 1), WurmTweaksItems.ingotYellowSteel,WurmTweaksItems.ingotTitanium, new ItemStack(BigReactors.blockReactorPart, 1));
-				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 1, 2), new ItemStack(BigReactors.blockTurbinePart, 1, 0), WurmTweaksItems.ingotYellowSteel, TFCItems.platinumSheet2x,  new ItemStack(ExtraUtils.transferNode, 1, 12));
-				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 1, 3), new ItemStack(BigReactors.blockTurbinePart, 1, 0), WurmTweaksItems.ingotYellowSteel, TFCItems.platinumSheet2x,  new ItemStack(ExtraUtils.transferNode, 1, 6));
+				r.addCrossWCenter(new ItemStack(BigReactors.blockTurbinePart, 1, 1), WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotTitanium, new ItemStack(BigReactors.blockReactorPart, 1));
+				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 1, 2), new ItemStack(BigReactors.blockTurbinePart, 1, 0), WurmTweaksItems.ingotYellowSteel, TFCItems.platinumSheet2x, new ItemStack(ExtraUtils.transferNode, 1, 12));
+				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 1, 3), new ItemStack(BigReactors.blockTurbinePart, 1, 0), WurmTweaksItems.ingotYellowSteel, TFCItems.platinumSheet2x, new ItemStack(ExtraUtils.transferNode, 1, 6));
 				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 1, 4), new ItemStack(BigReactors.blockTurbinePart, 1, 0), WurmTweaksItems.ingotYellowSteel, TFCItems.platinumSheet2x, LudicrousItems.matter_cluster);
-				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 1, 5), new ItemStack(BigReactors.blockTurbinePart, 1, 0), WurmTweaksItems.ingotYellowSteel, TFCItems.platinumSheet2x,ComputerCraft.Blocks.computer);
-				r.addShaped(new ItemStack(BigReactors.blockTurbineRotorPart,4,0), " X ", "XCX", " X ", 'X', WurmTweaksItems.ingotGraySteel, 'C', WurmTweaksItems.ingotFrancium);
-				r.addShaped(new ItemStack(BigReactors.blockTurbineRotorPart,2,1), " X ", "XCX", " X ", 'X', WurmTweaksItems.ingotGraySteel, 'C', WurmTweaksItems.ingotGreenSteel);
-				r.addShaped(BigReactors.blockDevice, "XAX", "CGC", "CCC",'X',new ItemStack(BigReactors.ingotGeneric, 1, 8), 'A', WurmTweaksItems.ingotEnergyReactor, 'G', "packGemBlock", 'C', WurmTweaksItems.ingotGraySteel);
+				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockTurbinePart, 1, 5), new ItemStack(BigReactors.blockTurbinePart, 1, 0), WurmTweaksItems.ingotYellowSteel, TFCItems.platinumSheet2x, ComputerCraft.Blocks.computer);
+				r.addShaped(new ItemStack(BigReactors.blockTurbineRotorPart, 4, 0), " X ", "XCX", " X ", 'X', WurmTweaksItems.ingotGraySteel, 'C', WurmTweaksItems.ingotFrancium);
+				r.addShaped(new ItemStack(BigReactors.blockTurbineRotorPart, 2, 1), " X ", "XCX", " X ", 'X', WurmTweaksItems.ingotGraySteel, 'C', WurmTweaksItems.ingotGreenSteel);
+				r.addShaped(BigReactors.blockDevice, "XAX", "CGC", "CCC", 'X', new ItemStack(BigReactors.ingotGeneric, 1, 8), 'A', WurmTweaksItems.ingotEnergyReactor, 'G', "packGemBlock", 'C', WurmTweaksItems.ingotGraySteel);
 				// TODO Creative Collant Port
 				// TODO Create Steam Generator
 				// TODO Centerfuge Yellorium Recipe

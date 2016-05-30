@@ -18,18 +18,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import tconstruct.smeltery.TinkerSmeltery;
+import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
-public class BloodMagicRecipes {
-
-		private static final RecipeHelper r = RecipeHelper.instance;
+public class BloodMagicRecipes implements IModRecipes {
 
 		@Optional.Method (modid = "BloodMagic")
-		public static void addRecipes () {
+		@Override
+		public void addRecipes () {
 				r.addCircleWCenter(new ItemStack(ModBlocks.largeBloodStoneBrick, 8, 0), "packSmoothStone", ModItems.weakBloodShard);
 				r.add2X(new ItemStack(ModBlocks.bloodStoneBrick, 4, 0), ModBlocks.largeBloodStoneBrick);
 				r.addCrossWCenter(ModBlocks.runeOfSelfSacrifice, WurmTweaksItems.stableMagicEssence, ModItems.reinforcedSlate, ModBlocks.bloodRune);
