@@ -1,4 +1,4 @@
-package wurmcraft.wurmatron.common;
+package wurmcraft.wurmatron;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
