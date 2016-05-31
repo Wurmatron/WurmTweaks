@@ -53,7 +53,8 @@ public class DraconicEvolutionRecipes implements IModRecipes {
 				r.addCrossWCenter(ModItems.teleporterMKII, ModItems.draconiumIngot, new ItemStack(LudicrousItems.resource,1,6), ModItems.teleporterMKI);
 				r.addShapeless(new ItemStack(ModItems.safetyMatch,4), TFCItems.bismuthBronzeSheet, TFCItems.fireStarter, "dye");
 				r.addCircleWCenter(ModItems.infoTablet, "packSmoothStone", ModItems.draconicIngot);
-				// Core
-				// Capacitors
+				r.addShaped(new ItemStack(ModItems.wyvernFluxCapacitor.getItem(), 1, 0), "SCS", "CBC", "SCS", 'S', WurmTweaksItems.ingotTitanium, 'C', ModItems.wyvernEnergyCore, 'B', ModItems.wyvernCore);
+				r.addShaped(new ItemStack(ModItems.draconicFluxCapacitor.getItem(), 1, 1), "SCS", "CBC", "SCS", 'S', WurmTweaksItems.ingotTitanium, 'C', ModItems.draconicEnergyCore, 'B', ModItems.draconicCore);
+				r.addCrossWCenter(ModItems.draconicCore, WurmTweaksItems.ingotPinkSteel, ModItems.draconiumIngot, WurmTweaksItems.itemCraftingCore);
 		}
 }

@@ -47,6 +47,8 @@ public class Recipes {
 						new CraftHeraldryRecipies().addRecipes();
 				if (RecipeChecker.modExists("props"))
 						new DecoCraftRecipes().addRecipes();
+				if(RecipeChecker.modExists("DraconicEvolution"))
+						new DraconicEvolutionRecipes().addRecipes();
 		}
 
 		public static void checkSettings () {

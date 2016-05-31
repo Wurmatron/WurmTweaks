@@ -25,6 +25,7 @@ public class ConfigHandler {
 		private static Property Chisel;
 		private static Property ComputerCraft;
 		private static Property CraftHeraldry;
+		private static Property DraconicEvolution;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -61,6 +62,8 @@ public class ConfigHandler {
 				Settings.ComputerCraft = ComputerCraft.getBoolean();
 				CraftHeraldry = config.get(Global.CATEGORY_MODS, "CraftHeraldry", true);
 				Settings.CraftHeraldry = CraftHeraldry.getBoolean();
+				DraconicEvolution = config.get(Global.CATEGORY_MODS, "DraconicEvolution", true);
+				Settings.DraconicEvolution = DraconicEvolution.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
