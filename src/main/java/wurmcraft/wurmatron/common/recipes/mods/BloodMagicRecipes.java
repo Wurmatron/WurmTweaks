@@ -167,11 +167,11 @@ public class BloodMagicRecipes implements IModRecipes {
 		@Optional.Method (modid = "BloodMagic")
 		private static void addBindingRecipes () {
 				BindingRegistry.bindingRecipes.clear();
-				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.energySword), 350), new ItemStack(TFCItems.blueSteelSword));
-				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.boundAxe), 320), new ItemStack(TFCItems.redSteelAxe));
-				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.boundPickaxe), 300), new ItemStack(TFCItems.redSteelPick));
-				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.boundShovel), 280), new ItemStack(TFCItems.redSteelShovel));
-				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.customTool), 380), new ItemStack(TFCItems.redSteelMace));
+				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.energySword), 1500), new ItemStack(TFCItems.blueSteelSword));
+				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.boundAxe), 1200), new ItemStack(TFCItems.redSteelAxe));
+				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.boundPickaxe), 1300), new ItemStack(TFCItems.redSteelPick));
+				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.boundShovel), 1280), new ItemStack(TFCItems.redSteelShovel));
+				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.customTool), 1400), new ItemStack(TFCItems.redSteelMace));
 		}
 
 		@Optional.Method (modid = "BloodMagic")
