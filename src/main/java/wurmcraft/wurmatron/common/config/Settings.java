@@ -17,6 +17,7 @@ public class Settings {
 		public static boolean ComputerCraft;
 		public static boolean CraftHeraldry;
 		public static boolean DraconicEvolution;
+		public static boolean IronChest;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -34,6 +35,7 @@ public class Settings {
 				if (modid.equalsIgnoreCase("ComputerCraft")) return ComputerCraft;
 				if (modid.equalsIgnoreCase("CraftHeraldry")) return CraftHeraldry;
 				if(modid.equalsIgnoreCase("DraconicEvolution")) return DraconicEvolution;
+				if(modid.equalsIgnoreCase("IronChest")) return IronChest;
 				return false;
 		}
 }

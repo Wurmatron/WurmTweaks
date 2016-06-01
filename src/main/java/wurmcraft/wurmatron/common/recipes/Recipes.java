@@ -49,6 +49,8 @@ public class Recipes {
 						new DecoCraftRecipes().addRecipes();
 				if(RecipeChecker.modExists("DraconicEvolution"))
 						new DraconicEvolutionRecipes().addRecipes();
+				if(RecipeChecker.modExists("IronChest"))
+						new IronChestRecipes().addRecipes();
 		}
 
 		public static void checkSettings () {
