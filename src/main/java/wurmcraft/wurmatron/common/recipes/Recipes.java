@@ -51,6 +51,8 @@ public class Recipes {
 						new DraconicEvolutionRecipes().addRecipes();
 				if(RecipeChecker.modExists("IronChest"))
 						new IronChestRecipes().addRecipes();
+				if(RecipeChecker.modExists("EnderIO"))
+						new EnderIORecipes().addRecipes();
 		}
 
 		public static void checkSettings () {

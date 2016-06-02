@@ -166,7 +166,7 @@ public class OreDict {
 						add("packGemFlawed", new ItemStack(gem, 1, 1));
 						add("packGem", new ItemStack(gem, 1, 2));
 						add("packGemFlawless", new ItemStack(gem, 1, 3));
-						add("packGemQxquisite", new ItemStack(gem, 1, 4));
+						add("packGemExquisite", new ItemStack(gem, 1, 4));
 				}
 				// Sand
 				add("packSand", Blocks.sand);
@@ -225,6 +225,27 @@ public class OreDict {
 				// Anvil
 				add("packAnvil", new ItemStack(TFCBlocks.anvil, 1, OreDictionary.WILDCARD_VALUE));
 				add("packAnvil", new ItemStack(TFCBlocks.anvil2, 1, OreDictionary.WILDCARD_VALUE));
+				// Seeds
+				add("packSeed", TFCItems.seedsWheat);
+				add("packSeed", TFCItems.seedsBarley);
+				add("packSeed", TFCItems.seedsRye);
+				add("packSeed", TFCItems.seedsOat);
+				add("packSeed", TFCItems.seedsRice);
+				add("packSeed", TFCItems.seedsMaize);
+				add("packSeed", TFCItems.seedsPotato);
+				add("packSeed", TFCItems.seedsOnion);
+				add("packSeed", TFCItems.seedsCabbage);
+				add("packSeed", TFCItems.seedsGarlic);
+				add("packSeed", TFCItems.seedsCarrot);
+				add("packSeed", TFCItems.seedsSugarcane);
+				add("packSeed", TFCItems.seedsTomato);
+				add("packSeed", TFCItems.seedsYellowBellPepper);
+				add("packSeed", TFCItems.seedsRedBellPepper);
+				add("packSeed", TFCItems.seedsSoybean);
+				add("packSeed", TFCItems.seedsGreenbean);
+				add("packSeed", TFCItems.seedsSquash);
+				add("packSeed", TFCItems.seedsJute);
+				// Rubber Ore Dict ("packRubber")
 				if (RecipeChecker.modExists("arsmagica2"))
 						addAM2();
 				if (RecipeChecker.modExists("Avaritia"))

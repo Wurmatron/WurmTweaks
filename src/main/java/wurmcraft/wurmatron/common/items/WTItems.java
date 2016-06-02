@@ -45,6 +45,7 @@ public class WTItems {
 				itemMaterialNames.add("miningCore");
 				itemMaterialNames.add("refiningModule");
 				itemMaterialNames.add("computationalCore");
+				itemMaterialNames.add("machineFrame");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 		}
 

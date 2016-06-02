@@ -15,7 +15,7 @@ public class AvaritiaRecipes implements IModRecipes {
 				r.addCrossWCenter(LudicrousBlocks.double_craft, WurmTweaksItems.ingotCyanSteel, "packCraftingTable", WurmTweaksItems.ingotRainbowSteel);
 				r.addCircleWCenter(LudicrousBlocks.triple_craft, LudicrousBlocks.double_craft, WurmTweaksItems.itemMixedSheet);
 				r.addCrossWCenter(LudicrousBlocks.dire_crafting, WurmTweaksItems.itemAutoCore, new ItemStack(LudicrousItems.resource, 1, 1), LudicrousBlocks.triple_craft);
-				r.addCircleWCenter(new ItemStack(LudicrousItems.resource, 1, 1), "packGemQxquisite", WurmTweaksItems.ingotRainbowSteel);
+				r.addCircleWCenter(new ItemStack(LudicrousItems.resource, 1, 1), "packGemExquisite", WurmTweaksItems.ingotRainbowSteel);
 				// TODO new ItemStack(LudicrousItems.resource,1,4) recipe "Neutronium Ingot"
 				r.addCrossWCenter(new ItemStack(LudicrousItems.resource, 1, 6), new ItemStack(LudicrousItems.resource, 1, 1), WurmTweaksItems.ingotRainbowSteel, "packGemBlock");
 				r.addCrossWCenter(new ItemStack(LudicrousItems.resource, 1, 5), new ItemStack(LudicrousItems.resource, 1, 1), new ItemStack(LudicrousItems.resource, 1, 6), "packGemBlock");

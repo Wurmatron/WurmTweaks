@@ -48,7 +48,7 @@ public class BuildcraftRecipes implements IModRecipes {
 
 		@Optional.Method (modid = "BuildCraft|Builders")
 		private static void addBuildersRecipes () {
-				r.addShaped(BuildCraftBuilders.quarryBlock, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'A', TFCItems.redSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemQxquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
+				r.addShaped(BuildCraftBuilders.quarryBlock, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'A', TFCItems.redSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemExquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
 				r.addBasicMachineRecipe(BuildCraftBuilders.fillerBlock, WurmTweaksItems.gearMixedSheet, BuildCraftCore.markerBlock, "dye", "packChest");
 				r.addBasicMachineRecipe(BuildCraftBuilders.builderBlock, WurmTweaksItems.gearMixedSheet, BuildCraftCore.markerBlock, "dye", "packCraftingTable");
 				r.addBasicMachineRecipe(BuildCraftBuilders.architectBlock, WurmTweaksItems.gearMixedSheet, BuildCraftCore.markerBlock, "dye", BuildCraftBuilders.blueprintItem);
@@ -71,13 +71,13 @@ public class BuildcraftRecipes implements IModRecipes {
 
 		@Optional.Method (modid = "BuildCraft|Silicon")
 		private static void addSiliconRecipes () {
-				r.addShaped(BuildCraftSilicon.laserBlock, "BRR", "RGG", "BRR", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemQxquisite");
-				r.addShaped(BuildCraftSilicon.laserBlock, "RRB", "GGR", "RRB", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemQxquisite");
-				r.addShaped(BuildCraftSilicon.laserBlock, "RGR", "RGR", "BRB", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemQxquisite");
-				r.addShaped(BuildCraftSilicon.laserBlock, "BRB", "RGR", "RGR", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemQxquisite");
-				r.addShaped(BuildCraftSilicon.assemblyTableBlock, "OGO", "ORO", "OXO", 'O', Blocks.obsidian, 'G', "packGemQxquisite", 'R', WurmTweaksBlocks.blockBlackSteel, 'X', WurmTweaksItems.gearMixedSheet);
+				r.addShaped(BuildCraftSilicon.laserBlock, "BRR", "RGG", "BRR", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemExquisite");
+				r.addShaped(BuildCraftSilicon.laserBlock, "RRB", "GGR", "RRB", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemExquisite");
+				r.addShaped(BuildCraftSilicon.laserBlock, "RGR", "RGR", "BRB", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemExquisite");
+				r.addShaped(BuildCraftSilicon.laserBlock, "BRB", "RGR", "RGR", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemExquisite");
+				r.addShaped(BuildCraftSilicon.assemblyTableBlock, "OGO", "ORO", "OXO", 'O', Blocks.obsidian, 'G', "packGemExquisite", 'R', WurmTweaksBlocks.blockBlackSteel, 'X', WurmTweaksItems.gearMixedSheet);
 				// TODO Assembling Machine Recipes
-				r.addShaped(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 2), "OGO", "ORO", "OXO", 'O', "packCraftingTable", 'G', "packGemQxquisite", 'R', WurmTweaksBlocks.blockBlackSteel, 'X', WurmTweaksItems.gearMixedSheet);
+				r.addShaped(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 2), "OGO", "ORO", "OXO", 'O', "packCraftingTable", 'G', "packGemExquisite", 'R', WurmTweaksBlocks.blockBlackSteel, 'X', WurmTweaksItems.gearMixedSheet);
 		}
 
 		@Optional.Method (modid = "BuildCraft|Transport")

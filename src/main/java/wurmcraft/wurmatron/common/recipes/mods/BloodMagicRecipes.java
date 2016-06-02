@@ -85,7 +85,7 @@ public class BloodMagicRecipes implements IModRecipes {
 				r.addShaped(ModBlocks.blockCrucible, "SSS", "XAX", "SSS", 'S', TFCItems.redSteelSheet2x, 'X', WurmTweaksItems.itemMagicChunk, 'A', WurmTweaksItems.itemBloodInfused);
 				r.addShaped(ModBlocks.blockCrystalBelljar, "GGG", "GXG", "BBB", 'G', "packGlass", 'X', WurmTweaksItems.itemBloodInfused, 'B', TFCItems.blackSteelSheet2x);
 				r.addShaped(ModBlocks.blockAltar, "XAX", "BBB", "CCC", 'X', "packGemBlock", 'A', WurmTweaksItems.itemMagicChunk, 'B', WurmTweaksItems.itemCraftingCore, 'C', WurmTweaksItems.ingotFrancium);
-				r.addShaped(ModBlocks.blockHomHeart, "XAX", "BBB", "CCC", 'X', "packGemQxquisite", 'A', WurmTweaksItems.itemMagicChunk, 'B', WurmTweaksItems.itemCraftingCore, 'C', WurmTweaksItems.ingotFrancium);
+				r.addShaped(ModBlocks.blockHomHeart, "XAX", "BBB", "CCC", 'X', "packGemExquisite", 'A', WurmTweaksItems.itemMagicChunk, 'B', WurmTweaksItems.itemCraftingCore, 'C', WurmTweaksItems.ingotFrancium);
 				r.addShaped(ModBlocks.blockConduit, "XXX", "AAA", "XXX", 'X', WurmTweaksItems.itemBloodInfused, 'A', TFItems.ingotEnderium);
 				r.addCrossWCenter(ModBlocks.emptySocket, Blocks.obsidian, WurmTweaksItems.ingotPurpleSteel, WurmTweaksItems.ingotRainbowSteel);
 				r.addBasicMachineRecipe(ModBlocks.blockAlchemicCalcinator, WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemMixedSheet, ModItems.demonicSlate, Blocks.furnace);

@@ -24,7 +24,7 @@ public class WurmTweaksBlocks {
 				blockSilver = new BlockBasic("blockSilver", Material.iron);
 				blockCompressedRedstone = new BlockBasic("blockCompressedRedstone", Material.iron);
 				blockBlueSteel = new BlockBasic("blockBlueSteel", Material.iron);
-				blockBlueSteel = new BlockBasic("blockBlackSteel", Material.iron);
+				blockBlackSteel = new BlockBasic("blockBlackSteel", Material.iron);
 				blockRedSteel = new BlockBasic("blockRedSteel", Material.iron);
 		}
 

@@ -4,6 +4,7 @@ import advsolar.common.AdvancedSolarPanel;
 import advsolar.utils.MTRecipeManager;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
+import cpw.mods.ironchest.IronChest;
 import ic2.api.item.IC2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -35,6 +36,7 @@ public class AdvancedSolarPanelRecipes implements IModRecipes {
 				r.addCircleWCenter(AdvancedSolarPanel.itemEnrichedSunnarium, AdvancedSolarPanel.itemSunnarium, AdvancedSolarPanel.itemIrradiantUranium);
 				r.addCircleWCenter(AdvancedSolarPanel.itemEnrichedSunnariumAlloy, IC2Items.getItem("iridiumPlate"), AdvancedSolarPanel.itemEnrichedSunnarium);
 				addMolecularTransformerRecipes();
+				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock,1,3), TFCItems.copperSheet, "packChest");
 		}
 
 		@Optional.Method (modid = "AdvancedSolarPanel")
