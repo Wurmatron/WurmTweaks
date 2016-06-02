@@ -53,6 +53,8 @@ public class Recipes {
 						new IronChestRecipes().addRecipes();
 				if(RecipeChecker.modExists("EnderIO"))
 						new EnderIORecipes().addRecipes();
+				if(RecipeChecker.modExists("EnderStorage"))
+						new EnderStorageRecipes().addRecipes();
 		}
 
 		public static void checkSettings () {

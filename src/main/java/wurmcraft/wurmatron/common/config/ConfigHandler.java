@@ -27,6 +27,7 @@ public class ConfigHandler {
 		private static Property CraftHeraldry;
 		private static Property DraconicEvolution;
 		private static Property IronChest;
+		private static Property EnderStorage;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -67,6 +68,8 @@ public class ConfigHandler {
 				Settings.DraconicEvolution = DraconicEvolution.getBoolean();
 				IronChest = config.get(Global.CATEGORY_MODS, "IronChest", true);
 				Settings.IronChest = IronChest.getBoolean();
+				EnderStorage = config.get(Global.CATEGORY_MODS, "EnderStorage", true);
+				Settings.EnderStorage = EnderStorage.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
