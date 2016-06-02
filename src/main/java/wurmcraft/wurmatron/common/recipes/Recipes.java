@@ -55,6 +55,8 @@ public class Recipes {
 						new EnderIORecipes().addRecipes();
 				if(RecipeChecker.modExists("EnderStorage"))
 						new EnderStorageRecipes().addRecipes();
+				if(RecipeChecker.modExists("extracells"))
+						new ExtraCellsRecipes().addRecipes();
 		}
 
 		public static void checkSettings () {

@@ -2,6 +2,7 @@ package wurmcraft.wurmatron.common.recipes.mods;
 
 import appeng.api.util.AEColor;
 import appeng.core.Api;
+import cofh.thermaldynamics.item.TDItems;
 import cofh.thermalexpansion.block.TEBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
@@ -113,5 +114,26 @@ public class AERecipes implements IModRecipes {
 						r.addCircleWCenter(new ItemStack(Api.INSTANCE.items().itemPaintBall.item(AEColor.Cyan), 8, 20 + i), new ItemStack(Api.INSTANCE.items().itemPaintBall.item(AEColor.Cyan), 8, i), new ItemStack(Items.glowstone_dust));
 				for (int i = 0; i < 15; i++)
 						r.addShapeless(new ItemStack(Api.INSTANCE.blocks().blockMultiPart.block(), 1, 60 + i), new Object[] {new ItemStack(Api.INSTANCE.materials().materialEngProcessor.item(), 1, 76), RecipeHelper.dye.get(i)});
+				r.addShaped(Api.INSTANCE.parts().partConversionMonitor.stack(1), "XAX", 'X', "packGem", 'A', Api.INSTANCE.parts().partTerminal.stack(1));
+				r.addShapeless(Api.INSTANCE.parts().partCraftingTerminal.stack(1), "packCraftingTable", Api.INSTANCE.parts().partTerminal.stack(1), WurmTweaksItems.itemAutoCore);
+				r.addShapeless(Api.INSTANCE.parts().partExportBus.stack(2), WurmTweaksItems.itemMixedSheet, Blocks.piston, (new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE)));
+				r.addShapeless(Api.INSTANCE.parts().partImportBus.stack(2), WurmTweaksItems.itemMixedSheet, Blocks.sticky_piston, new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
+				r.addShapeless(Api.INSTANCE.parts().partInterface.stack(1), Api.INSTANCE.blocks().blockInterface.stack(1), new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
+				r.addShapeless(Api.INSTANCE.parts().partMonitor.stack(1), Api.INSTANCE.blocks().blockInterface.stack(1), Api.INSTANCE.parts().partTerminal.stack(1), new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
+				r.addShapeless(Api.INSTANCE.parts().partInvertedToggleBus.stack(1), Api.INSTANCE.parts().partToggleBus);
+				r.addShapeless(Api.INSTANCE.parts().partToggleBus.stack(1), Api.INSTANCE.parts().partInvertedToggleBus);
+				r.addShapeless(Api.INSTANCE.parts().partLevelEmitter.stack(1), new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE), WurmTweaksItems.gearMixedSheet, Items.redstone);
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelEU.stack(1), "packCloth", TFCItems.leather, Items.redstone, IC2Items.getItem("glassFiberCableItem"));
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelItems.stack(1), "packCloth", TFCItems.leather, Items.redstone, TDItems.servoResonant);
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelLight.stack(1), "packCloth", TFCItems.leather, Items.redstone, Blocks.glowstone);
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelLiquids.stack(1), "packCloth", TFCItems.leather, Items.redstone, TDItems.ductFluidHardened);
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelME.stack(1), "packCloth", TFCItems.leather, Items.redstone, new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelRF.stack(1), "packCloth", TFCItems.leather, Items.redstone, TDItems.ductEnergyResonant);
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelRedstone.stack(1), "packCloth", TFCItems.leather, Items.redstone, WurmTweaksBlocks.blockCompressedRedstone);
+				r.addBasicMachineRecipe(Api.INSTANCE.parts().partP2PTunnelRF.stack(1), "packCloth", TFCItems.leather, Items.redstone, TDItems.ductEnergyResonant);
+				r.addShapeless(Api.INSTANCE.parts().partStorageMonitor.stack(1), Api.INSTANCE.blocks().blockInterface.stack(1), WurmTweaksItems.itemQuantumFoam);
+				r.addShapeless(Api.INSTANCE.parts().partTerminal.stack(1), WurmTweaksItems.itemQuantumSingularity, new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
+				r.addShapeless(Api.INSTANCE.parts().partToggleBus.stack(1), new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE), Items.redstone, Blocks.lever);
+				r.addShapeless(Api.INSTANCE.parts().partStorageBus.stack(1), Api.INSTANCE.blocks().blockInterface.stack(1), "packChest", WurmTweaksItems.itemQuantumFoam);
 		}
 }

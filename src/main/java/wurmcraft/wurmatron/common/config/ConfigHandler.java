@@ -28,6 +28,7 @@ public class ConfigHandler {
 		private static Property DraconicEvolution;
 		private static Property IronChest;
 		private static Property EnderStorage;
+		private static Property ExtraCells;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -70,6 +71,8 @@ public class ConfigHandler {
 				Settings.IronChest = IronChest.getBoolean();
 				EnderStorage = config.get(Global.CATEGORY_MODS, "EnderStorage", true);
 				Settings.EnderStorage = EnderStorage.getBoolean();
+				ExtraCells = config.get(Global.CATEGORY_MODS, "ExtraCells", true);
+				Settings.ExtraCells = ExtraCells.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
