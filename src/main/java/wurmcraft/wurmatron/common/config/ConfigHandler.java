@@ -29,6 +29,7 @@ public class ConfigHandler {
 		private static Property IronChest;
 		private static Property EnderStorage;
 		private static Property ExtraCells;
+		private static Property ExtraUtilities;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -73,6 +74,8 @@ public class ConfigHandler {
 				Settings.EnderStorage = EnderStorage.getBoolean();
 				ExtraCells = config.get(Global.CATEGORY_MODS, "ExtraCells", true);
 				Settings.ExtraCells = ExtraCells.getBoolean();
+				ExtraUtilities = config.get(Global.CATEGORY_MODS, "ExtraUtilities", true);
+				Settings.ExtraUtilities = ExtraUtilities.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

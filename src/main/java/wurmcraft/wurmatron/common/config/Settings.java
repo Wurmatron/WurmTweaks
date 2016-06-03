@@ -20,6 +20,7 @@ public class Settings {
 		public static boolean IronChest;
 		public static boolean EnderStorage;
 		public static boolean ExtraCells;
+		public static boolean ExtraUtilities;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -40,6 +41,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("IronChest")) return IronChest;
 				if(modid.equalsIgnoreCase("EnderStorage")) return EnderStorage;
 				if(modid.equalsIgnoreCase("extracells")) return ExtraCells;
+				if(modid.equalsIgnoreCase("ExtraUtilities")) return ExtraUtilities;
 				return false;
 		}
 }

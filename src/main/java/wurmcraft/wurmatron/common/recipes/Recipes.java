@@ -47,16 +47,18 @@ public class Recipes {
 						new CraftHeraldryRecipies().addRecipes();
 				if (RecipeChecker.modExists("props"))
 						new DecoCraftRecipes().addRecipes();
-				if(RecipeChecker.modExists("DraconicEvolution"))
+				if (RecipeChecker.modExists("DraconicEvolution"))
 						new DraconicEvolutionRecipes().addRecipes();
-				if(RecipeChecker.modExists("IronChest"))
+				if (RecipeChecker.modExists("IronChest"))
 						new IronChestRecipes().addRecipes();
-				if(RecipeChecker.modExists("EnderIO"))
+				if (RecipeChecker.modExists("EnderIO"))
 						new EnderIORecipes().addRecipes();
-				if(RecipeChecker.modExists("EnderStorage"))
+				if (RecipeChecker.modExists("EnderStorage"))
 						new EnderStorageRecipes().addRecipes();
-				if(RecipeChecker.modExists("extracells"))
+				if (RecipeChecker.modExists("extracells"))
 						new ExtraCellsRecipes().addRecipes();
+				if (RecipeChecker.modExists("ExtraUtilities"))
+						new ExtraUtilsRecipes().addRecipes();
 		}
 
 		public static void checkSettings () {
