@@ -4,7 +4,6 @@ import advsolar.common.AdvancedSolarPanel;
 import advsolar.utils.MTRecipeManager;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
-import cpw.mods.ironchest.IronChest;
 import ic2.api.item.IC2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -14,6 +13,11 @@ import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
+
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/3/2016 with v3.2.1
+ */
 public class AdvancedSolarPanelRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
@@ -37,7 +41,7 @@ public class AdvancedSolarPanelRecipes {
 				r.addCircleWCenter(AdvancedSolarPanel.itemEnrichedSunnarium, AdvancedSolarPanel.itemSunnarium, AdvancedSolarPanel.itemIrradiantUranium);
 				r.addCircleWCenter(AdvancedSolarPanel.itemEnrichedSunnariumAlloy, IC2Items.getItem("iridiumPlate"), AdvancedSolarPanel.itemEnrichedSunnarium);
 				addMolecularTransformerRecipes();
-				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock,1,3), TFCItems.copperSheet, "packChest");
+				// TODO Quantum Generator Recipe
 		}
 
 		@Optional.Method (modid = "AdvancedSolarPanel")
@@ -49,5 +53,6 @@ public class AdvancedSolarPanelRecipes {
 				MTRecipeManager.instance.addMTOreDict("packIngot", AdvancedSolarPanel.itemIrradiantUranium, 10000000);
 				MTRecipeManager.instance.addMTRecipe(WurmTweaksItems.ingotGreenSteel, new ItemStack(Items.skull, 1, 1), 1000000000);
 				MTRecipeManager.instance.addMTRecipe(new ItemStack(TFCItems.platinumIngot), new ItemStack(TFCItems.nickelIngot, 2), 100000);
+				MTRecipeManager.instance.addMTRecipe(new ItemStack(Items.skull, 3, 1), new ItemStack(Items.nether_star), 1000000000);
 		}
 }

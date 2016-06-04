@@ -14,42 +14,23 @@ import java.util.ArrayList;
 public class RecipeHelper {
 
 		public static final ArrayList<String> dye = new ArrayList<String>() {{
-				add(0, "dyeWhite");
-				add(1, "dyeOrange");
-				add(2, "dyeMagenta");
-				add(3, "dyeLightBlue");
-				add(4, "dyeYellow");
-				add(5, "dyeLime");
-				add(6, "dyePink");
-				add(7, "dyeGray");
-				add(8, "dyeLightGray");
-				add(9, "dyeCyan");
-				add(10, "dyePurple");
-				add(11, "dyeBlue");
-				add(12, "dyeBrown");
-				add(13, "dyeGreen");
-				add(14, "dyeRed");
-				add(15, "dyeBlack");
+				add("dyeWhite");
+				add("dyeOrange");
+				add("dyeMagenta");
+				add("dyeLightBlue");
+				add("dyeYellow");
+				add("dyeLime");
+				add("dyePink");
+				add("dyeGray");
+				add("dyeLightGray");
+				add("dyeCyan");
+				add("dyePurple");
+				add("dyeBlue");
+				add("dyeBrown");
+				add("dyeGreen");
+				add("dyeRed");
+				add("dyeBlack");
 		}};
-
-		public void RecipeHelper () {
-				dye.add(0, "dyeWhite");
-				dye.add(1, "dyeOrange");
-				dye.add(2, "dyeMagenta");
-				dye.add(3, "dyeLightBlue");
-				dye.add(4, "dyeYellow");
-				dye.add(5, "dyeLime");
-				dye.add(6, "dyePink");
-				dye.add(7, "dyeGray");
-				dye.add(8, "dyeLightGray");
-				dye.add(9, "dyeCyan");
-				dye.add(10, "dyePurple");
-				dye.add(11, "dyeBlue");
-				dye.add(12, "dyeBrown");
-				dye.add(13, "dyeGreen");
-				dye.add(14, "dyeRed");
-				dye.add(15, "dyeBlack");
-		}
 
 		/**
 		 * Adds a shaped recipe to the game
