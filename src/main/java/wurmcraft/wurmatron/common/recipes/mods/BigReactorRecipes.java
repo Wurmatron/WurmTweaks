@@ -9,15 +9,18 @@ import dan200.computercraft.ComputerCraft;
 import erogenousbeef.bigreactors.common.BigReactors;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.item.ItemStack;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class BigReactorRecipes implements IModRecipes {
+public class BigReactorRecipes {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "BigReactors")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding Big Reactor Recipes");
 				r.addShaped(new ItemStack(BigReactors.blockYelloriumFuelRod, 2), "SXS", "SXS", "SXS", 'S', WurmTweaksItems.itemRadiationShielding, 'X', WurmTweaksItems.ingotYellowSteel);
 				r.addShaped(new ItemStack(BigReactors.blockReactorPart, 6, 0), "SSS", "XAX", "SSS", 'S', WurmTweaksItems.itemRadiationShielding, 'X', WurmTweaksItems.ingotYellowSteel, 'A', WurmTweaksBlocks.blockBlueSteel);
 				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockReactorPart, 6, 1), WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.ingotYellowSteel, WurmTweaksBlocks.blockCompressedRedstone);

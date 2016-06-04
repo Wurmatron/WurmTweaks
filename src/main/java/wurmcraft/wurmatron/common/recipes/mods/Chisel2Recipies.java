@@ -8,15 +8,17 @@ import cpw.mods.fml.common.Optional;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
-public class Chisel2Recipies implements IModRecipes {
+public class Chisel2Recipies {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "chisel")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding Chisel 2 Recipes");
 				r.addShapeless(new ItemStack(ChiselBlocks.diorite, 32), "packCobblestone", Items.quartz);
 				r.addShapeless(new ItemStack(ChiselBlocks.andesite, 2), "packCobblestone", ChiselBlocks.diorite);
 				r.addShapeless(new ItemStack(ChiselBlocks.limestone, 2), "packSand", ChiselBlocks.diorite);
@@ -40,14 +42,14 @@ public class Chisel2Recipies implements IModRecipes {
 				for (int d = 0; d < 16; d++) {
 						r.addShapeless(new ItemStack(ChiselBlocks.woolen_clay, 2, d), new ItemStack(Blocks.wool, d), new ItemStack(Blocks.stained_glass, 1, d));
 						r.addCircleWCenter(new ItemStack(ChiselBlocks.carpet_block, 8, d), new ItemStack(Blocks.wool, 1, d), Items.string);
-						r.addShaped(new ItemStack(ChiselBlocks.carpet, 6, d), "WWW", new ItemStack(ChiselBlocks.carpet_block, 1, d));
+						r.addShaped(new ItemStack(ChiselBlocks.carpet, 6, d), "WWW", 'W', new ItemStack(ChiselBlocks.carpet_block, 1, d));
 						r.addShapeless(new ItemStack(ChiselBlocks.present, 1, d), Blocks.chest, RecipeHelper.dye.get(d));
 				}
 				r.addShaped(ChiselBlocks.autoChisel, "SSS", " X ", "III", 'S', "packSmoothStone", 'X', Blocks.piston, 'I', TFCItems.steelSheet);
-				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 0), "XAX", "ACA", "BB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', TFCHelper.getFood(TFCItems.sugar, 160), 'B', Items.redstone);
-				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 1), "XAX", "ACA", "BB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', Blocks.hopper, 'B', Items.redstone);
-				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 2), "XAX", "ACA", "BB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', "packCraftingTable", 'B', Items.redstone);
-				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 3), "XAX", "ACA", "BB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', Blocks.cauldron, 'B', Items.redstone);
+				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 0), "XAX", "ACA", "BBB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', TFCHelper.getFood(TFCItems.sugar, 160), 'B', Items.redstone);
+				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 1), "XAX", "ACA", "BBB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', Blocks.hopper, 'B', Items.redstone);
+				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 2), "XAX", "ACA", "BBB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', "packCraftingTable", 'B', Items.redstone);
+				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 3), "XAX", "ACA", "BBB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', Blocks.cauldron, 'B', Items.redstone);
 				r.addShaped(new ItemStack(ChiselItems.chisel), " I", "S ", 'I', TFCItems.bismuthBronzeIngot, 'S', "packStick");
 				r.addShaped(new ItemStack(ChiselItems.diamondChisel), " I", "S ", 'I', "packGem", 'S', "packStick");
 				r.addShaped(new ItemStack(ChiselItems.obsidianChisel), " I", "S ", 'I', Blocks.obsidian, 'S', "packStick");

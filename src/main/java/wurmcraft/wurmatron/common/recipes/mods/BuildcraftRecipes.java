@@ -10,16 +10,18 @@ import cpw.mods.fml.common.Optional;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class BuildcraftRecipes implements IModRecipes {
+public class BuildcraftRecipes  {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "BuildCraft|Core")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding Builcraft Recipes");
 				r.addEngineRecipe(new ItemStack(BuildCraftCore.engineBlock, 1, 0), BuildCraftCore.woodenGearItem, "packLog");
 				r.addEngineRecipe(new ItemStack(BuildCraftCore.engineBlock, 1, 1), BuildCraftCore.stoneGearItem, "packSmoothStone");
 				r.addEngineRecipe(new ItemStack(BuildCraftCore.engineBlock, 1, 2), BuildCraftCore.ironGearItem, TFCItems.wroughtIronSheet);

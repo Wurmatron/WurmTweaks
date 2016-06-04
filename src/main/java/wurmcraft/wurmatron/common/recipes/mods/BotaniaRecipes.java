@@ -15,18 +15,19 @@ import vazkii.botania.common.block.ModBlocks;
 import vazkii.botania.common.item.ItemSignalFlare;
 import vazkii.botania.common.item.ItemTwigWand;
 import vazkii.botania.common.item.ModItems;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
-public class BotaniaRecipes implements IModRecipes {
+public class BotaniaRecipes {
 
+		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method (modid = "botania")
-		@Override
-		public void addRecipes () {
+		@Optional.Method (modid = "Botania")
+		public static void addRecipes () {
+				LogHandler.info("Adding Botania Recipes");
 				for (int d = 0; d < 15; d++)
 						r.add3X(new ItemStack(ModBlocks.petalBlock, 1, d), new ItemStack(ModItems.petal, 1, d));
 				for (int i = 0; i <= 15; i++)
@@ -39,13 +40,13 @@ public class BotaniaRecipes implements IModRecipes {
 				r.addShapeless(new ItemStack(ModBlocks.livingwood, 4, 1), ModBlocks.livingwood);
 				r.addShapeless(new ItemStack(ModBlocks.livingwood, 1, 2), new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.add2X(new ItemStack(ModBlocks.livingwood, 4, 3), new ItemStack(ModBlocks.livingwood, 1, 1));
-				r.addShaped(new ItemStack(ModBlocks.livingwood, 4, 4), " X ", "X X", " X ", new ItemStack(ModBlocks.livingwood, 1, 1));
+				r.addShaped(new ItemStack(ModBlocks.livingwood, 4, 4), " X ", "X X", " X ",'X', new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.addShapeless(ModBlocks.livingwood, Items.glowstone_dust, ModBlocks.livingwood);
 				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 0), "WWW", "NX ", "WWW", 'W', ModBlocks.livingwood, 'N', WurmTweaksItems.itemNatureCore, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ModBlocks.spreader, 1, 1), ModBlocks.spreader, Items.redstone);
 				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 2), "WWW", "NX ", "WWW", 'W', ModBlocks.dreamwood, 'N', WurmTweaksItems.itemNatureCoreMK2, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ModBlocks.spreader, 1, 3), new ItemStack(ModBlocks.spreader, 1, 2), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 9));
-				r.addShaped(ModBlocks.pool, "W W", "WWW", ModBlocks.livingrock);
+				r.addShaped(ModBlocks.pool, "W W", "WWW", 'W', ModBlocks.livingrock);
 				r.addShaped(new ItemStack(ModBlocks.pool, 1, 3), "W W", "WWW", 'W', ModBlocks.shimmerrock);
 				// TODO Everlasting ManaPool (:1)
 				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotGreenSteel, new ItemStack(ModItems.manaResource, 1, 1));
@@ -78,10 +79,10 @@ public class BotaniaRecipes implements IModRecipes {
 				r.addShapeless(new ItemStack(ModBlocks.dreamwood, 4, 1), ModBlocks.dreamwood);
 				r.addShapeless(new ItemStack(ModBlocks.dreamwood, 1, 5), ModBlocks.dreamwood, Items.glowstone_dust);
 				r.addBasicMachineRecipe(ModBlocks.conjurationCatalyst, WurmTweaksBlocks.blockPlatinum, WurmTweaksItems.itemNatureCoreMK2, WurmTweaksItems.itemBloodInfused, ModBlocks.alchemyCatalyst);
-				r.addShaped(ModBlocks.prism, " X ", "XBX", " X ", 'B', "packCobblestone", new ItemStack(ModItems.manaResource, 1, 10));
-				r.addShaped(new ItemStack(ModBlocks.prism, 1, 1), " X ", "XBX", " X ", 'B', "packBrick", new ItemStack(ModItems.manaResource, 1, 10));
-				r.addShaped(new ItemStack(ModBlocks.prism, 1, 2), " X ", "XBX", " X ", 'B', Blocks.nether_brick, new ItemStack(ModItems.manaResource, 1, 10));
-				r.addShaped(new ItemStack(ModBlocks.seaLamp, 1, 0), " X ", "XBX", " X ", 'B', Blocks.glowstone, new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(ModBlocks.prism, " X ", "XBX", " X ", 'B', "packCobblestone",'X', new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(new ItemStack(ModBlocks.prism, 1, 1), " X ", "XBX", " X ", 'B', "packBrick",'B', new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(new ItemStack(ModBlocks.prism, 1, 2), " X ", "XBX", " X ", 'B', Blocks.nether_brick,'B', new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(new ItemStack(ModBlocks.seaLamp, 1, 0), " X ", "XBX", " X ", 'B', Blocks.glowstone,'B', new ItemStack(ModItems.manaResource, 1, 10));
 				for (int i = 0; i <= 15; i++)
 						r.addShaped(new ItemStack(ModBlocks.floatingFlower, 1, i), "F", "S", "D", 'F', new ItemStack(ModBlocks.shinyFlower, 1, i), 'S', ModItems.worldSeed, 'D', "packDirt");
 				r.add3X(ModBlocks.reedBlock, TFCItems.reeds);
@@ -241,8 +242,8 @@ public class BotaniaRecipes implements IModRecipes {
 				r.addCrossWCenter(ModItems.superLavaPendant, Items.fire_charge, TFCItems.blueSteelBucketLava, ModItems.lavaPendant);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.starSword), 2800), " S ", " S ", " X ", 'X', WurmTweaksItems.ingotRainbowSteel, 'S', WurmTweaksItems.itemNatureCoreMK2);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.thunderSword), 2600), " S ", " S ", " X ", 'X', WurmTweaksItems.ingotTitanium, 'S', WurmTweaksItems.itemNatureCoreMK2);
-				r.addShaped(ModItems.corporeaSpark, ModItems.spark, WurmTweaksItems.itemNatureCore);
-				r.addShaped(new ItemStack(ModItems.corporeaSpark, 1, 1), ModItems.corporeaSpark, WurmTweaksItems.itemNatureCoreMK2);
+				r.addShapeless(ModItems.corporeaSpark, ModItems.spark, WurmTweaksItems.itemNatureCore);
+				r.addShapeless(new ItemStack(ModItems.corporeaSpark, 1, 1), ModItems.corporeaSpark, WurmTweaksItems.itemNatureCoreMK2);
 				r.addShaped(ModItems.crystalBow, " WS", "W S", " WS", 'W', ModBlocks.dreamwood, 'S', new ItemStack(ModItems.manaResource, 1, 16));
 				r.addShaped(ModItems.livingwoodBow, " WS", "W S", " WS", 'W', ModBlocks.livingwood, 'S', new ItemStack(ModItems.manaResource, 1, 16));
 				r.addShapeless(new ItemStack(ModItems.sparkUpgrade), new ItemStack(ModItems.rune, 1, 0), Items.redstone, WurmTweaksItems.itemNatureCore);

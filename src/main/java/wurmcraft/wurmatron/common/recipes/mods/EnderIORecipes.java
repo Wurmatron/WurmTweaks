@@ -12,18 +12,21 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class EnderIORecipes implements IModRecipes {
+public class EnderIORecipes {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "EnderIO")
-		@Override
-		public void addRecipes () {
-				r.addShaped(EnderIO.blockStirlingGenerator, "SSS", "SES", "GXG", 'S', new ItemStack(EnderIO.itemAlloy, 1, 0), 'E', new ItemStack(BuildCraftCore.engineBlock, 1, 1), 'G', "gearIron", Blocks.piston);
-				r.addShaped(EnderIO.blockCombustionGenerator, "SSS", "SES", "GXG", 'S', new ItemStack(EnderIO.itemAlloy, 1, 0), 'E', new ItemStack(BuildCraftCore.engineBlock, 1, 2), 'G', "gearGold", Blocks.piston);
-				r.addShaped(EnderIO.blockZombieGenerator, "SSS", "SES", "GXG", 'S', new ItemStack(EnderIO.itemAlloy, 1, 0), 'E', EnderIO.itemFrankenSkull, 'G', "gearGold", Blocks.piston);
+		public static void addRecipes () {
+				LogHandler.info("Adding Ender IO Recipes");
+				r.addShaped(EnderIO.blockStirlingGenerator, "SSS", "SES", "GXG", 'S', new ItemStack(EnderIO.itemAlloy, 1, 0), 'E', new ItemStack(BuildCraftCore.engineBlock, 1, 1), 'G', "gearIron", 'X',Blocks.piston);
+				r.addShaped(EnderIO.blockCombustionGenerator, "SSS", "SES", "GXG", 'S', new ItemStack(EnderIO.itemAlloy, 1, 0), 'E', new ItemStack(BuildCraftCore.engineBlock, 1, 2), 'G', "gearGold",'X', Blocks.piston);
+				r.addShaped(EnderIO.blockZombieGenerator, "SSS", "SES", "GXG", 'S', new ItemStack(EnderIO.itemAlloy, 1, 0), 'E', EnderIO.itemFrankenSkull, 'G', "gearGold",'X', Blocks.piston);
 				r.addShaped(new ItemStack(EnderIO.blockSolarPanel, 1, 0), "IGI", "GCG", "XAX", 'I', new ItemStack(EnderIO.itemAlloy, 1, 1), 'G', "packGlass", 'C', WurmTweaksItems.itemSolarCore, 'X', TFCItems.platinumSheet2x, 'A', new ItemStack(EnderIO.itemMaterial));
 				r.addShaped(new ItemStack(EnderIO.blockSolarPanel, 1, 1), "IGI", "GCG", "XAX", 'I', new ItemStack(EnderIO.itemAlloy, 1, 1), 'G', "packGlass", 'C', TFCItems.platinumSheet2x, 'X', new ItemStack(EnderIO.blockSolarPanel, 1, 0), 'A', new ItemStack(EnderIO.itemMaterial));
 				r.addBasicMachineRecipe(EnderIO.blockCrusher, "packGemExquisite", new ItemStack(EnderIO.itemAlloy, 1, 2), WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
@@ -47,13 +50,13 @@ public class EnderIORecipes implements IModRecipes {
 				r.addCrossWCenter(EnderIO.blockTravelPlatform, TFItems.ingotEnderium, new ItemStack(EnderIO.itemMaterial, 1, 5), EnderIO.blockEnderIo);
 				r.addCrossWCenter(EnderIO.blockTelePad, TFItems.ingotEnderium, new ItemStack(EnderIO.itemMaterial, 1, 5), Items.ender_pearl);
 				r.addShaped(EnderIO.blockKillerJoe, "SSS", "XAX", "BCB", 'S', TFCItems.roseGoldSheet2x, 'X', "packGlass", 'A', EnderIO.itemFrankenSkull, 'B', TFCItems.blackSteelSheet2x, 'C', WurmTweaksItems.itemMachineFrame);
-				r.addShaped(EnderIO.blockAttractor, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 9), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), WurmTweaksItems.itemMagicChunk);
-				r.addShaped(EnderIO.blockSpawnGuard, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), WurmTweaksItems.itemMagicChunk);
-				r.addShaped(EnderIO.blockExperianceOblisk, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemXpTransfer, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), WurmTweaksItems.itemMagicChunk);
-				r.addShaped(EnderIO.blockEnchanter, "GEG", "III", " I I", 'G', "packGemExquisite", 'E', Blocks.enchanting_table, 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
+				r.addShaped(EnderIO.blockAttractor, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 9), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(EnderIO.blockSpawnGuard, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2),'B', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(EnderIO.blockExperianceOblisk, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemXpTransfer, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2),'B', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(EnderIO.blockEnchanter, "GEG", "III", "I I", 'G', "packGemExquisite", 'E', Blocks.enchanting_table, 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addPressurePlate(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(EnderIO.itemMaterial, 1, 6));
 				r.addShapeless(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 1), new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE));
-				r.addShaped(EnderIO.blockDarkSteelAnvil, "BBB", " I ", "III", 'I', new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), 'B', new ItemStack(EnderIO.blockIngotStorage, 1, 6));
+				r.addShaped(EnderIO.blockDarkSteelAnvil, "BBB", " I ", "III", 'I', new ItemStack(EnderIO.itemMaterial, 1, 6), 'B', new ItemStack(EnderIO.blockIngotStorage, 1, 6));
 				r.addShaped(new ItemStack(EnderIO.blockDarkSteelLadder, 8), "III", " I ", "III", 'I', new ItemStack(EnderIO.itemMaterial, 1, 6));
 				r.addCross(new ItemStack(EnderIO.blockReinforcedObsidian, 4), Blocks.obsidian, new ItemStack(EnderIO.itemMaterial, 1, 6));
 				r.addShaped(EnderIO.blockEnderRail, "E E", " R ", "E E", 'E', Items.ender_pearl, 'R', Blocks.rail);
@@ -63,7 +66,7 @@ public class EnderIORecipes implements IModRecipes {
 				// TODO Fix Farmer
 				r.addSlabs(new ItemStack(EnderIO.blockDarkIronBars, 24), new ItemStack(EnderIO.itemMaterial, 1, 6));
 				r.addBasicMachineRecipe(EnderIO.itemFrankenSkull, new ItemStack(EnderIO.itemMaterial, 1, 2), new ItemStack(EnderIO.itemMaterial, 1, 6), new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), new ItemStack(Items.skull, 1, 2));
-				r.addShaped(new ItemStack(EnderIO.itemRedstoneConduit, 8, 0), "III", "ingotRedstoneAlloy");
+				r.addShaped(new ItemStack(EnderIO.itemRedstoneConduit, 8, 0), "III",'I', "ingotRedstoneAlloy");
 				r.addShapeless(new ItemStack(EnderIO.itemRedstoneConduit, 1, 1), new ItemStack(EnderIO.itemRedstoneConduit, 1, 0), Blocks.lever);
 				r.addShaped(new ItemStack(EnderIO.itemRedstoneConduit, 3, 2), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemRedstoneConduit, 1, 0));
 				r.addShaped(new ItemStack(EnderIO.itemRedstoneConduit, 8, 2), "RRR", "III", "RRR", 'R', "packRubber", 'I', "ingotRedstoneAlloy");

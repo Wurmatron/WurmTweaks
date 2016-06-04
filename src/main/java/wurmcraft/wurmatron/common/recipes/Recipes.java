@@ -21,54 +21,54 @@ public class Recipes {
 				OreDict.init();
 				SmeltingRecipes.init();
 				LogHandler.info("Adding custom recipes");
-				new TerrafirmacraftRecipes().addRecipes();
-				new WurmTweaksRecipes().addRecipes();
+				TerrafirmacraftRecipes.addRecipes();
+				WurmTweaksRecipes.addRecipes();
 				if (RecipeChecker.modExists("AdvancedSolarPanel"))
-						new AdvancedSolarPanelRecipes().addRecipes();
+						AdvancedSolarPanelRecipes.addRecipes();
 				if (RecipeChecker.modExists("arsmagica2"))
-						new AM2Recipes().addRecipes();
+						AM2Recipes.addRecipes();
 				if (RecipeChecker.modExists("appliedenergistics2"))
-						new AERecipes().addRecipes();
+						AERecipes.addRecipes();
 				if (RecipeChecker.modExists("Avaritia"))
-						new AvaritiaRecipes().addRecipes();
+						AvaritiaRecipes.addRecipes();
 				if (RecipeChecker.modExists("BigReactors"))
-						new BigReactorRecipes().addRecipes();
-				if (RecipeChecker.modExists("BloodMagic"))
-						new BloodMagicRecipes().addRecipes();
+						BigReactorRecipes.addRecipes();
+				if (RecipeChecker.modExists("AWWayofTime"))
+						BloodMagicRecipes.addRecipes();
 				if (RecipeChecker.modExists("botania"))
-						new BotaniaRecipes().addRecipes();
+						BotaniaRecipes.addRecipes();
 				if (RecipeChecker.modExists("Buildcraft|Core"))
-						new BuildcraftRecipes().addRecipes();
+						BuildcraftRecipes.addRecipes();
 				if (RecipeChecker.modExists("chisel"))
-						new Chisel2Recipies().addRecipes();
+						Chisel2Recipies.addRecipes();
 				if (RecipeChecker.modExists("ComputerCraft"))
-						new ComputerCraftRecipes().addRecipes();
+						ComputerCraftRecipes.addRecipes();
 				if (RecipeChecker.modExists("CraftHeraldry"))
-						new CraftHeraldryRecipies().addRecipes();
+						CraftHeraldryRecipies.addRecipes();
 				if (RecipeChecker.modExists("props"))
-						new DecoCraftRecipes().addRecipes();
+						DecoCraftRecipes.addRecipes();
 				if (RecipeChecker.modExists("DraconicEvolution"))
-						new DraconicEvolutionRecipes().addRecipes();
+						DraconicEvolutionRecipes.addRecipes();
 				if (RecipeChecker.modExists("IronChest"))
-						new IronChestRecipes().addRecipes();
+						IronChestRecipes.addRecipes();
 				if (RecipeChecker.modExists("EnderIO"))
-						new EnderIORecipes().addRecipes();
+						EnderIORecipes.addRecipes();
 				if (RecipeChecker.modExists("EnderStorage"))
-						new EnderStorageRecipes().addRecipes();
+						EnderStorageRecipes.addRecipes();
 				if (RecipeChecker.modExists("extracells"))
-						new ExtraCellsRecipes().addRecipes();
+						ExtraCellsRecipes.addRecipes();
 				if (RecipeChecker.modExists("ExtraUtilities"))
-						new ExtraUtilsRecipes().addRecipes();
+						ExtraUtilsRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
 				LogHandler.info("Checking Recipes for issues");
 				for (ShapedOreRecipe r : shapedRecipes)
 						if (!CraftingManager.getInstance().getRecipeList().contains(r))
-								RecipeHelper.instance.addShaped(r.getRecipeOutput(), r.getInput());
+								new RecipeHelper().addShaped(r.getRecipeOutput(), r.getInput());
 				for (ShapelessOreRecipe r : shapelessRecipes)
 						if (!CraftingManager.getInstance().getRecipeList().contains(r))
-								RecipeHelper.instance.addShapeless(r.getRecipeOutput(), r.getInput());
+								new RecipeHelper().addShapeless(r.getRecipeOutput(), r.getInput());
 				LogHandler.info("Done checking recipes");
 		}
 

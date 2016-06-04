@@ -18,18 +18,20 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import tconstruct.smeltery.TinkerSmeltery;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
-public class BloodMagicRecipes implements IModRecipes {
+public class BloodMagicRecipes  {
 
-		@Optional.Method (modid = "BloodMagic")
-		@Override
-		public void addRecipes () {
+		private static final RecipeHelper r = new RecipeHelper();
+
+		@Optional.Method (modid = "AWWayofTime")
+		public static void addRecipes () {
+				LogHandler.info("Adding Blood Magic Recipes");
 				r.addCircleWCenter(new ItemStack(ModBlocks.largeBloodStoneBrick, 8, 0), "packSmoothStone", ModItems.weakBloodShard);
 				r.add2X(new ItemStack(ModBlocks.bloodStoneBrick, 4, 0), ModBlocks.largeBloodStoneBrick);
 				r.addCrossWCenter(ModBlocks.runeOfSelfSacrifice, WurmTweaksItems.stableMagicEssence, ModItems.reinforcedSlate, ModBlocks.bloodRune);
@@ -55,8 +57,8 @@ public class BloodMagicRecipes implements IModRecipes {
 				r.addBasicMachineRecipe(ModBlocks.speedRune, WurmTweaksItems.stableMagicEssence, TFCHelper.getFood(TFCItems.sugar, 160), Items.blaze_powder, ModBlocks.bloodRune);
 				r.addBasicMachineRecipe(ModBlocks.efficiencyRune, WurmTweaksItems.stableMagicEssence, TFItems.ingotEnderium, Items.blaze_powder, ModBlocks.bloodRune);
 				r.addCrossWCenter(ModBlocks.blockMasterStone, ModBlocks.bloodRune, Blocks.obsidian, ModItems.imbuedSlate);
-				r.addShaped(ModBlocks.blockPedestal, " X ", " X ", "BBB", ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.stableMagicEssence);
-				r.addShaped(ModBlocks.blockPlinth, " X ", " X ", "BBB", ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(ModBlocks.blockPedestal, " X ", " X ", "BBB",'B', ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.stableMagicEssence);
+				r.addShaped(ModBlocks.blockPlinth, " X ", " X ", "BBB",'B', ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.itemMagicChunk);
 				r.addBasicMachineRecipe(new ItemStack(ModBlocks.blockSpellEnhancement, 1, 0), WurmTweaksItems.itemBloodInfused, WurmTweaksItems.stableMagicEssence, new ItemStack(ModBlocks.efficiencyRune), WurmTweaksBlocks.blockPlatinum);
 				r.addBasicMachineRecipe(new ItemStack(ModBlocks.blockSpellEnhancement, 1, 1), WurmTweaksItems.itemBloodInfused, "packDirt", new ItemStack(ModBlocks.efficiencyRune), WurmTweaksBlocks.blockPlatinum);
 				r.addBasicMachineRecipe(new ItemStack(ModBlocks.blockSpellEnhancement, 1, 2), WurmTweaksItems.itemBloodInfused, Items.feather, new ItemStack(ModBlocks.efficiencyRune), WurmTweaksBlocks.blockPlatinum);
@@ -92,7 +94,7 @@ public class BloodMagicRecipes implements IModRecipes {
 				r.addCircleWCenter(ModItems.armourInhibitor, ModBlocks.ritualStone, ModItems.weakBloodShard);
 				r.addCircle(ModItems.itemDestinationClearer, "ingotThaumium");
 				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.daggerOfSacrifice), 825), "X", "X", "S", 'X', WurmTweaksItems.itemBloodInfused, 'S', WurmTweaksItems.ingotTitanium);
-				r.addShaped(ModItems.itemTankSegmenter, " SS", "  S", "  S", 'S', 'S', TFCItems.redSteelSheet2x);
+				r.addShaped(ModItems.itemTankSegmenter, " SS", "  S", "  S", 'S', TFCItems.redSteelSheet2x);
 				r.addCrossWCenter(ModItems.lavaCrystal, Items.blaze_rod, Blocks.obsidian, TFCItems.blueSteelBucketLava);
 				r.addShaped(ModItems.divinationSigil, "SSS", "SXS", "GGG", 'S', WurmTweaksItems.itemMagicChunk, 'X', ModItems.blankSlate, 'G', "packGlass");
 				r.addShaped(ModItems.inputRoutingFocus, "LXL", "X X", "LXL", 'L', "packLog", 'X', Items.redstone);
@@ -132,7 +134,7 @@ public class BloodMagicRecipes implements IModRecipes {
 				addAlterRecipes();
 		}
 
-		@Optional.Method (modid = "BloodMagic")
+		@Optional.Method (modid = "AWWayofTime")
 		private static void addAlchemyRecipes () {
 				AlchemyRecipeRegistry.recipes.clear();
 				addAlchemyRecipe(new ItemStack(ModItems.averagePowerCatalyst), 1, new ItemStack[] {new ItemStack(ModItems.mundanePowerCatalyst), new ItemStack(ModItems.mundanePowerCatalyst), new ItemStack(ModItems.mundanePowerCatalyst), new ItemStack(ModItems.standardBindingAgent)}, 2);
@@ -164,7 +166,7 @@ public class BloodMagicRecipes implements IModRecipes {
 				addAlchemyRecipe(new ItemStack(ModItems.simpleCatalyst), 4, new ItemStack[] {new ItemStack(Items.glowstone_dust), new ItemStack(TFCItems.clayBall), new ItemStack(TFCItems.blackSteelSheet)}, 1);
 		}
 
-		@Optional.Method (modid = "BloodMagic")
+		@Optional.Method (modid = "AWWayofTime")
 		private static void addBindingRecipes () {
 				BindingRegistry.bindingRecipes.clear();
 				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.energySword), 1500), new ItemStack(TFCItems.blueSteelSword));
@@ -174,7 +176,7 @@ public class BloodMagicRecipes implements IModRecipes {
 				addBindingRecipe(ItemNBT.addDamage(new ItemStack(ModItems.customTool), 1400), new ItemStack(TFCItems.redSteelMace));
 		}
 
-		@Optional.Method (modid = "BloodMagic")
+		@Optional.Method (modid = "AWWayofTime")
 		private static void addAlterRecipes () {
 				AltarRecipeRegistry.altarRecipes.clear();
 				addAlterRecipe(new ItemStack(ModItems.duskScribeTool), new ItemStack(WurmTweaksBlocks.blockBlackSteel), 4, 20000, 100, 100, false);
@@ -202,17 +204,17 @@ public class BloodMagicRecipes implements IModRecipes {
 								addAlterRecipe(new ItemStack(vazkii.botania.common.block.ModBlocks.flower, 1, i), OreDictionary.getOres(RecipeHelper.dye.get(i)).get(d), 1, 500, 100, 100, false);
 		}
 
-		@Optional.Method (modid = "BloodMagic")
+		@Optional.Method (modid = "AWWayofTime")
 		private static void addAlchemyRecipe (ItemStack output, int needed, ItemStack[] recipe, int level) {
 				AlchemyRecipeRegistry.registerRecipe(output, needed, recipe, level);
 		}
 
-		@Optional.Method (modid = "BloodMagic")
+		@Optional.Method (modid = "AWWayofTime")
 		private static void addBindingRecipe (ItemStack output, ItemStack input) {
 				BindingRegistry.registerRecipe(output, input);
 		}
 
-		@Optional.Method (modid = "BloodMagic")
+		@Optional.Method (modid = "AWWayofTime")
 		private static void addAlterRecipe (ItemStack output, ItemStack input, int tier, int blood, int consumption, int drain, boolean filled) {
 				AltarRecipeRegistry.registerAltarRecipe(output, input, tier, blood, consumption, drain, filled);
 		}

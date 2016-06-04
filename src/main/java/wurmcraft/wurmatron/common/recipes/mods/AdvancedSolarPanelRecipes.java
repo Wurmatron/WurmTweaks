@@ -10,15 +10,16 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class AdvancedSolarPanelRecipes implements IModRecipes {
+public class AdvancedSolarPanelRecipes {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "AdvancedSolarPanel")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
 				LogHandler.info("Adding recipes for Advanced solar panels");
 				r.addShaped(new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 0), "GGG", "BCB", "XSX", 'G', AdvancedSolarPanel.itemIrradiantGlassPane, 'B', IC2Items.getItem("advancedMachine"), 'C', WurmTweaksItems.itemSolarCore, 'X', IC2Items.getItem("advancedCircuit"), 'S', IC2Items.getItem("solarPanel"));
 				r.addShaped(new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 1), "SXS", "BCB", "PGP", 'S', TFCItems.platinumSheet2x, 'X', AdvancedSolarPanel.itemIrradiantReinforcedPlate, 'B', IC2Items.getItem("advancedMachine"), 'C', new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 0), 'P', WurmTweaksItems.itemCraftingCore, 'G', WurmTweaksItems.ingotGreenSteel);

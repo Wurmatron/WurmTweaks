@@ -4,14 +4,17 @@ import cpw.mods.fml.common.Optional;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.item.ItemStack;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class AvaritiaRecipes implements IModRecipes {
+public class AvaritiaRecipes {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "Avaritia")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding Avaritia Recipes");
 				r.addCrossWCenter(LudicrousBlocks.double_craft, WurmTweaksItems.ingotCyanSteel, "packCraftingTable", WurmTweaksItems.ingotRainbowSteel);
 				r.addCircleWCenter(LudicrousBlocks.triple_craft, LudicrousBlocks.double_craft, WurmTweaksItems.itemMixedSheet);
 				r.addCrossWCenter(LudicrousBlocks.dire_crafting, WurmTweaksItems.itemAutoCore, new ItemStack(LudicrousItems.resource, 1, 1), LudicrousBlocks.triple_craft);

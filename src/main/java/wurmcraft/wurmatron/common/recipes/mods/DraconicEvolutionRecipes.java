@@ -13,15 +13,18 @@ import ic2.api.item.IC2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class DraconicEvolutionRecipes implements IModRecipes {
+public class DraconicEvolutionRecipes  {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "DraconicEvolution")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding Draconic Evolution Recipes");
 				r.addCrossWCenter(new ItemStack(ModBlocks.xRayBlock, 9), Items.nether_star, "packGlass", WurmTweaksItems.ingotRainbowSteel);
 				r.addCrossWCenter(ModBlocks.potentiometer, WurmTweaksBlocks.blockGold, Items.quartz, Items.redstone);
 				r.addBasicMachineRecipe(ModBlocks.rainSensor, Blocks.quartz_block, TFCItems.redSteelBucketWater, Items.redstone, WurmTweaksItems.ingotBrownSteel);
@@ -29,7 +32,7 @@ public class DraconicEvolutionRecipes implements IModRecipes {
 				r.addCrossWCenter(ModBlocks.playerDetector, TFCItems.steelSheet2x, Items.redstone, Items.nether_star);
 				r.addCrossWCenter(ModBlocks.playerDetectorAdvanced, TFCItems.blackSteelSheet2x, Items.redstone, ModBlocks.playerDetector);
 				r.addBasicMachineRecipe(ModBlocks.energyInfuser, WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.ingotTitanium, ModItems.draconicEnergyCore, TEItems.capacitorResonant);
-				r.addShaped(ModBlocks.energyStorageCore, "SSS", "AXA", "SSS", 'S', ModItems.draconicCore, 'A', ModItems.draconicFluxCapacitor, ModItems.draconicCore);
+				r.addShaped(ModBlocks.energyStorageCore, "SSS", "AXA", "SSS", 'S', ModItems.draconicCore, 'A', ModItems.draconicFluxCapacitor,'X', ModItems.draconicCore);
 				// TODO Draconium Block
 				r.addCrossWCenter(ModBlocks.energyPylon, "packGemBlock", WurmTweaksBlocks.blockRedSteel, ModItems.draconicCore);
 				r.addShaped(ModBlocks.teleporterStand, " S ", " S ", "DDD", 'S', "packSmoothStone", 'D', WurmTweaksItems.ingotBrownSteel);

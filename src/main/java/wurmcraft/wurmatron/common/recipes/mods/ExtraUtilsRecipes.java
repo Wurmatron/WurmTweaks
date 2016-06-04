@@ -1,7 +1,6 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
 import advsolar.common.AdvancedSolarPanel;
-import cofh.thermaldynamics.item.TDItems;
 import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
@@ -13,16 +12,19 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
-public class ExtraUtilsRecipes implements IModRecipes {
+public class ExtraUtilsRecipes  {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "ExtraUtilities")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding Extra Util Recipes");
 				r.addShaped(GameRegistry.findItemStack("ExtraUtilities", "enderCollector", 1), "EQE", " E ", "OOO", 'E', TFItems.ingotEnderium, 'O', Blocks.obsidian, 'Q', WurmTweaksItems.itemQuantumFoam);
 				r.addShaped(ExtraUtils.qed, "XAX", "BXB", "BBB", 'X', WurmTweaksItems.itemQuantumSingularity, 'A', WurmTweaksItems.ingotRainbowSteel, 'B', WurmTweaksBlocks.blockBlueSteel);
 				r.addShaped(new ItemStack(ExtraUtils.qed, 1, 2), " E ", " E ", "PPP", 'E', TFItems.ingotEnderium, 'C', new ItemStack(Blocks.crafting_table), 'P', WurmTweaksBlocks.blockBlueSteel, 'C', AdvancedSolarPanel.itemQuantumCore);
@@ -66,8 +68,8 @@ public class ExtraUtilsRecipes implements IModRecipes {
 				r.addShaped(new ItemStack(ExtraUtils.transferPipe,8,13), " R ", "RPR", " R ", 'R', Items.redstone, 'P', new ItemStack(ExtraUtils.transferPipe,1,8));
 				r.addShaped(new ItemStack(ExtraUtils.transferPipe,8,12), " R ", "RPR", " R ", 'R', Items.redstone, 'P', new ItemStack(ExtraUtils.transferPipe,1,0));
 				r.addShaped(ExtraUtils.trashCan, "SSS", "CBC", "CCC", 'S', "packSmoothStone", 'C', "packCobblestone", 'B', "packChest");
-				r.addShapeless(new ItemStack(ExtraUtils.trashCan,1,1), ExtraUtils.trashCan, TDItems.ductFluidBasic);
-				r.addShapeless(new ItemStack(ExtraUtils.trashCan,1,2), ExtraUtils.trashCan, TDItems.ductEnergyBasic);
+//				r.addShapeless(new ItemStack(ExtraUtils.trashCan,1,1), ExtraUtils.trashCan, TDItems.ductFluidBasic);
+//				r.addShapeless(new ItemStack(ExtraUtils.trashCan,1,2), ExtraUtils.trashCan, TDItems.ductEnergyBasic);
 				r.addBasicMachineRecipe(ExtraUtils.enderThermicPump, new ItemStack(ExtraUtils.decorative1,1,11), "packGemExquisite", Items.bucket,WurmTweaksItems.itemMachineFrame);
 				r.addShaped(ExtraUtils.enderQuarry, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'A', TFCItems.blueSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemExquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
 				// TODO QED Quarry Upgrade Recipes

@@ -13,11 +13,26 @@ import java.util.ArrayList;
 
 public class RecipeHelper {
 
-		public static final RecipeHelper instance = new RecipeHelper();
+		public static final ArrayList<String> dye = new ArrayList<String>() {{
+				add(0, "dyeWhite");
+				add(1, "dyeOrange");
+				add(2, "dyeMagenta");
+				add(3, "dyeLightBlue");
+				add(4, "dyeYellow");
+				add(5, "dyeLime");
+				add(6, "dyePink");
+				add(7, "dyeGray");
+				add(8, "dyeLightGray");
+				add(9, "dyeCyan");
+				add(10, "dyePurple");
+				add(11, "dyeBlue");
+				add(12, "dyeBrown");
+				add(13, "dyeGreen");
+				add(14, "dyeRed");
+				add(15, "dyeBlack");
+		}};
 
-		public static ArrayList<String> dye = new ArrayList<String>();
-
-		public RecipeHelper () {
+		public void RecipeHelper () {
 				dye.add(0, "dyeWhite");
 				dye.add(1, "dyeOrange");
 				dye.add(2, "dyeMagenta");

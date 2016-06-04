@@ -12,17 +12,20 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.common.config.ConfigItems;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
-public class AM2Recipes implements IModRecipes {
+public class AM2Recipes {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "arsmagica2")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding AM2 Recipes");
 				r.addBasicMachineRecipe(BlocksCommonProxy.essenceRefiner, "packPlanks", WurmTweaksItems.ingotRainbowSteel, Items.nether_star, new ItemStack(BlocksCommonProxy.AMOres, 1, 6));
 				r.addShaped(BlocksCommonProxy.essenceConduit, " T ", "XSX", "SSS", 'T', new ItemStack(EnderIO.itemMaterial, 1, 8), 'X', "packSmoothStone", 'S', WurmTweaksItems.ingotOrangeSteel);
 				r.addCrossWCenter(BlocksCommonProxy.obelisk, "dustVintium", WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);

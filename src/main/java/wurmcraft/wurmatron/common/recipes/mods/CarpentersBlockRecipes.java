@@ -8,14 +8,17 @@ import com.carpentersblocks.util.registry.ItemRegistry;
 import cpw.mods.fml.common.Optional;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import wurmcraft.wurmatron.api.IModRecipes;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 
-public class CarpentersBlockRecipes implements IModRecipes {
+public class CarpentersBlockRecipes {
+
+		private static final RecipeHelper r = new RecipeHelper();
 
 		@Optional.Method (modid = "CarpentersBlocks")
-		@Override
-		public void addRecipes () {
+		public static void addRecipes () {
+				LogHandler.info("Adding Carpenters Blocks Recipes");
 				r.addCircleWCenter(new ItemStack(BlockRegistry.blockCarpentersBlock, 32), "packStick", TFCItems.steelIngot);
 				r.addShaped(new ItemStack(BlockRegistry.blockCarpentersBarrier, 8), " B ", "SBS", 'S', "packStick", 'B', BlockRegistry.blockCarpentersBlock);
 				r.addShapeless(new ItemStack(BlockRegistry.blockCarpentersButton, 4), BlockRegistry.blockCarpentersBlock);
