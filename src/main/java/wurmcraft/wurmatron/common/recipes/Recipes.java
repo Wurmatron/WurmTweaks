@@ -63,6 +63,8 @@ public class Recipes {
 						GravitySuitRecipes.addRecipes();
 				if(RecipeChecker.modExists("GalaticraftCore"))
 						GravitySuitRecipes.addRecipes();
+				if(RecipeChecker.modExists("ImmersiveEngineering"))
+						ImmersiveEngineeringRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

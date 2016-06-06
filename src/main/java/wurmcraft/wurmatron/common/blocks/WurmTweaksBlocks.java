@@ -19,6 +19,8 @@ public class WurmTweaksBlocks {
 		public static Block blockBlueSteel;
 		public static Block blockBlackSteel;
 		public static Block blockRedSteel;
+		public static Block blockCopper;
+		public static Block blockSteel;
 
 		public static void registerBlocks () {
 				blockWroughtIron = registerBlock(new BlockBasic("blockWroughtIron", Material.iron));
@@ -30,8 +32,8 @@ public class WurmTweaksBlocks {
 				blockBlueSteel = registerBlock(new BlockBasic("blockBlueSteel", Material.iron));
 				blockBlackSteel = registerBlock(new BlockBasic("blockBlackSteel", Material.iron));
 				blockRedSteel = registerBlock(new BlockBasic("blockRedSteel", Material.iron));
-
-
+				blockCopper = registerBlock(new BlockBasic("blockCopper", Material.iron));
+				blockSteel = registerBlock(new BlockBasic("blockSteel", Material.iron));
 		}
 
 		private static Block registerBlock (Block block) {

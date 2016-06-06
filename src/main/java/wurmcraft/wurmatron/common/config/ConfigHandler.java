@@ -32,6 +32,7 @@ public class ConfigHandler {
 		private static Property ExtraUtilities;
 		private static Property GalaticCraft;
 		private static Property GraviSuite;
+		private static Property ImmersiveEngineering;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -82,6 +83,8 @@ public class ConfigHandler {
 				Settings.GalaticCraft = GalaticCraft.getBoolean();
 				GraviSuite = config.get(Global.CATEGORY_MODS, "GraviSuite", true);
 				Settings.GraviSuite = GraviSuite.getBoolean();
+				ImmersiveEngineering = config.get(Global.CATEGORY_MODS, "ImmersiveEngineering", true);
+				Settings.ImmersiveEngineering = ImmersiveEngineering.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
