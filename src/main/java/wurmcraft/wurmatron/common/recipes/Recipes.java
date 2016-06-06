@@ -79,6 +79,8 @@ public class Recipes {
 						OpenBlocksRecipes.addRecipes();
 				if(RecipeChecker.modExists("OpenComputers"))
 						OpenComputersRecipes.addRecipes();
+				if(RecipeChecker.modExists("openmodularturrets"))
+						OpenModularTurretsRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

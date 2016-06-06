@@ -45,6 +45,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("MineFactoryReloaded", Settings.MineFactoryReloaded);
 				data.setBoolean("OpenBlocks", Settings.OpenBlocks);
 				data.setBoolean("OpenComputers", Settings.OpenComputers);
+				data.setBoolean("OpenModularTurrets", Settings.OpenModularTurrets);
 		}
 
 		@Override
@@ -88,5 +89,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.MineFactoryReloaded = data.getBoolean("MineFactoryReloaded");
 				Settings.OpenBlocks = data.getBoolean("OpenBlocks");
 				Settings.OpenComputers = data.getBoolean("OpenComputers");
+				Settings.OpenModularTurrets = data.getBoolean("OpenModularTurrets");
 		}
 }
