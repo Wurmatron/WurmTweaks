@@ -41,6 +41,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("IC2", Settings.IC2);
 				data.setBoolean("JABBA", Settings.JABBA);
 				data.setBoolean("MalisisDoors", Settings.MalisisDoors);
+				data.setBoolean("Mekanism", Settings.Mekanism);
 		}
 
 		@Override
@@ -80,5 +81,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.IC2 = data.getBoolean("IC2");
 				Settings.JABBA = data.getBoolean("JABBA");
 				Settings.MalisisDoors = data.getBoolean("MalisisDoors");
+				Settings.Mekanism = data.getBoolean("Mekanism");
 		}
 }

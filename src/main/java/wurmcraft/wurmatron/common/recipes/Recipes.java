@@ -71,6 +71,8 @@ public class Recipes {
 						JABBARecipes.addRecipes();
 				if (RecipeChecker.modExists("malisisdoors"))
 						MalisisDoorsRecipes.addRecipes();
+				if(RecipeChecker.modExists("Mekanism"))
+						MekanismRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

@@ -36,6 +36,7 @@ public class ConfigHandler {
 		private static Property IC2;
 		private static Property JABBA;
 		private static Property MalisisDoors;
+		private static Property Mekanism;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -94,7 +95,8 @@ public class ConfigHandler {
 				Settings.JABBA = JABBA.getBoolean();
 				MalisisDoors = config.get(Global.CATEGORY_MODS, "MalisisDoors", true);
 				Settings.MalisisDoors = MalisisDoors.getBoolean();
-
+				Mekanism = config.get(Global.CATEGORY_MODS, "Mekanism", true);
+				Settings.Mekanism = Mekanism.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
