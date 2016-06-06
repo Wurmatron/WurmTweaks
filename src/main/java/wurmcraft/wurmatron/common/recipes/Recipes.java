@@ -75,6 +75,8 @@ public class Recipes {
 						MekanismRecipes.addRecipes();
 				if(RecipeChecker.modExists("MineFactoryReloaded"))
 						MinefactoryReloadedRecipes.addRecipes();
+				if(RecipeChecker.modExists("OpenBlocks"))
+						OpenBlocksRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

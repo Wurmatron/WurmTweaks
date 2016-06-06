@@ -38,6 +38,7 @@ public class ConfigHandler {
 		private static Property MalisisDoors;
 		private static Property Mekanism;
 		private static Property MineFactoryReloaded;
+		private static Property OpenBlocks;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -100,6 +101,8 @@ public class ConfigHandler {
 				Settings.Mekanism = Mekanism.getBoolean();
 				MineFactoryReloaded = config.get(Global.CATEGORY_MODS, "MineFactoryReloaded", true);
 				Settings.MineFactoryReloaded = MineFactoryReloaded.getBoolean();
+				OpenBlocks = config.get(Global.CATEGORY_MODS, "OpenBlocks", true);
+				Settings.OpenBlocks = OpenBlocks.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
