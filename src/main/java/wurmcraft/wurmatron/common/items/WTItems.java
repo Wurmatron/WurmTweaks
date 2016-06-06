@@ -10,6 +10,16 @@ public class WTItems {
 		public static ArrayList<String> itemMaterialNames = new ArrayList<String>();
 
 		public static Item itemMaterial;
+		public static Item creditBismuth;
+		public static Item creditCopper;
+		public static Item creditGold;
+		public static Item creditIron;
+		public static Item creditLead;
+		public static Item creditNickel;
+		public static Item creditPlatinum;
+		public static Item creditSilver;
+		public static Item creditTin;
+		public static Item creditZinc;
 
 		public static void registerItems () {
 				itemMaterialNames.add("solarCore");
@@ -50,6 +60,16 @@ public class WTItems {
 				itemMaterialNames.add("unstableMatter");
 				itemMaterialNames.add("jetpackParts");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
+				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
+				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
+				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");
+				registerItem(creditIron = new ItemCredit("ironCredit"), "creditIron");
+				registerItem(creditLead = new ItemCredit("leadCredit"), "creditLead");
+				registerItem(creditNickel = new ItemCredit("nickelCredit"), "creditNickel");
+				registerItem(creditPlatinum = new ItemCredit("platinumCredit"), "creditPlatinum");
+				registerItem(creditSilver = new ItemCredit("silverCredit"), "creditSilver");
+				registerItem(creditTin = new ItemCredit("tinCredit"), "creditTin");
+				registerItem(creditZinc = new ItemCredit("zincCredit"), "creditZinc");
 		}
 
 		private static void registerItem (Item item, String name) {

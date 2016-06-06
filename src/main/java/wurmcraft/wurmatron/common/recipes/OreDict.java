@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import vazkii.botania.common.block.ModBlocks;
+import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
@@ -247,6 +248,16 @@ public class OreDict {
 				add("packSeed", TFCItems.seedsSquash);
 				add("packSeed", TFCItems.seedsJute);
 				// Rubber Ore Dict ("packRubber")
+				add("packCredit", new ItemStack(WTItems.creditBismuth, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditZinc, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditPlatinum, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditNickel, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditCopper, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditGold, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditIron, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditLead, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditSilver, 1, OreDictionary.WILDCARD_VALUE));
+				add("packCredit", new ItemStack(WTItems.creditTin, 1, OreDictionary.WILDCARD_VALUE));
 				if (RecipeChecker.modExists("arsmagica2"))
 						addAM2();
 				if (RecipeChecker.modExists("Avaritia"))

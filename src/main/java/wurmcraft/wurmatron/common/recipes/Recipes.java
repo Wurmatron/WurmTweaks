@@ -59,17 +59,17 @@ public class Recipes {
 						ExtraCellsRecipes.addRecipes();
 				if (RecipeChecker.modExists("ExtraUtilities"))
 						ExtraUtilsRecipes.addRecipes();
-				if(RecipeChecker.modExists("GraviSuite"))
+				if (RecipeChecker.modExists("GraviSuite"))
 						GravitySuitRecipes.addRecipes();
-				if(RecipeChecker.modExists("GalaticraftCore"))
+				if (RecipeChecker.modExists("GalaticraftCore"))
 						GravitySuitRecipes.addRecipes();
-				if(RecipeChecker.modExists("ImmersiveEngineering"))
+				if (RecipeChecker.modExists("ImmersiveEngineering"))
 						ImmersiveEngineeringRecipes.addRecipes();
-				if(RecipeChecker.modExists("IC2"))
+				if (RecipeChecker.modExists("IC2"))
 						IC2Recipes.addRecipes();
-				if(RecipeChecker.modExists("JABBA"))
+				if (RecipeChecker.modExists("JABBA"))
 						JABBARecipes.addRecipes();
-				if(RecipeChecker.modExists("malisisdoors"))
+				if (RecipeChecker.modExists("malisisdoors"))
 						MalisisDoorsRecipes.addRecipes();
 		}
 
@@ -83,5 +83,4 @@ public class Recipes {
 								new RecipeHelper().addShapeless(r.getRecipeOutput(), r.getInput());
 				LogHandler.info("Done checking recipes");
 		}
-
 }

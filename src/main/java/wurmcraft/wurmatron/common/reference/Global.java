@@ -1,5 +1,7 @@
 package wurmcraft.wurmatron.common.reference;
 
+import java.util.ArrayList;
+
 public class Global {
 		// @Mod
 		public static final String MODID = "wurmtweaks";
@@ -13,4 +15,8 @@ public class Global {
 		// Config
 		public static final String CATEGORY_MODS = "Mods";
 		public static final String DEBUG = "Debug";
+
+		public static final ArrayList<String> GODS = new ArrayList<String>() {{
+				add("Wurmatron");
+		}};
 }
