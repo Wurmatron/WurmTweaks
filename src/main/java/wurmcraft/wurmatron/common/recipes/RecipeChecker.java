@@ -3,6 +3,8 @@ package wurmcraft.wurmatron.common.recipes;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.ModContainer;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -17,11 +19,15 @@ public class RecipeChecker {
 		public static boolean check (ShapedOreRecipe recipe) {
 				if (checkStack(recipe.getRecipeOutput())) {
 						for (Object obj : recipe.getInput()) {
-								if (obj instanceof ItemStack) {
-										ItemStack item = (ItemStack) obj;
-										if (!checkStack(item))
+								if (obj instanceof ItemStack)
+										if (!checkStack((ItemStack) obj))
 												return false;
-								}
+								if (obj instanceof Item)
+										if (!checkStack(new ItemStack((Item) obj)))
+												return false;
+								if (obj instanceof Block)
+										if (!checkStack(new ItemStack((Block) obj)))
+												return false;
 						}
 						return true;
 				}
@@ -33,6 +39,12 @@ public class RecipeChecker {
 						for (Object obj : recipe.getInput()) {
 								if (obj instanceof ItemStack)
 										if (!checkStack((ItemStack) obj))
+												return false;
+								if (obj instanceof Item)
+										if (!checkStack(new ItemStack((Item) obj)))
+												return false;
+								if (obj instanceof Block)
+										if (!checkStack(new ItemStack((Block) obj)))
 												return false;
 						}
 						return true;

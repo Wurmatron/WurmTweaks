@@ -46,6 +46,8 @@ public class WTItems {
 				itemMaterialNames.add("refiningModule");
 				itemMaterialNames.add("computationalCore");
 				itemMaterialNames.add("machineFrame");
+				itemMaterialNames.add("spaceModule");
+				itemMaterialNames.add("unstableMatter");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 		}
 

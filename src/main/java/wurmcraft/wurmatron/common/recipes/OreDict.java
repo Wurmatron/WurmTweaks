@@ -220,6 +220,7 @@ public class OreDict {
 				for (Block door : TFCBlocks.doors)
 						add("packDoor", door);
 				// TODO Add Gem Block Ore Dict "packGemBlock"
+				add("packGemBlock", Blocks.bedrock);
 				// Logs
 				add("packLog", new ItemStack(TFCItems.logs, 1, OreDictionary.WILDCARD_VALUE));
 				// Anvil

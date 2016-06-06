@@ -17,10 +17,10 @@ public class IronChestRecipes {
 		public static void addRecipes () {
 				LogHandler.info("Adding Iron Chest Recipes");
 				r.addCircleWCenter(IronChest.ironChestBlock, TFCItems.wroughtIronSheet, new ItemStack(IronChest.ironChestBlock, 1, 3));
-				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 1), TFCItems.goldSheet, new ItemStack(IronChest.ironChestBlock));
+				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 1), TFCItems.goldSheet, new ItemStack(IronChest.ironChestBlock,1,4));
 				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 2), "packGemExquisite", new ItemStack(IronChest.ironChestBlock, 1, 1));
 				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 3), TFCItems.copperSheet, "packChest");
-				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 4), TFCItems.silverSheet, IronChest.ironChestBlock);
+				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 4), TFCItems.silverSheet, new ItemStack(IronChest.ironChestBlock,1,0));
 				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 5), "packGlass", new ItemStack(IronChest.ironChestBlock, 1, 2));
 				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 6), Blocks.obsidian, new ItemStack(IronChest.ironChestBlock, 1, 2));
 				r.addCircleWCenter(new ItemStack(IronChest.ironChestBlock, 1, 7), "packDirt", "packChest");

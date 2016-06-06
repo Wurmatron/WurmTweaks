@@ -4,6 +4,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
+
+// SkyStone Chest
+// Dark Matter
+// Red Matter
 public class WurmTweaksBlocks {
 
 		public static Block blockCompressedRedstone;
@@ -17,18 +21,21 @@ public class WurmTweaksBlocks {
 		public static Block blockRedSteel;
 
 		public static void registerBlocks () {
-				blockWroughtIron = new BlockBasic("blockWroughtIron", Material.iron);
-				blockPlatinum = new BlockBasic("blockPlatinum", Material.iron);
-				blockGold = new BlockBasic("blockGold", Material.iron);
-				blockSterlingSilver = new BlockBasic("blockSterlingSilver", Material.iron);
-				blockSilver = new BlockBasic("blockSilver", Material.iron);
-				blockCompressedRedstone = new BlockBasic("blockCompressedRedstone", Material.iron);
-				blockBlueSteel = new BlockBasic("blockBlueSteel", Material.iron);
-				blockBlackSteel = new BlockBasic("blockBlackSteel", Material.iron);
-				blockRedSteel = new BlockBasic("blockRedSteel", Material.iron);
+				blockWroughtIron = registerBlock(new BlockBasic("blockWroughtIron", Material.iron));
+				blockPlatinum = registerBlock(new BlockBasic("blockPlatinum", Material.iron));
+				blockGold = registerBlock(new BlockBasic("blockGold", Material.iron));
+				blockSterlingSilver = registerBlock(new BlockBasic("blockSterlingSilver", Material.iron));
+				blockSilver = registerBlock(new BlockBasic("blockSilver", Material.iron));
+				blockCompressedRedstone = registerBlock(new BlockBasic("blockCompressedRedstone", Material.iron));
+				blockBlueSteel = registerBlock(new BlockBasic("blockBlueSteel", Material.iron));
+				blockBlackSteel = registerBlock(new BlockBasic("blockBlackSteel", Material.iron));
+				blockRedSteel = registerBlock(new BlockBasic("blockRedSteel", Material.iron));
+
+
 		}
 
-		private static void registerBlock (Block block, String name) {
-				GameRegistry.registerBlock(block, name);
+		private static Block registerBlock (Block block) {
+				GameRegistry.registerBlock(block, block.getUnlocalizedName());
+				return block;
 		}
 }

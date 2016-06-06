@@ -121,6 +121,26 @@ public class RecipeHelper {
 				if (flip) addShaped(output, "BAB", "ABA", "BAB", 'A', partA, 'B', partB);
 		}
 
+		public void addCross (Item output, Object partA, Object partB) {
+				addShaped(output, "ABA", "BAB", "ABA", 'A', partA, 'B', partB);
+				addShaped(output, "BAB", "ABA", "BAB", 'A', partA, 'B', partB);
+		}
+
+		public void addCross (Item output, Object partA, Object partB, boolean flip) {
+				addShaped(output, "ABA", "BAB", "ABA", 'A', partA, 'B', partB);
+				if (flip) addShaped(output, "BAB", "ABA", "BAB", 'A', partA, 'B', partB);
+		}
+
+		public void addCross (Block output, Object partA, Object partB) {
+				addShaped(output, "ABA", "BAB", "ABA", 'A', partA, 'B', partB);
+				addShaped(output, "BAB", "ABA", "BAB", 'A', partA, 'B', partB);
+		}
+
+		public void addCross (Block output, Object partA, Object partB, boolean flip) {
+				addShaped(output, "ABA", "BAB", "ABA", 'A', partA, 'B', partB);
+				if (flip) addShaped(output, "BAB", "ABA", "BAB", 'A', partA, 'B', partB);
+		}
+
 		public void add3X (ItemStack output, Object input) {
 				addShaped(output, "III", "III", "III", 'I', input);
 		}
@@ -135,7 +155,14 @@ public class RecipeHelper {
 
 		public void add2X (ItemStack output, Object input) {
 				addShaped(output, "II", "II", 'I', input);
-				addShapeless(output, input, input, input, input);
+		}
+
+		public void add2X (Item output, Object input) {
+				addShaped(output, "II", "II", 'I', input);
+		}
+
+		public void add2X (Block output, Object input) {
+				addShaped(output, "II", "II", 'I', input);
 		}
 
 		public void addCrossWCenter (ItemStack output, Object partA, Object partB, Object center) {
@@ -180,7 +207,15 @@ public class RecipeHelper {
 				addShaped(output, "III", "III", 'I', input);
 		}
 
-		public void addSimpleCirc (ItemStack output, ItemStack outer, ItemStack center) {
+		public void addSimpleCirc (ItemStack output, Object outer, Object center) {
+				addShaped(output, " O ", "OCO", " O ", 'O', outer, 'C', center);
+		}
+
+		public void addSimpleCirc (Item output, Object outer, Object center) {
+				addShaped(output, " O ", "OCO", " O ", 'O', outer, 'C', center);
+		}
+
+		public void addSimpleCirc (Block output, Object outer, Object center) {
 				addShaped(output, " O ", "OCO", " O ", 'O', outer, 'C', center);
 		}
 

@@ -37,4 +37,6 @@ public class WurmTweaksItems {
 		public static final ItemStack itemRefiningModule = new ItemStack(WTItems.itemMaterial, 1, 31);
 		public static final ItemStack itemComputationalCore = new ItemStack(WTItems.itemMaterial, 1, 32);
 		public static final ItemStack itemMachineFrame = new ItemStack(WTItems.itemMaterial, 1, 33);
+		public static final ItemStack itemSpaceModule = new ItemStack(WTItems.itemMaterial,1,34);
+		public static final ItemStack itemUnstableatter = new ItemStack(WTItems.itemMaterial,1,35);
 }

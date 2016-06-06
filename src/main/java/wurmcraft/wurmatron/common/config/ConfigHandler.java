@@ -30,6 +30,7 @@ public class ConfigHandler {
 		private static Property EnderStorage;
 		private static Property ExtraCells;
 		private static Property ExtraUtilities;
+		private static Property GalaticCraft;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -76,6 +77,8 @@ public class ConfigHandler {
 				Settings.ExtraCells = ExtraCells.getBoolean();
 				ExtraUtilities = config.get(Global.CATEGORY_MODS, "ExtraUtilities", true);
 				Settings.ExtraUtilities = ExtraUtilities.getBoolean();
+				GalaticCraft = config.get(Global.CATEGORY_MODS, "GalaticCraft", true);
+				Settings.GalaticCraft = GalaticCraft.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

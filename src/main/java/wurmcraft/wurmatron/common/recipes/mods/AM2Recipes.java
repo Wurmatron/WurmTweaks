@@ -36,13 +36,13 @@ public class AM2Recipes {
 				r.addCrossWCenter(BlocksCommonProxy.keystoneChest, "packPlanks", "packRune", "packDoor");
 				r.addShaped(BlocksCommonProxy.blockLectern, "BBB", "XXX", "PPP", 'P', "packPlanks", 'B', WurmTweaksItems.ingotBrownSteel, 'X', WurmTweaksItems.itemMagicChunk);
 				r.addCrossWCenter(BlocksCommonProxy.manaBattery, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, "dustVintium");
-				r.addShapeless(BlocksCommonProxy.magicWall, "dustVintium", WurmTweaksItems.itemMagicChunk, WurmTweaksBlocks.blockWroughtIron);
+				r.addShapeless(new ItemStack(BlocksCommonProxy.magicWall,4), "dustVintium", WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotCyanSteel);
 				r.addShaped(BlocksCommonProxy.occulus, "XAX", " N ", "BAB", 'N', Items.nether_star, 'X', WurmTweaksItems.itemMagicChunk, 'A', "packRune", 'B', WurmTweaksBlocks.blockPlatinum);
-				r.addShapeless(BlocksCommonProxy.craftingAltar, "packGemBlock", "dustVintium", BlocksCommonProxy.magicWall);
+				r.addShapeless(BlocksCommonProxy.craftingAltar, "packGemBlock", "dustVintium", new ItemStack(BlocksCommonProxy.magicWall,1,0));
 				r.addShaped(new ItemStack(BlocksCommonProxy.vinteumTorch, 8), "V", "S", 'S', "packStick", 'V', "dustVintium");
 				r.addBasicMachineRecipe(BlocksCommonProxy.particleEmitter, WurmTweaksBlocks.blockGold, "dye", "packGemBlock", WurmTweaksItems.ingotCyanSteel);
 				r.addShaped(BlocksCommonProxy.inscriptionTable, "ABC", "SSS", "L L", 'L', "packLog", 'S', "packPlanks", 'A', WurmTweaksBlocks.blockSterlingSilver, 'B', WurmTweaksItems.itemMagicChunk, 'C', Items.feather);
-				r.addShapeless(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 3), BlocksCommonProxy.witchwoodLog);
+				r.addShapeless(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 2), BlocksCommonProxy.witchwoodLog);
 				//TODO SawMill Witchwood Log
 				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.redstoneInlay, 8), Blocks.redstone_block, WurmTweaksItems.itemMagicChunk);
 				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.ironInlay, 8), WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
