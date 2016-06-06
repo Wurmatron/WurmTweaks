@@ -77,6 +77,8 @@ public class Recipes {
 						MinefactoryReloadedRecipes.addRecipes();
 				if(RecipeChecker.modExists("OpenBlocks"))
 						OpenBlocksRecipes.addRecipes();
+				if(RecipeChecker.modExists("OpenComputers"))
+						OpenComputersRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

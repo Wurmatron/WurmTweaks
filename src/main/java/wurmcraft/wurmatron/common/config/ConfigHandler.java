@@ -39,6 +39,7 @@ public class ConfigHandler {
 		private static Property Mekanism;
 		private static Property MineFactoryReloaded;
 		private static Property OpenBlocks;
+		private static Property OpenComputers;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -103,6 +104,8 @@ public class ConfigHandler {
 				Settings.MineFactoryReloaded = MineFactoryReloaded.getBoolean();
 				OpenBlocks = config.get(Global.CATEGORY_MODS, "OpenBlocks", true);
 				Settings.OpenBlocks = OpenBlocks.getBoolean();
+				OpenComputers = config.get(Global.CATEGORY_MODS, "OpenComputers", true);
+				Settings.OpenComputers = OpenComputers.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

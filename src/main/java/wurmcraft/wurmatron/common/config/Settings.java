@@ -30,6 +30,7 @@ public class Settings {
 		public static boolean Mekanism;
 		public static boolean MineFactoryReloaded;
 		public static boolean OpenBlocks;
+		public static boolean OpenComputers;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -60,6 +61,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("Mekanism")) return Mekanism;
 				if(modid.equalsIgnoreCase("MineFactoryReloaded")) return MineFactoryReloaded;
 				if(modid.equalsIgnoreCase("OpenBlocks")) return OpenBlocks;
+				if(modid.equalsIgnoreCase("OpenComputers")) return OpenComputers;
 				return false;
 		}
 }

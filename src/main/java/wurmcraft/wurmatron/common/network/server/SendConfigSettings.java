@@ -44,6 +44,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("Mekanism", Settings.Mekanism);
 				data.setBoolean("MineFactoryReloaded", Settings.MineFactoryReloaded);
 				data.setBoolean("OpenBlocks", Settings.OpenBlocks);
+				data.setBoolean("OpenComputers", Settings.OpenComputers);
 		}
 
 		@Override
@@ -86,5 +87,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.Mekanism = data.getBoolean("Mekanism");
 				Settings.MineFactoryReloaded = data.getBoolean("MineFactoryReloaded");
 				Settings.OpenBlocks = data.getBoolean("OpenBlocks");
+				Settings.OpenComputers = data.getBoolean("OpenComputers");
 		}
 }
