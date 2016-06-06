@@ -34,6 +34,7 @@ public class Settings {
 		public static boolean OpenModularTurrets;
 		public static boolean PowerConverters;
 		public static boolean QuarryPlus;
+		public static boolean Railcraft;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -68,6 +69,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("openmodularturrets")) return OpenModularTurrets;
 				if(modid.equalsIgnoreCase("PowerConverters")) return PowerConverters;
 				if(modid.equalsIgnoreCase("QuarryPlus")) return QuarryPlus;
+				if(modid.equalsIgnoreCase("Railcraft")) return Railcraft;
 				return false;
 		}
 }

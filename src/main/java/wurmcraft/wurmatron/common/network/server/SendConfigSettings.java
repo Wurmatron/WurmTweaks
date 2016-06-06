@@ -48,6 +48,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("OpenModularTurrets", Settings.OpenModularTurrets);
 				data.setBoolean("PowerConverters", Settings.PowerConverters);
 				data.setBoolean("QuarryPlus", Settings.QuarryPlus);
+				data.setBoolean("Railcraft", Settings.Railcraft);
 		}
 
 		@Override
@@ -94,5 +95,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.OpenModularTurrets = data.getBoolean("OpenModularTurrets");
 				Settings.PowerConverters = data.getBoolean("PowerConverters");
 				Settings.QuarryPlus = data.getBoolean("QuarryPlus");
+				Settings.Railcraft = data.getBoolean("Railcraft");
 		}
 }

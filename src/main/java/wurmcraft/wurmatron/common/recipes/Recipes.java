@@ -85,6 +85,8 @@ public class Recipes {
 						PowerConverterRecipes.addRecipes();
 				if(RecipeChecker.modExists("QuarryPlus"))
 						QuarryPlusRecipes.addRecipes();
+				if(RecipeChecker.modExists("Railcraft"))
+						RailCraftRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

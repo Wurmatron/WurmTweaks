@@ -43,6 +43,7 @@ public class ConfigHandler {
 		private static Property OpenModularTurrets;
 		private static Property PowerConverters;
 		private static Property QuarryPlus;
+		private static Property Railcraft;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -115,6 +116,8 @@ public class ConfigHandler {
 				Settings.PowerConverters = PowerConverters.getBoolean();
 				QuarryPlus = config.get(Global.CATEGORY_MODS, "QuarryPlus", true);
 				Settings.QuarryPlus = QuarryPlus.getBoolean();
+				Railcraft = config.get(Global.CATEGORY_MODS, "Railcraft", true);
+				Settings.Railcraft = Railcraft.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
