@@ -25,6 +25,7 @@ public class Settings {
 		public static boolean GraviSuite;
 		public static boolean ImmersiveEngineering;
 		public static boolean IC2;
+		public static boolean JABBA;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -50,6 +51,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("GraviSuite")) return GraviSuite;
 				if(modid.equalsIgnoreCase("ImmersiveEngineering")) return ImmersiveEngineering;
 				if(modid.equalsIgnoreCase("IC2")) return IC2;
+				if(modid.equalsIgnoreCase("JABBA")) return JABBA;
 				return false;
 		}
 }

@@ -67,6 +67,8 @@ public class Recipes {
 						ImmersiveEngineeringRecipes.addRecipes();
 				if(RecipeChecker.modExists("IC2"))
 						IC2Recipes.addRecipes();
+				if(RecipeChecker.modExists("JABBA"))
+						JABBARecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
