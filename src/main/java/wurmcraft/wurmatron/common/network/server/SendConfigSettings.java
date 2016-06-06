@@ -47,6 +47,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("OpenComputers", Settings.OpenComputers);
 				data.setBoolean("OpenModularTurrets", Settings.OpenModularTurrets);
 				data.setBoolean("PowerConverters", Settings.PowerConverters);
+				data.setBoolean("QuarryPlus", Settings.QuarryPlus);
 		}
 
 		@Override
@@ -92,5 +93,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.OpenComputers = data.getBoolean("OpenComputers");
 				Settings.OpenModularTurrets = data.getBoolean("OpenModularTurrets");
 				Settings.PowerConverters = data.getBoolean("PowerConverters");
+				Settings.QuarryPlus = data.getBoolean("QuarryPlus");
 		}
 }

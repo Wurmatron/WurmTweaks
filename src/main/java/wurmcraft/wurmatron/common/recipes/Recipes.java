@@ -83,6 +83,8 @@ public class Recipes {
 						OpenModularTurretsRecipes.addRecipes();
 				if(RecipeChecker.modExists("PowerConverters"))
 						PowerConverterRecipes.addRecipes();
+				if(RecipeChecker.modExists("QuarryPlus"))
+						QuarryPlusRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

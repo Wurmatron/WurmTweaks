@@ -42,6 +42,7 @@ public class ConfigHandler {
 		private static Property OpenComputers;
 		private static Property OpenModularTurrets;
 		private static Property PowerConverters;
+		private static Property QuarryPlus;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -112,6 +113,8 @@ public class ConfigHandler {
 				Settings.OpenModularTurrets = OpenModularTurrets.getBoolean();
 				PowerConverters = config.get(Global.CATEGORY_MODS, "PowerConverters", true);
 				Settings.PowerConverters = PowerConverters.getBoolean();
+				QuarryPlus = config.get(Global.CATEGORY_MODS, "QuarryPlus", true);
+				Settings.QuarryPlus = QuarryPlus.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
