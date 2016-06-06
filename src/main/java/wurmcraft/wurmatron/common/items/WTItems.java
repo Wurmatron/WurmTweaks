@@ -48,6 +48,7 @@ public class WTItems {
 				itemMaterialNames.add("machineFrame");
 				itemMaterialNames.add("spaceModule");
 				itemMaterialNames.add("unstableMatter");
+				itemMaterialNames.add("jetpackParts");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 		}
 

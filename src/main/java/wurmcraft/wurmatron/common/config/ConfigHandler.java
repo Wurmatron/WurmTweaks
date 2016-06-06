@@ -31,6 +31,7 @@ public class ConfigHandler {
 		private static Property ExtraCells;
 		private static Property ExtraUtilities;
 		private static Property GalaticCraft;
+		private static Property GraviSuite;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -79,6 +80,8 @@ public class ConfigHandler {
 				Settings.ExtraUtilities = ExtraUtilities.getBoolean();
 				GalaticCraft = config.get(Global.CATEGORY_MODS, "GalaticCraft", true);
 				Settings.GalaticCraft = GalaticCraft.getBoolean();
+				GraviSuite = config.get(Global.CATEGORY_MODS, "GraviSuite", true);
+				Settings.GraviSuite = GraviSuite.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

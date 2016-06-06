@@ -59,6 +59,10 @@ public class Recipes {
 						ExtraCellsRecipes.addRecipes();
 				if (RecipeChecker.modExists("ExtraUtilities"))
 						ExtraUtilsRecipes.addRecipes();
+				if(RecipeChecker.modExists("GraviSuite"))
+						GravitySuitRecipes.addRecipes();
+				if(RecipeChecker.modExists("GalaticraftCore"))
+						GravitySuitRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

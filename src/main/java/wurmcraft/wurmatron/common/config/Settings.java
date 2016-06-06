@@ -22,6 +22,7 @@ public class Settings {
 		public static boolean ExtraCells;
 		public static boolean ExtraUtilities;
 		public static boolean GalaticCraft;
+		public static boolean GraviSuite;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -44,6 +45,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("extracells")) return ExtraCells;
 				if(modid.equalsIgnoreCase("ExtraUtilities")) return ExtraUtilities;
 				if(modid.equalsIgnoreCase("GalaticraftCore")) return GalaticCraft;
+				if(modid.equalsIgnoreCase("GraviSuite")) return GraviSuite;
 				return false;
 		}
 }
