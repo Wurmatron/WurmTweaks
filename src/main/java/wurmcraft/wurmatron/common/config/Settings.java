@@ -28,6 +28,7 @@ public class Settings {
 		public static boolean JABBA;
 		public static boolean MalisisDoors;
 		public static boolean Mekanism;
+		public static boolean MineFactoryReloaded;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -56,6 +57,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("JABBA")) return JABBA;
 				if(modid.equalsIgnoreCase("malisisdoors")) return MalisisDoors;
 				if(modid.equalsIgnoreCase("Mekanism")) return Mekanism;
+				if(modid.equalsIgnoreCase("MineFactoryReloaded")) return MineFactoryReloaded;
 				return false;
 		}
 }

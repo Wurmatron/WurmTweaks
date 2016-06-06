@@ -37,6 +37,7 @@ public class ConfigHandler {
 		private static Property JABBA;
 		private static Property MalisisDoors;
 		private static Property Mekanism;
+		private static Property MineFactoryReloaded;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -97,6 +98,8 @@ public class ConfigHandler {
 				Settings.MalisisDoors = MalisisDoors.getBoolean();
 				Mekanism = config.get(Global.CATEGORY_MODS, "Mekanism", true);
 				Settings.Mekanism = Mekanism.getBoolean();
+				MineFactoryReloaded = config.get(Global.CATEGORY_MODS, "MineFactoryReloaded", true);
+				Settings.MineFactoryReloaded = MineFactoryReloaded.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

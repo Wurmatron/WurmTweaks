@@ -73,6 +73,8 @@ public class Recipes {
 						MalisisDoorsRecipes.addRecipes();
 				if(RecipeChecker.modExists("Mekanism"))
 						MekanismRecipes.addRecipes();
+				if(RecipeChecker.modExists("MineFactoryReloaded"))
+						MinefactoryReloadedRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
