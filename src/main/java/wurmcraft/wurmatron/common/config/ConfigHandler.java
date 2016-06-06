@@ -41,6 +41,7 @@ public class ConfigHandler {
 		private static Property OpenBlocks;
 		private static Property OpenComputers;
 		private static Property OpenModularTurrets;
+		private static Property PowerConverters;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -109,6 +110,8 @@ public class ConfigHandler {
 				Settings.OpenComputers = OpenComputers.getBoolean();
 				OpenModularTurrets = config.get(Global.CATEGORY_MODS, "OpenModularTurrets", true);
 				Settings.OpenModularTurrets = OpenModularTurrets.getBoolean();
+				PowerConverters = config.get(Global.CATEGORY_MODS, "PowerConverters", true);
+				Settings.PowerConverters = PowerConverters.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

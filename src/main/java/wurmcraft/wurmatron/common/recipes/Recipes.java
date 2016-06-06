@@ -81,6 +81,8 @@ public class Recipes {
 						OpenComputersRecipes.addRecipes();
 				if(RecipeChecker.modExists("openmodularturrets"))
 						OpenModularTurretsRecipes.addRecipes();
+				if(RecipeChecker.modExists("PowerConverters"))
+						PowerConverterRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

@@ -32,6 +32,7 @@ public class Settings {
 		public static boolean OpenBlocks;
 		public static boolean OpenComputers;
 		public static boolean OpenModularTurrets;
+		public static boolean PowerConverters;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -64,6 +65,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("OpenBlocks")) return OpenBlocks;
 				if(modid.equalsIgnoreCase("OpenComputers")) return OpenComputers;
 				if(modid.equalsIgnoreCase("openmodularturrets")) return OpenModularTurrets;
+				if(modid.equalsIgnoreCase("PowerConverters")) return PowerConverters;
 				return false;
 		}
 }
