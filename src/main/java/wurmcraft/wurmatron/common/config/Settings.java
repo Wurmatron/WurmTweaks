@@ -24,6 +24,7 @@ public class Settings {
 		public static boolean GalaticCraft;
 		public static boolean GraviSuite;
 		public static boolean ImmersiveEngineering;
+		public static boolean IC2;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -48,6 +49,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("GalaticraftCore")) return GalaticCraft;
 				if(modid.equalsIgnoreCase("GraviSuite")) return GraviSuite;
 				if(modid.equalsIgnoreCase("ImmersiveEngineering")) return ImmersiveEngineering;
+				if(modid.equalsIgnoreCase("IC2")) return IC2;
 				return false;
 		}
 }

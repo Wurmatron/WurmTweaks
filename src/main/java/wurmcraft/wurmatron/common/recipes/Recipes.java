@@ -65,6 +65,8 @@ public class Recipes {
 						GravitySuitRecipes.addRecipes();
 				if(RecipeChecker.modExists("ImmersiveEngineering"))
 						ImmersiveEngineeringRecipes.addRecipes();
+				if(RecipeChecker.modExists("IC2"))
+						IC2Recipes.addRecipes();
 		}
 
 		public static void checkSettings () {

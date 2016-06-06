@@ -33,6 +33,7 @@ public class ConfigHandler {
 		private static Property GalaticCraft;
 		private static Property GraviSuite;
 		private static Property ImmersiveEngineering;
+		private static Property IC2;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -85,6 +86,8 @@ public class ConfigHandler {
 				Settings.GraviSuite = GraviSuite.getBoolean();
 				ImmersiveEngineering = config.get(Global.CATEGORY_MODS, "ImmersiveEngineering", true);
 				Settings.ImmersiveEngineering = ImmersiveEngineering.getBoolean();
+				IC2 = config.get(Global.CATEGORY_MODS, "IndustrialCraft2", true);
+				Settings.IC2 = IC2.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
