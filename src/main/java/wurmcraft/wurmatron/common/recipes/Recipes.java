@@ -69,6 +69,8 @@ public class Recipes {
 						IC2Recipes.addRecipes();
 				if(RecipeChecker.modExists("JABBA"))
 						JABBARecipes.addRecipes();
+				if(RecipeChecker.modExists("malisisdoors"))
+						MalisisDoorsRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

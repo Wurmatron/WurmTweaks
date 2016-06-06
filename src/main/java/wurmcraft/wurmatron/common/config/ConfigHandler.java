@@ -35,6 +35,7 @@ public class ConfigHandler {
 		private static Property ImmersiveEngineering;
 		private static Property IC2;
 		private static Property JABBA;
+		private static Property MalisisDoors;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -91,6 +92,9 @@ public class ConfigHandler {
 				Settings.IC2 = IC2.getBoolean();
 				JABBA = config.get(Global.CATEGORY_MODS, "JABBA", true);
 				Settings.JABBA = JABBA.getBoolean();
+				MalisisDoors = config.get(Global.CATEGORY_MODS, "MalisisDoors", true);
+				Settings.MalisisDoors = MalisisDoors.getBoolean();
+
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
