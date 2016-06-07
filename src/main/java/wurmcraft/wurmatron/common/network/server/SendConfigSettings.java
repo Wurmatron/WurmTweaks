@@ -58,6 +58,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("tfcm", Settings.TFCMisc);
 				data.setBoolean("SolarExpansion", Settings.SolarExpansion);
 				data.setBoolean("TConstruct", Settings.TConstruct);
+				data.setBoolean("TechReborn", Settings.TechReborn);
 		}
 
 		@Override
@@ -114,5 +115,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.TFCMisc = data.getBoolean("tfcm");
 				Settings.SolarExpansion = data.getBoolean("SolarExpansion");
 				Settings.TConstruct = data.getBoolean("TConstruct");
+				Settings.TechReborn = data.getBoolean("TechReborn");
 		}
 }

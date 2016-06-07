@@ -105,6 +105,8 @@ public class Recipes {
 						SolarExpansionRecipes.addRecipes();
 				if(RecipeChecker.modExists("TConstruct"))
 						TConstructRecipes.addRecipes();
+				if(RecipeChecker.modExists("techreborn"))
+						TechRebornRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

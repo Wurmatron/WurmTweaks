@@ -59,6 +59,8 @@ public class WTItems {
 				itemMaterialNames.add("spaceModule");
 				itemMaterialNames.add("unstableMatter");
 				itemMaterialNames.add("jetpackParts");
+				itemMaterialNames.add("electroMagneticShielding");
+				itemMaterialNames.add("electroShielding");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");

@@ -53,6 +53,7 @@ public class ConfigHandler {
 		private static Property WirelessRedstone;
 		private static Property SolarExpansion;
 		private static Property TConstruct;
+		private static Property TechReborn;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -145,6 +146,8 @@ public class ConfigHandler {
 				Settings.SolarExpansion = SolarExpansion.getBoolean();
 				TConstruct = config.get(Global.CATEGORY_MODS, "TConstruct", true);
 				Settings.TConstruct = TConstruct.getBoolean();
+				TechReborn = config.get(Global.CATEGORY_MODS, "TechReborn", true);
+				Settings.TechReborn = TechReborn.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
