@@ -51,6 +51,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("Railcraft", Settings.Railcraft);
 				data.setBoolean("tinker_io", Settings.TinkerIO);
 				data.setBoolean("ShinColle", Settings.ShinColle);
+				data.setBoolean("weightingscales", Settings.TFCScales);
 		}
 
 		@Override
@@ -100,5 +101,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.Railcraft = data.getBoolean("Railcraft");
 				Settings.TinkerIO = data.getBoolean("tinker_io");
 				Settings.ShinColle = data.getBoolean("ShinColle");
+				Settings.TFCScales = data.getBoolean("weightingscales");
 		}
 }

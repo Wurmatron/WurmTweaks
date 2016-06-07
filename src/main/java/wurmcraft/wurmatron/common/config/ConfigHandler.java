@@ -46,6 +46,7 @@ public class ConfigHandler {
 		private static Property Railcraft;
 		private static Property TinkerIO;
 		private static Property ShinColle;
+		private static Property TFCScales;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -124,6 +125,8 @@ public class ConfigHandler {
 				Settings.TinkerIO = TinkerIO.getBoolean();
 				ShinColle = config.get(Global.CATEGORY_MODS, "ShinColle", true);
 				Settings.ShinColle = ShinColle.getBoolean();
+				TFCScales = config.get(Global.CATEGORY_MODS, "weightingscales", true);
+				Settings.TFCScales = TFCScales.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

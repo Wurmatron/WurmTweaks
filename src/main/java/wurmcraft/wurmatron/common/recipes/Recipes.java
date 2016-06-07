@@ -91,6 +91,9 @@ public class Recipes {
 						TinkerIORecipes.addRecipes();
 				if(RecipeChecker.modExists("shincolle"))
 						ShinColleRecipes.addRecipes();
+				if (RecipeChecker.modExists("weightingscales")) {
+						TerrafirmacraftRecipes.addRecipes();
+				}
 		}
 
 		public static void checkSettings () {
