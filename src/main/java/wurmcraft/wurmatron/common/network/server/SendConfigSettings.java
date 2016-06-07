@@ -60,6 +60,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("TConstruct", Settings.TConstruct);
 				data.setBoolean("TechReborn", Settings.TechReborn);
 				data.setBoolean("Thaumcraft", Settings.Thaumcraft);
+				data.setBoolean("ThermalDynamics", Settings.ThermalDynamics);
 		}
 
 		@Override
@@ -118,5 +119,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.TConstruct = data.getBoolean("TConstruct");
 				Settings.TechReborn = data.getBoolean("TechReborn");
 				Settings.Thaumcraft = data.getBoolean("Thaumcraft");
+				Settings.ThermalDynamics = data.getBoolean("ThermalDynamics");
 		}
 }

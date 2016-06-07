@@ -109,6 +109,8 @@ public class Recipes {
 						TechRebornRecipes.addRecipes();
 				if(RecipeChecker.modExists("Thaumcraft"))
 						ThaumcraftRecipes.addRecipes();
+				if(RecipeChecker.modExists("ThermalDynamics"))
+						ThermalDynamicsRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

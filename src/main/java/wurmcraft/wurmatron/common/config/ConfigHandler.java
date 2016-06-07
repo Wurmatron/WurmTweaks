@@ -55,6 +55,7 @@ public class ConfigHandler {
 		private static Property TConstruct;
 		private static Property TechReborn;
 		private static Property Thaumcraft;
+		private static Property ThermalDynamics;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -151,6 +152,8 @@ public class ConfigHandler {
 				Settings.TechReborn = TechReborn.getBoolean();
 				Thaumcraft = config.get(Global.CATEGORY_MODS, "Thaumcraft", true);
 				Settings.Thaumcraft = Thaumcraft.getBoolean();
+				ThermalDynamics = config.get(Global.CATEGORY_MODS, "ThermalDynamics", true);
+				Settings.ThermalDynamics = ThermalDynamics.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
