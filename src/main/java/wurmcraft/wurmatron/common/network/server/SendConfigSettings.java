@@ -54,6 +54,8 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("weightingscales", Settings.TFCScales);
 				data.setBoolean("tfccellars", Settings.TFCCellars);
 				data.setBoolean("simplyjetpacks", Settings.SimplyJetpacks);
+				data.setBoolean("WR-CBE|Core", Settings.WirelessRedstone);
+				data.setBoolean("tfcm", Settings.TFCMisc);
 		}
 
 		@Override
@@ -106,5 +108,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.TFCScales = data.getBoolean("weightingscales");
 				Settings.TFCCellars = data.getBoolean("tfccellars");
 				Settings.SimplyJetpacks = data.getBoolean("simplyjetpacks");
+				Settings.WirelessRedstone = data.getBoolean("WR-CBE|Core");
+				Settings.TFCMisc = data.getBoolean("tfcm");
 		}
 }

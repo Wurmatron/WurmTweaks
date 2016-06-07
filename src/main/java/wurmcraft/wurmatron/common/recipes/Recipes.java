@@ -97,6 +97,10 @@ public class Recipes {
 						TerraFirmaCraftCellarsRecipes.addRecipes();
 				if(RecipeChecker.modExists("simplyjetpacks"))
 						SimplyJetpacksRecipes.addRecipes();
+				if(RecipeChecker.modExists("WR-CBE|Core"))
+						WirelessRedstoneRecipes.addRecipes();
+				if(RecipeChecker.modExists("tfcm"))
+						WirelessRedstoneRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
