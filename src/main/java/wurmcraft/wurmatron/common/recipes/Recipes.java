@@ -101,6 +101,8 @@ public class Recipes {
 						WirelessRedstoneRecipes.addRecipes();
 				if(RecipeChecker.modExists("tfcm"))
 						WirelessRedstoneRecipes.addRecipes();
+				if(RecipeChecker.modExists("SolarExpansion"))
+						SolarExpansionRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

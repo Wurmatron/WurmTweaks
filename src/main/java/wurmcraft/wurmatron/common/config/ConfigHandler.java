@@ -51,6 +51,7 @@ public class ConfigHandler {
 		private static Property SimplyJetpacks;
 		private static Property TFCMisc;
 		private static Property WirelessRedstone;
+		private static Property SolarExpansion;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -139,6 +140,8 @@ public class ConfigHandler {
 				Settings.TFCMisc = TFCMisc.getBoolean();
 				WirelessRedstone = config.get(Global.CATEGORY_MODS, "WR-CBE|Core", true);
 				Settings.WirelessRedstone = WirelessRedstone.getBoolean();
+				SolarExpansion = config.get(Global.CATEGORY_MODS, "SolarExpansion", true);
+				Settings.SolarExpansion = SolarExpansion.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

@@ -56,6 +56,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("simplyjetpacks", Settings.SimplyJetpacks);
 				data.setBoolean("WR-CBE|Core", Settings.WirelessRedstone);
 				data.setBoolean("tfcm", Settings.TFCMisc);
+				data.setBoolean("SolarExpansion", Settings.SolarExpansion);
 		}
 
 		@Override
@@ -110,5 +111,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.SimplyJetpacks = data.getBoolean("simplyjetpacks");
 				Settings.WirelessRedstone = data.getBoolean("WR-CBE|Core");
 				Settings.TFCMisc = data.getBoolean("tfcm");
+				Settings.SolarExpansion = data.getBoolean("SolarExpansion");
 		}
 }
