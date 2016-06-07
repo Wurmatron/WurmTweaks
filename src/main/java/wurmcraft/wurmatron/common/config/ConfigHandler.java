@@ -54,6 +54,7 @@ public class ConfigHandler {
 		private static Property SolarExpansion;
 		private static Property TConstruct;
 		private static Property TechReborn;
+		private static Property Thaumcraft;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -148,6 +149,8 @@ public class ConfigHandler {
 				Settings.TConstruct = TConstruct.getBoolean();
 				TechReborn = config.get(Global.CATEGORY_MODS, "TechReborn", true);
 				Settings.TechReborn = TechReborn.getBoolean();
+				Thaumcraft = config.get(Global.CATEGORY_MODS, "Thaumcraft", true);
+				Settings.Thaumcraft = Thaumcraft.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

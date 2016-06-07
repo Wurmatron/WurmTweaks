@@ -45,6 +45,7 @@ public class Settings {
 		public static boolean SolarExpansion;
 		public static boolean TConstruct;
 		public static boolean TechReborn;
+		public static boolean Thaumcraft;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -90,6 +91,7 @@ public class Settings {
 				if (modid.equalsIgnoreCase("SolarExpansion")) return SolarExpansion;
 				if (modid.equalsIgnoreCase("TConstruct")) return TConstruct;
 				if (modid.equalsIgnoreCase("techreborn")) return TechReborn;
+				if(modid.equalsIgnoreCase("Thaumcraft")) return Thaumcraft;
 				return false;
 		}
 }

@@ -107,6 +107,8 @@ public class Recipes {
 						TConstructRecipes.addRecipes();
 				if(RecipeChecker.modExists("techreborn"))
 						TechRebornRecipes.addRecipes();
+				if(RecipeChecker.modExists("Thaumcraft"))
+						ThaumcraftRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
