@@ -49,6 +49,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("PowerConverters", Settings.PowerConverters);
 				data.setBoolean("QuarryPlus", Settings.QuarryPlus);
 				data.setBoolean("Railcraft", Settings.Railcraft);
+				data.setBoolean("tinker_io", Settings.TinkerIO);
 		}
 
 		@Override
@@ -96,5 +97,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.PowerConverters = data.getBoolean("PowerConverters");
 				Settings.QuarryPlus = data.getBoolean("QuarryPlus");
 				Settings.Railcraft = data.getBoolean("Railcraft");
+				Settings.TinkerIO = data.getBoolean("tinker_io");
 		}
 }

@@ -87,6 +87,8 @@ public class Recipes {
 						QuarryPlusRecipes.addRecipes();
 				if(RecipeChecker.modExists("Railcraft"))
 						RailCraftRecipes.addRecipes();
+				if(RecipeChecker.modExists("tinker_io"))
+						TinkerIORecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

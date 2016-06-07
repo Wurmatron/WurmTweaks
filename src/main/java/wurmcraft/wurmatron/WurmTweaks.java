@@ -8,7 +8,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
-import wurmcraft.wurmatron.common.commands.WTCommand;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
 import wurmcraft.wurmatron.common.events.JoinGameEvent;
 import wurmcraft.wurmatron.common.items.WTItems;
@@ -47,7 +46,7 @@ public class WurmTweaks {
 		@Mod.EventHandler
 		public void serverStarting (FMLServerStartingEvent e) {
 				Recipes.checkSettings();
-				e.registerServerCommand(new WTCommand());
+				//e.registerServerCommand(new WTCommand());
 		}
 
 }

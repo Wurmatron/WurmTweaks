@@ -53,7 +53,7 @@ public class ImmersiveEngineeringRecipes {
 				r.addStairs(new ItemStack(IEContent.blockMetalDecoration, 4, 3), new ItemStack(IEContent.blockMetalDecoration, 2, 1));
 				r.addCrossWCenter(new ItemStack(IEContent.blockMetalDecoration, 1, 4), TFCItems.blackSteelSheet2x, WurmTweaksItems.ingotPinkSteel, TFCItems.redSteelBucketSaltWater);
 				r.addBasicMachineRecipe(new ItemStack(IEContent.blockMetalDecoration, 1, 5), new ItemStack(IEContent.blockMetalDecoration, 1, 7), TFCItems.redSteelSheet, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.itemMachineFrame);
-				r.addShaped(new ItemStack(IEContent.blockMetalDecoration, 2, 6), "SSS", "ABA", "SSS", 'S', TFCItems.blackSteelSheet2x, 'A', WurmTweaksItems.ingotBrownSteel, IC2Items.getItem("generator"));
+				r.addShaped(new ItemStack(IEContent.blockMetalDecoration, 2, 6), "SSS", "ABA", "SSS", 'S', TFCItems.blackSteelSheet2x, 'A', WurmTweaksItems.ingotBrownSteel, 'B', IC2Items.getItem("generator"));
 				r.addBasicMachineRecipe(new ItemStack(IEContent.blockMetalDecoration, 1, 7), new ItemStack(IEContent.blockMetalDecoration, 1, 1), TFCItems.redSteelSheet, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.itemMachineFrame);
 				r.addShaped(new ItemStack(IEContent.blockMetalDecoration, 1, 8), "AXA", "XXX", 'X', new ItemStack(IEContent.blockMetalDecoration, 1, 1), 'A', new ItemStack(IEContent.blockMetalDecoration, 1, 0));
 				r.addShaped(new ItemStack(IEContent.blockMetalDecoration, 1, 9), "AXA", "X X", "X X", 'X', new ItemStack(IEContent.blockMetalDecoration, 1, 1), 'A', new ItemStack(IEContent.blockMetalDecoration, 1, 0));
@@ -100,12 +100,12 @@ public class ImmersiveEngineeringRecipes {
 				r.addShaped(new ItemStack(IEContent.itemBullet, 3, 3), "XXX", "BBB", "GGG", 'X', TFCItems.steelIngot, 'B', new ItemStack(IEContent.itemBullet, 1, 0), 'G', Items.gunpowder);
 				r.addShapeless(new ItemStack(IEContent.itemToolUpgrades, 1, 4), TFCItems.blueSteelSword, IEContent.blockTreatedWood);
 				r.addShapeless(new ItemStack(IEContent.itemToolUpgrades, 1, 4), TFCItems.redSteelSword, IEContent.blockTreatedWood);
-				r.addShapeless(new ItemStack(IEContent.itemToolUpgrades, 1, 5), "SSS", "XXX", "SSS", 'S', TFCItems.blackSteelSheet, 'X', new ItemStack(IEContent.itemBullet, 1, 0));
-				r.addShapeless(new ItemStack(IEContent.itemToolUpgrades, 1, 6), "SSS", "XXX", "SSS", 'S', TFCItems.blackSteelSheet, 'X', TEItems.capacitorHardened);
-				r.addShapeless(new ItemStack(IEContent.itemToolUpgrades, 1, 7), " SS", "SXB", " SS", 'S', TFCItems.blackSteelSheet2x, 'X', TFCItems.steelSheet, 'B', WurmTweaksItems.ingotGraySteel);
+				r.addShaped(new ItemStack(IEContent.itemToolUpgrades, 1, 5), "SSS", "XXX", "SSS", 'S', TFCItems.blackSteelSheet, 'X', new ItemStack(IEContent.itemBullet, 1, 0));
+				r.addShaped(new ItemStack(IEContent.itemToolUpgrades, 1, 6), "SSS", "XXX", "SSS", 'S', TFCItems.blackSteelSheet, 'X', TEItems.capacitorHardened);
+				r.addShaped(new ItemStack(IEContent.itemToolUpgrades, 1, 7), " SS", "SXB", " SS", 'S', TFCItems.blackSteelSheet2x, 'X', TFCItems.steelSheet, 'B', WurmTweaksItems.ingotGraySteel);
 				r.addShapeless(new ItemStack(IEContent.itemToolUpgrades, 1, 8), "packGlass", WurmTweaksItems.itemBloodInfused);
-				r.addShapeless(new ItemStack(IEContent.itemToolUpgrades, 1, 9), "SSS", "XXX", "SSS", 'S', TFCItems.blackSteelSheet2x, 'X', TEItems.capacitorResonant);
-				r.addShapeless(new ItemStack(IEContent.itemJerrycan, 4, 0), " S ", "S S", "SSS", 'S', TFCItems.blackSteelSheet);
+				r.addShaped(new ItemStack(IEContent.itemToolUpgrades, 1, 9), "SSS", "XXX", "SSS", 'S', TFCItems.blackSteelSheet2x, 'X', TEItems.capacitorResonant);
+				r.addShaped(new ItemStack(IEContent.itemJerrycan, 4, 0), " S ", "S S", "SSS", 'S', TFCItems.blackSteelSheet);
 				r.addBasicMachineRecipe(new ItemStack(IEContent.itemChemthrower, 1, 0), WurmTweaksItems.ingotGraySteel, TFCItems.blackSteelSheet2x, new ItemStack(IEContent.itemJerrycan, 1, 0), WurmTweaksItems.itemCraftingCore);
 				r.addBasicMachineRecipe(new ItemStack(IEContent.itemRailgun, 1, 0), WurmTweaksItems.ingotGraySteel, TFCItems.blackSteelSheet2x, WurmTweaksItems.ingotOrangeSteel, WurmTweaksItems.itemCraftingCore);
 				addSqueezerRecipes();

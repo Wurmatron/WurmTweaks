@@ -35,6 +35,7 @@ public class Settings {
 		public static boolean PowerConverters;
 		public static boolean QuarryPlus;
 		public static boolean Railcraft;
+		public static boolean TinkerIO;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -70,6 +71,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("PowerConverters")) return PowerConverters;
 				if(modid.equalsIgnoreCase("QuarryPlus")) return QuarryPlus;
 				if(modid.equalsIgnoreCase("Railcraft")) return Railcraft;
+				if(modid.equalsIgnoreCase("tinker_io")) return TinkerIO;
 				return false;
 		}
 }

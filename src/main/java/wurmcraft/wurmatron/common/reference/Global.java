@@ -18,5 +18,6 @@ public class Global {
 
 		public static final ArrayList<String> GODS = new ArrayList<String>() {{
 				add("Wurmatron");
+				add("Ficisism");
 		}};
 }

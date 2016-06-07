@@ -32,7 +32,6 @@ public class OpenComputersRecipes {
 				r.addShaped(li.cil.oc.api.Items.get("hologram1").createItemStack(1), "EGE", "IXI", "OGO", 'I', new ItemStack(TFCItems.blackSteelSheet), 'E', "oc:circuitChip2", 'G', "packGlass", 'X', "packGemExquisite", 'O', Blocks.obsidian);
 				r.addShaped(li.cil.oc.api.Items.get("hologram2").createItemStack(1), "EGE", "IXI", "OGO", 'I', new ItemStack(TFCItems.blackSteelSheet), 'E', "oc:circuitChip2", 'G', "packGlass", 'X', "oc:hologram1", 'O', Blocks.obsidian);
 				r.addShaped(li.cil.oc.api.Items.get("keyboard").createItemStack(1), "BBB", "BAC", 'B', "oc:materialButtonGroup", 'A', "oc:materialArrowKey", 'C', "oc:materialNumPad");
-				r.addShaped(li.cil.oc.api.Items.get("serverRack").createItemStack(1), "CWC", "BCB", "AXY", 'C', "oc:circuitChip2", 'W', "oc:wlandCard", 'B', Blocks.iron_bars, 'C', "packChest", 'A', "oc:switch", 'X', TFCItems.redSteelSheet, 'Y', "oc:powerDistributor");
 				r.addShaped(li.cil.oc.api.Items.get("screen1").createItemStack(1), "IRI", "RXG", "IRI", 'I', TFCItems.blackSteelSheet, 'R', Items.redstone, 'G', "packGlass", 'X', "oc:circuitChip1");
 				r.addShaped(li.cil.oc.api.Items.get("screen2").createItemStack(1), "IRI", "RXG", "IRI", 'I', TFCItems.blackSteelSheet, 'R', Items.redstone, 'G', "packGlass", 'X', "oc:screen1");
 				r.addShaped(li.cil.oc.api.Items.get("screen2").createItemStack(1), "IRI", "RXG", "IRI", 'I', TFCItems.blackSteelSheet, 'R', Items.redstone, 'G', "packGlass", 'X', "oc:screen2");
@@ -113,7 +112,7 @@ public class OpenComputersRecipes {
 				r.addBasicMachineRecipe(li.cil.oc.api.Items.get("nanomachines").createItemStack(1), WurmTweaksItems.itemAntiMatter, WurmTweaksItems.itemQuantumSingularity, WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemMachineFrame);
 				// TODO Creative Server
 				// TODO Creative PC Case
-				r.addShaped(li.cil.oc.api.Items.get("worldSensorCard").createItemStack(1), "I I", " B ", "I I", 'I', TFCItems.blackSteelSheet, 'B', WurmTweaksItems.itemSpaceModule);
+				//r.addShaped(li.cil.oc.api.Items.get("worldSensorCard").createItemStack(1), "I I", " B ", "I I", 'I', TFCItems.blackSteelSheet, 'B', WurmTweaksItems.itemSpaceModule);
 				r.addShaped(li.cil.oc.api.Items.get("tankControllerUpgrade").createItemStack(1), "PIP", "DXD", 'P', TFCItems.goldSheet, 'I', TFCItems.blackSteelSheet, 'B', Blocks.piston, 'D', Blocks.dispenser, 'X', Items.bucket);
 				r.addShaped(li.cil.oc.api.Items.get("arrowKeys").createItemStack(1), " B ", "BBB", 'B', Blocks.stone_button);
 				r.addShaped(li.cil.oc.api.Items.get("buttonGroup").createItemStack(1), "BBB", "BBB", 'B', Blocks.stone_button);

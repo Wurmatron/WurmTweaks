@@ -44,6 +44,7 @@ public class ConfigHandler {
 		private static Property PowerConverters;
 		private static Property QuarryPlus;
 		private static Property Railcraft;
+		private static Property TinkerIO;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -118,6 +119,8 @@ public class ConfigHandler {
 				Settings.QuarryPlus = QuarryPlus.getBoolean();
 				Railcraft = config.get(Global.CATEGORY_MODS, "Railcraft", true);
 				Settings.Railcraft = Railcraft.getBoolean();
+				TinkerIO = config.get(Global.CATEGORY_MODS, "tinker_io", true);
+				Settings.Railcraft = TinkerIO.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
