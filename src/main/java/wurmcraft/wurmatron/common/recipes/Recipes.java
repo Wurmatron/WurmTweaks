@@ -117,6 +117,8 @@ public class Recipes {
 						BibliocraftTFCRecipes.addRecipes();
 				if(RecipeChecker.modExists("Ztones"))
 						ZTonesRecipes.addRecipes();
+				if(RecipeChecker.modExists("soulshardstow"))
+						SoulShardsRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

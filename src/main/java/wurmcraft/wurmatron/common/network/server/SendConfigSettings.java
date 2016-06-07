@@ -64,6 +64,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("ThermalExpansion", Settings.ThermalExpansion);
 				data.setBoolean("BiblioWoodsTFC",  Settings.BiblioWoodsTFC);
 				data.setBoolean("Ztones", Settings.Ztones);
+				data.setBoolean("SoulShards", Settings.SoulShards);
 		}
 
 		@Override
@@ -126,5 +127,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.ThermalExpansion = data.getBoolean("ThermalExpansion");
 				Settings.BiblioWoodsTFC = data.getBoolean("BiblioWoodsTFC");
 				Settings.Ztones = data.getBoolean("Ztones");
+				Settings.SoulShards = data.getBoolean("SoulShards");
 		}
 }

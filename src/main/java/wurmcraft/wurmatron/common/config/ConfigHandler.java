@@ -59,6 +59,7 @@ public class ConfigHandler {
 		private static Property ThermalExpansion;
 		private static Property BiblioWoodsTFC;
 		private static Property Ztones;
+		private static Property SoulShards;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -163,6 +164,8 @@ public class ConfigHandler {
 				Settings.BiblioWoodsTFC = BiblioWoodsTFC.getBoolean();
 				Ztones = config.get(Global.CATEGORY_MODS, "Ztones", true);
 				Settings.Ztones = Ztones.getBoolean();
+				SoulShards = config.get(Global.CATEGORY_MODS, "SoulShards", true);
+				Settings.SoulShards = SoulShards.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
