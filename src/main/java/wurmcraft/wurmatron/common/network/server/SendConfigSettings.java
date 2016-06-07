@@ -50,6 +50,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("QuarryPlus", Settings.QuarryPlus);
 				data.setBoolean("Railcraft", Settings.Railcraft);
 				data.setBoolean("tinker_io", Settings.TinkerIO);
+				data.setBoolean("ShinColle", Settings.ShinColle);
 		}
 
 		@Override
@@ -98,5 +99,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.QuarryPlus = data.getBoolean("QuarryPlus");
 				Settings.Railcraft = data.getBoolean("Railcraft");
 				Settings.TinkerIO = data.getBoolean("tinker_io");
+				Settings.ShinColle = data.getBoolean("ShinColle");
 		}
 }

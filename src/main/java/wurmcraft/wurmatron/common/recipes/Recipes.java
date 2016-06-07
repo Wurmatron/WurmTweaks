@@ -89,6 +89,8 @@ public class Recipes {
 						RailCraftRecipes.addRecipes();
 				if(RecipeChecker.modExists("tinker_io"))
 						TinkerIORecipes.addRecipes();
+				if(RecipeChecker.modExists("shincolle"))
+						ShinColleRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

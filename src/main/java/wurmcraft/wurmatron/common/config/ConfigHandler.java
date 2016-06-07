@@ -45,6 +45,7 @@ public class ConfigHandler {
 		private static Property QuarryPlus;
 		private static Property Railcraft;
 		private static Property TinkerIO;
+		private static Property ShinColle;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -120,7 +121,9 @@ public class ConfigHandler {
 				Railcraft = config.get(Global.CATEGORY_MODS, "Railcraft", true);
 				Settings.Railcraft = Railcraft.getBoolean();
 				TinkerIO = config.get(Global.CATEGORY_MODS, "tinker_io", true);
-				Settings.Railcraft = TinkerIO.getBoolean();
+				Settings.TinkerIO = TinkerIO.getBoolean();
+				ShinColle = config.get(Global.CATEGORY_MODS, "ShinColle", true);
+				Settings.ShinColle = ShinColle.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
