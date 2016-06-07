@@ -46,7 +46,7 @@ public class WurmTweaks {
 		@Mod.EventHandler
 		public void serverStarting (FMLServerStartingEvent e) {
 				Recipes.checkSettings();
-				//e.registerServerCommand(new WTCommand());
+				// TODO e.registerServerCommand(new WTCommand());
 		}
 
 }

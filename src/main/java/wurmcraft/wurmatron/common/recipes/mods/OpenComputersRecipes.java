@@ -112,7 +112,7 @@ public class OpenComputersRecipes {
 				r.addBasicMachineRecipe(li.cil.oc.api.Items.get("nanomachines").createItemStack(1), WurmTweaksItems.itemAntiMatter, WurmTweaksItems.itemQuantumSingularity, WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemMachineFrame);
 				// TODO Creative Server
 				// TODO Creative PC Case
-				//r.addShaped(li.cil.oc.api.Items.get("worldSensorCard").createItemStack(1), "I I", " B ", "I I", 'I', TFCItems.blackSteelSheet, 'B', WurmTweaksItems.itemSpaceModule);
+				// TODO r.addShaped(li.cil.oc.api.Items.get("worldSensorCard").createItemStack(1), "I I", " B ", "I I", 'I', TFCItems.blackSteelSheet, 'B', WurmTweaksItems.itemSpaceModule);
 				r.addShaped(li.cil.oc.api.Items.get("tankControllerUpgrade").createItemStack(1), "PIP", "DXD", 'P', TFCItems.goldSheet, 'I', TFCItems.blackSteelSheet, 'B', Blocks.piston, 'D', Blocks.dispenser, 'X', Items.bucket);
 				r.addShaped(li.cil.oc.api.Items.get("arrowKeys").createItemStack(1), " B ", "BBB", 'B', Blocks.stone_button);
 				r.addShaped(li.cil.oc.api.Items.get("buttonGroup").createItemStack(1), "BBB", "BBB", 'B', Blocks.stone_button);
