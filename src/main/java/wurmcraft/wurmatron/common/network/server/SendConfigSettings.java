@@ -65,6 +65,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("BiblioWoodsTFC",  Settings.BiblioWoodsTFC);
 				data.setBoolean("Ztones", Settings.Ztones);
 				data.setBoolean("SoulShards", Settings.SoulShards);
+				data.setBoolean("IC2NuclearControl", Settings.IC2NuclearControl);
 		}
 
 		@Override
@@ -128,5 +129,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.BiblioWoodsTFC = data.getBoolean("BiblioWoodsTFC");
 				Settings.Ztones = data.getBoolean("Ztones");
 				Settings.SoulShards = data.getBoolean("SoulShards");
+				Settings.IC2NuclearControl = data.getBoolean("IC2NuclearControl");
 		}
 }

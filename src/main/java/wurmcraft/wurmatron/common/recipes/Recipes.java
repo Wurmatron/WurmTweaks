@@ -119,6 +119,8 @@ public class Recipes {
 						ZTonesRecipes.addRecipes();
 				if(RecipeChecker.modExists("soulshardstow"))
 						SoulShardsRecipes.addRecipes();
+				if(RecipeChecker.modExists("IC2NuclearControl"))
+						IC2NuclearControlRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

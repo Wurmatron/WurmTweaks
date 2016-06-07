@@ -51,6 +51,7 @@ public class Settings {
 		public static boolean BiblioWoodsTFC;
 		public static boolean Ztones;
 		public static boolean SoulShards;
+		public static boolean IC2NuclearControl;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -102,6 +103,7 @@ public class Settings {
 				if (modid.equalsIgnoreCase("BiblioWoodsTFC")) return BiblioWoodsTFC;
 				if (modid.equalsIgnoreCase("Ztones")) return Ztones;
 				if (modid.equalsIgnoreCase("soulshardstow")) return SoulShards;
+				if (modid.equalsIgnoreCase("IC2NuclearControl")) return IC2NuclearControl;
 				return false;
 		}
 }

@@ -60,6 +60,7 @@ public class ConfigHandler {
 		private static Property BiblioWoodsTFC;
 		private static Property Ztones;
 		private static Property SoulShards;
+		private static Property IC2NuclearControl;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -166,6 +167,8 @@ public class ConfigHandler {
 				Settings.Ztones = Ztones.getBoolean();
 				SoulShards = config.get(Global.CATEGORY_MODS, "SoulShards", true);
 				Settings.SoulShards = SoulShards.getBoolean();
+				IC2NuclearControl = config.get(Global.CATEGORY_MODS, "IC2NuclearControl", true);
+				Settings.IC2NuclearControl = IC2NuclearControl.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
