@@ -52,6 +52,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("tinker_io", Settings.TinkerIO);
 				data.setBoolean("ShinColle", Settings.ShinColle);
 				data.setBoolean("weightingscales", Settings.TFCScales);
+				data.setBoolean("tfccellars", Settings.TFCCellars);
 		}
 
 		@Override
@@ -102,5 +103,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.TinkerIO = data.getBoolean("tinker_io");
 				Settings.ShinColle = data.getBoolean("ShinColle");
 				Settings.TFCScales = data.getBoolean("weightingscales");
+				Settings.TFCCellars = data.getBoolean("tfccellars");
 		}
 }

@@ -38,6 +38,7 @@ public class Settings {
 		public static boolean TinkerIO;
 		public static boolean ShinColle;
 		public static boolean TFCScales;
+		public static boolean TFCCellars;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -76,6 +77,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("tinker_io")) return TinkerIO;
 				if(modid.equalsIgnoreCase("shincolle")) return ShinColle;
 				if(modid.equalsIgnoreCase("weightingscales")) return TFCScales;
+				if(modid.equalsIgnoreCase("tfccellars")) return TFCCellars;
 				return false;
 		}
 }

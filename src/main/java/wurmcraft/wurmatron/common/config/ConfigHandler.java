@@ -47,6 +47,7 @@ public class ConfigHandler {
 		private static Property TinkerIO;
 		private static Property ShinColle;
 		private static Property TFCScales;
+		private static Property TFCCellars;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -127,6 +128,7 @@ public class ConfigHandler {
 				Settings.ShinColle = ShinColle.getBoolean();
 				TFCScales = config.get(Global.CATEGORY_MODS, "weightingscales", true);
 				Settings.TFCScales = TFCScales.getBoolean();
+				Settings.TFCCellars = TFCCellars.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

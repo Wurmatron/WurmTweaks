@@ -91,9 +91,10 @@ public class Recipes {
 						TinkerIORecipes.addRecipes();
 				if(RecipeChecker.modExists("shincolle"))
 						ShinColleRecipes.addRecipes();
-				if (RecipeChecker.modExists("weightingscales")) {
+				if(RecipeChecker.modExists("weightingscales"))
 						TerraFirmaCraftScalesRecipes.addRecipes();
-				}
+				if(RecipeChecker.modExists("tfccellars"))
+						TerraFirmaCraftCellarsRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
