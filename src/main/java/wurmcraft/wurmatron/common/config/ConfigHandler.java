@@ -48,6 +48,7 @@ public class ConfigHandler {
 		private static Property ShinColle;
 		private static Property TFCScales;
 		private static Property TFCCellars;
+		private static Property SimplyJetpacks;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -126,9 +127,12 @@ public class ConfigHandler {
 				Settings.TinkerIO = TinkerIO.getBoolean();
 				ShinColle = config.get(Global.CATEGORY_MODS, "ShinColle", true);
 				Settings.ShinColle = ShinColle.getBoolean();
-				TFCScales = config.get(Global.CATEGORY_MODS, "weightingscales", true);
+				TFCScales = config.get(Global.CATEGORY_MODS, "TFC_Scales", true);
 				Settings.TFCScales = TFCScales.getBoolean();
+				TFCCellars = config.get(Global.CATEGORY_MODS, "TFCCellars", true);
 				Settings.TFCCellars = TFCCellars.getBoolean();
+				SimplyJetpacks = config.get(Global.CATEGORY_MODS, "SimplyJetpacks", true);
+				Settings.SimplyJetpacks = SimplyJetpacks.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

@@ -95,6 +95,8 @@ public class Recipes {
 						TerraFirmaCraftScalesRecipes.addRecipes();
 				if(RecipeChecker.modExists("tfccellars"))
 						TerraFirmaCraftCellarsRecipes.addRecipes();
+				if(RecipeChecker.modExists("simplyjetpacks"))
+						SimplyJetpacksRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

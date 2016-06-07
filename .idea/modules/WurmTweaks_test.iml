@@ -698,7 +698,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../libs/ShinColle.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../libs/ShinColle-1.7.10.rv26.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

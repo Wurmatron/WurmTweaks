@@ -53,6 +53,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("ShinColle", Settings.ShinColle);
 				data.setBoolean("weightingscales", Settings.TFCScales);
 				data.setBoolean("tfccellars", Settings.TFCCellars);
+				data.setBoolean("simplyjetpacks", Settings.SimplyJetpacks);
 		}
 
 		@Override
@@ -104,5 +105,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.ShinColle = data.getBoolean("ShinColle");
 				Settings.TFCScales = data.getBoolean("weightingscales");
 				Settings.TFCCellars = data.getBoolean("tfccellars");
+				Settings.SimplyJetpacks = data.getBoolean("simplyjetpacks");
 		}
 }

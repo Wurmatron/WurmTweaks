@@ -39,6 +39,7 @@ public class Settings {
 		public static boolean ShinColle;
 		public static boolean TFCScales;
 		public static boolean TFCCellars;
+		public static boolean SimplyJetpacks;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -55,29 +56,30 @@ public class Settings {
 				if (modid.equalsIgnoreCase("chisel")) return Chisel;
 				if (modid.equalsIgnoreCase("ComputerCraft")) return ComputerCraft;
 				if (modid.equalsIgnoreCase("CraftHeraldry")) return CraftHeraldry;
-				if(modid.equalsIgnoreCase("DraconicEvolution")) return DraconicEvolution;
-				if(modid.equalsIgnoreCase("IronChest")) return IronChest;
-				if(modid.equalsIgnoreCase("EnderStorage")) return EnderStorage;
-				if(modid.equalsIgnoreCase("extracells")) return ExtraCells;
-				if(modid.equalsIgnoreCase("ExtraUtilities")) return ExtraUtilities;
-				if(modid.equalsIgnoreCase("GalaticraftCore")) return GalaticCraft;
-				if(modid.equalsIgnoreCase("GraviSuite")) return GraviSuite;
-				if(modid.equalsIgnoreCase("ImmersiveEngineering")) return ImmersiveEngineering;
-				if(modid.equalsIgnoreCase("IC2")) return IC2;
-				if(modid.equalsIgnoreCase("JABBA")) return JABBA;
-				if(modid.equalsIgnoreCase("malisisdoors")) return MalisisDoors;
-				if(modid.equalsIgnoreCase("Mekanism")) return Mekanism;
-				if(modid.equalsIgnoreCase("MineFactoryReloaded")) return MineFactoryReloaded;
-				if(modid.equalsIgnoreCase("OpenBlocks")) return OpenBlocks;
-				if(modid.equalsIgnoreCase("OpenComputers")) return OpenComputers;
-				if(modid.equalsIgnoreCase("openmodularturrets")) return OpenModularTurrets;
-				if(modid.equalsIgnoreCase("PowerConverters")) return PowerConverters;
-				if(modid.equalsIgnoreCase("QuarryPlus")) return QuarryPlus;
-				if(modid.equalsIgnoreCase("Railcraft")) return Railcraft;
-				if(modid.equalsIgnoreCase("tinker_io")) return TinkerIO;
-				if(modid.equalsIgnoreCase("shincolle")) return ShinColle;
-				if(modid.equalsIgnoreCase("weightingscales")) return TFCScales;
-				if(modid.equalsIgnoreCase("tfccellars")) return TFCCellars;
+				if (modid.equalsIgnoreCase("DraconicEvolution")) return DraconicEvolution;
+				if (modid.equalsIgnoreCase("IronChest")) return IronChest;
+				if (modid.equalsIgnoreCase("EnderStorage")) return EnderStorage;
+				if (modid.equalsIgnoreCase("extracells")) return ExtraCells;
+				if (modid.equalsIgnoreCase("ExtraUtilities")) return ExtraUtilities;
+				if (modid.equalsIgnoreCase("GalaticraftCore")) return GalaticCraft;
+				if (modid.equalsIgnoreCase("GraviSuite")) return GraviSuite;
+				if (modid.equalsIgnoreCase("ImmersiveEngineering")) return ImmersiveEngineering;
+				if (modid.equalsIgnoreCase("IC2")) return IC2;
+				if (modid.equalsIgnoreCase("JABBA")) return JABBA;
+				if (modid.equalsIgnoreCase("malisisdoors")) return MalisisDoors;
+				if (modid.equalsIgnoreCase("Mekanism")) return Mekanism;
+				if (modid.equalsIgnoreCase("MineFactoryReloaded")) return MineFactoryReloaded;
+				if (modid.equalsIgnoreCase("OpenBlocks")) return OpenBlocks;
+				if (modid.equalsIgnoreCase("OpenComputers")) return OpenComputers;
+				if (modid.equalsIgnoreCase("openmodularturrets")) return OpenModularTurrets;
+				if (modid.equalsIgnoreCase("PowerConverters")) return PowerConverters;
+				if (modid.equalsIgnoreCase("QuarryPlus")) return QuarryPlus;
+				if (modid.equalsIgnoreCase("Railcraft")) return Railcraft;
+				if (modid.equalsIgnoreCase("tinker_io")) return TinkerIO;
+				if (modid.equalsIgnoreCase("shincolle")) return ShinColle;
+				if (modid.equalsIgnoreCase("weightingscales")) return TFCScales;
+				if (modid.equalsIgnoreCase("tfccellars")) return TFCCellars;
+				if (modid.equalsIgnoreCase("simplyjetpacks")) return SimplyJetpacks;
 				return false;
 		}
 }
