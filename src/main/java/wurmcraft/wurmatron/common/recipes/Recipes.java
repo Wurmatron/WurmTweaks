@@ -111,6 +111,8 @@ public class Recipes {
 						ThaumcraftRecipes.addRecipes();
 				if(RecipeChecker.modExists("ThermalDynamics"))
 						ThermalDynamicsRecipes.addRecipes();
+				if(RecipeChecker.modExists("ThermalExpansion"))
+						ThermalExpansionRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

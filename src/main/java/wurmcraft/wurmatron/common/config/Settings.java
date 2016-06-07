@@ -47,6 +47,7 @@ public class Settings {
 		public static boolean TechReborn;
 		public static boolean Thaumcraft;
 		public static boolean ThermalDynamics;
+		public static boolean ThermalExpansion;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -94,6 +95,7 @@ public class Settings {
 				if (modid.equalsIgnoreCase("techreborn")) return TechReborn;
 				if(modid.equalsIgnoreCase("Thaumcraft")) return Thaumcraft;
 				if(modid.equalsIgnoreCase("ThermalDynamics")) return ThermalDynamics;
+				if(modid.equalsIgnoreCase("ThermalExpansion")) return ThermalExpansion;
 				return false;
 		}
 }
