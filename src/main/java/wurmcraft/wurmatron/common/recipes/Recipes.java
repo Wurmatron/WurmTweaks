@@ -113,6 +113,8 @@ public class Recipes {
 						ThermalDynamicsRecipes.addRecipes();
 				if(RecipeChecker.modExists("ThermalExpansion"))
 						ThermalExpansionRecipes.addRecipes();
+				if(RecipeChecker.modExists("BiblioWoodsTFC"))
+						BibliocraftTFCRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

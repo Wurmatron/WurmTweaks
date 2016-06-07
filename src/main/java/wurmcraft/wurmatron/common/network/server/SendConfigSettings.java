@@ -62,6 +62,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("Thaumcraft", Settings.Thaumcraft);
 				data.setBoolean("ThermalDynamics", Settings.ThermalDynamics);
 				data.setBoolean("ThermalExpansion", Settings.ThermalExpansion);
+				data.setBoolean("BiblioWoodsTFC",  Settings.BiblioWoodsTFC);
 		}
 
 		@Override
@@ -122,5 +123,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.Thaumcraft = data.getBoolean("Thaumcraft");
 				Settings.ThermalDynamics = data.getBoolean("ThermalDynamics");
 				Settings.ThermalExpansion = data.getBoolean("ThermalExpansion");
+				Settings.BiblioWoodsTFC = data.getBoolean("BiblioWoodsTFC");
 		}
 }

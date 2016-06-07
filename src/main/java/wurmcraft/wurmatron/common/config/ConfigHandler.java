@@ -57,6 +57,7 @@ public class ConfigHandler {
 		private static Property Thaumcraft;
 		private static Property ThermalDynamics;
 		private static Property ThermalExpansion;
+		private static Property BiblioWoodsTFC;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -157,6 +158,8 @@ public class ConfigHandler {
 				Settings.ThermalDynamics = ThermalDynamics.getBoolean();
 				ThermalExpansion = config.get(Global.CATEGORY_MODS, "ThermalExpansion", true);
 				Settings.ThermalExpansion = ThermalExpansion.getBoolean();
+				BiblioWoodsTFC = config.get(Global.CATEGORY_MODS, "BiblioWoodsTFC", true);
+				Settings.BiblioWoodsTFC = BiblioWoodsTFC.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
