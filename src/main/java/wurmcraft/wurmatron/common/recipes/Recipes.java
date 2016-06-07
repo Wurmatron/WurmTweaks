@@ -100,7 +100,7 @@ public class Recipes {
 				if(RecipeChecker.modExists("WR-CBE|Core"))
 						WirelessRedstoneRecipes.addRecipes();
 				if(RecipeChecker.modExists("tfcm"))
-						WirelessRedstoneRecipes.addRecipes();
+						TerraFirmaCraftMiscRecipes.addRecipes();
 				if(RecipeChecker.modExists("SolarExpansion"))
 						SolarExpansionRecipes.addRecipes();
 				if(RecipeChecker.modExists("TConstruct"))
