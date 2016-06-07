@@ -49,6 +49,7 @@ public class Settings {
 		public static boolean ThermalDynamics;
 		public static boolean ThermalExpansion;
 		public static boolean BiblioWoodsTFC;
+		public static boolean Ztones;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -98,6 +99,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("ThermalDynamics")) return ThermalDynamics;
 				if(modid.equalsIgnoreCase("ThermalExpansion")) return ThermalExpansion;
 				if(modid.equalsIgnoreCase("BiblioWoodsTFC")) return BiblioWoodsTFC;
+				if(modid.equalsIgnoreCase("Ztones")) return Ztones;
 				return false;
 		}
 }

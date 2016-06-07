@@ -115,6 +115,8 @@ public class Recipes {
 						ThermalExpansionRecipes.addRecipes();
 				if(RecipeChecker.modExists("BiblioWoodsTFC"))
 						BibliocraftTFCRecipes.addRecipes();
+				if(RecipeChecker.modExists("Ztones"))
+						ZTonesRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

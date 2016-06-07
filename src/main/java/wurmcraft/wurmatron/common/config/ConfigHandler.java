@@ -58,6 +58,7 @@ public class ConfigHandler {
 		private static Property ThermalDynamics;
 		private static Property ThermalExpansion;
 		private static Property BiblioWoodsTFC;
+		private static Property Ztones;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -160,6 +161,8 @@ public class ConfigHandler {
 				Settings.ThermalExpansion = ThermalExpansion.getBoolean();
 				BiblioWoodsTFC = config.get(Global.CATEGORY_MODS, "BiblioWoodsTFC", true);
 				Settings.BiblioWoodsTFC = BiblioWoodsTFC.getBoolean();
+				Ztones = config.get(Global.CATEGORY_MODS, "Ztones", true);
+				Settings.Ztones = Ztones.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
