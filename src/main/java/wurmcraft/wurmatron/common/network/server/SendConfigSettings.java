@@ -57,6 +57,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("WR-CBE|Core", Settings.WirelessRedstone);
 				data.setBoolean("tfcm", Settings.TFCMisc);
 				data.setBoolean("SolarExpansion", Settings.SolarExpansion);
+				data.setBoolean("TConstruct", Settings.TConstruct);
 		}
 
 		@Override
@@ -112,5 +113,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.WirelessRedstone = data.getBoolean("WR-CBE|Core");
 				Settings.TFCMisc = data.getBoolean("tfcm");
 				Settings.SolarExpansion = data.getBoolean("SolarExpansion");
+				Settings.TConstruct = data.getBoolean("TConstruct");
 		}
 }

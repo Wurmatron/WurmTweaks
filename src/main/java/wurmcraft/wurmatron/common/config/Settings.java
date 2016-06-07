@@ -43,6 +43,7 @@ public class Settings {
 		public static boolean TFCMisc;
 		public static boolean WirelessRedstone;
 		public static boolean SolarExpansion;
+		public static boolean TConstruct;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -86,6 +87,7 @@ public class Settings {
 				if (modid.equalsIgnoreCase("WR-CBE|Core")) return WirelessRedstone;
 				if (modid.equalsIgnoreCase("tfcm")) return TFCMisc;
 				if(modid.equalsIgnoreCase("SolarExpansion")) return SolarExpansion;
+				if(modid.equalsIgnoreCase("TConstruct")) return TConstruct;
 				return false;
 		}
 }
