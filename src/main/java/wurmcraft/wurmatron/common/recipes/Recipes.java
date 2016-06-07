@@ -92,7 +92,7 @@ public class Recipes {
 				if(RecipeChecker.modExists("shincolle"))
 						ShinColleRecipes.addRecipes();
 				if (RecipeChecker.modExists("weightingscales")) {
-						TerrafirmacraftRecipes.addRecipes();
+						TerraFirmaCraftScalesRecipes.addRecipes();
 				}
 		}
 
