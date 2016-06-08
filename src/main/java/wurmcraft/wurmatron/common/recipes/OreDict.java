@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import vazkii.botania.common.block.ModBlocks;
+import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.utils.LogHandler;
@@ -220,8 +221,19 @@ public class OreDict {
 				add("packDoor", Blocks.wooden_door);
 				for (Block door : TFCBlocks.doors)
 						add("packDoor", door);
-				// TODO Add Gem Block Ore Dict "packGemBlock"
-				add("packGemBlock", Blocks.bedrock);
+				// Gem Blocks
+				add("packGemBlock", WurmTweaksBlocks.blockJasper);
+				add("packGemBlock", WurmTweaksBlocks.blockAmethyst);
+				add("packGemBlock", WurmTweaksBlocks.blockDiamond);
+				add("packGemBlock", WurmTweaksBlocks.blockRuby);
+				add("packGemBlock", WurmTweaksBlocks.blockSapphire);
+				add("packGemBlock", WurmTweaksBlocks.blockEmerald);
+				add("packGemBlock", WurmTweaksBlocks.blockTopaz);
+				add("packGemBlock", WurmTweaksBlocks.blockTourmaline);
+				add("packGemBlock", WurmTweaksBlocks.blockJade);
+				add("packGemBlock", WurmTweaksBlocks.blockAgate);
+				add("packGemBlock", WurmTweaksBlocks.blockOpal);
+				add("packGemBlock", WurmTweaksBlocks.blockGarnet);
 				// Logs
 				add("packLog", new ItemStack(TFCItems.logs, 1, OreDictionary.WILDCARD_VALUE));
 				// Anvil

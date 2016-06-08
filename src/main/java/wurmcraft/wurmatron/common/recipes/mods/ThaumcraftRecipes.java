@@ -36,13 +36,13 @@ public class ThaumcraftRecipes {
 				r.add2X(new ItemStack(ConfigBlocks.blockCosmeticOpaque, 1, 0), new ItemStack(ConfigItems.itemResource, 1, 6));
 				r.add2X(new ItemStack(ConfigBlocks.blockCosmeticOpaque, 1, 1), new ItemStack(ConfigBlocks.blockCosmeticOpaque, 1, 0));
 				r.addShaped(new ItemStack(ConfigBlocks.blockCosmeticOpaque, 2, 2), "GGG", "XAX", "GGG", 'G', "packGlass", 'X', WurmTweaksItems.itemMagicChunk, 'A', ConfigItems.itemZombieBrain);
-				r.addShaped(new ItemStack(ConfigBlocks.blockTable, 2, 0), "XXX", "SSS", "P P", 'P', 'P', new ItemStack(ConfigBlocks.blockWoodenDevice, 1, 6), 'S', "packLog", 'X', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(new ItemStack(ConfigBlocks.blockTable, 2, 0), "XXX", "SSS", "P P", 'P', new ItemStack(ConfigBlocks.blockWoodenDevice, 1, 6), 'S', "packLog", 'X', WurmTweaksItems.itemMagicChunk);
 				r.addShaped(new ItemStack(ConfigBlocks.blockCandle, 1, 0), "X", "D", "D", 'X', Items.string, 'D', new ItemStack(ConfigItems.itemResource, 1, 4));
 				for (int i = 1; i < 15; i++)
 						r.addShapeless(new ItemStack(ConfigBlocks.blockCandle, 1, i), new ItemStack(ConfigBlocks.blockCandle, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(i));
 				// TODO Aura Node Crafting
 				r.addShaped(new ItemStack(ConfigItems.itemWandCap, 1, 0), "III", "I I", 'I', TFCItems.wroughtIronSheet);
-				r.addShapeless(new ItemStack(ConfigItems.itemWandCasting, 1, 0), "C  ", " S ", "  C", 'C', new ItemStack(ConfigItems.itemWandCap, 1, 0), 'S', "packStick");
+				r.addShaped(new ItemStack(ConfigItems.itemWandCasting, 1, 0), "C  ", " S ", "  C", 'C', new ItemStack(ConfigItems.itemWandCap, 1, 0), 'S', "packStick");
 				r.addShaped(new ItemStack(ConfigItems.itemThaumometer, 1, 0), " S ", "XGX", " S ", 'S', TFCItems.redSteelSheet2x, 'X', TFCItems.blueSteelSheet2x, 'G', WurmTweaksItems.stableMagicEssence);
 				r.addShaped(new ItemStack(ConfigItems.itemThaumometer, 1, 0), " S ", "XGX", " S ", 'X', TFCItems.redSteelSheet2x, 'S', TFCItems.blueSteelSheet2x, 'G', WurmTweaksItems.stableMagicEssence);
 				r.addShaped(new ItemStack(ConfigItems.itemEssence, 4, 0), " C ", "G G", " G ", 'C', TFCItems.clayBall, 'G', "packGlass");
@@ -146,7 +146,7 @@ public class ThaumcraftRecipes {
 				ThaumcraftHelper.addShaped("DISTILESSENTIA", new ItemStack(ConfigBlocks.blockMetalDevice, 1, 9), new AspectList().add(Aspect.AIR, 20).add(Aspect.FIRE, 20), "XAX", "ACA", "XAX", 'X', WurmTweaksItems.itemMixedSheet, 'A', WurmTweaksItems.itemCraftingCore, 'C', new ItemStack(ConfigBlocks.blockMagicalLog, 1, 1));
 				ThaumcraftHelper.addShaped("JARLABEL", new ItemStack(ConfigBlocks.blockJar, 1, 0), new AspectList().add(Aspect.WATER, 2), "PXP", "P P", "PPP", 'P', Blocks.glass_pane, 'X', new ItemStack(ConfigBlocks.blockSlabWood, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ConfigItems.itemResource, 2, 13), Items.paper, Items.paper, "dye", Items.slime_ball);
-				ThaumcraftHelper.addShaped("JARVOID", new ItemStack(ConfigBlocks.blockJar, 1, 3), new AspectList().add(Aspect.ENTROPY, 20), "X", "J", "B", 'X', Blocks.obsidian, 'J', Items.ender_pearl, new ItemStack(ConfigBlocks.blockJar, 1, 0));
+				ThaumcraftHelper.addShaped("JARVOID", new ItemStack(ConfigBlocks.blockJar, 1, 3), new AspectList().add(Aspect.ENTROPY, 20), "X", "J", "B", 'X', Blocks.obsidian, 'J', Items.ender_pearl,'B', new ItemStack(ConfigBlocks.blockJar, 1, 0));
 				ThaumcraftHelper.addShaped("TUBES", new ItemStack(ConfigBlocks.blockTube, 3, 0), new AspectList().add(Aspect.WATER, 4), "SGS", 'G', "packGlass", 'S', WurmTweaksItems.itemMagicChunk);
 				ThaumcraftHelper.addShapeless("TUBES", new ItemStack(ConfigBlocks.blockTube, 1, 1), new AspectList().add(Aspect.ORDER, 8), new ItemStack(ConfigBlocks.blockTube, 1, 0), Blocks.lever);
 				ThaumcraftHelper.addShaped("TUBES", new ItemStack(ConfigItems.itemResonator, 1, 0), new AspectList().add(Aspect.AIR, 8), "W W", "WWW", " W ", 'W', new ItemStack(ConfigItems.itemResource, 1, 4));
