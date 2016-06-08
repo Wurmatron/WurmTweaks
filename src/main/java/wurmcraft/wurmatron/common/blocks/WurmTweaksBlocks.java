@@ -5,11 +5,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 
-// SkyStone Chest
 // Dark Matter
 // Red Matter
 public class WurmTweaksBlocks {
 
+		// Metal Blocks
 		public static Block blockCompressedRedstone;
 		public static Block blockWroughtIron;
 		public static Block blockPlatinum;
@@ -32,7 +32,20 @@ public class WurmTweaksBlocks {
 		public static Block blockRoseGold;
 		public static Block blockZinc;
 		public static Block blockTin;
-		public static Block blockUnkownIngot;
+		public static Block blockUnkown;
+		// Gem Blocks
+		public static Block blockJasper;
+		public static Block blockAmethyst;
+		public static Block blockDiamond;
+		public static Block blockRuby;
+		public static Block blockSapphire;
+		public static Block blockEmerald;
+		public static Block blockTopaz;
+		public static Block blockTourmaline;
+		public static Block blockJade;
+		public static Block blockAgate;
+		public static Block blockOpal;
+		public static Block blockGarnet;
 
 		public static void registerBlocks () {
 				blockWroughtIron = registerBlock(new BlockBasic("blockWroughtIron", Material.iron));
@@ -57,7 +70,20 @@ public class WurmTweaksBlocks {
 				blockRoseGold = registerBlock(new BlockBasic("blockRoseGold", Material.iron));
 				blockZinc = registerBlock(new BlockBasic("blockZinc", Material.iron));
 				blockTin = registerBlock(new BlockBasic("blockTin", Material.iron));
-				blockUnkownIngot = registerBlock(new BlockBasic("blockUnkownIngot", Material.iron));
+				blockUnkown = registerBlock(new BlockBasic("blockUnkown", Material.iron));
+				// Gem Blocks
+				blockJasper = registerBlock(new BlockBasic("blockJasper", Material.iron));
+				blockAmethyst = registerBlock(new BlockBasic("blockAmethyst", Material.iron));
+				blockDiamond = registerBlock(new BlockBasic("blockDiamond", Material.iron));
+				blockRuby = registerBlock(new BlockBasic("blockRuby", Material.iron));
+				blockSapphire = registerBlock(new BlockBasic("blockSapphire", Material.iron));
+				blockEmerald = registerBlock(new BlockBasic("blockEmerald", Material.iron));
+				blockTopaz = registerBlock(new BlockBasic("blockTopaz", Material.iron));
+				blockTourmaline = registerBlock(new BlockBasic("blockTourmaline", Material.iron));
+				blockJade = registerBlock(new BlockBasic("blockJade", Material.iron));
+				blockAgate = registerBlock(new BlockBasic("blockAgate", Material.iron));
+				blockOpal = registerBlock(new BlockBasic("blockOpal", Material.iron));
+				blockGarnet = registerBlock(new BlockBasic("blockGarnet", Material.iron));
 		}
 
 		private static Block registerBlock (Block block) {
