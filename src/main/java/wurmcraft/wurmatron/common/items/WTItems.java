@@ -61,6 +61,7 @@ public class WTItems {
 				itemMaterialNames.add("jetpackParts");
 				itemMaterialNames.add("electroMagneticShielding");
 				itemMaterialNames.add("electroShielding");
+				itemMaterialNames.add("wandParts");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");

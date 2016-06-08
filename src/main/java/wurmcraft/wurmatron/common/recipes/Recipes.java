@@ -121,6 +121,8 @@ public class Recipes {
 						SoulShardsRecipes.addRecipes();
 				if(RecipeChecker.modExists("IC2NuclearControl"))
 						IC2NuclearControlRecipes.addRecipes();
+				if(RecipeChecker.modExists("Thaumcraft"))
+						ThaumcraftRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
