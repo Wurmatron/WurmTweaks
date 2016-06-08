@@ -2,26 +2,14 @@ package wurmcraft.wurmatron.common.items;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.util.EnumChatFormatting;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WTItems {
 
-		public static ArrayList<String> itemMaterialNames = new ArrayList<String>();
-
-		public static Item itemMaterial;
-		public static Item creditBismuth;
-		public static Item creditCopper;
-		public static Item creditGold;
-		public static Item creditIron;
-		public static Item creditLead;
-		public static Item creditNickel;
-		public static Item creditPlatinum;
-		public static Item creditSilver;
-		public static Item creditTin;
-		public static Item creditZinc;
-
-		public static void registerItems () {
+		public static ArrayList<String> itemMaterialNames = new ArrayList<String>() {{
 				itemMaterialNames.add("solarCore");
 				itemMaterialNames.add("craftingCore");
 				itemMaterialNames.add("greenSteel");
@@ -62,7 +50,28 @@ public class WTItems {
 				itemMaterialNames.add("electroMagneticShielding");
 				itemMaterialNames.add("electroShielding");
 				itemMaterialNames.add("wandParts");
+		}};
+		public static HashMap<String, EnumChatFormatting> itemSpecialNames = new HashMap<String, EnumChatFormatting>() {{
+				put("darkMatter", EnumChatFormatting.DARK_BLUE);
+				put("redMatter", EnumChatFormatting.DARK_RED);
+		}};
+
+		public static Item itemMaterial;
+		public static Item itemSpecial;
+		public static Item creditBismuth;
+		public static Item creditCopper;
+		public static Item creditGold;
+		public static Item creditIron;
+		public static Item creditLead;
+		public static Item creditNickel;
+		public static Item creditPlatinum;
+		public static Item creditSilver;
+		public static Item creditTin;
+		public static Item creditZinc;
+
+		public static void registerItems () {
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
+				registerItem(itemSpecial = new ItemSpecial(itemSpecialNames), "itemSpecial");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
 				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");

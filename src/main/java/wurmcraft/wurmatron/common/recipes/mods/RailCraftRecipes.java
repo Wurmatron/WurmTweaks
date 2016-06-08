@@ -31,6 +31,8 @@ import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
 import java.util.ArrayList;
 
+
+// TODO Fix Track Recipes
 public class RailCraftRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
@@ -124,7 +126,7 @@ public class RailCraftRecipes {
 				r.addCrossWCenter(new ItemStack(RailcraftBlocks.getBlockMachineEpsilon(), 1, 0), new ItemStack(TFCItems.steelSheet), IC2Items.getItem("glassFiberCableItem"), WurmTweaksBlocks.blockCompressedRedstone);
 				r.addCrossWCenter(new ItemStack(RailcraftBlocks.getBlockMachineEpsilon(), 1, 4), new ItemStack(TFCItems.copperSheet), IC2Items.getItem("glassFiberCableItem"), WurmTweaksBlocks.blockCompressedRedstone);
 				r.addCrossWCenter(new ItemStack(RailcraftBlocks.getBlockMachineEpsilon(), 8, 3), new ItemStack(TFCItems.copperSheet), "packGemExquisite", WurmTweaksBlocks.blockCompressedRedstone);
-				r.addShaped(new ItemStack(BlockRCAnvil.getBlock(), 1, 0), "BBB", " I ", "III", 'B', WurmTweaksBlocks.blockCompressedRedstone, 'I', TFCItems.steelIngot);
+				r.addShaped(new ItemStack(BlockRCAnvil.getBlock(), 1, 0), "BBB", " I ", "III", 'B', WurmTweaksBlocks.blockSteel, 'I', TFCItems.steelIngot);
 				r.addShapeless(new ItemStack(EnumPost.WOOD.getItem().getItem(), 2), new ItemStack(RailcraftItem.tie.item()));
 				r.addShaped(new ItemStack(EnumPost.STONE.getItem().getItem(), 2), "SRS", "SRS", "SRS", 'S', RailcraftItem.rebar.getStack(), 'S', "packSmoothStone");
 				r.addShaped(new ItemStack(EnumPost.METAL_UNPAINTED.getItem().getItem(), 4), "SRS", "SRS", 'S', RailcraftItem.rebar.getStack(), 'S', TFCItems.steelIngot);

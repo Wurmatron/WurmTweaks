@@ -28,6 +28,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
+import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
 
 public class ThermalExpansionRecipes {
@@ -69,6 +70,7 @@ public class ThermalExpansionRecipes {
 				r.addShaped(TEHelper.getPower("Resonant"), " R ", "BCB", "GXG", 'R', new ItemStack(Items.redstone), 'B', new ItemStack(TFCItems.silverSheet), 'C', new ItemStack(TEBlocks.blockFrame, 1, 3), 'G', WurmTweaksItems.itemMixedSheet, 'X', "packGemExquisite");
 				r.addShaped(ItemNBT.addDamage(TEItems.toolWrench, 120), "I I", " T ", " I ", 'I', new ItemStack(TFCItems.wroughtIronIngot), 'T', new ItemStack(TFCItems.tinIngot));
 				r.addShaped(TEItems.toolMultimeter, "C C", "LPL", " G ", 'C', new ItemStack(TFCItems.copperIngot), 'L', new ItemStack(TFCItems.leadIngot), 'P', cofh.thermalexpansion.item.TEItems.powerCoilElectrum, 'G', new ItemStack(TFCItems.roseGoldSheet2x));
+				r.addShaped(TEItems.capacitorPotato, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.leadIngot), 'R', new ItemStack(Items.redstone), 'X', TFCHelper.getFood(TFCItems.potato,160), 'Y', "dustSulfur");
 				r.addShaped(TEItems.capacitorBasic, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.leadIngot), 'R', new ItemStack(Items.redstone), 'X', new ItemStack(TFCItems.blackSteelIngot), 'Y', "dustSulfur");
 				r.addShaped(TEItems.capacitorHardened, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.nickelIngot), 'R', new ItemStack(Items.redstone), 'X', cofh.thermalexpansion.item.TEItems.capacitorBasic, 'Y', new ItemStack(TFCItems.blueSteelIngot));
 				r.addShaped(TEItems.capacitorHardened, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.nickelIngot), 'R', new ItemStack(Items.redstone), 'X', cofh.thermalexpansion.item.TEItems.capacitorBasic, 'Y', new ItemStack(TFCItems.blueSteelIngot));

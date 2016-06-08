@@ -38,11 +38,13 @@ public class OpenBlocksRecipes {
 				r.addShaped(new ItemStack(OpenBlocks.Items.generic, 1, 0), " SL", "SLL", "LLL", 'S', "packStick", 'L', new ItemStack(TFCItems.leather));
 				r.addShaped(new ItemStack(OpenBlocks.Items.generic, 1, 0), " SL", "SLL", "LLL", 'S', "packStick", 'L',"packCloth");
 				r.addShaped(new ItemStack(OpenBlocks.Items.generic, 1, 0), "LS ", "LLS", "LLL", 'S', "packStick", 'L', new ItemStack(TFCItems.leather));
+				r.addShaped(new ItemStack(OpenBlocks.Items.generic, 1, 0), "LS ", "LLS", "LLL", 'S', "packStick", 'L', "packCloth");
 				r.addShaped(new ItemStack(OpenBlocks.Items.generic, 1, 11), "C  ", " S ", "  S", 'S', "packStick", 'C', new ItemStack(TFCItems.coal));
 				r.addShaped(new ItemStack(OpenBlocks.Blocks.drawingTable, 1, 0), "SPS", "ICI", "III", 'S', new ItemStack(OpenBlocks.Items.generic, 1, 10), 'P', new ItemStack(OpenBlocks.Items.generic, 1, 11), 'C', new ItemStack(Blocks.crafting_table), 'I', new ItemStack(TFCItems.bismuthIngot));
 				r.addShaped(new ItemStack(OpenBlocks.Items.sleepingBag, 1, 0), "CCC", "PPP", 'C', new ItemStack(TFCItems.silkCloth), 'P', "packPlanks");
 				r.addShaped(new ItemStack(OpenBlocks.Items.paintBrush, 1, 0), "C  ", " S ", "  S", 'C', new ItemStack(TFCItems.silkCloth), 'S', "packStick");
 				r.addShaped(new ItemStack(OpenBlocks.Items.devNull, 1, 0), "RR ", "S S", " RR", 'R', "packCobble", 'S', TFCItems.redSteelSheet);
+				// TODO dev/null + dsu
 				r.addShapeless(new ItemStack(OpenBlocks.Blocks.fan, 1, 0), Items.redstone, TFCItems.blueSteelSheet, Items.glowstone_dust);
 		}
 }

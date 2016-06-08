@@ -17,7 +17,7 @@ public class ItemCredit extends Item {
 
 		private String name;
 		private IIcon[] icons;
-		public static int[] units = new int[] {30,50,70,60,100,140};
+		public static int[] units = new int[] {30, 50, 70, 60, 100, 140};
 
 		public ItemCredit (String creditName) {
 				setCreativeTab(CreativeTabs.tabMaterials);
@@ -51,7 +51,10 @@ public class ItemCredit extends Item {
 
 		@Override
 		public void addInformation (ItemStack stack, EntityPlayer player, List list, boolean adv) {
+				list.add(EnumChatFormatting.GRAY + "" + units[stack.getItemDamage()] + "units per piece");
 				list.add(EnumChatFormatting.AQUA + "" + (units[stack.getItemDamage()] * stack.stackSize) + " units");
+				list.add(EnumChatFormatting.AQUA + "" + ((units[stack.getItemDamage()] * stack.stackSize) / 100) + " ingots");
+				list.add(EnumChatFormatting.AQUA + "" + ((units[stack.getItemDamage()] * stack.stackSize) * 10) + " mb");
 				super.addInformation(stack, player, list, adv);
 		}
 }

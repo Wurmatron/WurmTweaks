@@ -13,6 +13,7 @@ import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
 
+// TC Tool Materials
 public class TConstructRecipes {
 
 		private static RecipeHelper r = new RecipeHelper();
@@ -67,13 +68,14 @@ public class TConstructRecipes {
 				r.addShapeless(new ItemStack(TinkerTools.craftingSlabWood, 1, 3), new ItemStack(TinkerTools.toolStationWood, 1, 12));
 				r.addShapeless(new ItemStack(TinkerTools.craftingSlabWood, 1, 3), new ItemStack(TinkerTools.toolStationWood, 1, 13));
 				r.addShapeless(new ItemStack(TinkerTools.craftingSlabWood, 1, 4), new ItemStack(TinkerTools.toolForge, 1, 5));
-				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 5), "III", "CSC", "III", 'I', TFCItems.goldSheet2x, 'C', "packChest", 'S', Blocks.bookshelf);
 				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 0), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockWroughtIron, 'S', WurmTweaksItems.itemMixedSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 1), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockGold, 'S', WurmTweaksItems.itemMixedSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 9), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockSilver, 'S', WurmTweaksItems.itemMixedSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 13), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockSteel, 'S', WurmTweaksItems.itemMixedSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 10), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockPlatinum, 'S', WurmTweaksItems.itemMixedSheet);
-				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 11), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockBronze, 'S', WurmTweaksItems.itemMixedSheet);
+				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 3), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockEmerald, 'S', WurmTweaksItems.itemMixedSheet);
+				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 8), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockBronze, 'S', WurmTweaksItems.itemMixedSheet);
+				r.addShaped(new ItemStack(TinkerTools.toolForge, 1, 2), "SSS", "B B", "B B", 'B', WurmTweaksBlocks.blockDiamond, 'S', WurmTweaksItems.itemMixedSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 10), "SSS", "L L", "L L", 'S', "packLog", 'L', TFCItems.blackSteelSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 11), "SSS", "L L", "L L", 'S', "packLog", 'L', TFCItems.blackSteelSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 12), "SSS", "L L", "L L", 'S', "packLog", 'L', TFCItems.blackSteelSheet);
