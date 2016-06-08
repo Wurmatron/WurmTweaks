@@ -7,9 +7,12 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.common.MinecraftForge;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
+import wurmcraft.wurmatron.common.events.EntityInteract;
 import wurmcraft.wurmatron.common.events.JoinGameEvent;
+import wurmcraft.wurmatron.common.handler.LootHandler;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.network.PacketHandler;
 import wurmcraft.wurmatron.common.proxy.CommonProxy;
@@ -36,6 +39,7 @@ public class WurmTweaks {
 				WurmTweaksBlocks.registerBlocks();
 				PacketHandler.registerPackets();
 				FMLCommonHandler.instance().bus().register(new JoinGameEvent());
+				MinecraftForge.EVENT_BUS.register(new EntityInteract());
 		}
 
 		@Mod.EventHandler
@@ -46,6 +50,7 @@ public class WurmTweaks {
 		@Mod.EventHandler
 		public void serverStarting (FMLServerStartingEvent e) {
 				Recipes.checkSettings();
+				LootHandler.init();
 				// TODO e.registerServerCommand(new WTCommand());
 		}
 

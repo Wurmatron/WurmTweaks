@@ -24,7 +24,7 @@ public class AdvancedSolarPanelRecipes {
 
 		@Optional.Method (modid = "AdvancedSolarPanel")
 		public static void addRecipes () {
-				LogHandler.info("Adding recipes for Advanced solar panels");
+				LogHandler.info("Adding Advanced Solar Panel Recipes");
 				r.addShaped(new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 0), "GGG", "BCB", "XSX", 'G', AdvancedSolarPanel.itemIrradiantGlassPane, 'B', IC2Items.getItem("advancedMachine"), 'C', WurmTweaksItems.itemSolarCore, 'X', IC2Items.getItem("advancedCircuit"), 'S', IC2Items.getItem("solarPanel"));
 				r.addShaped(new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 1), "SXS", "BCB", "PGP", 'S', TFCItems.platinumSheet2x, 'X', AdvancedSolarPanel.itemIrradiantReinforcedPlate, 'B', IC2Items.getItem("advancedMachine"), 'C', new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 0), 'P', WurmTweaksItems.itemCraftingCore, 'G', WurmTweaksItems.ingotGreenSteel);
 				r.addCircleWCenter(new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 2), new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 1), AdvancedSolarPanel.itemEnrichedSunnariumAlloy);
@@ -34,7 +34,7 @@ public class AdvancedSolarPanelRecipes {
 				r.addShapeless(new ItemStack(AdvancedSolarPanel.hybridSolarHelmet), new ItemStack(IC2Items.getItem("quantumHelmet").getItem(), 1, OreDictionary.WILDCARD_VALUE), new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 1));
 				r.addShapeless(new ItemStack(AdvancedSolarPanel.ultimateSolarHelmet), new ItemStack(IC2Items.getItem("quantumHelmet").getItem(), 1, OreDictionary.WILDCARD_VALUE), new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 2));
 				r.addShaped(AdvancedSolarPanel.itemIrradiantGlassPane, "GGG", "IXI", "GGG", 'G', "packGlass", 'I', AdvancedSolarPanel.itemIrradiantUranium, 'X', IC2Items.getItem("advancedAlloy"));
-				r.addShaped(AdvancedSolarPanel.itemIrradiantGlassPane, "GGG", "IXI", "GGG", 'G', IC2Items.getItem("reinforcedGlass").getItem(), 'I', AdvancedSolarPanel.itemIrradiantUranium, 'X', IC2Items.getItem("advancedAlloy"));
+				r.addShaped(new ItemStack(AdvancedSolarPanel.itemIrradiantGlassPane.getItem(),8,5), "GGG", "IXI", "GGG", 'G', IC2Items.getItem("reinforcedGlass").getItem(), 'I', AdvancedSolarPanel.itemIrradiantUranium, 'X', IC2Items.getItem("advancedAlloy"));
 				r.addCrossWCenter(AdvancedSolarPanel.itemQuantumCore, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.ingotGreenSteel, new ItemStack(TFCItems.unknownIngot));
 				r.addCross(AdvancedSolarPanel.itemMTCore, IC2Items.getItem("advancedAlloy"), AdvancedSolarPanel.itemQuantumCore);
 				r.add3X(AdvancedSolarPanel.itemSunnarium, AdvancedSolarPanel.itemSunnariumPart);

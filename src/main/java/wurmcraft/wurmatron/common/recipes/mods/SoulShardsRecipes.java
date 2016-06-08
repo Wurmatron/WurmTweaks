@@ -11,6 +11,10 @@ import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/8/2016 with 1.6a
+ */
 public class SoulShardsRecipes {
 
 		private static RecipeHelper r = new RecipeHelper();

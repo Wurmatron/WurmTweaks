@@ -1,7 +1,8 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
-import cofh.thermaldynamics.item.TDItems;
+import cofh.thermaldynamics.duct.TDDucts;
 import com.bioxx.tfc.api.TFCItems;
+import cpw.mods.fml.common.Optional;
 import ic2.api.item.IC2Items;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -15,6 +16,7 @@ public class IC2Recipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
+		@Optional.Method(modid = "IC2")
 		public static void addRecipes () {
 				r.addCircleWCenter(new ItemStack(IC2Items.getItem("reinforcedStone").getItem(), 8), "packSmoothStone", IC2Items.getItem("advancedAlloy"));
 				r.addCircleWCenter(new ItemStack(IC2Items.getItem("reinforcedGlass").getItem(), 8), "packGlass", IC2Items.getItem("advancedAlloy"));
@@ -31,7 +33,7 @@ public class IC2Recipes {
 				r.addShaped(IC2Items.getItem("semifluidGenerator"), "IFI", "FGF", "IFI", 'I', new ItemStack(TFCItems.wroughtIronSheet2x), 'F', IC2Items.getItem("FluidCell"), 'G', IC2Items.getItem("geothermalGenerator"));
 				r.addShaped(IC2Items.getItem("stirlingGenerator"), "IFI", "IGI", "III", 'I', new ItemStack(TFCItems.wroughtIronSheet2x), 'F', IC2Items.getItem("heatconductor"), 'G', IC2Items.getItem("generator"));
 				r.addShaped(IC2Items.getItem("kineticGenerator"), "III", "GMS", "III", 'I', new ItemStack(TFCItems.wroughtIronSheet2x), 'M', IC2Items.getItem("elemotor"), 'G', IC2Items.getItem("generator"), 'S', TFCItems.steelSheet2x);
-				r.addBasicMachineRecipe(IC2Items.getItem("reactorFluidPort"), TFCItems.leadSheet2x, TDItems.ductFluidHardened, Blocks.piston, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(IC2Items.getItem("reactorFluidPort"), TFCItems.leadSheet2x, new ItemStack(TDDucts.fluidBasic.itemStack.getItem(), 1, 2), Blocks.piston, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(IC2Items.getItem("reactorAccessHatch"), TFCItems.leadSheet2x, WurmTweaksItems.itemRadiationShielding, "packChest", WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(IC2Items.getItem("reactorRedstonePort"), TFCItems.leadSheet2x, WurmTweaksItems.itemRadiationShielding, Items.redstone, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(IC2Items.getItem("reactorvessel"), TFCItems.leadSheet2x, WurmTweaksItems.itemRadiationShielding, TFCItems.roseGoldSheet, WurmTweaksItems.itemMachineFrame);

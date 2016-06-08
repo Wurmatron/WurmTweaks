@@ -24,7 +24,7 @@ public class ItemCredit extends Item {
 				setUnlocalizedName(creditName);
 				setHasSubtypes(true);
 				name = creditName;
-				icons = new IIcon[6];
+				icons = new IIcon[7];
 		}
 
 		@Override

@@ -17,8 +17,15 @@ import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
+import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
+import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/8/2016 with 1.4.0.009 (Used Custom Jar from Modpack)
+ */
 public class AM2Recipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
@@ -28,18 +35,16 @@ public class AM2Recipes {
 				LogHandler.info("Adding AM2 Recipes");
 				r.addBasicMachineRecipe(BlocksCommonProxy.essenceRefiner, "packPlanks", WurmTweaksItems.ingotRainbowSteel, Items.nether_star, new ItemStack(BlocksCommonProxy.AMOres, 1, 6));
 				r.addShaped(BlocksCommonProxy.essenceConduit, " T ", "XSX", "SSS", 'T', new ItemStack(EnderIO.itemMaterial, 1, 8), 'X', "packSmoothStone", 'S', WurmTweaksItems.ingotOrangeSteel);
-				r.addCrossWCenter(BlocksCommonProxy.obelisk, "dustVintium", WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
+				r.addCrossWCenter(BlocksCommonProxy.obelisk, new ItemStack(ItemsCommonProxy.itemOre, 1, 0), WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
 				r.add3X(BlocksCommonProxy.astralBarrier, WurmTweaksItems.itemMagicChunk);
 				r.addShaped(BlocksCommonProxy.seerStone, " E ", "SSS", "BBB", 'E', WurmTweaksItems.itemMagicChunk, 'S', "packSmoothStone", 'B', Blocks.lapis_block);
-				//TODO AM2 Block Compressor Recipes
-				//TODO AM2 Flower Recipes
 				r.addCrossWCenter(BlocksCommonProxy.keystoneChest, "packPlanks", "packRune", "packDoor");
 				r.addShaped(BlocksCommonProxy.blockLectern, "BBB", "XXX", "PPP", 'P', "packPlanks", 'B', WurmTweaksItems.ingotBrownSteel, 'X', WurmTweaksItems.itemMagicChunk);
-				r.addCrossWCenter(BlocksCommonProxy.manaBattery, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, "dustVintium");
-				r.addShapeless(new ItemStack(BlocksCommonProxy.magicWall,4), "dustVintium", WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotCyanSteel);
+				r.addCrossWCenter(BlocksCommonProxy.manaBattery, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, new ItemStack(ItemsCommonProxy.itemOre, 1, 0));
+				r.addShapeless(new ItemStack(BlocksCommonProxy.magicWall, 4), new ItemStack(ItemsCommonProxy.itemOre, 1, 0), WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotCyanSteel);
 				r.addShaped(BlocksCommonProxy.occulus, "XAX", " N ", "BAB", 'N', Items.nether_star, 'X', WurmTweaksItems.itemMagicChunk, 'A', "packRune", 'B', WurmTweaksBlocks.blockPlatinum);
-				r.addShapeless(BlocksCommonProxy.craftingAltar, "packGemBlock", "dustVintium", new ItemStack(BlocksCommonProxy.magicWall,1,0));
-				r.addShaped(new ItemStack(BlocksCommonProxy.vinteumTorch, 8), "V", "S", 'S', "packStick", 'V', "dustVintium");
+				r.addShapeless(BlocksCommonProxy.craftingAltar, "packGemBlock", new ItemStack(ItemsCommonProxy.itemOre, 1, 0), new ItemStack(BlocksCommonProxy.magicWall, 1, 0));
+				r.addShaped(new ItemStack(BlocksCommonProxy.vinteumTorch, 8), "V", "S", 'S', "packStick", 'V', new ItemStack(ItemsCommonProxy.itemOre, 1, 0));
 				r.addBasicMachineRecipe(BlocksCommonProxy.particleEmitter, WurmTweaksBlocks.blockGold, "dye", "packGemBlock", WurmTweaksItems.ingotCyanSteel);
 				r.addShaped(BlocksCommonProxy.inscriptionTable, "ABC", "SSS", "L L", 'L', "packLog", 'S', "packPlanks", 'A', WurmTweaksBlocks.blockSterlingSilver, 'B', WurmTweaksItems.itemMagicChunk, 'C', Items.feather);
 				r.addShapeless(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 2), BlocksCommonProxy.witchwoodLog);
@@ -52,7 +57,7 @@ public class AM2Recipes {
 				r.addShaped(BlocksCommonProxy.magiciansWorkbench, "BAB", "PCP", "PPP", 'B', WurmTweaksBlocks.blockGold, 'A', WurmTweaksItems.itemMagicChunk, 'P', "packPlanks", 'C', "packCraftingTable");
 				r.addShapeless(BlocksCommonProxy.everstone, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotRainbowSteel, new ItemStack(LudicrousItems.beesource, 1, 4));
 				r.addCrossWCenter(BlocksCommonProxy.keystoneTrapDoor, WurmTweaksItems.itemMagicChunk, "packPlanks", "packTrapDoor");
-				r.addCrossWCenter(BlocksCommonProxy.elementalAttuner, WurmTweaksItems.itemMagicChunk, "dustVintium", WurmTweaksItems.itemCraftingCore);
+				r.addCrossWCenter(BlocksCommonProxy.elementalAttuner, WurmTweaksItems.itemMagicChunk, new ItemStack(ItemsCommonProxy.itemOre, 1, 0), WurmTweaksItems.itemCraftingCore);
 				r.addBasicMachineRecipe(BlocksCommonProxy.flickerLure, WurmTweaksItems.itemMagicChunk, WurmTweaksBlocks.blockSilver, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.ingotOrangeSteel);
 				r.addShapeless(BlocksCommonProxy.illusionBlock, "packSmoothStone", WurmTweaksItems.ingotRainbowSteel);
 				r.addShapeless(new ItemStack(BlocksCommonProxy.crystalMarker, 1, 0), WurmTweaksItems.itemMagicChunk, Blocks.piston);
@@ -64,12 +69,12 @@ public class AM2Recipes {
 				r.addShapeless(new ItemStack(BlocksCommonProxy.crystalMarker, 1, 6), Items.paper, new ItemStack(BlocksCommonProxy.crystalMarker, 1, 1));
 				r.addShapeless(new ItemStack(BlocksCommonProxy.crystalMarker, 1, 7), WurmTweaksItems.ingotRainbowSteel, new ItemStack(BlocksCommonProxy.crystalMarker, 1, 1));
 				r.addShapeless(new ItemStack(BlocksCommonProxy.crystalMarker, 1, 8), WurmTweaksItems.itemMagicChunk, new ItemStack(BlocksCommonProxy.crystalMarker, 1, 1));
-				r.addShaped(ItemsCommonProxy.crystalPhylactery, " M ", "GVG", " M ", 'M', new ItemStack(ItemsCommonProxy.itemOre, 1, 7), 'G', "packGlass", 'V', "dustVintium");
-				r.addShapeless(ItemsCommonProxy.legendaryManaPotion, "dustVintium", WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.greaterManaPotion);
-				r.addShapeless(ItemsCommonProxy.epicManaPotion, "dustVintium", WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.greaterManaPotion);
-				r.addShapeless(ItemsCommonProxy.greaterManaPotion, "dustVintium", WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.standardManaPotion);
-				r.addShapeless(ItemsCommonProxy.standardManaPotion, "dustVintium", WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.lesserManaPotion);
-				r.addShapeless(ItemsCommonProxy.lesserManaPotion, WurmTweaksItems.itemMagicChunk, "dustVintium", TFCHelper.getFood(TFCItems.sugar, 160));
+				r.addShaped(ItemsCommonProxy.crystalPhylactery, " M ", "GVG", " M ", 'M', new ItemStack(ItemsCommonProxy.itemOre, 1, 7), 'G', "packGlass", 'V', new ItemStack(ItemsCommonProxy.itemOre, 1, 0));
+				r.addShapeless(ItemsCommonProxy.legendaryManaPotion, new ItemStack(ItemsCommonProxy.itemOre, 1, 0), WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.greaterManaPotion);
+				r.addShapeless(ItemsCommonProxy.epicManaPotion, new ItemStack(ItemsCommonProxy.itemOre, 1, 0), WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.greaterManaPotion);
+				r.addShapeless(ItemsCommonProxy.greaterManaPotion, new ItemStack(ItemsCommonProxy.itemOre, 1, 0), WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.standardManaPotion);
+				r.addShapeless(ItemsCommonProxy.standardManaPotion, new ItemStack(ItemsCommonProxy.itemOre, 1, 0), WurmTweaksItems.itemMagicChunk, ItemsCommonProxy.lesserManaPotion);
+				r.addShapeless(ItemsCommonProxy.lesserManaPotion, WurmTweaksItems.itemMagicChunk, new ItemStack(ItemsCommonProxy.itemOre, 1, 0), TFCHelper.getFood(TFCItems.sugar, 160));
 				r.addShaped(ItemsCommonProxy.spellStaffMagitech, " IC", "I I", "II ", 'I', WurmTweaksItems.ingotOrangeSteel, 'C', WurmTweaksItems.itemMagicChunk);
 				for (ItemStack meat : OreDictionary.getOres("packMeat"))
 						r.addShapeless(ItemsCommonProxy.mobFocus, ItemsCommonProxy.standardFocus, meat);
@@ -138,13 +143,44 @@ public class AM2Recipes {
 				r.addShapeless(new ItemStack(ItemsCommonProxy.manaPotionBundle, 1, 512), ItemsCommonProxy.greaterManaPotion, ItemsCommonProxy.greaterManaPotion, ItemsCommonProxy.greaterManaPotion, Items.string);
 				r.addShapeless(new ItemStack(ItemsCommonProxy.manaPotionBundle, 1, 771), ItemsCommonProxy.epicManaPotion, ItemsCommonProxy.epicManaPotion, ItemsCommonProxy.epicManaPotion, Items.string);
 				r.addShapeless(new ItemStack(ItemsCommonProxy.manaPotionBundle, 1, 1027), ItemsCommonProxy.legendaryManaPotion, ItemsCommonProxy.legendaryManaPotion, ItemsCommonProxy.legendaryManaPotion, Items.string);
+				r.addBasicMachineRecipe(new ItemStack(ItemsCommonProxy.rune, 1, 1), TFCItems.steelIngot, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotRainbowSteel);
+				r.addCrossWCenter(new ItemStack(ItemsCommonProxy.standardFocus, 1, 0), WurmTweaksItems.itemMagicChunk, "packGlass", ItemsCommonProxy.lesserFocus);
+				r.addCrossWCenter(new ItemStack(ItemsCommonProxy.greaterFocus, 1, 0), WurmTweaksItems.itemMagicChunk, "packGlass", ItemsCommonProxy.standardFocus);
+				r.addShapeless(ItemsCommonProxy.chargeFocus, ItemsCommonProxy.standardFocus, Items.redstone);
+				r.addShapeless(ItemsCommonProxy.playerFocus, ItemsCommonProxy.standardFocus, new ItemStack(Items.skull, 1, OreDictionary.WILDCARD_VALUE));
 				addRefinerRecipes();
 				if (RecipeChecker.modExists("Avaritia"))
 						r.addShaped9X9Recipe(BlocksCommonProxy.armorInfuser, "MMMBBBMMM", "MMMBBBMMM", "MMMBBBMMM", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", 'O', Blocks.obsidian, 'M', new ItemStack(ItemsCommonProxy.itemOre, 1, 7), 'B', "packGemBlock");
+				if (RecipeChecker.modExists("techreborn"))
+						addCentrifugeRecipe();
+				if (RecipeChecker.modExists("IC2"))
+						addCompressorRecipes();
+				addSawMillRecipes();
 		}
 
 		@Optional.Method (modid = "arsmagica2")
 		private static void addRefinerRecipes () {
 				RecipesEssenceRefiner.essenceRefinement().AddRecipe(new ItemStack[] {new ItemStack(Items.blaze_powder), new ItemStack(TFCItems.coal, 1, 0), new ItemStack(TFCItems.coal), new ItemStack(Items.blaze_powder), new ItemStack(ItemsCommonProxy.itemOre, 1, 2), new ItemStack(ItemsCommonProxy.essence, 1, 3)}, new ItemStack(ItemsCommonProxy.essence, 1, 3));
+		}
+
+		@Optional.Method (modid = "techreborn")
+		private static void addCentrifugeRecipe () {
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.blueSteelIngot), null, new ItemStack(BlocksCommonProxy.cerublossom, 4), null, null, null, 200, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.blackBronzeIngot), null, new ItemStack(BlocksCommonProxy.desertNova, 4), null, null, null, 200, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Items.golden_apple, 1, 0), null, new ItemStack(BlocksCommonProxy.aum, 4), null, null, null, 200, 128);
+				TechRebornHelper.addCentrifugeRecipe(WurmTweaksItems.ingotBrownSteel, null, new ItemStack(BlocksCommonProxy.tarmaRoot, 4), null, null, null, 200, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.redSteelIngot), null, new ItemStack(BlocksCommonProxy.wakebloom, 4), null, null, null, 200, 128);
+				for (ItemStack sapling : OreDictionary.getOres("packSapling"))
+						TechRebornHelper.addCentrifugeRecipe(sapling, null, new ItemStack(BlocksCommonProxy.witchwoodSapling, 2), null, null, null, 800, 512);
+		}
+
+		@Optional.Method (modid = "IC2")
+		private static void addCompressorRecipes () {
+				for (int o = 0; o < 4; o++)
+						ICHelper.addCompressorRecipe(new ItemStack(BlocksCommonProxy.AMOres, 1, o + 5), new ItemStack(ItemsCommonProxy.itemOre, 1, 7 - o));
+		}
+
+		private static void addSawMillRecipes () {
+				MachineHelper.addSawMillRecipe(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 6, 0), null, new ItemStack(BlocksCommonProxy.witchwoodLog), 32, 80);
 		}
 }

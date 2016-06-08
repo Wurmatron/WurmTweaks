@@ -233,15 +233,15 @@ public class RecipeHelper {
 
 
 		public void addBasicMachineRecipe (ItemStack output, Object corner, Object hor, Object ver, Object center) {
-				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver, 'X', center);
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver,'H', hor, 'X', center);
 		}
 
 		public void addBasicMachineRecipe (Item output, Object corner, Object hor, Object ver, Object center) {
-				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver, 'X', center);
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver,'H', hor, 'X', center);
 		}
 
 		public void addBasicMachineRecipe (Block output, Object corner, Object hor, Object ver, Object center) {
-				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver, 'X', center, 'H', hor);
+				addShaped(output, "CVC", "HXH", "CVC", 'C', corner, 'V', ver,'H', hor, 'X', center);
 		}
 
 		public void addEngineRecipe (ItemStack output, Object gear, Object material) {

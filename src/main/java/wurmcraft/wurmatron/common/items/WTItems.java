@@ -9,7 +9,24 @@ import java.util.HashMap;
 
 public class WTItems {
 
-		public static ArrayList<String> itemMaterialNames = new ArrayList<String>() {{
+		public static ArrayList<String> itemMaterialNames = new ArrayList<String>();
+
+		public static HashMap<String, EnumChatFormatting> itemSpecialNames = new HashMap<String, EnumChatFormatting>();
+
+		public static Item itemMaterial;
+		public static Item itemSpecial;
+		public static Item creditBismuth;
+		public static Item creditCopper;
+		public static Item creditGold;
+		public static Item creditIron;
+		public static Item creditLead;
+		public static Item creditNickel;
+		public static Item creditPlatinum;
+		public static Item creditSilver;
+		public static Item creditTin;
+		public static Item creditZinc;
+
+		public static void registerItems () {
 				itemMaterialNames.add("solarCore");
 				itemMaterialNames.add("craftingCore");
 				itemMaterialNames.add("greenSteel");
@@ -50,27 +67,9 @@ public class WTItems {
 				itemMaterialNames.add("electroMagneticShielding");
 				itemMaterialNames.add("electroShielding");
 				itemMaterialNames.add("wandParts");
-		}};
-		public static HashMap<String, EnumChatFormatting> itemSpecialNames = new HashMap<String, EnumChatFormatting>() {{
-				put("darkMatter", EnumChatFormatting.DARK_BLUE);
-				put("redMatter", EnumChatFormatting.DARK_RED);
-		}};
-
-		public static Item itemMaterial;
-		public static Item itemSpecial;
-		public static Item creditBismuth;
-		public static Item creditCopper;
-		public static Item creditGold;
-		public static Item creditIron;
-		public static Item creditLead;
-		public static Item creditNickel;
-		public static Item creditPlatinum;
-		public static Item creditSilver;
-		public static Item creditTin;
-		public static Item creditZinc;
-
-		public static void registerItems () {
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
+				itemSpecialNames.put("darkMatter", EnumChatFormatting.GRAY);
+				itemSpecialNames.put("redMatter", EnumChatFormatting.DARK_RED);
 				registerItem(itemSpecial = new ItemSpecial(itemSpecialNames), "itemSpecial");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");

@@ -1,5 +1,6 @@
 package wurmcraft.wurmatron.common.recipes;
 
+import am2.blocks.BlocksCommonProxy;
 import am2.items.ItemsCommonProxy;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
@@ -148,6 +149,13 @@ public class OreDict {
 				add("packGrain", TFCHelper.getFood(TFCItems.oatGrain, 160));
 				add("packGrain", TFCHelper.getFood(TFCItems.barleyGrain, 160));
 				add("packGrain", TFCHelper.getFood(TFCItems.wheatGrain, 160));
+				// Bread
+				add("packBread", TFCHelper.getFood(TFCItems.barleyBread, 160));
+				add("packBread", TFCHelper.getFood(TFCItems.cornBread, 160));
+				add("packBread", TFCHelper.getFood(TFCItems.oatBread, 160));
+				add("packBread", TFCHelper.getFood(TFCItems.riceBread, 160));
+				add("packBread", TFCHelper.getFood(TFCItems.ryeBread, 160));
+				add("packBread", TFCHelper.getFood(TFCItems.wheatBread, 160));
 				// Gems
 				ArrayList<Item> gems = new ArrayList<Item>();
 				gems.add(TFCItems.gemAgate);
@@ -282,7 +290,9 @@ public class OreDict {
 
 		@Optional.Method (modid = "arsmagica2")
 		private static void addAM2 () {
-				add("packRune", new ItemStack(ItemsCommonProxy.rune, 1, OreDictionary.WILDCARD_VALUE));
+				for (int r = 0; r < 16; r++)
+						add("packRune", new ItemStack(ItemsCommonProxy.rune, 1, r));
+				add("packSapling", new ItemStack(BlocksCommonProxy.witchwoodSapling));
 		}
 
 		@Optional.Method (modid = "Avaritia")

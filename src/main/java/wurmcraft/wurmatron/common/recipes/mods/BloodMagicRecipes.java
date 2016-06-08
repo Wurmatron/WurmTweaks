@@ -194,9 +194,9 @@ public class BloodMagicRecipes  {
 				addAlterRecipe(new ItemStack(ModItems.fireScribeTool), new ItemStack(Items.blaze_rod), 3, 20000, 100, 100, false);
 				addAlterRecipe(new ItemStack(ModItems.waterScribeTool), new ItemStack(TFCItems.redSteelBucketWater), 3, 20000, 100, 100, false);
 				addAlterRecipe(new ItemStack(ModItems.airScribeTool), new ItemStack(Items.feather), 3, 20000, 100, 100, false);
-				addAlterRecipe(new ItemStack(ModItems.apprenticeBloodOrb), new ItemStack(TFCItems.gemDiamond, 2, 4), 2, 8000, 100, 100, false);
+				addAlterRecipe(new ItemStack(ModItems.apprenticeBloodOrb), new ItemStack(TFCItems.gemDiamond, 1, 4), 2, 8000, 100, 100, false);
 				addAlterRecipe(new ItemStack(ModItems.activationCrystal), new ItemStack(ModItems.lavaCrystal), 3, 4000, 50, 50, false);
-				addAlterRecipe(new ItemStack(ModItems.weakBloodOrb), new ItemStack(TFCItems.gemRuby, 2, 4), 1, 2000, 25, 25, false);
+				addAlterRecipe(new ItemStack(ModItems.weakBloodOrb), new ItemStack(TFCItems.gemRuby, 1, 4), 1, 2000, 25, 25, false);
 				addAlterRecipe(new ItemStack(ModItems.bucketLife), new ItemStack(Items.bucket), 1, 1000, 50, 50, true);
 				addAlterRecipe(new ItemStack(ModItems.archmageBloodOrb), new ItemStack(ModItems.demonBloodShard), 5, 100000, 500, 500, false);
 				for (int i = 0; i <= 15; i++)
