@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.common.config.ConfigItems;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.handler.ArmorHandler;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
@@ -156,6 +157,17 @@ public class AM2Recipes {
 				if (RecipeChecker.modExists("IC2"))
 						addCompressorRecipes();
 				addSawMillRecipes();
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.mageHood, 1000, 1500, 500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.mageArmor, 1000, 1500, 500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.mageLeggings, 1000, 1500, 500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.mageBoots, 1000, 1500, 500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.battlemageHood, 2000, 3000, 1500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.battlemageArmor, 2000, 3000, 1500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.battlemageLeggings, 2000, 13000, 1500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.battlemageBoots, 2000, 3000, 1500);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.magitechGoggles, 200, 200, 200);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.earthArmorEnchanted.getItem(), 3000, 3000, 3000);
+				ArmorHandler.addArmorProtection(ItemsCommonProxy.enderBoots, 2000, 3000, 1500);
 		}
 
 		@Optional.Method (modid = "arsmagica2")

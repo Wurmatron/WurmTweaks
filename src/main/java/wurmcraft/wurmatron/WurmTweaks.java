@@ -10,8 +10,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.common.MinecraftForge;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
-import wurmcraft.wurmatron.common.events.EntityInteract;
-import wurmcraft.wurmatron.common.events.JoinGameEvent;
+import wurmcraft.wurmatron.common.events.*;
 import wurmcraft.wurmatron.common.handler.LootHandler;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.network.PacketHandler;
@@ -40,6 +39,9 @@ public class WurmTweaks {
 				PacketHandler.registerPackets();
 				FMLCommonHandler.instance().bus().register(new JoinGameEvent());
 				MinecraftForge.EVENT_BUS.register(new EntityInteract());
+				MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
+				MinecraftForge.EVENT_BUS.register(new HurtEvent());
+				MinecraftForge.EVENT_BUS.register(new PickupEvent());
 		}
 
 		@Mod.EventHandler
