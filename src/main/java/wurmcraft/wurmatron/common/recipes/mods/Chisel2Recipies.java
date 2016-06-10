@@ -12,6 +12,10 @@ import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/9/2016 with 2.5.1.44
+ */
 public class Chisel2Recipies {
 
 		private static final RecipeHelper r = new RecipeHelper();

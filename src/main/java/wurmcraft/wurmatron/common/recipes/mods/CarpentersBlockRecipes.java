@@ -12,6 +12,10 @@ import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/10/2016 with v3.3.7
+ */
 public class CarpentersBlockRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
@@ -38,6 +42,6 @@ public class CarpentersBlockRecipes {
 				r.addWrenchRecipe(ItemRegistry.itemCarpentersHammer, BlockRegistry.blockCarpentersBlock);
 				r.addShapeless(ItemRegistry.itemCarpentersChisel, TFCItems.wroughtIronIngot, BlockRegistry.blockCarpentersBlock);
 				r.addShaped(ItemRegistry.itemCarpentersBed, "CCC", "LLL", 'C', "packCloth", 'L', "packLog");
-				r.addShaped(ItemRegistry.itemCarpentersDoor, "DD", "DD", "DD", BlockRegistry.blockCarpentersBlock);
+				r.addShaped(ItemRegistry.itemCarpentersDoor, "DD", "DD", "DD",'D', BlockRegistry.blockCarpentersBlock);
 		}
 }

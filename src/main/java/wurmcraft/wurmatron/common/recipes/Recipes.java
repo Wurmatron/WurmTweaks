@@ -1,9 +1,11 @@
 package wurmcraft.wurmatron.common.recipes;
 
+import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import vazkii.botania.api.BotaniaAPI;
 import wurmcraft.wurmatron.common.recipes.mods.*;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
@@ -18,6 +20,14 @@ public class Recipes {
 				LogHandler.info("Removing all the games recipes and smelting recipes");
 				CraftingManager.getInstance().getRecipeList().clear();
 				FurnaceRecipes.smelting().getSmeltingList().clear();
+				if (RecipeChecker.modExists("Avaritia"))
+						ExtremeCraftingManager.getInstance().getRecipeList().clear();
+				if (RecipeChecker.modExists("Botania")) {
+						BotaniaAPI.elvenTradeRecipes.clear();
+						BotaniaAPI.manaInfusionRecipes.clear();
+						BotaniaAPI.petalRecipes.clear();
+						BotaniaAPI.runeAltarRecipes.clear();
+				}
 				OreDict.init();
 				SmeltingRecipes.init();
 				LogHandler.info("Adding custom recipes");
@@ -45,6 +55,8 @@ public class Recipes {
 						ComputerCraftRecipes.addRecipes();
 				if (RecipeChecker.modExists("CraftHeraldry"))
 						CraftHeraldryRecipies.addRecipes();
+				if (RecipeChecker.modExists("CarpentersBlocks"))
+						CarpentersBlockRecipes.addRecipes();
 				if (RecipeChecker.modExists("props"))
 						DecoCraftRecipes.addRecipes();
 				if (RecipeChecker.modExists("DraconicEvolution"))
@@ -71,57 +83,57 @@ public class Recipes {
 						JABBARecipes.addRecipes();
 				if (RecipeChecker.modExists("malisisdoors"))
 						MalisisDoorsRecipes.addRecipes();
-				if(RecipeChecker.modExists("Mekanism"))
+				if (RecipeChecker.modExists("Mekanism"))
 						MekanismRecipes.addRecipes();
-				if(RecipeChecker.modExists("MineFactoryReloaded"))
+				if (RecipeChecker.modExists("MineFactoryReloaded"))
 						MinefactoryReloadedRecipes.addRecipes();
-				if(RecipeChecker.modExists("OpenBlocks"))
+				if (RecipeChecker.modExists("OpenBlocks"))
 						OpenBlocksRecipes.addRecipes();
-				if(RecipeChecker.modExists("OpenComputers"))
+				if (RecipeChecker.modExists("OpenComputers"))
 						OpenComputersRecipes.addRecipes();
-				if(RecipeChecker.modExists("openmodularturrets"))
+				if (RecipeChecker.modExists("openmodularturrets"))
 						OpenModularTurretsRecipes.addRecipes();
-				if(RecipeChecker.modExists("PowerConverters"))
+				if (RecipeChecker.modExists("PowerConverters"))
 						PowerConverterRecipes.addRecipes();
-				if(RecipeChecker.modExists("QuarryPlus"))
+				if (RecipeChecker.modExists("QuarryPlus"))
 						QuarryPlusRecipes.addRecipes();
-				if(RecipeChecker.modExists("Railcraft"))
+				if (RecipeChecker.modExists("Railcraft"))
 						RailCraftRecipes.addRecipes();
-				if(RecipeChecker.modExists("tinker_io"))
+				if (RecipeChecker.modExists("tinker_io"))
 						TinkerIORecipes.addRecipes();
-				if(RecipeChecker.modExists("shincolle"))
+				if (RecipeChecker.modExists("shincolle"))
 						ShinColleRecipes.addRecipes();
-				if(RecipeChecker.modExists("weightingscales"))
+				if (RecipeChecker.modExists("weightingscales"))
 						TerraFirmaCraftScalesRecipes.addRecipes();
-				if(RecipeChecker.modExists("tfccellars"))
+				if (RecipeChecker.modExists("tfccellars"))
 						TerraFirmaCraftCellarsRecipes.addRecipes();
-				if(RecipeChecker.modExists("simplyjetpacks"))
+				if (RecipeChecker.modExists("simplyjetpacks"))
 						SimplyJetpacksRecipes.addRecipes();
-				if(RecipeChecker.modExists("WR-CBE|Core"))
+				if (RecipeChecker.modExists("WR-CBE|Core"))
 						WirelessRedstoneRecipes.addRecipes();
-				if(RecipeChecker.modExists("tfcm"))
+				if (RecipeChecker.modExists("tfcm"))
 						TerraFirmaCraftMiscRecipes.addRecipes();
-				if(RecipeChecker.modExists("SolarExpansion"))
+				if (RecipeChecker.modExists("SolarExpansion"))
 						SolarExpansionRecipes.addRecipes();
-				if(RecipeChecker.modExists("TConstruct"))
+				if (RecipeChecker.modExists("TConstruct"))
 						TConstructRecipes.addRecipes();
-				if(RecipeChecker.modExists("techreborn"))
+				if (RecipeChecker.modExists("techreborn"))
 						TechRebornRecipes.addRecipes();
-				if(RecipeChecker.modExists("Thaumcraft"))
+				if (RecipeChecker.modExists("Thaumcraft"))
 						ThaumcraftRecipes.addRecipes();
-				if(RecipeChecker.modExists("ThermalDynamics"))
+				if (RecipeChecker.modExists("ThermalDynamics"))
 						ThermalDynamicsRecipes.addRecipes();
-				if(RecipeChecker.modExists("ThermalExpansion"))
+				if (RecipeChecker.modExists("ThermalExpansion"))
 						ThermalExpansionRecipes.addRecipes();
-				if(RecipeChecker.modExists("BiblioWoodsTFC"))
+				if (RecipeChecker.modExists("BiblioWoodsTFC"))
 						BibliocraftTFCRecipes.addRecipes();
-				if(RecipeChecker.modExists("Ztones"))
+				if (RecipeChecker.modExists("Ztones"))
 						ZTonesRecipes.addRecipes();
-				if(RecipeChecker.modExists("soulshardstow"))
+				if (RecipeChecker.modExists("soulshardstow"))
 						SoulShardsRecipes.addRecipes();
-				if(RecipeChecker.modExists("IC2NuclearControl"))
+				if (RecipeChecker.modExists("IC2NuclearControl"))
 						IC2NuclearControlRecipes.addRecipes();
-				if(RecipeChecker.modExists("Thaumcraft"))
+				if (RecipeChecker.modExists("Thaumcraft"))
 						ThaumcraftRecipes.addRecipes();
 		}
 

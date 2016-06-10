@@ -122,7 +122,7 @@ public class GalaticCraftRecipes {
 				r.addShaped(new ItemStack(AsteroidBlocks.beamReflector, 2), "ASA", "SXS", "ASA", 'S', WurmTweaksItems.gearMixedSheet, 'X', new ItemStack(AsteroidsItems.basicItem, 1, 8), 'A', TFCItems.silverSheet);
 				r.addShaped(new ItemStack(AsteroidBlocks.shortRangeTelepad, 1, 0), "XAX", "ACA", "XAX", 'X', WurmTweaksItems.itemQuantumSingularity, 'A', Items.ender_pearl, 'C', "packGemBlock");
 				r.addCrossWCenter(AsteroidBlocks.blockMinerBase, WurmTweaksItems.ingotTitanium, WurmTweaksItems.ingotFrancium, "packGemBlock");
-				r.addBasicMachineRecipe(new ItemStack(MarsBlocks.machine,1,4), WurmTweaksItems.ingotHalfium, "packCloth", WurmTweaksItems.itemUnstableatter, Blocks.bed);
+				r.addBasicMachineRecipe(new ItemStack(MarsBlocks.machine,1,4), WurmTweaksItems.ingotHalfium, "packCloth", WurmTweaksItems.itemUnstableMatter, Blocks.bed);
 				r.addCircleWCenter(new ItemStack(MarsBlocks.machine,1,8), WurmTweaksBlocks.blockCompressedRedstone, new ItemStack(RailcraftBlocks.getBlockMachineAlpha(),1,0));
 				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2,1,0), WurmTweaksItems.ingotTitanium, TFCItems.redSteelBucketWater,WurmTweaksItems.itemSpaceModule);
 				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2,1,4), WurmTweaksItems.ingotTitanium, "dustCoal",WurmTweaksItems.itemSpaceModule);

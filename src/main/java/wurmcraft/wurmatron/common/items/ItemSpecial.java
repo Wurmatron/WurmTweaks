@@ -8,31 +8,34 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import wurmcraft.wurmatron.common.reference.Global;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class ItemSpecial extends Item {
 
-		private static HashMap<String, EnumChatFormatting> itemNames = new HashMap<String, EnumChatFormatting>();
+		private static HashMap<String, EnumChatFormatting> itemColors = new HashMap<String, EnumChatFormatting>();
+		private static ArrayList<String> itemNames = new ArrayList<String>();
 		private IIcon[] icons;
 
-		public ItemSpecial (HashMap<String, EnumChatFormatting> names) {
+		public ItemSpecial (ArrayList<String> items, HashMap<String, EnumChatFormatting> names) {
 				setCreativeTab(CreativeTabs.tabMaterials);
 				setUnlocalizedName("itemSpecial");
 				setHasSubtypes(true);
-				itemNames = names;
+				itemColors = names;
+				itemNames = items;
 				icons = new IIcon[itemNames.size() + 1];
 		}
 
 		@Override
 		public String getItemStackDisplayName (ItemStack stack) {
-				return itemNames.get(itemNames.keySet().toArray()[stack.getItemDamage()]) + "item." + itemNames.keySet().toArray()[stack.getItemDamage()] + ".name";
+				return itemColors.get(itemNames.get(stack.getItemDamage())) + "item." + itemNames.get(stack.getItemDamage()) + ".name";
 		}
 
 		@Override
 		public void registerIcons (IIconRegister iicon) {
 				for (int m = 0; m < itemNames.size(); m++)
-						icons[m] = iicon.registerIcon(Global.MODID + ":" + itemNames.keySet().toArray()[m]);
+						icons[m] = iicon.registerIcon(Global.MODID + ":" + itemNames.get(m));
 		}
 
 		@Override

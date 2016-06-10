@@ -68,10 +68,8 @@ public class ExtraUtilsRecipes  {
 				r.addShaped(new ItemStack(ExtraUtils.transferPipe,8,13), " R ", "RPR", " R ", 'R', Items.redstone, 'P', new ItemStack(ExtraUtils.transferPipe,1,8));
 				r.addShaped(new ItemStack(ExtraUtils.transferPipe,8,12), " R ", "RPR", " R ", 'R', Items.redstone, 'P', new ItemStack(ExtraUtils.transferPipe,1,0));
 				r.addShaped(ExtraUtils.trashCan, "SSS", "CBC", "CCC", 'S', "packSmoothStone", 'C', "packCobblestone", 'B', "packChest");
-//				r.addShapeless(new ItemStack(ExtraUtils.trashCan,1,1), ExtraUtils.trashCan, TDItems.ductFluidBasic);
-//				r.addShapeless(new ItemStack(ExtraUtils.trashCan,1,2), ExtraUtils.trashCan, TDItems.ductEnergyBasic);
 				r.addBasicMachineRecipe(ExtraUtils.enderThermicPump, new ItemStack(ExtraUtils.decorative1,1,11), "packGemExquisite", Items.bucket,WurmTweaksItems.itemMachineFrame);
-				r.addShaped(ExtraUtils.enderQuarry, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'A', TFCItems.blueSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemExquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
+				r.addShaped(ExtraUtils.enderQuarry, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'C', TFCItems.blueSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemExquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
 				// TODO QED Quarry Upgrade Recipes
 				r.addCrossWCenter(ExtraUtils.timerBlock, Items.redstone, Blocks.redstone_torch, "packSmoothStone");
 				// QED Magnium Torch

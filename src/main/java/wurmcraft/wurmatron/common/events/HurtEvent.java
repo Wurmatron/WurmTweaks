@@ -30,6 +30,7 @@ public class HurtEvent {
 								float piercePer = 1000f / (1000f + pierceRating);
 								float slashPer = 1000f / (1000f + slashRating);
 								float crushPer = 1000f / (1000f + crushRating);
+
 								e.ammount = processDamageSource(e.source, e.ammount, piercePer, slashPer, crushPer);
 								if (location == 0 && armor[location] == null) {
 										e.ammount *= 1.75;
@@ -89,7 +90,7 @@ public class HurtEvent {
 		}
 
 		private ItemStack[] getArmorFromEntity (EntityLivingBase entity) {
-				ItemStack[] armor = new ItemStack[] {};
+				ItemStack[] armor = new ItemStack[4];
 				armor[0] = entity.getEquipmentInSlot(1);
 				armor[1] = entity.getEquipmentInSlot(2);
 				armor[2] = entity.getEquipmentInSlot(3);

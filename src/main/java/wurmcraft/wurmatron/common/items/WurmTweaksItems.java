@@ -39,7 +39,7 @@ public class WurmTweaksItems {
 		public static final ItemStack itemComputationalCore = new ItemStack(WTItems.itemMaterial, 1, 32);
 		public static final ItemStack itemMachineFrame = new ItemStack(WTItems.itemMaterial, 1, 33);
 		public static final ItemStack itemSpaceModule = new ItemStack(WTItems.itemMaterial,1,34);
-		public static final ItemStack itemUnstableatter = new ItemStack(WTItems.itemMaterial,1,35);
+		public static final ItemStack itemUnstableMatter = new ItemStack(WTItems.itemMaterial,1,35);
 		public static final ItemStack itemJetpackParts = new ItemStack(WTItems.itemMaterial,1,36);
 		public static final ItemStack itemElectroMagneticShielding = new ItemStack(WTItems.itemMaterial,1,37);
 		public static final ItemStack itemElectroShielding = new ItemStack(WTItems.itemMaterial,1,38);
@@ -105,4 +105,9 @@ public class WurmTweaksItems {
 		public static final ItemStack creditZinc60 = new ItemStack(WTItems.creditZinc,1,3);
 		public static final ItemStack creditZinc100 = new ItemStack(WTItems.creditZinc,1,4);
 		public static final ItemStack creditZinc140 = new ItemStack(WTItems.creditZinc,1,5);
+		// ItemSpecial
+		public static final ItemStack itemDarkMatter = new ItemStack(WTItems.itemSpecial,1,0);
+		public static final ItemStack itemRedMatter = new ItemStack(WTItems.itemSpecial,1,1);
+		public static final ItemStack creativeCreativeParts = new ItemStack(WTItems.itemSpecial,1,2);
+		public static final ItemStack creativeCreativePartsEnergy = new ItemStack(WTItems.itemSpecial,1,3);
 }

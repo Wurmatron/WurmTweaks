@@ -1,5 +1,6 @@
 package wurmcraft.wurmatron.common.items;
 
+import com.bioxx.tfc.api.Enums.EnumFoodGroup;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumChatFormatting;
@@ -10,11 +11,18 @@ import java.util.HashMap;
 public class WTItems {
 
 		public static ArrayList<String> itemMaterialNames = new ArrayList<String>();
+		public static ArrayList<String> itemSpecialNames = new ArrayList<String>();
+		public static ArrayList<String> itemBasicFoodNames = new ArrayList<String>();
+		public static ArrayList<String> itemPillNames = new ArrayList<String>();
 
-		public static HashMap<String, EnumChatFormatting> itemSpecialNames = new HashMap<String, EnumChatFormatting>();
+		public static HashMap<String, EnumChatFormatting> itemSpecialColors = new HashMap<String, EnumChatFormatting>();
+		public static HashMap<String, EnumFoodGroup[]> itemBasicFoodGroups = new HashMap<String, EnumFoodGroup[]>();
+		public static HashMap<String, EnumFoodGroup[]> itemPillFoodGroups = new HashMap<String, EnumFoodGroup[]>();
 
 		public static Item itemMaterial;
 		public static Item itemSpecial;
+		public static Item itemBasicFood;
+		public static Item itemPill;
 		public static Item creditBismuth;
 		public static Item creditCopper;
 		public static Item creditGold;
@@ -68,9 +76,43 @@ public class WTItems {
 				itemMaterialNames.add("electroShielding");
 				itemMaterialNames.add("wandParts");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
-				itemSpecialNames.put("darkMatter", EnumChatFormatting.GRAY);
-				itemSpecialNames.put("redMatter", EnumChatFormatting.DARK_RED);
-				registerItem(itemSpecial = new ItemSpecial(itemSpecialNames), "itemSpecial");
+				itemSpecialColors.put("creativeParts", EnumChatFormatting.DARK_PURPLE);
+				itemSpecialColors.put("redMatter", EnumChatFormatting.DARK_RED);
+				itemSpecialColors.put("darkMatter", EnumChatFormatting.GRAY);
+				itemSpecialColors.put("darkMatter", EnumChatFormatting.DARK_PURPLE);
+				itemSpecialNames.add("darkMatter");
+				itemSpecialNames.add("redMatter");
+				itemSpecialNames.add("creativeParts");
+				itemSpecialNames.add("creativePartsEnergy");
+				registerItem(itemSpecial = new ItemSpecial(itemSpecialNames, itemSpecialColors), "itemSpecial");
+				itemBasicFoodGroups.put("foodFruit", new EnumFoodGroup[] {EnumFoodGroup.Fruit});
+				itemBasicFoodGroups.put("foodGrain", new EnumFoodGroup[] {EnumFoodGroup.Grain});
+				itemBasicFoodGroups.put("foodProtein", new EnumFoodGroup[] {EnumFoodGroup.Protein});
+				itemBasicFoodGroups.put("foodVegetable", new EnumFoodGroup[] {EnumFoodGroup.Vegetable});
+				itemBasicFoodGroups.put("foodDairy", new EnumFoodGroup[] {EnumFoodGroup.Dairy});
+				itemBasicFoodGroups.put("humanSoul", new EnumFoodGroup[] {EnumFoodGroup.Protein});
+				itemBasicFoodGroups.put("melonBread", new EnumFoodGroup[] {EnumFoodGroup.Grain});
+				itemBasicFoodNames.add("foodFruit");
+				itemBasicFoodNames.add("foodGrain");
+				itemBasicFoodNames.add("foodProtein");
+				itemBasicFoodNames.add("foodVegetable");
+				itemBasicFoodNames.add("foodDairy");
+				itemBasicFoodNames.add("humanSoul");
+				itemBasicFoodNames.add("melonBread");
+				registerItem(itemBasicFood = new ItemBasicTFCFood(itemBasicFoodNames, itemBasicFoodGroups), "iemBasicFood");
+				itemPillFoodGroups.put("pillFruit", new EnumFoodGroup[] {EnumFoodGroup.Fruit});
+				itemPillFoodGroups.put("pillGrain", new EnumFoodGroup[] {EnumFoodGroup.Grain});
+				itemPillFoodGroups.put("pillProtein", new EnumFoodGroup[] {EnumFoodGroup.Protein});
+				itemPillFoodGroups.put("pillVegetable", new EnumFoodGroup[] {EnumFoodGroup.Vegetable});
+				itemPillFoodGroups.put("pillDairy", new EnumFoodGroup[] {EnumFoodGroup.Dairy});
+				itemPillFoodGroups.put("pillAll", new EnumFoodGroup[] {EnumFoodGroup.Dairy, EnumFoodGroup.Fruit, EnumFoodGroup.Grain, EnumFoodGroup.Protein, EnumFoodGroup.Vegetable});
+				itemPillNames.add("pillFruit");
+				itemPillNames.add("pillGrain");
+				itemPillNames.add("pillProtein");
+				itemPillNames.add("pillVegetable");
+				itemPillNames.add("pillDairy");
+				itemPillNames.add("pillAll");
+				registerItem(itemPill = new ItemPill(itemPillNames, itemPillFoodGroups), "itemPill");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
 				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");

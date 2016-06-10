@@ -19,13 +19,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import tconstruct.smeltery.TinkerSmeltery;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.handler.ArmorHandler;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
-public class BloodMagicRecipes  {
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/9/2016 with 1.3.3-17
+ */
+public class BloodMagicRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
@@ -57,8 +62,8 @@ public class BloodMagicRecipes  {
 				r.addBasicMachineRecipe(ModBlocks.speedRune, WurmTweaksItems.stableMagicEssence, TFCHelper.getFood(TFCItems.sugar, 160), Items.blaze_powder, ModBlocks.bloodRune);
 				r.addBasicMachineRecipe(ModBlocks.efficiencyRune, WurmTweaksItems.stableMagicEssence, TFItems.ingotEnderium, Items.blaze_powder, ModBlocks.bloodRune);
 				r.addCrossWCenter(ModBlocks.blockMasterStone, ModBlocks.bloodRune, Blocks.obsidian, ModItems.imbuedSlate);
-				r.addShaped(ModBlocks.blockPedestal, " X ", " X ", "BBB",'B', ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.stableMagicEssence);
-				r.addShaped(ModBlocks.blockPlinth, " X ", " X ", "BBB",'B', ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(ModBlocks.blockPedestal, " X ", " X ", "BBB", 'B', ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.stableMagicEssence);
+				r.addShaped(ModBlocks.blockPlinth, " X ", " X ", "BBB", 'B', ModBlocks.largeBloodStoneBrick, 'X', WurmTweaksItems.itemMagicChunk);
 				r.addBasicMachineRecipe(new ItemStack(ModBlocks.blockSpellEnhancement, 1, 0), WurmTweaksItems.itemBloodInfused, WurmTweaksItems.stableMagicEssence, new ItemStack(ModBlocks.efficiencyRune), WurmTweaksBlocks.blockPlatinum);
 				r.addBasicMachineRecipe(new ItemStack(ModBlocks.blockSpellEnhancement, 1, 1), WurmTweaksItems.itemBloodInfused, "packDirt", new ItemStack(ModBlocks.efficiencyRune), WurmTweaksBlocks.blockPlatinum);
 				r.addBasicMachineRecipe(new ItemStack(ModBlocks.blockSpellEnhancement, 1, 2), WurmTweaksItems.itemBloodInfused, Items.feather, new ItemStack(ModBlocks.efficiencyRune), WurmTweaksBlocks.blockPlatinum);
@@ -79,11 +84,11 @@ public class BloodMagicRecipes  {
 				for (Item sword : Recipes.swords)
 						r.addBasicMachineRecipe(ModBlocks.runeOfSacrifice, WurmTweaksItems.stableMagicEssence, TFItems.ingotEnderium, new ItemStack(sword, 1, OreDictionary.WILDCARD_VALUE), ModItems.reinforcedSlate);
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(ModBlocks.bloodRune, "XAX", "AOA", "XAX", 'X', ModItems.blankSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.apprenticeBloodOrb));
-				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 1), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.apprenticeBloodOrb));
-				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 2), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.apprenticeBloodOrb));
+				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 1), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
+				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 2), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 3), "XAX", "AOA", "XAX", 'X', ModItems.imbuedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.masterBloodOrb));
-				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 4), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', new ItemStack(ModBlocks.bloodRune, 1, 1), 'O', ModItems.apprenticeBloodOrb));
-				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 5), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', ModBlocks.speedRune, 'O', ModItems.apprenticeBloodOrb));
+				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 4), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', new ItemStack(ModBlocks.bloodRune, 1, 1), 'O', ModItems.weakBloodOrb));
+				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 5), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', ModBlocks.speedRune, 'O', ModItems.weakBloodOrb));
 				r.addShaped(ModBlocks.blockCrucible, "SSS", "XAX", "SSS", 'S', TFCItems.redSteelSheet2x, 'X', WurmTweaksItems.itemMagicChunk, 'A', WurmTweaksItems.itemBloodInfused);
 				r.addShaped(ModBlocks.blockCrystalBelljar, "GGG", "GXG", "BBB", 'G', "packGlass", 'X', WurmTweaksItems.itemBloodInfused, 'B', TFCItems.blackSteelSheet2x);
 				r.addShaped(ModBlocks.blockAltar, "XAX", "BBB", "CCC", 'X', "packGemBlock", 'A', WurmTweaksItems.itemMagicChunk, 'B', WurmTweaksItems.itemCraftingCore, 'C', WurmTweaksItems.ingotFrancium);
@@ -93,6 +98,7 @@ public class BloodMagicRecipes  {
 				r.addBasicMachineRecipe(ModBlocks.blockAlchemicCalcinator, WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemMixedSheet, ModItems.demonicSlate, Blocks.furnace);
 				r.addCircleWCenter(ModItems.armourInhibitor, ModBlocks.ritualStone, ModItems.weakBloodShard);
 				r.addCircle(ModItems.itemDestinationClearer, "ingotThaumium");
+				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.sacrificialDagger, 1, 0), 425), "X", "S", 'S', "packStick", 'X', WurmTweaksItems.ingotRainbowSteel);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.daggerOfSacrifice), 825), "X", "X", "S", 'X', WurmTweaksItems.itemBloodInfused, 'S', WurmTweaksItems.ingotTitanium);
 				r.addShaped(ModItems.itemTankSegmenter, " SS", "  S", "  S", 'S', TFCItems.redSteelSheet2x);
 				r.addCrossWCenter(ModItems.lavaCrystal, Items.blaze_rod, Blocks.obsidian, TFCItems.blueSteelBucketLava);
@@ -129,6 +135,10 @@ public class BloodMagicRecipes  {
 				r.addBasicMachineRecipe(ModItems.itemBloodLightSigil, WurmTweaksItems.stableMagicEssence, Blocks.glowstone, WurmTweaksItems.ingotRainbowSteel, ModItems.imbuedSlate);
 				r.addBasicMachineRecipe(ModItems.itemAssassinSigil, WurmTweaksItems.stableMagicEssence, TFCItems.blueSteelSword, WurmTweaksItems.ingotRainbowSteel, ModItems.imbuedSlate);
 				r.addBasicMachineRecipe(ModItems.itemAssassinSigil, WurmTweaksItems.stableMagicEssence, TFCItems.redSteelSword, WurmTweaksItems.ingotRainbowSteel, ModItems.imbuedSlate);
+				ArmorHandler.addArmorProtection(ModItems.boundBoots, 3000, 300, 3000);
+				ArmorHandler.addArmorProtection(ModItems.boundHelmet, 3000, 300, 3000);
+				ArmorHandler.addArmorProtection(ModItems.boundLeggings, 3000, 300, 3000);
+				ArmorHandler.addArmorProtection(ModItems.boundPlate, 3000, 300, 3000);
 				addAlchemyRecipes();
 				addBindingRecipes();
 				addAlterRecipes();

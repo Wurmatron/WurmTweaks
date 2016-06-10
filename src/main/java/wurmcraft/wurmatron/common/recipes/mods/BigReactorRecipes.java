@@ -1,5 +1,6 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
+import cofh.thermalexpansion.block.TEBlocks;
 import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
@@ -8,12 +9,20 @@ import crazypants.enderio.EnderIO;
 import dan200.computercraft.ComputerCraft;
 import erogenousbeef.bigreactors.common.BigReactors;
 import fox.spiteful.avaritia.items.LudicrousItems;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
+import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/9/2016 with 0.4.3a
+ */
 public class BigReactorRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
@@ -42,10 +51,31 @@ public class BigReactorRecipes {
 				r.addShaped(new ItemStack(BigReactors.blockTurbineRotorPart, 4, 0), " X ", "XCX", " X ", 'X', WurmTweaksItems.ingotGraySteel, 'C', WurmTweaksItems.ingotFrancium);
 				r.addShaped(new ItemStack(BigReactors.blockTurbineRotorPart, 2, 1), " X ", "XCX", " X ", 'X', WurmTweaksItems.ingotGraySteel, 'C', WurmTweaksItems.ingotGreenSteel);
 				r.addShaped(BigReactors.blockDevice, "XAX", "CGC", "CCC", 'X', new ItemStack(BigReactors.ingotGeneric, 1, 8), 'A', WurmTweaksItems.ingotEnergyReactor, 'G', "packGemBlock", 'C', WurmTweaksItems.ingotGraySteel);
-				// TODO Creative Collant Port
-				// TODO Create Steam Generator
-				// TODO Centerfuge Yellorium Recipe
+				r.addShaped9X9Recipe(new ItemStack(BigReactors.blockMultiblockCreativePart, 1, 0), "CBBBBBBBC", "BXHHXHHXB", "BHFFFFFHB", "BHFQQQFHB", "BKFQQQFKB", "BHFQQQFHB", "BHFFFFFHB", "BXHHXHHXB", "CBBBBBBBC", 'C', new ItemStack(LudicrousItems.resource, 1, 6), 'B', Blocks.bedrock, 'X', new ItemStack(LudicrousItems.resource, 1, 5), 'H', TFCItems.redSteelBucketWater, 'F', WurmTweaksItems.itemUnstableMatter, 'Q', WurmTweaksItems.creativeCreativeParts, 'K', new ItemStack(BigReactors.blockReactorPart, 1, 5));
+				r.addShaped9X9Recipe(new ItemStack(BigReactors.blockMultiblockCreativePart, 1, 0), "CBBBBBBBC", "BXHHXHHXB", "BHFFFFFHB", "BHFQQQFHB", "BKFQQQFKB", "BHFQQQFHB", "BHFFFFFHB", "BXHHXHHXB", "CBBBBBBBC", 'C', new ItemStack(LudicrousItems.resource, 1, 6), 'B', Blocks.bedrock, 'X', new ItemStack(LudicrousItems.resource, 1, 5), 'H', TFCItems.redSteelBucketSaltWater, 'F', WurmTweaksItems.itemUnstableMatter, 'Q', WurmTweaksItems.creativeCreativeParts, 'K', new ItemStack(BigReactors.blockReactorPart, 1, 5));
+				r.addShaped9X9Recipe(new ItemStack(BigReactors.blockMultiblockCreativePart, 1, 1), "CBBBBBBBC", "BXHHXHHXB", "BHFFFFFHB", "BHFQQQFHB", "BKFQQQFKB", "BHFQQQFHB", "BHFFFFFHB", "BXHHXHHXB", "CBBBBBBBC", 'C', new ItemStack(LudicrousItems.resource, 1, 6), 'B', Blocks.bedrock, 'X', new ItemStack(LudicrousItems.resource, 1, 5), 'H', new ItemStack(TEBlocks.blockDynamo, 1, 0), 'F', WurmTweaksItems.itemUnstableMatter, 'Q', WurmTweaksItems.creativeCreativeParts, 'K', new ItemStack(BigReactors.blockTurbinePart, 1, 3));
 				r.addShapeless(new ItemStack(BigReactors.ingotGeneric, 1, 8), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemMagicChunk, ExtraUtils.bedrockium, WurmTweaksItems.itemCraftingCore);
-				// TODO Ludicrite Block (:4)
+				for (int b = 0; b < 3; b++)
+						r.addShapeless(new ItemStack(BigReactors.ingotGeneric, 32, b), new ItemStack(BigReactors.blockMetal, 1, b));
+				r.addShapeless(new ItemStack(BigReactors.ingotGeneric, 32, 8), new ItemStack(BigReactors.blockMetal, 1, 4));
+				if (RecipeChecker.modExists("techreborn"))
+						addCentrifugeRecipes();
+				if (RecipeChecker.modExists("IC2"))
+						addCompressorRecipes();
+		}
+
+		@Optional.Method (modid = "techreborn")
+		private static void addCentrifugeRecipes () {
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.leadIngot, 4), null, new ItemStack(BigReactors.ingotGeneric, 12, 0), null, null, null, 600, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.leadIngot2x, 4), null, new ItemStack(BigReactors.ingotGeneric, 24, 0), null, null, null, 600, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.oreChunk, 1, 26), null, new ItemStack(BigReactors.ingotGeneric, 48, 0), null, null, null, 100, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.oreChunk, 1, 25), null, new ItemStack(BigReactors.ingotGeneric, 36, 0), null, null, null, 400, 128);
+		}
+
+		@Optional.Method (modid = "IC2")
+		private static void addCompressorRecipes () {
+				for (int b = 0; b < 3; b++)
+						ICHelper.addCompressorRecipe(new ItemStack(BigReactors.ingotGeneric, 32, b), new ItemStack(BigReactors.blockMetal, 1, b));
+				ICHelper.addCompressorRecipe(new ItemStack(BigReactors.ingotGeneric, 32, 8), new ItemStack(BigReactors.blockMetal, 1, 4));
 		}
 }

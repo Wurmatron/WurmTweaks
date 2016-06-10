@@ -16,6 +16,10 @@ import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/10/2016 with 2.3.9b188
+ */
 public class ExtraCellsRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();

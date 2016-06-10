@@ -11,10 +11,12 @@ import net.minecraftforge.common.MinecraftForge;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
 import wurmcraft.wurmatron.common.events.*;
+import wurmcraft.wurmatron.common.events.bloodmagic.KnifeHandler;
 import wurmcraft.wurmatron.common.handler.LootHandler;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.network.PacketHandler;
 import wurmcraft.wurmatron.common.proxy.CommonProxy;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.Recipes;
 import wurmcraft.wurmatron.common.reference.Global;
 
@@ -42,6 +44,8 @@ public class WurmTweaks {
 				MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
 				MinecraftForge.EVENT_BUS.register(new HurtEvent());
 				MinecraftForge.EVENT_BUS.register(new PickupEvent());
+				if(RecipeChecker.modExists("AWWayofTime"))
+						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
 		}
 
 		@Mod.EventHandler

@@ -10,6 +10,10 @@ import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/10/2016 with 1.4.7.37
+ */
 public class EnderStorageRecipes  {
 
 		private static final RecipeHelper r = new RecipeHelper();

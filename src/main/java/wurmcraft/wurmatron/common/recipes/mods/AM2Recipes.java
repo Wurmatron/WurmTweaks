@@ -149,6 +149,8 @@ public class AM2Recipes {
 				r.addCrossWCenter(new ItemStack(ItemsCommonProxy.greaterFocus, 1, 0), WurmTweaksItems.itemMagicChunk, "packGlass", ItemsCommonProxy.standardFocus);
 				r.addShapeless(ItemsCommonProxy.chargeFocus, ItemsCommonProxy.standardFocus, Items.redstone);
 				r.addShapeless(ItemsCommonProxy.playerFocus, ItemsCommonProxy.standardFocus, new ItemStack(Items.skull, 1, OreDictionary.WILDCARD_VALUE));
+				for (int o = 0; o < 4; o++)
+						r.addShapeless(new ItemStack(ItemsCommonProxy.itemOre, 32, 7 - o), new ItemStack(BlocksCommonProxy.AMOres, 1, o + 5));
 				addRefinerRecipes();
 				if (RecipeChecker.modExists("Avaritia"))
 						r.addShaped9X9Recipe(BlocksCommonProxy.armorInfuser, "MMMBBBMMM", "MMMBBBMMM", "MMMBBBMMM", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", "OOOOOOOOO", 'O', Blocks.obsidian, 'M', new ItemStack(ItemsCommonProxy.itemOre, 1, 7), 'B', "packGemBlock");
@@ -189,7 +191,7 @@ public class AM2Recipes {
 		@Optional.Method (modid = "IC2")
 		private static void addCompressorRecipes () {
 				for (int o = 0; o < 4; o++)
-						ICHelper.addCompressorRecipe(new ItemStack(BlocksCommonProxy.AMOres, 1, o + 5), new ItemStack(ItemsCommonProxy.itemOre, 1, 7 - o));
+						ICHelper.addCompressorRecipe(new ItemStack(ItemsCommonProxy.itemOre, 32, 7 - o), new ItemStack(BlocksCommonProxy.AMOres, 1, o + 5));
 		}
 
 		private static void addSawMillRecipes () {

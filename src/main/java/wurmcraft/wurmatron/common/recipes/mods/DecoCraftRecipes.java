@@ -10,6 +10,10 @@ import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/9/2016 with 2.2.1
+ */
 public class DecoCraftRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();

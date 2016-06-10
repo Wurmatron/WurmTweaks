@@ -1,12 +1,16 @@
 package wurmcraft.wurmatron.common.recipes;
 
+import WayofTime.alchemicalWizardry.ModItems;
 import am2.blocks.BlocksCommonProxy;
 import am2.items.ItemsCommonProxy;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
 import crazypants.enderio.EnderIO;
+import crazypants.enderio.item.darksteel.DarkSteelItems;
+import erogenousbeef.bigreactors.common.BigReactors;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
+import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -286,6 +290,12 @@ public class OreDict {
 						addEnderIO();
 				if (RecipeChecker.modExists("Botania"))
 						addBotania();
+				if (RecipeChecker.modExists("BigReactors"))
+						addBigReactors();
+				if (RecipeChecker.modExists("AWWayofTime"))
+						addBloodMagic();
+				if (RecipeChecker.modExists("DraconicEvolution"))
+						addDraconicEvolution();
 		}
 
 		@Optional.Method (modid = "arsmagica2")
@@ -300,6 +310,9 @@ public class OreDict {
 				add("packCraftingTable", LudicrousBlocks.dire_crafting);
 				add("packCraftingTable", LudicrousBlocks.double_craft);
 				add("packCraftingTable", LudicrousBlocks.triple_craft);
+				add("itemAxe", LudicrousItems.infinity_axe);
+				add("itemShovel", LudicrousItems.infinity_shovel);
+				add("itemPick", LudicrousItems.infinity_pickaxe);
 		}
 
 		@Optional.Method (modid = "Botania")
@@ -312,11 +325,48 @@ public class OreDict {
 				add("packSmoothStone", ModBlocks.shimmerrock);
 				add("packGlass", ModBlocks.manaGlass);
 				add("packGlass", ModBlocks.elfGlass);
+				add("itemAxe", vazkii.botania.common.item.ModItems.manasteelAxe);
+				add("itemAxe", vazkii.botania.common.item.ModItems.terraAxe);
+				add("itemAxe", vazkii.botania.common.item.ModItems.elementiumAxe);
+				add("itemPick", vazkii.botania.common.item.ModItems.manasteelPick);
+				add("itemPick", vazkii.botania.common.item.ModItems.terraPick);
+				add("itemPick", vazkii.botania.common.item.ModItems.elementiumPick);
+				add("itemShovel", vazkii.botania.common.item.ModItems.manasteelShovel);
+				add("itemShovel", vazkii.botania.common.item.ModItems.elementiumShovel);
+				add("packIngot", new ItemStack(vazkii.botania.common.item.ModItems.manaResource, 1, 0));
+				add("packIngot", new ItemStack(vazkii.botania.common.item.ModItems.manaResource, 1, 4));
+				add("packIngot", new ItemStack(vazkii.botania.common.item.ModItems.manaResource, 1, 7));
+		}
+
+		@Optional.Method (modid = "BigReactors")
+		private static void addBigReactors () {
+				for (int i = 0; i < 4; i++)
+						add("packIngot", new ItemStack(BigReactors.ingotGeneric, 1, i));
+		}
+
+		@Optional.Method (modid = "AWWayofTime")
+		private static void addBloodMagic () {
+				add("itemAxe", ModItems.boundAxe);
+				add("itemPick", ModItems.boundPickaxe);
+				add("itemShovel", ModItems.boundShovel);
 		}
 
 		@Optional.Method (modid = "EnderIO")
 		private static void addEnderIO () {
 				add("packGlass", EnderIO.blockFusedQuartz);
+				add("itemPick", DarkSteelItems.itemDarkSteelPickaxe);
+				add("itemAxe", DarkSteelItems.itemDarkSteelAxe);
+		}
+
+		@Optional.Method (modid = "DraconicEvolution")
+		private static void addDraconicEvolution () {
+				add("itemAxe", com.brandon3055.draconicevolution.common.ModItems.draconicAxe);
+				add("itemPick", com.brandon3055.draconicevolution.common.ModItems.draconicPickaxe);
+				add("itemPick", com.brandon3055.draconicevolution.common.ModItems.wyvernPickaxe);
+				add("itemShovel", com.brandon3055.draconicevolution.common.ModItems.draconicShovel);
+				add("itemShovel", com.brandon3055.draconicevolution.common.ModItems.wyvernShovel);
+				add("itemSword", com.brandon3055.draconicevolution.common.ModItems.draconicSword);
+				add("itemSword", com.brandon3055.draconicevolution.common.ModItems.wyvernSword);
 		}
 
 		private static void add (String name, ItemStack stack) {

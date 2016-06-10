@@ -22,4 +22,11 @@ public class MachineHelper {
 								TechRebornHelper.addSawMillRecipe(input, null, null, output, output2, null, timeinTicks, euTick);
 				}
 		}
+
+		public static void addAlloySmelterRecipe (ItemStack input1, ItemStack input2, ItemStack output, int euTick, int timeinTicks) {
+				if (RecipeChecker.checkStack(output)) {
+						if (RecipeChecker.modExists("techreborn"))
+								TechRebornHelper.addAlloySmelterRecipe(input1, input2, output, euTick, timeinTicks);
+				}
+		}
 }

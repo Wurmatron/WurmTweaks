@@ -71,7 +71,7 @@ public class TechRebornRecipes {
 				r.addShaped(new ItemStack(ModBlocks.ComputerCube), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.itemComputationalCore, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(IC2Items.getItem("iridiumPlate").getItem()));
 				r.addShaped(new ItemStack(ModBlocks.FusionControlComputer), "XCX", "XBX", "XCX", 'X', WurmTweaksItems.itemElectroMagneticShielding, 'C', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'B', new ItemStack(ModBlocks.ComputerCube));
 				r.addShaped(new ItemStack(ModBlocks.FusionCoil, 2), "XXX", "BFB", "XXX", 'X', WurmTweaksItems.itemElectroMagneticShielding, 'B', new ItemStack(ModBlocks.Supercondensator), 'F', new ItemStack(IC2Items.getItem("iridiumPlate").getItem()));
-				r.addShaped(new ItemStack(ModBlocks.PlasmaGenerator), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.itemMachineFrame, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', WurmTweaksItems.itemUnstableatter);
+				r.addShaped(new ItemStack(ModBlocks.PlasmaGenerator), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.itemMachineFrame, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', WurmTweaksItems.itemUnstableMatter);
 				r.addShaped(new ItemStack(TFCItems.redSteelIngot), " U ", "UUU", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
 				r.addShaped(new ItemStack(TFCItems.blueSteelIngot), " U ", "UUU", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
 				r.addShaped(new ItemStack(TFCItems.nickelIngot), "UUU", "   ", "UUU", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));

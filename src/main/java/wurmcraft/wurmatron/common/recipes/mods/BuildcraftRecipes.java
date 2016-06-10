@@ -2,8 +2,16 @@ package wurmcraft.wurmatron.common.recipes.mods;
 
 
 import buildcraft.*;
+import buildcraft.api.recipes.BuildcraftRecipeRegistry;
+import buildcraft.api.transport.PipeWire;
 import buildcraft.core.BCRegistry;
+import buildcraft.core.lib.utils.ColorUtils;
 import buildcraft.core.lib.utils.NBTUtils;
+import buildcraft.silicon.ItemRedstoneChipset;
+import buildcraft.transport.gates.GateDefinition;
+import buildcraft.transport.gates.ItemGate;
+import buildcraft.transport.recipes.AdvancedFacadeRecipe;
+import buildcraft.transport.recipes.GateExpansionRecipe;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
@@ -14,8 +22,12 @@ import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
+import wurmcraft.wurmatron.common.utils.buildcraft.BuildCraftHelper;
 
-public class BuildcraftRecipes  {
+import java.util.ArrayList;
+import java.util.List;
+
+public class BuildcraftRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
@@ -25,7 +37,7 @@ public class BuildcraftRecipes  {
 				r.addEngineRecipe(new ItemStack(BuildCraftCore.engineBlock, 1, 0), BuildCraftCore.woodenGearItem, "packLog");
 				r.addEngineRecipe(new ItemStack(BuildCraftCore.engineBlock, 1, 1), BuildCraftCore.stoneGearItem, "packSmoothStone");
 				r.addEngineRecipe(new ItemStack(BuildCraftCore.engineBlock, 1, 2), BuildCraftCore.ironGearItem, TFCItems.wroughtIronSheet);
-				// TODO Creative Engine
+				r.addEngineRecipe(new ItemStack(BuildCraftCore.engineBlock, 1, 3), WurmTweaksItems.gearMixedSheet, WurmTweaksItems.creativeCreativePartsEnergy);
 				r.addShaped(BuildCraftCore.markerBlock, "L", "T", 'L', "dyeBlue", 'T', Blocks.torch);
 				r.addShaped(BuildCraftCore.pathMarkerBlock, "L", "T", 'L', "dyeGreen", 'T', Blocks.torch);
 				r.addWrenchRecipe(BuildCraftCore.wrenchItem, TFCItems.wroughtIronSheet);
@@ -35,7 +47,7 @@ public class BuildcraftRecipes  {
 				r.addShaped(BuildCraftCore.stoneGearItem, " S ", "SWS", " S ", 'S', "packSmoothStone", 'W', BuildCraftCore.woodenGearItem);
 				r.addShaped(BuildCraftCore.ironGearItem, " S ", "SWS", " S ", 'S', TFCItems.wroughtIronSheet, 'W', BuildCraftCore.stoneGearItem);
 				r.addShaped(BuildCraftCore.goldGearItem, " S ", "SWS", " S ", 'S', TFCItems.goldSheet, 'W', BuildCraftCore.ironGearItem);
-				r.addShaped(BuildCraftCore.diamondGearItem, " S ", "SWS", " S ", 'S', "packGemQxquisite", 'W', BuildCraftCore.goldGearItem);
+				r.addShaped(BuildCraftCore.diamondGearItem, " S ", "SWS", " S ", 'S', "packGemExquisite", 'W', BuildCraftCore.goldGearItem);
 				r.addShaped(BuildCraftCore.paintbrushItem, "C", "S", 'C', "packCloth", 'S', "packStick");
 				for (int i = 0; i < 16; ++i) {
 						ItemStack outputStack = new ItemStack(BuildCraftCore.paintbrushItem);
@@ -46,11 +58,12 @@ public class BuildcraftRecipes  {
 				addFactoryRecipes();
 				addSiliconRecipes();
 				addTransportRecipes();
+				//addAssemblerRecipes();
 		}
 
 		@Optional.Method (modid = "BuildCraft|Builders")
 		private static void addBuildersRecipes () {
-				r.addShaped(BuildCraftBuilders.quarryBlock, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'A', TFCItems.redSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemExquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
+				r.addShaped(BuildCraftBuilders.quarryBlock, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'C', TFCItems.redSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemExquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
 				r.addBasicMachineRecipe(BuildCraftBuilders.fillerBlock, WurmTweaksItems.gearMixedSheet, BuildCraftCore.markerBlock, "dye", "packChest");
 				r.addBasicMachineRecipe(BuildCraftBuilders.builderBlock, WurmTweaksItems.gearMixedSheet, BuildCraftCore.markerBlock, "dye", "packCraftingTable");
 				r.addBasicMachineRecipe(BuildCraftBuilders.architectBlock, WurmTweaksItems.gearMixedSheet, BuildCraftCore.markerBlock, "dye", BuildCraftBuilders.blueprintItem);
@@ -78,8 +91,34 @@ public class BuildcraftRecipes  {
 				r.addShaped(BuildCraftSilicon.laserBlock, "RGR", "RGR", "BRB", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemExquisite");
 				r.addShaped(BuildCraftSilicon.laserBlock, "BRB", "RGR", "RGR", 'B', Blocks.obsidian, 'R', Items.redstone, 'G', "packGemExquisite");
 				r.addShaped(BuildCraftSilicon.assemblyTableBlock, "OGO", "ORO", "OXO", 'O', Blocks.obsidian, 'G', "packGemExquisite", 'R', WurmTweaksBlocks.blockBlackSteel, 'X', WurmTweaksItems.gearMixedSheet);
-				// TODO Assembling Machine Recipes
 				r.addShaped(new ItemStack(BuildCraftSilicon.assemblyTableBlock, 1, 2), "OGO", "ORO", "OXO", 'O', "packCraftingTable", 'G', "packGemExquisite", 'R', WurmTweaksBlocks.blockBlackSteel, 'X', WurmTweaksItems.gearMixedSheet);
+		}
+
+		private static void addAssemblerRecipes () {
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:redstoneChipset", Math.round(100000), ItemRedstoneChipset.Chipset.RED.getStack(), "dustRedstone");
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:ironChipset", Math.round(200000), ItemRedstoneChipset.Chipset.IRON.getStack(), "dustRedstone", "wurmiron");
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:goldChipset", Math.round(400000), ItemRedstoneChipset.Chipset.GOLD.getStack(), "dustRedstone", "wurmgold");
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:diamondChipset", Math.round(800000), ItemRedstoneChipset.Chipset.DIAMOND.getStack(), "dustRedstone", new ItemStack(TFCItems.gemDiamond, 1, 2));
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:emeraldChipset", Math.round(1200000), ItemRedstoneChipset.Chipset.EMERALD.getStack(), "dustRedstone", new ItemStack(TFCItems.gemEmerald, 1, 2));
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:pulsatingChipset", Math.round(400000), ItemRedstoneChipset.Chipset.PULSATING.getStack(2), "dustRedstone", Items.ender_pearl);
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:quartzChipset", Math.round(600000), ItemRedstoneChipset.Chipset.QUARTZ.getStack(), "dustRedstone", Items.quartz);
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:compChipset", Math.round(600000), ItemRedstoneChipset.Chipset.COMP.getStack(), "dustRedstone", Items.comparator);
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:redWire", 5000, PipeWire.RED.getStack(8), "dyeRed", Items.redstone, TFCItems.wroughtIronIngot);
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:blueWire", 5000, PipeWire.BLUE.getStack(8), "dyeBlue", Items.redstone, TFCItems.wroughtIronIngot);
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:greenWire", 5000, PipeWire.GREEN.getStack(8), "dyeGreen", Items.redstone, TFCItems.wroughtIronIngot);
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:yellowWire", 5000, PipeWire.YELLOW.getStack(8), "dyeYellow", Items.redstone, TFCItems.wroughtIronIngot);
+				for (int i = 0; i < 16; i++) {
+						BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:lens:" + i, 10000, new ItemStack(BuildCraftTransport.lensItem, 2, i), ColorUtils.getOreDictionaryName(15 - i), "packGlass", TFCItems.wroughtIronIngot);
+						BuildcraftRecipeRegistry.assemblyTable.addRecipe("buildcraft:filter:" + i, 10000, new ItemStack(BuildCraftTransport.lensItem, 2, i + 16), ColorUtils.getOreDictionaryName(15 - i), "packGlass", Blocks.iron_bars);
+				}
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:simpleGate", Math.round(100000 * BuildCraftTransport.gateCostMultiplier), ItemGate.makeGateItem(GateDefinition.GateMaterial.REDSTONE, GateDefinition.GateLogic.AND), ItemRedstoneChipset.Chipset.RED.getStack(), PipeWire.RED.getStack());
+				addGateRecipe("Iron", Math.round(200000 * BuildCraftTransport.gateCostMultiplier), GateDefinition.GateMaterial.IRON, ItemRedstoneChipset.Chipset.IRON, PipeWire.RED, PipeWire.BLUE);
+				addGateRecipe("Gold", Math.round(400000 * BuildCraftTransport.gateCostMultiplier), GateDefinition.GateMaterial.GOLD, ItemRedstoneChipset.Chipset.GOLD, PipeWire.RED, PipeWire.BLUE, PipeWire.GREEN);
+				addGateRecipe("Quartz", Math.round(600000 * BuildCraftTransport.gateCostMultiplier), GateDefinition.GateMaterial.QUARTZ, ItemRedstoneChipset.Chipset.QUARTZ, PipeWire.RED, PipeWire.BLUE, PipeWire.GREEN);
+				addGateRecipe("Diamond", Math.round(800000 * BuildCraftTransport.gateCostMultiplier), GateDefinition.GateMaterial.DIAMOND, ItemRedstoneChipset.Chipset.DIAMOND, PipeWire.RED, PipeWire.BLUE, PipeWire.GREEN, PipeWire.YELLOW);
+				addGateRecipe("Emerald", Math.round(1200000 * BuildCraftTransport.gateCostMultiplier), GateDefinition.GateMaterial.EMERALD, ItemRedstoneChipset.Chipset.EMERALD, PipeWire.RED, PipeWire.BLUE, PipeWire.GREEN, PipeWire.YELLOW);
+				BuildcraftRecipeRegistry.integrationTable.addRecipe(new GateExpansionRecipe());
+				BuildcraftRecipeRegistry.integrationTable.addRecipe(new AdvancedFacadeRecipe());
 		}
 
 		@Optional.Method (modid = "BuildCraft|Transport")
@@ -123,5 +162,16 @@ public class BuildcraftRecipes  {
 				r.addShapeless(BuildCraftTransport.pipePowerSandstone, BuildCraftTransport.pipeItemsSandstone, Items.redstone);
 				r.addShapeless(BuildCraftTransport.gateCopier, BuildCraftCore.wrenchItem, "packGemChipped");
 				r.addShapeless(new ItemStack(BuildCraftTransport.plugItem, 8), BuildCraftTransport.pipeItemsStone);
+		}
+
+		@Optional.Method (modid = "BuildCraft|Silicon")
+		private static void addGateRecipe (String materialName, int energyCost, GateDefinition.GateMaterial material, ItemRedstoneChipset.Chipset chipset, PipeWire... pipeWire) {
+				List<ItemStack> temp = new ArrayList<ItemStack>();
+				temp.add(chipset.getStack());
+				for (PipeWire wire : pipeWire)
+						temp.add(wire.getStack());
+				Object[] inputs = temp.toArray();
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:andGate" + materialName, energyCost, ItemGate.makeGateItem(material, GateDefinition.GateLogic.AND), inputs);
+				BuildCraftHelper.addAssemblerRecipes("buildcraft:orGate" + materialName, energyCost, ItemGate.makeGateItem(material, GateDefinition.GateLogic.OR), inputs);
 		}
 }

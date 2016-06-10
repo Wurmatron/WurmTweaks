@@ -5,22 +5,35 @@ import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
+import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import powercrystals.powerconverters.PowerConverterCore;
 import thaumcraft.common.config.ConfigItems;
 import vazkii.botania.common.block.ModBlocks;
+import vazkii.botania.common.item.ItemManaTablet;
 import vazkii.botania.common.item.ItemSignalFlare;
 import vazkii.botania.common.item.ItemTwigWand;
 import vazkii.botania.common.item.ModItems;
+import vazkii.botania.common.lib.LibOreDict;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.handler.ArmorHandler;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
+import wurmcraft.wurmatron.common.utils.botania.BotaniaHelper;
+import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
+
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/9/2016 with r1.8-249
+ */
 public class BotaniaRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
@@ -40,7 +53,7 @@ public class BotaniaRecipes {
 				r.addShapeless(new ItemStack(ModBlocks.livingwood, 4, 1), ModBlocks.livingwood);
 				r.addShapeless(new ItemStack(ModBlocks.livingwood, 1, 2), new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.add2X(new ItemStack(ModBlocks.livingwood, 4, 3), new ItemStack(ModBlocks.livingwood, 1, 1));
-				r.addShaped(new ItemStack(ModBlocks.livingwood, 4, 4), " X ", "X X", " X ",'X', new ItemStack(ModBlocks.livingwood, 1, 1));
+				r.addShaped(new ItemStack(ModBlocks.livingwood, 4, 4), " X ", "X X", " X ", 'X', new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.addShapeless(ModBlocks.livingwood, Items.glowstone_dust, ModBlocks.livingwood);
 				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 0), "WWW", "NX ", "WWW", 'W', ModBlocks.livingwood, 'N', WurmTweaksItems.itemNatureCore, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ModBlocks.spreader, 1, 1), ModBlocks.spreader, Items.redstone);
@@ -67,7 +80,6 @@ public class BotaniaRecipes {
 				r.addCircle(ModBlocks.openCrate, ModBlocks.livingwood);
 				r.addCircleWCenter(new ItemStack(ModBlocks.openCrate, 1, 1), ModBlocks.dreamwood, "packCraftingTable");
 				r.addCrossWCenter(ModBlocks.forestEye, Blocks.obsidian, ModItems.manaResource, Items.ender_eye);
-				// TODO Metal Compression Blocks
 				r.addShaped(ModBlocks.forestDrum, "WXW", "WBW", "WXW", 'W', ModBlocks.livingwood, 'X', TFCItems.leather, 'B', ModItems.grassHorn);
 				r.addShaped(new ItemStack(ModBlocks.forestDrum, 1, 1), "WXW", "WBW", "WXW", 'W', ModBlocks.dreamwood, 'X', WurmTweaksItems.itemNatureCoreMK2, 'B', ModItems.grassHorn);
 				r.addShaped(new ItemStack(ModBlocks.forestDrum, 1, 2), "WXW", "WBW", "WXW", 'W', ModBlocks.livingwood, 'X', TFCItems.leather, 'B', new ItemStack(ModItems.grassHorn, 1, 1));
@@ -79,10 +91,10 @@ public class BotaniaRecipes {
 				r.addShapeless(new ItemStack(ModBlocks.dreamwood, 4, 1), ModBlocks.dreamwood);
 				r.addShapeless(new ItemStack(ModBlocks.dreamwood, 1, 5), ModBlocks.dreamwood, Items.glowstone_dust);
 				r.addBasicMachineRecipe(ModBlocks.conjurationCatalyst, WurmTweaksBlocks.blockPlatinum, WurmTweaksItems.itemNatureCoreMK2, WurmTweaksItems.itemBloodInfused, ModBlocks.alchemyCatalyst);
-				r.addShaped(ModBlocks.prism, " X ", "XBX", " X ", 'B', "packCobblestone",'X', new ItemStack(ModItems.manaResource, 1, 10));
-				r.addShaped(new ItemStack(ModBlocks.prism, 1, 1), " X ", "XBX", " X ", 'B', "packBrick",'B', new ItemStack(ModItems.manaResource, 1, 10));
-				r.addShaped(new ItemStack(ModBlocks.prism, 1, 2), " X ", "XBX", " X ", 'B', Blocks.nether_brick,'B', new ItemStack(ModItems.manaResource, 1, 10));
-				r.addShaped(new ItemStack(ModBlocks.seaLamp, 1, 0), " X ", "XBX", " X ", 'B', Blocks.glowstone,'B', new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(ModBlocks.prism, " X ", "XBX", " X ", 'B', "packCobblestone", 'X', new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(new ItemStack(ModBlocks.prism, 1, 1), " X ", "XBX", " X ", 'B', "packBrick", 'B', new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(new ItemStack(ModBlocks.prism, 1, 2), " X ", "XBX", " X ", 'B', Blocks.nether_brick, 'B', new ItemStack(ModItems.manaResource, 1, 10));
+				r.addShaped(new ItemStack(ModBlocks.seaLamp, 1, 0), " X ", "XBX", " X ", 'B', Blocks.glowstone, 'B', new ItemStack(ModItems.manaResource, 1, 10));
 				for (int i = 0; i <= 15; i++)
 						r.addShaped(new ItemStack(ModBlocks.floatingFlower, 1, i), "F", "S", "D", 'F', new ItemStack(ModBlocks.shinyFlower, 1, i), 'S', ModItems.worldSeed, 'D', "packDirt");
 				r.add3X(ModBlocks.reedBlock, TFCItems.reeds);
@@ -106,7 +118,7 @@ public class BotaniaRecipes {
 				r.addShaped(ModBlocks.redStringFertilizer, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', ModItems.fertilizer, 'S', new ItemStack(ModItems.manaResource, 1, 10));
 				r.addShaped(ModBlocks.redStringComparator, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', Items.comparator, 'S', new ItemStack(ModItems.manaResource, 1, 10));
 				r.addShaped(ModBlocks.redStringInterceptor, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', ModBlocks.spreader, 'S', new ItemStack(ModItems.manaResource, 1, 10));
-				// TODO Special floating flowers
+				// TODO World Seed
 				r.addShaped(ModBlocks.corporeaIndex, "EXE", "XCX", "DXD", 'E', new ItemStack(ModItems.manaResource, 1, 15), 'X', Blocks.obsidian, 'C', ModItems.corporeaSpark, 'D', new ItemStack(ModItems.manaResource, 1, 9));
 				r.addShapeless(ModBlocks.corporeaFunnel, ModItems.corporeaSpark, Blocks.dropper, WurmTweaksItems.itemMagicChunk);
 				r.addShapeless(ModBlocks.corporeaCrystalCube, ModItems.corporeaSpark, ModBlocks.elfGlass, WurmTweaksItems.itemNatureCoreMK2);
@@ -126,14 +138,6 @@ public class BotaniaRecipes {
 				r.addShapeless(ModBlocks.shimmerrock, ModBlocks.livingrock, ModBlocks.bifrost);
 				r.addShapeless(ModBlocks.shimmerwoodPlanks, ModBlocks.dreamwood, ModBlocks.bifrost);
 				r.addShaped(ModBlocks.avatar, " P ", "PDP", "P P", 'P', new ItemStack(ModBlocks.livingwood, 1, 1), 'D', new ItemStack(ModItems.manaResource, 1, 1));
-				// TODO Living Wood Stairs/Walls/
-				// TODO Living rock Stairs/ Walls
-				// TODO Dreamwood Stairs/ Walls
-				// TODO prismarine Staris/walls
-				// TODO Reed staris/walls
-				// TODO Thatch stairs
-				//TODO ManaGlass , ElfGlass, Bifrost Glass | pane
-				// Lexicon both
 				for (int d = 0; d <= 15; d++)
 						r.addShapeless(new ItemStack(ModItems.petal, 2, d), new ItemStack(ModBlocks.flower, 1, d));
 				for (int d = 0; d <= 15; d++)
@@ -170,7 +174,6 @@ public class BotaniaRecipes {
 				r.addShapeless(new ItemStack(ModItems.lens, 1, 18), ModItems.lens, WurmTweaksItems.itemNatureCoreMK2);
 				r.addShapeless(new ItemStack(ModItems.lens, 1, 19), new ItemStack(ModItems.lens, 1, 18));
 				r.addShapeless(new ItemStack(ModItems.lens, 1, 20), ModItems.lens, WurmTweaksItems.itemNatureCore, Items.fireworks);
-				// TODO Runes
 				for (int i = 0; i < 16; i++)
 						r.addShaped(ItemSignalFlare.forColor(i), "I ", " B", "W ", 'B', new ItemStack(ModBlocks.manaBeacon, 1, i), 'I', "packIngo", 'W', ModBlocks.livingwood);
 				r.addCircleWCenter(new ItemStack(ModItems.manaTablet, 1, 0), ModBlocks.livingrock, WurmTweaksItems.itemNatureCoreMK2);
@@ -211,7 +214,7 @@ public class BotaniaRecipes {
 				r.addBasicMachineRecipe(ModItems.magnetRing, ModBlocks.livingrock, new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.rune, 1, 3), new ItemStack(ModItems.lens, 1, 10));
 				r.addBasicMachineRecipe(ModItems.lavaPendant, ModBlocks.livingrock, new ItemStack(ModItems.rune, 1, 1), new ItemStack(ModItems.rune, 1, 0), TFCItems.redSteelBucketSaltWater);
 				r.addBasicMachineRecipe(ModItems.speedUpBelt, ModBlocks.livingrock, new ItemStack(ModItems.rune, 1, 1), new ItemStack(ModItems.rune, 1, 2), new ItemStack(Items.potionitem, 1, 8258));
-				//TODO Charm of the diva
+				r.addBasicMachineRecipe(ModItems.divaCharm, WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemNatureCoreMK2, new ItemStack(LudicrousItems.resource, 1, 4));
 				r.addShaped(new ItemStack(ModItems.flightTiara, 1, 0), "SSS", "XSX", "FEF", 'S', new ItemStack(ModItems.manaResource, 1, 5), 'X', WurmTweaksItems.ingotRainbowSteel, 'F', Items.feather, 'E', new ItemStack(ModItems.manaResource, 1, 15));
 				r.addShapeless(new ItemStack(ModItems.flightTiara, 1, 1), new ItemStack(ModItems.flightTiara, 1, 0), Items.quartz);
 				r.addShapeless(new ItemStack(ModItems.flightTiara, 1, 2), new ItemStack(ModItems.flightTiara, 1, 1), Items.quartz);
@@ -231,13 +234,15 @@ public class BotaniaRecipes {
 				r.addShaped(new ItemStack(ModItems.vial, 2), "V V", " V ", 'V', ModBlocks.manaGlass);
 				r.addShaped(new ItemStack(ModItems.brewFlask, 1), "V V", " V ", 'V', ModBlocks.elfGlass);
 				r.addCircleWCenter(ModItems.bloodPendant, WurmTweaksItems.itemNatureCoreMK2, Items.ghast_tear);
-				// TODO Creative Mana Tablet
+				ItemStack creativeManaTablet = new ItemStack(ModItems.manaTablet);
+				ItemManaTablet.setMana(creativeManaTablet, 500000);
+				ItemManaTablet.setStackCreative(creativeManaTablet);
+				r.addShaped9X9Recipe(creativeManaTablet, "         ", " IIIIIII ", " IXXXXXI ", " IXBBBXI ", " IXBBBXI ", " IXBBBXI ", " IXXXXXI ", " IIIIIII ", "         ", 'I', new ItemStack(LudicrousItems.resource, 1, 6), 'X', new ItemStack(ModItems.manaTablet), 'B', WurmTweaksItems.creativeCreativeParts);
 				r.addShaped(ModItems.incenseStick, "S", "S", "X", 'X', "packStick", 'S', WurmTweaksItems.itemNatureCoreMK2);
 				r.addShaped(ModItems.gravityRod, "XAX", " X ", " S ", 'X', WurmTweaksItems.itemNatureCoreMK2, 'A', WurmTweaksItems.ingotRainbowSteel, 'S', new ItemStack(ModItems.manaResource, 1, 13));
 				r.addCircleWCenter(ModItems.blackHoleTalisman, ModItems.manaResource, WurmTweaksItems.itemAntiMatter);
 				r.addShapeless(ModItems.poolMinecart, Items.minecart, ModBlocks.pool);
 				r.addCircleWCenter(ModItems.baubleBox, "packSmoothStone", "packChest");
-				// TODO World Seed
 				r.addShaped(ModItems.obedienceStick, "  I", " S ", "S  ", 'I', ModItems.manaResource, 'S', new ItemStack(ModItems.manaResource, 1, 3));
 				r.addCrossWCenter(ModItems.superLavaPendant, Items.fire_charge, TFCItems.blueSteelBucketLava, ModItems.lavaPendant);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.starSword), 2800), " S ", " S ", " X ", 'X', WurmTweaksItems.ingotRainbowSteel, 'S', WurmTweaksItems.itemNatureCoreMK2);
@@ -254,9 +259,123 @@ public class BotaniaRecipes {
 						r.addCircleWCenter(new ItemStack(ModItems.cosmetic, 1, a), new ItemStack(ModItems.petal, 1, a), new ItemStack(ModItems.manaResource, 1, 16));
 				for (int a = 16; a < 31; a++)
 						r.addCircleWCenter(new ItemStack(ModItems.cosmetic, 1, a), new ItemStack(ModItems.petal, 1, a), new ItemStack(ModItems.manaResource, 1, 16));
-				// TODO Runic Alter Recipes
-				// TODO Mana Pool Recipes
-				// Alchemy recipies
-				// Transmutation recipes
+				ArmorHandler.addArmorProtection(ModItems.manasteelHelm, 300, 1200, 600);
+				ArmorHandler.addArmorProtection(ModItems.manasteelLegs, 300, 1200, 600);
+				ArmorHandler.addArmorProtection(ModItems.manasteelBoots, 300, 1200, 600);
+				ArmorHandler.addArmorProtection(ModItems.manasteelChest, 300, 1200, 600);
+				ArmorHandler.addArmorProtection(ModItems.manasteelHelmRevealing, 400, 1300, 700);
+				ArmorHandler.addArmorProtection(ModItems.terrasteelHelm, 600, 2400, 1200);
+				ArmorHandler.addArmorProtection(ModItems.terrasteelLegs, 600, 2400, 1200);
+				ArmorHandler.addArmorProtection(ModItems.terrasteelBoots, 600, 2400, 1200);
+				ArmorHandler.addArmorProtection(ModItems.terrasteelChest, 600, 2400, 1200);
+				ArmorHandler.addArmorProtection(ModItems.terrasteelHelmRevealing, 800, 2600, 1400);
+				ArmorHandler.addArmorProtection(ModItems.elementiumHelm, 450, 1800, 1000);
+				ArmorHandler.addArmorProtection(ModItems.elementiumLegs, 450, 1800, 1000);
+				ArmorHandler.addArmorProtection(ModItems.elementiumBoots, 450, 1800, 1000);
+				ArmorHandler.addArmorProtection(ModItems.elementiumChest, 450, 1800, 1000);
+				ArmorHandler.addArmorProtection(ModItems.elementiumHelmRevealing, 550, 2000, 1000);
+				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 0), new ItemStack(ModBlocks.storage, 1, 0));
+				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 4), new ItemStack(ModBlocks.storage, 1, 1));
+				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 7), new ItemStack(ModBlocks.storage, 1, 2));
+				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 2), new ItemStack(ModBlocks.storage, 1, 3));
+				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 9), new ItemStack(ModBlocks.storage, 1, 4));
+				if (RecipeChecker.modExists("IC2"))
+						addCompressorRecipes();
+				addManaPoolRecipes();
+				addElvenRecipes();
+				addRunicAlterRecipes();
+				addConjurationRecipes();
+				addAlchemyRecipes();
+		}
+
+		@Optional.Method (modid = "IC2")
+		private static void addCompressorRecipes () {
+				ICHelper.addCompressorRecipe(new ItemStack(ModItems.manaResource, 32, 0), new ItemStack(ModBlocks.storage, 1, 0));
+				ICHelper.addCompressorRecipe(new ItemStack(ModItems.manaResource, 32, 4), new ItemStack(ModBlocks.storage, 1, 1));
+				ICHelper.addCompressorRecipe(new ItemStack(ModItems.manaResource, 32, 7), new ItemStack(ModBlocks.storage, 1, 2));
+				ICHelper.addCompressorRecipe(new ItemStack(ModItems.manaResource, 32, 2), new ItemStack(ModBlocks.storage, 1, 3));
+				ICHelper.addCompressorRecipe(new ItemStack(ModItems.manaResource, 32, 9), new ItemStack(ModBlocks.storage, 1, 4));
+		}
+
+		@Optional.Method (modid = "Botania")
+		private static void addManaPoolRecipes () {
+				LogHandler.info("Adding Mana Pool Recipes");
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(TFCItems.wroughtIronIngot), 3000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModBlocks.storage, 1, 0), new ItemStack(WurmTweaksBlocks.blockWroughtIron), 96000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 1), new ItemStack(Items.ender_pearl), 6000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 2), "packGemExquisite", 12000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 2), "packGemBlock", 38400);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(Items.redstone), 500);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(Items.glowstone_dust), 500);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(Items.gunpowder), 500);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), "dustSulfur", 500);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModBlocks.pistonRelay), new ItemStack(Blocks.piston), 15000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.quartz, 1, 1), new ItemStack(Items.quartz), 500);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaInkwell, 1, ModItems.manaInkwell.getMaxDamage()), new ItemStack((Item) Item.itemRegistry.getObject("Thaumcraft:ItemInkwell")), 35000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModBlocks.manaGlass), "packGlass", 1500);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 16), new ItemStack(TFCItems.woolYarn), 5000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaBottle), new ItemStack(TFCItems.glassBottle), 5000);
+				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaBottle), new ItemStack(Items.glass_bottle), 5000);
+		}
+
+		@Optional.Method (modid = "Botania")
+		private static void addElvenRecipes () {
+				BotaniaHelper.addPortalRecipe(new ItemStack(ModBlocks.dreamwood), "packLog");
+				BotaniaHelper.addPortalRecipe(new ItemStack(ModItems.manaResource, 1, 7), new ItemStack(ModItems.manaResource, 1, 0));
+				BotaniaHelper.addPortalRecipe(new ItemStack(ModBlocks.storage, 1, 2), new ItemStack(ModBlocks.storage, 1, 0));
+				BotaniaHelper.addPortalRecipe(new ItemStack(ModItems.manaResource, 1, 8), new ItemStack(ModItems.manaResource, 1, 1));
+				BotaniaHelper.addPortalRecipe(new ItemStack(ModItems.manaResource, 1, 9), new ItemStack(ModItems.manaResource, 1, 2));
+				BotaniaHelper.addPortalRecipe(new ItemStack(ModBlocks.storage, 1, 4), new ItemStack(ModBlocks.storage, 1, 3));
+				BotaniaHelper.addPortalRecipe(new ItemStack(ModBlocks.elfGlass), "packGlass");
+				for (ItemStack ingot : OreDictionary.getOres("packIngot"))
+						BotaniaHelper.addPortalRecipe(ingot, ingot);
+		}
+
+		@Optional.Method (modid = "Botania")
+		private static void addRunicAlterRecipes () {
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 2, 0), 5200, new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(Items.dye, 1, 15), new ItemStack(Items.reeds), new ItemStack(Items.fishing_rod));
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 2, 1), 5200, new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(Items.netherbrick), new ItemStack(Items.gunpowder), new ItemStack(Items.nether_wart));
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 2, 2), 5200, new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 0), "packSmoothStone", new ItemStack(Blocks.coal_block), new ItemStack(Blocks.brown_mushroom));
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 2, 2), 5200, new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 0), "packSmoothStone", new ItemStack(Blocks.coal_block), new ItemStack(Blocks.red_mushroom));
+				for (int i = 0; i < 16; i++)
+						BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 2, 3), 5200, new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(Blocks.carpet, 1, i), new ItemStack(Items.feather), new ItemStack(Items.string));
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 4), 8900, LibOreDict.RUNE[0], LibOreDict.RUNE[1], "packSapling", "packSapling", "packSapling", new ItemStack(Items.wheat));
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 5), 8900, LibOreDict.RUNE[2], LibOreDict.RUNE[3], "packSand", "packSand", new ItemStack(Items.slime_ball), new ItemStack(Items.melon));
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 6), 8900, LibOreDict.RUNE[1], LibOreDict.RUNE[3], "packSapling", "packSapling", "packSapling", new ItemStack(Items.spider_eye));
+				for (int i = 0; i < 16; i++)
+						BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 7), 8900, LibOreDict.RUNE[0], LibOreDict.RUNE[2], new ItemStack(Blocks.snow), new ItemStack(Blocks.snow), new ItemStack(Blocks.wool, 1, i), "packFruit");
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 8), 8900, new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 0), new ItemStack(ModItems.manaResource, 1, 0), LibOreDict.MANA_PEARL);
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 9), 20000, new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 2), LibOreDict.RUNE[5], LibOreDict.RUNE[3]);
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 10), 20000, new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 2), LibOreDict.RUNE[7], LibOreDict.RUNE[1]);
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 11), 20000, new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 2), LibOreDict.RUNE[4], LibOreDict.RUNE[0]);
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 12), 20000, new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 2), LibOreDict.RUNE[6], LibOreDict.RUNE[3]);
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 13), 20000, new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 2), LibOreDict.RUNE[7], LibOreDict.RUNE[2]);
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 14), 20000, new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 2), LibOreDict.RUNE[7], LibOreDict.RUNE[0]);
+				BotaniaHelper.addAlterRecipe(new ItemStack(ModItems.rune, 1, 15), 20000, new ItemStack(ModItems.manaResource, 1, 2), new ItemStack(ModItems.manaResource, 1, 2), LibOreDict.RUNE[5], LibOreDict.RUNE[1]);
+		}
+
+		@Optional.Method (modid = "Botania")
+		private static void addConjurationRecipes () {
+				for (ItemStack sand : OreDictionary.getOres("packSand"))
+						BotaniaHelper.addConjurationRecipe(new ItemStack(sand.getItem(), 2, sand.getItemDamage()), sand, 8000);
+				for (ItemStack gravel : OreDictionary.getOres("packGravel"))
+						BotaniaHelper.addConjurationRecipe(new ItemStack(gravel.getItem(), 2, gravel.getItemDamage()), gravel, 8000);
+				BotaniaHelper.addConjurationRecipe(new ItemStack(Items.redstone, 2), new ItemStack(Items.redstone), 12000);
+				BotaniaHelper.addConjurationRecipe(new ItemStack(Items.glowstone_dust, 2), new ItemStack(Items.glowstone_dust), 24000);
+				BotaniaHelper.addConjurationRecipe(new ItemStack(TFCItems.coal, 2, 1), new ItemStack(TFCItems.coal, 1, 1), 8000);
+				BotaniaHelper.addConjurationRecipe(new ItemStack(TFCItems.coal, 2, 0), new ItemStack(TFCItems.coal, 1, 0), 8000);
+		}
+
+		@Optional.Method (modid = "Botania")
+		private static void addAlchemyRecipes () {
+				for (int l = 0; l < 15; l++)
+						BotaniaHelper.addAlchemyRecipe(new ItemStack(TFCItems.logs, 1, l + 1), new ItemStack(TFCItems.logs, 1, l), 4000);
+				for (int s = 0; s < OreDictionary.getOres("packSeed").size() - 1; s++)
+						BotaniaHelper.addAlchemyRecipe(OreDictionary.getOres("packSeed").get(s + 1), OreDictionary.getOres("packSeed").get(s), 8000);
+				BotaniaHelper.addAlchemyRecipe(new ItemStack(Items.redstone), new ItemStack(Items.glowstone_dust), 4000);
+				BotaniaHelper.addAlchemyRecipe(new ItemStack(Items.glowstone_dust), new ItemStack(Items.redstone), 4000);
+				for (int s = 0; s < OreDictionary.getOres("packSmoothStone").size() - 1; s++)
+						BotaniaHelper.addAlchemyRecipe(OreDictionary.getOres("packSmoothStone").get(s + 1), OreDictionary.getOres("packSmoothStone").get(s), 12000);
+				BotaniaHelper.addAlchemyRecipe(new ItemStack(ModItems.worldSeed), WurmTweaksItems.itemNatureCore, 28000);
 		}
 }
