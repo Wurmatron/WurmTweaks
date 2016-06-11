@@ -17,6 +17,7 @@ public class WTItems {
 		public static ArrayList<String> itemClumpNames = new ArrayList<String>();
 		public static ArrayList<String> itemCrystalNames = new ArrayList<String>();
 		public static ArrayList<String> itemShardNames = new ArrayList<String>();
+		public static ArrayList<String> itemDirtyNames = new ArrayList<String>();
 
 		public static HashMap<String, EnumChatFormatting> itemSpecialColors = new HashMap<String, EnumChatFormatting>();
 		public static HashMap<String, EnumFoodGroup[]> itemBasicFoodGroups = new HashMap<String, EnumFoodGroup[]>();
@@ -41,6 +42,7 @@ public class WTItems {
 		public static Item itemClump;
 		public static Item itemCrystal;
 		public static Item itemShard;
+		public static Item itemDirty;
 
 		public static void registerItems () {
 				itemMaterialNames.add("solarCore");
@@ -149,17 +151,28 @@ public class WTItems {
 				itemCrystalNames.add("crystalTin");
 				itemCrystalNames.add("crystalZinc");
 				registerItem(itemCrystal = new ItemClump(itemCrystalNames), "itemCrystal");
-				itemShardNames.add("crystalBismuth");
-				itemShardNames.add("crystalCopper");
-				itemShardNames.add("crystalGold");
-				itemShardNames.add("crystalIron");
-				itemShardNames.add("crystalLead");
-				itemShardNames.add("crystalNickel");
-				itemShardNames.add("crystalPlatinum");
-				itemShardNames.add("crystalSilver");
-				itemShardNames.add("crystalTin");
-				itemShardNames.add("crystalZinc");
-				registerItem(itemShard = new ItemClump(itemShardNames), "itemShard");
+				itemShardNames.add("shardBismuth");
+				itemShardNames.add("shardCopper");
+				itemShardNames.add("shardGold");
+				itemShardNames.add("shardIron");
+				itemShardNames.add("shardLead");
+				itemShardNames.add("shardNickel");
+				itemShardNames.add("shardPlatinum");
+				itemShardNames.add("shardSilver");
+				itemShardNames.add("shardTin");
+				itemShardNames.add("shardZinc");
+				registerItem(itemShard = new ItemShard(itemShardNames), "itemShard");
+				itemDirtyNames.add("dirtyBismuth");
+				itemDirtyNames.add("dirtyCopper");
+				itemDirtyNames.add("dirtyGold");
+				itemDirtyNames.add("dirtyIron");
+				itemDirtyNames.add("dirtyLead");
+				itemDirtyNames.add("dirtyNickel");
+				itemDirtyNames.add("dirtyPlatinum");
+				itemDirtyNames.add("dirtySilver");
+				itemDirtyNames.add("dirtyTin");
+				itemDirtyNames.add("dirtyZinc");
+				registerItem(itemDirty = new ItemClump(itemDirtyNames), "itemDirty");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
 				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");

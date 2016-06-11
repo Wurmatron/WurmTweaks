@@ -1,6 +1,7 @@
 package wurmcraft.wurmatron.common.recipes;
 
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
+import mekanism.common.recipe.RecipeHandler;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
@@ -27,6 +28,17 @@ public class Recipes {
 						BotaniaAPI.manaInfusionRecipes.clear();
 						BotaniaAPI.petalRecipes.clear();
 						BotaniaAPI.runeAltarRecipes.clear();
+				}
+				if (RecipeChecker.modExists("Mekanism")) {
+						RecipeHandler.Recipe.METALLURGIC_INFUSER.get().clear();
+						RecipeHandler.Recipe.ENRICHMENT_CHAMBER.get().clear();
+						RecipeHandler.Recipe.CRUSHER.get().clear();
+						RecipeHandler.Recipe.PURIFICATION_CHAMBER.get().clear();
+						RecipeHandler.Recipe.CHEMICAL_INJECTION_CHAMBER.get().clear();
+						RecipeHandler.Recipe.CHEMICAL_CRYSTALLIZER.get().clear();
+						RecipeHandler.Recipe.CHEMICAL_WASHER.get().clear();
+						RecipeHandler.Recipe.CHEMICAL_INJECTION_CHAMBER.get().clear();
+						RecipeHandler.Recipe.CHEMICAL_DISSOLUTION_CHAMBER.get().clear();
 				}
 				OreDict.init();
 				SmeltingRecipes.init();

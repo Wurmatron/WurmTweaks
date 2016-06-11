@@ -221,4 +221,9 @@ public class MekanismHelper {
 		public static void addSolarNeutronRecipe (GasStack input, GasStack output) {
 				RecipeHandler.addSolarNeutronRecipe(input, output);
 		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addChemicalDissolutionRecipe(GasStack output, ItemStack input) {
+				RecipeHandler.addChemicalDissolutionChamberRecipe(input, output);
+		}
 }

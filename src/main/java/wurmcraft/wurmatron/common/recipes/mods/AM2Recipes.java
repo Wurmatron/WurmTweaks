@@ -195,6 +195,6 @@ public class AM2Recipes {
 		}
 
 		private static void addSawMillRecipes () {
-				MachineHelper.addSawMillRecipe(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 6, 0), null, new ItemStack(BlocksCommonProxy.witchwoodLog), 32, 80);
+				MachineHelper.addSawMillRecipe(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 6, 0), null, new ItemStack(BlocksCommonProxy.witchwoodLog), 0, 32, 80);
 		}
 }

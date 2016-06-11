@@ -3,10 +3,13 @@ package wurmcraft.wurmatron.common.recipes.mods;
 import buildcraft.BuildCraftBuilders;
 import buildcraft.BuildCraftFactory;
 import cofh.thermalexpansion.block.TEBlocks;
+import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
+import erogenousbeef.bigreactors.common.BigReactors;
 import ic2.api.item.IC2Items;
+import mekanism.api.gas.GasStack;
 import mekanism.api.infuse.InfuseRegistry;
 import mekanism.common.MekanismBlocks;
 import mekanism.common.MekanismItems;
@@ -20,7 +23,9 @@ import solarexpansion.init.SEGameObjects;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
 import wurmcraft.wurmatron.common.utils.mekanism.MekanismHelper;
+import wurmcraft.wurmatron.common.utils.mekanism.MekanismRegistry;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
 public class MekanismRecipes {
@@ -156,8 +161,15 @@ public class MekanismRecipes {
 				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 9), WurmTweaksItems.gearMixedSheet, Items.book, Items.redstone, new ItemStack(MekanismItems.ControlCircuit, 1, 3));
 				r.addCrossWCenter(new ItemStack(MekanismBlocks.BasicBlock, 1, 8), TFCItems.steelSheet2x, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 5), WurmTweaksBlocks.blockCompressedRedstone, TFCItems.blueSteelBucketLava, WurmTweaksBlocks.blockGold, WurmTweaksItems.itemMachineFrame);
+				MekanismRegistry.addGases();
 				addMetallurgicInfuserRecipe();
-				addEnrichmentChamberRecipes();
+				addPulversiverRecipes();
+				addCrusherRecipes();
+				addPurificationChamberRecipes();
+				addChemicalInjectorRecipes();
+				addChemicalCrystallizerRecipes();
+				addChemicalWasherRecipes();
+				addChemicalDissolutionRecipes();
 		}
 
 		@Optional.Method (modid = "Mekanism")
@@ -169,8 +181,192 @@ public class MekanismRecipes {
 				MekanismHelper.addMetallurgicInfuserRecipe(InfuseRegistry.get("CARBON"), 50, new ItemStack(Items.nether_star, 4, 0), new ItemStack(GeneratorsItems.Hohlraum, 1, 100));
 		}
 
-		@Optional.Method (modid = "Mekanism")
-		private static void addEnrichmentChamberRecipes () {
+		private static void addPulversiverRecipes () {
+				// Poor Ores
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper30, new ItemStack(TFCItems.oreChunk, 1, 49), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditGold30, new ItemStack(TFCItems.oreChunk, 1, 50), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditPlatinum30, new ItemStack(TFCItems.oreChunk, 1, 51), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron30, new ItemStack(TFCItems.oreChunk, 1, 52), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditSilver30, new ItemStack(TFCItems.oreChunk, 1, 53), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditTin30, new ItemStack(TFCItems.oreChunk, 1, 54), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditLead30, new ItemStack(TFCItems.oreChunk, 1, 55), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditBismuth30, new ItemStack(TFCItems.oreChunk, 1, 56), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditNickel30, new ItemStack(TFCItems.oreChunk, 1, 57), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper30, new ItemStack(TFCItems.oreChunk, 1, 58), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron30, new ItemStack(TFCItems.oreChunk, 1, 59), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron30, new ItemStack(TFCItems.oreChunk, 1, 60), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditZinc30, new ItemStack(TFCItems.oreChunk, 1, 61), 32, 300, null, 0);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper30, new ItemStack(TFCItems.oreChunk, 1, 62), 32, 300, null, 0);
+				// Regular Ores
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper50, new ItemStack(TFCItems.oreChunk, 1, 0), 32, 400, WurmTweaksItems.creditCopper30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditGold50, new ItemStack(TFCItems.oreChunk, 1, 1), 32, 400, WurmTweaksItems.creditGold30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditPlatinum50, new ItemStack(TFCItems.oreChunk, 1, 2), 32, 400, WurmTweaksItems.creditPlatinum30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron50, new ItemStack(TFCItems.oreChunk, 1, 3), 32, 400, WurmTweaksItems.creditIron30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditSilver50, new ItemStack(TFCItems.oreChunk, 1, 4), 32, 400, WurmTweaksItems.creditSilver30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditTin50, new ItemStack(TFCItems.oreChunk, 1, 5), 32, 400, WurmTweaksItems.creditTin30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditLead50, new ItemStack(TFCItems.oreChunk, 1, 6), 32, 400, WurmTweaksItems.creditLead30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditBismuth50, new ItemStack(TFCItems.oreChunk, 1, 7), 32, 400, WurmTweaksItems.creditBismuth30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditNickel50, new ItemStack(TFCItems.oreChunk, 1, 8), 32, 400, WurmTweaksItems.creditNickel30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper50, new ItemStack(TFCItems.oreChunk, 1, 9), 32, 400, WurmTweaksItems.creditCopper30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron50, new ItemStack(TFCItems.oreChunk, 1, 10), 32, 400, WurmTweaksItems.creditIron30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron50, new ItemStack(TFCItems.oreChunk, 1, 11), 32, 400, WurmTweaksItems.creditIron30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditZinc50, new ItemStack(TFCItems.oreChunk, 1, 12), 32, 400, WurmTweaksItems.creditZinc30, 5);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper50, new ItemStack(TFCItems.oreChunk, 1, 13), 32, 400, WurmTweaksItems.creditCopper30, 5);
+				// Rich Ores
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper70, new ItemStack(TFCItems.oreChunk, 1, 35), 32, 400, WurmTweaksItems.creditCopper30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditGold70, new ItemStack(TFCItems.oreChunk, 1, 36), 32, 400, WurmTweaksItems.creditGold30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditPlatinum70, new ItemStack(TFCItems.oreChunk, 1, 37), 32, 400, WurmTweaksItems.creditPlatinum30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron70, new ItemStack(TFCItems.oreChunk, 1, 38), 32, 400, WurmTweaksItems.creditIron30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditSilver70, new ItemStack(TFCItems.oreChunk, 1, 39), 32, 400, WurmTweaksItems.creditSilver30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditTin70, new ItemStack(TFCItems.oreChunk, 1, 40), 32, 400, WurmTweaksItems.creditTin30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditLead70, new ItemStack(TFCItems.oreChunk, 1, 41), 32, 400, WurmTweaksItems.creditLead30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditBismuth70, new ItemStack(TFCItems.oreChunk, 1, 42), 32, 400, WurmTweaksItems.creditBismuth30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditNickel70, new ItemStack(TFCItems.oreChunk, 1, 43), 32, 400, WurmTweaksItems.creditNickel30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper70, new ItemStack(TFCItems.oreChunk, 1, 44), 32, 400, WurmTweaksItems.creditCopper30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron70, new ItemStack(TFCItems.oreChunk, 1, 45), 32, 400, WurmTweaksItems.creditIron30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditIron70, new ItemStack(TFCItems.oreChunk, 1, 46), 32, 400, WurmTweaksItems.creditIron30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditZinc70, new ItemStack(TFCItems.oreChunk, 1, 47), 32, 400, WurmTweaksItems.creditZinc30, 20);
+				MachineHelper.addPulveriserRecipes(WurmTweaksItems.creditCopper70, new ItemStack(TFCItems.oreChunk, 1, 48), 32, 400, WurmTweaksItems.creditCopper30, 20);
+				// Misc Ores
+				MachineHelper.addPulveriserRecipes(new ItemStack(Items.redstone, 12), new ItemStack(TFCItems.oreChunk, 1, 27), 32, 400, new ItemStack(Items.redstone), 25);
+				MachineHelper.addPulveriserRecipes(new ItemStack(Items.redstone, 12), new ItemStack(TFCItems.oreChunk, 1, 28), 32, 400, new ItemStack(Items.redstone), 25);
+				MachineHelper.addPulveriserRecipes(new ItemStack(Items.dye, 12, 4), new ItemStack(TFCItems.oreChunk, 1, 34), 32, 400, new ItemStack(Items.dye, 1, 4), 25);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFCItems.coal, 8, 0), new ItemStack(TFCItems.oreChunk, 1, 14), 32, 400, new ItemStack(TFCItems.coal, 1, 0), 25);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFCItems.coal, 8, 0), new ItemStack(TFCItems.oreChunk, 1, 15), 32, 400, new ItemStack(TFCItems.coal, 1, 0), 25);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFCItems.powder, 6, 1), new ItemStack(TFCItems.oreChunk, 1, 16), 32, 400, null, 0);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFCItems.powder, 6, 2), new ItemStack(TFCItems.oreChunk, 1, 20), 32, 400, null, 0);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial, 4, 17), new ItemStack(TFCItems.oreChunk, 1, 29), 32, 400, null, 0);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial, 12, 16), new ItemStack(TFCItems.oreChunk, 1, 23), 32, 400, null, 0);
+				MachineHelper.addPulveriserRecipes(new ItemStack(BigReactors.ingotGeneric, 6, 0), new ItemStack(TFCItems.oreChunk, 1, 26), 32, 400, null, 0);
+				// Dirty - > Credits
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditCopper100, WurmTweaksItems.dirtyCopper);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditGold100, WurmTweaksItems.dirtyGold);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditPlatinum100, WurmTweaksItems.dirtyPlatinum);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditIron100, WurmTweaksItems.dirtyIron);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditSilver100, WurmTweaksItems.dirtySilver);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditTin100, WurmTweaksItems.dirtyTin);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditLead100, WurmTweaksItems.dirtyLead);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditBismuth100, WurmTweaksItems.dirtyBismuth);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditNickel100, WurmTweaksItems.dirtyNickel);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditIron100, WurmTweaksItems.dirtyIron);
+				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditZinc100, WurmTweaksItems.dirtyZinc);
+		}
 
+		private static void addCrusherRecipes () {
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyCopper, WurmTweaksItems.clumpCopper);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyGold, WurmTweaksItems.clumpGold);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyPlatinum, WurmTweaksItems.clumpPlatinum);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyIron, WurmTweaksItems.clumpIron);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtySilver, WurmTweaksItems.clumpSilver);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyTin, WurmTweaksItems.clumpTin);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyLead, WurmTweaksItems.clumpLead);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyBismuth, WurmTweaksItems.clumpBismuth);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyNickel, WurmTweaksItems.clumpNickel);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyIron, WurmTweaksItems.clumpIron);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyZinc, WurmTweaksItems.clumpZinc);
+		}
+
+		private static void addPurificationChamberRecipes () {
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpCopper, WurmTweaksItems.shardCopper);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpGold, WurmTweaksItems.shardGold);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpPlatinum, WurmTweaksItems.shardPlatinum);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpIron, WurmTweaksItems.shardIron);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpSilver, WurmTweaksItems.shardSilver);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpTin, WurmTweaksItems.shardTin);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpLead, WurmTweaksItems.shardLead);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpBismuth, WurmTweaksItems.shardBismuth);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpNickel, WurmTweaksItems.shardNickel);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpIron, WurmTweaksItems.shardIron);
+				MekanismHelper.addPurificationChamberRecipe(WurmTweaksItems.clumpZinc, WurmTweaksItems.shardZinc);
+		}
+
+		private static void addChemicalInjectorRecipes () {
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardCopper, "hydrogenChloride", WurmTweaksItems.crystalCopper);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardGold, "hydrogenChloride", WurmTweaksItems.crystalGold);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardPlatinum, "hydrogenChloride", WurmTweaksItems.crystalPlatinum);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardIron, "hydrogenChloride", WurmTweaksItems.crystalIron);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardSilver, "hydrogenChloride", WurmTweaksItems.crystalSilver);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardTin, "hydrogenChloride", WurmTweaksItems.crystalTin);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardLead, "hydrogenChloride", WurmTweaksItems.crystalLead);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardBismuth, "hydrogenChloride", WurmTweaksItems.crystalBismuth);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardNickel, "hydrogenChloride", WurmTweaksItems.crystalNickel);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardIron, "hydrogenChloride", WurmTweaksItems.crystalIron);
+				MekanismHelper.addChemicalInjectionChamberRecipe(WurmTweaksItems.shardZinc, "hydrogenChloride", WurmTweaksItems.crystalZinc);
+		}
+
+		public static void addChemicalCrystallizerRecipes () {
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.copperPure, 100), WurmTweaksItems.crystalCopper);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.goldPure, 100), WurmTweaksItems.crystalGold);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.platinumPure, 100), WurmTweaksItems.crystalPlatinum);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.ironPure, 100), WurmTweaksItems.crystalIron);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.silverPure, 100), WurmTweaksItems.crystalSilver);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.tinPure, 100), WurmTweaksItems.crystalTin);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.leadPure, 100), WurmTweaksItems.crystalLead);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.bismuthPure, 100), WurmTweaksItems.crystalBismuth);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.nickelPure, 100), WurmTweaksItems.crystalNickel);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.ironPure, 100), WurmTweaksItems.crystalIron);
+				MekanismHelper.addChemicalCrystallizerRecipe(new GasStack(MekanismRegistry.zincPure, 100), WurmTweaksItems.crystalZinc);
+		}
+
+		private static void addChemicalWasherRecipes () {
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.copper, 100), new GasStack(MekanismRegistry.copperPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.gold, 100), new GasStack(MekanismRegistry.goldPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.platinum, 100), new GasStack(MekanismRegistry.platinumPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.iron, 100), new GasStack(MekanismRegistry.ironPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.silver, 100), new GasStack(MekanismRegistry.silverPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.tin, 100), new GasStack(MekanismRegistry.tinPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.lead, 100), new GasStack(MekanismRegistry.leadPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.bismuth, 100), new GasStack(MekanismRegistry.bismuthPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.nickel, 100), new GasStack(MekanismRegistry.nickelPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.iron, 100), new GasStack(MekanismRegistry.ironPure, 100));
+				MekanismHelper.addChemicalWasherRecipe(new GasStack(MekanismRegistry.zinc, 100), new GasStack(MekanismRegistry.zincPure, 100));
+		}
+
+		private static void addChemicalDissolutionRecipes () {
+				// Poor Ores
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 75), new ItemStack(TFCItems.oreChunk, 1, 49));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.gold, 75), new ItemStack(TFCItems.oreChunk, 1, 50));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.platinum, 75), new ItemStack(TFCItems.oreChunk, 1, 51));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 75), new ItemStack(TFCItems.oreChunk, 1, 52));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.silver, 75), new ItemStack(TFCItems.oreChunk, 1, 53));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.tin, 75), new ItemStack(TFCItems.oreChunk, 1, 54));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.lead, 75), new ItemStack(TFCItems.oreChunk, 1, 55));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.bismuth, 75), new ItemStack(TFCItems.oreChunk, 1, 56));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.nickel, 75), new ItemStack(TFCItems.oreChunk, 1, 57));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 75), new ItemStack(TFCItems.oreChunk, 1, 58));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 75), new ItemStack(TFCItems.oreChunk, 1, 59));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 75), new ItemStack(TFCItems.oreChunk, 1, 60));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.zinc, 75), new ItemStack(TFCItems.oreChunk, 1, 61));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 75), new ItemStack(TFCItems.oreChunk, 1, 62));
+				// Regular Ores
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 125), new ItemStack(TFCItems.oreChunk, 1, 0));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.gold, 125), new ItemStack(TFCItems.oreChunk, 1, 1));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.platinum, 125), new ItemStack(TFCItems.oreChunk, 1, 2));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 125), new ItemStack(TFCItems.oreChunk, 1, 3));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.silver, 125), new ItemStack(TFCItems.oreChunk, 1, 4));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.tin, 125), new ItemStack(TFCItems.oreChunk, 1, 5));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.lead, 125), new ItemStack(TFCItems.oreChunk, 1, 6));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.bismuth, 125), new ItemStack(TFCItems.oreChunk, 1, 7));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.nickel, 125), new ItemStack(TFCItems.oreChunk, 1, 8));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 125), new ItemStack(TFCItems.oreChunk, 1, 9));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 125), new ItemStack(TFCItems.oreChunk, 1, 10));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 125), new ItemStack(TFCItems.oreChunk, 1, 11));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.zinc, 125), new ItemStack(TFCItems.oreChunk, 1, 12));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 125), new ItemStack(TFCItems.oreChunk, 1, 13));
+				// Rich Ores
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 175), new ItemStack(TFCItems.oreChunk, 1, 35));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.gold, 175), new ItemStack(TFCItems.oreChunk, 1, 36));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.platinum, 175), new ItemStack(TFCItems.oreChunk, 1, 37));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 175), new ItemStack(TFCItems.oreChunk, 1, 38));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.silver, 175), new ItemStack(TFCItems.oreChunk, 1, 39));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.tin, 175), new ItemStack(TFCItems.oreChunk, 1, 40));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.lead, 175), new ItemStack(TFCItems.oreChunk, 1, 41));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.bismuth, 175), new ItemStack(TFCItems.oreChunk, 1, 42));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.nickel, 175), new ItemStack(TFCItems.oreChunk, 1, 43));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 175), new ItemStack(TFCItems.oreChunk, 1, 44));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 175), new ItemStack(TFCItems.oreChunk, 1, 45));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 175), new ItemStack(TFCItems.oreChunk, 1, 46));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.zinc, 175), new ItemStack(TFCItems.oreChunk, 1, 47));
+				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 175), new ItemStack(TFCItems.oreChunk, 1, 48));
 		}
 }

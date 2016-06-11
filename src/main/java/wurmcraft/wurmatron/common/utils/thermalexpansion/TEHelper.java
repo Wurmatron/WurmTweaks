@@ -1,8 +1,15 @@
 package wurmcraft.wurmatron.common.utils.thermalexpansion;
 
+import cofh.api.modhelpers.ThermalExpansionHelper;
 import cofh.thermalexpansion.block.TEBlocks;
+import cofh.thermalexpansion.util.crafting.CrucibleManager;
+import cofh.thermalexpansion.util.crafting.PulverizerManager;
+import cofh.thermalexpansion.util.crafting.TransposerManager;
+import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fluids.FluidStack;
 
 public class TEHelper {
 
@@ -21,6 +28,7 @@ public class TEHelper {
 		private static final byte[] SideCache = new byte[] {(byte) 1, 1, (byte) 2, 2, (byte) 2, 2, 2,};
 		private static NBTTagCompound Augments = new NBTTagCompound();
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getPulveriser (String name) {
 
 				if (name == "Basic") {
@@ -75,6 +83,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getFurnace (String name) {
 				if (name == "Basic") {
 						// Set Basic NBT
@@ -127,6 +136,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getSawmill (String name) {
 
 				if (name == "Basic") {
@@ -181,6 +191,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getSmelter (String name) {
 
 				if (name == "Basic") {
@@ -234,6 +245,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getMagma (String name) {
 				if (name == "Basic") {
 						// Set Basic NBT
@@ -286,6 +298,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getFluid (String name) {
 
 				if (name == "Basic") {
@@ -339,7 +352,7 @@ public class TEHelper {
 				return null;
 		}
 
-
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getGlacial (String name) {
 				if (name == "Basic") {
 						// Set Basic NBT
@@ -392,6 +405,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getCobble (String name) {
 
 				if (name == "Basic") {
@@ -445,6 +459,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getAqua (String name) {
 				if (name == "Basic") {
 						// Set Basic NBT
@@ -497,6 +512,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getAssembler (String name) {
 
 				if (name == "Basic") {
@@ -550,6 +566,7 @@ public class TEHelper {
 				return null;
 		}
 
+		@Optional.Method (modid = "ThermalExpansion")
 		public static ItemStack getPower (String name) {
 
 				if (name == "Basic") {
@@ -601,5 +618,100 @@ public class TEHelper {
 						return Power;
 				}
 				return null;
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addFurnaceRecipe (int energy, ItemStack input, ItemStack output) {
+				if (input == null || output == null) {
+						return;
+				}
+				ThermalExpansionHelper.addFurnaceRecipe(energy, input, output);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addPulverizerRecipe (int power, ItemStack in, ItemStack out, ItemStack secondary, int chance) {
+				PulverizerManager.addRecipe(power, in, out, secondary, chance);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addPulverizerRecipe (int power, ItemStack in, ItemStack out) {
+				PulverizerManager.addRecipe(power, in, out);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addSawmillRecipe (int energy, ItemStack input, ItemStack primaryOutput) {
+				addSawmillRecipe(energy, input, primaryOutput, null, 0);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addSawmillRecipe (int energy, ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput) {
+				addSawmillRecipe(energy, input, primaryOutput, secondaryOutput, 100);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addSawmillRecipe (int energy, ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput, int secondaryChance) {
+				ThermalExpansionHelper.addSawmillRecipe(energy, input, primaryOutput, secondaryOutput, secondaryChance);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addSmelterRecipe (int energy, ItemStack primaryInput, ItemStack secondaryInput, ItemStack primaryOutput) {
+				addSmelterRecipe(energy, primaryInput, secondaryInput, primaryOutput, null, 0);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addSmelterRecipe (int energy, ItemStack primaryInput, ItemStack secondaryInput, ItemStack primaryOutput, ItemStack secondaryOutput) {
+				addSmelterRecipe(energy, primaryInput, secondaryInput, primaryOutput, secondaryOutput, 100);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addSmelterRecipe (int energy, ItemStack primaryInput, ItemStack secondaryInput, ItemStack primaryOutput, ItemStack secondaryOutput, int secondaryChance) {
+				ThermalExpansionHelper.addSmelterRecipe(energy, primaryInput, secondaryInput, primaryOutput, secondaryOutput, secondaryChance);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addCrucibleRecipe (int energy, ItemStack input, FluidStack output) {
+				CrucibleManager.addRecipe(energy, input, output);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addTransposerFill (int energy, ItemStack input, ItemStack output, FluidStack fluid, boolean reversible) {
+				TransposerManager.addFillRecipe(energy, input, output, fluid, reversible);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addTransposerExtract (int energy, ItemStack input, ItemStack output, FluidStack fluid, int chance, boolean reversible) {
+				ThermalExpansionHelper.addTransposerExtract(energy, input, output, fluid, chance, reversible);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addMagmaticFuel (String fluidName, int energy) {
+				NBTTagCompound toSend = new NBTTagCompound();
+				toSend.setString("fluidName", fluidName);
+				toSend.setInteger("energy", energy);
+				FMLInterModComms.sendMessage("ThermalExpansion", "MagmaticFuel", toSend);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addCompressionFuel (String fluidName, int energy) {
+				NBTTagCompound toSend = new NBTTagCompound();
+				toSend.setString("fluidName", fluidName);
+				toSend.setInteger("energy", energy);
+				FMLInterModComms.sendMessage("ThermalExpansion", "CompressionFuel", toSend);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addReactantFuel (String fluidName, int energy) {
+				NBTTagCompound toSend = new NBTTagCompound();
+				toSend.setString("fluidName", fluidName);
+				toSend.setInteger("energy", energy);
+				FMLInterModComms.sendMessage("ThermalExpansion", "ReactantFuel", toSend);
+		}
+
+		@Optional.Method (modid = "ThermalExpansion")
+		public static void addCoolant (String fluidName, int energy) {
+				NBTTagCompound toSend = new NBTTagCompound();
+				toSend.setString("fluidName", fluidName);
+				toSend.setInteger("energy", energy);
+				FMLInterModComms.sendMessage("ThermalExpansion", "Coolant", toSend);
 		}
 }
