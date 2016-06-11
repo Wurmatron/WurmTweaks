@@ -1,8 +1,14 @@
 package wurmcraft.wurmatron.common.utils.mekanism;
 
+import cpw.mods.fml.common.Optional;
+import mekanism.api.gas.GasStack;
+import mekanism.api.infuse.InfuseType;
 import mekanism.common.MekanismBlocks;
+import mekanism.common.recipe.RecipeHandler;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fluids.FluidStack;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 
 public class MekanismHelper {
 
@@ -123,6 +129,96 @@ public class MekanismHelper {
 						tag.setInteger("tier", 3);
 				stack.setTagCompound(tag);
 				return stack;
+		}
 
+		@Optional.Method (modid = "Mekanism")
+		public static void addEnrichmentChamberRecipe (ItemStack output, ItemStack input) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addEnrichmentChamberRecipe(output, input);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addOsmiumCompressorRecipe (ItemStack output, ItemStack input) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addOsmiumCompressorRecipe(output, input);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addCombinerRecipe (ItemStack output, ItemStack input) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addCombinerRecipe(output, input);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addCrusherRecipe (ItemStack output, ItemStack input) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addCrusherRecipe(output, input);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addPurificationChamberRecipe (ItemStack output, ItemStack input) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addPurificationChamberRecipe(output, input);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addChemicalOxidizerRecipe (GasStack output, ItemStack input) {
+				if (RecipeChecker.checkStack(input))
+						RecipeHandler.addChemicalOxidizerRecipe(input, output);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addChemicalInfuserRecipe (GasStack output, GasStack input1, GasStack input2) {
+				RecipeHandler.addChemicalInfuserRecipe(input1, input2, output);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addPrecisionSawmillRecipe (ItemStack input, ItemStack primaryOutput, ItemStack secondaryOutput, double chance) {
+				if (RecipeChecker.checkStack(primaryOutput) && RecipeChecker.checkStack(secondaryOutput))
+						RecipeHandler.addPrecisionSawmillRecipe(input, primaryOutput, secondaryOutput, chance);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addChemicalInjectionChamberRecipe (ItemStack output, String gasName, ItemStack input) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addChemicalInjectionChamberRecipe(input, gasName, output);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addElectrolyticSeparatorRecipe (FluidStack input, double energy, GasStack leftOutput, GasStack rightOutput) {
+				RecipeHandler.addElectrolyticSeparatorRecipe(input, energy, leftOutput, rightOutput);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addChemicalWasherRecipe (GasStack input, GasStack output) {
+				RecipeHandler.addChemicalWasherRecipe(input, output);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addChemicalCrystallizerRecipe (GasStack input, ItemStack output) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addChemicalCrystallizerRecipe(input, output);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addMetallurgicInfuserRecipe (InfuseType infuse, int amount, ItemStack input, ItemStack output) {
+				if (RecipeChecker.checkStack(output))
+						RecipeHandler.addMetallurgicInfuserRecipe(infuse, amount, input, output);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addPRCRecipe (ItemStack inputSolid, FluidStack inputFluid, GasStack inputGas, ItemStack outputSolid, GasStack outputGas, double extraEnergy, int ticks) {
+				if (RecipeChecker.checkStack(outputSolid))
+						RecipeHandler.addPRCRecipe(inputSolid, inputFluid, inputGas, outputSolid, outputGas, extraEnergy, ticks);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addThermalEvaporationRecipe (FluidStack input, FluidStack output) {
+				RecipeHandler.addThermalEvaporationRecipe(input, output);
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		public static void addSolarNeutronRecipe (GasStack input, GasStack output) {
+				RecipeHandler.addSolarNeutronRecipe(input, output);
 		}
 }

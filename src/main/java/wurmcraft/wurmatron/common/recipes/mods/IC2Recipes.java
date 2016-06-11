@@ -22,7 +22,6 @@ public class IC2Recipes {
 				r.addCircleWCenter(new ItemStack(IC2Items.getItem("reinforcedGlass").getItem(), 8), "packGlass", IC2Items.getItem("advancedAlloy"));
 				r.addShaped(new ItemStack(IC2Items.getItem("scaffold").getItem(), 16, 0), "PPP", " S ", "S S", 'P', "packPlanks", 'S', "packStick");
 				r.addShaped(new ItemStack(IC2Items.getItem("ironScaffold").getItem(), 16, 0), "III", " S ", "S S", 'I', TFCItems.wroughtIronIngot, 'S', "packStick");
-				// TODO Uranium Compression
 				r.addBasicMachineRecipe(IC2Items.getItem("WindKineticGenerator"), IC2Items.getItem("carbonPlate"), WurmTweaksItems.ingotGreenSteel, TFCItems.platinumSheet, IC2Items.getItem("generator"));
 				r.addBasicMachineRecipe(IC2Items.getItem("generator"), TFCItems.blueSteelSheet, new ItemStack(IC2Items.getItem("reBattery").getItem(), 1, OreDictionary.WILDCARD_VALUE), Blocks.coal_block, WurmTweaksItems.itemMachineFrame);
 				r.addCrossWCenter(new ItemStack(IC2Items.getItem("generator").getItem(), 1, 1), TFCItems.redSteelSheet2x, TFCItems.blackSteelSheet2x, new ItemStack(IC2Items.getItem("generator").getItem(), 1, 0));
@@ -155,6 +154,5 @@ public class IC2Recipes {
 				r.addShapeless(IC2Items.getItem("copperCableItem"), TFCItems.copperIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(IC2Items.getItem("goldCableItem"), TFCItems.goldIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(IC2Items.getItem("tinCableItem"), TFCItems.tinIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
-				// TODO All MACHINE RECIPES
 		}
 }

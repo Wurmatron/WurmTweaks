@@ -27,6 +27,11 @@ import wurmcraft.wurmatron.common.utils.buildcraft.BuildCraftHelper;
 import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
+
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/10/2016 with 2.3.0.425_beta
+ */
 public class EnderIORecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
@@ -64,7 +69,7 @@ public class EnderIORecipes {
 				r.addShaped(EnderIO.blockSpawnGuard, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
 				r.addShaped(EnderIO.blockExperianceOblisk, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemXpTransfer, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
 				r.addShaped(EnderIO.blockEnchanter, "GEG", "III", "I I", 'G', "packGemExquisite", 'E', Blocks.enchanting_table, 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
-				r.addPressurePlate(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(EnderIO.itemMaterial, 1, 6));
+				r.addPressurePlate(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShapeless(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 1), new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShaped(EnderIO.blockDarkSteelAnvil, "BBB", " I ", "III", 'I', new ItemStack(EnderIO.itemMaterial, 1, 6), 'B', new ItemStack(EnderIO.blockIngotStorage, 1, 6));
 				r.addShaped(new ItemStack(EnderIO.blockDarkSteelLadder, 8), "III", " I ", "III", 'I', new ItemStack(EnderIO.itemMaterial, 1, 6));

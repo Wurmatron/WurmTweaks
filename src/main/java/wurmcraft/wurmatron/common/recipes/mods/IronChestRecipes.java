@@ -9,6 +9,10 @@ import net.minecraft.item.ItemStack;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/10/2016 with 6.0.60.741
+ */
 public class IronChestRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();

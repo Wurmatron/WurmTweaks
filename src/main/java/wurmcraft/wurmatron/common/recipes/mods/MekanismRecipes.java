@@ -7,9 +7,11 @@ import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
 import ic2.api.item.IC2Items;
+import mekanism.api.infuse.InfuseRegistry;
 import mekanism.common.MekanismBlocks;
 import mekanism.common.MekanismItems;
 import mekanism.generators.common.GeneratorsBlocks;
+import mekanism.generators.common.GeneratorsItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -151,7 +153,24 @@ public class MekanismRecipes {
 				r.addShaped(new ItemStack(GeneratorsBlocks.ReactorGlass, 1, 1), " R ", "RBR", " R ", 'R', new ItemStack(GeneratorsBlocks.ReactorGlass, 1, 0), 'B', WurmTweaksBlocks.blockCompressedRedstone);
 				r.addShaped(new ItemStack(GeneratorsBlocks.Reactor, 1, 3), " R ", "RBR", " R ", 'R', new ItemStack(GeneratorsBlocks.Reactor, 1, 1), 'B', new ItemStack(MekanismItems.ControlCircuit, 1, 3));
 				r.addShaped(new ItemStack(GeneratorsBlocks.Reactor, 1, 0), "RRR", "RBR", "RRR", 'R', new ItemStack(GeneratorsBlocks.Reactor, 1, 1), 'B', new ItemStack(SEGameObjects.SolarPanelUltimate));
-				// TODO Machine Recipes
-				// TODO Creative energy Cell
+				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 9), WurmTweaksItems.gearMixedSheet, Items.book, Items.redstone, new ItemStack(MekanismItems.ControlCircuit, 1, 3));
+				r.addCrossWCenter(new ItemStack(MekanismBlocks.BasicBlock, 1, 8), TFCItems.steelSheet2x, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 5), WurmTweaksBlocks.blockCompressedRedstone, TFCItems.blueSteelBucketLava, WurmTweaksBlocks.blockGold, WurmTweaksItems.itemMachineFrame);
+				addMetallurgicInfuserRecipe();
+				addEnrichmentChamberRecipes();
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		private static void addMetallurgicInfuserRecipe () {
+				MekanismHelper.addMetallurgicInfuserRecipe(InfuseRegistry.get("REDSTONE"), 20, new ItemStack(TFCItems.steelIngot), new ItemStack(MekanismItems.EnrichedAlloy));
+				MekanismHelper.addMetallurgicInfuserRecipe(InfuseRegistry.get("CARBON"), 50, new ItemStack(MekanismItems.EnrichedAlloy), new ItemStack(MekanismItems.ControlCircuit, 1, 0));
+				MekanismHelper.addMetallurgicInfuserRecipe(InfuseRegistry.get("REDSTONE"), 100, new ItemStack(MekanismItems.EnrichedAlloy), new ItemStack(MekanismItems.ReinforcedAlloy));
+				MekanismHelper.addMetallurgicInfuserRecipe(InfuseRegistry.get("CARBON"), 100, new ItemStack(MekanismItems.ReinforcedAlloy), new ItemStack(MekanismItems.AtomicAlloy));
+				MekanismHelper.addMetallurgicInfuserRecipe(InfuseRegistry.get("CARBON"), 50, new ItemStack(Items.nether_star, 4, 0), new ItemStack(GeneratorsItems.Hohlraum, 1, 100));
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		private static void addEnrichmentChamberRecipes () {
+
 		}
 }

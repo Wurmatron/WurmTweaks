@@ -12,6 +12,7 @@ import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
 import wurmcraft.wurmatron.common.events.*;
 import wurmcraft.wurmatron.common.events.bloodmagic.KnifeHandler;
+import wurmcraft.wurmatron.common.fluid.WurmTweaksFluid;
 import wurmcraft.wurmatron.common.handler.LootHandler;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.network.PacketHandler;
@@ -38,13 +39,14 @@ public class WurmTweaks {
 		public void init (FMLInitializationEvent e) {
 				WTItems.registerItems();
 				WurmTweaksBlocks.registerBlocks();
+				WurmTweaksFluid.registerFluids();
 				PacketHandler.registerPackets();
 				FMLCommonHandler.instance().bus().register(new JoinGameEvent());
 				MinecraftForge.EVENT_BUS.register(new EntityInteract());
 				MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
 				MinecraftForge.EVENT_BUS.register(new HurtEvent());
 				MinecraftForge.EVENT_BUS.register(new PickupEvent());
-				if(RecipeChecker.modExists("AWWayofTime"))
+				if (RecipeChecker.modExists("AWWayofTime"))
 						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
 		}
 

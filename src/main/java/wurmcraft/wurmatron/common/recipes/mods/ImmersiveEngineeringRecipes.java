@@ -18,11 +18,15 @@ import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 
+/**
+ * Recipes Verified by Wurmatron
+ * on 6/10/2016 with 0.7.5
+ */
 public class ImmersiveEngineeringRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "ImmersiveEngineering")
+		@Optional.Method (modid = "ImmersiveEngineering")
 		public static final void addRecipes () {
 				r.addBasicMachineRecipe(new ItemStack(IEContent.blockMetalDevice, 2, 0), WurmTweaksBlocks.blockCopper, TFCItems.bismuthBronzeSheet, Items.redstone, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(new ItemStack(IEContent.blockMetalDevice, 2, 2), WurmTweaksBlocks.blockPlatinum, TFCItems.goldSheet, Items.redstone, WurmTweaksItems.itemMachineFrame);
@@ -43,7 +47,7 @@ public class ImmersiveEngineeringRecipes {
 				r.addShaped(new ItemStack(IEContent.blockMetalDevice2, 1, 2), " S ", "SXS", "BAB", 'S', TFCItems.copperSheet2x, 'X', WurmTweaksItems.ingotYellowSteel, 'B', WurmTweaksItems.itemMixedSheet, 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShapeless(new ItemStack(IEContent.blockMetalDevice2, 1, 3), Blocks.glowstone, IEContent.blockTreatedWood, WurmTweaksItems.itemMachineFrame);
 				r.addShapeless(new ItemStack(IEContent.blockMetalDevice2, 1, 4), new ItemStack(IEContent.blockMetalDevice2, 1, 3), WurmTweaksItems.ingotRainbowSteel);
-				// TODO Creative Capacitor
+				// TODO Creative Capacitor (500,000rf/t)
 				r.addShaped(new ItemStack(IEContent.blockMetalDevice2, 1, 9), "XAX", 'X', new ItemStack(IEContent.blockMetalDevice2, 1, 0), 'A', Items.redstone);
 				r.addBasicMachineRecipe(new ItemStack(IEContent.blockMetalDevice2, 1, 10), IEContent.blockTreatedWood, TEItems.capacitorResonant, WurmTweaksBlocks.blockCompressedRedstone, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(new ItemStack(IEContent.blockMetalDevice2, 1, 11), IEContent.blockTreatedWood, TFCItems.blueSteelBucketLava, WurmTweaksBlocks.blockCompressedRedstone, WurmTweaksItems.itemMachineFrame);
@@ -171,6 +175,4 @@ public class ImmersiveEngineeringRecipes {
 				MetalPressRecipe.addRecipe(new ItemStack(TFCItems.silverSheet), TFCItems.silverIngot, new ItemStack(IEContent.itemMold), 8000);
 				MetalPressRecipe.addRecipe(new ItemStack(TFCItems.sterlingSilverSheet), TFCItems.sterlingSilverIngot, new ItemStack(IEContent.itemMold), 8000);
 		}
-
-
 }

@@ -5,7 +5,7 @@ import buildcraft.BuildCraftTransport;
 import cofh.thermaldynamics.duct.TDDucts;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
-import cpw.mods.fml.common.Optional;
+import fox.spiteful.avaritia.items.LudicrousItems;
 import ic2.api.item.IC2Items;
 import micdoodle8.mods.galacticraft.api.recipe.CircuitFabricatorRecipes;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
@@ -21,6 +21,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.handler.ArmorHandler;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 
@@ -28,7 +29,6 @@ public class GalaticCraftRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "GalaticraftCore")
 		public static void addRecipes () {
 				r.addCrossWCenter(new ItemStack(GCBlocks.landingPad, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), "packGemBlock", WurmTweaksItems.ingotEnergyReactor);
 				r.addCrossWCenter(new ItemStack(GCBlocks.landingPad, 9, 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6), "packGemBlock", WurmTweaksItems.ingotEnergyReactor);
@@ -65,47 +65,47 @@ public class GalaticCraftRecipes {
 				r.addShaped(new ItemStack(GCBlocks.machineBase, 1, 12), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotGreenSteel, 'X', WurmTweaksItems.gearMixedSheet, 'X', IC2Items.getItem("compressor"));
 				r.addShaped(new ItemStack(GCBlocks.machineBase2, 1, 0), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.itemSpaceModule, 'X', WurmTweaksItems.gearMixedSheet, 'X', new ItemStack(GCBlocks.machineBase, 1, 12));
 				r.addShaped(new ItemStack(GCBlocks.machineBase2, 1, 4), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotBrownSteel, 'X', "packGemExquisite", 'X', WurmTweaksItems.itemSpaceModule);
-				r.addShaped(new ItemStack(GCBlocks.machineBase2, 1, 8), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotBrownSteel, 'X', new ItemStack(GCItems.oxTankHeavy,1, OreDictionary.WILDCARD_VALUE), 'X', WurmTweaksItems.itemSpaceModule);
-				r.addShaped(new ItemStack(GCBlocks.machineTiered, 1,0), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotBrownSteel, 'X', IC2Items.getItem("mfsUnit"), 'X', WurmTweaksItems.itemSpaceModule);
-				r.addShaped(new ItemStack(GCBlocks.machineTiered, 1,8), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotTitanium, 'X', new ItemStack(GCBlocks.machineTiered, 1,0), 'X', WurmTweaksItems.itemSpaceModule);
-				r.addShaped(new ItemStack(GCBlocks.aluminumWire,6,0), "WWW", "III", "WWW", 'W', new ItemStack(Blocks.wool,1,OreDictionary.WILDCARD_VALUE), 'I', "ingotAluminum");
-				r.addShaped(new ItemStack(GCBlocks.aluminumWire,6,1), "WWW", "III", "WWW", 'W', new ItemStack(Blocks.wool,1,OreDictionary.WILDCARD_VALUE), 'I', new ItemStack(GCBlocks.aluminumWire,1,0));
-				// TODO Spin Thrusters
+				r.addShaped(new ItemStack(GCBlocks.machineBase2, 1, 8), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotBrownSteel, 'X', new ItemStack(GCItems.oxTankHeavy, 1, OreDictionary.WILDCARD_VALUE), 'X', WurmTweaksItems.itemSpaceModule);
+				r.addShaped(new ItemStack(GCBlocks.machineTiered, 1, 0), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotBrownSteel, 'X', IC2Items.getItem("mfsUnit"), 'X', WurmTweaksItems.itemSpaceModule);
+				r.addShaped(new ItemStack(GCBlocks.machineTiered, 1, 8), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotTitanium, 'X', new ItemStack(GCBlocks.machineTiered, 1, 0), 'X', WurmTweaksItems.itemSpaceModule);
+				r.addShaped(new ItemStack(GCBlocks.aluminumWire, 6, 0), "WWW", "III", "WWW", 'W', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), 'I', "ingotAluminum");
+				r.addShaped(new ItemStack(GCBlocks.aluminumWire, 6, 1), "WWW", "III", "WWW", 'W', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), 'I', new ItemStack(GCBlocks.aluminumWire, 1, 0));
+				r.addBasicMachineRecipe(new ItemStack(GCBlocks.spinThruster, 1, 0), WurmTweaksItems.itemAntiMatter, WurmTweaksBlocks.blockCompressedRedstone, WurmTweaksItems.ingotTitanium, WurmTweaksBlocks.blockPlatinum);
 				r.addCircleWCenter(GCBlocks.screen, TFCItems.blackSteelSheet2x, "packCloth");
-				r.addCircleWCenter(GCBlocks.telemetry, WurmTweaksItems.ingotEnergyReactor, new ItemStack(GCItems.basicItem,1,19));
+				r.addCircleWCenter(GCBlocks.telemetry, WurmTweaksItems.ingotEnergyReactor, new ItemStack(GCItems.basicItem, 1, 19));
 				r.addShaped(GCBlocks.brightLamp, "XXX", "ABA", "XXX", 'A', Blocks.glowstone, 'X', WurmTweaksBlocks.blockCompressedRedstone, 'B', WurmTweaksItems.itemSpaceModule);
-				r.addShaped(GCItems.oxMask, "GGG", "XGX", "BCB", 'G', "packGlass", 'X', WurmTweaksItems.ingotCyanSteel, 'B',"packGemExquisite", 'C', GCBlocks.oxygenPipe);
-				r.addShaped(GCItems.oxygenGear, "XXX", "X X","X X", 'X', WurmTweaksItems.ingotCyanSteel);
-				r.addBasicMachineRecipe(new ItemStack(GCItems.oxTankLight,1,900), "packGlass", "packCloth", "packGemExquisite", TFCItems.platinumSheet);
-				r.addShapeless(new ItemStack(GCItems.oxTankMedium,1,1800),new ItemStack(GCItems.oxTankLight,1,OreDictionary.WILDCARD_VALUE), new ItemStack(GCItems.oxTankLight,1,OreDictionary.WILDCARD_VALUE));
-				r.addShapeless(new ItemStack(GCItems.oxTankHeavy,1,2700),new ItemStack(GCItems.oxTankMedium,1,OreDictionary.WILDCARD_VALUE), new ItemStack(GCItems.oxTankMedium,1,OreDictionary.WILDCARD_VALUE));
+				r.addShaped(GCItems.oxMask, "GGG", "XGX", "BCB", 'G', "packGlass", 'X', WurmTweaksItems.ingotCyanSteel, 'B', "packGemExquisite", 'C', GCBlocks.oxygenPipe);
+				r.addShaped(GCItems.oxygenGear, "XXX", "X X", "X X", 'X', WurmTweaksItems.ingotCyanSteel);
+				r.addBasicMachineRecipe(new ItemStack(GCItems.oxTankLight, 1, 900), "packGlass", "packCloth", "packGemExquisite", TFCItems.platinumSheet);
+				r.addShapeless(new ItemStack(GCItems.oxTankMedium, 1, 1800), new ItemStack(GCItems.oxTankLight, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(GCItems.oxTankLight, 1, OreDictionary.WILDCARD_VALUE));
+				r.addShapeless(new ItemStack(GCItems.oxTankHeavy, 1, 2700), new ItemStack(GCItems.oxTankMedium, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(GCItems.oxTankMedium, 1, OreDictionary.WILDCARD_VALUE));
 				r.addCrossWCenter(GCItems.sensorLens, TFCItems.redSteelSheet, "packGemExquisite", "packGlass");
-				r.addShaped(GCItems.sensorGlasses, "XAX", 'X', GCItems.sensorLens, 'A', new ItemStack(TFCItems.redSteelHelmet,1,OreDictionary.WILDCARD_VALUE));
-				r.addShaped(GCItems.sensorGlasses, "XAX", 'X', GCItems.sensorLens, 'A', new ItemStack(TFCItems.blueSteelHelmet,1,OreDictionary.WILDCARD_VALUE));
-				r.addCircle(new ItemStack(GCItems.canister,2,0), TFCItems.tinSheet);
-				r.addCircle(new ItemStack(GCItems.canister,2,1), TFCItems.bronzeSheet);
-				r.addBasicMachineRecipe(new ItemStack(GCItems.rocketEngine,1,0), WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.ingotRainbowSteel,ExtraUtils.bedrockiumBlock,WurmTweaksItems.ingotEnergyReactor);
-				r.addBasicMachineRecipe(new ItemStack(GCItems.rocketEngine,1,1), WurmTweaksItems.ingotEnergyReactor,ExtraUtils.bedrockium, "packGemBlock", WurmTweaksItems.itemSpaceModule);
-				r.addShaped(new ItemStack(GCItems.partNoseCone,1,0), " X ", "XCX", "CBC", 'X', new ItemStack(GCItems.heavyPlatingTier1,1,0), 'C', WurmTweaksItems.itemSpaceModule, 'B', "packGemBlock");
-				r.addShaped(new ItemStack(GCItems.partFins,1,0), "BSB", "XXX", "BSB", 'B', WurmTweaksBlocks.blockPlatinum, 'S', WurmTweaksItems.itemRadiationShielding, 'X', IC2Items.getItem("iridiumPlate"));
+				r.addShaped(GCItems.sensorGlasses, "XAX", 'X', GCItems.sensorLens, 'A', new ItemStack(TFCItems.redSteelHelmet, 1, OreDictionary.WILDCARD_VALUE));
+				r.addShaped(GCItems.sensorGlasses, "XAX", 'X', GCItems.sensorLens, 'A', new ItemStack(TFCItems.blueSteelHelmet, 1, OreDictionary.WILDCARD_VALUE));
+				r.addCircle(new ItemStack(GCItems.canister, 2, 0), TFCItems.tinSheet);
+				r.addCircle(new ItemStack(GCItems.canister, 2, 1), TFCItems.bronzeSheet);
+				r.addBasicMachineRecipe(new ItemStack(GCItems.rocketEngine, 1, 0), WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.ingotRainbowSteel, ExtraUtils.bedrockiumBlock, WurmTweaksItems.ingotEnergyReactor);
+				r.addBasicMachineRecipe(new ItemStack(GCItems.rocketEngine, 1, 1), WurmTweaksItems.ingotEnergyReactor, ExtraUtils.bedrockium, "packGemBlock", WurmTweaksItems.itemSpaceModule);
+				r.addShaped(new ItemStack(GCItems.partNoseCone, 1, 0), " X ", "XCX", "CBC", 'X', new ItemStack(GCItems.heavyPlatingTier1, 1, 0), 'C', WurmTweaksItems.itemSpaceModule, 'B', "packGemBlock");
+				r.addShaped(new ItemStack(GCItems.partFins, 1, 0), "BSB", "XXX", "BSB", 'B', WurmTweaksBlocks.blockPlatinum, 'S', WurmTweaksItems.itemRadiationShielding, 'X', IC2Items.getItem("iridiumPlate"));
 				r.addShaped(new ItemStack(GCItems.flagPole), "S", "S", "S", 'S', TFCItems.steelSheet);
 				r.add2X(GCItems.canvas, "packCloth");
-				r.addSimpleCirc(GCItems.canister,"packGlass", TFCItems.silverSheet);
+				r.addSimpleCirc(GCItems.canister, "packGlass", TFCItems.silverSheet);
 				r.addSimpleCirc(GCItems.partBuggy, TFCItems.blackSteelSheet2x, "packGemExquisite");
-				r.addShaped(new ItemStack(GCItems.partBuggy,1,1), "X  ", "XX ", "XX ", 'X', 'X', TFCItems.blackSteelSheet2x);
-				r.addShaped(new ItemStack(GCItems.partBuggy,1,2), "CSC", "CSC", "CSC", 'C', "packChest", 'S', "packCloth");
-				r.addShaped(new ItemStack(GCItems.basicItem,2,0), "SXS", "SCS", "SXS", 'S', new ItemStack(GCItems.basicItem,1,12), 'X', TFCItems.platinumSheet, 'C', WurmTweaksItems.itemSolarCore);
-				r.addShaped(new ItemStack(GCItems.basicItem,1,1), "SRS", "SRS", "SRS", 'R', Items.redstone, 'S', new ItemStack(GCItems.basicItem,1,0));
-				r.addShapeless(new ItemStack(GCItems.basicItem,1,19), TFCItems.bismuthBronzeSheet, Items.redstone, WurmTweaksItems.itemQuantumFoam);
-				r.addShaped(new ItemStack(GCItems.battery,1,100), "SRS", "SXS", "SSS", 'S', TFCItems.tinSheet, 'R', "dustSulfur", 'X', TFCItems.leadSheet2x);
-				// TODO Infinite Battery
-				// TODO Infinite Oxygen
+				r.addShaped(new ItemStack(GCItems.partBuggy, 1, 1), "X  ", "XX ", "XX ", 'X', TFCItems.blackSteelSheet2x);
+				r.addShaped(new ItemStack(GCItems.partBuggy, 1, 2), "CSC", "CSC", "CSC", 'C', "packChest", 'S', "packCloth");
+				r.addShaped(new ItemStack(GCItems.basicItem, 2, 0), "SXS", "SCS", "SXS", 'S', new ItemStack(GCItems.basicItem, 1, 12), 'X', TFCItems.platinumSheet, 'C', WurmTweaksItems.itemSolarCore);
+				r.addShaped(new ItemStack(GCItems.basicItem, 1, 1), "SRS", "SRS", "SRS", 'R', Items.redstone, 'S', new ItemStack(GCItems.basicItem, 1, 0));
+				r.addShapeless(new ItemStack(GCItems.basicItem, 1, 19), TFCItems.bismuthBronzeSheet, Items.redstone, WurmTweaksItems.itemQuantumFoam);
+				r.addShaped(new ItemStack(GCItems.battery, 1, 100), "SRS", "SXS", "SSS", 'S', TFCItems.tinSheet, 'R', "dustSulfur", 'X', TFCItems.leadSheet2x);
+				r.addShaped9X9Recipe(new ItemStack(GCItems.infiniteBatery, 1, 0), " IIIIIII ", "IMMMMMMI ", "IBBBXBBBI", "IBBBXBBBI", "IBBBBXBBI", "IBBBXBBBI", "IMMMMMMI ", " IIIIIII ", 'I', new ItemStack(LudicrousItems.resource, 1, 6), 'M', WurmTweaksItems.ingotRainbowSteel, 'B', new ItemStack(GCItems.battery, 1, OreDictionary.WILDCARD_VALUE), 'X', WurmTweaksItems.creativeCreativePartsEnergy);
+				r.addShaped9X9Recipe(new ItemStack(GCItems.oxygenCanisterInfinite, 1, 0), " IIIIIII ", "IMMMMMMI ", "IBBBXBBBI", "IBBBXBBBI", "IBBBBXBBI", "IBBBXBBBI", "IMMMMMMI ", " IIIIIII ", 'I', new ItemStack(LudicrousItems.resource, 1, 6), 'M', WurmTweaksItems.ingotRainbowSteel, 'B', new ItemStack(GCItems.oxTankHeavy, 1, OreDictionary.WILDCARD_VALUE), 'X', WurmTweaksItems.creativeCreativeParts);
 				r.addWrenchRecipe(GCItems.wrench, "ingotAluminum");
-				r.addShaped(GCItems.flag, "WWW", "WWW", "  P", 'W', new ItemStack(Blocks.wool,1,OreDictionary.WILDCARD_VALUE), 'P', GCItems.flagPole);
+				r.addShaped(GCItems.flag, "WWW", "WWW", "  P", 'W', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), 'P', GCItems.flagPole);
 				r.addShaped(new ItemStack(GCItems.parachute, 1, 0), "WWW", "S S", "LLL", 'W', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), 'S', TFCItems.silkCloth, 'L', TFCItems.leather);
 				r.addShapeless(new ItemStack(GCItems.parachute, 1, 1), new ItemStack(GCItems.parachute, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(15));
 				r.addShapeless(new ItemStack(GCItems.parachute, 1, 2), new ItemStack(GCItems.parachute, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(3));
-				r.addShapeless(new ItemStack(GCItems.parachute, 1, 3), new ItemStack(GCItems.parachute, 1,OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(5));
+				r.addShapeless(new ItemStack(GCItems.parachute, 1, 3), new ItemStack(GCItems.parachute, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(5));
 				r.addShapeless(new ItemStack(GCItems.parachute, 1, 4), new ItemStack(GCItems.parachute, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(12));
 				r.addShapeless(new ItemStack(GCItems.parachute, 1, 5), new ItemStack(GCItems.parachute, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(11));
 				r.addShapeless(new ItemStack(GCItems.parachute, 1, 6), new ItemStack(GCItems.parachute, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(7));
@@ -122,33 +122,40 @@ public class GalaticCraftRecipes {
 				r.addShaped(new ItemStack(AsteroidBlocks.beamReflector, 2), "ASA", "SXS", "ASA", 'S', WurmTweaksItems.gearMixedSheet, 'X', new ItemStack(AsteroidsItems.basicItem, 1, 8), 'A', TFCItems.silverSheet);
 				r.addShaped(new ItemStack(AsteroidBlocks.shortRangeTelepad, 1, 0), "XAX", "ACA", "XAX", 'X', WurmTweaksItems.itemQuantumSingularity, 'A', Items.ender_pearl, 'C', "packGemBlock");
 				r.addCrossWCenter(AsteroidBlocks.blockMinerBase, WurmTweaksItems.ingotTitanium, WurmTweaksItems.ingotFrancium, "packGemBlock");
-				r.addBasicMachineRecipe(new ItemStack(MarsBlocks.machine,1,4), WurmTweaksItems.ingotHalfium, "packCloth", WurmTweaksItems.itemUnstableMatter, Blocks.bed);
-				r.addCircleWCenter(new ItemStack(MarsBlocks.machine,1,8), WurmTweaksBlocks.blockCompressedRedstone, new ItemStack(RailcraftBlocks.getBlockMachineAlpha(),1,0));
-				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2,1,0), WurmTweaksItems.ingotTitanium, TFCItems.redSteelBucketWater,WurmTweaksItems.itemSpaceModule);
-				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2,1,4), WurmTweaksItems.ingotTitanium, "dustCoal",WurmTweaksItems.itemSpaceModule);
-				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2,1,8), WurmTweaksItems.ingotTitanium, TFCItems.redSteelSheet,WurmTweaksItems.itemSpaceModule);
-				r.addShaped(new ItemStack(MarsBlocks.hydrogenPipe,8), "GGG","CCC", "GGG", 'G', Blocks.glass_pane, 'C', TFCItems.clayBall);
+				r.addBasicMachineRecipe(new ItemStack(MarsBlocks.machine, 1, 4), WurmTweaksItems.ingotHalfium, "packCloth", WurmTweaksItems.itemUnstableMatter, Blocks.bed);
+				r.addCircleWCenter(new ItemStack(MarsBlocks.machine, 1, 8), WurmTweaksBlocks.blockCompressedRedstone, new ItemStack(RailcraftBlocks.getBlockMachineAlpha(), 1, 0));
+				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2, 1, 0), WurmTweaksItems.ingotTitanium, TFCItems.redSteelBucketWater, WurmTweaksItems.itemSpaceModule);
+				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2, 1, 4), WurmTweaksItems.ingotTitanium, "dustCoal", WurmTweaksItems.itemSpaceModule);
+				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2, 1, 8), WurmTweaksItems.ingotTitanium, TFCItems.redSteelSheet, WurmTweaksItems.itemSpaceModule);
+				r.addShaped(new ItemStack(MarsBlocks.hydrogenPipe, 8), "GGG", "CCC", "GGG", 'G', Blocks.glass_pane, 'C', TFCItems.clayBall);
 				r.addShapeless(AsteroidsItems.grapple, "packCloth", TFCItems.bow, Items.string);
-				r.addArmorRecipes(new ItemStack(AsteroidsItems.thermalPadding,1,0),new ItemStack(AsteroidsItems.thermalPadding,1,1),new ItemStack(AsteroidsItems.thermalPadding,1,2), new ItemStack(AsteroidsItems.thermalPadding,1,3), new ItemStack(AsteroidsItems.basicItem,1,7));
-				r.addBasicMachineRecipe(new ItemStack(AsteroidsItems.basicItem,1,0), WurmTweaksBlocks.blockPlatinum, new ItemStack(MarsItems.marsItemBasic, 1, 3), IC2Items.getItem("iridiumPlate"), WurmTweaksItems.itemMixedSheet);
-				r.addBasicMachineRecipe(new ItemStack(AsteroidsItems.basicItem,1,1),new ItemStack(AsteroidsItems.basicItem,1,0), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotRainbowSteel,GCItems.rocketEngine);
-				r.addCross(new ItemStack(AsteroidsItems.basicItem,1,7), "packCloth", WurmTweaksItems.ingotHalfium);
-				r.addCrossWCenter(new ItemStack(AsteroidsItems.basicItem,1,8), WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemMixedSheet, "dyeRed");
-				r.addShaped(new ItemStack(AsteroidsItems.heavyNoseCone,1,0),  " X ", "XBX", "CAC", 'X', new ItemStack(AsteroidsItems.basicItem,1,0), 'B', GCItems.partNoseCone, 'C', WurmTweaksItems.itemRadiationShielding, 'A', WurmTweaksBlocks.blockRedSteel);
-				r.addBasicMachineRecipe(new ItemStack(AsteroidsItems.basicItem,1,2),new ItemStack(AsteroidsItems.basicItem,1,0), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotRainbowSteel,GCItems.partFins);
+				r.addArmorRecipes(new ItemStack(AsteroidsItems.thermalPadding, 1, 0), new ItemStack(AsteroidsItems.thermalPadding, 1, 1), new ItemStack(AsteroidsItems.thermalPadding, 1, 2), new ItemStack(AsteroidsItems.thermalPadding, 1, 3), new ItemStack(AsteroidsItems.basicItem, 1, 7));
+				r.addBasicMachineRecipe(new ItemStack(AsteroidsItems.basicItem, 1, 0), WurmTweaksBlocks.blockPlatinum, new ItemStack(MarsItems.marsItemBasic, 1, 3), IC2Items.getItem("iridiumPlate"), WurmTweaksItems.itemMixedSheet);
+				r.addBasicMachineRecipe(new ItemStack(AsteroidsItems.basicItem, 1, 1), new ItemStack(AsteroidsItems.basicItem, 1, 0), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotRainbowSteel, GCItems.rocketEngine);
+				r.addCross(new ItemStack(AsteroidsItems.basicItem, 1, 7), "packCloth", WurmTweaksItems.ingotHalfium);
+				r.addCrossWCenter(new ItemStack(AsteroidsItems.basicItem, 1, 8), WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemMixedSheet, "dyeRed");
+				r.addShaped(new ItemStack(AsteroidsItems.heavyNoseCone, 1, 0), " X ", "XBX", "CAC", 'X', new ItemStack(AsteroidsItems.basicItem, 1, 0), 'B', GCItems.partNoseCone, 'C', WurmTweaksItems.itemRadiationShielding, 'A', WurmTweaksBlocks.blockRedSteel);
+				r.addBasicMachineRecipe(new ItemStack(AsteroidsItems.basicItem, 1, 2), new ItemStack(AsteroidsItems.basicItem, 1, 0), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotRainbowSteel, GCItems.partFins);
+				r.addArmorRecipes(AsteroidsItems.titaniumHelmet, AsteroidsItems.titaniumChestplate, AsteroidsItems.titaniumLeggings, AsteroidsItems.titaniumBoots, WurmTweaksItems.ingotTitanium);
+				ArmorHandler.addArmorProtection(AsteroidsItems.titaniumHelmet, 3000, 3500, 2500);
+				ArmorHandler.addArmorProtection(AsteroidsItems.titaniumChestplate, 3000, 3500, 2500);
+				ArmorHandler.addArmorProtection(AsteroidsItems.titaniumLeggings, 3000, 3500, 2500);
+				ArmorHandler.addArmorProtection(AsteroidsItems.titaniumBoots, 3000, 3500, 2500);
 				addCompressorRecipes();
 				addFabricatorRecipes();
 		}
 
-		private static void addCompressorRecipes() {
+		private static void addCompressorRecipes () {
 				CompressorRecipes.getRecipeList().clear();
-				CompressorRecipes.addRecipe(new ItemStack(GCItems.heavyPlatingTier1,1,0), "SSS", "BBB", "CCC", 'S', WurmTweaksItems.ingotYellowSteel, 'B', WurmTweaksItems.itemRadiationShielding, "packGemExquisite");
-				CompressorRecipes.addRecipe(new ItemStack(MarsItems.marsItemBasic, 1, 3), "SSS", "BBB", "CCC", 'S', new ItemStack(GCItems.heavyPlatingTier1,1,0), 'B', WurmTweaksItems.itemRadiationShielding, "packGemBlock");
+				for (ItemStack gem : OreDictionary.getOres("packGemExquisite")) {
+						CompressorRecipes.addRecipe(new ItemStack(GCItems.heavyPlatingTier1, 1, 0), "SSS", "BBB", "CCC", 'S', WurmTweaksItems.ingotYellowSteel, 'B', WurmTweaksItems.itemRadiationShielding, 'C', gem);
+						CompressorRecipes.addRecipe(new ItemStack(MarsItems.marsItemBasic, 1, 3), "SSS", "BBB", "CCC", 'S', new ItemStack(GCItems.heavyPlatingTier1, 1, 0), 'B', WurmTweaksItems.itemRadiationShielding, 'C', gem);
+				}
 		}
 
-		private static void addFabricatorRecipes() {
-				CircuitFabricatorRecipes.addRecipe(new ItemStack(GCItems.basicItem,4,12), new ItemStack[] {WurmTweaksItems.itemCraftingCore, new ItemStack(TFCItems.platinumSheet), new ItemStack(TFCItems.platinumSheet),new ItemStack(Items.redstone), new ItemStack(Blocks.redstone_torch)});
-				CircuitFabricatorRecipes.addRecipe(new ItemStack(GCItems.basicItem,1,13), new ItemStack[] {WurmTweaksItems.itemCraftingCore, new ItemStack(TFCItems.platinumSheet), new ItemStack(TFCItems.platinumSheet),new ItemStack(Items.redstone), new ItemStack(TFCItems.blackSteelSheet)});
-				CircuitFabricatorRecipes.addRecipe(new ItemStack(GCItems.basicItem,1,14), new ItemStack[] {WurmTweaksItems.itemCraftingCore, new ItemStack(TFCItems.platinumSheet), new ItemStack(TFCItems.platinumSheet),new ItemStack(Items.redstone), new ItemStack(GCItems.basicItem,1,13)});
+		private static void addFabricatorRecipes () {
+				CircuitFabricatorRecipes.addRecipe(new ItemStack(GCItems.basicItem, 4, 12), new ItemStack[] {WurmTweaksItems.itemCraftingCore, new ItemStack(TFCItems.platinumSheet), new ItemStack(TFCItems.platinumSheet), new ItemStack(Items.redstone), new ItemStack(Blocks.redstone_torch)});
+				CircuitFabricatorRecipes.addRecipe(new ItemStack(GCItems.basicItem, 1, 13), new ItemStack[] {WurmTweaksItems.itemCraftingCore, new ItemStack(TFCItems.platinumSheet), new ItemStack(TFCItems.platinumSheet), new ItemStack(Items.redstone), new ItemStack(TFCItems.blackSteelSheet)});
+				CircuitFabricatorRecipes.addRecipe(new ItemStack(GCItems.basicItem, 1, 14), new ItemStack[] {WurmTweaksItems.itemCraftingCore, new ItemStack(TFCItems.platinumSheet), new ItemStack(TFCItems.platinumSheet), new ItemStack(Items.redstone), new ItemStack(GCItems.basicItem, 1, 13)});
 		}
 }

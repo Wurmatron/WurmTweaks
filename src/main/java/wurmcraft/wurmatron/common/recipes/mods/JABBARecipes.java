@@ -17,6 +17,7 @@ public class JABBARecipes {
 		@Optional.Method(modid = "JABBA")
 		public static void addRecipes () {
 				r.addShaped(new ItemStack(BetterBarrels.blockBarrel), "LPL", "LCL", "LLL", 'L', "packLog", 'P', "packPlanks", 'C', "packChest");
+				r.addShaped(new ItemStack(BetterBarrels.itemUpgradeStructural, 1, 0), "FLF", "LCL", "FLF", 'F', new ItemStack(Blocks.fence), 'L', "packLog", 'C', "packPlanks");
 				for (int i = 1; i < 6; i++)
 						r.addShaped(new ItemStack(BetterBarrels.itemUpgradeStructural, 1, i), "FLF", "LCL", "FLF", 'F', new ItemStack(Blocks.fence), 'L', "packLog", 'C', new ItemStack(BetterBarrels.itemUpgradeStructural, 1, i - 1));
 				r.addShaped(new ItemStack(BetterBarrels.itemUpgradeCore, 1, 0), "CPC", " B ", "CPC", 'B', new ItemStack(IronChest.ironChestBlock, 1, 0), 'C', "packChest", 'P', Blocks.piston);

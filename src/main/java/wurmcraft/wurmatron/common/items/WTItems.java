@@ -14,6 +14,9 @@ public class WTItems {
 		public static ArrayList<String> itemSpecialNames = new ArrayList<String>();
 		public static ArrayList<String> itemBasicFoodNames = new ArrayList<String>();
 		public static ArrayList<String> itemPillNames = new ArrayList<String>();
+		public static ArrayList<String> itemClumpNames = new ArrayList<String>();
+		public static ArrayList<String> itemCrystalNames = new ArrayList<String>();
+		public static ArrayList<String> itemShardNames = new ArrayList<String>();
 
 		public static HashMap<String, EnumChatFormatting> itemSpecialColors = new HashMap<String, EnumChatFormatting>();
 		public static HashMap<String, EnumFoodGroup[]> itemBasicFoodGroups = new HashMap<String, EnumFoodGroup[]>();
@@ -23,6 +26,7 @@ public class WTItems {
 		public static Item itemSpecial;
 		public static Item itemBasicFood;
 		public static Item itemPill;
+		// Credits
 		public static Item creditBismuth;
 		public static Item creditCopper;
 		public static Item creditGold;
@@ -33,6 +37,10 @@ public class WTItems {
 		public static Item creditSilver;
 		public static Item creditTin;
 		public static Item creditZinc;
+		// Processing Items
+		public static Item itemClump;
+		public static Item itemCrystal;
+		public static Item itemShard;
 
 		public static void registerItems () {
 				itemMaterialNames.add("solarCore");
@@ -92,6 +100,9 @@ public class WTItems {
 				itemBasicFoodGroups.put("foodDairy", new EnumFoodGroup[] {EnumFoodGroup.Dairy});
 				itemBasicFoodGroups.put("humanSoul", new EnumFoodGroup[] {EnumFoodGroup.Protein});
 				itemBasicFoodGroups.put("melonBread", new EnumFoodGroup[] {EnumFoodGroup.Grain});
+				itemBasicFoodGroups.put("galaxyBaggel", new EnumFoodGroup[] {EnumFoodGroup.Grain, EnumFoodGroup.Dairy});
+				itemBasicFoodGroups.put("deathMelon", new EnumFoodGroup[] {EnumFoodGroup.Grain, EnumFoodGroup.Grain});
+				itemBasicFoodGroups.put("wurm", new EnumFoodGroup[] {EnumFoodGroup.Grain, EnumFoodGroup.Fruit, EnumFoodGroup.Protein, EnumFoodGroup.Vegetable, EnumFoodGroup.Dairy});
 				itemBasicFoodNames.add("foodFruit");
 				itemBasicFoodNames.add("foodGrain");
 				itemBasicFoodNames.add("foodProtein");
@@ -99,6 +110,9 @@ public class WTItems {
 				itemBasicFoodNames.add("foodDairy");
 				itemBasicFoodNames.add("humanSoul");
 				itemBasicFoodNames.add("melonBread");
+				itemBasicFoodNames.add("galaxyBaggel");
+				itemBasicFoodNames.add("deathMelon");
+				itemBasicFoodNames.add("wurm");
 				registerItem(itemBasicFood = new ItemBasicTFCFood(itemBasicFoodNames, itemBasicFoodGroups), "iemBasicFood");
 				itemPillFoodGroups.put("pillFruit", new EnumFoodGroup[] {EnumFoodGroup.Fruit});
 				itemPillFoodGroups.put("pillGrain", new EnumFoodGroup[] {EnumFoodGroup.Grain});
@@ -113,6 +127,39 @@ public class WTItems {
 				itemPillNames.add("pillDairy");
 				itemPillNames.add("pillAll");
 				registerItem(itemPill = new ItemPill(itemPillNames, itemPillFoodGroups), "itemPill");
+				itemClumpNames.add("clumpBismuth");
+				itemClumpNames.add("clumpCopper");
+				itemClumpNames.add("clumpGold");
+				itemClumpNames.add("clumpIron");
+				itemClumpNames.add("clumpLead");
+				itemClumpNames.add("clumpNickel");
+				itemClumpNames.add("clumpPlatinum");
+				itemClumpNames.add("clumpSilver");
+				itemClumpNames.add("clumpTin");
+				itemClumpNames.add("clumpZinc");
+				registerItem(itemClump = new ItemCrystal(itemClumpNames), "itemClump");
+				itemCrystalNames.add("crystalBismuth");
+				itemCrystalNames.add("crystalCopper");
+				itemCrystalNames.add("crystalGold");
+				itemCrystalNames.add("crystalIron");
+				itemCrystalNames.add("crystalLead");
+				itemCrystalNames.add("crystalNickel");
+				itemCrystalNames.add("crystalPlatinum");
+				itemCrystalNames.add("crystalSilver");
+				itemCrystalNames.add("crystalTin");
+				itemCrystalNames.add("crystalZinc");
+				registerItem(itemCrystal = new ItemClump(itemCrystalNames), "itemCrystal");
+				itemShardNames.add("crystalBismuth");
+				itemShardNames.add("crystalCopper");
+				itemShardNames.add("crystalGold");
+				itemShardNames.add("crystalIron");
+				itemShardNames.add("crystalLead");
+				itemShardNames.add("crystalNickel");
+				itemShardNames.add("crystalPlatinum");
+				itemShardNames.add("crystalSilver");
+				itemShardNames.add("crystalTin");
+				itemShardNames.add("crystalZinc");
+				registerItem(itemShard = new ItemClump(itemShardNames), "itemShard");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
 				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");

@@ -74,7 +74,7 @@ public class Recipes {
 				if (RecipeChecker.modExists("GraviSuite"))
 						GravitySuitRecipes.addRecipes();
 				if (RecipeChecker.modExists("GalaticraftCore"))
-						GravitySuitRecipes.addRecipes();
+						GalaticCraftRecipes.addRecipes();
 				if (RecipeChecker.modExists("ImmersiveEngineering"))
 						ImmersiveEngineeringRecipes.addRecipes();
 				if (RecipeChecker.modExists("IC2"))
