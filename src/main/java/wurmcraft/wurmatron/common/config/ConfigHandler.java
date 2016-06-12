@@ -62,6 +62,7 @@ public class ConfigHandler {
 		private static Property SoulShards;
 		private static Property IC2NuclearControl;
 		private static Property IronTank;
+		private static Property CompactMachines;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -172,6 +173,8 @@ public class ConfigHandler {
 				Settings.IC2NuclearControl = IC2NuclearControl.getBoolean();
 				IronTank = config.get(Global.CATEGORY_MODS, "IronTank", true);
 				Settings.IronTank = IronTank.getBoolean();
+				CompactMachines = config.get(Global.CATEGORY_MODS, "CompactMachines", true);
+				Settings.CompactMachines = CompactMachines.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

@@ -18,6 +18,7 @@ public class WTItems {
 		public static ArrayList<String> itemCrystalNames = new ArrayList<String>();
 		public static ArrayList<String> itemShardNames = new ArrayList<String>();
 		public static ArrayList<String> itemDirtyNames = new ArrayList<String>();
+		public static ArrayList<Integer> itemJugValues = new ArrayList<Integer>();
 
 		public static HashMap<String, EnumChatFormatting> itemSpecialColors = new HashMap<String, EnumChatFormatting>();
 		public static HashMap<String, EnumFoodGroup[]> itemBasicFoodGroups = new HashMap<String, EnumFoodGroup[]>();
@@ -27,6 +28,7 @@ public class WTItems {
 		public static Item itemSpecial;
 		public static Item itemBasicFood;
 		public static Item itemPill;
+		public static ItemJug itemJug;
 		// Credits
 		public static Item creditBismuth;
 		public static Item creditCopper;
@@ -174,6 +176,7 @@ public class WTItems {
 				itemDirtyNames.add("dirtyTin");
 				itemDirtyNames.add("dirtyZinc");
 				registerItem(itemDirty = new ItemClump(itemDirtyNames), "itemDirty");
+				registerItem(itemJug = new ItemJug(itemJugValues), "itemJug");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
 				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");

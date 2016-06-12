@@ -53,6 +53,7 @@ public class Settings {
 		public static boolean SoulShards;
 		public static boolean IC2NuclearControl;
 		public static boolean IronTank;
+		public static boolean CompactMachines;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -106,6 +107,7 @@ public class Settings {
 				if (modid.equalsIgnoreCase("soulshardstow")) return SoulShards;
 				if (modid.equalsIgnoreCase("IC2NuclearControl")) return IC2NuclearControl;
 				if(modid.equalsIgnoreCase("IronTank")) return IronTank;
+				if(modid.equalsIgnoreCase("CompactMachines")) return CompactMachines;
 				return false;
 		}
 }
