@@ -61,6 +61,7 @@ public class ConfigHandler {
 		private static Property Ztones;
 		private static Property SoulShards;
 		private static Property IC2NuclearControl;
+		private static Property IronTank;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -169,6 +170,8 @@ public class ConfigHandler {
 				Settings.SoulShards = SoulShards.getBoolean();
 				IC2NuclearControl = config.get(Global.CATEGORY_MODS, "IC2NuclearControl", true);
 				Settings.IC2NuclearControl = IC2NuclearControl.getBoolean();
+				IronTank = config.get(Global.CATEGORY_MODS, "IronTank", true);
+				Settings.IronTank = IronTank.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

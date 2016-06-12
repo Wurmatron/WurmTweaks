@@ -147,6 +147,8 @@ public class Recipes {
 						IC2NuclearControlRecipes.addRecipes();
 				if (RecipeChecker.modExists("Thaumcraft"))
 						ThaumcraftRecipes.addRecipes();
+				if(RecipeChecker.modExists("irontank"))
+						IronTankRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

@@ -90,6 +90,7 @@ public class WTItems {
 				itemSpecialColors.put("redMatter", EnumChatFormatting.DARK_RED);
 				itemSpecialColors.put("darkMatter", EnumChatFormatting.GRAY);
 				itemSpecialColors.put("darkMatter", EnumChatFormatting.DARK_PURPLE);
+				itemSpecialColors.put("creativePartsEnergy", EnumChatFormatting.DARK_PURPLE);
 				itemSpecialNames.add("darkMatter");
 				itemSpecialNames.add("redMatter");
 				itemSpecialNames.add("creativeParts");

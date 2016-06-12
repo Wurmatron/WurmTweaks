@@ -107,7 +107,6 @@ public class RailCraftRecipes {
 				r.addShaped(new ItemStack(RailcraftBlocks.getBlockSignal(), 1, 9), "SSS", "SXS", "SRS", 'S', TFCItems.blackSteelSheet, 'X', "dyeYellow", 'R', Items.redstone);
 				r.addShaped(new ItemStack(RailcraftBlocks.getBlockSignal(), 1, 6), "SSS", "SXS", "SRS", 'S', TFCItems.blackSteelSheet, 'X', Items.repeater, 'R', Items.redstone);
 				r.addShaped(new ItemStack(RailcraftBlocks.getBlockSignal(), 1, 0), "SSS", "SXS", "SRS", 'S', TFCItems.blackSteelSheet, 'X', Items.quartz, 'R', Items.redstone);
-				// All Deco Blocks
 				r.addCircleWCenter(new ItemStack(GameRegistry.findBlock("Railcraft", "detector"), 1, 0), "packPlanks", new ItemStack(Blocks.stone_pressure_plate));
 				r.addCircleWCenter(new ItemStack(GameRegistry.findBlock("Railcraft", "detector"), 1, 1), "packSmoothStone", new ItemStack(Blocks.stone_pressure_plate));
 				r.addCircleWCenter(new ItemStack(GameRegistry.findBlock("Railcraft", "detector"), 1, 2), new ItemStack(Blocks.stonebrick), new ItemStack(Blocks.stone_pressure_plate));
@@ -197,6 +196,7 @@ public class RailCraftRecipes {
 				steamLocomotive.setTagCompound(steam);
 				r.addShaped(steamLocomotive, "LXL", "SFS", "G G", 'L', Blocks.glowstone, 'X', new ItemStack(SEGameObjects.SolarPanelHardened), 'S', TFCItems.steelSheet2x, 'G', TFCItems.platinumSheet);
 				r.addShapeless(GameRegistry.findItemStack("railcraft", "tool.signal.label", 1), TFCItems.wroughtIronIngot, Items.paper, "dyeBlack");
-				// TODO Machine Recipes
+				r.addCrossWCenter(new ItemStack(RailcraftBlocks.getBlockMachineAlpha(), 1, 0), WurmTweaksItems.itemMixedSheet, "packGemBlock", WurmTweaksItems.itemCraftingCore);
+				r.addCrossWCenter(new ItemStack(RailcraftBlocks.getBlockMachineAlpha(), 1, 2), WurmTweaksItems.itemMixedSheet, "packGemExquisite", WurmTweaksItems.itemCraftingCore);
 		}
 }

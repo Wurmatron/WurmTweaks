@@ -17,7 +17,7 @@ public class ItemCredit extends Item {
 
 		private String name;
 		private IIcon[] icons;
-		public static int[] units = new int[] {30, 50, 70, 60, 100, 140};
+		public static final int[] units = new int[] {30, 50, 70, 60, 100, 140};
 
 		public ItemCredit (String creditName) {
 				setCreativeTab(CreativeTabs.tabMaterials);

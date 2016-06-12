@@ -67,6 +67,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("SoulShards", Settings.SoulShards);
 				data.setBoolean("IC2NuclearControl", Settings.IC2NuclearControl);
 				data.setBoolean("Thaumcraft", Settings.Thaumcraft);
+				data.setBoolean("irontank", Settings.IronTank);
 		}
 
 		@Override
@@ -132,5 +133,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.SoulShards = data.getBoolean("SoulShards");
 				Settings.IC2NuclearControl = data.getBoolean("IC2NuclearControl");
 				Settings.Thaumcraft = data.getBoolean("Thaumcraft");
+				Settings.IronTank  = data.getBoolean("irontank");
 		}
 }
