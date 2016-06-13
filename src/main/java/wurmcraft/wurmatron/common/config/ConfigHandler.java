@@ -67,6 +67,7 @@ public class ConfigHandler {
 		private static Property ProjRed;
 		private static Property powersuits;
 		private static Property InterdictionPillar;
+		private static Property qCraft;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -187,7 +188,8 @@ public class ConfigHandler {
 				Settings.powersuits = powersuits.getBoolean();
 				InterdictionPillar = config.get(Global.CATEGORY_MODS, "InterdictionPillar", true);
 				Settings.InterdictionPillar = InterdictionPillar.getBoolean();
-
+				qCraft = config.get(Global.CATEGORY_MODS, "QCraft", true);
+				Settings.qCraft = qCraft.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

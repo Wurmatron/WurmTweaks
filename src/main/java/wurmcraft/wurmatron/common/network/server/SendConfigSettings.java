@@ -75,6 +75,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("powersuits", Settings.powersuits);
 				data.setBoolean("RouterReborn", Settings.RouterReborn);
 				data.setBoolean("InterdictionPillar", Settings.InterdictionPillar);
+				data.setBoolean("qCraft", Settings.qCraft);
 		}
 
 		@Override
@@ -147,5 +148,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.powersuits = data.getBoolean("powersuits");
 				Settings.RouterReborn = data.getBoolean("RouterReborn");
 				Settings.InterdictionPillar = data.getBoolean("InterdictionPillar");
+				Settings.qCraft = data.getBoolean("qCraft");
 		}
 }

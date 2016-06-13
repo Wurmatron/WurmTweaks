@@ -59,6 +59,7 @@ public class Settings {
 		public static boolean powersuits;
 		public static boolean RouterReborn;
 		public static boolean InterdictionPillar;
+		public static boolean qCraft;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -118,6 +119,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("powersuits")) return powersuits;
 				if(modid.equalsIgnoreCase("RouterReborn")) return RouterReborn;
 				if(modid.equalsIgnoreCase("interdictionpillar")) return InterdictionPillar;
+				if(modid.equalsIgnoreCase("qCraft")) return qCraft;
 				return false;
 		}
 }

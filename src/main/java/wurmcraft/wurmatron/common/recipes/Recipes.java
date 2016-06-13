@@ -161,6 +161,8 @@ public class Recipes {
 						RouterRebornRecipes.addRecipes();
 				if(RecipeChecker.modExists("interdictionpillar"))
 						InterdictionPillarRecipes.addRecipes();
+				if(RecipeChecker.modExists("qCraft"))
+						qCraftRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
