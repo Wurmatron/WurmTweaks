@@ -32,8 +32,8 @@ public class PowerSuitRecipes {
 				r.addShaped(new ItemStack(MPSItems.powerArmorLegs()), "XXX", "XCX", "XCX", 'X', WurmTweaksItems.ingotTitanium, 'C', new ItemStack(MekanismItems.ControlCircuit, 1, 3));
 				r.addShaped(new ItemStack(MPSItems.powerArmorFeet()), "X X", "XCX", 'X', WurmTweaksItems.ingotTitanium, 'C', new ItemStack(MekanismItems.ControlCircuit, 1, 3));
 				r.addBasicMachineRecipe(ItemNBT.addDamage(new ItemStack(MPSItems.powerTool(), 1, 0), 2500), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotTitanium, WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.itemComputationalCore);
-				r.addShaped(new ItemStack(MPSItems.components(), 12, 0), "CSC", "CSC", "CSC", 'C', TFCItems.copperSheet, TFCItems.silverSheet);
-				r.addShaped(new ItemStack(MPSItems.components(), 12, 0), "CCC", "SSS", "CCC", 'C', TFCItems.copperSheet, TFCItems.silverSheet);
+				r.addShaped(new ItemStack(MPSItems.components(), 12, 0), "CSC", "CSC", "CSC", 'C', TFCItems.copperSheet, 'S',TFCItems.silverSheet);
+				r.addShaped(new ItemStack(MPSItems.components(), 12, 0), "CCC", "SSS", "CCC", 'C', TFCItems.copperSheet, 'S', TFCItems.silverSheet);
 				r.addShaped(new ItemStack(MPSItems.components(), 1, 1), "CSC", "CEC", "CSC", 'C', new ItemStack(MPSItems.components(), 1), 'S', WurmTweaksItems.ingotTitanium, 'E', TFItems.ingotEnderium);
 				r.addCrossWCenter(new ItemStack(MPSItems.components(), 1, 2), new ItemStack(MPSItems.components(), 1, 1), new ItemStack(MPSItems.components(), 1, 0), WurmTweaksItems.itemMachineFrame);
 				r.addShaped(new ItemStack(MPSItems.components(), 1, 3), " GG", "GGS", "G X", 'G', "packGlass", 'S', WurmTweaksItems.ingotTitanium, 'X', new ItemStack(MPSItems.components(), 1, 1));
@@ -58,9 +58,6 @@ public class PowerSuitRecipes {
 				// TODO Add Support for TFC Damage values
 				ArrayList<IModularItem> validItems = new ArrayList<IModularItem>();
 				validItems.add(MPSItems.powerArmorHead());
-				validItems.add(MPSItems.powerArmorTorso());
-				validItems.add(MPSItems.powerArmorLegs());
-				validItems.add(MPSItems.powerArmorFeet());
 				ModuleManager.addModule(new TFCFoodModule(validItems));
 		}
 }

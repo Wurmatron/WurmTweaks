@@ -19,6 +19,7 @@ public class TFCFoodModule extends PowerModuleBase implements IToggleableModule,
 				super(validItems);
 				addInstallCost(WurmTweaksItems.ingotEnergyReactor);
 				addInstallCost(WurmTweaksItems.ingotRainbowSteel);
+				addInstallCost(WurmTweaksItems.stableMagicEssence);
 		}
 
 		@Override
@@ -26,22 +27,25 @@ public class TFCFoodModule extends PowerModuleBase implements IToggleableModule,
 				FoodStatsTFC stats = TFC_Core.getPlayerFoodStats(player);
 				if (stats.needDrink())
 						stats.restoreWater(player, (int) stats.getMaxWater(player) - (int) stats.waterLevel);
-				if (stats.getMaxStomach(player) != stats.stomachLevel)
-						stats.setFoodLevel(stats.getMaxStomach(player) - stats.stomachLevel);
-				if (stats.nutrDairy == 0)
-						stats.addNutrition(EnumFoodGroup.Dairy, 1);
-				if (stats.nutrFruit == 0)
-						stats.addNutrition(EnumFoodGroup.Fruit, 1);
-				if (stats.nutrGrain == 0)
-						stats.addNutrition(EnumFoodGroup.Grain, 1);
-				if (stats.nutrProtein == 0)
-						stats.addNutrition(EnumFoodGroup.Protein, 1);
-				if (stats.nutrVeg == 0)
-						stats.addNutrition(EnumFoodGroup.Vegetable, 1);
+				if (stats.getMaxStomach(player) != stats.stomachLevel) {
+						stats.setFoodLevel(stats.getMaxStomach(player));
+						stats.stomachLevel = stats.getMaxStomach(player);
+				}
+				if (stats.nutrDairy < 1f)
+						stats.addNutrition(EnumFoodGroup.Dairy, 1f);
+				if (stats.nutrFruit < 1f)
+						stats.addNutrition(EnumFoodGroup.Fruit, 1f);
+				if (stats.nutrGrain < 1f)
+						stats.addNutrition(EnumFoodGroup.Grain, 1f);
+				if (stats.nutrProtein < 1f)
+						stats.addNutrition(EnumFoodGroup.Protein, 1f);
+				if (stats.nutrVeg < 1f)
+						stats.addNutrition(EnumFoodGroup.Vegetable, 1f);
 		}
 
 		@Override
-		public void onPlayerTickInactive (EntityPlayer player, ItemStack stack) {}
+		public void onPlayerTickInactive (EntityPlayer player, ItemStack stack) {
+		}
 
 		@Override
 		public String getTextureFile () {

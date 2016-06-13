@@ -1,7 +1,7 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
 import buildcraft.BuildCraftSilicon;
-import cofh.thermaldynamics.item.TDItems;
+import cofh.thermaldynamics.ThermalDynamics;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
 import ic2.api.item.IC2Items;
@@ -17,7 +17,7 @@ public class LogisticsPipesRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "LogisticsPipes")
+		@Optional.Method (modid = "LogisticsPipes")
 		public static void addRecipes () {
 				r.addBasicMachineRecipe(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 0), BuildCraftSilicon.redstoneChipset, Items.redstone, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 1), BuildCraftSilicon.redstoneChipset, Items.glowstone_dust, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
@@ -25,7 +25,7 @@ public class LogisticsPipesRecipes {
 				r.addBasicMachineRecipe(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 3), BuildCraftSilicon.redstoneChipset, "packCraftingTable", WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
 				r.addShapeless(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 4), new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 3), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE));
 				r.addBasicMachineRecipe(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 5), "packCraftingTable", WurmTweaksItems.itemComputationalCore, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
-				r.addBasicMachineRecipe(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 11), TDItems.ductEnergyBasic, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.ingotOrangeSteel, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 11), ThermalDynamics.itemServo, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.ingotOrangeSteel, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(new ItemStack(LogisticsPipes.LogisticsSolidBlock, 1, 12), IC2Items.getItem("insulatedCopperCableItem"), WurmTweaksItems.itemMixedSheet, WurmTweaksItems.ingotOrangeSteel, WurmTweaksItems.itemMachineFrame);
 				r.addShapeless(new ItemStack(LogisticsPipes.LogisticsRemoteOrderer, 1, 0), LogisticsPipes.logisticsRequestTable, WurmTweaksItems.gearMixedSheet);
 				for (int d = 15; d < 0; d--)
