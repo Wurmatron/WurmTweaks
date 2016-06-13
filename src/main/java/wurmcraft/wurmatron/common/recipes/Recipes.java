@@ -157,6 +157,8 @@ public class Recipes {
 						ProjectRedRecipes.addRecipes();
 				if(RecipeChecker.modExists("powersuits"))
 						PowerSuitRecipes.addRecipes();
+				if(RecipeChecker.modExists("RouterReborn"))
+						RouterRebornRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

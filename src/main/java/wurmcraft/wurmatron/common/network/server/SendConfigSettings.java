@@ -13,7 +13,8 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 
 		private NBTTagCompound data;
 
-		public SendConfigSettings () {}
+		public SendConfigSettings () {
+		}
 
 		public SendConfigSettings (EntityPlayer player) {
 				data.setBoolean("debug", Settings.debug);
@@ -62,7 +63,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("Thaumcraft", Settings.Thaumcraft);
 				data.setBoolean("ThermalDynamics", Settings.ThermalDynamics);
 				data.setBoolean("ThermalExpansion", Settings.ThermalExpansion);
-				data.setBoolean("BiblioWoodsTFC",  Settings.BiblioWoodsTFC);
+				data.setBoolean("BiblioWoodsTFC", Settings.BiblioWoodsTFC);
 				data.setBoolean("Ztones", Settings.Ztones);
 				data.setBoolean("SoulShards", Settings.SoulShards);
 				data.setBoolean("IC2NuclearControl", Settings.IC2NuclearControl);
@@ -72,6 +73,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("LogisticsPipes", Settings.LogisticsPipes);
 				data.setBoolean("ProjRed", Settings.ProjRed);
 				data.setBoolean("powersuits", Settings.powersuits);
+				data.setBoolean("RouterReborn", Settings.RouterReborn);
 		}
 
 		@Override
@@ -137,10 +139,11 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.SoulShards = data.getBoolean("SoulShards");
 				Settings.IC2NuclearControl = data.getBoolean("IC2NuclearControl");
 				Settings.Thaumcraft = data.getBoolean("Thaumcraft");
-				Settings.IronTank  = data.getBoolean("irontank");
+				Settings.IronTank = data.getBoolean("irontank");
 				Settings.CompactMachines = data.getBoolean("CompactMachines");
 				Settings.LogisticsPipes = data.getBoolean("LogisticsPipes");
 				Settings.ProjRed = data.getBoolean("ProjRed");
 				Settings.powersuits = data.getBoolean("powersuits");
+				Settings.RouterReborn = data.getBoolean("RouterReborn");
 		}
 }
