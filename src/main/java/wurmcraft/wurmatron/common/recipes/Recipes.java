@@ -159,6 +159,8 @@ public class Recipes {
 						PowerSuitRecipes.addRecipes();
 				if(RecipeChecker.modExists("RouterReborn"))
 						RouterRebornRecipes.addRecipes();
+				if(RecipeChecker.modExists("interdictionpillar"))
+						InterdictionPillarRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

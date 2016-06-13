@@ -72,7 +72,7 @@ public class ShinColleRecipes {
 				r.addShaped(new ItemStack(ModItems.DeskItemRadar), "ggg", "gbg", "ggg", 'g', new ItemStack(ModItems.Grudge), 'b', Items.compass);
 				r.addBasicMachineRecipe(new ItemStack(ModBlocks.BlockSmallShipyard), WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotTitanium, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.itemMachineFrame);
 				r.addShaped(new ItemStack(ModItems.MarriageRing), "asa", "a a", "aaa", 's', Items.nether_star, 'a', new ItemStack(ModItems.AbyssMetal, 1, 0));
-				r.addShaped(new ItemStack(ModItems.KaitaiHammer), "aaa", "aaa", " s ", 's', Items.stick, 'a', new ItemStack(ModItems.AbyssMetal, 1, 0));
+				r.addShaped(new ItemStack(ModItems.KaitaiHammer), "aaa", "aaa", " s ", 's', "packStick", 'a', new ItemStack(ModItems.AbyssMetal, 1, 0));
 				r.addShaped(new ItemStack(ModItems.PointerItem), "  g", " p ", "p  ", 'g', new ItemStack(ModBlocks.BlockGrudge), 'p', new ItemStack(ModItems.AbyssMetal, 1, 1));
 				r.addShaped(new ItemStack(ModItems.ToyAirplane), " a ", "aaa", " a ", 'a', new ItemStack(ModItems.AbyssMetal, 1, 1));
 				r.addShaped(new ItemStack(ModItems.RepairGoddess, 1, 0), "hgh", "gdg", "hgh", 'd', "packGemExquisite", 'g', new ItemStack(ModBlocks.BlockGrudge), 'h', new ItemStack(ModBlocks.BlockGrudgeHeavy));

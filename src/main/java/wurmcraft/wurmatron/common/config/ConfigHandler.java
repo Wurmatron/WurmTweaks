@@ -66,6 +66,7 @@ public class ConfigHandler {
 		private static Property LogisticsPipes;
 		private static Property ProjRed;
 		private static Property powersuits;
+		private static Property InterdictionPillar;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -184,6 +185,9 @@ public class ConfigHandler {
 				Settings.ProjRed = ProjRed.getBoolean();
 				powersuits = config.get(Global.CATEGORY_MODS, "powersuits", true);
 				Settings.powersuits = powersuits.getBoolean();
+				InterdictionPillar = config.get(Global.CATEGORY_MODS, "InterdictionPillar", true);
+				Settings.InterdictionPillar = InterdictionPillar.getBoolean();
+
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
