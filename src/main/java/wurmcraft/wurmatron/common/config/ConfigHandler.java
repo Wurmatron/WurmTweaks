@@ -63,6 +63,7 @@ public class ConfigHandler {
 		private static Property IC2NuclearControl;
 		private static Property IronTank;
 		private static Property CompactMachines;
+		private static Property LogisticsPipes;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -175,6 +176,8 @@ public class ConfigHandler {
 				Settings.IronTank = IronTank.getBoolean();
 				CompactMachines = config.get(Global.CATEGORY_MODS, "CompactMachines", true);
 				Settings.CompactMachines = CompactMachines.getBoolean();
+				LogisticsPipes = config.get(Global.CATEGORY_MODS, "LogisticsPipes", true);
+				Settings.LogisticsPipes = LogisticsPipes.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

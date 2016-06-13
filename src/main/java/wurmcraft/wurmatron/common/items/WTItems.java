@@ -87,6 +87,7 @@ public class WTItems {
 				itemMaterialNames.add("electroMagneticShielding");
 				itemMaterialNames.add("electroShielding");
 				itemMaterialNames.add("wandParts");
+				itemMaterialNames.add("pumpkinBits");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
 				itemSpecialColors.put("creativeParts", EnumChatFormatting.DARK_PURPLE);
 				itemSpecialColors.put("redMatter", EnumChatFormatting.DARK_RED);

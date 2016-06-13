@@ -69,6 +69,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("Thaumcraft", Settings.Thaumcraft);
 				data.setBoolean("irontank", Settings.IronTank);
 				data.setBoolean("CompactMachines", Settings.CompactMachines);
+				data.setBoolean("LogisticsPipes", Settings.LogisticsPipes);
 		}
 
 		@Override
@@ -136,5 +137,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.Thaumcraft = data.getBoolean("Thaumcraft");
 				Settings.IronTank  = data.getBoolean("irontank");
 				Settings.CompactMachines = data.getBoolean("CompactMachines");
+				Settings.LogisticsPipes = data.getBoolean("LogisticsPipes");
 		}
 }

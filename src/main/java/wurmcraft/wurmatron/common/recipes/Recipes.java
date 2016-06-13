@@ -151,6 +151,8 @@ public class Recipes {
 						IronTankRecipes.addRecipes();
 				if (RecipeChecker.modExists("CompactMachines"))
 						CompactMachinesRecipes.addRecipes();
+				if(RecipeChecker.modExists("LogisticsPipes"))
+						LogisticsPipesRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

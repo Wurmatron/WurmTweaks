@@ -44,6 +44,7 @@ public class WurmTweaksItems {
 		public static final ItemStack itemElectroMagneticShielding = new ItemStack(WTItems.itemMaterial, 1, 37);
 		public static final ItemStack itemElectroShielding = new ItemStack(WTItems.itemMaterial, 1, 38);
 		public static final ItemStack itemWandParts = new ItemStack(WTItems.itemMaterial, 1, 39);
+		public static final ItemStack itemPumpkinBits = new ItemStack(WTItems.itemMaterial, 1, 40);
 		// Credits (ItemCredit)
 		public static final ItemStack creditBismuth30 = new ItemStack(WTItems.creditBismuth, 1, 0);
 		public static final ItemStack creditBismuth50 = new ItemStack(WTItems.creditBismuth, 1, 1);
