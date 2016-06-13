@@ -155,6 +155,8 @@ public class Recipes {
 						LogisticsPipesRecipes.addRecipes();
 				if(RecipeChecker.modExists("ProjRed"))
 						ProjectRedRecipes.addRecipes();
+				if(RecipeChecker.modExists("powersuits"))
+						PowerSuitRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

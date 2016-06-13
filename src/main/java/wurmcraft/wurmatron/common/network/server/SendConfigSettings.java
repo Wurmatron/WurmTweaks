@@ -71,6 +71,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("CompactMachines", Settings.CompactMachines);
 				data.setBoolean("LogisticsPipes", Settings.LogisticsPipes);
 				data.setBoolean("ProjRed", Settings.ProjRed);
+				data.setBoolean("powersuits", Settings.powersuits);
 		}
 
 		@Override
@@ -140,5 +141,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.CompactMachines = data.getBoolean("CompactMachines");
 				Settings.LogisticsPipes = data.getBoolean("LogisticsPipes");
 				Settings.ProjRed = data.getBoolean("ProjRed");
+				Settings.powersuits = data.getBoolean("powersuits");
 		}
 }
