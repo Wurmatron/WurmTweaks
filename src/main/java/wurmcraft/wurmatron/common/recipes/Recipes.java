@@ -153,6 +153,8 @@ public class Recipes {
 						CompactMachinesRecipes.addRecipes();
 				if(RecipeChecker.modExists("LogisticsPipes"))
 						LogisticsPipesRecipes.addRecipes();
+				if(RecipeChecker.modExists("ProjRed"))
+						ProjectRedRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

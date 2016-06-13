@@ -64,6 +64,7 @@ public class ConfigHandler {
 		private static Property IronTank;
 		private static Property CompactMachines;
 		private static Property LogisticsPipes;
+		private static Property ProjRed;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -178,6 +179,8 @@ public class ConfigHandler {
 				Settings.CompactMachines = CompactMachines.getBoolean();
 				LogisticsPipes = config.get(Global.CATEGORY_MODS, "LogisticsPipes", true);
 				Settings.LogisticsPipes = LogisticsPipes.getBoolean();
+				ProjRed = config.get(Global.CATEGORY_MODS, "ProjectRed", true);
+				Settings.ProjRed = ProjRed.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

@@ -55,6 +55,7 @@ public class Settings {
 		public static boolean IronTank;
 		public static boolean CompactMachines;
 		public static boolean LogisticsPipes;
+		public static boolean ProjRed;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -110,6 +111,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("IronTank")) return IronTank;
 				if(modid.equalsIgnoreCase("CompactMachines")) return CompactMachines;
 				if(modid.equalsIgnoreCase("LogisticsPipes")) return LogisticsPipes;
+				if(modid.equalsIgnoreCase("ProjRed")) return ProjRed;
 				return false;
 		}
 }
