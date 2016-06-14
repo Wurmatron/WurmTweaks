@@ -69,6 +69,7 @@ public class ConfigHandler {
 		private static Property InterdictionPillar;
 		private static Property qCraft;
 		private static Property ElectroMagic;
+		private static Property ThaumicTinkerer;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -193,6 +194,8 @@ public class ConfigHandler {
 				Settings.qCraft = qCraft.getBoolean();
 				ElectroMagic = config.get(Global.CATEGORY_MODS, "ElectroMagic", true);
 				Settings.ElectroMagic = ElectroMagic.getBoolean();
+				ThaumicTinkerer = config.get(Global.CATEGORY_MODS, "ThaumicTinkerer", true);
+				Settings.ThaumicTinkerer = ThaumicTinkerer.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {

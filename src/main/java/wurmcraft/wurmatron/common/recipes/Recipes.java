@@ -151,22 +151,24 @@ public class Recipes {
 						IronTankRecipes.addRecipes();
 				if (RecipeChecker.modExists("CompactMachines"))
 						CompactMachinesRecipes.addRecipes();
-				if(RecipeChecker.modExists("LogisticsPipes"))
+				if (RecipeChecker.modExists("LogisticsPipes"))
 						LogisticsPipesRecipes.addRecipes();
-				if(RecipeChecker.modExists("ProjRed"))
+				if (RecipeChecker.modExists("ProjRed"))
 						ProjectRedRecipes.addRecipes();
-				if(RecipeChecker.modExists("powersuits"))
+				if (RecipeChecker.modExists("powersuits"))
 						PowerSuitRecipes.addRecipes();
-				if(RecipeChecker.modExists("RouterReborn"))
+				if (RecipeChecker.modExists("RouterReborn"))
 						RouterRebornRecipes.addRecipes();
-				if(RecipeChecker.modExists("interdictionpillar"))
+				if (RecipeChecker.modExists("interdictionpillar"))
 						InterdictionPillarRecipes.addRecipes();
-				if(RecipeChecker.modExists("qCraft"))
+				if (RecipeChecker.modExists("qCraft"))
 						qCraftRecipes.addRecipes();
-				if(RecipeChecker.modExists("academy-craft"))
+				if (RecipeChecker.modExists("academy-craft"))
 						AcademyCraftRecipes.addRecipes();
-				if(RecipeChecker.modExists("EMT"))
+				if (RecipeChecker.modExists("EMT"))
 						ElectroMagicRecipes.addRecipes();
+				if (RecipeChecker.modExists("ThaumicTinkerer"))
+						ThamicTinkersRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

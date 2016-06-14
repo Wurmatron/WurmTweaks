@@ -78,6 +78,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("qCraft", Settings.qCraft);
 				data.setBoolean("academy-craft", Settings.AcademyCraft);
 				data.setBoolean("ElectroMagic", Settings.ElectroMagic);
+				data.setBoolean("ThaumicTinkerer", Settings.ThaumicTinkerer);
 		}
 
 		@Override
@@ -153,5 +154,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.qCraft = data.getBoolean("qCraft");
 				Settings.AcademyCraft = data.getBoolean("AcademyCraft");
 				Settings.ElectroMagic = data.getBoolean("ElectroMagic");
+				Settings.ThaumicTinkerer = data.getBoolean("ThaumicTinkerer");
 		}
 }

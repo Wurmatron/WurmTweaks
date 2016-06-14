@@ -62,6 +62,7 @@ public class Settings {
 		public static boolean qCraft;
 		public static boolean AcademyCraft;
 		public static boolean ElectroMagic;
+		public static boolean ThaumicTinkerer;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -124,6 +125,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("qCraft")) return qCraft;
 				if(modid.equalsIgnoreCase("AcademyCraft")) return AcademyCraft;
 				if(modid.equalsIgnoreCase("EMT")) return ElectroMagic;
+				if(modid.equalsIgnoreCase("ThaumicTinkerer")) return ThaumicTinkerer;
 				return false;
 		}
 }
