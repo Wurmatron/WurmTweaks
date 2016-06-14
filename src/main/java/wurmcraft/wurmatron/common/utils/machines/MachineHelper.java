@@ -1,5 +1,6 @@
 package wurmcraft.wurmatron.common.utils.machines;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import wurmcraft.wurmatron.common.items.ItemCredit;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
@@ -63,6 +64,14 @@ public class MachineHelper {
 								else
 										IEHelper.addCrusherRecipe(CreditHelper.getCreditsFromTypeAndUnits(output.getItem(), ItemCredit.units[output.getItemDamage()] * 2), input, euTick * timeInTicks);
 						}
+				}
+		}
+
+		public static void addFurnaceRecipes (ItemStack output, ItemStack input) {
+				if (RecipeChecker.checkStack(output)) {
+						if (RecipeChecker.modExists("ThermalExpansion"))
+								TEHelper.addFurnaceRecipe(8000, input, output);
+						GameRegistry.addSmelting(input, output, 1f);
 				}
 		}
 }

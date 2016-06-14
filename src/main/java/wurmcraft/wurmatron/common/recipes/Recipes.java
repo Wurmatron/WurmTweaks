@@ -43,6 +43,7 @@ public class Recipes {
 				OreDict.init();
 				SmeltingRecipes.init();
 				LogHandler.info("Adding custom recipes");
+				VinilaRecipes.addRecipes();
 				TerrafirmacraftRecipes.addRecipes();
 				WurmTweaksRecipes.addRecipes();
 				if (RecipeChecker.modExists("AdvancedSolarPanel"))
