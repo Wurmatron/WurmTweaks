@@ -163,6 +163,8 @@ public class Recipes {
 						InterdictionPillarRecipes.addRecipes();
 				if(RecipeChecker.modExists("qCraft"))
 						qCraftRecipes.addRecipes();
+				if(RecipeChecker.modExists("academy-craft"))
+						AcademyCraftRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
