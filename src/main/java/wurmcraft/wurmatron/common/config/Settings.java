@@ -61,6 +61,7 @@ public class Settings {
 		public static boolean InterdictionPillar;
 		public static boolean qCraft;
 		public static boolean AcademyCraft;
+		public static boolean ElectroMagic;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;
@@ -122,6 +123,7 @@ public class Settings {
 				if(modid.equalsIgnoreCase("interdictionpillar")) return InterdictionPillar;
 				if(modid.equalsIgnoreCase("qCraft")) return qCraft;
 				if(modid.equalsIgnoreCase("AcademyCraft")) return AcademyCraft;
+				if(modid.equalsIgnoreCase("EMT")) return ElectroMagic;
 				return false;
 		}
 }

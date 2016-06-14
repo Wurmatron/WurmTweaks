@@ -77,6 +77,7 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				data.setBoolean("InterdictionPillar", Settings.InterdictionPillar);
 				data.setBoolean("qCraft", Settings.qCraft);
 				data.setBoolean("academy-craft", Settings.AcademyCraft);
+				data.setBoolean("ElectroMagic", Settings.ElectroMagic);
 		}
 
 		@Override
@@ -151,5 +152,6 @@ public class SendConfigSettings extends CustomMessage.ClientMessage<SendConfigSe
 				Settings.InterdictionPillar = data.getBoolean("InterdictionPillar");
 				Settings.qCraft = data.getBoolean("qCraft");
 				Settings.AcademyCraft = data.getBoolean("AcademyCraft");
+				Settings.ElectroMagic = data.getBoolean("ElectroMagic");
 		}
 }

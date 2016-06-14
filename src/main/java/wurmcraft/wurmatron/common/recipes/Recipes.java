@@ -165,6 +165,8 @@ public class Recipes {
 						qCraftRecipes.addRecipes();
 				if(RecipeChecker.modExists("academy-craft"))
 						AcademyCraftRecipes.addRecipes();
+				if(RecipeChecker.modExists("EMT"))
+						ElectroMagicRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {

@@ -68,6 +68,7 @@ public class ConfigHandler {
 		private static Property powersuits;
 		private static Property InterdictionPillar;
 		private static Property qCraft;
+		private static Property ElectroMagic;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -190,6 +191,8 @@ public class ConfigHandler {
 				Settings.InterdictionPillar = InterdictionPillar.getBoolean();
 				qCraft = config.get(Global.CATEGORY_MODS, "QCraft", true);
 				Settings.qCraft = qCraft.getBoolean();
+				ElectroMagic = config.get(Global.CATEGORY_MODS, "ElectroMagic", true);
+				Settings.ElectroMagic = ElectroMagic.getBoolean();
 
 				LogHandler.info("Loaded Config");
 				if (config.hasChanged()) {
