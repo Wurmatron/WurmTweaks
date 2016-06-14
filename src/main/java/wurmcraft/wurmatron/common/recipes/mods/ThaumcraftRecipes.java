@@ -55,15 +55,19 @@ public class ThaumcraftRecipes {
 				r.addArmorRecipes(ConfigItems.itemHelmetThaumium, ConfigItems.itemChestThaumium, ConfigItems.itemLegsThaumium, ConfigItems.itemBootsThaumium, new ItemStack(ConfigItems.itemResource, 1, 2));
 				r.addShapeless(new ItemStack(ConfigItems.itemInkwell, 1, 0), "dyeBlack", new ItemStack(ConfigItems.itemEssence, 1, 0), WurmTweaksItems.itemMagicChunk);
 				r.addShapeless(new ItemStack(ConfigItems.itemInkwell, 1, 0), "dyeBlack", new ItemStack(ConfigItems.itemInkwell, 1, OreDictionary.WILDCARD_VALUE));
+				ThaumcraftApi.getCraftingRecipes().clear();
 				addInfoRecipes();
 				addThamRecipes();
 				addAlchemyRecipes();
 				addArtificeRecipes();
+				ThaumcraftHelper.removeTab("GOLEMANCY");
 				addEldridthRecipes();
 		}
 
 		// 1st Page
 		private static void addInfoRecipes () {
+				ThaumcraftHelper.refreshResearch("RESEARCH");
+				ThaumcraftHelper.refreshResearch("PLANTS");
 				ThaumcraftHelper.addShaped("DECONSTRUCTOR", new ItemStack(ConfigBlocks.blockTable, 1, 14), new AspectList().add(Aspect.ENTROPY, 20), " S ", "XBY", 'S', new ItemStack(ConfigItems.itemThaumometer, 1, 0), 'X', TFCItems.redSteelPick, 'B', new ItemStack(ConfigBlocks.blockTable, 1, 0), 'Y', TFCItems.blueSteelAxe);
 				ThaumcraftHelper.addShaped("DECONSTRUCTOR", new ItemStack(ConfigBlocks.blockTable, 1, 14), new AspectList().add(Aspect.ENTROPY, 20), " S ", "XBY", 'S', new ItemStack(ConfigItems.itemThaumometer, 1, 0), 'X', TFCItems.blueSteelPick, 'B', new ItemStack(ConfigBlocks.blockTable, 1, 0), 'Y', TFCItems.redSteelAxe);
 		}
@@ -79,6 +83,7 @@ public class ThaumcraftRecipes {
 				ThaumcraftHelper.addShaped("VISPOWER", new ItemStack(ConfigBlocks.blockStoneDevice, 1, 11), new AspectList().add(Aspect.AIR, 100).add(Aspect.FIRE, 100).add(Aspect.EARTH, 100), "XAX", "XCX", "XAX", 'X', WurmTweaksBlocks.blockCompressedRedstone, 'A', WurmTweaksItems.stableMagicEssence, 'C', new ItemStack(ConfigBlocks.blockStoneDevice, 1, 10));
 				ThaumcraftHelper.addShaped("VISPOWER", new ItemStack(ConfigBlocks.blockStoneDevice, 1, 14), new AspectList().add(Aspect.AIR, 50), " X ", "XCX", " X ", 'X', WurmTweaksItems.itemMixedSheet, 'C', WurmTweaksItems.stableMagicEssence);
 				ThaumcraftHelper.addShaped("FOCUSSHOCK", new ItemStack(ConfigItems.itemFocusShock, 1, 0), new AspectList().add(Aspect.ORDER, 25), "XAX", "ACA", "XAX", 'X', ModItems.draconicCore, 'A', WurmTweaksItems.stableMagicEssence, 'C', WurmTweaksItems.itemWandParts);
+				ThaumcraftHelper.addShaped("FOCUSFIRE", new ItemStack(ConfigItems.itemFocusFire, 1, 0), new AspectList().add(Aspect.FIRE, 25), "XAX", "ACA", "XAX", 'X', Items.flint, 'A', WurmTweaksItems.stableMagicEssence, 'C', WurmTweaksItems.itemWandParts);
 				ThaumcraftHelper.addShaped("FOCUSFROST", new ItemStack(ConfigItems.itemFocusShock, 1, 0), new AspectList().add(Aspect.ORDER, 25), "XAX", "ACA", "XAX", 'X', TFCBlocks.ice, 'A', WurmTweaksItems.stableMagicEssence, 'C', WurmTweaksItems.itemWandParts);
 				ThaumcraftHelper.addShaped("NODESTABILIZER", new ItemStack(ConfigBlocks.blockStoneDevice, 1, 9), new AspectList().add(Aspect.EARTH, 20), " S ", "SXS", "BBB", 'S', WurmTweaksItems.stableMagicEssence, 'X', WurmTweaksItems.itemCraftingCore, 'B', WurmTweaksBlocks.blockPlatinum);
 				ThaumcraftHelper.addInfusion("NODESTABILIZERADV", new ItemStack(ConfigBlocks.blockStoneDevice, 1, 10), 12, new AspectList().add(Aspect.MAGIC, 64).add(Aspect.ORDER, 64), new ItemStack(ConfigBlocks.blockStoneDevice, 1, 9), new ItemStack[] {new ItemStack(WurmTweaksBlocks.blockCompressedRedstone), new ItemStack(WurmTweaksBlocks.blockCompressedRedstone), new ItemStack(WurmTweaksBlocks.blockCompressedRedstone), new ItemStack(WurmTweaksBlocks.blockCompressedRedstone), new ItemStack(ConfigItems.itemResource, 1, 1), new ItemStack(ConfigItems.itemResource, 1, 1), new ItemStack(ConfigItems.itemResource, 1, 0), new ItemStack(ConfigItems.itemResource, 1, 0)});
@@ -113,6 +118,19 @@ public class ThaumcraftRecipes {
 
 		// 3rd Page
 		private static void addAlchemyRecipes () {
+				ThaumcraftHelper.removeResearch("TRANSGOLD");
+				ThaumcraftHelper.removeResearch("TRANSLEAD");
+				ThaumcraftHelper.removeResearch("TRANSIRON");
+				ThaumcraftHelper.removeResearch("TRANSTIN");
+				ThaumcraftHelper.removeResearch("TRANSCOPPER");
+				ThaumcraftHelper.removeResearch("TRANSSILVER");
+				ThaumcraftHelper.removeResearch("PUREGOLD");
+				ThaumcraftHelper.removeResearch("PURELEAD");
+				ThaumcraftHelper.removeResearch("PUREIRON");
+				ThaumcraftHelper.removeResearch("PURETIN");
+				ThaumcraftHelper.removeResearch("PURECOPPER");
+				ThaumcraftHelper.removeResearch("PURESILVER");
+				ThaumcraftHelper.refreshResearch("PHIAL");
 				ThaumcraftHelper.addCrucible("SANESOAP", new ItemStack(ConfigItems.itemSanitySoap, 1, 0), WurmTweaksItems.stableMagicEssence, new AspectList().add(Aspect.MAGIC, 32).add(Aspect.HEAL, 16).add(Aspect.ELDRITCH, 8));
 				ThaumcraftHelper.addCrucible("BATHSALTS", new ItemStack(ConfigItems.itemBathSalts, 1, 0), WurmTweaksItems.stableMagicEssence, new AspectList().add(Aspect.MAGIC, 8).add(Aspect.HEAL, 4).add(Aspect.ELDRITCH, 4));
 				ThaumcraftHelper.addShaped("ARCANESPA", new ItemStack(ConfigBlocks.blockStoneDevice, 1, 12), new AspectList().add(Aspect.ORDER, 16).add(Aspect.WATER, 24).add(Aspect.EARTH, 8), "XAX", "XCX", "XXX", 'X', new ItemStack(ConfigBlocks.blockCosmeticSolid, 1, 6), 'A', TFCItems.blueSteelBucketEmpty, 'C', WurmTweaksItems.stableMagicEssence);
@@ -146,7 +164,7 @@ public class ThaumcraftRecipes {
 				ThaumcraftHelper.addShaped("DISTILESSENTIA", new ItemStack(ConfigBlocks.blockMetalDevice, 1, 9), new AspectList().add(Aspect.AIR, 20).add(Aspect.FIRE, 20), "XAX", "ACA", "XAX", 'X', WurmTweaksItems.itemMixedSheet, 'A', WurmTweaksItems.itemCraftingCore, 'C', new ItemStack(ConfigBlocks.blockMagicalLog, 1, 1));
 				ThaumcraftHelper.addShaped("JARLABEL", new ItemStack(ConfigBlocks.blockJar, 1, 0), new AspectList().add(Aspect.WATER, 2), "PXP", "P P", "PPP", 'P', Blocks.glass_pane, 'X', new ItemStack(ConfigBlocks.blockSlabWood, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ConfigItems.itemResource, 2, 13), Items.paper, Items.paper, "dye", Items.slime_ball);
-				ThaumcraftHelper.addShaped("JARVOID", new ItemStack(ConfigBlocks.blockJar, 1, 3), new AspectList().add(Aspect.ENTROPY, 20), "X", "J", "B", 'X', Blocks.obsidian, 'J', Items.ender_pearl,'B', new ItemStack(ConfigBlocks.blockJar, 1, 0));
+				ThaumcraftHelper.addShaped("JARVOID", new ItemStack(ConfigBlocks.blockJar, 1, 3), new AspectList().add(Aspect.ENTROPY, 20), "X", "J", "B", 'X', Blocks.obsidian, 'J', Items.ender_pearl, 'B', new ItemStack(ConfigBlocks.blockJar, 1, 0));
 				ThaumcraftHelper.addShaped("TUBES", new ItemStack(ConfigBlocks.blockTube, 3, 0), new AspectList().add(Aspect.WATER, 4), "SGS", 'G', "packGlass", 'S', WurmTweaksItems.itemMagicChunk);
 				ThaumcraftHelper.addShapeless("TUBES", new ItemStack(ConfigBlocks.blockTube, 1, 1), new AspectList().add(Aspect.ORDER, 8), new ItemStack(ConfigBlocks.blockTube, 1, 0), Blocks.lever);
 				ThaumcraftHelper.addShaped("TUBES", new ItemStack(ConfigItems.itemResonator, 1, 0), new AspectList().add(Aspect.AIR, 8), "W W", "WWW", " W ", 'W', new ItemStack(ConfigItems.itemResource, 1, 4));
@@ -159,8 +177,21 @@ public class ThaumcraftRecipes {
 
 		// Page 4
 		public static void addArtificeRecipes () {
+				ThaumcraftHelper.refreshResearch("BASICARTIFACE");
 				ThaumcraftHelper.addInfusion("JARBRAIN", new ItemStack(ConfigBlocks.blockJar, 1, 1), 12, new AspectList().add(Aspect.BEAST, 20).add(Aspect.AURA, 20), new ItemStack(ConfigBlocks.blockJar, 1, 0), new ItemStack[] {new ItemStack(TFCItems.redSteelSheet), WurmTweaksItems.stableMagicEssence, WurmTweaksItems.itemCraftingCore, new ItemStack(Items.rotten_flesh)});
-				// TODO Runic Matrix
+				ThaumcraftHelper.removeResearch("BONEBOW");
+				ThaumcraftHelper.removeResearch("PRIMALARROW");
+				ThaumcraftHelper.removeResearch("ELEMENTALPICK");
+				ThaumcraftHelper.removeResearch("ELEMENTALAXE");
+				ThaumcraftHelper.removeResearch("ELEMENTALSWORD");
+				ThaumcraftHelper.removeResearch("ELEMENTALSHOVEL");
+				ThaumcraftHelper.removeResearch("ELEMENTALHOE");
+				ThaumcraftHelper.removeResearch("ARMORFORTRESS");
+				ThaumcraftHelper.removeResearch("HELMGOGGLES");
+				ThaumcraftHelper.removeResearch("	MASKGRINNINGDEVIL");
+				ThaumcraftHelper.removeResearch("MASKANGRYGHOST");
+				ThaumcraftHelper.removeResearch("MASKSIPPINGFIEND");
+				ThaumcraftHelper.addShaped("LEVITATOR", new ItemStack(ConfigBlocks.blockLifter, 1, 0), new AspectList().add(Aspect.AIR, 25).add(Aspect.EARTH, 25), "XAX", "BBB", "XAX", 'X', Items.feather, 'A', WurmTweaksItems.ingotTitanium, 'B', WurmTweaksItems.stableMagicEssence);
 				ThaumcraftHelper.addShaped("INFUSION", new ItemStack(ConfigBlocks.blockStoneDevice, 1, 2), new AspectList().add(Aspect.ORDER, 50), "AXA", "XCX", "AXA", 'A', WurmTweaksItems.itemMixedSheet, 'X', WurmTweaksItems.itemCraftingCore, 'C', WurmTweaksBlocks.blockBlueSteel);
 				ThaumcraftHelper.addShaped("ARCANESTONE", new ItemStack(ConfigBlocks.blockCosmeticSolid, 4, 6), new AspectList().add(Aspect.EARTH, 2).add(Aspect.AIR, 2), "SSS", "SXS", "SSS", 'S', "packSmoothStone", 'X', WurmTweaksItems.stableMagicEssence);
 				ThaumcraftHelper.addShaped("ARCANEEAR", new ItemStack(ConfigBlocks.blockWoodenDevice, 1, 1), new AspectList().add(Aspect.EARTH, 20).add(Aspect.ENTROPY, 20), "ISI", "ISI", "BBB", 'I', WurmTweaksItems.itemMixedSheet, 'S', WurmTweaksItems.stableMagicEssence, 'B', WurmTweaksBlocks.blockBlueSteel);
@@ -182,6 +213,8 @@ public class ThaumcraftRecipes {
 
 		// Page 6
 		public static void addEldridthRecipes () {
+				ThaumcraftHelper.removeResearch("PRIMALCRUSHER");
+				ThaumcraftHelper.removeResearch("AKASHIC");
 				ThaumcraftHelper.addInfusion("SANITYCHECK", new ItemStack(ConfigItems.itemSanityChecker), 16, new AspectList().add(Aspect.DARKNESS, 20).add(Aspect.SOUL, 20).add(Aspect.MAGIC, 20), WurmTweaksItems.itemCraftingCore, new ItemStack[] {new ItemStack(TFCItems.blueSteelSheet), new ItemStack(TFCItems.redSteelSheet), new ItemStack(WurmTweaksBlocks.blockBlueSteel)});
 				for (ItemStack seed : OreDictionary.getOres("packSeed"))
 						ThaumcraftHelper.addCrucible("ELDRITCHMAJOR", new ItemStack(ConfigItems.itemResource, 1, 17), seed, new AspectList().add(Aspect.VOID, 8).add(Aspect.ENTROPY, 8).add(Aspect.MAGIC, 8));

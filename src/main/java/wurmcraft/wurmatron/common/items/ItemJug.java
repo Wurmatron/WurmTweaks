@@ -216,6 +216,11 @@ public class ItemJug extends Item implements IFluidContainerItem {
 				this.itemIcon = registerer.registerIcon(Global.MODID + ":" + getUnlocalizedName());
 		}
 
+		@Override
+		public String getItemStackDisplayName (ItemStack stack) {
+				return StatCollector.translateToLocal("item.itemJug.name");
+		}
+
 		private void fillSac (World world, ItemStack sac, int x, int y, int z, int amount) {
 				Block b = world.getBlock(x, y, z);
 				if (isFreshWater(b) || isHotWater(b)) {
