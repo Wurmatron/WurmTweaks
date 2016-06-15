@@ -4,9 +4,11 @@ import com.bioxx.tfc.Core.Player.FoodStatsTFC;
 import com.bioxx.tfc.Core.TFC_Core;
 import com.bioxx.tfc.api.Enums.EnumFoodGroup;
 import net.machinemuse.api.IModularItem;
+import net.machinemuse.api.ModuleManager;
 import net.machinemuse.api.moduletrigger.IPlayerTickModule;
 import net.machinemuse.api.moduletrigger.IToggleableModule;
 import net.machinemuse.powersuits.powermodule.PowerModuleBase;
+import net.machinemuse.utils.ElectricItemUtils;
 import net.machinemuse.utils.MuseCommonStrings;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,11 +17,15 @@ import java.util.List;
 
 public class TFCFoodModule extends PowerModuleBase implements IToggleableModule, IPlayerTickModule {
 
+		public static final String POWER_USAGE = "Power Usage";
+
 		public TFCFoodModule (List<IModularItem> validItems) {
 				super(validItems);
 				addInstallCost(WurmTweaksItems.ingotEnergyReactor);
 				addInstallCost(WurmTweaksItems.ingotRainbowSteel);
 				addInstallCost(WurmTweaksItems.stableMagicEssence);
+				addTradeoffProperty("TFCFood", POWER_USAGE, 200, " Joules/Tick");
+
 		}
 
 		@Override
@@ -41,6 +47,7 @@ public class TFCFoodModule extends PowerModuleBase implements IToggleableModule,
 						stats.addNutrition(EnumFoodGroup.Protein, 1f);
 				if (stats.nutrVeg < 1f)
 						stats.addNutrition(EnumFoodGroup.Vegetable, 1f);
+				ElectricItemUtils.drainPlayerEnergy(player, ModuleManager.computeModularProperty(stack, POWER_USAGE));
 		}
 
 		@Override

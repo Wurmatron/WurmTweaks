@@ -46,7 +46,6 @@ public class VinilaRecipes {
 						r.add3X(Blocks.hay_block, TFCBlocks.thatch);
 						r.addShapeless(new ItemStack(Blocks.carpet, 1, d), new ItemStack(Blocks.carpet, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
 						r.addCircleWCenter(new ItemStack(Blocks.carpet, 8, d), new ItemStack(Blocks.carpet, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
-
 				}
 				r.addSlabs(new ItemStack(Blocks.stone_slab, 12, 0), "packSmoothStone");
 				r.addSlabs(new ItemStack(Blocks.stone_slab, 12, 1), new ItemStack(Blocks.sandstone, 1, OreDictionary.WILDCARD_VALUE));
@@ -75,14 +74,14 @@ public class VinilaRecipes {
 				r.add2X(new ItemStack(Blocks.stonebrick, 4, 1), Blocks.stonebrick);
 				r.addSlabs(new ItemStack(Blocks.iron_bars, 12, 0), TFCItems.wroughtIronSheet);
 				r.addSlabs(new ItemStack(Blocks.glass_pane, 12, 0), Blocks.glass);
-				r.addShaped(Blocks.enchanting_table, " B ", "XAX", "BBB", 'B', Blocks.obsidian, 'B', Items.book, 'X', "packGemExquisite", 'A', TFCItems.blueSteelSheet2x);
+				r.addShaped(Blocks.enchanting_table, " C ", "XAX", "BBB", 'B', Blocks.obsidian, 'C', Items.book, 'X', "packGemExquisite", 'A', TFCItems.blueSteelSheet2x);
 				r.addSimpleCirc(Blocks.redstone_lamp, Blocks.glowstone, Items.redstone);
 				r.addShapeless(Blocks.tripwire_hook, TFCItems.wroughtIronSheet, Items.redstone, Items.string);
 				r.addShaped(Blocks.beacon, "GGG", "GXG", "BBB", 'G', "packGlass", 'X', Items.nether_star, 'B', Blocks.obsidian);
 				r.addShaped(Blocks.anvil, "BBB", " S ", "S S", 'B', WurmTweaksBlocks.blockSteel, 'S', TFCItems.steelSheet);
 				r.addBasicMachineRecipe(Blocks.daylight_detector, Items.quartz, Items.redstone, Items.glowstone_dust, TFCItems.wroughtIronSheet);
 				r.addShapeless(new ItemStack(Items.redstone, 32), new ItemStack(Blocks.redstone_block));
-				r.addShaped(Blocks.hopper, "SCS", "S S", " S ", 'S', TFCItems.wroughtIronIngot, 'C', "packChest");
+				r.addShaped(new ItemStack(Blocks.hopper), "SCS", "S S", " S ", 'S', TFCItems.wroughtIronIngot, 'C', "packChest");
 				r.addShapeless(new ItemStack(Items.quartz, 32), new ItemStack(Blocks.quartz_block));
 				r.addShaped(Blocks.dropper, "CCC", "C C", "CRC", 'C', "packCobblestone", 'R', Items.redstone);
 				r.addPressurePlate(new ItemStack(Blocks.carpet, 6, 0), "packCloth");
@@ -98,11 +97,11 @@ public class VinilaRecipes {
 				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.diamond_pickaxe), 280), "SSS", " X ", " X ", 'S', new ItemStack(TFCItems.gemDiamond, 1, 2), 'X', "packStick");
 				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.diamond_axe), 300), "SS ", "SX ", " X ", 'S', new ItemStack(TFCItems.gemDiamond, 1, 2), 'X', "packStick");
 				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.diamond_axe), 300), " SS", " XS", " X ", 'S', new ItemStack(TFCItems.gemDiamond, 1, 2), 'X', "packStick");
-				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.iron_shovel), 100), " S ", " X ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
-				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.iron_sword), 200), " S ", " S ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
-				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.iron_pickaxe), 150), "SSS", " X ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
-				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.iron_axe), 150), "SS ", "SX ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
-				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.iron_axe), 150), " SS", " XS", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
+				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.golden_shovel), 100), " S ", " X ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
+				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.golden_sword), 200), " S ", " S ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
+				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.golden_pickaxe), 150), "SSS", " X ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
+				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.golden_axe), 150), "SS ", "SX ", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
+				r.addShaped(ItemNBT.addDamage(new ItemStack(Items.golden_axe), 150), " SS", " XS", " X ", 'S', TFCItems.goldSheet, 'X', "packStick");
 				r.addShaped(new ItemStack(Items.minecart, 1, 0), "S S", "SSS", 'S', TFCItems.wroughtIronSheet);
 				r.addShaped(new ItemStack(Items.minecart, 2, 0), "S S", "SSS", 'S', TFCItems.steelSheet);
 				r.addShaped(new ItemStack(Items.minecart, 4, 0), "S S", "SSS", 'S', TFCItems.blackSteelSheet);
@@ -111,7 +110,7 @@ public class VinilaRecipes {
 				r.addShaped(Items.iron_door, "SS", "SS", "SS", 'S', TFCItems.wroughtIronSheet);
 				r.addShapeless(Items.bucket, TFCItems.blueSteelBucketEmpty, TFCItems.redSteelBucketEmpty);
 				r.addShapeless(Items.name_tag, "dyeBlack", Items.paper);
-				r.addShaped(new ItemStack(Items.paper, 12), TFCItems.juteFiber);
+				r.addShaped(new ItemStack(Items.paper, 12), "SSS", 'S', TFCItems.juteFiber);
 				r.addShaped(Blocks.cauldron, "S S", "S S", "SSS", 'S', TFCItems.wroughtIronSheet);
 				r.addShaped(new ItemStack(Items.glass_bottle, 3), "G G", " G ", 'G', "packGlass");
 				r.addShapeless(Items.chest_minecart, "packChest", Items.minecart);
@@ -155,10 +154,9 @@ public class VinilaRecipes {
 
 		@Optional.Method (modid = "IC2")
 		private static void addCompressonRecipes () {
-				ICHelper.addCompressorRecipe(new ItemStack(TFCItems.powder, 32, 6), new ItemStack(Blocks.lapis_block));
 				ICHelper.addCompressorRecipe(new ItemStack(Items.redstone, 32), new ItemStack(Blocks.redstone_block));
 				ICHelper.addCompressorRecipe(new ItemStack(Items.quartz, 32), new ItemStack(Blocks.quartz_block));
-
+				ICHelper.addCompressorRecipe(new ItemStack(TFCItems.powder, 32, 6), new ItemStack(Blocks.lapis_block));
 		}
 
 		@Optional.Method (modid = "techreborn")

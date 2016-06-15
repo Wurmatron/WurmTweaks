@@ -1,17 +1,23 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
 import advsolar.common.AdvancedSolarPanel;
+import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import powercrystals.minefactoryreloaded.MFRRegistry;
+import powercrystals.minefactoryreloaded.farmables.harvestables.HarvestableWood;
+import powercrystals.minefactoryreloaded.farmables.plantables.PlantableSapling;
+import powercrystals.minefactoryreloaded.farmables.plantables.PlantableSoil;
 import powercrystals.minefactoryreloaded.setup.MFRThings;
 import powercrystals.minefactoryreloaded.setup.Machine;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.mfr.HarvestLeaves;
 
 public class MinefactoryReloadedRecipes {
 
@@ -53,6 +59,68 @@ public class MinefactoryReloadedRecipes {
 						r.addShapeless(new ItemStack(MFRThings.conveyorBlock, 1, i), new ItemStack(MFRThings.conveyorBlock, 1, 16), RecipeHelper.dye.get(i));
 				for (int i = 1; i < 11; i++)
 						r.addShapeless(new ItemStack(MFRThings.upgradeItem, 1, i), new ItemStack(MFRThings.upgradeItem, 1, i - 1), new ItemStack(MFRThings.upgradeItem, 1, i - 1));
-			// TODO Machine Handlers
+				MFRRegistry.registerHarvestable(new HarvestLeaves(TFCBlocks.leaves));
+				MFRRegistry.registerHarvestable(new HarvestableWood(TFCBlocks.logNatural));
+				MFRRegistry.registerHarvestable(new HarvestableWood(TFCBlocks.logNatural2));
+				MFRRegistry.registerHarvestable(new HarvestLeaves(TFCBlocks.leaves));
+				MFRRegistry.registerHarvestable(new HarvestLeaves(TFCBlocks.leaves2));
+				MFRRegistry.registerPlantable(new PlantableSapling(TFCBlocks.sapling));
+				MFRRegistry.registerPlantable(new PlantableSapling(TFCBlocks.sapling2));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.dirt));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.dirt2));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.grass));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.grass2));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.clayGrass));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.clayGrass2));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.tilledSoil));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.tilledSoil2));
+				MFRRegistry.registerPlantable(new PlantableSoil(TFCBlocks.peatGrass));
+				MFRRegistry.getLaserOres().clear();
+				MFRRegistry.registerLaserOre(12, new ItemStack(TFCItems.oreChunk, 1, 0));
+				MFRRegistry.registerLaserOre(15, new ItemStack(TFCItems.oreChunk, 1, 1));
+				MFRRegistry.registerLaserOre(5, new ItemStack(TFCItems.oreChunk, 1, 2));
+				MFRRegistry.registerLaserOre(10, new ItemStack(TFCItems.oreChunk, 1, 3));
+				MFRRegistry.registerLaserOre(8, new ItemStack(TFCItems.oreChunk, 1, 4));
+				MFRRegistry.registerLaserOre(12, new ItemStack(TFCItems.oreChunk, 1, 5));
+				MFRRegistry.registerLaserOre(14, new ItemStack(TFCItems.oreChunk, 1, 6));
+				MFRRegistry.registerLaserOre(8, new ItemStack(TFCItems.oreChunk, 1, 7));
+				MFRRegistry.registerLaserOre(2, new ItemStack(TFCItems.oreChunk, 1, 8));
+				MFRRegistry.registerLaserOre(12, new ItemStack(TFCItems.oreChunk, 1, 9));
+				MFRRegistry.registerLaserOre(8, new ItemStack(TFCItems.oreChunk, 1, 10));
+				MFRRegistry.registerLaserOre(10, new ItemStack(TFCItems.oreChunk, 1, 11));
+				MFRRegistry.registerLaserOre(10, new ItemStack(TFCItems.oreChunk, 1, 12));
+				MFRRegistry.registerLaserOre(10, new ItemStack(TFCItems.oreChunk, 1, 13));
+				MFRRegistry.registerLaserOre(12, new ItemStack(TFCItems.oreChunk, 1, 16));
+				MFRRegistry.registerLaserOre(12, new ItemStack(TFCItems.oreChunk, 1, 20));
+				MFRRegistry.registerLaserOre(8, new ItemStack(TFCItems.oreChunk, 1, 27));
+				MFRRegistry.registerLaserOre(8, new ItemStack(TFCItems.oreChunk, 1, 28));
+				MFRRegistry.registerLaserOre(22, new ItemStack(TFCItems.oreChunk, 1, 49));
+				MFRRegistry.registerLaserOre(25, new ItemStack(TFCItems.oreChunk, 1, 50));
+				MFRRegistry.registerLaserOre(15, new ItemStack(TFCItems.oreChunk, 1, 51));
+				MFRRegistry.registerLaserOre(20, new ItemStack(TFCItems.oreChunk, 1, 52));
+				MFRRegistry.registerLaserOre(18, new ItemStack(TFCItems.oreChunk, 1, 53));
+				MFRRegistry.registerLaserOre(22, new ItemStack(TFCItems.oreChunk, 1, 54));
+				MFRRegistry.registerLaserOre(24, new ItemStack(TFCItems.oreChunk, 1, 55));
+				MFRRegistry.registerLaserOre(18, new ItemStack(TFCItems.oreChunk, 1, 56));
+				MFRRegistry.registerLaserOre(12, new ItemStack(TFCItems.oreChunk, 1, 57));
+				MFRRegistry.registerLaserOre(22, new ItemStack(TFCItems.oreChunk, 1, 58));
+				MFRRegistry.registerLaserOre(18, new ItemStack(TFCItems.oreChunk, 1, 59));
+				MFRRegistry.registerLaserOre(20, new ItemStack(TFCItems.oreChunk, 1, 60));
+				MFRRegistry.registerLaserOre(20, new ItemStack(TFCItems.oreChunk, 1, 61));
+				MFRRegistry.registerLaserOre(20, new ItemStack(TFCItems.oreChunk, 1, 62));
+				MFRRegistry.registerLaserOre(32, new ItemStack(TFCItems.smallOreChunk, 1, 0));
+				MFRRegistry.registerLaserOre(35, new ItemStack(TFCItems.smallOreChunk, 1, 1));
+				MFRRegistry.registerLaserOre(25, new ItemStack(TFCItems.smallOreChunk, 1, 2));
+				MFRRegistry.registerLaserOre(30, new ItemStack(TFCItems.smallOreChunk, 1, 3));
+				MFRRegistry.registerLaserOre(28, new ItemStack(TFCItems.smallOreChunk, 1, 4));
+				MFRRegistry.registerLaserOre(32, new ItemStack(TFCItems.smallOreChunk, 1, 5));
+				MFRRegistry.registerLaserOre(34, new ItemStack(TFCItems.smallOreChunk, 1, 6));
+				MFRRegistry.registerLaserOre(28, new ItemStack(TFCItems.smallOreChunk, 1, 7));
+				MFRRegistry.registerLaserOre(22, new ItemStack(TFCItems.smallOreChunk, 1, 8));
+				MFRRegistry.registerLaserOre(32, new ItemStack(TFCItems.smallOreChunk, 1, 9));
+				MFRRegistry.registerLaserOre(28, new ItemStack(TFCItems.smallOreChunk, 1, 10));
+				MFRRegistry.registerLaserOre(30, new ItemStack(TFCItems.smallOreChunk, 1, 11));
+				MFRRegistry.registerLaserOre(30, new ItemStack(TFCItems.smallOreChunk, 1, 12));
+				MFRRegistry.registerLaserOre(30, new ItemStack(TFCItems.smallOreChunk, 1, 13));
 		}
 }

@@ -6,11 +6,14 @@ import am2.items.ItemsCommonProxy;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.registry.GameRegistry;
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.item.darksteel.DarkSteelItems;
 import erogenousbeef.bigreactors.common.BigReactors;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.items.LudicrousItems;
+import gravisuite.GraviSuite;
+import mekanism.common.MekanismItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -296,6 +299,12 @@ public class OreDict {
 						addBloodMagic();
 				if (RecipeChecker.modExists("DraconicEvolution"))
 						addDraconicEvolution();
+				if (RecipeChecker.modExists("GraviSuite"))
+						addGraviSuit();
+				if (RecipeChecker.modExists("ThaumicTinkerer"))
+						addThaumicTinkerer();
+				if(RecipeChecker.modExists("Mekanism"))
+						addMekanism();
 		}
 
 		@Optional.Method (modid = "arsmagica2")
@@ -367,6 +376,27 @@ public class OreDict {
 				add("itemShovel", com.brandon3055.draconicevolution.common.ModItems.wyvernShovel);
 				add("itemSword", com.brandon3055.draconicevolution.common.ModItems.draconicSword);
 				add("itemSword", com.brandon3055.draconicevolution.common.ModItems.wyvernSword);
+				add("itemSword", com.brandon3055.draconicevolution.common.ModItems.draconicDestructionStaff);
+				add("itemPick", com.brandon3055.draconicevolution.common.ModItems.draconicDestructionStaff);
+				add("itemAxe", com.brandon3055.draconicevolution.common.ModItems.draconicDestructionStaff);
+		}
+
+		@Optional.Method (modid = "GraviSuite")
+		private static void addGraviSuit () {
+				add("itemAxe", GraviSuite.vajra);
+				add("itemPick", GraviSuite.vajra);
+				add("itemSword", GraviSuite.vajra);
+		}
+
+		@Optional.Method (modid = "ThaumicTinkerer")
+		private static void addThaumicTinkerer () {
+				add("itemAxe", GameRegistry.findItem("ThaumicTinkerer", "ichorAxeGem"));
+				add("itemAxe", GameRegistry.findItem("ThaumicTinkerer", "ichorAxe"));
+		}
+
+		@Optional.Method (modid = "Mekanism")
+		private static void addMekanism() {
+				add("itemAxe", MekanismItems.AtomicDisassembler);
 		}
 
 		private static void add (String name, ItemStack stack) {

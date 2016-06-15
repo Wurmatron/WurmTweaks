@@ -52,7 +52,7 @@ public class AERecipes {
 				r.addShaped(Api.INSTANCE.blocks().blockVibrationChamber.stack(1), "SSS", "SES", "SFS", 'S', WurmTweaksItems.ingotYellowSteel, 'E', Api.INSTANCE.blocks().blockEnergyAcceptor.stack(1), 'F', new ItemStack(IC2Items.getItem("generator").getItem(), 1, 0));
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockEnergyCell.stack(1), TFCItems.redSteelSheet2x, TFCItems.blueSteelSheet2x, IC2Items.getItem("mfeUnit"));
 				r.addCircleWCenter(Api.INSTANCE.blocks().blockEnergyCellDense.stack(1), Api.INSTANCE.blocks().blockEnergyCell.stack(1), WurmTweaksItems.ingotEnergyReactor);
-				// TODO Creative Energy Cell
+				r.addShaped9X9Recipe(Api.INSTANCE.blocks().blockEnergyCellCreative.stack(1), "CIIIIIIIC", "IBBBBBBBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBBBBBBBI", "CIIIIIIIC", 'C', WurmTweaksItems.creativeCreativePartsEnergy, 'I', new ItemStack(LudicrousItems.resource, 1, 4), 'B', Api.INSTANCE.blocks().blockEnergyCellDense.stack(1), 'X', WurmTweaksItems.ingotEnergyReactor);
 				r.addCross(Api.INSTANCE.blocks().blockCraftingUnit.stack(2), WurmTweaksItems.itemQuantumSingularity, WurmTweaksItems.itemCraftingCore);
 				r.addShapeless(new ItemStack(Api.INSTANCE.blocks().blockCraftingUnit.item(), 1, 1), Api.INSTANCE.blocks().blockCraftingUnit.stack(1), Api.INSTANCE.materials().materialEngProcessor.stack(1));
 				r.addShapeless(Api.INSTANCE.blocks().blockCraftingStorage1k.stack(1), Api.INSTANCE.blocks().blockCraftingUnit.stack(1), Api.INSTANCE.materials().materialCell1kPart.stack(1));
@@ -63,7 +63,7 @@ public class AERecipes {
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockMolecularAssembler.stack(1), WurmTweaksItems.itemAutoCore, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.ingotTitanium);
 				r.addShapeless(Api.INSTANCE.items().itemWirelessTerminal.stack(1), Api.INSTANCE.materials().materialWireless.stack(1), Api.INSTANCE.blocks().blockEnergyCellDense.stack(1), Api.INSTANCE.parts().partTerminal.stack(1), ExtraUtils.bedrockium, WurmTweaksItems.itemQuantumSingularity);
 				r.addShaped(Api.INSTANCE.items().itemBiometricCard.stack(1), "SSS", "SPS", 'S', TFCItems.blackSteelSheet, 'P', TFCItems.juteFiber);
-				r.addShaped(Api.INSTANCE.items().itemMassCannon.stack(1), "SSX", "CB ", "S  ",'C', WurmTweaksItems.itemQuantumFoam, 'S', WurmTweaksItems.ingotFrancium, 'X', Api.INSTANCE.materials().materialFormationCore.stack(1), 'B', Api.INSTANCE.blocks().blockEnergyCell.stack(1));
+				r.addShaped(Api.INSTANCE.items().itemMassCannon.stack(1), "SSX", "CB ", "S  ", 'C', WurmTweaksItems.itemQuantumFoam, 'S', WurmTweaksItems.ingotFrancium, 'X', Api.INSTANCE.materials().materialFormationCore.stack(1), 'B', Api.INSTANCE.blocks().blockEnergyCell.stack(1));
 				r.addShaped(Api.INSTANCE.items().itemMassCannon.stack(1), "XSS", " BC", "  S", 'C', WurmTweaksItems.itemQuantumFoam, 'S', WurmTweaksItems.ingotFrancium, 'X', Api.INSTANCE.materials().materialFormationCore.stack(1), 'B', Api.INSTANCE.blocks().blockEnergyCell.stack(1));
 				r.addShaped(Api.INSTANCE.items().itemMemoryCard.stack(1), "SSS", "SPS", 'S', TFCItems.platinumSheet, 'P', TFCItems.juteFiber);
 				r.addShaped(Api.INSTANCE.items().itemNetworkTool.stack(1), "Y Y", " Y ", " Y ", 'Y', WurmTweaksItems.itemQuantumFoam);

@@ -54,7 +54,6 @@ public class PowerSuitRecipes {
 				r.addShaped(new ItemStack(MPSItems.components(), 1, 18), "XAX", "SSS", "XAX", 'X', TFCItems.redSteelSheet2x, 'A', new ItemStack(MekanismItems.ControlCircuit, 1, 2), 'S', new ItemStack(MPSItems.components(), 1, 1));
 				r.addCrossWCenter(new ItemStack(MPSItems.components(), 1, 19), new ItemStack(IC2Items.getItem("advancedCircuit").getItem(), 1), WurmTweaksItems.itemComputationalCore, WurmTweaksBlocks.blockCompressedRedstone);
 				r.addShaped(new ItemStack(MPSItems.components(), 6, 20), "XXX", "I I", "XXX", 'X', "packRubber", 'I', "packGlass");
-				// TODO Remove Json Recipes
 				// TODO Add Support for TFC Damage values
 				ArrayList<IModularItem> validItems = new ArrayList<IModularItem>();
 				validItems.add(MPSItems.powerArmorHead());

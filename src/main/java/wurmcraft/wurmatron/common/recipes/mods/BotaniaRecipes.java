@@ -61,7 +61,7 @@ public class BotaniaRecipes {
 				r.addShapeless(new ItemStack(ModBlocks.spreader, 1, 3), new ItemStack(ModBlocks.spreader, 1, 2), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 9));
 				r.addShaped(ModBlocks.pool, "W W", "WWW", 'W', ModBlocks.livingrock);
 				r.addShaped(new ItemStack(ModBlocks.pool, 1, 3), "W W", "WWW", 'W', ModBlocks.shimmerrock);
-				// TODO Everlasting ManaPool (:1)
+				r.addShaped9X9Recipe(new ItemStack(ModBlocks.pool, 1, 1), "CIIIIIIIC", "IBBBBBBBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBBBBBBBI", "CIIIIIIIC", 'C', WurmTweaksItems.creativeCreativeParts, 'I', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(ModBlocks.pool, 1, 3), 'X', WurmTweaksItems.itemNatureCoreMK2);
 				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotGreenSteel, new ItemStack(ModItems.manaResource, 1, 1));
 				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotGreenSteel, new ItemStack(ModItems.manaResource, 1, 2));
 				for (int d = 0; d <= 15; d++)
@@ -118,7 +118,6 @@ public class BotaniaRecipes {
 				r.addShaped(ModBlocks.redStringFertilizer, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', ModItems.fertilizer, 'S', new ItemStack(ModItems.manaResource, 1, 10));
 				r.addShaped(ModBlocks.redStringComparator, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', Items.comparator, 'S', new ItemStack(ModItems.manaResource, 1, 10));
 				r.addShaped(ModBlocks.redStringInterceptor, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', ModBlocks.spreader, 'S', new ItemStack(ModItems.manaResource, 1, 10));
-				// TODO World Seed
 				r.addShaped(ModBlocks.corporeaIndex, "EXE", "XCX", "DXD", 'E', new ItemStack(ModItems.manaResource, 1, 15), 'X', Blocks.obsidian, 'C', ModItems.corporeaSpark, 'D', new ItemStack(ModItems.manaResource, 1, 9));
 				r.addShapeless(ModBlocks.corporeaFunnel, ModItems.corporeaSpark, Blocks.dropper, WurmTweaksItems.itemMagicChunk);
 				r.addShapeless(ModBlocks.corporeaCrystalCube, ModItems.corporeaSpark, ModBlocks.elfGlass, WurmTweaksItems.itemNatureCoreMK2);
@@ -177,7 +176,6 @@ public class BotaniaRecipes {
 				for (int i = 0; i < 16; i++)
 						r.addShaped(ItemSignalFlare.forColor(i), "I ", " B", "W ", 'B', new ItemStack(ModBlocks.manaBeacon, 1, i), 'I', "packIngo", 'W', ModBlocks.livingwood);
 				r.addCircleWCenter(new ItemStack(ModItems.manaTablet, 1, 0), ModBlocks.livingrock, WurmTweaksItems.itemNatureCoreMK2);
-				// TODO Creative Mana Tablet
 				r.addShaped(ModItems.manaGun, "MRA", " BT", "  W", 'W', ModBlocks.livingwood, 'M', ModBlocks.spreader, 'R', new ItemStack(ModItems.rune, 1, 8), 'A', WurmTweaksItems.stableMagicEssence, 'T', Blocks.tnt, 'B', ModBlocks.dreamwood);
 				r.addShapeless(new ItemStack(ModItems.fertilizer, 32), WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemNatureCore, "dye", "dye", "dye", "dye");
 				r.addShapeless(new ItemStack(ModItems.grassHorn, 1, 0), WurmTweaksItems.itemNatureCore, new ItemStack(ModItems.dye, 1, OreDictionary.WILDCARD_VALUE));

@@ -41,7 +41,6 @@ public class AdvancedSolarPanelRecipes {
 				r.addCircleWCenter(AdvancedSolarPanel.itemEnrichedSunnarium, AdvancedSolarPanel.itemSunnarium, AdvancedSolarPanel.itemIrradiantUranium);
 				r.addCircleWCenter(AdvancedSolarPanel.itemEnrichedSunnariumAlloy, IC2Items.getItem("iridiumPlate"), AdvancedSolarPanel.itemEnrichedSunnarium);
 				addMolecularTransformerRecipes();
-				// TODO Quantum Generator Recipe
 		}
 
 		@Optional.Method (modid = "AdvancedSolarPanel")

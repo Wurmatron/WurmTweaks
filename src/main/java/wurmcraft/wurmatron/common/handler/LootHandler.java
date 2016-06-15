@@ -72,6 +72,9 @@ public class LootHandler {
 				addDungeonLoot("dungeonChest",PartDefs.GREENILLUMAR().makeStack(),1,18,20);
 				addDungeonLoot("dungeonChest",PartDefs.REDILLUMAR().makeStack(),1,18,20);
 				addDungeonLoot("dungeonChest",PartDefs.BLACKILLUMAR().makeStack(),1,18,20);
+				for(int t = 0; t < 10; t++)
+						addDungeonLoot("dungeonChest", new ItemStack(ItemsCommonProxy.bookAffinity,1,t),1,1,500);
+
 
 		}
 

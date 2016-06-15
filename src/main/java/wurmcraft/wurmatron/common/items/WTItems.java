@@ -19,6 +19,7 @@ public class WTItems {
 		public static ArrayList<String> itemShardNames = new ArrayList<String>();
 		public static ArrayList<String> itemDirtyNames = new ArrayList<String>();
 		public static ArrayList<Integer> itemJugValues = new ArrayList<Integer>();
+		public static ArrayList<String> itemCastNames = new ArrayList<String>();
 
 		public static HashMap<String, EnumChatFormatting> itemSpecialColors = new HashMap<String, EnumChatFormatting>();
 		public static HashMap<String, EnumFoodGroup[]> itemBasicFoodGroups = new HashMap<String, EnumFoodGroup[]>();
@@ -29,6 +30,7 @@ public class WTItems {
 		public static Item itemBasicFood;
 		public static Item itemPill;
 		public static ItemJug itemJug;
+		public static Item itemCast;
 		// Credits
 		public static Item creditBismuth;
 		public static Item creditCopper;
@@ -88,7 +90,7 @@ public class WTItems {
 				itemMaterialNames.add("electroShielding");
 				itemMaterialNames.add("wandParts");
 				itemMaterialNames.add("pumpkinBits");
-				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames), "itemMaterial");
+				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames, "itemMaterial"), "itemMaterial");
 				itemSpecialColors.put("creativeParts", EnumChatFormatting.DARK_PURPLE);
 				itemSpecialColors.put("redMatter", EnumChatFormatting.DARK_RED);
 				itemSpecialColors.put("darkMatter", EnumChatFormatting.GRAY);
@@ -188,6 +190,31 @@ public class WTItems {
 				registerItem(creditSilver = new ItemCredit("silverCredit"), "creditSilver");
 				registerItem(creditTin = new ItemCredit("tinCredit"), "creditTin");
 				registerItem(creditZinc = new ItemCredit("zincCredit"), "creditZinc");
+				itemCastNames.add("doubleIngotCast");
+				itemCastNames.add("sheetCast");
+				itemCastNames.add("2xsheetCast");
+				itemCastNames.add("javelinCast");
+				itemCastNames.add("proPickCast");
+				itemCastNames.add("pickCast");
+				itemCastNames.add("scytheCast");
+				itemCastNames.add("hammerCast");
+				itemCastNames.add("axeCast");
+				itemCastNames.add("shovelCast");
+				itemCastNames.add("swordCast");
+				itemCastNames.add("sawCast");
+				itemCastNames.add("knifeCast");
+				itemCastNames.add("tuyereCast");
+				itemCastNames.add("hoeCast");
+				itemCastNames.add("iceSawCast");
+				itemCastNames.add("linkCast");
+				itemCastNames.add("boltCast");
+				itemCastNames.add("arrowHeadCast");
+				itemCastNames.add("warHammerCast");
+				itemCastNames.add("poniardCast");
+				itemCastNames.add("chiselCast");
+				itemCastNames.add("maceCast");
+				itemCastNames.add("halberdCast");
+				registerItem(itemCast = new ItemMaterial(itemCastNames, "itemCast"), "itemCastNames");
 		}
 
 		private static void registerItem (Item item, String name) {

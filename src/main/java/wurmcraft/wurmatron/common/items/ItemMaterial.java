@@ -13,12 +13,12 @@ import java.util.List;
 
 public class ItemMaterial extends Item {
 
-		private static ArrayList<String> itemNames = new ArrayList<String>();
+		private ArrayList<String> itemNames = new ArrayList<String>();
 		private IIcon[] icons;
 
-		public ItemMaterial (ArrayList<String> names) {
+		public ItemMaterial (ArrayList<String> names, String name) {
 				setCreativeTab(CreativeTabs.tabMaterials);
-				setUnlocalizedName("itemMaterial");
+				setUnlocalizedName(name);
 				setHasSubtypes(true);
 				itemNames = names;
 				icons = new IIcon[itemNames.size() + 1];
@@ -26,7 +26,7 @@ public class ItemMaterial extends Item {
 
 		@Override
 		public String getItemStackDisplayName (ItemStack stack) {
-				return StatCollector.translateToLocal("item." + ItemMaterial.itemNames.get(stack.getItemDamage()) + ".name");
+				return StatCollector.translateToLocal("item." + itemNames.get(stack.getItemDamage()) + ".name");
 		}
 
 		@Override

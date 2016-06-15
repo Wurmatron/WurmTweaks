@@ -11,12 +11,13 @@ import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
 
 public class IC2Recipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "IC2")
+		@Optional.Method (modid = "IC2")
 		public static void addRecipes () {
 				r.addCircleWCenter(new ItemStack(IC2Items.getItem("reinforcedStone").getItem(), 8), "packSmoothStone", IC2Items.getItem("advancedAlloy"));
 				r.addCircleWCenter(new ItemStack(IC2Items.getItem("reinforcedGlass").getItem(), 8), "packGlass", IC2Items.getItem("advancedAlloy"));
@@ -154,5 +155,14 @@ public class IC2Recipes {
 				r.addShapeless(IC2Items.getItem("copperCableItem"), TFCItems.copperIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(IC2Items.getItem("goldCableItem"), TFCItems.goldIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(IC2Items.getItem("tinCableItem"), TFCItems.tinIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
+				r.add2X(IC2Items.getItem("carbonFiber"), "dustCoal");
+				addExtrudingRecipes();
+		}
+
+		private static void addExtrudingRecipes () {
+				ICHelper.addMetalFormerExtrudingRecipe(new ItemStack(TFCItems.tinIngot), new ItemStack(IC2Items.getItem("tinCableItem").getItem(), 4, 10));
+				ICHelper.addMetalFormerExtrudingRecipe(new ItemStack(TFCItems.copperIngot), new ItemStack(IC2Items.getItem("copperCableItem").getItem(), 4, 1));
+				ICHelper.addMetalFormerExtrudingRecipe(new ItemStack(TFCItems.goldIngot), new ItemStack(IC2Items.getItem("goldCableItem").getItem(), 4, 2));
+				ICHelper.addMetalFormerExtrudingRecipe(new ItemStack(TFCItems.wroughtIronIngot), new ItemStack(IC2Items.getItem("ironCableItem").getItem(), 4, 5));
 		}
 }

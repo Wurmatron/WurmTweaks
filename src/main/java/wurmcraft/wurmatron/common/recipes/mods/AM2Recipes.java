@@ -49,7 +49,6 @@ public class AM2Recipes {
 				r.addBasicMachineRecipe(BlocksCommonProxy.particleEmitter, WurmTweaksBlocks.blockGold, "dye", "packGemBlock", WurmTweaksItems.ingotCyanSteel);
 				r.addShaped(BlocksCommonProxy.inscriptionTable, "ABC", "SSS", "L L", 'L', "packLog", 'S', "packPlanks", 'A', WurmTweaksBlocks.blockSterlingSilver, 'B', WurmTweaksItems.itemMagicChunk, 'C', Items.feather);
 				r.addShapeless(new ItemStack(BlocksCommonProxy.witchwoodPlanks, 2), BlocksCommonProxy.witchwoodLog);
-				//TODO SawMill Witchwood Log
 				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.redstoneInlay, 8), Blocks.redstone_block, WurmTweaksItems.itemMagicChunk);
 				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.ironInlay, 8), WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMagicChunk);
 				r.addCircleWCenter(new ItemStack(BlocksCommonProxy.goldInlay, 8), WurmTweaksBlocks.blockGold, WurmTweaksItems.itemMagicChunk);
@@ -94,7 +93,6 @@ public class AM2Recipes {
 				r.addShaped(ItemsCommonProxy.essenceBag, "LWL", "LCL", "LLL", 'L', TFCItems.leather, 'W', new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), 'C', "packChest");
 				r.addShapeless(ItemsCommonProxy.liquidEssenceBottle, WurmTweaksItems.itemMagicChunk, TFCItems.glassBottle);
 				r.addShaped(ItemsCommonProxy.keystone, "RCR", 'R', "packRune", 'C', WurmTweaksItems.itemMagicChunk);
-				// TODO Affinity Tome
 				r.addShapeless(ItemsCommonProxy.wardingCandle, new ItemStack(ItemsCommonProxy.itemOre, 1, 8), TFCItems.woolYarn, BlocksCommonProxy.witchwoodSingleSlab);
 				r.addShapeless(new ItemStack(ItemsCommonProxy.spellBook, 1, 0), "dyeBrown", new ItemStack(ItemsCommonProxy.spellBook, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ItemsCommonProxy.spellBook, 1, 1), "dyeCyan", new ItemStack(ItemsCommonProxy.spellBook, 1, OreDictionary.WILDCARD_VALUE));

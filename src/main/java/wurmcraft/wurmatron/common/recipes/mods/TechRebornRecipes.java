@@ -13,6 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import techreborn.init.ModBlocks;
+import techreborn.init.ModItems;
 import thaumcraft.common.config.ConfigItems;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
@@ -47,7 +48,7 @@ public class TechRebornRecipes {
 						r.addShaped(new ItemStack(ModBlocks.MagicalAbsorber), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(ConfigItems.itemShard, 1, i));
 				r.addShaped(new ItemStack(ModBlocks.DieselGenerator), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(Items.bucket));
 				r.addCircleWCenter(new ItemStack(ModBlocks.AlloyFurnace), new ItemStack(TFCItems.fireBrick, 1, 1), WurmTweaksItems.gearMixedSheet);
-				r.addShaped(new ItemStack(ModBlocks.AssemblyMachine), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(Items.golden_apple, 1, 1));
+				r.addShaped(new ItemStack(ModBlocks.ChemicalReactor), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(Items.golden_apple, 1, 1));
 				r.addCrossWCenter(new ItemStack(ModBlocks.Idsu), new ItemStack(techreborn.init.ModItems.lapotronicOrb), new ItemStack(ModBlocks.Aesu), new ItemStack(ModBlocks.HighAdvancedMachineBlock));
 				r.addCrossWCenter(new ItemStack(ModBlocks.Lesu), new ItemStack(IC2Items.getItem("lapotronCrystal").getItem(), 1, OreDictionary.WILDCARD_VALUE), WurmTweaksItems.gearMixedSheet, new ItemStack(ModBlocks.machineframe, 1, 4));
 				r.addShaped(new ItemStack(ModBlocks.Supercondensator, 4), "SSS", "XXX", "SSS", 'S', WurmTweaksItems.itemElectroShielding, 'X', new ItemStack(TFCItems.platinumSheet2x));
@@ -72,8 +73,15 @@ public class TechRebornRecipes {
 				r.addShaped(new ItemStack(ModBlocks.FusionControlComputer), "XCX", "XBX", "XCX", 'X', WurmTweaksItems.itemElectroMagneticShielding, 'C', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'B', new ItemStack(ModBlocks.ComputerCube));
 				r.addShaped(new ItemStack(ModBlocks.FusionCoil, 2), "XXX", "BFB", "XXX", 'X', WurmTweaksItems.itemElectroMagneticShielding, 'B', new ItemStack(ModBlocks.Supercondensator), 'F', new ItemStack(IC2Items.getItem("iridiumPlate").getItem()));
 				r.addShaped(new ItemStack(ModBlocks.PlasmaGenerator), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.itemMachineFrame, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', WurmTweaksItems.itemUnstableMatter);
-				r.addShaped(new ItemStack(TFCItems.redSteelIngot), " U ", "UUU", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
-				r.addShaped(new ItemStack(TFCItems.blueSteelIngot), " U ", "UUU", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
-				r.addShaped(new ItemStack(TFCItems.nickelIngot), "UUU", "   ", "UUU", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.redSteelIngot, 4), "U U", " U ", "U U", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.blueSteelIngot, 4), " U ", "UUU", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.nickelIngot, 8), " U ", "U U", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.silverIngot, 12), "U U", "   ", "U U", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.copperIngot, 12), "U  ", " U ", "  U", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.bismuthIngot, 12), "  U", " U ", "U  ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.zincIngot, 12), " U ", " U ", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.wroughtIronIngot, 12), "U U", " U ", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addShaped(new ItemStack(TFCItems.steelIngot, 10), "U U", "U U", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
+				r.addCrossWCenter(new ItemStack(ModItems.parts, 1, 23), ExtraUtils.bedrockium, WurmTweaksItems.ingotTitanium, WurmTweaksItems.itemCraftingCore);
 		}
 }

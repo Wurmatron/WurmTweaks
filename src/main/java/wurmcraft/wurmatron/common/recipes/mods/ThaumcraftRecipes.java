@@ -19,14 +19,13 @@ import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.crafting.ArcaneSceptreRecipe;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 import wurmcraft.wurmatron.common.utils.thaumcraft.ThaumcraftHelper;
 
-/**
- * TODO Finish the rest like reloaded the book and removing the existing Thaumcraft recipes for each research
- */
 public class ThaumcraftRecipes {
 
 		private static RecipeHelper r = new RecipeHelper();
@@ -62,6 +61,8 @@ public class ThaumcraftRecipes {
 				addArtificeRecipes();
 				ThaumcraftHelper.removeTab("GOLEMANCY");
 				addEldridthRecipes();
+				if(RecipeChecker.modExists("techreborn"))
+						addCentrifugeRecipes();
 		}
 
 		// 1st Page
@@ -219,5 +220,16 @@ public class ThaumcraftRecipes {
 				for (ItemStack seed : OreDictionary.getOres("packSeed"))
 						ThaumcraftHelper.addCrucible("ELDRITCHMAJOR", new ItemStack(ConfigItems.itemResource, 1, 17), seed, new AspectList().add(Aspect.VOID, 8).add(Aspect.ENTROPY, 8).add(Aspect.MAGIC, 8));
 				ThaumcraftHelper.addShaped("FOCUSPRIMAL", new ItemStack(ConfigItems.itemFocusPrimal, 1, 0), new AspectList().add(Aspect.ORDER, 25).add(Aspect.AIR, 25).add(Aspect.FIRE, 25).add(Aspect.ENTROPY, 25).add(Aspect.EARTH, 25).add(Aspect.WATER, 25), "XAX", "ACA", "XAX", 'X', WurmTweaksItems.itemBloodInfused, 'A', WurmTweaksItems.stableMagicEssence, 'C', WurmTweaksItems.itemWandParts);
+		}
+
+		@Optional.Method (modid = "techreborn")
+		private static void addCentrifugeRecipes() {
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.zincIngot), null,new ItemStack(ConfigItems.itemShard,4,0),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.nickelIngot), null,new ItemStack(ConfigItems.itemShard,4,1),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.bismuthIngot), null,new ItemStack(ConfigItems.itemShard,4,2),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.copperIngot), null,new ItemStack(ConfigItems.itemShard,4,3),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.steelIngot), null,new ItemStack(ConfigItems.itemShard,4,4),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.blackSteelIngot), null,new ItemStack(ConfigItems.itemShard,4,5),null,null,null,100,32);
+
 		}
 }

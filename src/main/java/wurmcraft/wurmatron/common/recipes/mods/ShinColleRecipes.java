@@ -10,14 +10,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
 public class ShinColleRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "shincolle")
+		@Optional.Method (modid = "shincolle")
 		public static void addRecipes () {
 				r.addShapeless(new ItemStack(ModItems.AbyssMetal), TFCItems.wroughtIronIngot, ModItems.Grudge);
 				r.addShapeless(new ItemStack(ModItems.BucketRepair), TFCItems.redSteelBucketEmpty, new ItemStack(ModItems.AbyssMetal));
@@ -89,5 +91,19 @@ public class ShinColleRecipes {
 				r.addShaped(new ItemStack(ModItems.CombatRation, 1, 2), "www", "bgc", "www", 'b', "packMeat", 'c', Items.golden_carrot, 'g', new ItemStack(ModItems.Grudge), 'w', "packGrain");
 				r.addShaped(new ItemStack(ModItems.CombatRation, 1, 2), "www", "bgc", "www", 'b', "packMeat", 'c', Items.golden_carrot, 'g', new ItemStack(ModItems.Grudge), 'w', "packGrain");
 				r.addShaped(new ItemStack(ModItems.CombatRation, 1, 2), "www", "bgc", "www", 'b', "packMeat", 'c', Items.golden_carrot, 'g', new ItemStack(ModItems.Grudge), 'w', "packGrain");
+				if (RecipeChecker.modExists("techreborn")) {
+						addCentrifugeRecipes();
+						addElectrolyzerRecipes();
+				}
+		}
+
+		@Optional.Method (modid = "techreborn")
+		private static void addCentrifugeRecipes () {
+				TechRebornHelper.addCentrifugeRecipe(WurmTweaksItems.itemMixedSheet, null, new ItemStack(ModItems.AbyssMetal, 4, 1), null, null, null, 800, 128);
+		}
+
+		@Optional.Method (modid = "techreborn")
+		private static void addElectrolyzerRecipes () {
+				TechRebornHelper.addIndustrialElectrolyzerRecipe(WurmTweaksItems.itemMixedSheet, null, new ItemStack(ModItems.AbyssMetal, 4, 1), null, null, null, 800, 128);
 		}
 }

@@ -10,6 +10,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 
@@ -28,7 +29,7 @@ public class ZTonesRecipes {
 				r.addCrossWCenter(ModBlocks.lampf, TFCItems.wroughtIronIngot, "packGlass", Items.glowstone_dust);
 				r.addShapeless(ModBlocks.lampb, ModBlocks.lampf);
 				r.addShapeless(ModBlocks.lampt, ModBlocks.lampb);
-				r.addShaped(ModBlocks.auroraBlock, "AA ", "ABA", " AA", 'A', "packGlass",'B', "dyeBlack");
+				r.addShaped(ModBlocks.auroraBlock, "AA ", "ABA", " AA", 'A', "packGlass", 'B', "dyeBlack");
 				// Agon Block Set
 				r.addCircleWCenter(ModBlocks.agonBlock, ModBlocks.stoneTile, ModBlocks.auroraBlock);
 				r.addShaped(ModBlocks.auroraBlock, "AB ", "   ", "   ", 'A', ModItems.ofanix, 'B', ModBlocks.agonBlock);
@@ -228,7 +229,7 @@ public class ZTonesRecipes {
 				r.addShaped(new ItemStack(ModBlocks.mintBlock, 1, 14), "   ", "   ", "A B", 'A', ModBlocks.mintBlock, 'B', ModItems.ofanix);
 				r.addShaped(new ItemStack(ModBlocks.mintBlock, 1, 15), "   ", "   ", " AB", 'A', ModBlocks.mintBlock, 'B', ModItems.ofanix);
 				// Myst Block Set
-				r.addCircleWCenter(ModBlocks.mystBlock, Blocks.brown_mushroom_block, ModBlocks.auroraBlock);
+				r.addCircleWCenter(new ItemStack(ModBlocks.mystBlock, 48), "packSmoothStone", WurmTweaksItems.ingotGraySteel);
 				r.addShaped(ModBlocks.mystBlock, "AB ", "   ", "   ", 'A', ModItems.ofanix, 'B', ModBlocks.mystBlock);
 				r.addShaped(new ItemStack(ModBlocks.mystBlock, 1, 1), "A B", "   ", "   ", 'A', ModItems.ofanix, 'B', ModBlocks.mystBlock);
 				r.addShaped(new ItemStack(ModBlocks.mystBlock, 1, 2), "A  ", "B  ", "   ", 'A', ModItems.ofanix, 'B', ModBlocks.mystBlock);

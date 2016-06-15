@@ -155,4 +155,29 @@ public class WurmTweaksItems {
 		public static final ItemStack dirtySilver = new ItemStack(WTItems.itemDirty, 1, 7);
 		public static final ItemStack dirtyTin = new ItemStack(WTItems.itemDirty, 1, 8);
 		public static final ItemStack dirtyZinc = new ItemStack(WTItems.itemDirty, 1, 9);
+		// Item Cast (Item Material)
+		public static final ItemStack itemDoubleIngotCast = new ItemStack(WTItems.itemCast, 1, 0);
+		public static final ItemStack itemSheetCast = new ItemStack(WTItems.itemCast, 1, 1);
+		public static final ItemStack item2xSheetCast = new ItemStack(WTItems.itemCast, 1, 2);
+		public static final ItemStack itemJavelinCast = new ItemStack(WTItems.itemCast, 1, 3);
+		public static final ItemStack itemProPickCast = new ItemStack(WTItems.itemCast, 1, 4);
+		public static final ItemStack itemPickCast = new ItemStack(WTItems.itemCast, 1, 5);
+		public static final ItemStack  itemScytheCast = new ItemStack(WTItems.itemCast, 1, 6);
+		public static final ItemStack  itemHammerCast = new ItemStack(WTItems.itemCast, 1, 7);
+		public static final ItemStack  itemAxeCast = new ItemStack(WTItems.itemCast, 1, 8);
+		public static final ItemStack  itemShovelCast = new ItemStack(WTItems.itemCast, 1, 9);
+		public static final ItemStack  itemSwordCast = new ItemStack(WTItems.itemCast, 1, 10);
+		public static final ItemStack  itemSawCast = new ItemStack(WTItems.itemCast, 1, 11);
+		public static final ItemStack  itemKnifeCast = new ItemStack(WTItems.itemCast, 1, 12);
+		public static final ItemStack  itemTuyereCast = new ItemStack(WTItems.itemCast, 1, 13);
+		public static final ItemStack  itemHoeCast = new ItemStack(WTItems.itemCast, 1, 14);
+		public static final ItemStack  itemIceSawCast = new ItemStack(WTItems.itemCast, 1, 15);
+		public static final ItemStack  itemLinkCast = new ItemStack(WTItems.itemCast, 1, 16);
+		public static final ItemStack  itemBoltCast = new ItemStack(WTItems.itemCast, 1, 17);
+		public static final ItemStack  itemArrowHeadCast = new ItemStack(WTItems.itemCast, 1, 18);
+		public static final ItemStack  itemWarHammerCast = new ItemStack(WTItems.itemCast, 1, 19);
+		public static final ItemStack  itemPoniardCast = new ItemStack(WTItems.itemCast, 1, 20);
+		public static final ItemStack  itemChiselCast = new ItemStack(WTItems.itemCast, 1, 21);
+		public static final ItemStack  itemMaceCast = new ItemStack(WTItems.itemCast, 1, 22);
+		public static final ItemStack  itemHalberdCast = new ItemStack(WTItems.itemCast, 1, 23);
 }

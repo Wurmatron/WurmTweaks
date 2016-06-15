@@ -6,6 +6,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import tconstruct.library.TConstructRegistry;
 import vazkii.botania.api.BotaniaAPI;
 import wurmcraft.wurmatron.common.recipes.mods.*;
 import wurmcraft.wurmatron.common.utils.LogHandler;
@@ -39,6 +40,20 @@ public class Recipes {
 						RecipeHandler.Recipe.CHEMICAL_WASHER.get().clear();
 						RecipeHandler.Recipe.CHEMICAL_INJECTION_CHAMBER.get().clear();
 						RecipeHandler.Recipe.CHEMICAL_DISSOLUTION_CHAMBER.get().clear();
+				}
+				if (RecipeChecker.modExists("IC2")) {
+						ic2.api.recipe.Recipes.metalformerExtruding.getRecipes().clear();
+						ic2.api.recipe.Recipes.metalformerRolling.getRecipes().clear();
+						ic2.api.recipe.Recipes.metalformerCutting.getRecipes().clear();
+						ic2.api.recipe.Recipes.centrifuge.getRecipes().clear();
+						ic2.api.recipe.Recipes.compressor.getRecipes().clear();
+						ic2.api.recipe.Recipes.extractor.getRecipes().clear();
+				}
+				if (RecipeChecker.modExists("techreborn"))
+						techreborn.api.recipe.RecipeHandler.recipeList.clear();
+				if (RecipeChecker.modExists("TConstruct")) {
+						TConstructRegistry.getTableCasting().getCastingRecipes().clear();
+						TConstructRegistry.getBasinCasting().getCastingRecipes().clear();
 				}
 				OreDict.init();
 				SmeltingRecipes.init();
