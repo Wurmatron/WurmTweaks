@@ -29,8 +29,6 @@ import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
 
 import java.util.ArrayList;
 
-// TODO TC Tool Materials
-// Casting Recipes thingys
 public class TConstructRecipes {
 
 		private static RecipeHelper r = new RecipeHelper();

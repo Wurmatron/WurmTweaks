@@ -20,6 +20,7 @@ public class WTItems {
 		public static ArrayList<String> itemDirtyNames = new ArrayList<String>();
 		public static ArrayList<Integer> itemJugValues = new ArrayList<Integer>();
 		public static ArrayList<String> itemCastNames = new ArrayList<String>();
+		public static ArrayList<String> itemMetalCastNames = new ArrayList<String>();
 
 		public static HashMap<String, EnumChatFormatting> itemSpecialColors = new HashMap<String, EnumChatFormatting>();
 		public static HashMap<String, EnumFoodGroup[]> itemBasicFoodGroups = new HashMap<String, EnumFoodGroup[]>();
@@ -31,6 +32,7 @@ public class WTItems {
 		public static Item itemPill;
 		public static ItemJug itemJug;
 		public static Item itemCast;
+		public static Item itemMetalCast;
 		// Credits
 		public static Item creditBismuth;
 		public static Item creditCopper;
@@ -78,7 +80,7 @@ public class WTItems {
 				itemMaterialNames.add("antimatter");
 				itemMaterialNames.add("engineCoil");
 				itemMaterialNames.add("quarryCore");
-				itemMaterialNames.add("geatMixedSheet");
+				itemMaterialNames.add("gearMixedSheet");
 				itemMaterialNames.add("miningCore");
 				itemMaterialNames.add("refiningModule");
 				itemMaterialNames.add("computationalCore");
@@ -214,7 +216,29 @@ public class WTItems {
 				itemCastNames.add("chiselCast");
 				itemCastNames.add("maceCast");
 				itemCastNames.add("halberdCast");
-				registerItem(itemCast = new ItemMaterial(itemCastNames, "itemCast"), "itemCastNames");
+				registerItem(itemCast = new ItemMaterial(itemCastNames, "itemCast"), "itemCast");
+				itemMetalCastNames.add("metalBismuth");
+				itemMetalCastNames.add("metalBismuthBronze");
+				itemMetalCastNames.add("metalBlackBronze");
+				itemMetalCastNames.add("metalBlackSteel");
+				itemMetalCastNames.add("metalBlueSteel");
+				itemMetalCastNames.add("metalBrass");
+				itemMetalCastNames.add("metalBronze");
+				itemMetalCastNames.add("metalCopper");
+				itemMetalCastNames.add("metalGold");
+				itemMetalCastNames.add("metalIron");
+				itemMetalCastNames.add("metalLead");
+				itemMetalCastNames.add("metalNickel");
+				itemMetalCastNames.add("metalPigIron");
+				itemMetalCastNames.add("metalPlatinum");
+				itemMetalCastNames.add("metalRedSteel");
+				itemMetalCastNames.add("metalRoseGold");
+				itemMetalCastNames.add("metalSilver");
+				itemMetalCastNames.add("metalSteel");
+				itemMetalCastNames.add("metalSterlingSilver");
+				itemMetalCastNames.add("metalTin");
+				itemMetalCastNames.add("metalZinc");
+				registerItem(itemMetalCast = new ItemMaterial(itemMetalCastNames, "itemMetalCast"), "itemMetalCast");
 		}
 
 		private static void registerItem (Item item, String name) {

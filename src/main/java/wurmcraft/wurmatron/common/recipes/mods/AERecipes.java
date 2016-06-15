@@ -9,6 +9,7 @@ import cofh.thermalexpansion.block.TEBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
+import extracells.registries.ItemEnum;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import ic2.api.item.IC2Items;
 import net.minecraft.init.Blocks;
@@ -68,7 +69,7 @@ public class AERecipes {
 				r.addShaped(Api.INSTANCE.items().itemMemoryCard.stack(1), "SSS", "SPS", 'S', TFCItems.platinumSheet, 'P', TFCItems.juteFiber);
 				r.addShaped(Api.INSTANCE.items().itemNetworkTool.stack(1), "Y Y", " Y ", " Y ", 'Y', WurmTweaksItems.itemQuantumFoam);
 				r.addShapeless(Api.INSTANCE.items().itemPortableCell.stack(1), Api.INSTANCE.blocks().blockEnergyCellDense.stack(1), Api.INSTANCE.blocks().blockChest.stack(1), Api.INSTANCE.materials().materialCell1kPart.stack(1));
-				// TODO Creative Drive
+				r.addShaped9X9Recipe(Api.INSTANCE.items().itemCellCreative.stack(1), "CIIIIIIIC", "IBBBBBBBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBBBBBBBI", "CIIIIIIIC", 'C', WurmTweaksItems.creativeCreativeParts, 'I', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(ItemEnum.STORAGECOMPONET.getItem(), 1, 3), 'X', Api.INSTANCE.blocks().blockController.stack(1));
 				r.addShaped(Api.INSTANCE.items().itemViewCell.stack(1), "XAX", "ABA", "CCC", 'X', TFCItems.blackSteelSheet, 'A', WurmTweaksItems.itemQuantumFoam, 'C', TFCItems.wroughtIronSheet, 'B', "packChest");
 				r.addShaped(Api.INSTANCE.items().itemCell1k.stack(1), "RXR", "XCX", "BBB", 'R', Items.redstone, 'X', WurmTweaksItems.itemQuantumFoam, 'C', Api.INSTANCE.materials().materialCell1kPart.stack(1), 'B', TFCItems.blackSteelSheet);
 				r.addShaped(Api.INSTANCE.items().itemCell4k.stack(1), "RXR", "XCX", "BBB", 'R', Items.redstone, 'X', WurmTweaksItems.itemQuantumFoam, 'C', Api.INSTANCE.materials().materialCell4kPart.stack(1), 'B', TFCItems.blackSteelSheet);

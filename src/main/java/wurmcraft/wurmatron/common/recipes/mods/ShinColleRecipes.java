@@ -27,7 +27,7 @@ public class ShinColleRecipes {
 				r.addShapeless(new ItemStack(ModItems.Ammo, 9, 0), new ItemStack(ModItems.Ammo, 1, 1));
 				r.addShapeless(new ItemStack(ModItems.Ammo, 9, 2), new ItemStack(ModItems.Ammo, 1, 3));
 				r.addShapeless(new ItemStack(ModItems.AbyssNugget, 9, 0), new ItemStack(ModItems.AbyssMetal, 1, 0));
-				r.addShapeless(new ItemStack(ModItems.AbyssMetal, 32, 0), new ItemStack(ModBlocks.BlockAbyssium));
+				r.addShapeless(new ItemStack(ModItems.AbyssMetal, 9, 0), new ItemStack(ModBlocks.BlockAbyssium));
 				r.addShapeless(new ItemStack(ModBlocks.BlockAbyssium), WurmTweaksBlocks.blockWroughtIron, new ItemStack(ModBlocks.BlockGrudge));
 				r.addShapeless(new ItemStack(ModItems.Grudge, 9, 0), new ItemStack(ModBlocks.BlockGrudge));
 				r.addShapeless(new ItemStack(ModBlocks.BlockGrudge, 9, 0), new ItemStack(ModBlocks.BlockGrudgeHeavy));

@@ -21,12 +21,15 @@ import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
+import crazypants.enderio.EnderIO;
+import fox.spiteful.avaritia.items.LudicrousItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.buildcraft.BuildCraftHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
@@ -36,12 +39,12 @@ public class ThermalExpansionRecipes {
 
 		private static RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "ThermalExpansion")
+		@Optional.Method (modid = "ThermalExpansion")
 		public static void addRecipes () {
-				r.addBasicMachineRecipe(BlockFrame.frameCellBasic, WurmTweaksItems.itemMixedSheet, TFCItems.blackSteelSheet2x, TFCItems.brassSheet2x, WurmTweaksItems.itemMachineFrame);
-				r.addBasicMachineRecipe(BlockFrame.frameCellHardened, TFCItems.redSteelSheet2x, TFCItems.platinumSheet2x, TFCItems.leather, BlockFrame.frameCellBasic);
-				r.addBasicMachineRecipe(BlockFrame.frameMachineReinforced, TFCItems.redSteelSheet2x, TFCItems.platinumSheet2x, TFCItems.leather, BlockFrame.frameCellHardened);
-				r.addBasicMachineRecipe(BlockFrame.frameMachineResonant, TFItems.ingotEnderium, TFCItems.platinumSheet2x, TFCItems.leather, BlockFrame.frameCellHardened);
+				BuildCraftHelper.addAssemblerRecipes("te:basicmachineframe", 12000, BlockFrame.frameCellBasic, WurmTweaksItems.itemMachineFrame, new ItemStack(EnderIO.itemBasicCapacitor, 4, 0), new ItemStack(TFCItems.blackSteelSheet, 4));
+				BuildCraftHelper.addAssemblerRecipes("te:hardmachineframe", 240000, BlockFrame.frameCellHardened, new ItemStack(WurmTweaksItems.itemMachineFrame.getItem(), 2, 33), new ItemStack(EnderIO.itemBasicCapacitor, 4, 1), new ItemStack(TFCItems.redSteelSheet, 4));
+				BuildCraftHelper.addAssemblerRecipes("te:reinforcedmachineframe", 1200000, BlockFrame.frameMachineReinforced, new ItemStack(WurmTweaksItems.itemMachineFrame.getItem(), 3, 33), new ItemStack(EnderIO.itemBasicCapacitor, 4, 2), new ItemStack(TFCItems.platinumSheet2x, 4));
+				BuildCraftHelper.addAssemblerRecipes("te:enderiummachineframe", 12000000, BlockFrame.frameMachineResonant, new ItemStack(WurmTweaksItems.itemMachineFrame.getItem(), 4, 33), new ItemStack(EnderIO.itemBasicCapacitor, 4, 2), new ItemStack(TFCItems.platinumSheet2x, 4), TFItems.ingotEnderium);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(TEItems.itemBattleWrench), 280), "III", " I ", " I ", 'I', new ItemStack(TFCItems.steelSheet));
 				r.addShaped(new ItemStack(TEItems.itemMaterial, 1, 16), " I ", "ICI", "III", 'I', new ItemStack(TFItems.itemMaterial, 1, 74), 'C', TFCItems.bronzeIngot);
 				r.addShaped(TEHelper.getMagma("Basic"), " R ", "BCB", "GXG", 'R', new ItemStack(Items.redstone), 'B', new ItemStack(TFCItems.roseGoldSheet), 'C', new ItemStack(TEBlocks.blockFrame, 1, 0), 'G', WurmTweaksItems.itemMixedSheet, 'X', "packGem");
@@ -70,7 +73,7 @@ public class ThermalExpansionRecipes {
 				r.addShaped(TEHelper.getPower("Resonant"), " R ", "BCB", "GXG", 'R', new ItemStack(Items.redstone), 'B', new ItemStack(TFCItems.silverSheet), 'C', new ItemStack(TEBlocks.blockFrame, 1, 3), 'G', WurmTweaksItems.itemMixedSheet, 'X', "packGemExquisite");
 				r.addShaped(ItemNBT.addDamage(TEItems.toolWrench, 120), "I I", " T ", " I ", 'I', new ItemStack(TFCItems.wroughtIronIngot), 'T', new ItemStack(TFCItems.tinIngot));
 				r.addShaped(TEItems.toolMultimeter, "C C", "LPL", " G ", 'C', new ItemStack(TFCItems.copperIngot), 'L', new ItemStack(TFCItems.leadIngot), 'P', cofh.thermalexpansion.item.TEItems.powerCoilElectrum, 'G', new ItemStack(TFCItems.roseGoldSheet2x));
-				r.addShaped(TEItems.capacitorPotato, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.leadIngot), 'R', new ItemStack(Items.redstone), 'X', TFCHelper.getFood(TFCItems.potato,160), 'Y', "dustSulfur");
+				r.addShaped(TEItems.capacitorPotato, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.leadIngot), 'R', new ItemStack(Items.redstone), 'X', TFCHelper.getFood(TFCItems.potato, 160), 'Y', "dustSulfur");
 				r.addShaped(TEItems.capacitorBasic, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.leadIngot), 'R', new ItemStack(Items.redstone), 'X', new ItemStack(TFCItems.blackSteelIngot), 'Y', "dustSulfur");
 				r.addShaped(TEItems.capacitorHardened, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.nickelIngot), 'R', new ItemStack(Items.redstone), 'X', cofh.thermalexpansion.item.TEItems.capacitorBasic, 'Y', new ItemStack(TFCItems.blueSteelIngot));
 				r.addShaped(TEItems.capacitorHardened, " R ", "IXI", "RYR", 'I', new ItemStack(TFCItems.nickelIngot), 'R', new ItemStack(Items.redstone), 'X', cofh.thermalexpansion.item.TEItems.capacitorBasic, 'Y', new ItemStack(TFCItems.blueSteelIngot));
@@ -193,5 +196,7 @@ public class ThermalExpansionRecipes {
 				r.addShapeless(TEItems.diagramRedprint, Items.paper, Items.paper, Items.redstone);
 				r.addShapeless(new ItemStack(TFItems.itemMaterial, 1, 74), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106), new ItemStack(TFItems.itemMaterial, 1, 106));
 				r.addShapeless(new ItemStack(TFItems.itemMaterial, 9, 106), new ItemStack(TFItems.itemMaterial, 1, 74));
+				r.addShaped9X9Recipe(new ItemStack(TEBlocks.blockCell, 1, 1), "CIIIIIIIC", "IBBBBBBBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBBBBBBBI", "CIIIIIIIC", 'C', WurmTweaksItems.creativeCreativePartsEnergy, 'I', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(TEBlocks.blockCell, 1, 4), 'X', WurmTweaksItems.ingotRainbowSteel);
+				r.addBasicMachineRecipe(TEItems.capacitorCreative, new ItemStack(LudicrousItems.resource, 1, 5), TEItems.capacitorResonant, WurmTweaksItems.creativeCreativeParts, new ItemStack(TEBlocks.blockCell, 1, 1));
 		}
 }

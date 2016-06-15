@@ -20,6 +20,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import tconstruct.tools.TinkerTools;
 import vazkii.botania.common.block.ModBlocks;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WTItems;
@@ -285,6 +286,58 @@ public class OreDict {
 				add("packCredit", new ItemStack(WTItems.creditLead, 1, OreDictionary.WILDCARD_VALUE));
 				add("packCredit", new ItemStack(WTItems.creditSilver, 1, OreDictionary.WILDCARD_VALUE));
 				add("packCredit", new ItemStack(WTItems.creditTin, 1, OreDictionary.WILDCARD_VALUE));
+				// Ore
+				addOre("oreCopper", new ItemStack(TFCBlocks.ore, 1, 0));
+				addOre("oreGold", new ItemStack(TFCBlocks.ore, 1, 1));
+				addOre("orePlatinum", new ItemStack(TFCBlocks.ore, 1, 2));
+				addOre("oreIron", new ItemStack(TFCBlocks.ore, 1, 3));
+				addOre("oreSilver", new ItemStack(TFCBlocks.ore, 1, 4));
+				addOre("oreTin", new ItemStack(TFCBlocks.ore, 1, 5));
+				addOre("oreTin", new ItemStack(TFCBlocks.ore, 1, 5));
+				addOre("oreLead", new ItemStack(TFCBlocks.ore, 1, 6));
+				addOre("oreBismuth", new ItemStack(TFCBlocks.ore, 1, 7));
+				addOre("oreNickel", new ItemStack(TFCBlocks.ore, 1, 8));
+				addOre("oreCopper", new ItemStack(TFCBlocks.ore, 1, 9));
+				addOre("oreIron", new ItemStack(TFCBlocks.ore, 1, 10));
+				addOre("oreIron", new ItemStack(TFCBlocks.ore, 1, 11));
+				addOre("oreZinc", new ItemStack(TFCBlocks.ore, 1, 12));
+				addOre("oreCopper", new ItemStack(TFCBlocks.ore, 1, 13));
+				addOre("oreCoal", new ItemStack(TFCBlocks.ore, 1, 14));
+				addOre("oreCoal", new ItemStack(TFCBlocks.ore, 1, 15));
+				addOre("oreKaolinite", new ItemStack(TFCBlocks.ore2, 1, 0));
+				addOre("oreGypsum", new ItemStack(TFCBlocks.ore2, 1, 1));
+				addOre("oreSatinspar", new ItemStack(TFCBlocks.ore2, 1, 2));
+				addOre("oreSelenite", new ItemStack(TFCBlocks.ore2, 1, 3));
+				addOre("oreGraphite", new ItemStack(TFCBlocks.ore2, 1, 4));
+				addOre("oreKimberlite", new ItemStack(TFCBlocks.ore2, 1, 5));
+				addOre("orePetrifiedWood", new ItemStack(TFCBlocks.ore2, 1, 6));
+				addOre("oreSulfur", new ItemStack(TFCBlocks.ore2, 1, 7));
+				addOre("oreJet", new ItemStack(TFCBlocks.ore2, 1, 8));
+				addOre("oreMicrocline", new ItemStack(TFCBlocks.ore2, 1, 9));
+				addOre("orePitchblende", new ItemStack(TFCBlocks.ore2, 1, 10));
+				addOre("oreRedstone", new ItemStack(TFCBlocks.ore2, 1, 11));
+				addOre("oreRedstone", new ItemStack(TFCBlocks.ore2, 1, 12));
+				addOre("oreSaltpeter", new ItemStack(TFCBlocks.ore2, 1, 13));
+				addOre("oreSerpentine", new ItemStack(TFCBlocks.ore2, 1, 14));
+				addOre("oreSylvite", new ItemStack(TFCBlocks.ore2, 1, 15));
+				addOre("oreBorax", new ItemStack(TFCBlocks.ore3, 1, 0));
+				addOre("oreOlivine", new ItemStack(TFCBlocks.ore3, 1, 1));
+				addOre("oreLapis", new ItemStack(TFCBlocks.ore3, 1, 2));
+				addOre("oreCopper", new ItemStack(TFCBlocks.ore3, 1, 3));
+				addOre("oreGold", new ItemStack(TFCBlocks.ore3, 1, 4));
+				addOre("orePlatinum", new ItemStack(TFCBlocks.ore3, 1, 5));
+				addOre("oreIron", new ItemStack(TFCBlocks.ore3, 1, 6));
+				addOre("oreSilver", new ItemStack(TFCBlocks.ore3, 1, 7));
+				addOre("oreTin", new ItemStack(TFCBlocks.ore3, 1, 8));
+				addOre("oreTin", new ItemStack(TFCBlocks.ore3, 1, 9));
+				addOre("oreLead", new ItemStack(TFCBlocks.ore3, 1, 10));
+				addOre("oreBismuth", new ItemStack(TFCBlocks.ore3, 1, 11));
+				addOre("oreNickel", new ItemStack(TFCBlocks.ore3, 1, 12));
+				addOre("oreCopper", new ItemStack(TFCBlocks.ore3, 1, 13));
+				addOre("oreIron", new ItemStack(TFCBlocks.ore3, 1, 14));
+				addOre("oreIron", new ItemStack(TFCBlocks.ore3, 1, 15));
+				addOre("oreZinc", new ItemStack(TFCBlocks.ore3, 1, 16));
+				addOre("oreCopper", new ItemStack(TFCBlocks.ore3, 1, 17));
 				if (RecipeChecker.modExists("arsmagica2"))
 						addAM2();
 				if (RecipeChecker.modExists("Avaritia"))
@@ -303,8 +356,10 @@ public class OreDict {
 						addGraviSuit();
 				if (RecipeChecker.modExists("ThaumicTinkerer"))
 						addThaumicTinkerer();
-				if(RecipeChecker.modExists("Mekanism"))
+				if (RecipeChecker.modExists("Mekanism"))
 						addMekanism();
+				if (RecipeChecker.modExists("TConstruct"))
+						addTConstruct();
 		}
 
 		@Optional.Method (modid = "arsmagica2")
@@ -394,13 +449,26 @@ public class OreDict {
 				add("itemAxe", GameRegistry.findItem("ThaumicTinkerer", "ichorAxe"));
 		}
 
+		@Optional.Method (modid = "TConstruct")
+		private static void addTConstruct () {
+				add("itemAxe", TinkerTools.battleaxe);
+				add("itemAxe", TinkerTools.lumberaxe);
+				add("itemShovel", TinkerTools.shovel);
+				add("itemAxe", TinkerTools.hatchet);
+		}
+
 		@Optional.Method (modid = "Mekanism")
-		private static void addMekanism() {
+		private static void addMekanism () {
 				add("itemAxe", MekanismItems.AtomicDisassembler);
 		}
 
 		private static void add (String name, ItemStack stack) {
 				OreDictionary.registerOre(name, stack);
+		}
+
+		private static void addOre (String name, ItemStack stack) {
+				add(name, stack);
+				add("ore", stack);
 		}
 
 		private static void add (String name, Item stack) {
