@@ -112,6 +112,7 @@ public class ItemPill extends Item {
 				}
 				world.playSoundAtEntity(player, "random.burp", 0.5F, world.rand.nextFloat() * 0.1F + 0.9F);
 				TFC_Core.setPlayerFoodStats(player, foodstats);
+				player.inventory.consumeInventoryItem(stack.getItem());
 				return stack;
 		}
 

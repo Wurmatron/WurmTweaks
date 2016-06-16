@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 
 public class PickupEvent {
 
@@ -47,6 +48,10 @@ public class PickupEvent {
 						e.item.setDead();
 						e.entityPlayer.worldObj.playSoundAtEntity(e.entityPlayer, "random.pop", 0.2F, 3f);
 						e.entityPlayer.inventory.addItemStackToInventory(new ItemStack(TFCItems.gemDiamond, 2, 2));
+				}
+				if (e.entityPlayer.dimension != 0) {
+						LogHandler.info("Syncing");
+						e.entityPlayer.inventoryContainer.detectAndSendChanges();
 				}
 		}
 }

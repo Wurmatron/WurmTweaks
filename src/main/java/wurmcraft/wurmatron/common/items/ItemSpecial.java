@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.StatCollector;
 import wurmcraft.wurmatron.common.reference.Global;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class ItemSpecial extends Item {
 
 		@Override
 		public String getItemStackDisplayName (ItemStack stack) {
-				return itemColors.get(itemNames.get(stack.getItemDamage())) + "item." + itemNames.get(stack.getItemDamage()) + ".name";
+				return itemColors.get(itemNames.get(stack.getItemDamage())) + StatCollector.translateToLocal("item." + itemNames.get(stack.getItemDamage()) + ".name");
 		}
 
 		@Override

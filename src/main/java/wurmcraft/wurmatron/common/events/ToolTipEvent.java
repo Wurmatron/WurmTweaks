@@ -14,9 +14,7 @@ public class ToolTipEvent {
 		public void onRenderTooltip (ItemTooltipEvent e) {
 				if (e.itemStack != null && e.itemStack.getItem() instanceof ItemArmor) {
 						if (ArmorHandler.armor.containsKey(e.itemStack.getItem())) {
-								LogHandler.info("valid armor");
 								if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-										LogHandler.info("Advanced");
 										e.toolTip.add(EnumChatFormatting.GRAY + "Advanced: ");
 										e.toolTip.add(EnumChatFormatting.GRAY + "" + EnumChatFormatting.ITALIC + "Pierce: " + EnumChatFormatting.AQUA + ArmorHandler.armor.get(e.itemStack.getItem())[0]);
 										e.toolTip.add(EnumChatFormatting.GRAY + "" + EnumChatFormatting.ITALIC + "Slash: " + EnumChatFormatting.AQUA + ArmorHandler.armor.get(e.itemStack.getItem())[1]);

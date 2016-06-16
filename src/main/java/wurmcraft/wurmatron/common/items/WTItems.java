@@ -147,7 +147,7 @@ public class WTItems {
 				itemClumpNames.add("clumpSilver");
 				itemClumpNames.add("clumpTin");
 				itemClumpNames.add("clumpZinc");
-				registerItem(itemClump = new ItemCrystal(itemClumpNames), "itemClump");
+				registerItem(itemClump = new ItemClump(itemClumpNames), "itemClump");
 				itemCrystalNames.add("crystalBismuth");
 				itemCrystalNames.add("crystalCopper");
 				itemCrystalNames.add("crystalGold");
@@ -158,7 +158,7 @@ public class WTItems {
 				itemCrystalNames.add("crystalSilver");
 				itemCrystalNames.add("crystalTin");
 				itemCrystalNames.add("crystalZinc");
-				registerItem(itemCrystal = new ItemClump(itemCrystalNames), "itemCrystal");
+				registerItem(itemCrystal = new ItemCrystal(itemCrystalNames), "itemCrystal");
 				itemShardNames.add("shardBismuth");
 				itemShardNames.add("shardCopper");
 				itemShardNames.add("shardGold");
@@ -180,7 +180,7 @@ public class WTItems {
 				itemDirtyNames.add("dirtySilver");
 				itemDirtyNames.add("dirtyTin");
 				itemDirtyNames.add("dirtyZinc");
-				registerItem(itemDirty = new ItemClump(itemDirtyNames), "itemDirty");
+				registerItem(itemDirty = new ItemDirty(itemDirtyNames), "itemDirty");
 				registerItem(itemJug = new ItemJug(itemJugValues), "itemJug");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
@@ -217,6 +217,7 @@ public class WTItems {
 				itemCastNames.add("maceCast");
 				itemCastNames.add("halberdCast");
 				registerItem(itemCast = new ItemMaterial(itemCastNames, "itemCast"), "itemCast");
+				itemMetalCastNames.add("metalEmpty");
 				itemMetalCastNames.add("metalBismuth");
 				itemMetalCastNames.add("metalBismuthBronze");
 				itemMetalCastNames.add("metalBlackBronze");

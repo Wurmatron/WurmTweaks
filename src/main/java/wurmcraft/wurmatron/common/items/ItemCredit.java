@@ -16,7 +16,7 @@ import java.util.List;
 public class ItemCredit extends Item {
 
 		private String name;
-		private IIcon[] icons;
+		private IIcon icon;
 		public static final int[] units = new int[] {30, 50, 70, 60, 100, 140};
 
 		public ItemCredit (String creditName) {
@@ -24,7 +24,6 @@ public class ItemCredit extends Item {
 				setUnlocalizedName(creditName);
 				setHasSubtypes(true);
 				name = creditName;
-				icons = new IIcon[7];
 		}
 
 		@Override
@@ -34,13 +33,12 @@ public class ItemCredit extends Item {
 
 		@Override
 		public void registerIcons (IIconRegister iicon) {
-				for (int i = 0; i < 6; i++)
-						icons[i] = iicon.registerIcon(Global.MODID + ":" + name + "_" + i);
+				icon = iicon.registerIcon(Global.MODID + ":" + name);
 		}
 
 		@Override
 		public IIcon getIconFromDamage (int meta) {
-				return icons[meta];
+				return icon;
 		}
 
 		@Override

@@ -48,6 +48,7 @@ public class WurmTweaks {
 				MinecraftForge.EVENT_BUS.register(new PickupEvent());
 				if (RecipeChecker.modExists("AWWayofTime"))
 						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
+				LootHandler.init();
 		}
 
 		@Mod.EventHandler

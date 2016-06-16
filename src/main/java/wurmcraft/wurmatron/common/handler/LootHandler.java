@@ -1,12 +1,20 @@
 package wurmcraft.wurmatron.common.handler;
 
+import advsolar.common.AdvancedSolarPanel;
 import am2.items.ItemsCommonProxy;
+import codechicken.wirelessredstone.addons.WirelessRedstoneAddons;
 import com.bioxx.tfc.api.TFCItems;
+import com.lulan.shincolle.init.ModBlocks;
+import com.lulan.shincolle.init.ModItems;
+import com.rwtema.extrautils.ExtraUtils;
+import cpw.mods.ironchest.IronChest;
 import mrtjp.projectred.core.PartDefs;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.oredict.OreDictionary;
+import powercrystals.minefactoryreloaded.setup.MFRThings;
 import thaumcraft.api.internal.WeightedRandomLoot;
 import thaumcraft.common.config.ConfigItems;
 
@@ -55,25 +63,71 @@ public class LootHandler {
 				addDungeonLoot("dungeonChest", new ItemStack(ItemsCommonProxy.rune, 1, 19), 1, 1, 45);
 				for (int i = 0; i < 10; i++)
 						addDungeonLoot("dungeonChest", new ItemStack(ItemsCommonProxy.bookAffinity, 1, i), 1, 1, 50);
-				addDungeonLoot("dungeonChest",new ItemStack(ConfigItems.itemResource,1,9), 1,6,12);
-				addDungeonLoot("dungeonChest",PartDefs.WHITEILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.ORANGEILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.MAGENTAILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.LIGHTBLUEILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.YELLOWILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.LIMEILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.PINKILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.GREYILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.LIGHTGREYILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.CYANILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.PURPLEILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.BLUEILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.BROWNILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.GREENILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.REDILLUMAR().makeStack(),1,18,20);
-				addDungeonLoot("dungeonChest",PartDefs.BLACKILLUMAR().makeStack(),1,18,20);
-				for(int t = 0; t < 10; t++)
-						addDungeonLoot("dungeonChest", new ItemStack(ItemsCommonProxy.bookAffinity,1,t),1,1,500);
+				addDungeonLoot("dungeonChest", new ItemStack(ConfigItems.itemResource, 1, 9), 1, 6, 12);
+				addDungeonLoot("dungeonChest", PartDefs.WHITEILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.ORANGEILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.MAGENTAILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.LIGHTBLUEILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.YELLOWILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.LIMEILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.PINKILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.GREYILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.LIGHTGREYILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.CYANILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.PURPLEILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.BLUEILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.BROWNILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.GREENILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.REDILLUMAR().makeStack(), 1, 18, 20);
+				addDungeonLoot("dungeonChest", PartDefs.BLACKILLUMAR().makeStack(), 1, 18, 20);
+				for (int t = 0; t < 10; t++)
+						addDungeonLoot("dungeonChest", new ItemStack(ItemsCommonProxy.bookAffinity, 1, t), 1, 1, 500);
+				addDungeonLoot("dungeonChest", new ItemStack(IronChest.ironChestBlock, 1, 3), 1, 1, 50);
+				addDungeonLoot("dungeonChest", new ItemStack(IronChest.ironChestBlock, 1, 0), 1, 1, 200);
+				addDungeonLoot("dungeonChest", new ItemStack(MFRThings.rubberSaplingItem, 1, 0), 1, 3, 10);
+				addDungeonLoot("dungeonChest", new ItemStack(MFRThings.rubberSaplingItem, 1, 1), 1, 1, 50);
+				addDungeonLoot("dungeonChest", new ItemStack(MFRThings.rubberSaplingItem, 1, 2), 1, 1, 100);
+				addDungeonLoot("dungeonChest", new ItemStack(MFRThings.rubberSaplingItem, 1, 3), 1, 1, 1000);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.leather, 1, 0), 1, 12, 25);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.coal, 1, 0), 4, 48, 20);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.coal, 1, 1), 8, 64, 15);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.jute), 3, 32, 20);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.bismuthBronzeJavelinHead), 1, 1, 30);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.blackBronzeJavelinHead), 1, 1, 40);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.wroughtIronJavelinHead), 1, 1, 50);
+				addDungeonLoot("dungeonChest", new ItemStack(ModBlocks.BlockGrudge), 1, 5, 20);
+				addDungeonLoot("dungeonChest", new ItemStack(ModItems.DeskItemBook), 1, 1, 10);
+				addDungeonLoot("dungeonChest", new ItemStack(ModItems.InstantConMat), 1, 24, 50);
+				addDungeonLoot("dungeonChest", new ItemStack(ModItems.ModernKit), 1, 1, 100);
+				addDungeonLoot("dungeonChest", new ItemStack(WirelessRedstoneAddons.rep), 1, 3, 200);
+				addDungeonLoot("dungeonChest", new ItemStack(ConfigItems.itemLootbag,1,0),1,1,10);
+				addDungeonLoot("dungeonChest", new ItemStack(ConfigItems.itemLootbag,1,1),1,1,50);
+				addDungeonLoot("dungeonChest", new ItemStack(ConfigItems.itemLootbag,1,2),1,1,100);
+				addDungeonLoot("dungeonChest", new ItemStack(MFRThings.safariNetSingleItem),1,1,25);
+				addDungeonLoot("dungeonChest", new ItemStack(ExtraUtils.goldenLasso, 1, 0),1,1,40);
+				addDungeonLoot("dungeonChest", new ItemStack(ExtraUtils.enderLily, 1, 0),1,24,10);
+				for(ItemStack seeds : OreDictionary.getOres("packSeed"))
+						addDungeonLoot("dungeonChest", seeds, 1, 1, 10);
+				for(ItemStack seeds : OreDictionary.getOres("packMeat"))
+						addDungeonLoot("dungeonChest", seeds, 1, 1, 20);
+				for(ItemStack seeds : OreDictionary.getOres("packFruit"))
+						addDungeonLoot("dungeonChest", seeds, 1, 1, 20);
+				for(ItemStack seeds : OreDictionary.getOres("packGrain"))
+						addDungeonLoot("dungeonChest", seeds, 1, 1, 20);
+				for(ItemStack seeds : OreDictionary.getOres("packVegtable"))
+						addDungeonLoot("dungeonChest", seeds, 1, 1, 20);
+				addDungeonLoot("dungeonChest", AdvancedSolarPanel.itemSunnariumPart,1,4,100);
+				addDungeonLoot("dungeonChest", new ItemStack(Items.redstone),1,36,25);
+				addDungeonLoot("dungeonChest", new ItemStack(Items.glowstone_dust),1,36,50);
+			addDungeonLoot("dungeonChest", new ItemStack(TFCItems.wool),1,3,25);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.potterySmallVessel,1,1),1,8,20);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.potterySmallVessel,1,1),1,8,20);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.bismuthBronzeKnifeHead,1,0),1,1,30);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.blackBronzeKnifeHead,1,0),1,1,30);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.bronzeKnifeHead,1,0),1,1,30);
+				addDungeonLoot("dungeonChest", new ItemStack(TFCItems.wroughtIronKnifeHead,1,0),1,1,50);
+
+
 
 
 		}
