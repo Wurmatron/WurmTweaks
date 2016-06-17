@@ -13,6 +13,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import wurmcraft.wurmatron.WurmTweaks;
 import wurmcraft.wurmatron.common.reference.Global;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class ItemPill extends Item {
 		private IIcon[] icons;
 
 		public ItemPill (ArrayList<String> pillNames, HashMap<String, EnumFoodGroup[]> pillTypes) {
-				setCreativeTab(CreativeTabs.tabMaterials);
+				setCreativeTab(WurmTweaks.tabWurmTweaks);
 				setUnlocalizedName("itemPill");
 				setHasSubtypes(true);
 				this.pillNames = pillNames;

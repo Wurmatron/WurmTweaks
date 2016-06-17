@@ -181,7 +181,7 @@ public class WTItems {
 				itemDirtyNames.add("dirtyTin");
 				itemDirtyNames.add("dirtyZinc");
 				registerItem(itemDirty = new ItemDirty(itemDirtyNames), "itemDirty");
-				registerItem(itemJug = new ItemJug(itemJugValues), "itemJug");
+				registerItem(itemJug = new ItemJug(24), "itemJug");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
 				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");

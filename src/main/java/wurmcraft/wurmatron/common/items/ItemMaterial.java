@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
+import wurmcraft.wurmatron.WurmTweaks;
 import wurmcraft.wurmatron.common.reference.Global;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class ItemMaterial extends Item {
 		private IIcon[] icons;
 
 		public ItemMaterial (ArrayList<String> names, String name) {
-				setCreativeTab(CreativeTabs.tabMaterials);
+				setCreativeTab(WurmTweaks.tabWurmTweaks);
 				setUnlocalizedName(name);
 				setHasSubtypes(true);
 				itemNames = names;

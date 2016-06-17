@@ -1,16 +1,7 @@
 package wurmcraft.wurmatron.common.items;
 
-import com.bioxx.tfc.Core.Player.FoodStatsTFC;
-import com.bioxx.tfc.Core.TFC_Core;
-import com.bioxx.tfc.Core.TFC_Time;
-import com.bioxx.tfc.api.Enums.EnumFoodGroup;
-import com.bioxx.tfc.api.TFCBlocks;
-import com.bioxx.tfc.api.TFCFluids;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.EnumAction;
@@ -19,87 +10,70 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.S0BPacketAnimation;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.*;
+import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidContainerItem;
-import wurmcraft.wurmatron.common.reference.Global;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.bioxx.tfc.Core.TFCTabs;
+import com.bioxx.tfc.Core.TFC_Core;
+import com.bioxx.tfc.Core.TFC_Time;
+import com.bioxx.tfc.Core.Player.FoodStatsTFC;
+import com.bioxx.tfc.api.TFCBlocks;
+import com.bioxx.tfc.api.TFCFluids;
+import com.bioxx.tfc.api.Enums.EnumFoodGroup;
+import com.bioxx.tfc.api.Enums.EnumItemReach;
+import com.bioxx.tfc.api.Enums.EnumSize;
+import com.bioxx.tfc.api.Enums.EnumWeight;
+import com.bioxx.tfc.api.Interfaces.ISize;
 
-public class ItemJug extends Item implements IFluidContainerItem {
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-		private ArrayList<Integer> jugAmount;
+public class ItemJug extends Item implements ISize, IFluidContainerItem {
 
-		public ItemJug (ArrayList<Integer> amounts) {
-				setMaxStackSize(1);
-				setUnlocalizedName("itemJug");
-				jugAmount = amounts;
+		private int capacity;
+
+		public ItemJug (int size) {
+				super();
+				this.maxStackSize = 1;
+				this.capacity = size;
+				this.setCreativeTab(TFCTabs.TFC_MISC);
+				this.setMaxDamage(capacity);
+				this.setMaxStackSize(1);
 		}
 
-		public static ItemStack setCapacity (int capacity) {
-				ItemStack stack = new ItemStack(WTItems.itemJug);
-				NBTTagCompound nbt = new NBTTagCompound();
-				nbt.setInteger("capacity", capacity);
-				stack.setTagCompound(nbt);
-				return stack;
-		}
-
+		@SideOnly (Side.CLIENT)
 		@Override
-		public void getSubItems (Item item, CreativeTabs tab, List list) {
-				list.add(setCapacity(2000));
-				list.add(setCapacity(3000));
-				list.add(setCapacity(4000));
-				list.add(setCapacity(5000));
-				list.add(setCapacity(6000));
-				list.add(setCapacity(7000));
-				list.add(setCapacity(8000));
-				list.add(setCapacity(9000));
-				list.add(setCapacity(10000));
-				list.add(setCapacity(11000));
-				list.add(setCapacity(12000));
-				list.add(setCapacity(13000));
-				list.add(setCapacity(14000));
-				list.add(setCapacity(15000));
-				list.add(setCapacity(16000));
-				list.add(setCapacity(17000));
-				list.add(setCapacity(18000));
-				list.add(setCapacity(19000));
-				list.add(setCapacity(20000));
-				list.add(setCapacity(21000));
-				list.add(setCapacity(22000));
-				list.add(setCapacity(23000));
-				list.add(setCapacity(24000));
-		}
-
-		@Override
-		public void addInformation (ItemStack stack, EntityPlayer player, List list, boolean adv) {
-				list.add(EnumChatFormatting.GRAY + "Capacity: " + getCapacity(stack));
-				if (!adv)
-						list.add(EnumChatFormatting.BLUE + "Level: " + getFluid(stack).amount / 1000);
-				else
-						list.add(EnumChatFormatting.BLUE + "Level: " + getFluid(stack).amount);
-				if (getFluid(stack) != null)
-						list.add(EnumChatFormatting.YELLOW + "Fluid: " + getFluid(stack).getLocalizedName());
+		public void registerIcons (IIconRegister registerer) {
+				this.itemIcon = registerer.registerIcon("wurmtweaks:" + this.getUnlocalizedName());
 		}
 
 		@Override
 		public ItemStack onItemRightClick (ItemStack sac, World world, EntityPlayer player) {
 				if (player.capabilities.isCreativeMode)
 						return sac;
+				if (this.getFluid(sac) == null && sac.getItemDamage() != sac.getMaxDamage()) {
+						sac.setItemDamage(sac.getMaxDamage());
+				}
+
 				if (player.isSneaking()) {
-						drain(sac, getCapacity(sac), true);
+						this.drain(sac, capacity, true);
 						return sac;
 				}
 				MovingObjectPosition mop = this.getMovingObjectPositionFromPlayer(world, player, true);
 				if (mop == null) {
 						if (sac.getItemDamage() == sac.getMaxDamage()) {
-								if (player instanceof EntityPlayerMP)
-										player.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_AQUA + StatCollector.translateToLocal("This is Empty")));
-						} else
-								player.setItemInUse(sac, getMaxItemUseDuration(sac));
+								if (player instanceof EntityPlayerMP) {
+										player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("This is Empty")));
+								}
+						} else {
+								player.setItemInUse(sac, this.getMaxItemUseDuration(sac));
+						}
 						return sac;
 				} else {
 						if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
@@ -109,23 +83,25 @@ public class ItemJug extends Item implements IFluidContainerItem {
 								if (!player.canPlayerEdit(wp.getX(), wp.getY(), wp.getZ(), mop.sideHit, sac))
 										return sac;
 								if (wp.isWater()) {
-										if (getFluid(sac).amount < sac.getTagCompound().getInteger("capacity")) {
-												fillSac(world, sac, wp.getX(), wp.getY(), wp.getZ(), sac.getTagCompound().getInteger("capacity"));
+										if (sac.getItemDamage() > 0) {
+												fillSac(world, sac, wp.getX(), wp.getY(), wp.getZ(), 200);
 												double xHit = mop.hitVec.xCoord;
 												double yHit = mop.hitVec.yCoord;
-												if (world.getBlockMetadata(wp.getX(), wp.getY(), wp.getZ()) > 0 && mop.sideHit == 1)
-														yHit += 1;
+												if (world.getBlockMetadata(wp.getX(), wp.getY(), wp.getZ()) > 0 && mop.sideHit == 1) yHit += 1;
 												double zHit = mop.hitVec.zCoord;
 												for (int l = 0; l < 5; l++) {
 														world.spawnParticle("splash", xHit, yHit, zHit, (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()));
 												}
 												world.playSoundAtEntity(player, "random.splash", 0.2F, world.rand.nextFloat() * 0.1F + 0.9F);
-										} else
+										} else {
 												player.setItemInUse(sac, this.getMaxItemUseDuration(sac));
+										}
 								} else {
 										if (sac.getItemDamage() == sac.getMaxDamage()) {
-										} else
+										} else {
 												player.setItemInUse(sac, this.getMaxItemUseDuration(sac));
+
+										}
 								}
 						}
 						return sac;
@@ -150,7 +126,7 @@ public class ItemJug extends Item implements IFluidContainerItem {
 								EntityPlayerMP p = (EntityPlayerMP) player;
 								FoodStatsTFC fs = TFC_Core.getPlayerFoodStats(p);
 								float nwl = fs.getMaxWater(p);
-								int rw = (int) fs.getMaxWater(p) - (int) fs.waterLevel;
+								int rw = (int) nwl / 6;
 								if (sacFS.getFluid() == TFCFluids.FRESHWATER) {
 										if (fs.needDrink()) {
 												fs.restoreWater(p, rw);
@@ -209,28 +185,68 @@ public class ItemJug extends Item implements IFluidContainerItem {
 				return sac;
 		}
 
-
-		@SideOnly (Side.CLIENT)
 		@Override
-		public void registerIcons (IIconRegister registerer) {
-				this.itemIcon = registerer.registerIcon(Global.MODID + ":" + getUnlocalizedName());
+		public EnumSize getSize (ItemStack is) {
+				return EnumSize.SMALL;
 		}
 
 		@Override
-		public String getItemStackDisplayName (ItemStack stack) {
-				return StatCollector.translateToLocal("item.itemJug.name");
+		public EnumWeight getWeight (ItemStack is) {
+				return EnumWeight.LIGHT;
 		}
+
+		@Override
+		public boolean canStack () {
+				return false;
+		}
+
+		@Override
+		public EnumItemReach getReach (ItemStack is) {
+
+				return EnumItemReach.SHORT;
+
+		}
+
 
 		private void fillSac (World world, ItemStack sac, int x, int y, int z, int amount) {
+
 				Block b = world.getBlock(x, y, z);
 				if (isFreshWater(b) || isHotWater(b)) {
 						FluidStack fs = FluidRegistry.getFluidStack(TFCFluids.FRESHWATER.getName(), amount);
-						fill(sac, fs, true);
+						this.fill(sac, fs, true);
 				}
+
 				if (isSaltWater(b)) {
 						FluidStack fs = FluidRegistry.getFluidStack(TFCFluids.SALTWATER.getName(), amount);
-						fill(sac, fs, true);
+						this.fill(sac, fs, true);
 				}
+		}
+
+		private boolean isValidFluid (FluidStack fs) {
+				return fs.getFluid() == TFCFluids.BEER
+								|| fs.getFluid() == TFCFluids.CIDER
+								|| fs.getFluid() == TFCFluids.CORNWHISKEY
+								|| fs.getFluid() == TFCFluids.FRESHWATER
+								|| fs.getFluid() == TFCFluids.HOTWATER
+								|| fs.getFluid() == TFCFluids.MILK
+								|| fs.getFluid() == TFCFluids.RUM
+								|| fs.getFluid() == TFCFluids.RYEWHISKEY
+								|| fs.getFluid() == TFCFluids.SAKE
+								|| fs.getFluid() == TFCFluids.SALTWATER
+								|| fs.getFluid() == TFCFluids.VODKA
+								|| fs.getFluid() == TFCFluids.WHISKEY;
+
+		}
+
+		private boolean isAlcohol (FluidStack fs) {
+				return fs.getFluid() == TFCFluids.BEER
+								|| fs.getFluid() == TFCFluids.CIDER
+								|| fs.getFluid() == TFCFluids.CORNWHISKEY
+								|| fs.getFluid() == TFCFluids.RUM
+								|| fs.getFluid() == TFCFluids.RYEWHISKEY
+								|| fs.getFluid() == TFCFluids.SAKE
+								|| fs.getFluid() == TFCFluids.VODKA
+								|| fs.getFluid() == TFCFluids.WHISKEY;
 		}
 
 		private boolean isFreshWater (Block block) {
@@ -243,91 +259,6 @@ public class ItemJug extends Item implements IFluidContainerItem {
 
 		private boolean isSaltWater (Block block) {
 				return block == TFCBlocks.saltWater || block == TFCBlocks.saltWaterStationary;
-		}
-
-		private boolean isAlcohol (FluidStack fs) {
-				return fs.getFluid() == TFCFluids.BEER || fs.getFluid() == TFCFluids.CIDER || fs.getFluid() == TFCFluids.CORNWHISKEY || fs.getFluid() == TFCFluids.RUM || fs.getFluid() == TFCFluids.RYEWHISKEY || fs.getFluid() == TFCFluids.SAKE || fs.getFluid() == TFCFluids.VODKA || fs.getFluid() == TFCFluids.WHISKEY;
-		}
-
-		@Override
-		public FluidStack getFluid (ItemStack container) {
-				if (container.stackTagCompound == null || !container.stackTagCompound.hasKey("Fluid"))
-						return null;
-				return FluidStack.loadFluidStackFromNBT(container.stackTagCompound.getCompoundTag("Fluid"));
-		}
-
-		@Override
-		public int getCapacity (ItemStack stack) {
-				return stack.getTagCompound().getInteger("capacity");
-		}
-
-		@Override
-		public int fill (ItemStack container, FluidStack resource, boolean doFill) {
-				if (resource == null || !isValidFluid(resource))
-						return 0;
-				if (!doFill) {
-						if (container.stackTagCompound == null || !container.stackTagCompound.hasKey("Fluid"))
-								return Math.min(getCapacity(container), resource.amount);
-						FluidStack stack = FluidStack.loadFluidStackFromNBT(container.stackTagCompound.getCompoundTag("Fluid"));
-						if (stack == null)
-								return Math.min(getCapacity(container), resource.amount);
-						if (!stack.isFluidEqual(resource))
-								return 0;
-						return Math.min(getCapacity(container) - stack.amount, resource.amount);
-				}
-				if (container.stackTagCompound == null)
-						container.stackTagCompound = new NBTTagCompound();
-				if (!container.stackTagCompound.hasKey("Fluid")) {
-						NBTTagCompound fluidTag = resource.writeToNBT(new NBTTagCompound());
-
-						if (getCapacity(container) < resource.amount) {
-								fluidTag.setInteger("Amount", getCapacity(container));
-								container.stackTagCompound.setTag("Fluid", fluidTag);
-								return getCapacity(container);
-						}
-						container.stackTagCompound.setTag("Fluid", fluidTag);
-						return resource.amount;
-				}
-				NBTTagCompound fluidTag = container.stackTagCompound.getCompoundTag("Fluid");
-				FluidStack stack = FluidStack.loadFluidStackFromNBT(fluidTag);
-				if (!stack.isFluidEqual(resource))
-						return 0;
-				int filled = getCapacity(container) - stack.amount;
-				if (resource.amount < filled) {
-						stack.amount += resource.amount;
-						filled = resource.amount;
-				} else {
-						stack.amount = getCapacity(container);
-				}
-				container.stackTagCompound.setTag("Fluid", stack.writeToNBT(fluidTag));
-				return filled;
-		}
-
-		@Override
-		public FluidStack drain (ItemStack container, int maxDrain, boolean doDrain) {
-				if (container.stackTagCompound == null || !container.stackTagCompound.hasKey("Fluid"))
-						return null;
-				FluidStack stack = FluidStack.loadFluidStackFromNBT(container.stackTagCompound.getCompoundTag("Fluid"));
-				if (stack == null)
-						return null;
-				int currentAmount = stack.amount;
-				stack.amount = Math.min(stack.amount, maxDrain);
-				if (doDrain) {
-						if (currentAmount == stack.amount) {
-								container.stackTagCompound.removeTag("Fluid");
-								if (container.stackTagCompound.hasNoTags())
-										container.stackTagCompound = null;
-								return stack;
-						}
-						NBTTagCompound fluidTag = container.stackTagCompound.getCompoundTag("Fluid");
-						fluidTag.setInteger("Amount", currentAmount - stack.amount);
-						container.stackTagCompound.setTag("Fluid", fluidTag);
-				}
-				return stack;
-		}
-
-		private boolean isValidFluid (FluidStack fs) {
-				return fs.getFluid() == TFCFluids.BEER || fs.getFluid() == TFCFluids.CIDER || fs.getFluid() == TFCFluids.CORNWHISKEY || fs.getFluid() == TFCFluids.FRESHWATER || fs.getFluid() == TFCFluids.HOTWATER || fs.getFluid() == TFCFluids.MILK || fs.getFluid() == TFCFluids.RUM || fs.getFluid() == TFCFluids.RYEWHISKEY || fs.getFluid() == TFCFluids.SAKE || fs.getFluid() == TFCFluids.SALTWATER || fs.getFluid() == TFCFluids.VODKA || fs.getFluid() == TFCFluids.WHISKEY;
 		}
 
 		private WPos findWater (World world, int x, int y, int z, int side) {
@@ -368,6 +299,93 @@ public class ItemJug extends Item implements IFluidContainerItem {
 				return wp;
 		}
 
+		////////////////////////////////////////////////////
+	/*
+	 * Fluid stuff
+	 */
+		////////////////////////////////////////////////////
+		@Override
+		public FluidStack getFluid (ItemStack container) {
+				if (container.stackTagCompound == null || !container.stackTagCompound.hasKey("Fluid"))
+						return null;
+				return FluidStack.loadFluidStackFromNBT(container.stackTagCompound.getCompoundTag("Fluid"));
+		}
+
+		@Override
+		public int getCapacity (ItemStack container) {
+				return this.capacity;
+		}
+
+		@Override
+		public int fill (ItemStack container, FluidStack resource, boolean doFill) {
+				if (resource == null || !isValidFluid(resource))
+						return 0;
+				if (!doFill) {
+						if (container.stackTagCompound == null || !container.stackTagCompound.hasKey("Fluid"))
+								return Math.min(capacity, resource.amount);
+						FluidStack stack = FluidStack.loadFluidStackFromNBT(container.stackTagCompound.getCompoundTag("Fluid"));
+						if (stack == null)
+								return Math.min(capacity, resource.amount);
+						if (!stack.isFluidEqual(resource))
+								return 0;
+						return Math.min(capacity - stack.amount, resource.amount);
+				}
+				if (container.stackTagCompound == null)
+						container.stackTagCompound = new NBTTagCompound();
+				if (!container.stackTagCompound.hasKey("Fluid")) {
+						NBTTagCompound fluidTag = resource.writeToNBT(new NBTTagCompound());
+
+						if (capacity < resource.amount) {
+								fluidTag.setInteger("Amount", capacity);
+								container.stackTagCompound.setTag("Fluid", fluidTag);
+								container.setItemDamage(0);
+								return capacity;
+						}
+						container.stackTagCompound.setTag("Fluid", fluidTag);
+						container.setItemDamage(capacity - resource.amount);
+						return resource.amount;
+				}
+				NBTTagCompound fluidTag = container.stackTagCompound.getCompoundTag("Fluid");
+				FluidStack stack = FluidStack.loadFluidStackFromNBT(fluidTag);
+				if (!stack.isFluidEqual(resource))
+						return 0;
+				int filled = capacity - stack.amount;
+				if (resource.amount < filled) {
+						stack.amount += resource.amount;
+						filled = resource.amount;
+				} else {
+						stack.amount = capacity;
+				}
+				container.stackTagCompound.setTag("Fluid", stack.writeToNBT(fluidTag));
+				container.setItemDamage(capacity - stack.amount);
+				return filled;
+		}
+
+		@Override
+		public FluidStack drain (ItemStack container, int maxDrain, boolean doDrain) {
+				if (container.stackTagCompound == null || !container.stackTagCompound.hasKey("Fluid"))
+						return null;
+				FluidStack stack = FluidStack.loadFluidStackFromNBT(container.stackTagCompound.getCompoundTag("Fluid"));
+				if (stack == null)
+						return null;
+				int currentAmount = stack.amount;
+				stack.amount = Math.min(stack.amount, maxDrain);
+				if (doDrain) {
+						if (currentAmount == stack.amount) {
+								container.stackTagCompound.removeTag("Fluid");
+								if (container.stackTagCompound.hasNoTags())
+										container.stackTagCompound = null;
+								container.setItemDamage(container.getMaxDamage());
+								return stack;
+						}
+						NBTTagCompound fluidTag = container.stackTagCompound.getCompoundTag("Fluid");
+						fluidTag.setInteger("Amount", currentAmount - stack.amount);
+						container.stackTagCompound.setTag("Fluid", fluidTag);
+						container.setItemDamage(capacity - (currentAmount - stack.amount));
+				}
+				return stack;
+		}
+
 		public class WPos {
 
 				private int x;
@@ -375,35 +393,35 @@ public class ItemJug extends Item implements IFluidContainerItem {
 				private int z;
 				private boolean isWater;
 
-				public int getX () {
+				public int getX() {
 						return x;
 				}
 
-				public void setX (int x) {
+				public void setX(int x) {
 						this.x = x;
 				}
 
-				public int getY () {
+				public int getY() {
 						return y;
 				}
 
-				public void setY (int y) {
+				public void setY(int y) {
 						this.y = y;
 				}
 
-				public int getZ () {
+				public int getZ() {
 						return z;
 				}
 
-				public void setZ (int z) {
+				public void setZ(int z) {
 						this.z = z;
 				}
 
-				public boolean isWater () {
+				public boolean isWater() {
 						return isWater;
 				}
 
-				public void setWater (boolean isWater) {
+				public void setWater(boolean isWater) {
 						this.isWater = isWater;
 				}
 		}

@@ -299,3 +299,5 @@ item.metalSteel.name=Steel Cast
 item.metalSterlingSilver.name=Sterling Silver Cast
 item.metalTin.name=Tin Cast
 item.metalZinc.name=Zinc Cast
+
+itemGroup.tabWurmTweaks=WurmTweaks

@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
+import wurmcraft.wurmatron.WurmTweaks;
 import wurmcraft.wurmatron.common.reference.Global;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class ItemSpecial extends Item {
 		private IIcon[] icons;
 
 		public ItemSpecial (ArrayList<String> items, HashMap<String, EnumChatFormatting> names) {
-				setCreativeTab(CreativeTabs.tabMaterials);
+				setCreativeTab(WurmTweaks.tabWurmTweaks);
 				setUnlocalizedName("itemSpecial");
 				setHasSubtypes(true);
 				itemColors = names;

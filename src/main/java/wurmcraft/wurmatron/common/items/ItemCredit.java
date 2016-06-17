@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
+import wurmcraft.wurmatron.WurmTweaks;
 import wurmcraft.wurmatron.common.reference.Global;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class ItemCredit extends Item {
 		public static final int[] units = new int[] {30, 50, 70, 60, 100, 140};
 
 		public ItemCredit (String creditName) {
-				setCreativeTab(CreativeTabs.tabMaterials);
+				setCreativeTab(WurmTweaks.tabWurmTweaks);
 				setUnlocalizedName(creditName);
 				setHasSubtypes(true);
 				name = creditName;

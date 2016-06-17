@@ -13,6 +13,7 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import wurmcraft.wurmatron.WurmTweaks;
 import wurmcraft.wurmatron.common.reference.Global;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class ItemBasicTFCFood extends Item {
 		private IIcon[] icons;
 
 		public ItemBasicTFCFood (ArrayList<String> foodNames, HashMap<String, EnumFoodGroup[]> foodTypes) {
-				setCreativeTab(CreativeTabs.tabMaterials);
+				setCreativeTab(WurmTweaks.tabWurmTweaks);
 				setUnlocalizedName("itemBasicFood");
 				setHasSubtypes(true);
 				this.foodNames = foodNames;

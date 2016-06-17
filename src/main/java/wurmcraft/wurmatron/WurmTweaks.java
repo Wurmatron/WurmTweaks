@@ -7,6 +7,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
@@ -30,6 +32,13 @@ public class WurmTweaks {
 		@SidedProxy (serverSide = Global.COMMONPROXY, clientSide = Global.CLIENTPROXY)
 		public static CommonProxy proxy;
 
+		public static final CreativeTabs tabWurmTweaks = new CreativeTabs("tabWurmTweaks") {
+				@Override
+				public Item getTabIconItem () {
+						return WTItems.itemSpecial;
+				}
+		};
+
 		@Mod.EventHandler
 		public void preInit (FMLPreInitializationEvent e) {
 				ConfigHandler.init(e);
@@ -48,6 +57,7 @@ public class WurmTweaks {
 				MinecraftForge.EVENT_BUS.register(new PickupEvent());
 				if (RecipeChecker.modExists("AWWayofTime"))
 						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
+				FMLCommonHandler.instance().bus().register(new PlayerClone());
 				LootHandler.init();
 		}
 
