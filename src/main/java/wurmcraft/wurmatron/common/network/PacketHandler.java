@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import wurmcraft.wurmatron.common.network.server.SendConfigSettings;
+import wurmcraft.wurmatron.common.network.server.UpdateRecipe;
 import wurmcraft.wurmatron.common.reference.Global;
 
 public class PacketHandler {
@@ -22,6 +23,7 @@ public class PacketHandler {
 		public static void registerPackets () {
 				// Server - > Client
 				registerMessage(SendConfigSettings.class);
+				registerMessage(UpdateRecipe.class);
 				// Client - > Server
 		}
 

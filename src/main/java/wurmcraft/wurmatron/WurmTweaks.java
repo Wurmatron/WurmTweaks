@@ -11,6 +11,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.commands.WTCommand;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
 import wurmcraft.wurmatron.common.events.*;
 import wurmcraft.wurmatron.common.events.bloodmagic.KnifeHandler;
@@ -70,7 +71,7 @@ public class WurmTweaks {
 		public void serverStarting (FMLServerStartingEvent e) {
 				Recipes.checkSettings();
 				LootHandler.init();
-				// TODO e.registerServerCommand(new WTCommand());
+				 e.registerServerCommand(new WTCommand());
 		}
 
 }
