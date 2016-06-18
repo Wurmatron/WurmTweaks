@@ -7,6 +7,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import sladki.tfc.ModManager;
@@ -32,6 +33,8 @@ import java.util.ArrayList;
 public class TConstructRecipes {
 
 		private static RecipeHelper r = new RecipeHelper();
+
+		public static Fluid[] TCFluid = {WurmTweaksFluid.fluidCopper, WurmTweaksFluid.fluidBronze, WurmTweaksFluid.fluidBismuthBronze, WurmTweaksFluid.fluidBlackBronze, WurmTweaksFluid.fluidWroughtIron, WurmTweaksFluid.fluidSteel, WurmTweaksFluid.fluidBlackSteel, WurmTweaksFluid.fluidBlueSteel, WurmTweaksFluid.fluidRedSteel, WurmTweaksFluid.fluidPlatinum};
 
 		@Optional.Method (modid = "TConstruct")
 		public static void addRecipes () {
@@ -483,7 +486,7 @@ public class TConstructRecipes {
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemArrow_BlackSteel_Head, 6), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemArrowHeadCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemArrow_RedSteel_Head, 6), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemArrowHeadCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemArrow_BlueSteel_Head, 6), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemArrowHeadCast);
-			TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemBolt_Copper_Head, 6), new FluidStack(WurmTweaksFluid.fluidCopper, 1000), WurmTweaksItems.itemBoltCast);
+				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemBolt_Copper_Head, 6), new FluidStack(WurmTweaksFluid.fluidCopper, 1000), WurmTweaksItems.itemBoltCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemBolt_BismuthBronze_Head, 6), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 1000), WurmTweaksItems.itemBoltCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemBolt_Bronze_Head, 6), new FluidStack(WurmTweaksFluid.fluidBronze, 1000), WurmTweaksItems.itemBoltCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemBolt_BlackBronze_Head, 6), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000), WurmTweaksItems.itemBoltCast);
@@ -501,6 +504,9 @@ public class TConstructRecipes {
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemLink_BlackSteel, 6), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemLinkCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemLink_RedSteel, 6), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemLinkCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(ModItems.itemLink_BlueSteel, 6), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemLinkCast);
+				for (Item tool : TConstructHelper.TCTools)
+						for (int fluid = 0; fluid < TCFluid.length; fluid++)
+								TConstructRegistry.getTableCasting().addCastingRecipe(new ItemStack(tool, 1, 201 + fluid), new FluidStack(TCFluid[fluid], getSize(tool)), getPattern(tool), 40);
 		}
 
 		private static void addMoldCrafting () {
@@ -515,19 +521,18 @@ public class TConstructRecipes {
 				}
 		}
 
-
 		// Created by Troykoffeman
-		public static void addAlloy () {
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidSteel,10),new FluidStack(WurmTweaksFluid.fluidPigIron,9),new FluidStack(WurmTweaksFluid.fluidNickel,1));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBismuthBronze,10), new FluidStack(WurmTweaksFluid.fluidZinc,3), new FluidStack(WurmTweaksFluid.fluidCopper,5), new FluidStack(WurmTweaksFluid.fluidBismuth,2));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBlackBronze,20), new FluidStack(WurmTweaksFluid.fluidBismuthBronze,14), new FluidStack(WurmTweaksFluid.fluidSilver,3), new FluidStack(WurmTweaksFluid.fluidGold,3));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBronze,10), new FluidStack(WurmTweaksFluid.fluidCopper,9), new FluidStack(WurmTweaksFluid.fluidTin,1));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBrass,10), new FluidStack(WurmTweaksFluid.fluidCopper,8), new FluidStack(WurmTweaksFluid.fluidZinc,1), new FluidStack(WurmTweaksFluid.fluidGold,1));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidRoseGold,10), new FluidStack(WurmTweaksFluid.fluidCopper,2), new FluidStack(WurmTweaksFluid.fluidGold,8));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidSterlingSilver,10), new FluidStack(WurmTweaksFluid.fluidCopper,3), new FluidStack(WurmTweaksFluid.fluidSilver,7));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBlackSteel,20), new FluidStack(WurmTweaksFluid.fluidNickel,2), new FluidStack(WurmTweaksFluid.fluidBlackBronze,3), new FluidStack(WurmTweaksFluid.fluidSteel,15));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidRedSteel,10), new FluidStack(WurmTweaksFluid.fluidBlackSteel,15), new FluidStack(WurmTweaksFluid.fluidRoseGold,1), new FluidStack(WurmTweaksFluid.fluidBrass,2), new FluidStack(WurmTweaksFluid.fluidSteel,2));
-				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBlueSteel,10), new FluidStack(WurmTweaksFluid.fluidBlackSteel,15), new FluidStack(WurmTweaksFluid.fluidBismuthBronze,2), new FluidStack(WurmTweaksFluid.fluidSterlingSilver,1), new FluidStack(WurmTweaksFluid.fluidSteel,2));
+		private static void addAlloy () {
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidSteel, 10), new FluidStack(WurmTweaksFluid.fluidPigIron, 9), new FluidStack(WurmTweaksFluid.fluidNickel, 1));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 10), new FluidStack(WurmTweaksFluid.fluidZinc, 3), new FluidStack(WurmTweaksFluid.fluidCopper, 5), new FluidStack(WurmTweaksFluid.fluidBismuth, 2));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBlackBronze, 20), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 14), new FluidStack(WurmTweaksFluid.fluidSilver, 3), new FluidStack(WurmTweaksFluid.fluidGold, 3));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBronze, 10), new FluidStack(WurmTweaksFluid.fluidCopper, 9), new FluidStack(WurmTweaksFluid.fluidTin, 1));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBrass, 10), new FluidStack(WurmTweaksFluid.fluidCopper, 8), new FluidStack(WurmTweaksFluid.fluidZinc, 1), new FluidStack(WurmTweaksFluid.fluidGold, 1));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidRoseGold, 10), new FluidStack(WurmTweaksFluid.fluidCopper, 2), new FluidStack(WurmTweaksFluid.fluidGold, 8));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidSterlingSilver, 10), new FluidStack(WurmTweaksFluid.fluidCopper, 3), new FluidStack(WurmTweaksFluid.fluidSilver, 7));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBlackSteel, 20), new FluidStack(WurmTweaksFluid.fluidNickel, 2), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 3), new FluidStack(WurmTweaksFluid.fluidSteel, 15));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidRedSteel, 10), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 15), new FluidStack(WurmTweaksFluid.fluidRoseGold, 1), new FluidStack(WurmTweaksFluid.fluidBrass, 2), new FluidStack(WurmTweaksFluid.fluidSteel, 2));
+				Smeltery.addAlloyMixing(new FluidStack(WurmTweaksFluid.fluidBlueSteel, 10), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 15), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 2), new FluidStack(WurmTweaksFluid.fluidSterlingSilver, 1), new FluidStack(WurmTweaksFluid.fluidSteel, 2));
 		}
 
 		private static void addMaterials () {

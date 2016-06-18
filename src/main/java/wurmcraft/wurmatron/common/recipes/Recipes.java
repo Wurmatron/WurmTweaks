@@ -185,6 +185,8 @@ public class Recipes {
 						ElectroMagicRecipes.addRecipes();
 				if (RecipeChecker.modExists("ThaumicTinkerer"))
 						ThamicTinkersRecipes.addRecipes();
+				if (RecipeChecker.modExists("RefinedRelocation"))
+						RefinedRelocationRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
