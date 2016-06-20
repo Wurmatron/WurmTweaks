@@ -43,7 +43,7 @@ public class AERecipes {
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockQuantumRing.stack(1), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemQuantumSingularity);
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockQuantumLink.stack(1), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemQuantumCore, "packGlass");
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockSpatialPylon.stack(1), WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotEnergyReactor);
-				r.addBasicMachineRecipe(Api.INSTANCE.blocks().blockController.stack(1), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemCraftingCore, new ItemStack(LudicrousItems.resource, 1, 4));
+				r.addBasicMachineRecipe(Api.INSTANCE.blocks().blockController.stack(1), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.ingotEnergyReactor);
 				r.addShaped(Api.INSTANCE.blocks().blockDrive.stack(1), "XBX", "X X", "XBX", 'X', WurmTweaksItems.itemQuantumFoam, 'B', "packChest");
 				r.addShaped(Api.INSTANCE.blocks().blockChest.stack(1), "GXG", "XCX", "SBS", 'G', Api.INSTANCE.blocks().blockQuartzVibrantGlass.stack(1), 'X', Api.INSTANCE.parts().partCableDense.stack(AEColor.Transparent, 1), 'C', "packChest", 'S', WurmTweaksItems.itemMixedSheet, 'B', new ItemStack(TEBlocks.blockStrongbox, 1, 4));
 				r.addCross(Api.INSTANCE.blocks().blockInterface.stack(1), WurmTweaksItems.itemMixedSheet, WurmTweaksItems.ingotCyanSteel);

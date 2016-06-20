@@ -38,7 +38,13 @@ public class UpdateRecipe extends CustomMessage.ClientMessage<UpdateRecipe> {
 		@Override
 		public void process (EntityPlayer player, Side side) {
 				String[] args = data.getString("input").split("$");
-				RecipeCreator.addShapelessRecipe(args, null);
-				player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[Modpack]: " + EnumChatFormatting.DARK_GREEN + "my master has added an recipe."));
+				if (args[1].equalsIgnoreCase("shapeless")) {
+						RecipeCreator.addShapelessRecipe(args, null);
+						player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[Modpack]: " + EnumChatFormatting.DARK_GREEN + "my master has added an recipe."));
+				}
+				if (args[1].equalsIgnoreCase("shaped")) {
+						RecipeCreator.addShapedRecipe(args, null);
+						player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[Modpack]: " + EnumChatFormatting.DARK_GREEN + "my master has added an recipe."));
+				}
 		}
 }

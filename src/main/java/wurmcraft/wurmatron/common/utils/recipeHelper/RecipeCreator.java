@@ -5,11 +5,13 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import wurmcraft.wurmatron.common.network.PacketHandler;
 import wurmcraft.wurmatron.common.network.server.UpdateRecipe;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecipeCreator {
 
@@ -241,4 +243,66 @@ public class RecipeCreator {
 				}
 				return null;
 		}
+
+		public static boolean addShapedRecipe (String[] args, ICommandSender sender) {
+				if (args != null && args.length > 3) {
+						if (args[2].contains(":")) {
+								ItemStack output = getStackFromString(args[2]);
+								if (output != null) {
+										List<Object> data = new ArrayList<Object>();
+										for (String d : args) {
+												if (!d.equals(args[0]) || !d.equals(args[1])) {
+														if (d.contains(":")) {
+																if (!getStackFromString(d).isItemEqual(output)) {
+																		data.add(getStackFromString(d) != null ? getStackFromString(d) : null);
+																}
+														} else if (d.contains("'")) {
+																data.add(d.replace("'", "").charAt(0));
+														} else if (d.contains("\"")) {
+																data.add(d.replace("\"", ""));
+														} else if (d.startsWith("[")) {
+																data.add(d.replace("[", "").replace("]", ""));
+														} else
+																sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_GRAY + "Unknown input: " + args[2]));
+														sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "Output: " + output.getItem().getUnlocalizedName()));
+														for (Object recipe : data) {
+																if (recipe instanceof ItemStack)
+																		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "Arg: " + ((ItemStack) recipe).getItem().getUnlocalizedName()));
+																else if (recipe instanceof String)
+																		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.AQUA + "Arg: " + recipe));
+																else if (recipe instanceof Character)
+																		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + "Arg: " + recipe));
+																else
+																		sender.addChatMessage(new ChatComponentText(EnumChatFormatting.BLACK + "Arg: " + recipe));
+														}
+												}
+										}
+										if (output != null && data != null) {
+												String out = "";
+												for (Object f : data) {
+														if (f instanceof ItemStack)
+																out = out + EnumChatFormatting.GREEN + ((ItemStack) f).getItem().getUnlocalizedName() + ",";
+														else if (f instanceof String)
+																out = out + EnumChatFormatting.AQUA + f + ",";
+														else if (f instanceof Character)
+																out = out + EnumChatFormatting.BLUE + f + ",";
+														else
+																out = out + EnumChatFormatting.BLACK + f + ",";
+												}
+												sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_PURPLE + "Recipe: " + EnumChatFormatting.GREEN + output.getItem().getUnlocalizedName() + "," + EnumChatFormatting.LIGHT_PURPLE + out));
+												GameRegistry.addRecipe(new ShapedOreRecipe(output, data.toArray()));
+												PacketHandler.sendToAll(new UpdateRecipe(args));
+												return true;
+										}
+								}
+						}
+				}
+				if (sender != null) {
+						sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_AQUA + "Enter Valid shapeless recipe"));
+						sender.addChatMessage(new ChatComponentText(EnumChatFormatting.AQUA + "/wt addRecipe shaped output inputs..."));
+						sender.addChatMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[oreDictEntry]"));
+				}
+				return false;
+		}
+
 }

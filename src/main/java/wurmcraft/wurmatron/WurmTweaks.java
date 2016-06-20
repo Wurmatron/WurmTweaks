@@ -17,6 +17,7 @@ import wurmcraft.wurmatron.common.events.*;
 import wurmcraft.wurmatron.common.events.bloodmagic.KnifeHandler;
 import wurmcraft.wurmatron.common.fluid.WurmTweaksFluid;
 import wurmcraft.wurmatron.common.handler.LootHandler;
+import wurmcraft.wurmatron.common.handler.MobBiomeSpawn;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.network.PacketHandler;
 import wurmcraft.wurmatron.common.proxy.CommonProxy;
@@ -65,6 +66,7 @@ public class WurmTweaks {
 		@Mod.EventHandler
 		public void postInit (FMLPostInitializationEvent e) {
 				Recipes.init();
+				MobBiomeSpawn.init();
 		}
 
 		@Mod.EventHandler
