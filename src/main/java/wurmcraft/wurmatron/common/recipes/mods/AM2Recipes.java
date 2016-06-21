@@ -188,8 +188,11 @@ public class AM2Recipes {
 
 		@Optional.Method (modid = "IC2")
 		private static void addCompressorRecipes () {
-				for (int o = 0; o < 4; o++)
-						ICHelper.addCompressorRecipe(new ItemStack(ItemsCommonProxy.itemOre, 32, 7 - o), new ItemStack(BlocksCommonProxy.AMOres, 1, o + 5));
+				ICHelper.addCompressorRecipe(new ItemStack(ItemsCommonProxy.itemOre, 32, 7), new ItemStack(BlocksCommonProxy.AMOres, 1, 5));
+				ICHelper.addCompressorRecipe(new ItemStack(ItemsCommonProxy.itemOre, 32, 0), new ItemStack(BlocksCommonProxy.AMOres, 1, 6));
+				ICHelper.addCompressorRecipe(new ItemStack(ItemsCommonProxy.itemOre, 32, 5), new ItemStack(BlocksCommonProxy.AMOres, 1, 7));
+				ICHelper.addCompressorRecipe(new ItemStack(ItemsCommonProxy.itemOre, 32, 6), new ItemStack(BlocksCommonProxy.AMOres, 1, 8));
+				ICHelper.addCompressorRecipe(new ItemStack(ItemsCommonProxy.itemOre, 32, 4), new ItemStack(BlocksCommonProxy.AMOres, 1, 9));
 		}
 
 		private static void addSawMillRecipes () {

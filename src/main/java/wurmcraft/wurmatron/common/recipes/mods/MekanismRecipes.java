@@ -170,6 +170,7 @@ public class MekanismRecipes {
 				addChemicalCrystallizerRecipes();
 				addChemicalWasherRecipes();
 				addChemicalDissolutionRecipes();
+				addOsmiumCompressorRecipes();
 		}
 
 		@Optional.Method (modid = "Mekanism")
@@ -368,5 +369,10 @@ public class MekanismRecipes {
 				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.iron, 175), new ItemStack(TFCItems.oreChunk, 1, 46));
 				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.zinc, 175), new ItemStack(TFCItems.oreChunk, 1, 47));
 				MekanismHelper.addChemicalDissolutionRecipe(new GasStack(MekanismRegistry.copper, 175), new ItemStack(TFCItems.oreChunk, 1, 48));
+		}
+
+		private static void addOsmiumCompressorRecipes () {
+				MekanismHelper.addOsmiumCompressorRecipe(new ItemStack(MekanismItems.Ingot, 1, 0), new ItemStack(TFCItems.redSteelIngot));
+				MekanismHelper.addOsmiumCompressorRecipe(new ItemStack(MekanismItems.Ingot, 1, 0), new ItemStack(TFCItems.blueSteelIngot));
 		}
 }

@@ -4,6 +4,7 @@ import cofh.thermaldynamics.duct.TDDucts;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
 import ic2.api.item.IC2Items;
+import ic2.api.recipe.Recipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -157,6 +158,9 @@ public class IC2Recipes {
 				r.addShapeless(IC2Items.getItem("tinCableItem"), TFCItems.tinIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.add2X(IC2Items.getItem("carbonFiber"), "dustCoal");
 				addExtrudingRecipes();
+				addExtractor();
+				addRolling();
+				addCutting();
 		}
 
 		private static void addExtrudingRecipes () {
@@ -164,5 +168,36 @@ public class IC2Recipes {
 				ICHelper.addMetalFormerExtrudingRecipe(new ItemStack(TFCItems.copperIngot), new ItemStack(IC2Items.getItem("copperCableItem").getItem(), 4, 1));
 				ICHelper.addMetalFormerExtrudingRecipe(new ItemStack(TFCItems.goldIngot), new ItemStack(IC2Items.getItem("goldCableItem").getItem(), 4, 2));
 				ICHelper.addMetalFormerExtrudingRecipe(new ItemStack(TFCItems.wroughtIronIngot), new ItemStack(IC2Items.getItem("ironCableItem").getItem(), 4, 5));
+		}
+
+		private static void addExtractor () {
+				Recipes.extractor.getRecipes().clear();
+				for (ItemStack sand : OreDictionary.getOres("packSand")) {
+						if (!sand.isItemEqual(new ItemStack(Blocks.sand)))
+								ICHelper.addExtractorRecipe(sand, new ItemStack(Blocks.sand));
+				}
+				for (ItemStack gravel : OreDictionary.getOres("packGravel")) {
+						if (!gravel.isItemEqual(new ItemStack(Blocks.gravel)))
+								ICHelper.addExtractorRecipe(gravel, new ItemStack(Blocks.gravel));
+				}
+				for (ItemStack dirt : OreDictionary.getOres("packDirt")) {
+						if (!dirt.isItemEqual(new ItemStack(Blocks.dirt)))
+								ICHelper.addExtractorRecipe(dirt, new ItemStack(Blocks.dirt));
+				}
+				for (ItemStack grass : OreDictionary.getOres("packGrass")) {
+						if (!grass.isItemEqual(new ItemStack(Blocks.grass)))
+								ICHelper.addExtractorRecipe(grass, new ItemStack(Blocks.grass));
+				}
+		}
+
+		public static void addRolling () {
+				ICHelper.addMetalFormerRollingRecipe(IC2Items.getItem("mixedMetalIngot"), IC2Items.getItem("advancedAlloy"));
+				for (int i = 0; i < RecipeHelper.INGOTS.length; i++)
+						ICHelper.addMetalFormerRollingRecipe(new ItemStack(RecipeHelper.INGOTS[i], 1), new ItemStack(RecipeHelper.SHEETS[i]));
+		}
+
+		public static void addCutting () {
+				for (int i = 0; i < RecipeHelper.SHEETS.length; i++)
+						ICHelper.addMetalFormerCuttingRecipe(new ItemStack(RecipeHelper.SHEETS[i], 2), new ItemStack(RecipeHelper.SHEETS2X[i]));
 		}
 }

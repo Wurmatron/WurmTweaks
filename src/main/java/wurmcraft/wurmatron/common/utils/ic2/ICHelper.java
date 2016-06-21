@@ -31,4 +31,10 @@ public class ICHelper {
 		public static void addMetalFormerRollingRecipe (ItemStack input, ItemStack output) {
 				Recipes.metalformerRolling.addRecipe(new RecipeInputItemStack(input), null, output);
 		}
+
+
+		@Optional.Method (modid = "IC2")
+		public static void addMaceratorRecipe (ItemStack input, ItemStack... output) {
+				Recipes.macerator.addRecipe(new RecipeInputItemStack(input),null,output);
+		}
 }

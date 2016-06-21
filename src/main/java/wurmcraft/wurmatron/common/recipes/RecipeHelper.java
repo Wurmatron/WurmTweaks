@@ -1,5 +1,6 @@
 package wurmcraft.wurmatron.common.recipes;
 
+import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import net.minecraft.block.Block;
@@ -31,6 +32,11 @@ public class RecipeHelper {
 				add("dyeRed");
 				add("dyeBlack");
 		}};
+
+		public static final Item[] INGOTS = {TFCItems.bismuthIngot, TFCItems.bismuthBronzeIngot, TFCItems.blackBronzeIngot, TFCItems.blackSteelIngot, TFCItems.blueSteelIngot, TFCItems.brassIngot, TFCItems.bronzeIngot, TFCItems.copperIngot, TFCItems.goldIngot, TFCItems.leadIngot, TFCItems.nickelIngot, TFCItems.platinumIngot, TFCItems.redSteelIngot, TFCItems.roseGoldIngot, TFCItems.silverIngot, TFCItems.steelIngot, TFCItems.sterlingSilverIngot, TFCItems.tinIngot, TFCItems.wroughtIronIngot};
+		public static final Item[] SHEETS = {TFCItems.bismuthSheet, TFCItems.bismuthBronzeSheet, TFCItems.blackBronzeSheet, TFCItems.blackSteelSheet, TFCItems.blueSteelSheet, TFCItems.brassSheet, TFCItems.bronzeSheet, TFCItems.copperSheet, TFCItems.goldSheet, TFCItems.leadSheet, TFCItems.nickelSheet, TFCItems.platinumSheet, TFCItems.redSteelSheet, TFCItems.roseGoldSheet, TFCItems.silverSheet, TFCItems.steelSheet, TFCItems.sterlingSilverSheet, TFCItems.tinSheet, TFCItems.wroughtIronSheet};
+		public static final Item[] SHEETS2X = {TFCItems.bismuthSheet2x, TFCItems.bismuthBronzeSheet2x, TFCItems.blackBronzeSheet2x, TFCItems.blackSteelSheet2x, TFCItems.blueSteelSheet2x, TFCItems.brassSheet2x, TFCItems.bronzeSheet2x, TFCItems.copperSheet2x, TFCItems.goldSheet2x, TFCItems.leadSheet2x, TFCItems.nickelSheet2x, TFCItems.platinumSheet2x, TFCItems.redSteelSheet2x, TFCItems.roseGoldSheet2x, TFCItems.silverSheet2x, TFCItems.steelSheet2x, TFCItems.sterlingSilverSheet2x, TFCItems.tinSheet2x, TFCItems.wroughtIronSheet2x};
+
 
 		/**
 		 * Adds a shaped recipe to the game

@@ -17,6 +17,8 @@ import techreborn.init.ModItems;
 import thaumcraft.common.config.ConfigItems;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 
 public class TechRebornRecipes {
 
@@ -32,7 +34,7 @@ public class TechRebornRecipes {
 				r.addShaped(new ItemStack(ModBlocks.BlastFurnace), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', TFCItems.copperSheet2x);
 				r.addCrossWCenter(new ItemStack(ModBlocks.AlloySmelter), WurmTweaksItems.gearMixedSheet, new ItemStack(TFCItems.fireBrick, 1, 1), new ItemStack(ModBlocks.AlloyFurnace));
 				r.addShaped(new ItemStack(ModBlocks.Grinder), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', Items.flint);
-				r.addShaped(new ItemStack(ModBlocks.ImplosionCompressor), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', Blocks.tnt);
+				r.addShaped(new ItemStack(ModBlocks.ImplosionCompressor), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 4), 'B', WurmTweaksItems.itemCraftingCore, 'A', Blocks.tnt);
 				r.addShaped(new ItemStack(ModBlocks.MatterFabricator), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.itemCraftingCore, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(IC2Items.getItem("iridiumPlate").getItem()));
 				r.addShaped(new ItemStack(ModBlocks.BlastFurnace), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', TFCItems.copperSheet2x);
 				r.addShaped(new ItemStack(ModBlocks.chargeBench), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', IC2Items.getItem("glassFiberCableItem"));
@@ -83,5 +85,53 @@ public class TechRebornRecipes {
 				r.addShaped(new ItemStack(TFCItems.wroughtIronIngot, 12), "U U", " U ", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
 				r.addShaped(new ItemStack(TFCItems.steelIngot, 10), "U U", "U U", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
 				r.addCrossWCenter(new ItemStack(ModItems.parts, 1, 23), ExtraUtils.bedrockium, WurmTweaksItems.ingotTitanium, WurmTweaksItems.itemCraftingCore);
+				addSawMillRecipes();
+				addFusionReactorRecipes();
+				addIndustrialElectrolyzerRecipes();
+				addImplosionCompressorRecipes();
+				addAlloySmelter();
+				addBlastFurnaceRecipes();
+				adAssemblingMachineRecipes();
+		}
+
+		private static void addSawMillRecipes () {
+				for (int l = 0; l < 16; l++)
+						MachineHelper.addSawMillRecipe(new ItemStack(TFCItems.singlePlank, 16, l), null, new ItemStack(TFCItems.logs, 1, l), 5, 32, 80);
+		}
+
+		private static void addFusionReactorRecipes () {
+				TechRebornHelper.addFusionReactoRecipe(WurmTweaksItems.ingotTitanium, new ItemStack(TFCItems.redSteelIngot), WurmTweaksItems.itemAntiMatter, 9000000, 8192, 800);
+		}
+
+		private static void addIndustrialElectrolyzerRecipes () {
+				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(TFCItems.leadIngot, 1, 0), null, new ItemStack(TFCItems.oreChunk, 1, 51), null, null, null, 100, 128);
+		}
+
+		private static void addImplosionCompressorRecipes () {
+				TechRebornHelper.addImplosionCompressorRecipe(new ItemStack(ModItems.parts, 1, 23), new ItemStack(Blocks.tnt, 8), IC2Items.getItem("iridiumPlate"), null, 200, 512);
+		}
+
+		private static void addAlloySmelter () {
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 11), new ItemStack(TFCItems.zincIngot, 1), new ItemStack(TFCItems.brassIngot, 12), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 11), new ItemStack(TFCItems.tinIngot, 1), new ItemStack(TFCItems.bronzeIngot, 12), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 2), new ItemStack(TFCItems.goldIngot, 10), new ItemStack(TFCItems.roseGoldIngot, 12), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 3), new ItemStack(TFCItems.goldIngot, 10), new ItemStack(TFCItems.sterlingSilverIngot, 13), 80, 32);
+		}
+
+		private static void addBlastFurnaceRecipes () {
+				TechRebornHelper.addBlastFurnaceRecipe(new ItemStack(TFCItems.coal, 1, 1), new ItemStack(TFCItems.wroughtIronIngot), new ItemStack(TFCItems.steelIngot), null, 60, 32, 1200);
+		}
+
+		private static void adAssemblingMachineRecipes () {
+				for (ItemStack chest : OreDictionary.getOres("packChest"))
+						TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(TFCItems.steelIngot), chest, new ItemStack(Blocks.chest), 80, 32);
+				for(ItemStack stick : OreDictionary.getOres("packStick")) {
+						TechRebornHelper.adAssemblingMachineRecipe(stick, new ItemStack(TFCItems.coal, 1, 1), new ItemStack(Blocks.torch), 80, 32);
+						TechRebornHelper.adAssemblingMachineRecipe(stick, new ItemStack(TFCItems.coal, 1, 0), new ItemStack(Blocks.torch), 80, 32);
+				}
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.wool), null,new ItemStack(TFCItems.woolYarn,8),80,32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.woolYarn,16), null,new ItemStack(TFCItems.woolCloth),80,32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(Items.string,24), null,new ItemStack(TFCItems.silkCloth),80,32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.juteFiber,12), null,new ItemStack(TFCItems.burlapCloth),80,32);
 		}
 }

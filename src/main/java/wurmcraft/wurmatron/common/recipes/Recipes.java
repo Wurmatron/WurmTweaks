@@ -40,6 +40,9 @@ public class Recipes {
 						RecipeHandler.Recipe.CHEMICAL_WASHER.get().clear();
 						RecipeHandler.Recipe.CHEMICAL_INJECTION_CHAMBER.get().clear();
 						RecipeHandler.Recipe.CHEMICAL_DISSOLUTION_CHAMBER.get().clear();
+						RecipeHandler.Recipe.OSMIUM_COMPRESSOR.get().clear();
+						RecipeHandler.Recipe.COMBINER.get().clear();
+						RecipeHandler.Recipe.PRECISION_SAWMILL.get().clear();
 				}
 				if (RecipeChecker.modExists("IC2")) {
 						ic2.api.recipe.Recipes.metalformerExtruding.getRecipes().clear();
@@ -48,6 +51,7 @@ public class Recipes {
 						ic2.api.recipe.Recipes.centrifuge.getRecipes().clear();
 						ic2.api.recipe.Recipes.compressor.getRecipes().clear();
 						ic2.api.recipe.Recipes.extractor.getRecipes().clear();
+						ic2.api.recipe.Recipes.macerator.getRecipes().clear();
 				}
 				if (RecipeChecker.modExists("techreborn"))
 						techreborn.api.recipe.RecipeHandler.recipeList.clear();

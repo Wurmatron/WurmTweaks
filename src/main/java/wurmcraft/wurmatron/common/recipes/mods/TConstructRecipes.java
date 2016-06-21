@@ -504,6 +504,16 @@ public class TConstructRecipes {
 				addCastingWithReverse(new ItemStack(ModItems.itemLink_BlackSteel, 6), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemLinkCast);
 				addCastingWithReverse(new ItemStack(ModItems.itemLink_RedSteel, 6), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemLinkCast);
 				addCastingWithReverse(new ItemStack(ModItems.itemLink_BlueSteel, 6), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemLinkCast);
+				addCastingWithReverse(new ItemStack(TFCItems.copperPickaxeHead), new FluidStack(WurmTweaksFluid.fluidCopper, 1000), WurmTweaksItems.itemHammerCast);
+				addCastingWithReverse(new ItemStack(TFCItems.bismuthBronzePickaxeHead), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.bronzePickaxeHead), new FluidStack(WurmTweaksFluid.fluidBronze, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.blackBronzePickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.wroughtIronPickaxeHead), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.steelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.blackSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.redSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.blueSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemPickCast);
+
 				for (Item tool : TConstructHelper.TCTools)
 						for (int fluid = 0; fluid < TCFluid.length; fluid++)
 								TConstructRegistry.getTableCasting().addCastingRecipe(new ItemStack(tool, 1, 201 + fluid), new FluidStack(TCFluid[fluid], getSize(tool)), getPattern(tool), 40);
@@ -664,7 +674,7 @@ public class TConstructRecipes {
 
 		private static void addCastingWithReverse (ItemStack output, FluidStack fluid, ItemStack cast) {
 				TConstructHelper.addCastingRecipe(output, fluid, cast);
-				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidBrass, 1000), output);
-				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000), output);
+				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidBrass, 1000), new ItemStack(output.getItem(),1,output.getItemDamage()));
+				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000), new ItemStack(output.getItem(),1,output.getItemDamage()));
 		}
 }

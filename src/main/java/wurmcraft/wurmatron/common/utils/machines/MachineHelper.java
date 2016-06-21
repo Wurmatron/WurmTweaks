@@ -6,6 +6,7 @@ import wurmcraft.wurmatron.common.items.ItemCredit;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.utils.CreditHelper;
 import wurmcraft.wurmatron.common.utils.IE.IEHelper;
+import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
 import wurmcraft.wurmatron.common.utils.mekanism.MekanismHelper;
 import wurmcraft.wurmatron.common.utils.railcraft.RailcraftHelper;
 import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
@@ -63,6 +64,12 @@ public class MachineHelper {
 										IEHelper.addCrusherRecipe(output, input, euTick * timeInTicks);
 								else
 										IEHelper.addCrusherRecipe(CreditHelper.getCreditsFromTypeAndUnits(output.getItem(), ItemCredit.units[output.getItemDamage()] * 2), input, euTick * timeInTicks);
+						}
+						if (RecipeChecker.modExists("IC2")) {
+								if (!(output.getItem() instanceof ItemCredit))
+										ICHelper.addMaceratorRecipe(input, output);
+								else
+										ICHelper.addMaceratorRecipe(input, CreditHelper.getCreditsFromTypeAndUnits(output.getItem(), ItemCredit.units[output.getItemDamage()]));
 						}
 				}
 		}
