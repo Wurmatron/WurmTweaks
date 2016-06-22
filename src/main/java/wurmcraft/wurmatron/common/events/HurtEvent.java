@@ -39,6 +39,10 @@ public class HurtEvent {
 								}
 						}
 				}
+				if (entity.getHealth() <= 0) {
+						entity.setHealth(0);
+						entity.setDead();
+				}
 		}
 
 		/**

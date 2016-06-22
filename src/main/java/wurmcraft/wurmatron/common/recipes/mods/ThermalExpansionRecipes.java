@@ -327,7 +327,7 @@ public class ThermalExpansionRecipes {
 //				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.tinSheet2x), new FluidStack(WurmTweaksFluid.fluidTin, 4000));
 //				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.zincSheet2x), new FluidStack(WurmTweaksFluid.fluidZinc, 4000));
 				for (ItemStack cobble : OreDictionary.getOres("packCobblestone"))
-						TEHelper.addCrucibleRecipe(20000, cobble, new FluidStack(FluidRegistry.WATER, 500));
+						TEHelper.addCrucibleRecipe(20000, cobble, new FluidStack(FluidRegistry.LAVA, 500));
 		}
 
 		private static void addFluidTransposerRecipes () {

@@ -7,8 +7,8 @@ import net.minecraftforge.event.entity.player.EntityInteractEvent;
 public class EntityInteract {
 
 		@SubscribeEvent
-		public void onEntityInteract(EntityInteractEvent e) {
-				if(e.target instanceof EntityVillager)
+		public void onEntityInteract (EntityInteractEvent e) {
+				if (e.target instanceof EntityVillager)
 						e.setCanceled(true);
 		}
 }

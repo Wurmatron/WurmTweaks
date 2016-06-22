@@ -67,6 +67,7 @@ public class WurmTweaks {
 		public void postInit (FMLPostInitializationEvent e) {
 				Recipes.init();
 				MobBiomeSpawn.init();
+				LootHandler.init();
 		}
 
 		@Mod.EventHandler
