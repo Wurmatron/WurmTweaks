@@ -4,6 +4,7 @@ import appeng.api.util.AEColor;
 import appeng.core.Api;
 import buildcraft.BuildCraftCore;
 import cofh.thermalexpansion.block.TEBlocks;
+import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
@@ -59,14 +60,14 @@ public class EnderIORecipes {
 				r.addCircleWCenter(EnderIO.blockReservoir, "packGlass", Blocks.cauldron);
 				r.addCrossWCenter(EnderIO.blockVacuumChest, Items.ender_pearl, WurmTweaksItems.itemQuantumFoam, "packChest");
 				r.addBasicMachineRecipe(EnderIO.blockTransceiver, new ItemStack(EnderIO.itemAlloy, 1, 6), "packIngot", Items.redstone, WurmTweaksItems.itemMachineFrame);
-//				r.addBasicMachineRecipe(EnderIO.blockInventoryPanel, new ItemStack(EnderIO.itemAlloy, 1, 6), "packGemExquisite", EnderIO.blockFusedQuartz, WurmTweaksItems.itemQuantumSingularity);
+				r.addBasicMachineRecipe(EnderIO.blockInventoryPanel, new ItemStack(EnderIO.itemAlloy, 1, 6), "packGemExquisite", EnderIO.blockFusedQuartz, WurmTweaksItems.itemQuantumSingularity);
 				r.addCrossWCenter(EnderIO.blockEnderIo, new ItemStack(EnderIO.itemAlloy, 1, 6), "packGlass", Items.ender_eye);
-//				r.addCrossWCenter(EnderIO.blockTravelPlatform., TFItems.ingotEnderium, new ItemStack(EnderIO.itemMaterial, 1, 5), EnderIO.blockEnderIo);
-//				r.addCrossWCenter(EnderIO.blockTelePad, TFItems.ingotEnderium, new ItemStack(EnderIO.itemMaterial, 1, 5), Items.ender_pearl);
+				r.addCrossWCenter(EnderIO.blockTravelPlatform, TFItems.ingotEnderium, new ItemStack(EnderIO.itemMaterial, 1, 5), EnderIO.blockEnderIo);
+				r.addCrossWCenter(EnderIO.blockTelePad, TFItems.ingotEnderium, new ItemStack(EnderIO.itemMaterial, 1, 5), Items.ender_pearl);
 				r.addShaped(EnderIO.blockKillerJoe, "SSS", "XAX", "BCB", 'S', TFCItems.roseGoldSheet2x, 'X', "packGlass", 'A', EnderIO.itemFrankenSkull, 'B', TFCItems.blackSteelSheet2x, 'C', WurmTweaksItems.itemMachineFrame);
-				//r.addShaped(EnderIO.blockAttractor, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 9), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
-				//r.addShaped(EnderIO.blockSpawnGuard, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
-				//r.addShaped(EnderIO.blockExperianceOblisk, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(EnderIO.blockAttractor, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 9), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(EnderIO.blockSpawnGuard, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
+				r.addShaped(EnderIO.blockExperianceOblisk, " G ", "XAX", "ABA", 'G', new ItemStack(EnderIO.itemMaterial, 1, 7), 'X', new ItemStack(EnderIO.itemAlloy, 1, 1), 'A', new ItemStack(EnderIO.itemAlloy, 1, 2), 'B', WurmTweaksItems.itemMagicChunk);
 				r.addShaped(EnderIO.blockEnchanter, "GEG", "III", "I I", 'G', "packGemExquisite", 'E', Blocks.enchanting_table, 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addPressurePlate(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShapeless(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 1), new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE));
@@ -92,7 +93,7 @@ public class EnderIORecipes {
 				r.addShaped(new ItemStack(EnderIO.itemLiquidConduit, 3, 1), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemLiquidConduit, 6, 0));
 				r.addShaped(new ItemStack(EnderIO.itemLiquidConduit, 3, 2), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemLiquidConduit, 1, 1));
 				r.addShaped(new ItemStack(EnderIO.itemItemConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemLiquidConduit, 1, 5));
-//				r.addShaped(new ItemStack(EnderIO.itemGasConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemMaterial, 1, 1));
+				r.addShaped(new ItemStack(EnderIO.itemGasConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemMaterial, 1, 1));
 				r.addCircle(new ItemStack(EnderIO.blockConduitFacade, 8), new ItemStack(EnderIO.itemMaterial, 1, 1));
 				r.addCircleWCenter(new ItemStack(EnderIO.blockConduitFacade, 8, 1), new ItemStack(EnderIO.itemMaterial, 1, 1), "dustObsidian");
 				r.addShaped(new ItemStack(EnderIO.itemMEConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
@@ -104,7 +105,7 @@ public class EnderIORecipes {
 				r.addCrossWCenter(EnderIO.itemPowerItemFilter, Items.redstone, Items.paper, EnderIO.itemConduitProbe);
 				r.addCrossWCenter(EnderIO.itemExtractSpeedUpgrade, TFCItems.wroughtIronIngot, Items.redstone, new ItemStack(EnderIO.itemBasicFilterUpgrade, 1, 0));
 				r.addCrossWCenter(new ItemStack(EnderIO.itemExtractSpeedUpgrade, 1, 1), TFCItems.wroughtIronIngot, Items.slime_ball, new ItemStack(EnderIO.itemBasicFilterUpgrade, 1, 0));
-//				r.addCross(new ItemStack(EnderIO.itemFunctionUpgrade), WurmTweaksItems.itemQuantumFoam, new ItemStack(EnderIO.itemMaterial, 1, 1));
+				r.addCross(new ItemStack(EnderIO.itemFunctionUpgrade), WurmTweaksItems.itemQuantumFoam, new ItemStack(EnderIO.itemMaterial, 1, 1));
 				r.addWrenchRecipe(EnderIO.itemYetaWench, new ItemStack(EnderIO.itemMaterial, 1, 0));
 				r.addShapeless(new ItemStack(EnderIO.itemMaterial, 1, 5), "packGemExquisite", WurmTweaksItems.itemMixedSheet, Items.ender_eye);
 				r.addShapeless(new ItemStack(EnderIO.itemMaterial, 1, 6), "packGemExquisite", WurmTweaksItems.itemMixedSheet);
@@ -112,14 +113,14 @@ public class EnderIORecipes {
 				// TODO Alloy ingots
 				r.addCrossWCenter(EnderIO.itemTravelStaff, new ItemStack(EnderIO.itemMaterial, 1, 5), new ItemStack(EnderIO.itemMaterial, 1, 1), "packGemExquisite");
 				r.addCrossWCenter(EnderIO.itemConduitProbe, new ItemStack(EnderIO.itemPowerConduit, 6, 2), new ItemStack(EnderIO.itemMaterial, 1, 1), Items.repeater);
-//				r.addBasicMachineRecipe(DarkSteelItems.itemMagnet, "packIngot", WurmTweaksItems.ingotGreenSteel, TFCItems.redSteelSheet, "packChest");
+				r.addBasicMachineRecipe(DarkSteelItems.itemMagnet, "packIngot", WurmTweaksItems.ingotGreenSteel, TFCItems.redSteelSheet, "packChest");
 				r.addArmorRecipes(DarkSteelItems.itemDarkSteelHelmet, DarkSteelItems.itemDarkSteelChestplate, DarkSteelItems.itemDarkSteelLeggings, DarkSteelItems.itemDarkSteelBoots, new ItemStack(EnderIO.itemAlloy, 1, 6));
 				ArmorHandler.addArmorProtection(DarkSteelItems.itemDarkSteelHelmet, 2800, 2800, 2800);
 				r.addShaped(DarkSteelItems.itemDarkSteelAxe, "XX ", "XS ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				r.addShaped(DarkSteelItems.itemDarkSteelAxe, " XX", "XS ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				r.addShaped(DarkSteelItems.itemDarkSteelPickaxe, "XXX", " S ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
-//				r.addShaped(DarkSteelItems.itemDarkSteelShears, "I ", " I", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
-//				r.addShaped(DarkSteelItems.itemDarkSteelShears, " I", "I ", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
+				r.addShaped(DarkSteelItems.itemDarkSteelShears, "I ", " I", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
+				r.addShaped(DarkSteelItems.itemDarkSteelShears, " I", "I ", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShaped(ItemNBT.addDamage(new ItemStack(DarkSteelItems.itemDarkSteelSword), 600), " X ", " X ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				for (int m = 0; m < 7; m++)
 						r.addShapeless(new ItemStack(EnderIO.itemAlloy, 32, m), new ItemStack(EnderIO.blockIngotStorage, 1, m));
