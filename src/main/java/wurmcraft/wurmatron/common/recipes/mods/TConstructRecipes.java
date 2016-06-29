@@ -99,7 +99,7 @@ public class TConstructRecipes {
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 12), "SSS", "L L", "L L", 'S', "packLog", 'L', TFCItems.blackSteelSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 13), "SSS", "L L", "L L", 'S', "packLog", 'L', TFCItems.blackSteelSheet);
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 0), "SSS", "L L", "L L", 'S', TFCItems.redSteelSheet, 'L', "packLog");
-				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 1), "SSS", "L L", "L L", 'S', TFCItems.redSteelSheet, 'L', "packLog");
+				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 1), "SSS", "L L", "L L", 'S', TFCItems.blueSteelSheet, 'L', "packLog");
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 2), "SSS", "L L", "L L", 'S', TFCItems.redSteelSheet, 'L', "packLog");
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 3), "SSS", "L L", "L L", 'S', TFCItems.redSteelSheet, 'L', "packLog");
 				r.addShaped(new ItemStack(TinkerTools.toolStationWood, 1, 4), "SSS", "L L", "L L", 'S', TFCItems.redSteelSheet, 'L', "packLog");
@@ -513,10 +513,13 @@ public class TConstructRecipes {
 				addCastingWithReverse(new ItemStack(TFCItems.blackSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.redSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.blueSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemPickCast);
-
 				for (Item tool : TConstructHelper.TCTools)
 						for (int fluid = 0; fluid < TCFluid.length; fluid++)
 								TConstructRegistry.getTableCasting().addCastingRecipe(new ItemStack(tool, 1, 201 + fluid), new FluidStack(TCFluid[fluid], getSize(tool)), getPattern(tool), 40);
+				for (Item tool : TConstructHelper.TCTools) {
+						TConstructHelper.addCastingRecipe(getPattern(tool), new FluidStack(WurmTweaksFluid.fluidBrass, 1000), new ItemStack(tool, 1, OreDictionary.WILDCARD_VALUE));
+						TConstructHelper.addCastingRecipe(getPattern(tool), new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000), new ItemStack(tool, 1, OreDictionary.WILDCARD_VALUE));
+				}
 		}
 
 		private static void addMoldCrafting () {
@@ -674,7 +677,7 @@ public class TConstructRecipes {
 
 		private static void addCastingWithReverse (ItemStack output, FluidStack fluid, ItemStack cast) {
 				TConstructHelper.addCastingRecipe(output, fluid, cast);
-				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidBrass, 1000), new ItemStack(output.getItem(),1,output.getItemDamage()));
-				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000), new ItemStack(output.getItem(),1,output.getItemDamage()));
+				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidBrass, 1000), new ItemStack(output.getItem(), 1, output.getItemDamage()));
+				TConstructHelper.addCastingRecipe(cast, new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000), new ItemStack(output.getItem(), 1, output.getItemDamage()));
 		}
 }

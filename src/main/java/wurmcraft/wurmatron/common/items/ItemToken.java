@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ItemSpecial extends Item {
+public class ItemToken extends Item {
 
 		private static HashMap<String, EnumChatFormatting> itemColors = new HashMap<String, EnumChatFormatting>();
 		private static ArrayList<String> itemNames = new ArrayList<String>();
 		private IIcon[] icons;
 
-		public ItemSpecial (ArrayList<String> items, HashMap<String, EnumChatFormatting> names) {
+		public ItemToken (ArrayList<String> items, HashMap<String, EnumChatFormatting> names) {
 				setCreativeTab(WurmTweaks.tabWurmTweaks);
 				setHasSubtypes(true);
 				itemColors = names;

@@ -13,6 +13,7 @@ import erogenousbeef.bigreactors.common.BigReactors;
 import fox.spiteful.avaritia.blocks.LudicrousBlocks;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import gravisuite.GraviSuite;
+import ic2.api.item.IC2Items;
 import mekanism.common.MekanismItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -20,6 +21,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import powercrystals.minefactoryreloaded.setup.MFRThings;
 import tconstruct.tools.TinkerTools;
 import vazkii.botania.common.block.ModBlocks;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
@@ -276,6 +278,8 @@ public class OreDict {
 				add("packSeed", TFCItems.seedsSquash);
 				add("packSeed", TFCItems.seedsJute);
 				// Rubber Ore Dict ("packRubber")
+				add("packRubber", IC2Items.getItem("rubber"));
+				add("packRubber", MFRThings.rawRubberItem);
 				add("packCredit", new ItemStack(WTItems.creditBismuth, 1, OreDictionary.WILDCARD_VALUE));
 				add("packCredit", new ItemStack(WTItems.creditZinc, 1, OreDictionary.WILDCARD_VALUE));
 				add("packCredit", new ItemStack(WTItems.creditPlatinum, 1, OreDictionary.WILDCARD_VALUE));

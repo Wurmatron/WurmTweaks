@@ -157,6 +157,7 @@ public class IC2Recipes {
 				r.addShapeless(IC2Items.getItem("goldCableItem"), TFCItems.goldIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(IC2Items.getItem("tinCableItem"), TFCItems.tinIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.add2X(IC2Items.getItem("carbonFiber"), "dustCoal");
+				ICHelper.addCompressorRecipe(IC2Items.getItem("carbonMesh"), IC2Items.getItem("carbonPlate"));
 				addExtrudingRecipes();
 				addExtractor();
 				addRolling();

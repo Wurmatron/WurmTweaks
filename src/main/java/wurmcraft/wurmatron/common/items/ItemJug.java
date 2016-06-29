@@ -1,5 +1,17 @@
 package wurmcraft.wurmatron.common.items;
 
+import com.bioxx.tfc.Core.Player.FoodStatsTFC;
+import com.bioxx.tfc.Core.TFC_Core;
+import com.bioxx.tfc.Core.TFC_Time;
+import com.bioxx.tfc.api.Enums.EnumFoodGroup;
+import com.bioxx.tfc.api.Enums.EnumItemReach;
+import com.bioxx.tfc.api.Enums.EnumSize;
+import com.bioxx.tfc.api.Enums.EnumWeight;
+import com.bioxx.tfc.api.Interfaces.ISize;
+import com.bioxx.tfc.api.TFCBlocks;
+import com.bioxx.tfc.api.TFCFluids;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,29 +22,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.S0BPacketAnimation;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidContainerItem;
-
-import com.bioxx.tfc.Core.TFCTabs;
-import com.bioxx.tfc.Core.TFC_Core;
-import com.bioxx.tfc.Core.TFC_Time;
-import com.bioxx.tfc.Core.Player.FoodStatsTFC;
-import com.bioxx.tfc.api.TFCBlocks;
-import com.bioxx.tfc.api.TFCFluids;
-import com.bioxx.tfc.api.Enums.EnumFoodGroup;
-import com.bioxx.tfc.api.Enums.EnumItemReach;
-import com.bioxx.tfc.api.Enums.EnumSize;
-import com.bioxx.tfc.api.Enums.EnumWeight;
-import com.bioxx.tfc.api.Interfaces.ISize;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import wurmcraft.wurmatron.WurmTweaks;
 
 public class ItemJug extends Item implements ISize, IFluidContainerItem {
 
@@ -42,9 +37,10 @@ public class ItemJug extends Item implements ISize, IFluidContainerItem {
 				super();
 				this.maxStackSize = 1;
 				this.capacity = size;
-				this.setCreativeTab(TFCTabs.TFC_MISC);
-				this.setMaxDamage(capacity);
-				this.setMaxStackSize(1);
+				setCreativeTab(WurmTweaks.tabWurmTweaks);
+				setMaxDamage(capacity);
+				setMaxStackSize(1);
+				setUnlocalizedName("itemJug_" + size);
 		}
 
 		@SideOnly (Side.CLIENT)
@@ -57,23 +53,19 @@ public class ItemJug extends Item implements ISize, IFluidContainerItem {
 		public ItemStack onItemRightClick (ItemStack sac, World world, EntityPlayer player) {
 				if (player.capabilities.isCreativeMode)
 						return sac;
-				if (this.getFluid(sac) == null && sac.getItemDamage() != sac.getMaxDamage()) {
+				if (this.getFluid(sac) == null && sac.getItemDamage() != sac.getMaxDamage())
 						sac.setItemDamage(sac.getMaxDamage());
-				}
-
 				if (player.isSneaking()) {
-						this.drain(sac, capacity, true);
+						drain(sac, capacity, true);
 						return sac;
 				}
 				MovingObjectPosition mop = this.getMovingObjectPositionFromPlayer(world, player, true);
 				if (mop == null) {
-						if (sac.getItemDamage() == sac.getMaxDamage()) {
+						if (sac.getItemDamage() == sac.getMaxDamage())
 								if (player instanceof EntityPlayerMP) {
-										player.addChatMessage(new ChatComponentText(StatCollector.translateToLocal("This is Empty")));
-								}
-						} else {
-								player.setItemInUse(sac, this.getMaxItemUseDuration(sac));
-						}
+										player.addChatMessage(new ChatComponentText(EnumChatFormatting.BLUE + StatCollector.translateToLocal("This is Empty")));
+								} else
+										player.setItemInUse(sac, this.getMaxItemUseDuration(sac));
 						return sac;
 				} else {
 						if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
@@ -84,24 +76,20 @@ public class ItemJug extends Item implements ISize, IFluidContainerItem {
 										return sac;
 								if (wp.isWater()) {
 										if (sac.getItemDamage() > 0) {
-												fillSac(world, sac, wp.getX(), wp.getY(), wp.getZ(), 200);
+												fillSac(world, sac, wp.getX(), wp.getY(), wp.getZ(), 20000);
 												double xHit = mop.hitVec.xCoord;
 												double yHit = mop.hitVec.yCoord;
 												if (world.getBlockMetadata(wp.getX(), wp.getY(), wp.getZ()) > 0 && mop.sideHit == 1) yHit += 1;
 												double zHit = mop.hitVec.zCoord;
-												for (int l = 0; l < 5; l++) {
+												for (int l = 0; l < 5; l++)
 														world.spawnParticle("splash", xHit, yHit, zHit, (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()));
-												}
 												world.playSoundAtEntity(player, "random.splash", 0.2F, world.rand.nextFloat() * 0.1F + 0.9F);
-										} else {
+										} else
 												player.setItemInUse(sac, this.getMaxItemUseDuration(sac));
-										}
 								} else {
 										if (sac.getItemDamage() == sac.getMaxDamage()) {
-										} else {
+										} else
 												player.setItemInUse(sac, this.getMaxItemUseDuration(sac));
-
-										}
 								}
 						}
 						return sac;
@@ -126,7 +114,7 @@ public class ItemJug extends Item implements ISize, IFluidContainerItem {
 								EntityPlayerMP p = (EntityPlayerMP) player;
 								FoodStatsTFC fs = TFC_Core.getPlayerFoodStats(p);
 								float nwl = fs.getMaxWater(p);
-								int rw = (int) nwl / 6;
+								int rw = (int) nwl / 2;
 								if (sacFS.getFluid() == TFCFluids.FRESHWATER) {
 										if (fs.needDrink()) {
 												fs.restoreWater(p, rw);
@@ -393,35 +381,35 @@ public class ItemJug extends Item implements ISize, IFluidContainerItem {
 				private int z;
 				private boolean isWater;
 
-				public int getX() {
+				public int getX () {
 						return x;
 				}
 
-				public void setX(int x) {
+				public void setX (int x) {
 						this.x = x;
 				}
 
-				public int getY() {
+				public int getY () {
 						return y;
 				}
 
-				public void setY(int y) {
+				public void setY (int y) {
 						this.y = y;
 				}
 
-				public int getZ() {
+				public int getZ () {
 						return z;
 				}
 
-				public void setZ(int z) {
+				public void setZ (int z) {
 						this.z = z;
 				}
 
-				public boolean isWater() {
+				public boolean isWater () {
 						return isWater;
 				}
 
-				public void setWater(boolean isWater) {
+				public void setWater (boolean isWater) {
 						this.isWater = isWater;
 				}
 		}

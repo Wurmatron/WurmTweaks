@@ -21,10 +21,12 @@ public class WTItems {
 		public static ArrayList<Integer> itemJugValues = new ArrayList<Integer>();
 		public static ArrayList<String> itemCastNames = new ArrayList<String>();
 		public static ArrayList<String> itemMetalCastNames = new ArrayList<String>();
+		public static ArrayList<String> itemTokenNames = new ArrayList<String>();
 
 		public static HashMap<String, EnumChatFormatting> itemSpecialColors = new HashMap<String, EnumChatFormatting>();
 		public static HashMap<String, EnumFoodGroup[]> itemBasicFoodGroups = new HashMap<String, EnumFoodGroup[]>();
 		public static HashMap<String, EnumFoodGroup[]> itemPillFoodGroups = new HashMap<String, EnumFoodGroup[]>();
+		public static HashMap<String, EnumChatFormatting> itemTokenColors = new HashMap<String, EnumChatFormatting>();
 
 		public static Item itemMaterial;
 		public static Item itemSpecial;
@@ -33,6 +35,7 @@ public class WTItems {
 		public static ItemJug itemJug;
 		public static Item itemCast;
 		public static Item itemMetalCast;
+		public static Item itemToken;
 		// Credits
 		public static Item creditBismuth;
 		public static Item creditCopper;
@@ -95,14 +98,13 @@ public class WTItems {
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames, "itemMaterial"), "itemMaterial");
 				itemSpecialColors.put("creativeParts", EnumChatFormatting.DARK_PURPLE);
 				itemSpecialColors.put("redMatter", EnumChatFormatting.DARK_RED);
-				itemSpecialColors.put("darkMatter", EnumChatFormatting.GRAY);
 				itemSpecialColors.put("darkMatter", EnumChatFormatting.DARK_PURPLE);
 				itemSpecialColors.put("creativePartsEnergy", EnumChatFormatting.DARK_PURPLE);
 				itemSpecialNames.add("darkMatter");
 				itemSpecialNames.add("redMatter");
 				itemSpecialNames.add("creativeParts");
 				itemSpecialNames.add("creativePartsEnergy");
-				registerItem(itemSpecial = new ItemSpecial(itemSpecialNames, itemSpecialColors), "itemSpecial");
+				registerItem(itemSpecial = new ItemSpecial(itemSpecialNames, itemSpecialColors).setUnlocalizedName("itemSpecial"), "itemSpecial");
 				itemBasicFoodGroups.put("foodFruit", new EnumFoodGroup[] {EnumFoodGroup.Fruit});
 				itemBasicFoodGroups.put("foodGrain", new EnumFoodGroup[] {EnumFoodGroup.Grain});
 				itemBasicFoodGroups.put("foodProtein", new EnumFoodGroup[] {EnumFoodGroup.Protein});
@@ -181,7 +183,12 @@ public class WTItems {
 				itemDirtyNames.add("dirtyTin");
 				itemDirtyNames.add("dirtyZinc");
 				registerItem(itemDirty = new ItemDirty(itemDirtyNames), "itemDirty");
-				registerItem(itemJug = new ItemJug(24), "itemJug");
+				registerItem(itemJug = new ItemJug(2), "itemJug_2");
+				registerItem(itemJug = new ItemJug(4), "itemJug_4");
+				registerItem(itemJug = new ItemJug(6), "itemJug_6");
+				registerItem(itemJug = new ItemJug(12), "itemJug_12");
+				registerItem(itemJug = new ItemJug(24), "itemJug_24");
+				registerItem(itemJug = new ItemJug(48), "itemJug_48");
 				registerItem(creditBismuth = new ItemCredit("bismuthCredit"), "creditBismuth");
 				registerItem(creditCopper = new ItemCredit("copperCredit"), "creditCopper");
 				registerItem(creditGold = new ItemCredit("goldCredit"), "creditGold");
@@ -240,6 +247,9 @@ public class WTItems {
 				itemMetalCastNames.add("metalTin");
 				itemMetalCastNames.add("metalZinc");
 				registerItem(itemMetalCast = new ItemMaterial(itemMetalCastNames, "itemMetalCast"), "itemMetalCast");
+				itemTokenNames.add("token");
+				itemTokenColors.put("token", EnumChatFormatting.LIGHT_PURPLE);
+				registerItem(itemToken = new ItemToken(itemTokenNames, itemTokenColors).setUnlocalizedName("token"), "token");
 		}
 
 		private static void registerItem (Item item, String name) {

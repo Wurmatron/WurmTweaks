@@ -203,4 +203,15 @@ public class WurmTweaksItems {
 		public static final ItemStack castSterlingSilver = new ItemStack(WTItems.itemMetalCast, 1, 19);
 		public static final ItemStack castTin = new ItemStack(WTItems.itemMetalCast, 1, 20);
 		public static final ItemStack castZinc = new ItemStack(WTItems.itemMetalCast, 1, 21);
+		// Food
+		public static final ItemStack foodFruit = new ItemStack(WTItems.itemBasicFood, 1, 0);
+		public static final ItemStack foodGrain = new ItemStack(WTItems.itemBasicFood, 1, 1);
+		public static final ItemStack foodMeat = new ItemStack(WTItems.itemBasicFood, 1, 2);
+		public static final ItemStack foodVegtable = new ItemStack(WTItems.itemBasicFood, 1, 3);
+		public static final ItemStack foodCheese = new ItemStack(WTItems.itemBasicFood, 1, 4);
+		public static final ItemStack foodHumanSoul = new ItemStack(WTItems.itemBasicFood, 1, 5);
+		public static final ItemStack foodMelonBread = new ItemStack(WTItems.itemBasicFood, 1, 6);
+		public static final ItemStack foodBagel = new ItemStack(WTItems.itemBasicFood, 1, 7);
+		public static final ItemStack foodDeathMelon = new ItemStack(WTItems.itemBasicFood, 1, 8);
+		public static final ItemStack foodGods = new ItemStack(WTItems.itemBasicFood, 19);
 }

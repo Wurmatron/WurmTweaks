@@ -28,6 +28,6 @@ public class qCraftRecipes {
 
 		@Optional.Method (modid = "techreborn")
 		private static void addCentrifugeRecipe () {
-				TechRebornHelper.addCentrifugeRecipe(WurmTweaksItems.itemQuantumFoam, null, new ItemStack(QCraft.Items.quantumDust, 4), null, null, null, 100, 512);
+				TechRebornHelper.addCentrifugeRecipe(WurmTweaksItems.dirtyBismuth, null, new ItemStack(QCraft.Items.quantumDust, 4), null, null, null, 100, 512);
 		}
 }

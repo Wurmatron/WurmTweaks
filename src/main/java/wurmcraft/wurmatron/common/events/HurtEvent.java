@@ -11,6 +11,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import tconstruct.world.entity.KingBlueSlime;
 import wurmcraft.wurmatron.common.handler.ArmorHandler;
 
 import java.util.Random;
@@ -43,6 +44,8 @@ public class HurtEvent {
 						entity.setHealth(0);
 						entity.setDead();
 				}
+				if(e.entity instanceof KingBlueSlime)
+						e.entity.setDead();
 		}
 
 		/**

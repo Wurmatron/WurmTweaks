@@ -4,7 +4,6 @@ import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -24,8 +23,15 @@ public class VinilaRecipes {
 		private static final RecipeHelper r = new RecipeHelper();
 
 		public static void addRecipes () {
-				for (ItemStack stone : OreDictionary.getOres("packSmoothStone"))
-						GameRegistry.addSmelting(stone, new ItemStack(Blocks.stone), 1f);
+				MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.stone), new ItemStack(Blocks.cobblestone));
+				for (int c = 0; c < 2; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgIn, 1, c), new ItemStack(TFCBlocks.stoneIgInCobble, 1, c));
+				for (int c = 0; c < 3; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgEx, 1, c), new ItemStack(TFCBlocks.stoneIgExCobble, 1, c));
+				for (int c = 0; c < 7; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneSed, 1, c), new ItemStack(TFCBlocks.stoneSedCobble, 1, c));
+				for (int c = 0; c < 5; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneMM, 1, c), new ItemStack(TFCBlocks.stoneMM, 1, c));
 				r.addCircleWCenter(new ItemStack(Blocks.bedrock, 2), ExtraUtils.bedrockiumBlock, WurmTweaksItems.itemAntiMatter);
 				r.addShaped(Blocks.dispenser, "CCC", "CBC", "CRC", 'C', "packCobblestone", 'B', new ItemStack(TFCItems.bow, 1, OreDictionary.WILDCARD_VALUE), 'R', Items.redstone);
 				r.add2X(new ItemStack(Blocks.sandstone, 4, 0), "packSand");
@@ -43,10 +49,10 @@ public class VinilaRecipes {
 						r.addShapeless(new ItemStack(Blocks.stained_hardened_clay, 1, d), Blocks.hardened_clay, RecipeHelper.dye.get(d));
 						r.addShapeless(new ItemStack(Blocks.stained_hardened_clay, 1, d), new ItemStack(Blocks.stained_hardened_clay, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
 						r.addCircleWCenter(new ItemStack(Blocks.stained_hardened_clay, 8, d), new ItemStack(Blocks.stained_hardened_clay, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
-						r.add3X(Blocks.hay_block, TFCBlocks.thatch);
 						r.addShapeless(new ItemStack(Blocks.carpet, 1, d), new ItemStack(Blocks.carpet, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
 						r.addCircleWCenter(new ItemStack(Blocks.carpet, 8, d), new ItemStack(Blocks.carpet, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
 				}
+				r.add3X(Blocks.hay_block, TFCBlocks.thatch);
 				r.addSlabs(new ItemStack(Blocks.stone_slab, 12, 0), "packSmoothStone");
 				r.addSlabs(new ItemStack(Blocks.stone_slab, 12, 1), new ItemStack(Blocks.sandstone, 1, OreDictionary.WILDCARD_VALUE));
 				r.addSlabs(new ItemStack(Blocks.stone_slab, 12, 3), "packCobblestone");
@@ -55,7 +61,7 @@ public class VinilaRecipes {
 				r.addCross(Blocks.tnt, Items.gunpowder, "packSand");
 				r.addShaped(new ItemStack(Blocks.obsidian, 8), "XA", "AX", 'X', TFCItems.blueSteelBucketLava, 'A', TFCItems.redSteelBucketWater);
 				r.addShaped(new ItemStack(Blocks.obsidian, 8), "XA", "AX", 'X', TFCItems.redSteelBucketWater, 'A', TFCItems.blueSteelBucketLava);
-				r.addCircleWCenter(Blocks.cobblestone, "packCobblestone", TFCItems.wroughtIronSheet);
+				r.addCircleWCenter(Blocks.furnace, "packCobblestone", TFCItems.wroughtIronSheet);
 				r.addPressurePlate(Blocks.stone_pressure_plate, "packSmoothStone");
 				r.addPressurePlate(Blocks.wooden_pressure_plate, "packLog");
 				r.addPressurePlate(Blocks.heavy_weighted_pressure_plate, TFCItems.wroughtIronSheet);
@@ -68,17 +74,16 @@ public class VinilaRecipes {
 				r.addCircleWCenter(Blocks.jukebox, "packLog", "packGem");
 				r.addSlabs(new ItemStack(Blocks.fence), "packStick");
 				r.addShaped(Blocks.fence_gate, "XGX", "XGX", 'X', "packStick", 'G', "packLog");
-				r.addCircleWCenter(new ItemStack(Blocks.stained_glass, 8, 0), "packGlass", "dye");
 				r.addSlabs(new ItemStack(Blocks.stained_glass_pane, 8, 0), new ItemStack(Blocks.stained_glass, 1, 0));
 				r.add2X(new ItemStack(Blocks.stonebrick, 4, 0), "packSmoothStone");
 				r.add2X(new ItemStack(Blocks.stonebrick, 4, 1), Blocks.stonebrick);
 				r.addSlabs(new ItemStack(Blocks.iron_bars, 12, 0), TFCItems.wroughtIronSheet);
 				r.addSlabs(new ItemStack(Blocks.glass_pane, 12, 0), Blocks.glass);
+				r.addCircleWCenter(new ItemStack(Blocks.stained_glass, 8, 0), "packGlass", "dye");
 				r.addShaped(Blocks.enchanting_table, " C ", "XAX", "BBB", 'B', Blocks.obsidian, 'C', Items.book, 'X', "packGemExquisite", 'A', TFCItems.blueSteelSheet2x);
 				r.addSimpleCirc(Blocks.redstone_lamp, Blocks.glowstone, Items.redstone);
 				r.addShapeless(Blocks.tripwire_hook, TFCItems.wroughtIronSheet, Items.redstone, Items.string);
 				r.addShaped(Blocks.beacon, "GGG", "GXG", "BBB", 'G', "packGlass", 'X', Items.nether_star, 'B', Blocks.obsidian);
-				r.addShaped(Blocks.anvil, "BBB", " S ", "S S", 'B', WurmTweaksBlocks.blockSteel, 'S', TFCItems.steelSheet);
 				r.addBasicMachineRecipe(Blocks.daylight_detector, Items.quartz, Items.redstone, Items.glowstone_dust, TFCItems.wroughtIronSheet);
 				r.addShapeless(new ItemStack(Items.redstone, 32), new ItemStack(Blocks.redstone_block));
 				r.addShaped(new ItemStack(Blocks.hopper), "SCS", "S S", " S ", 'S', TFCItems.wroughtIronIngot, 'C', "packChest");
@@ -120,6 +125,17 @@ public class VinilaRecipes {
 				r.addShaped(Items.boat, "L L", "LLL", 'L', "packLumber");
 				r.addShaped(Items.brewing_stand, " S ", "CCC", 'S', Items.blaze_rod, 'C', "packCobblestone");
 				r.addShapeless(Items.magma_cream, Items.slime_ball, Items.blaze_powder);
+				r.addShaped(new ItemStack(Blocks.lever), "S", "R", 'S', "packStick", 'R', "packRock");
+				r.addCircleWCenter(new ItemStack(Items.golden_apple, 1, 0), TFCItems.goldSheet, TFCHelper.getFood(TFCItems.redApple, 160));
+				r.addCircleWCenter(new ItemStack(Items.golden_apple, 1, 1), WurmTweaksBlocks.blockGold, new ItemStack(Items.golden_apple, 1, 0));
+				r.addShapeless(new ItemStack(TFCItems.powder, 32, 6), new ItemStack(Blocks.lapis_block));
+				r.add2X(Blocks.wool, new ItemStack(TFCItems.woolCloth));
+				r.addShapeless(new ItemStack(TFCItems.coal, 1, 1), new ItemStack(Items.coal, 1, 1));
+				r.addShapeless(new ItemStack(TFCItems.coal, 1, 0), new ItemStack(Items.coal, 1, 0));
+				r.addShapeless(new ItemStack(TFCItems.gemEmerald, 1, 2), new ItemStack(Items.emerald, 1, 0));
+				r.addShapeless(new ItemStack(TFCItems.gemDiamond, 1, 2), new ItemStack(Items.diamond, 1, 0));
+				r.addShapeless(new ItemStack(Items.iron_ingot), new ItemStack(TFCItems.wroughtIronIngot, 1, 0));
+				r.addShapeless(new ItemStack(Items.gold_ingot), new ItemStack(TFCItems.goldIngot, 1, 0));
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();
@@ -133,14 +149,22 @@ public class VinilaRecipes {
 
 		@Optional.Method (modid = "IC2")
 		private static void addExtractorRecipes () {
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.grass, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.grass));
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.grass2, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.grass));
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.gravel, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel));
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.gravel2, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.gravel));
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.dirt, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.dirt));
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.dirt2, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.dirt));
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.sand, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.sand));
-				ICHelper.addExtractorRecipe(new ItemStack(TFCBlocks.sand2, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Blocks.sand));
+				for (int c = 0; c < 15; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.grass), new ItemStack(TFCBlocks.grass, 1, c));
+				for (int c = 0; c < 4; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.grass), new ItemStack(TFCBlocks.grass2, 1, c));
+				for (int c = 0; c < 15; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.gravel), new ItemStack(TFCBlocks.gravel, 1, c));
+				for (int c = 0; c < 4; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.gravel), new ItemStack(TFCBlocks.gravel2, 1, c));
+				for (int c = 0; c < 15; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.sand), new ItemStack(TFCBlocks.sand, 1, c));
+				for (int c = 0; c < 4; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.sand), new ItemStack(TFCBlocks.sand2, 1, c));
+				for (int c = 0; c < 15; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.dirt), new ItemStack(TFCBlocks.dirt, 1, c));
+				for (int c = 0; c < 4; c++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.dirt), new ItemStack(TFCBlocks.dirt2, 1, c));
 		}
 
 		private static void addFurnaceRecipes () {

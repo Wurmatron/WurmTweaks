@@ -162,6 +162,7 @@ public class BuildcraftRecipes {
 				r.addShapeless(BuildCraftTransport.pipePowerSandstone, BuildCraftTransport.pipeItemsSandstone, Items.redstone);
 				r.addShapeless(BuildCraftTransport.gateCopier, BuildCraftCore.wrenchItem, "packGemChipped");
 				r.addShapeless(new ItemStack(BuildCraftTransport.plugItem, 8), BuildCraftTransport.pipeItemsStone);
+				r.addShapeless(BuildCraftTransport.pipeWaterproof, "dyeGreen");
 		}
 
 		@Optional.Method (modid = "BuildCraft|Silicon")

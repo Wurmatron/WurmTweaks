@@ -24,6 +24,7 @@ import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.extrautils.ExtraUtilsHelper;
 import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
+import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
 /**
@@ -37,6 +38,7 @@ public class ExtraUtilsRecipes {
 		@Optional.Method (modid = "ExtraUtilities")
 		public static void addRecipes () {
 				LogHandler.info("Adding Extra Util Recipes");
+				MachineHelper.addFurnaceRecipes(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0), new ItemStack(Blocks.stone, 9));
 				r.addShaped(GameRegistry.findItemStack("ExtraUtilities", "enderCollector", 1), "EQE", " E ", "OOO", 'E', TFItems.ingotEnderium, 'O', Blocks.obsidian, 'Q', WurmTweaksItems.itemQuantumFoam);
 				r.addShaped(ExtraUtils.qed, "XAX", "BXB", "BBB", 'X', WurmTweaksItems.itemQuantumSingularity, 'A', WurmTweaksItems.ingotRainbowSteel, 'B', WurmTweaksBlocks.blockBlueSteel);
 				r.addShaped(new ItemStack(ExtraUtils.qed, 1, 2), " E ", " E ", "PPP", 'E', TFItems.ingotEnderium, 'C', new ItemStack(Blocks.crafting_table), 'P', WurmTweaksBlocks.blockBlueSteel, 'C', AdvancedSolarPanel.itemQuantumCore);

@@ -112,10 +112,10 @@ public class TechRebornRecipes {
 		}
 
 		private static void addAlloySmelter () {
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 11), new ItemStack(TFCItems.zincIngot, 1), new ItemStack(TFCItems.brassIngot, 12), 80, 32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 11), new ItemStack(TFCItems.tinIngot, 1), new ItemStack(TFCItems.bronzeIngot, 12), 80, 32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 2), new ItemStack(TFCItems.goldIngot, 10), new ItemStack(TFCItems.roseGoldIngot, 12), 80, 32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 3), new ItemStack(TFCItems.goldIngot, 10), new ItemStack(TFCItems.sterlingSilverIngot, 13), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 11, 0), new ItemStack(TFCItems.zincIngot, 1, 0), new ItemStack(TFCItems.brassIngot, 12, 0), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 11, 0), new ItemStack(TFCItems.tinIngot, 1, 0), new ItemStack(TFCItems.bronzeIngot, 12, 0), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 2, 0), new ItemStack(TFCItems.goldIngot, 10, 0), new ItemStack(TFCItems.roseGoldIngot, 12, 0), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.copperIngot, 3, 0), new ItemStack(TFCItems.goldIngot, 10, 0), new ItemStack(TFCItems.sterlingSilverIngot, 13, 0), 80, 32);
 		}
 
 		private static void addBlastFurnaceRecipes () {
@@ -125,13 +125,13 @@ public class TechRebornRecipes {
 		private static void adAssemblingMachineRecipes () {
 				for (ItemStack chest : OreDictionary.getOres("packChest"))
 						TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(TFCItems.steelIngot), chest, new ItemStack(Blocks.chest), 80, 32);
-				for(ItemStack stick : OreDictionary.getOres("packStick")) {
+				for (ItemStack stick : OreDictionary.getOres("packStick")) {
 						TechRebornHelper.adAssemblingMachineRecipe(stick, new ItemStack(TFCItems.coal, 1, 1), new ItemStack(Blocks.torch), 80, 32);
 						TechRebornHelper.adAssemblingMachineRecipe(stick, new ItemStack(TFCItems.coal, 1, 0), new ItemStack(Blocks.torch), 80, 32);
 				}
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.wool), null,new ItemStack(TFCItems.woolYarn,8),80,32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.woolYarn,16), null,new ItemStack(TFCItems.woolCloth),80,32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(Items.string,24), null,new ItemStack(TFCItems.silkCloth),80,32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.juteFiber,12), null,new ItemStack(TFCItems.burlapCloth),80,32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.wool), null, new ItemStack(TFCItems.woolYarn, 8), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.woolYarn, 16), null, new ItemStack(TFCItems.woolCloth), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(Items.string, 24), null, new ItemStack(TFCItems.silkCloth), 80, 32);
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.juteFiber, 12), null, new ItemStack(TFCItems.burlapCloth), 80, 32);
 		}
 }
