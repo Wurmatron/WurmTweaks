@@ -35,7 +35,7 @@ public class AvaritiaRecipes {
 				r.addCrossWCenter(new ItemStack(LudicrousItems.resource, 1, 6), new ItemStack(LudicrousItems.resource, 1, 4), WurmTweaksItems.ingotRainbowSteel, "packGemBlock");
 				r.addCrossWCenter(new ItemStack(LudicrousItems.resource, 1, 5), new ItemStack(LudicrousItems.resource, 1, 1), new ItemStack(LudicrousItems.resource, 1, 6), "packGemBlock");
 				r.addShaped9X9Recipe(new ItemStack(LudicrousItems.matter_cluster, 1, 0), "  XXXXX  ", " XIIIIIX ", "XIBBBBBIX", "XIBBBBBIX", "XIBBBBBIX", "XIBBBBBIX", "XIBBBBBIX", " XIIIIIX ", "  XXXXX  ", 'X', TFCItems.blackSteelIngot, 'I', Api.INSTANCE.materials().materialMatterBall.stack(1), 'B', WurmTweaksItems.itemMixedSheet);
-				r.add3X(new ItemStack(LudicrousBlocks.resource_block, 1, 0), new ItemStack(LudicrousItems.resource, 1, 1));
+				r.add3X(new ItemStack(LudicrousBlocks.resource_block, 1, 0), new ItemStack(LudicrousItems.resource, 1, 4));
 				r.add3X(new ItemStack(LudicrousBlocks.resource_block, 1, 1), new ItemStack(LudicrousItems.resource, 1, 6));
 				r.addShaped9X9Recipe(new ItemStack(LudicrousItems.infinity_helm, 1, 0), " IIIIIII ", "IXXXXXXXI", "IXAA AAXI", "IXAA AAXI", "IX     XI", "IX JLJ XI", "IXXXXXXXI", 'I', new ItemStack(LudicrousItems.resource, 1, 6), 'X', new ItemStack(LudicrousItems.matter_cluster, 1, 0), 'A', "packGemBlock", 'J', new ItemStack(LudicrousItems.resource, 1, 5), 'L', WurmTweaksItems.itemAntiMatter);
 				r.addShaped9X9Recipe(new ItemStack(LudicrousItems.infinity_armor, 1, 0), " II   II ", "III   III", "IIIIIIIII", " IXXXXXI ", " IXAAAXI ", " IXAAAXI ", " IXAAAXI ", "  IIIII  ", 'I', new ItemStack(LudicrousItems.resource, 1, 4), 'X', new ItemStack(LudicrousItems.resource, 1, 6), 'A', new ItemStack(LudicrousItems.matter_cluster, 1, 0));

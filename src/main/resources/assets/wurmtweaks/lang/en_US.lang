@@ -346,3 +346,10 @@ fluid.packFluidPigIron=Pig Iron
 fluid.packFluidRoseGold=Rose Gold
 fluid.packFluidZinc=Zinc
 fluid.packFluidTin=Tin
+# Jug
+item.itemJug_2.name=2x Water Jug
+item.itemJug_4.name=4x Water Jug
+item.itemJug_6.name=6x Water Jug
+item.itemJug_12.name=12x Water Jug
+item.itemJug_24.name=24x Water Jug
+item.itemJug_48.name=48x Water Jug
