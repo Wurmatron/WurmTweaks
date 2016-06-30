@@ -16,9 +16,6 @@ import net.minecraft.entity.monster.EntityGiantZombie;
 import net.minecraft.world.biome.BiomeGenBase;
 import thaumcraft.common.entities.monster.*;
 import thaumcraft.common.entities.monster.boss.EntityEldritchGolem;
-import thehippomaster.MutantCreatures.MutantCreeper;
-import thehippomaster.MutantCreatures.MutantEnderman;
-import thehippomaster.MutantCreatures.MutantZombie;
 
 import java.util.ArrayList;
 
@@ -78,9 +75,6 @@ public class MobBiomeSpawn {
 						addBiome(EntityBlizz.class, 5, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntityCultistKnight.class, 20, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntityMindSpider.class, 50, 3, 10, EnumCreatureType.monster, biome);
-						addBiome(MutantCreeper.class, 25, 1, 1, EnumCreatureType.monster, biome);
-						addBiome(MutantEnderman.class, 25, 1, 1, EnumCreatureType.monster, biome);
-						addBiome(MutantZombie.class, 35, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntityEndermanTFC.class, 50, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntityZombieTFC.class, 70, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntitySkeletonTFC.class, 60, 1, 1, EnumCreatureType.monster, biome);
