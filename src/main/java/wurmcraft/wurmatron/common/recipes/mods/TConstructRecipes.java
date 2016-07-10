@@ -564,7 +564,7 @@ public class TConstructRecipes {
 
 		private static void addMaterials () {
 				// Copper
-				ToolMaterial TCopper = new ToolMaterial("TCopper", "TFCCopper", 5, 600, 800, 170, 0, 0, 0, EnumChatFormatting.AQUA.toString(), 0x33100B);
+				ToolMaterial TCopper = new ToolMaterial("TCopper", "TFCCopper", 5, 600, 800, 170, 1f, 0, 0, EnumChatFormatting.AQUA.toString(), 0x33100B);
 				TConstructRegistry.addtoolMaterial(201, TCopper);
 				TConstructRegistry.addArrowMaterial(201, 0.01f, 0.6f);
 				TConstructRegistry.addBowMaterial(201, 110, 4f);
@@ -572,7 +572,7 @@ public class TConstructRecipes {
 				addRepairMaterial(201, new ItemStack(TFCItems.copperIngot));
 				TConstructRegistry.addDefaultToolPartMaterial(201);
 				// Bronze
-				ToolMaterial TBronze = new ToolMaterial("TBronze", "TFCBronze", 5, 1300, 1100, 225, 0, 0, 0, EnumChatFormatting.GOLD.toString(), 0x4B4021);
+				ToolMaterial TBronze = new ToolMaterial("TBronze", "TFCBronze", 5, 1300, 1100, 225, 1f, 0, 0, EnumChatFormatting.GOLD.toString(), 0x4B4021);
 				TConstructRegistry.addtoolMaterial(202, TBronze);
 				TConstructRegistry.addArrowMaterial(202, 0.04f, 0.4f);
 				TConstructRegistry.addBowMaterial(202, 130, 4f);
@@ -580,7 +580,7 @@ public class TConstructRecipes {
 				addRepairMaterial(202, new ItemStack(TFCItems.bronzeIngot));
 				TConstructRegistry.addDefaultToolPartMaterial(202);
 				// Bismuth Bronze
-				ToolMaterial TBismuthBronze = new ToolMaterial("TBismuthBronze", "Bismuth Bronze", 5, 1200, 1000, 215, 0, 0, 0, EnumChatFormatting.GOLD.toString(), 0x142B17);
+				ToolMaterial TBismuthBronze = new ToolMaterial("TBismuthBronze", "Bismuth Bronze", 5, 1200, 1000, 215, 1f, 0, 0, EnumChatFormatting.GOLD.toString(), 0x142B17);
 				TConstructRegistry.addtoolMaterial(203, TBismuthBronze);
 				TConstructRegistry.addArrowMaterial(203, 0.2f, 0.6f);
 				TConstructRegistry.addBowMaterial(203, 120, 6f);
@@ -588,7 +588,7 @@ public class TConstructRecipes {
 				addRepairMaterial(203, new ItemStack(TFCItems.bismuthBronzeIngot));
 				TConstructRegistry.addDefaultToolPartMaterial(203);
 				// Black Bronze
-				ToolMaterial TBlackBronze = new ToolMaterial("TBlackBronze", "Black Bronze", 5, 1460, 900, 235, 0, 0, 0, EnumChatFormatting.GOLD.toString(), 0x271433);
+				ToolMaterial TBlackBronze = new ToolMaterial("TBlackBronze", "Black Bronze", 5, 1460, 900, 235, 1f, 0, 0, EnumChatFormatting.GOLD.toString(), 0x271433);
 				TConstructRegistry.addtoolMaterial(204, TBlackBronze);
 				TConstructRegistry.addArrowMaterial(204, 0.1f, 0.6f);
 				TConstructRegistry.addBowMaterial(204, 100, 8f);
@@ -596,7 +596,7 @@ public class TConstructRecipes {
 				addRepairMaterial(204, new ItemStack(TFCItems.blackBronzeIngot));
 				TConstructRegistry.addDefaultToolPartMaterial(204);
 				// Wrought Iron
-				ToolMaterial TWroughtIron = new ToolMaterial("TWroughtIron", "Wrought Iron", 6, 2200, 1200, 245, 0, 0, 0, EnumChatFormatting.GOLD.toString(), 0x565656);
+				ToolMaterial TWroughtIron = new ToolMaterial("TWroughtIron", "Wrought Iron", 6, 2200, 1200, 245, 1f, 0, 0, EnumChatFormatting.GOLD.toString(), 0x565656);
 				TConstructRegistry.addtoolMaterial(205, TWroughtIron);
 				TConstructRegistry.addArrowMaterial(205, 0.0f, 0.6f);
 				TConstructRegistry.addBowMaterial(205, 85, 8f);
@@ -604,11 +604,11 @@ public class TConstructRecipes {
 				addRepairMaterial(5, new ItemStack(TFCItems.wroughtIronIngot));
 				TConstructRegistry.addDefaultToolPartMaterial(205);
 				// Steel
-				ToolMaterial TSeel = new ToolMaterial("TSeel", "TFC_Steel", 7, 3300, 1400, 270, 1f, 0, 0, EnumChatFormatting.GOLD.toString(), 0x2A2A2A);
-				TConstructRegistry.addtoolMaterial(206, TSeel);
+				ToolMaterial TSteel = new ToolMaterial("TFCSteel", "TFCSteel", 7, 3300, 1400, 270, 1f, 0, 0, EnumChatFormatting.GOLD.toString(), 0x2A2A2A);
+				TConstructRegistry.addtoolMaterial(206, TSteel);
 				TConstructRegistry.addArrowMaterial(206, 0.0f, 0.6f);
 				TConstructRegistry.addBowMaterial(206, 100, 8f);
-				TConstructRegistry.toolMaterials.put(206, TSeel);
+				TConstructRegistry.toolMaterials.put(206, TSteel);
 				addRepairMaterial(206, new ItemStack(TFCItems.steelIngot));
 				TConstructRegistry.addDefaultToolPartMaterial(206);
 				// Black Steel

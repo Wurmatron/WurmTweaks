@@ -6,6 +6,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import org.lwjgl.input.Keyboard;
@@ -32,7 +33,7 @@ public class ToolTipEvent {
 								e.toolTip.add(EnumChatFormatting.GRAY + "Used to make flux");
 				if (e.itemStack != null && e.itemStack.getItem() == Item.getItemFromBlock(TFCBlocks.stoneIgIn) || e.itemStack.getItem() == Item.getItemFromBlock(TFCBlocks.stoneIgEx))
 						e.toolTip.add(EnumChatFormatting.GRAY + "Used to make an stone anvil");
-				if (e.itemStack != null && e.itemStack.getItem() == Item.getItemFromBlock(Blocks.bed))
+				if (e.itemStack != null && e.itemStack.getItem() == Item.getItemFromBlock(Blocks.bed) || e.itemStack == new ItemStack(Blocks.bed))
 						e.toolTip.add(EnumChatFormatting.RED + "Place this below 128 for it to act correctly");
 		}
 }

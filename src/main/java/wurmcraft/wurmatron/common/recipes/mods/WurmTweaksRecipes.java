@@ -41,7 +41,7 @@ public class WurmTweaksRecipes {
 				r.addCrossWCenter(WurmTweaksItems.itemMixedSheet, TFCItems.redSteelSheet2x, TFCItems.blueSteelSheet2x, WurmTweaksItems.ingotPurpleSteel);
 				r.addBasicMachineRecipe(WurmTweaksItems.ingotPinkSteel, "dyePink", WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotPurpleSteel);
 				r.addCrossWCenter(WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.itemMixedSheet, "dyeYellow", WurmTweaksItems.ingotEnergyReactor);
-				r.addCrossWCenter(WurmTweaksItems.ingotOrangeSteel, "dyeOrange", WurmTweaksItems.stableMagicEssence, WurmTweaksItems.itemCraftingCore);
+				r.addCrossWCenter(WurmTweaksItems.ingotOrangeSteel, "dyeOrange", WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemCraftingCore);
 				r.addCrossWCenter(WurmTweaksItems.ingotPurpleSteel, TFCItems.redSteelIngot, TFCItems.blueSteelIngot, "packGem");
 				r.addShapeless(WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.itemMixedSheet, "dyeCyan");
 				r.addCrossWCenter(WurmTweaksItems.ingotBrownSteel, "dyeBrown", WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemCraftingCore);
