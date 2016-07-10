@@ -251,20 +251,22 @@ public class MekanismRecipes {
 				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditNickel100, WurmTweaksItems.dirtyNickel);
 				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditIron100, WurmTweaksItems.dirtyIron);
 				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditZinc100, WurmTweaksItems.dirtyZinc);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial,1,2), new ItemStack(TFCItems.coal,1,0),32,200,null,0);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial,1,2), new ItemStack(TFCItems.coal,4,1),32,200,null,0);
 		}
 
 		private static void addCrusherRecipes () {
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyCopper, WurmTweaksItems.clumpCopper);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyGold, WurmTweaksItems.clumpGold);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyPlatinum, WurmTweaksItems.clumpPlatinum);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyIron, WurmTweaksItems.clumpIron);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtySilver, WurmTweaksItems.clumpSilver);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyTin, WurmTweaksItems.clumpTin);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyLead, WurmTweaksItems.clumpLead);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyBismuth, WurmTweaksItems.clumpBismuth);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyNickel, WurmTweaksItems.clumpNickel);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyIron, WurmTweaksItems.clumpIron);
-				MekanismHelper.addCrusherRecipe(WurmTweaksItems.dirtyZinc, WurmTweaksItems.clumpZinc);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpCopper, WurmTweaksItems.dirtyCopper);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpGold, WurmTweaksItems.dirtyGold);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpPlatinum, WurmTweaksItems.dirtyPlatinum);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpIron, WurmTweaksItems.dirtyIron);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpSilver, WurmTweaksItems.dirtySilver);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpTin, WurmTweaksItems.dirtyTin);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpLead, WurmTweaksItems.dirtyLead);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpBismuth, WurmTweaksItems.dirtyBismuth);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpNickel, WurmTweaksItems.dirtyNickel);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpIron, WurmTweaksItems.dirtyIron);
+				MekanismHelper.addCrusherRecipe(WurmTweaksItems.clumpZinc, WurmTweaksItems.dirtyZinc);
 		}
 
 		private static void addPurificationChamberRecipes () {

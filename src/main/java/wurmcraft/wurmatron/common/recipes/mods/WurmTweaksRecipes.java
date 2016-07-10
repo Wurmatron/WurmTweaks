@@ -39,15 +39,15 @@ public class WurmTweaksRecipes {
 				r.addShapeless(WurmTweaksItems.ingotGreenSteel, new ItemStack(ModItems.manaResource, 1, 4), WurmTweaksItems.itemMixedSheet);
 				r.addBasicMachineRecipe(WurmTweaksItems.ingotEnergyReactor, ExtraUtils.bedrockiumBlock, WurmTweaksItems.itemElectroMagneticShielding, BlockCell.cellResonant, "packGemBlock");
 				r.addCrossWCenter(WurmTweaksItems.itemMixedSheet, TFCItems.redSteelSheet2x, TFCItems.blueSteelSheet2x, WurmTweaksItems.ingotPurpleSteel);
-				r.addBasicMachineRecipe(WurmTweaksItems.ingotPinkSteel, "dyePink", WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotPurpleSteel);
+				r.addBasicMachineRecipe(WurmTweaksItems.ingotPinkSteel, "dyePink", WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotPurpleSteel);
 				r.addCrossWCenter(WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.itemMixedSheet, "dyeYellow", WurmTweaksItems.ingotEnergyReactor);
 				r.addCrossWCenter(WurmTweaksItems.ingotOrangeSteel, "dyeOrange", WurmTweaksItems.stableMagicEssence, WurmTweaksItems.itemCraftingCore);
 				r.addCrossWCenter(WurmTweaksItems.ingotPurpleSteel, TFCItems.redSteelIngot, TFCItems.blueSteelIngot, "packGem");
-				r.addShapeless(WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotOrangeSteel);
-				r.addCrossWCenter(WurmTweaksItems.ingotBrownSteel, "dyeBrown", WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemCraftingCore);
+				r.addShapeless(WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.itemMixedSheet, "dyeCyan");
+				r.addCrossWCenter(WurmTweaksItems.ingotBrownSteel, "dyeBrown", WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemCraftingCore);
 				r.addBasicMachineRecipe(WurmTweaksItems.ingotGraySteel, TFCItems.blackSteelSheet2x, TFCItems.steelSheet2x, "packGemExquisite", WurmTweaksItems.itemMixedSheet);
 				r.addShapeless(WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.itemCraftingCore, new ItemStack(EnderIO.itemAlloy, 1, 2), TFItems.ingotEnderium, com.brandon3055.draconicevolution.common.ModItems.draconicIngot, new ItemStack(ModItems.manaResource, 1, 14), IC2Items.getItem("iridiumPlate"));
-				// Magic Chunk
+				r.addBasicMachineRecipe(WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemCraftingCore, Items.ghast_tear, Items.glowstone_dust, ExtraUtils.bedrockium);
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.itemQuantumSingularity);
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumSingularity, ExtraUtils.bedrockium, "packGemExquisite", WurmTweaksItems.itemMixedSheet);
 				r.addBasicMachineRecipe(WurmTweaksItems.itemQuantumFoam, QCraft.Items.quantumDust, ExtraUtils.bedrockium, Items.glowstone_dust, Items.redstone);
@@ -74,9 +74,9 @@ public class WurmTweaksRecipes {
 				r.addBasicMachineRecipe(WurmTweaksItems.itemWandParts, new ItemStack(ConfigBlocks.blockMagicalLog, 1, 1), WurmTweaksItems.itemCraftingCore, WurmTweaksItems.ingotEnergyReactor, new ItemStack(ConfigItems.itemResource, 1, 0));
 				r.addSimpleCirc(new ItemStack(WurmTweaksItems.foodFruit.getItem(), 8, 0), "packFruit", "packFruit");
 				r.addSimpleCirc(new ItemStack(WurmTweaksItems.foodGrain.getItem(), 8, 1), "packGrain", "packGrain");
-				r.addSimpleCirc(new ItemStack(WurmTweaksItems.foodMeat.getItem(), 8, 2), "foodMeat", "foodMeat");
+				r.addSimpleCirc(new ItemStack(WurmTweaksItems.foodMeat.getItem(), 8, 2), "packMeat", "packMeat");
 				r.addSimpleCirc(new ItemStack(WurmTweaksItems.foodVegtable.getItem(), 8, 3), "packVegetable", "packVegetable");
-				r.addSimpleCirc(new ItemStack(WurmTweaksItems.foodCheese.getItem(), 8, 4), TFCHelper.getFood(TFCItems.cheese, 160), TFCHelper.getFood(TFCItems.cheese, 160));
+				r.addSimpleCirc(new ItemStack(WurmTweaksItems.foodCheese.getItem(), 8, 4), TFCHelper.getFood(TFCItems.cheese, 160), TFCItems.woodenBucketMilk);
 				r.addShapeless(new ItemStack(WTItems.itemBasicFood, 1, 5), Items.skull, new ItemStack(WurmTweaksItems.foodMeat.getItem(), 1, 1));
 				r.addSimpleCirc(new ItemStack(WTItems.itemBasicFood, 8, 6), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1));
 				r.addSimpleCirc(new ItemStack(WTItems.itemBasicFood, 5, 7), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1), new ItemStack(WurmTweaksItems.foodCheese.getItem(), 1, 4));

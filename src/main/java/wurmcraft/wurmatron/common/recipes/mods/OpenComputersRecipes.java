@@ -5,6 +5,7 @@ import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.registry.GameRegistry;
 import ic2.api.item.IC2Items;
 import mods.railcraft.common.blocks.RailcraftBlocks;
 import net.minecraft.init.Blocks;
@@ -124,5 +125,9 @@ public class OpenComputersRecipes {
 				r.addShapeless(li.cil.oc.api.Items.get("manual").createItemStack(1), Items.book, WurmTweaksItems.itemComputationalCore);
 				r.addBasicMachineRecipe(li.cil.oc.api.Items.get("hoverBoots").createItemStack(1), WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.ingotEnergyReactor, TFCItems.redSteelBoots);
 				r.addBasicMachineRecipe(li.cil.oc.api.Items.get("hoverBoots").createItemStack(1), WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.ingotEnergyReactor, TFCItems.blueSteelBoots);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 24), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 23), Items.redstone, "packIngot", TFCItems.blackSteelSheet);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 25), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 23), Items.redstone, TFCItems.platinumSheet, new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 24));
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 26), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 23), Items.redstone, TFCItems.blueSteelSheet2x, new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 25));
+				r.addCrossWCenter(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 23), Items.redstone, TFCItems.blackSteelSheet, Items.glowstone_dust);
 		}
 }

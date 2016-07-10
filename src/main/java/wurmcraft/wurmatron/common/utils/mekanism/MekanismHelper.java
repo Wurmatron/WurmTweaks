@@ -134,7 +134,7 @@ public class MekanismHelper {
 		@Optional.Method (modid = "Mekanism")
 		public static void addEnrichmentChamberRecipe (ItemStack output, ItemStack input) {
 				if (RecipeChecker.checkStack(output))
-						RecipeHandler.addEnrichmentChamberRecipe(output, input);
+						RecipeHandler.addEnrichmentChamberRecipe(input, output);
 		}
 
 		@Optional.Method (modid = "Mekanism")

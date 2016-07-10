@@ -4,6 +4,7 @@ import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.registry.GameRegistry;
 import dan200.QCraft;
 import dan200.qcraft.shared.QBlockRecipe;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
@@ -28,6 +29,6 @@ public class qCraftRecipes {
 
 		@Optional.Method (modid = "techreborn")
 		private static void addCentrifugeRecipe () {
-				TechRebornHelper.addCentrifugeRecipe(WurmTweaksItems.dirtyBismuth, null, new ItemStack(QCraft.Items.quantumDust, 4), null, null, null, 100, 512);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Items.glowstone_dust,8), null, new ItemStack(QCraft.Items.quantumDust, 4), null, null, null, 100, 512);
 		}
 }

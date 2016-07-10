@@ -22,6 +22,8 @@ import tconstruct.world.TinkerWorld;
 import terramisc.core.ModItems;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.fluid.WurmTweaksFluid;
+import wurmcraft.wurmatron.common.items.ItemCredit;
+import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
@@ -330,6 +332,18 @@ public class TConstructRecipes {
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinIngot2x), WurmTweaksBlocks.blockTin, 900, new FluidStack(WurmTweaksFluid.fluidTin, 2000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinSheet), WurmTweaksBlocks.blockTin, 1000, new FluidStack(WurmTweaksFluid.fluidTin, 2000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinSheet2x), WurmTweaksBlocks.blockTin, 1200, new FluidStack(WurmTweaksFluid.fluidTin, 4000));
+				for (int c = 0; c > ItemCredit.units.length; c++) {
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditBismuth, 1, c), WurmTweaksBlocks.blockBismuth, 400, new FluidStack(WurmTweaksFluid.fluidBismuth, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditGold, 1, c), WurmTweaksBlocks.blockGold, 400, new FluidStack(WurmTweaksFluid.fluidGold, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditLead, 1, c), WurmTweaksBlocks.blockLead, 400, new FluidStack(WurmTweaksFluid.fluidLead, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditNickel, 1, c), WurmTweaksBlocks.blockNickel, 400, new FluidStack(WurmTweaksFluid.fluidNickel, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditSilver, 1, c), WurmTweaksBlocks.blockSilver, 400, new FluidStack(WurmTweaksFluid.fluidSilver, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditCopper, 1, c), WurmTweaksBlocks.blockCopper, 400, new FluidStack(WurmTweaksFluid.fluidCopper, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditPlatinum, 1, c), WurmTweaksBlocks.blockPlatinum, 400, new FluidStack(WurmTweaksFluid.fluidPlatinum, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditZinc, 1, c), WurmTweaksBlocks.blockZinc, 400, new FluidStack(WurmTweaksFluid.fluidZinc, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditIron, 1, c), WurmTweaksBlocks.blockWroughtIron, 400, new FluidStack(WurmTweaksFluid.fluidWroughtIron, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditTin, 1, c), WurmTweaksBlocks.blockTin, 400, new FluidStack(WurmTweaksFluid.fluidTin, ItemCredit.units[c] * 100));
+				}
 		}
 
 		private static void addToolCasting () {
@@ -509,7 +523,7 @@ public class TConstructRecipes {
 				addCastingWithReverse(new ItemStack(TFCItems.bronzePickaxeHead), new FluidStack(WurmTweaksFluid.fluidBronze, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.blackBronzePickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.wroughtIronPickaxeHead), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), WurmTweaksItems.itemPickCast);
-				addCastingWithReverse(new ItemStack(TFCItems.steelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(new ItemStack(TFCItems.steelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidSteel, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.blackSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.redSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.blueSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemPickCast);

@@ -84,7 +84,7 @@ public class TechRebornRecipes {
 				r.addShaped(new ItemStack(TFCItems.zincIngot, 12), " U ", " U ", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
 				r.addShaped(new ItemStack(TFCItems.wroughtIronIngot, 12), "U U", " U ", " U ", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
 				r.addShaped(new ItemStack(TFCItems.steelIngot, 10), "U U", "U U", 'U', new ItemStack(techreborn.init.ModItems.uuMatter));
-				r.addCrossWCenter(new ItemStack(ModItems.parts, 1, 23), ExtraUtils.bedrockium, WurmTweaksItems.ingotTitanium, WurmTweaksItems.itemCraftingCore);
+				r.addCrossWCenter(new ItemStack(ModItems.parts, 1, 23), ExtraUtils.bedrockium, WurmTweaksItems.ingotOrangeSteel, WurmTweaksItems.itemCraftingCore);
 				addSawMillRecipes();
 				addFusionReactorRecipes();
 				addIndustrialElectrolyzerRecipes();
@@ -129,9 +129,9 @@ public class TechRebornRecipes {
 						TechRebornHelper.adAssemblingMachineRecipe(stick, new ItemStack(TFCItems.coal, 1, 1), new ItemStack(Blocks.torch), 80, 32);
 						TechRebornHelper.adAssemblingMachineRecipe(stick, new ItemStack(TFCItems.coal, 1, 0), new ItemStack(Blocks.torch), 80, 32);
 				}
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.wool), null, new ItemStack(TFCItems.woolYarn, 8), 80, 32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.woolYarn, 16), null, new ItemStack(TFCItems.woolCloth), 80, 32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(Items.string, 24), null, new ItemStack(TFCItems.silkCloth), 80, 32);
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.juteFiber, 12), null, new ItemStack(TFCItems.burlapCloth), 80, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(TFCItems.wool), null, new ItemStack(TFCItems.woolYarn, 8), 80, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(TFCItems.woolYarn, 16), null, new ItemStack(TFCItems.woolCloth), 80, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(Items.string, 24), null, new ItemStack(TFCItems.silkCloth), 80, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(TFCItems.juteFiber, 12), null, new ItemStack(TFCItems.burlapCloth), 80, 32);
 		}
 }

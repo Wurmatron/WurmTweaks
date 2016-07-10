@@ -23,7 +23,6 @@ import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
-import wurmcraft.wurmatron.common.utils.buildcraft.BuildCraftHelper;
 import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
@@ -55,6 +54,7 @@ public class EnderIORecipes {
 				r.addBasicMachineRecipe(EnderIO.blockPowerMonitor, EnderIO.itemAlloy, EnderIO.itemPowerConduit, EnderIO.itemRedstoneConduit, EnderIO.itemConduitProbe);
 				r.addBasicMachineRecipe(EnderIO.blockFarmStation, "packGemExquisite", "packSeed", TFCItems.redSteelBucketEmpty, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(EnderIO.blockWirelessCharger, "packGemBlock", WurmTweaksItems.itemQuantumCore, EnderIO.itemAlloy, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(EnderIO.blockVat, "packGemExquisite", EnderIO.itemAlloy, TFCItems.redSteelSheet2x, "packGlass");
 				r.addCircleWCenter(EnderIO.blockTank, EnderIO.itemAlloy, "packGlass");
 				r.addCircleWCenter(new ItemStack(EnderIO.blockTank, 1, 1), new ItemStack(EnderIO.itemAlloy, 1, 6), "packGlass");
 				r.addCircleWCenter(EnderIO.blockReservoir, "packGlass", Blocks.cauldron);
@@ -75,8 +75,6 @@ public class EnderIORecipes {
 				r.addShaped(new ItemStack(EnderIO.blockDarkSteelLadder, 8), "III", " I ", "III", 'I', new ItemStack(EnderIO.itemMaterial, 1, 6));
 				r.addCross(new ItemStack(EnderIO.blockReinforcedObsidian, 4), Blocks.obsidian, new ItemStack(EnderIO.itemMaterial, 1, 6));
 				r.addShaped(EnderIO.blockEnderRail, "E E", " R ", "E E", 'E', Items.ender_pearl, 'R', Blocks.rail);
-				// TODO Sag Mill Recipes
-				// TODO Alloy Smelter Recipes
 				// Find a way to get nbt to work with enderio farmer
 				FarmersCommune.joinCommune(new TreeFarmer(TFCBlocks.sapling, TFCBlocks.logNatural));
 				FarmersCommune.joinCommune(new TreeFarmer(TFCBlocks.sapling2, TFCBlocks.logNatural2));
@@ -92,7 +90,7 @@ public class EnderIORecipes {
 				r.addShaped(new ItemStack(EnderIO.itemLiquidConduit, 6, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', "packGlass");
 				r.addShaped(new ItemStack(EnderIO.itemLiquidConduit, 3, 1), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemLiquidConduit, 6, 0));
 				r.addShaped(new ItemStack(EnderIO.itemLiquidConduit, 3, 2), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemLiquidConduit, 1, 1));
-				r.addShaped(new ItemStack(EnderIO.itemItemConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemLiquidConduit, 1, 5));
+				r.addShaped(new ItemStack(EnderIO.itemItemConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', Items.redstone);
 				r.addShaped(new ItemStack(EnderIO.itemGasConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemMaterial, 1, 1));
 				r.addCircle(new ItemStack(EnderIO.blockConduitFacade, 8), new ItemStack(EnderIO.itemMaterial, 1, 1));
 				r.addCircleWCenter(new ItemStack(EnderIO.blockConduitFacade, 8, 1), new ItemStack(EnderIO.itemMaterial, 1, 1), "dustObsidian");
@@ -110,36 +108,32 @@ public class EnderIORecipes {
 				r.addShapeless(new ItemStack(EnderIO.itemMaterial, 1, 5), "packGemExquisite", WurmTweaksItems.itemMixedSheet, Items.ender_eye);
 				r.addShapeless(new ItemStack(EnderIO.itemMaterial, 1, 6), "packGemExquisite", WurmTweaksItems.itemMixedSheet);
 				r.addShapeless(new ItemStack(EnderIO.itemMaterial, 1, 8), "packGemExquisite", Items.ender_pearl);
-				// TODO Alloy ingots
 				r.addCrossWCenter(EnderIO.itemTravelStaff, new ItemStack(EnderIO.itemMaterial, 1, 5), new ItemStack(EnderIO.itemMaterial, 1, 1), "packGemExquisite");
 				r.addCrossWCenter(EnderIO.itemConduitProbe, new ItemStack(EnderIO.itemPowerConduit, 6, 2), new ItemStack(EnderIO.itemMaterial, 1, 1), Items.repeater);
 				r.addBasicMachineRecipe(DarkSteelItems.itemMagnet, "packIngot", WurmTweaksItems.ingotGreenSteel, TFCItems.redSteelSheet, "packChest");
 				r.addArmorRecipes(DarkSteelItems.itemDarkSteelHelmet, DarkSteelItems.itemDarkSteelChestplate, DarkSteelItems.itemDarkSteelLeggings, DarkSteelItems.itemDarkSteelBoots, new ItemStack(EnderIO.itemAlloy, 1, 6));
 				ArmorHandler.addArmorProtection(DarkSteelItems.itemDarkSteelHelmet, 2800, 2800, 2800);
+				ArmorHandler.addArmorProtection(DarkSteelItems.itemDarkSteelChestplate, 2800, 2800, 2800);
+				ArmorHandler.addArmorProtection(DarkSteelItems.itemDarkSteelLeggings, 2800, 2800, 2800);
+				ArmorHandler.addArmorProtection(DarkSteelItems.itemDarkSteelBoots, 2800, 2800, 2800);
 				r.addShaped(DarkSteelItems.itemDarkSteelAxe, "XX ", "XS ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				r.addShaped(DarkSteelItems.itemDarkSteelAxe, " XX", "XS ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				r.addShaped(DarkSteelItems.itemDarkSteelPickaxe, "XXX", " S ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				r.addShaped(DarkSteelItems.itemDarkSteelShears, "I ", " I", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShaped(DarkSteelItems.itemDarkSteelShears, " I", "I ", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShaped(ItemNBT.addDamage(new ItemStack(DarkSteelItems.itemDarkSteelSword), 600), " X ", " X ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
+				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), Items.redstone, TFCItems.blackSteelSheet, Items.glowstone_dust);
+				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), TFCItems.blackSteelSheet, Items.glowstone_dust);
+				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), TFCItems.blackSteelSheet, Items.glowstone_dust);
 				for (int m = 0; m < 7; m++)
 						r.addShapeless(new ItemStack(EnderIO.itemAlloy, 32, m), new ItemStack(EnderIO.blockIngotStorage, 1, m));
 				if (RecipeChecker.modExists("addCompressorRecipes"))
 						addCompressorRecipes();
-				if (RecipeChecker.modExists("BuildCraft|Core"))
-						addAssemblerRecipes();
 		}
 
 		@Optional.Method (modid = "IC2")
 		private static void addCompressorRecipes () {
 				for (int m = 0; m < 7; m++)
 						ICHelper.addCompressorRecipe(new ItemStack(EnderIO.itemAlloy, 32, m), new ItemStack(EnderIO.blockIngotStorage, 1, m));
-		}
-
-		@Optional.Method (modid = "BuildCraft|Core")
-		private static void addAssemblerRecipes () {
-				BuildCraftHelper.addAssemblerRecipes("enderio:capacitor1", 4000, new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), new ItemStack(Items.redstone, 8), new ItemStack(TFCItems.wroughtIronIngot, 4));
-				BuildCraftHelper.addAssemblerRecipes("enderio:capacitor2", 8000, new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), new ItemStack(Items.redstone, 8), new ItemStack(TFCItems.steelIngot, 4), new ItemStack(EnderIO.itemBasicCapacitor, 4, 0));
-				BuildCraftHelper.addAssemblerRecipes("enderio:capacitor3", 12000, new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), new ItemStack(Items.redstone, 32), new ItemStack(TFCItems.blackSteelIngot, 4), new ItemStack(EnderIO.itemBasicCapacitor, 4, 1));
 		}
 }

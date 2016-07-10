@@ -91,8 +91,8 @@ public class AERecipes {
 				r.addShapeless(Api.INSTANCE.materials().materialAnnihilationCore.stack(1), TFCItems.blackSteelSheet, Api.INSTANCE.materials().materialLogicProcessor.stack(1));
 				r.addCrossWCenter(Api.INSTANCE.materials().materialBasicCard.stack(4), TFCItems.blackSteelSheet, WurmTweaksItems.itemQuantumFoam, "packIngot");
 				r.addShaped(Api.INSTANCE.materials().materialBlankPattern.stack(8), "XAX", "ABA", "CCC", 'X', TFCItems.bismuthSheet, 'A', Items.glowstone_dust, 'B', TFCItems.blackBronzeSheet, 'C', TFCItems.blackSteelSheet);
-				r.addCrossWCenter(Api.INSTANCE.materials().materialCalcProcessor.stack(2), TFCItems.blackSteelSheet, TFCItems.redSteelSheet, WurmTweaksItems.ingotCyanSteel);
-				r.addCrossWCenter(Api.INSTANCE.materials().materialLogicProcessor.stack(2), TFCItems.blackSteelSheet, TFCItems.redSteelSheet, WurmTweaksItems.ingotOrangeSteel);
+				r.addCrossWCenter(Api.INSTANCE.materials().materialCalcProcessor.stack(2), TFCItems.blackSteelSheet, TFCItems.redSteelSheet, IC2Items.getItem("advancedCircuit"));
+				r.addCrossWCenter(Api.INSTANCE.materials().materialLogicProcessor.stack(2), TFCItems.blackSteelSheet, TFCItems.redSteelSheet, IC2Items.getItem("electronicCircuit"));
 				r.addCrossWCenter(Api.INSTANCE.materials().materialEngProcessor.stack(2), TFCItems.blackSteelSheet, TFCItems.redSteelSheet, "packGemExquisite");
 				r.addShapeless(Api.INSTANCE.materials().materialCardCrafting.stack(1), Api.INSTANCE.materials().materialBasicCard.stack(1), "packCraftingTable");
 				r.addShapeless(Api.INSTANCE.materials().materialCardCapacity.stack(1), Api.INSTANCE.materials().materialBasicCard.stack(1), "packChest");

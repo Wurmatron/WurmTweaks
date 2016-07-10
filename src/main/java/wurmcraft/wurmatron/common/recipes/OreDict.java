@@ -253,7 +253,8 @@ public class OreDict {
 				add("packGemBlock", WurmTweaksBlocks.blockOpal);
 				add("packGemBlock", WurmTweaksBlocks.blockGarnet);
 				// Logs
-				add("packLog", new ItemStack(TFCItems.logs, 1, OreDictionary.WILDCARD_VALUE));
+				for (int l = 0; l < 16; l++)
+						add("packLog", new ItemStack(TFCItems.logs, 1, l));
 				// Anvil
 				add("packAnvil", new ItemStack(TFCBlocks.anvil, 1, OreDictionary.WILDCARD_VALUE));
 				add("packAnvil", new ItemStack(TFCBlocks.anvil2, 1, OreDictionary.WILDCARD_VALUE));

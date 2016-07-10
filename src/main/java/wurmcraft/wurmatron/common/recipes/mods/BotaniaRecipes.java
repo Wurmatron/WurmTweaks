@@ -62,8 +62,8 @@ public class BotaniaRecipes {
 				r.addShaped(ModBlocks.pool, "W W", "WWW", 'W', ModBlocks.livingrock);
 				r.addShaped(new ItemStack(ModBlocks.pool, 1, 3), "W W", "WWW", 'W', ModBlocks.shimmerrock);
 				r.addShaped9X9Recipe(new ItemStack(ModBlocks.pool, 1, 1), "CIIIIIIIC", "IBBBBBBBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBXXXXXBI", "IBBBBBBBI", "CIIIIIIIC", 'C', WurmTweaksItems.creativeCreativeParts, 'I', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(ModBlocks.pool, 1, 3), 'X', WurmTweaksItems.itemNatureCoreMK2);
-				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotGreenSteel, new ItemStack(ModItems.manaResource, 1, 1));
-				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotGreenSteel, new ItemStack(ModItems.manaResource, 1, 2));
+				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotCyanSteel, new ItemStack(ModItems.manaResource, 1, 1));
+				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotCyanSteel, new ItemStack(ModItems.manaResource, 1, 2));
 				for (int d = 0; d <= 15; d++)
 						r.addCrossWCenter(new ItemStack(ModBlocks.unstableBlock, 1, d), WurmTweaksItems.itemNatureCore, new ItemStack(ModItems.petal, 1, d), new ItemStack(ModItems.manaResource, 1, 1));
 				r.addShaped(new ItemStack(ModBlocks.pylon, 1, 0), " X ", "BCB", " X ", 'X', WurmTweaksItems.itemNatureCoreMK2, 'B', new ItemStack(ModItems.manaResource, 1, 0), 'C', new ItemStack(ModItems.manaResource, 1, 2));

@@ -136,6 +136,7 @@ public class VinilaRecipes {
 				r.addShapeless(new ItemStack(TFCItems.gemDiamond, 1, 2), new ItemStack(Items.diamond, 1, 0));
 				r.addShapeless(new ItemStack(Items.iron_ingot), new ItemStack(TFCItems.wroughtIronIngot, 1, 0));
 				r.addShapeless(new ItemStack(Items.gold_ingot), new ItemStack(TFCItems.goldIngot, 1, 0));
+				r.addShapeless(new ItemStack(Items.arrow), TFCItems.arrow);
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();
@@ -169,10 +170,10 @@ public class VinilaRecipes {
 
 		private static void addFurnaceRecipes () {
 				for (int i = 0; i < 16; i++)
-						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.sand, 1, i), new ItemStack(Blocks.glass));
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.glass), new ItemStack(TFCBlocks.sand, 1, i));
 				for (int s = 0; s < 4; s++)
-						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.sand2, 1, s), new ItemStack(Blocks.glass));
-				MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.sand), new ItemStack(Blocks.glass));
+						MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.glass), new ItemStack(TFCBlocks.sand2, 1, s));
+				MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.glass), new ItemStack(Blocks.sand));
 				MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.hardened_clay), new ItemStack(Blocks.clay));
 		}
 
@@ -191,6 +192,11 @@ public class VinilaRecipes {
 				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.coal, 4, 1), null, new ItemStack(Items.ghast_tear, 1, 0), null, null, null, 100, 128);
 				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.coal, 1, 0), null, new ItemStack(Items.blaze_rod), null, null, null, 80, 512);
 				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.bismuthBronzeSheet), null, new ItemStack(Items.quartz, 16), null, null, null, 60, 32);
+				for (int s = 0; s < 8; s++)
+						TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.fruitTreeSapling, 1, s), null, new ItemStack(Items.nether_wart, 4), null, null, null, 60, 32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Items.skull, 8, 0), null, new ItemStack(Items.skull, 1, 1), null, null, null, 8000, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Items.skull, 8, 2), null, new ItemStack(Items.skull, 1, 1), null, null, null, 8000, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Items.skull, 8, 4), null, new ItemStack(Items.skull, 1, 1), null, null, null, 8000, 128);
 		}
 
 		@Optional.Method (modid = "techreborn")

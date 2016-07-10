@@ -166,7 +166,7 @@ public class ExtraUtilsRecipes {
 				r.addShaped9X9Recipe(new ItemStack(ExtraUtils.angelRing, 1, 3), "  G   G  ", " DBISIBD ", " LXPPPXL ", "  FFGFF  ", "  FDJDF  ", "  FFGFF  ", "ABNPPPNBA", " CKCZCJC ", " H  U  H ", 'G', WurmTweaksBlocks.blockPlatinum, 'D', "packGemBlock", 'B', WurmTweaksBlocks.blockGold, 'S', new ItemStack(SEGameObjects.SolarPanelUltimate), 'I', WurmTweaksItems.gearMixedSheet, 'L', WurmTweaksItems.itemAntiMatter, 'X', tonius.simplyjetpacks.setup.ModItems.jetpackTE4Armored, 'P', IC2Items.getItem("iridiumPlate"), 'F', WurmTweaksItems.ingotRainbowSteel, 'G', "dyeRed", 'A', WurmTweaksItems.itemMixedSheet, 'B', WurmTweaksBlocks.blockCompressedRedstone, 'N', GraviSuite.gravitationEngine, 'C', new ItemStack(GraviSuite.advJetpack, 1, OreDictionary.WILDCARD_VALUE), 'K', new ItemStack(ItemEnum.STORAGECOMPONET.getItem(), 1, 3), 'C', WurmTweaksItems.ingotGreenSteel, 'Z', WurmTweaksItems.itemBloodInfused, 'H', TFItems.ingotEnderium, 'U', TFItems.ingotSignalum);
 				r.addShaped9X9Recipe(new ItemStack(ExtraUtils.angelRing, 1, 4), "  G   G  ", " DBISIBD ", " LXPPPXL ", "  FFGFF  ", "  FDJDF  ", "  FFGFF  ", "ABNPPPNBA", " CKCZCJC ", " H  U  H ", 'G', WurmTweaksBlocks.blockPlatinum, 'D', "packGemBlock", 'B', WurmTweaksBlocks.blockGold, 'S', new ItemStack(SEGameObjects.SolarPanelUltimate), 'I', WurmTweaksItems.gearMixedSheet, 'L', WurmTweaksItems.itemAntiMatter, 'X', tonius.simplyjetpacks.setup.ModItems.jetpackTE4Armored, 'P', IC2Items.getItem("iridiumPlate"), 'F', WurmTweaksItems.ingotRainbowSteel, 'G', TFCItems.goldSheet, 'A', WurmTweaksItems.itemMixedSheet, 'B', WurmTweaksBlocks.blockCompressedRedstone, 'N', GraviSuite.gravitationEngine, 'C', new ItemStack(GraviSuite.advJetpack, 1, OreDictionary.WILDCARD_VALUE), 'K', new ItemStack(ItemEnum.STORAGECOMPONET.getItem(), 1, 3), 'C', WurmTweaksItems.ingotGreenSteel, 'Z', WurmTweaksItems.itemBloodInfused, 'H', TFItems.ingotEnderium, 'U', TFItems.ingotSignalum);
 				for (int b = 1; b < 7; b++) {
-						r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, b), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b - 1));
+						r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, b - 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b));
 						r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, b), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b - 1));
 				}
 				if (RecipeChecker.modExists("addCompressorRecipes"))
@@ -176,7 +176,8 @@ public class ExtraUtilsRecipes {
 		@Optional.Method (modid = "IC2")
 		private static void addCompressorRecipes () {
 				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.bedrockium, 32, 0), new ItemStack(ExtraUtils.bedrockiumBlock));
+				ICHelper.addCompressorRecipe(new ItemStack(Blocks.cobblestone, 9), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
 				for (int b = 1; b < 7; b++)
-						ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, b), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b - 1));
+						ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, b - 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b));
 		}
 }

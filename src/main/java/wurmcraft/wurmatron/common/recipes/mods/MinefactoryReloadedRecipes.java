@@ -23,7 +23,7 @@ public class MinefactoryReloadedRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "MineFactoryReloaded")
+		@Optional.Method (modid = "MineFactoryReloaded")
 		public static void addRecipes () {
 				r.addShaped(new ItemStack(MFRThings.conveyorBlock, 6, 16), "RSR", "RSR", "RSR", 'R', "ingotRubber", 'S', TFCItems.bronzeSheet);
 				r.addShaped(new ItemStack(MFRThings.factoryHammerItem, 1, 0), "SS ", "SSX", "SS ", 'S', WurmTweaksItems.gearMixedSheet, 'X', "packSick");
@@ -32,7 +32,7 @@ public class MinefactoryReloadedRecipes {
 				r.addShaped(Machine.ItemCollector.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', TFCItems.steelSheet, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.BlockBreaker.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', TFCItems.redSteelPick, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.Sewer.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', Blocks.iron_bars, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
-				r.addShaped(Machine.Grinder.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', TFCItems.blackSteelSword, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
+				r.addShaped(Machine.Grinder.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemMixedSheet, 'X', TFCItems.blackSteelSword, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.AutoEnchanter.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', Blocks.enchanting_table, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.Ejector.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', "wurmpiston", 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.ItemRouter.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', TFCItems.blackSteelSheet, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
@@ -59,6 +59,7 @@ public class MinefactoryReloadedRecipes {
 						r.addShapeless(new ItemStack(MFRThings.conveyorBlock, 1, i), new ItemStack(MFRThings.conveyorBlock, 1, 16), RecipeHelper.dye.get(i));
 				for (int i = 1; i < 11; i++)
 						r.addShapeless(new ItemStack(MFRThings.upgradeItem, 1, i), new ItemStack(MFRThings.upgradeItem, 1, i - 1), new ItemStack(MFRThings.upgradeItem, 1, i - 1));
+				r.addShaped(new ItemStack(MFRThings.strawItem), "SSS", "  S", "  S", 'S', "packRubber");
 				MFRRegistry.registerHarvestable(new HarvestLeaves(TFCBlocks.leaves));
 				MFRRegistry.registerHarvestable(new HarvestableWood(TFCBlocks.logNatural));
 				MFRRegistry.registerHarvestable(new HarvestableWood(TFCBlocks.logNatural2));

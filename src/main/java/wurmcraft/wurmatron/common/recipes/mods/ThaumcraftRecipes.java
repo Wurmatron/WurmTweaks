@@ -24,6 +24,7 @@ import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
+import wurmcraft.wurmatron.common.utils.thaumcraft.TAspect;
 import wurmcraft.wurmatron.common.utils.thaumcraft.ThaumcraftHelper;
 
 public class ThaumcraftRecipes {
@@ -45,7 +46,6 @@ public class ThaumcraftRecipes {
 				r.addShaped(new ItemStack(ConfigItems.itemThaumometer, 1, 0), " S ", "XGX", " S ", 'S', TFCItems.redSteelSheet2x, 'X', TFCItems.blueSteelSheet2x, 'G', WurmTweaksItems.stableMagicEssence);
 				r.addShaped(new ItemStack(ConfigItems.itemThaumometer, 1, 0), " S ", "XGX", " S ", 'X', TFCItems.redSteelSheet2x, 'S', TFCItems.blueSteelSheet2x, 'G', WurmTweaksItems.stableMagicEssence);
 				r.addShaped(new ItemStack(ConfigItems.itemEssence, 4, 0), " C ", "G G", " G ", 'C', TFCItems.clayBall, 'G', "packGlass");
-				// TODO Knowledge Fragment
 				r.add3X(new ItemStack(ConfigItems.itemResearchNotes, 1, 0), new ItemStack(ConfigItems.itemResource, 1, 9));
 				r.addSlabs(new ItemStack(ConfigBlocks.blockSlabStone, 3, 0), new ItemStack(ConfigBlocks.blockCosmeticSolid, 1, 7));
 				r.addSlabs(new ItemStack(ConfigBlocks.blockSlabWood, 3, 0), new ItemStack(ConfigBlocks.blockWoodenDevice, 1, 6));
@@ -63,6 +63,7 @@ public class ThaumcraftRecipes {
 				addEldridthRecipes();
 				if(RecipeChecker.modExists("techreborn"))
 						addCentrifugeRecipes();
+				TAspect.addAspects();
 		}
 
 		// 1st Page

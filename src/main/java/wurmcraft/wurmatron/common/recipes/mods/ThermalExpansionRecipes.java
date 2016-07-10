@@ -33,7 +33,6 @@ import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.fluid.WurmTweaksFluid;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
-import wurmcraft.wurmatron.common.utils.buildcraft.BuildCraftHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
@@ -45,10 +44,10 @@ public class ThermalExpansionRecipes {
 
 		@Optional.Method (modid = "ThermalExpansion")
 		public static void addRecipes () {
-				BuildCraftHelper.addAssemblerRecipes("te:basicmachineframe", 12000, BlockFrame.frameMachineBasic, WurmTweaksItems.itemMachineFrame, new ItemStack(EnderIO.itemBasicCapacitor, 4, 0), new ItemStack(TFCItems.blackSteelSheet, 4));
-				BuildCraftHelper.addAssemblerRecipes("te:hardmachineframe", 240000, BlockFrame.frameMachineReinforced, new ItemStack(WurmTweaksItems.itemMachineFrame.getItem(), 2, 33), new ItemStack(EnderIO.itemBasicCapacitor, 4, 1), new ItemStack(TFCItems.redSteelSheet, 4));
-				BuildCraftHelper.addAssemblerRecipes("te:reinforcedmachineframe", 1200000, BlockFrame.frameMachineReinforced, new ItemStack(WurmTweaksItems.itemMachineFrame.getItem(), 3, 33), new ItemStack(EnderIO.itemBasicCapacitor, 4, 2), new ItemStack(TFCItems.platinumSheet2x, 4));
-				BuildCraftHelper.addAssemblerRecipes("te:enderiummachineframe", 12000000, BlockFrame.frameMachineResonant, new ItemStack(WurmTweaksItems.itemMachineFrame.getItem(), 4, 33), new ItemStack(EnderIO.itemBasicCapacitor, 4, 2), new ItemStack(TFCItems.platinumSheet2x, 4), TFItems.ingotEnderium);
+				r.addBasicMachineRecipe(BlockFrame.frameMachineBasic, new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), TFCItems.blackSteelSheet2x, Items.redstone, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(BlockFrame.frameCellHardened, new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), BlockFrame.frameMachineBasic, Items.redstone, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(BlockFrame.frameMachineReinforced, new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), BlockFrame.frameCellHardened, Items.redstone, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(BlockFrame.frameMachineResonant, new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), BlockFrame.frameMachineReinforced, TFItems.ingotEnderium, WurmTweaksItems.itemMachineFrame);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(TEItems.itemBattleWrench), 280), "III", " I ", " I ", 'I', new ItemStack(TFCItems.steelSheet));
 				r.addShaped(new ItemStack(TEItems.itemMaterial, 1, 16), " I ", "ICI", "III", 'I', new ItemStack(TFItems.itemMaterial, 1, 74), 'C', TFCItems.bronzeIngot);
 				r.addShaped(TEHelper.getMagma("Basic"), " R ", "BCB", "GXG", 'R', new ItemStack(Items.redstone), 'B', new ItemStack(TFCItems.roseGoldSheet), 'C', new ItemStack(TEBlocks.blockFrame, 1, 0), 'G', WurmTweaksItems.itemMixedSheet, 'X', "packGem");
@@ -229,7 +228,7 @@ public class ThermalExpansionRecipes {
 
 		private static void addSawmillRecipes () {
 				for (int l = 0; l < 16; l++)
-						TEHelper.addFurnaceRecipe(8000, new ItemStack(TFCItems.logs, 1, l), new ItemStack(TFCItems.singlePlank, 6, 1));
+						TEHelper.addSawmillRecipe(8000, new ItemStack(TFCItems.logs, 1, l), new ItemStack(TFCItems.singlePlank, 6, 1));
 		}
 
 		private static void addInductionSmelterRecipes () {
@@ -241,91 +240,6 @@ public class ThermalExpansionRecipes {
 		}
 
 		public static void addMagmaCrucibleRecipes () {
-				// TODO Disabled due to skipping smeltery
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthIngot), new FluidStack(WurmTweaksFluid.fluidBismuth, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthBronzeIngot), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackBronzeIngot), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackSteelIngot), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blueSteelIngot), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.brassIngot), new FluidStack(WurmTweaksFluid.fluidBrass, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bronzeIngot), new FluidStack(WurmTweaksFluid.fluidBronze, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.copperIngot), new FluidStack(WurmTweaksFluid.fluidCopper, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.goldIngot), new FluidStack(WurmTweaksFluid.fluidGold, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.wroughtIronIngot), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.leadIngot), new FluidStack(WurmTweaksFluid.fluidLead, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.nickelIngot), new FluidStack(WurmTweaksFluid.fluidNickel, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.pigIronIngot), new FluidStack(WurmTweaksFluid.fluidPigIron, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.platinumIngot), new FluidStack(WurmTweaksFluid.fluidPlatinum, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.redSteelIngot), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.roseGoldIngot), new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.silverIngot), new FluidStack(WurmTweaksFluid.fluidSilver, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.steelIngot), new FluidStack(WurmTweaksFluid.fluidSteel, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.sterlingSilverIngot), new FluidStack(WurmTweaksFluid.fluidSterlingSilver, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.tinIngot), new FluidStack(WurmTweaksFluid.fluidTin, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.zincIngot), new FluidStack(WurmTweaksFluid.fluidZinc, 1000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthSheet), new FluidStack(WurmTweaksFluid.fluidBismuth, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthBronzeSheet), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackBronzeSheet), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackSteelSheet), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blueSteelSheet), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.brassSheet), new FluidStack(WurmTweaksFluid.fluidBrass, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bronzeSheet), new FluidStack(WurmTweaksFluid.fluidBronze, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.copperSheet), new FluidStack(WurmTweaksFluid.fluidCopper, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.goldSheet), new FluidStack(WurmTweaksFluid.fluidGold, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.wroughtIronSheet), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.leadSheet), new FluidStack(WurmTweaksFluid.fluidLead, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.nickelSheet), new FluidStack(WurmTweaksFluid.fluidNickel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.pigIronSheet), new FluidStack(WurmTweaksFluid.fluidPigIron, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.platinumSheet), new FluidStack(WurmTweaksFluid.fluidPlatinum, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.redSteelSheet), new FluidStack(WurmTweaksFluid.fluidRedSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.roseGoldSheet), new FluidStack(WurmTweaksFluid.fluidRoseGold, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.silverSheet), new FluidStack(WurmTweaksFluid.fluidSilver, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.steelSheet), new FluidStack(WurmTweaksFluid.fluidSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.sterlingSilverSheet), new FluidStack(WurmTweaksFluid.fluidSterlingSilver, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.tinSheet), new FluidStack(WurmTweaksFluid.fluidTin, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.zincSheet), new FluidStack(WurmTweaksFluid.fluidZinc, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthIngot2x), new FluidStack(WurmTweaksFluid.fluidBismuth, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthBronzeIngot2x), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackBronzeIngot2x), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackSteelIngot2x), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blueSteelIngot2x), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.brassIngot2x), new FluidStack(WurmTweaksFluid.fluidBrass, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bronzeIngot2x), new FluidStack(WurmTweaksFluid.fluidBronze, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.copperIngot2x), new FluidStack(WurmTweaksFluid.fluidCopper, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.goldIngot2x), new FluidStack(WurmTweaksFluid.fluidGold, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.wroughtIronIngot2x), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.leadIngot2x), new FluidStack(WurmTweaksFluid.fluidLead, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.nickelIngot2x), new FluidStack(WurmTweaksFluid.fluidNickel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.pigIronIngot2x), new FluidStack(WurmTweaksFluid.fluidPigIron, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.platinumIngot2x), new FluidStack(WurmTweaksFluid.fluidPlatinum, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.redSteelIngot2x), new FluidStack(WurmTweaksFluid.fluidRedSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.roseGoldIngot2x), new FluidStack(WurmTweaksFluid.fluidRoseGold, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.silverIngot2x), new FluidStack(WurmTweaksFluid.fluidSilver, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.steelIngot2x), new FluidStack(WurmTweaksFluid.fluidSteel, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.sterlingSilverIngot2x), new FluidStack(WurmTweaksFluid.fluidSterlingSilver, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.tinIngot2x), new FluidStack(WurmTweaksFluid.fluidTin, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.zincIngot2x), new FluidStack(WurmTweaksFluid.fluidZinc, 2000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthSheet2x), new FluidStack(WurmTweaksFluid.fluidBismuth, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bismuthBronzeSheet2x), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackBronzeSheet2x), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blackSteelSheet2x), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.blueSteelSheet2x), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.brassSheet2x), new FluidStack(WurmTweaksFluid.fluidBrass, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.bronzeSheet2x), new FluidStack(WurmTweaksFluid.fluidBronze, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.copperSheet2x), new FluidStack(WurmTweaksFluid.fluidCopper, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.goldSheet2x), new FluidStack(WurmTweaksFluid.fluidGold, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.wroughtIronSheet2x), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.leadSheet2x), new FluidStack(WurmTweaksFluid.fluidLead, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.nickelSheet2x), new FluidStack(WurmTweaksFluid.fluidNickel, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.pigIronSheet2x), new FluidStack(WurmTweaksFluid.fluidPigIron, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.platinumSheet2x), new FluidStack(WurmTweaksFluid.fluidPlatinum, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.redSteelSheet2x), new FluidStack(WurmTweaksFluid.fluidRedSteel, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.roseGoldSheet2x), new FluidStack(WurmTweaksFluid.fluidRoseGold, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.silverSheet2x), new FluidStack(WurmTweaksFluid.fluidSilver, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.steelSheet2x), new FluidStack(WurmTweaksFluid.fluidSteel, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.sterlingSilverSheet2x), new FluidStack(WurmTweaksFluid.fluidSterlingSilver, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.tinSheet2x), new FluidStack(WurmTweaksFluid.fluidTin, 4000));
-//				TEHelper.addCrucibleRecipe(8000, new ItemStack(TFCItems.zincSheet2x), new FluidStack(WurmTweaksFluid.fluidZinc, 4000));
 				for (ItemStack cobble : OreDictionary.getOres("packCobblestone"))
 						TEHelper.addCrucibleRecipe(20000, cobble, new FluidStack(FluidRegistry.LAVA, 500));
 		}

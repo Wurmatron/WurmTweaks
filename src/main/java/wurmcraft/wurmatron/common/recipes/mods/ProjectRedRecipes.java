@@ -1,5 +1,7 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
+import com.bioxx.tfc.api.TFCItems;
+import cpw.mods.fml.common.Optional;
 import mrtjp.projectred.ProjectRedIllumination;
 import mrtjp.projectred.core.PartDefs;
 import mrtjp.projectred.illumination.LightObjFallout;
@@ -9,7 +11,9 @@ import mrtjp.projectred.transmission.WireDef;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 
 public class ProjectRedRecipes {
 
@@ -199,5 +203,13 @@ public class ProjectRedRecipes {
 						r.addShapeless(new ItemStack(ProjectRedIllumination.itemPartIllumarFButton(), 1, i), new ItemStack(ProjectRedIllumination.itemPartIllumarButton(), 1, i), Blocks.redstone_torch);
 				for (int i = 0; i < 15; i++)
 						r.addShapeless(new ItemStack(PartDefs.getItem(), 1, 18 + i), new ItemStack(WireDef.getItem(), 1, 17), RecipeHelper.dye.get(i));
+				r.addShaped(WireDef.RED_ALLOY().makeStack(6), "SSS", 'S', PartDefs.REDINGOT().makeStack());
+				if (RecipeChecker.modExists("techreborn"))
+						addAlloyRecipe();
+		}
+
+		@Optional.Method (modid = "techreborn")
+		private static void addAlloyRecipe () {
+				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.steelIngot), new ItemStack(Items.redstone, 8), PartDefs.REDINGOT().makeStack(), 200, 32);
 		}
 }

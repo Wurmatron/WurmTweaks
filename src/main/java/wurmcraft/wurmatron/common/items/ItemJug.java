@@ -200,12 +200,12 @@ public class ItemJug extends Item implements ISize, IFluidContainerItem {
 
 				Block b = world.getBlock(x, y, z);
 				if (isFreshWater(b) || isHotWater(b)) {
-						FluidStack fs = FluidRegistry.getFluidStack(TFCFluids.FRESHWATER.getName(), amount);
-						this.fill(sac, fs, true);
+						FluidStack fs = FluidRegistry.getFluidStack(TFCFluids.FRESHWATER.getName(), amount * 500);
+						this.fill(sac, fs , true);
 				}
 
 				if (isSaltWater(b)) {
-						FluidStack fs = FluidRegistry.getFluidStack(TFCFluids.SALTWATER.getName(), amount);
+						FluidStack fs = FluidRegistry.getFluidStack(TFCFluids.SALTWATER.getName(), amount * 500);
 						this.fill(sac, fs, true);
 				}
 		}

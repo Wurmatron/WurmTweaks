@@ -169,8 +169,8 @@ public class Recipes {
 						ThaumcraftRecipes.addRecipes();
 				if (RecipeChecker.modExists("irontank"))
 						IronTankRecipes.addRecipes();
-				if (RecipeChecker.modExists("CompactMachines"))
-						CompactMachinesRecipes.addRecipes();
+//				if (RecipeChecker.modExists("CompactMachines"))
+//						CompactMachinesRecipes.addRecipes();
 				if (RecipeChecker.modExists("LogisticsPipes"))
 						LogisticsPipesRecipes.addRecipes();
 				if (RecipeChecker.modExists("ProjRed"))
