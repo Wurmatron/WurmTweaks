@@ -86,7 +86,7 @@ public class ImmersiveEngineeringRecipes {
 				r.addShaped(new ItemStack(IEContent.itemMaterial, 1, 10), "S  ", "SS ", " SS", 'S', TFCItems.blackSteelSheet2x);
 				r.addCrossWCenter(new ItemStack(IEContent.itemMaterial, 1, 1), IEContent.blockTreatedWood, WurmTweaksItems.itemMixedSheet, TFCItems.blackSteelSheet2x);
 				r.addBasicMachineRecipe(new ItemStack(IEContent.itemMaterial, 1, 2), IEContent.blockTreatedWood, WurmTweaksItems.itemMixedSheet, TFCItems.blackSteelSheet2x, "packCloth");
-				r.addSimpleCirc(new ItemStack(IEContent.itemMaterial, 1, 2), IEContent.blockTreatedWood, new ItemStack(IEContent.itemMaterial, 1, 2));
+				r.addSimpleCirc(new ItemStack(IEContent.itemMaterial, 1, 5), IEContent.blockTreatedWood, new ItemStack(IEContent.itemMaterial, 1, 2));
 				r.addCircleWCenter(new ItemStack(IEContent.itemWireCoil, 4, 0), TFCItems.copperSheet, "packStick");
 				r.addCircleWCenter(new ItemStack(IEContent.itemWireCoil, 8, 4), TFCItems.steelSheet, "packStick");
 				r.addCircleWCenter(new ItemStack(IEContent.itemWireCoil, 8, 2), TFCItems.blackSteelSheet, "packStick");

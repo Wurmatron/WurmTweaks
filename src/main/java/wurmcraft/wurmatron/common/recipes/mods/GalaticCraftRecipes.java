@@ -84,7 +84,7 @@ public class GalaticCraftRecipes {
 				r.addShaped(GCItems.sensorGlasses, "XAX", 'X', GCItems.sensorLens, 'A', new ItemStack(TFCItems.blueSteelHelmet, 1, OreDictionary.WILDCARD_VALUE));
 				r.addCircle(new ItemStack(GCItems.canister, 2, 0), TFCItems.tinSheet);
 				r.addCircle(new ItemStack(GCItems.canister, 2, 1), TFCItems.bronzeSheet);
-				r.addBasicMachineRecipe(new ItemStack(GCItems.rocketEngine, 1, 0), WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.ingotRainbowSteel, ExtraUtils.bedrockiumBlock, WurmTweaksItems.ingotEnergyReactor);
+				r.addBasicMachineRecipe(new ItemStack(GCItems.rocketEngine, 1, 0), WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.itemEngineCoil, ExtraUtils.bedrockiumBlock, WurmTweaksItems.ingotEnergyReactor);
 				r.addBasicMachineRecipe(new ItemStack(GCItems.rocketEngine, 1, 1), WurmTweaksItems.ingotEnergyReactor, ExtraUtils.bedrockium, "packGemBlock", WurmTweaksItems.itemSpaceModule);
 				r.addShaped(new ItemStack(GCItems.partNoseCone, 1, 0), " X ", "XCX", "CBC", 'X', new ItemStack(GCItems.heavyPlatingTier1, 1, 0), 'C', WurmTweaksItems.itemSpaceModule, 'B', "packGemBlock");
 				r.addShaped(new ItemStack(GCItems.partFins, 1, 0), "BSB", "XXX", "BSB", 'B', WurmTweaksBlocks.blockPlatinum, 'S', WurmTweaksItems.itemRadiationShielding, 'X', IC2Items.getItem("iridiumPlate"));

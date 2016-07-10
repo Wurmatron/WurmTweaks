@@ -53,7 +53,7 @@ public class WurmTweaksRecipes {
 				r.addBasicMachineRecipe(WurmTweaksItems.itemQuantumFoam, QCraft.Items.quantumDust, ExtraUtils.bedrockium, Items.glowstone_dust, Items.redstone);
 				// Hafium Ore/ Ingot
 				// Titanium, Francium
-				r.addBasicMachineRecipe(WurmTweaksItems.itemRadiationShielding, TFCItems.leadSheet2x, WurmTweaksItems.ingotTitanium, WurmTweaksItems.itemMixedSheet, Items.redstone);
+				r.addBasicMachineRecipe(WurmTweaksItems.itemRadiationShielding, TFCItems.leadSheet2x, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.itemMixedSheet, Items.redstone);
 				r.addCrossWCenter(WurmTweaksItems.stableMagicEssence, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotGreenSteel, TFCItems.redSteelSheet2x);
 				r.addBasicMachineRecipe(WurmTweaksItems.itemElectroShielding, WurmTweaksItems.itemRadiationShielding, TFItems.ingotEnderium, TEItems.capacitorResonant, WurmTweaksItems.itemMixedSheet);
 				r.addCrossWCenter(WurmTweaksItems.itemBloodInfused, WurmTweaksItems.stableMagicEssence, WayofTime.alchemicalWizardry.ModItems.reinforcedSlate, WayofTime.alchemicalWizardry.ModItems.weakBloodShard);

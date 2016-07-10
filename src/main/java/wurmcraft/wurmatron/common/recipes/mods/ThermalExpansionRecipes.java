@@ -45,8 +45,8 @@ public class ThermalExpansionRecipes {
 		@Optional.Method (modid = "ThermalExpansion")
 		public static void addRecipes () {
 				r.addBasicMachineRecipe(BlockFrame.frameMachineBasic, new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), TFCItems.blackSteelSheet2x, Items.redstone, WurmTweaksItems.itemMachineFrame);
-				r.addBasicMachineRecipe(BlockFrame.frameCellHardened, new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), BlockFrame.frameMachineBasic, Items.redstone, WurmTweaksItems.itemMachineFrame);
-				r.addBasicMachineRecipe(BlockFrame.frameMachineReinforced, new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), BlockFrame.frameCellHardened, Items.redstone, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(BlockFrame.frameMachineHardened, new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), BlockFrame.frameMachineBasic, Items.redstone, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(BlockFrame.frameMachineReinforced, new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), BlockFrame.frameMachineHardened, Items.redstone, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(BlockFrame.frameMachineResonant, new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), BlockFrame.frameMachineReinforced, TFItems.ingotEnderium, WurmTweaksItems.itemMachineFrame);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(TEItems.itemBattleWrench), 280), "III", " I ", " I ", 'I', new ItemStack(TFCItems.steelSheet));
 				r.addShaped(new ItemStack(TEItems.itemMaterial, 1, 16), " I ", "ICI", "III", 'I', new ItemStack(TFItems.itemMaterial, 1, 74), 'C', TFCItems.bronzeIngot);

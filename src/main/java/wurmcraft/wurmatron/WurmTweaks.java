@@ -53,6 +53,7 @@ public class WurmTweaks {
 				WurmTweaksFluid.registerFluids();
 				PacketHandler.registerPackets();
 				FMLCommonHandler.instance().bus().register(new JoinGameEvent());
+				FMLCommonHandler.instance().bus().register(new MiningWorldFix());
 				MinecraftForge.EVENT_BUS.register(new EntityInteract());
 				MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
 				MinecraftForge.EVENT_BUS.register(new HurtEvent());
@@ -74,7 +75,7 @@ public class WurmTweaks {
 		public void serverStarting (FMLServerStartingEvent e) {
 				Recipes.checkSettings();
 				LootHandler.init();
-				 e.registerServerCommand(new WTCommand());
+				e.registerServerCommand(new WTCommand());
 		}
 
 }
