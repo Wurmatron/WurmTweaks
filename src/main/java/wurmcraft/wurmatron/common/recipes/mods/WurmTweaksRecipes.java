@@ -25,6 +25,7 @@ import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
+import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
 public class WurmTweaksRecipes {
@@ -51,8 +52,9 @@ public class WurmTweaksRecipes {
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.itemQuantumSingularity);
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumSingularity, ExtraUtils.bedrockium, "packGemExquisite", WurmTweaksItems.itemMixedSheet);
 				r.addBasicMachineRecipe(WurmTweaksItems.itemQuantumFoam, QCraft.Items.quantumDust, ExtraUtils.bedrockium, Items.glowstone_dust, Items.redstone);
-				// Hafium Ore/ Ingot
-				// Titanium, Francium
+				MachineHelper.addFurnaceRecipes(WurmTweaksItems.ingotFrancium, new ItemStack(WurmTweaksBlocks.oreFrancium));
+				MachineHelper.addFurnaceRecipes(WurmTweaksItems.ingotHalfium, new ItemStack(WurmTweaksBlocks.oreHalfium));
+				MachineHelper.addFurnaceRecipes(WurmTweaksItems.ingotTitanium, new ItemStack(WurmTweaksBlocks.oreTitanium));
 				r.addBasicMachineRecipe(WurmTweaksItems.itemRadiationShielding, TFCItems.leadSheet2x, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.itemMixedSheet, Items.redstone);
 				r.addCrossWCenter(WurmTweaksItems.stableMagicEssence, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotGreenSteel, TFCItems.redSteelSheet2x);
 				r.addBasicMachineRecipe(WurmTweaksItems.itemElectroShielding, WurmTweaksItems.itemRadiationShielding, TFItems.ingotEnderium, TEItems.capacitorResonant, WurmTweaksItems.itemMixedSheet);

@@ -46,6 +46,10 @@ public class WurmTweaksBlocks {
 		public static Block blockAgate;
 		public static Block blockOpal;
 		public static Block blockGarnet;
+		// Ore Blocks
+		public static Block oreHalfium;
+		public static Block oreTitanium;
+		public static Block oreFrancium;
 
 		public static void registerBlocks () {
 				blockWroughtIron = registerBlock(new BlockBasic("blockWroughtIron", Material.iron));
@@ -84,6 +88,10 @@ public class WurmTweaksBlocks {
 				blockAgate = registerBlock(new BlockBasic("blockAgate", Material.iron));
 				blockOpal = registerBlock(new BlockBasic("blockOpal", Material.iron));
 				blockGarnet = registerBlock(new BlockBasic("blockGarnet", Material.iron));
+				// Ore
+				oreHalfium = registerBlock(new BlockBasic("oreHalfium", Material.ground));
+				oreTitanium = registerBlock(new BlockBasic("oreTitanium", Material.ground));
+				oreFrancium = registerBlock(new BlockBasic("oreFrancium", Material.ground));
 		}
 
 		private static Block registerBlock (Block block) {
