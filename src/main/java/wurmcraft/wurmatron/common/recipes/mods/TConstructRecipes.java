@@ -283,7 +283,7 @@ public class TConstructRecipes {
 				TConstructHelper.addMelting(new ItemStack(TFCItems.copperIngot), WurmTweaksBlocks.blockCopper, 850, new FluidStack(WurmTweaksFluid.fluidCopper, 1000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.copperIngot2x), WurmTweaksBlocks.blockCopper, 900, new FluidStack(WurmTweaksFluid.fluidCopper, 2000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.copperSheet), WurmTweaksBlocks.blockCopper, 1000, new FluidStack(WurmTweaksFluid.fluidCopper, 2000));
-				TConstructHelper.addMelting(new ItemStack(TFCItems.copperSheet2x), WurmTweaksBlocks.blockCopper, 1200, new FluidStack(WurmTweaksFluid.fluidRedSteel, 4000));
+				TConstructHelper.addMelting(new ItemStack(TFCItems.copperSheet2x), WurmTweaksBlocks.blockCopper, 1200, new FluidStack(WurmTweaksFluid.fluidCopper, 4000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.steelIngot), WurmTweaksBlocks.blockSteel, 850, new FluidStack(WurmTweaksFluid.fluidSteel, 1000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.steelIngot2x), WurmTweaksBlocks.blockSteel, 900, new FluidStack(WurmTweaksFluid.fluidSteel, 2000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.steelSheet), WurmTweaksBlocks.blockSteel, 1000, new FluidStack(WurmTweaksFluid.fluidSteel, 2000));

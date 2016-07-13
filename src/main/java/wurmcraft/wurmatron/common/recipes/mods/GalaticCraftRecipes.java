@@ -42,7 +42,7 @@ public class GalaticCraftRecipes {
 				r.addBasicMachineRecipe(GCBlocks.fuelLoader, WurmTweaksItems.gearMixedSheet, GCItems.heavyPlatingTier1, TDDucts.fluidBasic.itemStack, WurmTweaksItems.itemSpaceModule);
 				r.addBasicMachineRecipe(GCBlocks.cargoLoader, WurmTweaksItems.gearMixedSheet, GCItems.heavyPlatingTier1, "packChest", WurmTweaksItems.itemSpaceModule);
 				r.addBasicMachineRecipe(GCBlocks.cargoLoader, WurmTweaksItems.gearMixedSheet, "packChest", GCItems.heavyPlatingTier1, WurmTweaksItems.itemSpaceModule);
-				r.addBasicMachineRecipe(GCBlocks.nasaWorkbench, WurmTweaksBlocks.blockRedSteel, WurmTweaksItems.itemSpaceModule, WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.gearMixedSheet);
+				r.addBasicMachineRecipe(GCBlocks.nasaWorkbench, WurmTweaksBlocks.blockRedSteel, WurmTweaksItems.itemSpaceModule, WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.gearMixedSheet);
 				r.addCross(GCBlocks.airLockFrame, WurmTweaksBlocks.blockBlackSteel, TFCItems.mortar);
 				r.addCrossWCenter(GCBlocks.airLockSeal, WurmTweaksBlocks.blockRedSteel, TFCItems.mortar, WurmTweaksItems.itemRadiationShielding);
 				r.addShaped(new ItemStack(GCBlocks.sealableBlock, 1, 14), "TXT", "TCT", "TXT", 'T', TFCItems.tinSheet, 'X', TFCItems.mortar, 'C', GCBlocks.aluminumWire);
