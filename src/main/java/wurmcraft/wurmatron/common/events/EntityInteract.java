@@ -11,8 +11,9 @@ public class EntityInteract {
 		public void onEntityInteract (EntityInteractEvent e) {
 				if (e.target instanceof EntityVillager)
 						e.setCanceled(true);
-				if (e.entityPlayer.inventory.getCurrentItem().getItem().equals(AlternateWorld.itemTeleporter))
-						if (e.entityPlayer.dimension != 0)
-								e.setCanceled(true);
+				if (e.entityPlayer != null && e.entityPlayer.inventory != null && e.entityPlayer.inventory.getCurrentItem() != null)
+						if (e.entityPlayer.inventory.getCurrentItem().getItem().equals(AlternateWorld.itemTeleporter))
+								if (e.entityPlayer.dimension != 0)
+										e.setCanceled(true);
 		}
 }
