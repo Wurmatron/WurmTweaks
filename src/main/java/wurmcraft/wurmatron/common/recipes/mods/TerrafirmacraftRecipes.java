@@ -48,7 +48,7 @@ public class TerrafirmacraftRecipes {
 		}
 
 		private static void addMaceratorRecipes () {
-				for (int g = 0; g <= 0; g++) {
+				for (int g = 0; g < 4; g++) {
 						MachineHelper.addPulveriserRecipes(new ItemStack(TFCItems.gemRuby, 4, g), new ItemStack(TFCItems.gemRuby, 1, g + 1), 32, 60, null, 0);
 						MachineHelper.addPulveriserRecipes(new ItemStack(TFCItems.gemSapphire, 4, g), new ItemStack(TFCItems.gemSapphire, 1, g + 1), 32, 60, null, 0);
 						MachineHelper.addPulveriserRecipes(new ItemStack(TFCItems.gemEmerald, 4, g), new ItemStack(TFCItems.gemEmerald, 1, g + 1), 32, 60, null, 0);

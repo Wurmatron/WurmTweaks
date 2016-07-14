@@ -62,7 +62,7 @@ public class GalaticCraftRecipes {
 				r.addBasicMachineRecipe(new ItemStack(GCBlocks.solarPanel), TFCItems.platinumSheet2x, new ItemStack(GCItems.basicItem, 1, 1), WurmTweaksBlocks.blockCompressedRedstone, WurmTweaksItems.itemSolarCore);
 				r.addBasicMachineRecipe(new ItemStack(GCBlocks.solarPanel, 1, 1), TFCItems.platinumSheet2x, new ItemStack(GCItems.basicItem, 1, 1), new ItemStack(GCBlocks.solarPanel), WurmTweaksItems.itemSolarCore);
 				r.addShapeless(GCBlocks.machineBase, IC2Items.getItem("generator"), WurmTweaksItems.itemSpaceModule, WurmTweaksItems.gearMixedSheet);
-				r.addShaped(new ItemStack(GCBlocks.machineBase, 1, 12), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotGreenSteel, 'X', WurmTweaksItems.gearMixedSheet, 'X', IC2Items.getItem("compressor"));
+				r.addShaped(new ItemStack(GCBlocks.machineBase, 1, 12), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.itemSpaceModule, 'X', WurmTweaksItems.gearMixedSheet, 'X', IC2Items.getItem("compressor"));
 				r.addShaped(new ItemStack(GCBlocks.machineBase2, 1, 0), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.itemSpaceModule, 'X', WurmTweaksItems.gearMixedSheet, 'X', new ItemStack(GCBlocks.machineBase, 1, 12));
 				r.addShaped(new ItemStack(GCBlocks.machineBase2, 1, 4), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotBrownSteel, 'X', "packGemExquisite", 'X', WurmTweaksItems.itemSpaceModule);
 				r.addShaped(new ItemStack(GCBlocks.machineBase2, 1, 8), "SSS", "XCX", "SSS", 'S', WurmTweaksItems.ingotBrownSteel, 'X', new ItemStack(GCItems.oxTankHeavy, 1, OreDictionary.WILDCARD_VALUE), 'X', WurmTweaksItems.itemSpaceModule);

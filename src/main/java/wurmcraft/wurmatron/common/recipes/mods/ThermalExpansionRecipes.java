@@ -17,6 +17,7 @@ import cofh.thermalexpansion.block.workbench.BlockWorkbench;
 import cofh.thermalexpansion.item.TEAugments;
 import cofh.thermalexpansion.item.TEItems;
 import cofh.thermalexpansion.util.crafting.TECraftingHandler;
+import cofh.thermalfoundation.fluid.TFFluids;
 import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
@@ -404,5 +405,6 @@ public class ThermalExpansionRecipes {
 				TEHelper.addTransposerFill(10000, new ItemStack(TFCItems.clayMoldShovel, 1, 1), new ItemStack(TFCItems.steelShovelHead), new FluidStack(WurmTweaksFluid.fluidSteel, 1000), false);
 				TEHelper.addTransposerFill(10000, new ItemStack(TFCItems.clayMoldShovel, 1, 1), new ItemStack(TFCItems.bismuthBronzeShovelHead), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 1000), false);
 				TEHelper.addTransposerFill(10000, new ItemStack(TFCItems.clayMoldShovel, 1, 1), new ItemStack(TFCItems.blackBronzeShovelHead), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000), false);
+				TEHelper.addTransposerFill(10000, new ItemStack(TEBlocks.blockFrame, 1, 10), new ItemStack(TEBlocks.blockFrame, 1, 11), new FluidStack(TFFluids.fluidEnder, 4000), false);
 		}
 }

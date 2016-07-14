@@ -41,7 +41,7 @@ public class WurmTweaksRecipes {
 				r.addBasicMachineRecipe(WurmTweaksItems.ingotEnergyReactor, ExtraUtils.bedrockiumBlock, WurmTweaksItems.itemElectroMagneticShielding, BlockCell.cellResonant, "packGemBlock");
 				r.addCrossWCenter(WurmTweaksItems.itemMixedSheet, TFCItems.redSteelSheet2x, TFCItems.blueSteelSheet2x, WurmTweaksItems.ingotPurpleSteel);
 				r.addBasicMachineRecipe(WurmTweaksItems.ingotPinkSteel, "dyePink", WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotPurpleSteel);
-				r.addCrossWCenter(WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.itemMixedSheet, "dyeYellow", WurmTweaksItems.ingotEnergyReactor);
+				r.addCrossWCenter(WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.itemMixedSheet, "dyeYellow", WurmTweaksItems.itemCraftingCore);
 				r.addCrossWCenter(WurmTweaksItems.ingotOrangeSteel, "dyeOrange", WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemCraftingCore);
 				r.addCrossWCenter(WurmTweaksItems.ingotPurpleSteel, TFCItems.redSteelIngot, TFCItems.blueSteelIngot, "packGem");
 				r.addShapeless(WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.itemMixedSheet, "dyeCyan");
@@ -83,7 +83,7 @@ public class WurmTweaksRecipes {
 				r.addSimpleCirc(new ItemStack(WTItems.itemBasicFood, 8, 6), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1));
 				r.addSimpleCirc(new ItemStack(WTItems.itemBasicFood, 5, 7), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1), new ItemStack(WurmTweaksItems.foodCheese.getItem(), 1, 4));
 				r.addSimpleCirc(new ItemStack(WTItems.itemBasicFood, 5, 8), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1), new ItemStack(Items.skull, 1, OreDictionary.WILDCARD_VALUE));
-				r.addShapeless(new ItemStack(WTItems.itemBasicFood, 4, 9), WurmTweaksItems.foodFruit, WurmTweaksItems.foodGrain, WurmTweaksItems.foodMeat, WurmTweaksItems.foodVegtable, WurmTweaksItems.foodCheese);
+				r.addShapeless(new ItemStack(WTItems.itemBasicFood, 5, 9), WurmTweaksItems.foodFruit, WurmTweaksItems.foodGrain, WurmTweaksItems.foodMeat, WurmTweaksItems.foodVegtable, WurmTweaksItems.foodCheese);
 				r.addShaped(new ItemStack(WTItems.itemPill, 1, 0), "RX", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
 				r.addShaped(new ItemStack(WTItems.itemPill, 1, 1), " RX", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
 				r.addShaped(new ItemStack(WTItems.itemPill, 1, 2), "XR", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");

@@ -1,6 +1,10 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
+import cofh.thermalfoundation.fluid.TFFluids;
+import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
+import com.rwtema.extrautils.ExtraUtils;
+import com.rwtema.extrautils.modintegration.TConIntegration;
 import cpw.mods.fml.common.Optional;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -527,6 +531,9 @@ public class TConstructRecipes {
 				addCastingWithReverse(new ItemStack(TFCItems.blackSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.redSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemPickCast);
 				addCastingWithReverse(new ItemStack(TFCItems.blueSteelPickaxeHead), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemPickCast);
+				addCastingWithReverse(TFItems.ingotEnderium, new FluidStack(TFFluids.fluidEnder, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
+				addCastingWithReverse(TFItems.ingotSignalum,new FluidStack(TinkerSmeltery.moltenSignalumFluid,1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(ExtraUtils.bedrockium), new FluidStack(TConIntegration.bedrock,1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				for (Item tool : TConstructHelper.TCTools)
 						for (int fluid = 0; fluid < TCFluid.length; fluid++)
 								TConstructRegistry.getTableCasting().addCastingRecipe(new ItemStack(tool, 1, 201 + fluid), new FluidStack(TCFluid[fluid], getSize(tool)), getPattern(tool), 40);
