@@ -90,7 +90,6 @@ public class WurmTweaksRecipes {
 				r.addShaped(new ItemStack(WTItems.itemPill, 1, 3), " XR", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
 				r.addShaped(new ItemStack(WTItems.itemPill, 1, 4), "R X", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
 				r.addShapeless(new ItemStack(WTItems.itemPill, 2, 5), new ItemStack(WTItems.itemPill, 1, 0), new ItemStack(WTItems.itemPill, 1, 1), new ItemStack(WTItems.itemPill, 1, 2), new ItemStack(WTItems.itemPill, 1, 3), new ItemStack(WTItems.itemPill, 1, 4));
-
 				r.addShapeless(new ItemStack(TFCItems.wroughtIronIngot, 32), new ItemStack(WurmTweaksBlocks.blockWroughtIron));
 				r.addShapeless(new ItemStack(TFCItems.platinumIngot, 32), new ItemStack(WurmTweaksBlocks.blockPlatinum));
 				r.addShapeless(new ItemStack(TFCItems.goldIngot, 32), new ItemStack(WurmTweaksBlocks.blockGold));
