@@ -62,7 +62,6 @@ public class Recipes {
 				OreDict.init();
 				SmeltingRecipes.init();
 				LogHandler.info("Adding custom recipes");
-				VinilaRecipes.addRecipes();
 				TerrafirmacraftRecipes.addRecipes();
 				WurmTweaksRecipes.addRecipes();
 				if (RecipeChecker.modExists("AdvancedSolarPanel"))
@@ -191,6 +190,7 @@ public class Recipes {
 						ThamicTinkersRecipes.addRecipes();
 				if (RecipeChecker.modExists("RefinedRelocation"))
 						RefinedRelocationRecipes.addRecipes();
+				VinilaRecipes.addRecipes();//Adding this to the end seems to let it load completly
 		}
 
 		public static void checkSettings () {
