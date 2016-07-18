@@ -225,12 +225,11 @@ public class ThaumcraftRecipes {
 
 		@Optional.Method (modid = "techreborn")
 		private static void addCentrifugeRecipes() {
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.zincIngot), null,new ItemStack(ConfigItems.itemShard,4,0),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.nickelIngot), null,new ItemStack(ConfigItems.itemShard,4,1),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.bismuthIngot), null,new ItemStack(ConfigItems.itemShard,4,2),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.copperIngot), null,new ItemStack(ConfigItems.itemShard,4,3),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.steelIngot), null,new ItemStack(ConfigItems.itemShard,4,4),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.blackSteelIngot), null,new ItemStack(ConfigItems.itemShard,4,5),null,null,null,100,32);
-
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.zincIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,0),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.nickelIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,1),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.bismuthIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,2),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.copperIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,3),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.steelIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,4),null,null,null,100,32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.blackSteelIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,5),null,null,null,100,32);
 		}
 }

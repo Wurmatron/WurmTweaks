@@ -15,16 +15,21 @@ public class OpenModularTurretsRecipes {
 
 		private static final RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "openmodularturrets")
+		@Optional.Method (modid = "openmodularturrets")
 		public static void addRecipes () {
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.barrelTierFiveItem), "III", "G G", "III", 'I', WurmTweaksItems.itemRadiationShielding, 'G', "packGemExquisite");
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.ioBus), " I ", "GGG", " I ", 'I', new ItemStack(TFCItems.goldSheet2x), 'G', "packGemExquisite");
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.chamberTierOneItem), "III", "  I", "III", 'I', new ItemStack(TFCItems.blackSteelSheet2x));
+				r.add2X(new ItemStack(openmodularturrets.items.Items.chamberTierTwoItem), new ItemStack(openmodularturrets.items.Items.chamberTierOneItem));
+				r.add2X(new ItemStack(openmodularturrets.items.Items.chamberTierThreeItem), new ItemStack(openmodularturrets.items.Items.chamberTierTwoItem));
+				r.add2X(new ItemStack(openmodularturrets.items.Items.chamberTierFourItem), new ItemStack(openmodularturrets.items.Items.chamberTierThreeItem));
+				r.add2X(new ItemStack(openmodularturrets.items.Items.chamberTierFiveItem), new ItemStack(openmodularturrets.items.Items.chamberTierFourItem));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.barrelTierOneItem), "III", "   ", "III", 'I', new ItemStack(TFCItems.redSteelSheet2x));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.sensorTierOneItem), "IGI", "GCG", "IGI", 'I', TFItems.ingotEnderium, 'G', "packGemExquisite", 'C', new ItemStack(Blocks.redstone_block));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.sensorTierTwoItem), "IGI", "GCG", "IGI", 'I', TFItems.ingotEnderium, 'G', "packGemExquisite", 'C', new ItemStack(openmodularturrets.items.Items.sensorTierOneItem));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.sensorTierThreeItem), "IGI", "GCG", "IGI", 'I', TFItems.ingotEnderium, 'G', "packGemExquisite", 'C', new ItemStack(openmodularturrets.items.Items.sensorTierTwoItem));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.sensorTierFourItem), "IGI", "GCG", "IGI", 'I', TFItems.ingotEnderium, 'G', "packGemExquisite", 'C', new ItemStack(openmodularturrets.items.Items.sensorTierThreeItem));
+				r.addShaped(new ItemStack(openmodularturrets.items.Items.sensorTierFiveItem), "IGI", "GCG", "IGI", 'I', WurmTweaksItems.itemMixedSheet, 'G', "packGemExquisite", 'C', new ItemStack(openmodularturrets.items.Items.sensorTierFourItem));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.solarPanelAddon), "GGG", "ISI", "DRD", 'G', "packGlass", 'I', new ItemStack(ExtraUtils.bedrockium), 'S', WurmTweaksItems.itemSolarCore, 'D', "packGemExquisite", 'R', new ItemStack(Items.redstone));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.redstoneReactorAddon), "III", "ICI", "IRI", 'I', new ItemStack(TFCItems.leadSheet), 'C', "packGemExquisite", 'R', new ItemStack(Items.redstone));
 				r.addShaped(new ItemStack(openmodularturrets.items.Items.damageAmpAddon), "C C", "RRR", "III", 'C', ic2.api.item.IC2Items.getItem("teslaCoil"), 'R', new ItemStack(Blocks.redstone_block), 'I', new ItemStack(TFCItems.redSteelSheet2x));
@@ -47,5 +52,12 @@ public class OpenModularTurretsRecipes {
 				r.addShaped(new ItemStack(openmodularturrets.blocks.Blocks.grenadeLauncherTurret), "ALA", "LCL", " B ", 'L', new ItemStack(TFCItems.leadIngot), 'A', new ItemStack(TFCItems.brassIngot), 'C', new ItemStack(openmodularturrets.items.Items.chamberTierFourItem), 'B', new ItemStack(openmodularturrets.items.Items.chamberTierFourItem));
 				r.addShaped(new ItemStack(openmodularturrets.blocks.Blocks.laserTurret), "LLL", "LCL", " B ", 'L', TFItems.ingotEnderium, 'C', new ItemStack(openmodularturrets.items.Items.chamberTierFiveItem), 'B', new ItemStack(openmodularturrets.items.Items.chamberTierFiveItem));
 				r.addShaped(new ItemStack(openmodularturrets.blocks.Blocks.railGunTurret), "LLL", "LCL", " B ", 'L', TFItems.ingotSignalum, 'C', new ItemStack(openmodularturrets.items.Items.chamberTierFiveItem), 'B', new ItemStack(openmodularturrets.items.Items.chamberTierFiveItem));
+				r.addCross(new ItemStack(openmodularturrets.items.Items.blazingClayCraftable, 8), TFCItems.clayBall, Items.blaze_powder);
+				r.addShaped(new ItemStack(openmodularturrets.items.Items.concealerAddon), "EGE", "IEI", 'E', WurmTweaksItems.ingotRainbowSteel, 'G', "packGemExquisite", 'I', WurmTweaksItems.itemMixedSheet);
+				r.addShaped(new ItemStack(openmodularturrets.items.Items.scattershotUpgradeItem), "EGE", "IEI", 'E', Items.gunpowder, 'G', "packGem", 'I', WurmTweaksItems.itemComputationalCore);
+				r.addShaped(new ItemStack(openmodularturrets.items.Items.serialPortAddon), "EGE", "IEI", 'E', Items.redstone, 'G', "packGemExquisite", 'I', WurmTweaksItems.itemComputationalCore);
+				r.addShaped(new ItemStack(openmodularturrets.blocks.Blocks.relativisticTurret), "LLL", "LCL", " B ", 'L', "dye", 'C', new ItemStack(openmodularturrets.items.Items.chamberTierThreeItem), 'B', new ItemStack(openmodularturrets.items.Items.chamberTierTwoItem));
+				r.addShaped(new ItemStack(openmodularturrets.blocks.Blocks.teleporterTurret), "LLL", "LCL", " B ", 'L', Items.ender_pearl, 'C', new ItemStack(openmodularturrets.items.Items.chamberTierThreeItem), 'B', TFItems.ingotEnderium);
+				r.addShaped(new ItemStack(openmodularturrets.blocks.Blocks.incendiaryTurret), "LLL", "LCL", " B ", 'L', Items.blaze_rod, 'C', new ItemStack(openmodularturrets.items.Items.chamberTierTwoItem), 'B', TFItems.bucketGlowstone);
 		}
 }

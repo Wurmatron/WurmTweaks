@@ -165,7 +165,7 @@ public class ThermalExpansionRecipes {
 				r.addShaped(BlockFrame.frameCellReinforcedEmpty, "IGI", "GXG", "IGI", 'I', TFItems.ingotEnderium, 'G', "packGlass", 'X', "packGemExquisite");
 				r.addShaped(BlockFrame.frameCellResonantEmpty, " I ", "IXI", " I ", 'I', TFItems.ingotEnderium, 'X', BlockFrame.frameCellReinforcedEmpty);
 				r.addShaped(BlockFrame.frameCellResonantFull, " I ", "IXI", " I ", 'I', TFItems.ingotEnderium, 'X', BlockFrame.frameCellReinforcedFull);
-				r.addShaped(BlockFrame.frameTesseractEmpty, "IGI", "GXG", "IGI", 'I', TFItems.ingotEnderium, 'G', "packGlass", 'X', "packGemExquisite");
+				r.addShaped(BlockFrame.frameTesseractEmpty, "IGI", "GXG", "IGI", 'I', TFItems.ingotEnderium, 'G', "packGlass", 'X', BlockFrame.frameCellResonantFull);
 				r.addShaped(BlockSponge.spongeBasic, "SWS", "WBW", "SWS", 'S', Items.string, 'W', "packLog", 'B', Items.slime_ball);
 				r.addShaped(BlockSponge.spongeMagmatic, "SWS", "WBW", "SWS", 'S', Items.string, 'W', "packLog", 'B', Items.magma_cream);
 				r.addShaped(BlockWorkbench.workbenchBasic, " X ", "ICI", " P ", 'C', Blocks.crafting_table, 'I', "ingotCopper", 'P', BlockStrongbox.strongboxBasic, 'X', Items.paper);
