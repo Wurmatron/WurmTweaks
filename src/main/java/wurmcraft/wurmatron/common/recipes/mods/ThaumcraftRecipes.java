@@ -54,6 +54,8 @@ public class ThaumcraftRecipes {
 				r.addArmorRecipes(ConfigItems.itemHelmetThaumium, ConfigItems.itemChestThaumium, ConfigItems.itemLegsThaumium, ConfigItems.itemBootsThaumium, new ItemStack(ConfigItems.itemResource, 1, 2));
 				r.addShapeless(new ItemStack(ConfigItems.itemInkwell, 1, 0), "dyeBlack", new ItemStack(ConfigItems.itemEssence, 1, 0), WurmTweaksItems.itemMagicChunk);
 				r.addShapeless(new ItemStack(ConfigItems.itemInkwell, 1, 0), "dyeBlack", new ItemStack(ConfigItems.itemInkwell, 1, OreDictionary.WILDCARD_VALUE));
+				r.addShapeless(new ItemStack(ConfigBlocks.blockMagicalLog, 1, 0), new ItemStack(ConfigBlocks.blockWoodenDevice, 4, 6));
+				r.addShapeless(new ItemStack(ConfigBlocks.blockMagicalLog, 1, 1), new ItemStack(ConfigBlocks.blockWoodenDevice, 4, 7));
 				ThaumcraftApi.getCraftingRecipes().clear();
 				addInfoRecipes();
 				addThamRecipes();
@@ -61,7 +63,7 @@ public class ThaumcraftRecipes {
 				addArtificeRecipes();
 				ThaumcraftHelper.removeTab("GOLEMANCY");
 				addEldridthRecipes();
-				if(RecipeChecker.modExists("techreborn"))
+				if (RecipeChecker.modExists("techreborn"))
 						addCentrifugeRecipes();
 				TAspect.addAspects();
 		}
@@ -224,12 +226,12 @@ public class ThaumcraftRecipes {
 		}
 
 		@Optional.Method (modid = "techreborn")
-		private static void addCentrifugeRecipes() {
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.zincIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,0),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.nickelIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,1),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.bismuthIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,2),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.copperIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,3),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.steelIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,4),null,null,null,100,32);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.blackSteelIngot,1,0), null,new ItemStack(ConfigItems.itemShard,4,5),null,null,null,100,32);
+		private static void addCentrifugeRecipes () {
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Items.feather, 16), null, new ItemStack(ConfigItems.itemShard, 4, 0), null, null, null, 100, 32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Items.blaze_rod, 4, 0), null, new ItemStack(ConfigItems.itemShard, 4, 1), null, null, null, 100, 32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.redSteelBucketSaltWater, 1, 0), null, new ItemStack(ConfigItems.itemShard, 4, 2), null, null, null, 100, 32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCBlocks.dirt), null, new ItemStack(ConfigItems.itemShard, 4, 3), null, null, null, 100, 32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.juteFiber, 8, 0), null, new ItemStack(ConfigItems.itemShard, 4, 4), null, null, null, 100, 32);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Blocks.cobblestone, 16), null, new ItemStack(ConfigItems.itemShard, 4, 5), null, null, null, 100, 32);
 		}
 }

@@ -62,35 +62,44 @@ public class OreDict {
 				add("packBrick", new ItemStack(TFCBlocks.stoneSedBrick, 1, OreDictionary.WILDCARD_VALUE));
 				// Planks
 				add("packPlanks", new ItemStack(Blocks.planks, 1, OreDictionary.WILDCARD_VALUE));
-				add("packPlanks", new ItemStack(TFCBlocks.planks, 1, OreDictionary.WILDCARD_VALUE));
-				add("packPlanks", new ItemStack(TFCBlocks.planks2, 1, OreDictionary.WILDCARD_VALUE));
+				for (int p = 0; p < 16; p++)
+						add("packPlanks", new ItemStack(TFCBlocks.planks, 1, p));
+				add("packPlanks", new ItemStack(TFCBlocks.planks2, 1, 0));
 				// Dirt
 				add("packDirt", Blocks.dirt);
-				add("packDirt", new ItemStack(TFCBlocks.dirt, 1, OreDictionary.WILDCARD_VALUE));
-				add("packDirt", new ItemStack(TFCBlocks.dirt2, 1, OreDictionary.WILDCARD_VALUE));
+				for (int g = 0; g < 16; g++)
+						add("packDirt", new ItemStack(TFCBlocks.dirt, 1, g));
+				for (int g = 0; g < 5; g++)
+						add("packDirt", new ItemStack(TFCBlocks.dirt2, 1, g));
 				// Grass
 				add("packGrass", Blocks.grass);
-				add("packGrass", new ItemStack(TFCBlocks.grass, 1, OreDictionary.WILDCARD_VALUE));
-				add("packGrass", new ItemStack(TFCBlocks.grass2, 1, OreDictionary.WILDCARD_VALUE));
-				add("packGrass", new ItemStack(TFCBlocks.clayGrass, 1, OreDictionary.WILDCARD_VALUE));
-				add("packGrass", new ItemStack(TFCBlocks.dryGrass, 1, OreDictionary.WILDCARD_VALUE));
-				add("packGrass", new ItemStack(TFCBlocks.clayGrass2, 1, OreDictionary.WILDCARD_VALUE));
-				add("packGrass", new ItemStack(TFCBlocks.dryGrass2, 1, OreDictionary.WILDCARD_VALUE));
+				for (int g = 0; g < 16; g++) {
+						add("packGrass", new ItemStack(TFCBlocks.grass, 1, g));
+						add("packGrass", new ItemStack(TFCBlocks.grass2, 1, g));
+						add("packGrass", new ItemStack(TFCBlocks.clayGrass, 1, g));
+						add("packGrass", new ItemStack(TFCBlocks.dryGrass, 1, g));
+						add("packGrass", new ItemStack(TFCBlocks.clayGrass2, 1, g));
+						add("packGrass", new ItemStack(TFCBlocks.dryGrass2, 1, g));
+				}
 				// Saplings
 				add("packSapling", new ItemStack(Blocks.sapling, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSapling", new ItemStack(TFCBlocks.sapling, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSapling", new ItemStack(TFCBlocks.sapling2, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSapling", new ItemStack(TFCItems.fruitTreeSapling, 1, OreDictionary.WILDCARD_VALUE));
+				for (int s = 0; s < 16; s++)
+						add("packSapling", new ItemStack(TFCBlocks.sapling, 1, s));
+				add("packSapling", new ItemStack(TFCBlocks.sapling2, 1, 0));
+				for (int s = 0; s < 9; s++)
+						add("packSapling", new ItemStack(TFCItems.fruitTreeSapling, 1, s));
 				// Anvil
 				add("packAnvil", new ItemStack(TFCBlocks.anvil, 1, OreDictionary.WILDCARD_VALUE));
 				add("packAnvil", new ItemStack(TFCBlocks.anvil2, 1, OreDictionary.WILDCARD_VALUE));
 				// Lumber
-				add("packLumber", new ItemStack(TFCItems.singlePlank, 1, OreDictionary.WILDCARD_VALUE));
+				for (int l = 0; l < 17; l++)
+						add("packLumber", new ItemStack(TFCItems.singlePlank, 1, l));
 				// Chest
 				add("packChest", Blocks.chest);
 				add("packChest", Blocks.ender_chest);
 				add("packChest", Blocks.trapped_chest);
-				add("packChest", new ItemStack(TFCBlocks.chest, 1, OreDictionary.WILDCARD_VALUE));
+				for (int c = 0; c < 17; c++)
+						add("packChest", new ItemStack(TFCBlocks.chest, 1, c));
 				// TrapDoor
 				add("packTrapDoor", Blocks.trapdoor);
 				add("packTrapDoor", new ItemStack(TFCBlocks.metalTrapDoor, 1, OreDictionary.WILDCARD_VALUE));
@@ -106,7 +115,8 @@ public class OreDict {
 				add("packString", Items.string);
 				add("packString", TFCItems.woolYarn);
 				// Rocks
-				add("packRock", new ItemStack(TFCItems.looseRock, 1, OreDictionary.WILDCARD_VALUE));
+				for (int i = 0; i < 21; i++)
+						add("packRock", new ItemStack(TFCItems.looseRock, 1, i));
 				// Fruit
 				add("packFruit", TFCHelper.getFood(TFCItems.redApple, 160));
 				add("packFruit", TFCHelper.getFood(TFCItems.banana, 160));
@@ -190,12 +200,16 @@ public class OreDict {
 				}
 				// Sand
 				add("packSand", Blocks.sand);
-				add("packSand", new ItemStack(TFCBlocks.sand, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSand", new ItemStack(TFCBlocks.sand2, 1, OreDictionary.WILDCARD_VALUE));
+				for (int o = 0; o < 16; o++)
+						add("packSand", new ItemStack(TFCBlocks.sand, 1, o));
+				for (int o = 0; o < 5; o++)
+						add("packSand", new ItemStack(TFCBlocks.sand2, 1, o));
 				// Gravel
 				add("packGravel", Blocks.gravel);
-				add("packGravel", new ItemStack(TFCBlocks.gravel, 1, OreDictionary.WILDCARD_VALUE));
-				add("packGravel", new ItemStack(TFCBlocks.gravel2, 1, OreDictionary.WILDCARD_VALUE));
+				for (int o = 0; o < 16; o++)
+						add("packGravel", new ItemStack(TFCBlocks.gravel, 1, o));
+				for (int o = 0; o < 5; o++)
+						add("packGravel", new ItemStack(TFCBlocks.gravel2, 1, o));
 				// Ingot
 				add("packIngot", Items.gold_ingot);
 				add("packIngot", Items.gold_ingot);
@@ -281,16 +295,18 @@ public class OreDict {
 				// Rubber Ore Dict ("packRubber")
 				add("packRubber", IC2Items.getItem("rubber"));
 				add("packRubber", MFRThings.rawRubberItem);
-				add("packCredit", new ItemStack(WTItems.creditBismuth, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditZinc, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditPlatinum, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditNickel, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditCopper, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditGold, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditIron, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditLead, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditSilver, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCredit", new ItemStack(WTItems.creditTin, 1, OreDictionary.WILDCARD_VALUE));
+				for (int c = 0; c < 5; c++) {
+						add("packCredit", new ItemStack(WTItems.creditBismuth, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditZinc, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditPlatinum, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditNickel, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditCopper, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditGold, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditIron, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditLead, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditSilver, 1, c));
+						add("packCredit", new ItemStack(WTItems.creditTin, 1, c));
+				}
 				// Ore
 				addOre("oreCopper", new ItemStack(TFCBlocks.ore, 1, 0));
 				addOre("oreGold", new ItemStack(TFCBlocks.ore, 1, 1));

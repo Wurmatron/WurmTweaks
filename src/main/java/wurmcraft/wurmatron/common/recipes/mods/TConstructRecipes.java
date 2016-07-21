@@ -336,7 +336,7 @@ public class TConstructRecipes {
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinIngot2x), WurmTweaksBlocks.blockTin, 900, new FluidStack(WurmTweaksFluid.fluidTin, 2000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinSheet), WurmTweaksBlocks.blockTin, 1000, new FluidStack(WurmTweaksFluid.fluidTin, 2000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinSheet2x), WurmTweaksBlocks.blockTin, 1200, new FluidStack(WurmTweaksFluid.fluidTin, 4000));
-				for (int c = 0; c > ItemCredit.units.length; c++) {
+				for (int c = 0; c < ItemCredit.units.length; c++) {
 						TConstructHelper.addMelting(new ItemStack(WTItems.creditBismuth, 1, c), WurmTweaksBlocks.blockBismuth, 400, new FluidStack(WurmTweaksFluid.fluidBismuth, ItemCredit.units[c] * 100));
 						TConstructHelper.addMelting(new ItemStack(WTItems.creditGold, 1, c), WurmTweaksBlocks.blockGold, 400, new FluidStack(WurmTweaksFluid.fluidGold, ItemCredit.units[c] * 100));
 						TConstructHelper.addMelting(new ItemStack(WTItems.creditLead, 1, c), WurmTweaksBlocks.blockLead, 400, new FluidStack(WurmTweaksFluid.fluidLead, ItemCredit.units[c] * 100));
