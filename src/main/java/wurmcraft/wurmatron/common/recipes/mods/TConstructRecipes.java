@@ -550,6 +550,16 @@ public class TConstructRecipes {
 						TConstructHelper.addCastingRecipe(getPattern(tool), new FluidStack(WurmTweaksFluid.fluidBrass, 1000), new ItemStack(tool, 1, OreDictionary.WILDCARD_VALUE));
 						TConstructHelper.addCastingRecipe(getPattern(tool), new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000), new ItemStack(tool, 1, OreDictionary.WILDCARD_VALUE));
 				}
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 201), new FluidStack(WurmTweaksFluid.fluidCopper, 1000), new ItemStack(TinkerTools.toolRod, 1, 201));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 202), new FluidStack(WurmTweaksFluid.fluidBronze, 1000), new ItemStack(TinkerTools.toolRod, 1, 202));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 203), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 1000), new ItemStack(TinkerTools.toolRod, 1, 203));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 204), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000), new ItemStack(TinkerTools.toolRod, 1, 204));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 205), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), new ItemStack(TinkerTools.toolRod, 1, 205));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 206), new FluidStack(WurmTweaksFluid.fluidSteel, 1000), new ItemStack(TinkerTools.toolRod, 1, 206));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 207), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), new ItemStack(TinkerTools.toolRod, 1, 207));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 208), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), new ItemStack(TinkerTools.toolRod, 1, 208));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 209), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), new ItemStack(TinkerTools.toolRod, 1, 209));
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 210), new FluidStack(WurmTweaksFluid.fluidPlatinum, 1000), new ItemStack(TinkerTools.toolRod, 1, 210));
 		}
 
 		private static void addMoldCrafting () {
