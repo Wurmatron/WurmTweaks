@@ -22,6 +22,7 @@ import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.network.PacketHandler;
 import wurmcraft.wurmatron.common.proxy.CommonProxy;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
+import wurmcraft.wurmatron.common.recipes.RecipeStorage;
 import wurmcraft.wurmatron.common.recipes.Recipes;
 import wurmcraft.wurmatron.common.reference.Global;
 
@@ -76,6 +77,7 @@ public class WurmTweaks {
 				Recipes.checkSettings();
 				LootHandler.init();
 				e.registerServerCommand(new WTCommand());
+				RecipeStorage.loadRecipes();
 		}
 
 }

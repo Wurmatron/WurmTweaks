@@ -12,12 +12,4 @@ public class MiningWorldFix {
 						e.player.setLocationAndAngles((double) e.player.worldObj.getSpawnPoint().posX, (double) e.player.worldObj.getSpawnPoint().posY, (double) e.player.worldObj.getSpawnPoint().posZ, 0f, 0f);
 				}
 		}
-
-		@SubscribeEvent
-		public void onLogin (PlayerEvent.PlayerLoggedInEvent e) {
-				if (e.player.dimension != 0) {
-						e.player.travelToDimension(0);
-						e.player.setLocationAndAngles((double) e.player.worldObj.getSpawnPoint().posX, (double) e.player.worldObj.getSpawnPoint().posY, (double) e.player.worldObj.getSpawnPoint().posZ, 0f, 0f);
-				}
-		}
 }

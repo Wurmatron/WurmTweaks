@@ -8,8 +8,7 @@ import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
-import wurmcraft.wurmatron.common.network.PacketHandler;
-import wurmcraft.wurmatron.common.network.server.UpdateRecipe;
+import wurmcraft.wurmatron.common.recipes.RecipeStorage;
 import wurmcraft.wurmatron.common.reference.Global;
 import wurmcraft.wurmatron.common.utils.recipeHelper.RecipeCreator;
 
@@ -35,7 +34,7 @@ public class WTCommand extends CommandBase {
 
 		@Override
 		public String getCommandUsage (ICommandSender sender) {
-				return "wt <addRecipe | removeRecipe>";
+				return "wt <addRecipe | removeRecipe | delete | reload>";
 		}
 
 		@Override
@@ -56,10 +55,12 @@ public class WTCommand extends CommandBase {
 								if (argString[0].equalsIgnoreCase("addRecipe") || argString[0].equalsIgnoreCase("addRec")) {
 										if (argString.length > 2 && argString[1] != null && argString[2] != null) {
 												if (argString[1].equalsIgnoreCase("shaped")) {
-														RecipeCreator.addShapedRecipe(argString, sender,true);
+														RecipeStorage.addLine(argString);
+														RecipeCreator.addShapedRecipe(argString, sender, true);
 												}
 												if (argString[1].equalsIgnoreCase("shapeless")) {
-														RecipeCreator.addShapelessRecipe(argString, sender,true);
+														RecipeStorage.addLine(argString);
+														RecipeCreator.addShapelessRecipe(argString, sender, true);
 												}
 										} else {
 												sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_RED + "/wt addRecipe <shaped | shapeless> <output> ..."));
@@ -73,9 +74,9 @@ public class WTCommand extends CommandBase {
 														if (recipe instanceof IRecipe) {
 																if (((IRecipe) recipe).getRecipeOutput() != null)
 																		if (((IRecipe) recipe).getRecipeOutput().isItemEqual(stack)) {
+																				RecipeStorage.addLine(argString);
 																				CraftingManager.getInstance().getRecipeList().remove(index);
 																				sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_RED + "Recipe removed for " + stack.getItem().getUnlocalizedName()));
-																				PacketHandler.sendToAll(new UpdateRecipe(argString));
 																				return;
 																		}
 														}
@@ -84,6 +85,12 @@ public class WTCommand extends CommandBase {
 										} else {
 												sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_RED + "/wt removeRecipe ItemStack"));
 										}
+								} else if (argString[0].equalsIgnoreCase("delete")) {
+										RecipeStorage.recipeLocation.delete();
+										if (sender != null)
+												sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_RED + "Deleted " + RecipeStorage.recipeLocation.getAbsolutePath()));
+								} else if(argString[0].equalsIgnoreCase("reload")) {
+										RecipeStorage.loadRecipes();
 								}
 						} else {
 								sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_RED + "You are not my master"));

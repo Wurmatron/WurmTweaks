@@ -15,7 +15,6 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityGiantZombie;
 import net.minecraft.world.biome.BiomeGenBase;
 import thaumcraft.common.entities.monster.*;
-import thaumcraft.common.entities.monster.boss.EntityEldritchGolem;
 
 import java.util.ArrayList;
 
@@ -69,7 +68,8 @@ public class MobBiomeSpawn {
 						addBiome(EntityGhastTFC.class, 25, 1, 4, EnumCreatureType.monster, biome);
 						addBiome(EntityGiantZombie.class, 6, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntityEldritchGuardian.class, 12, 1, 1, EnumCreatureType.monster, biome);
-						addBiome(EntityEldritchGolem.class, 1, 1, 1, EnumCreatureType.monster, biome);
+						//	Disabled Due to being Anoying and spawning too much　
+						// addBiome(EntityEldritchGolem.class, 1, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntityEldritchCrab.class, 24, 1, 5, EnumCreatureType.monster, biome);
 						addBiome(EntityBlitz.class, 5, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntityBlizz.class, 5, 1, 1, EnumCreatureType.monster, biome);
