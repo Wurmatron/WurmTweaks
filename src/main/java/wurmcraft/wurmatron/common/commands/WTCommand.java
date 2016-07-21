@@ -56,10 +56,10 @@ public class WTCommand extends CommandBase {
 								if (argString[0].equalsIgnoreCase("addRecipe") || argString[0].equalsIgnoreCase("addRec")) {
 										if (argString.length > 2 && argString[1] != null && argString[2] != null) {
 												if (argString[1].equalsIgnoreCase("shaped")) {
-														RecipeCreator.addShapedRecipe(argString, sender);
+														RecipeCreator.addShapedRecipe(argString, sender,true);
 												}
 												if (argString[1].equalsIgnoreCase("shapeless")) {
-														RecipeCreator.addShapelessRecipe(argString, sender);
+														RecipeCreator.addShapelessRecipe(argString, sender,true);
 												}
 										} else {
 												sender.addChatMessage(new ChatComponentText(EnumChatFormatting.DARK_RED + "/wt addRecipe <shaped | shapeless> <output> ..."));

@@ -24,6 +24,7 @@ import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
+import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
 
 
@@ -125,6 +126,8 @@ public class EnderIORecipes {
 				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), Items.redstone, TFCItems.blackSteelSheet, Items.glowstone_dust);
 				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), TFCItems.blackSteelSheet, Items.glowstone_dust);
 				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), TFCItems.blackSteelSheet, Items.glowstone_dust);
+				r.addBasicMachineRecipe(new ItemStack(EnderIO.itemMaterial, 4, 2), TFCItems.clayBall, new ItemStack(TFCItems.powder, 1, 2), new ItemStack(TFCItems.powder, 1, 1), Items.redstone);
+				MachineHelper.addFurnaceRecipes(new ItemStack(EnderIO.itemMaterial, 1, 1), new ItemStack(EnderIO.itemMaterial, 1, 2));
 				for (int m = 0; m < 7; m++)
 						r.addShapeless(new ItemStack(EnderIO.itemAlloy, 32, m), new ItemStack(EnderIO.blockIngotStorage, 1, m));
 				if (RecipeChecker.modExists("addCompressorRecipes"))

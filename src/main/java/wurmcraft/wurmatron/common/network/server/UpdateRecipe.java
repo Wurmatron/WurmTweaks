@@ -10,6 +10,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
 import wurmcraft.wurmatron.common.network.CustomMessage;
+import wurmcraft.wurmatron.common.utils.LogHandler;
 import wurmcraft.wurmatron.common.utils.recipeHelper.RecipeCreator;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class UpdateRecipe extends CustomMessage.ClientMessage<UpdateRecipe> {
 
-		private NBTTagCompound data;
+		private NBTTagCompound data = new NBTTagCompound();
 
 		public UpdateRecipe () {
 		}
@@ -25,7 +26,7 @@ public class UpdateRecipe extends CustomMessage.ClientMessage<UpdateRecipe> {
 		public UpdateRecipe (String[] args) {
 				String wurmCommand = "";
 				for (String arg : args)
-						wurmCommand = wurmCommand + "$" + arg;
+						wurmCommand = wurmCommand + "-" + arg;
 				data.setString("Input", wurmCommand);
 		}
 
@@ -41,26 +42,32 @@ public class UpdateRecipe extends CustomMessage.ClientMessage<UpdateRecipe> {
 
 		@Override
 		public void process (EntityPlayer player, Side side) {
-				String[] args = data.getString("input").split("$");
-				if (args[1].equalsIgnoreCase("shapeless")) {
-						RecipeCreator.addShapelessRecipe(args, null);
-						player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[Modpack]: " + EnumChatFormatting.DARK_GREEN + "my master has added an recipe."));
-				}
-				if (args[1].equalsIgnoreCase("shaped")) {
-						RecipeCreator.addShapedRecipe(args, null);
-						player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[Modpack]: " + EnumChatFormatting.DARK_GREEN + "my master has added an recipe."));
-				}
-				if (args[0].equalsIgnoreCase("removeRecipe") || args[0].equalsIgnoreCase("removeRec") || args[0].equalsIgnoreCase("remRec")) {
-						ItemStack stack = RecipeCreator.getStackFromString(args[1]);
-						List recipes = CraftingManager.getInstance().getRecipeList();
-						int index = 0;
-						for (Object recipe : recipes) {
-								if (recipe instanceof IRecipe) {
-										if (((IRecipe) recipe).getRecipeOutput() != null)
-												if (((IRecipe) recipe).getRecipeOutput().isItemEqual(stack))
-														CraftingManager.getInstance().getRecipeList().remove(index);
+				if (side.isClient()) {
+						String[] input = data.getString("Input").split("-");
+						String[] args = new String[input.length];
+						for (int l = 1; l < input.length; l++)
+								args[l - 1] = input[l];
+						if (args[1].equalsIgnoreCase("shapeless")) {
+								RecipeCreator.addShapelessRecipe(args, null, false);
+								player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[Modpack]: " + EnumChatFormatting.DARK_GREEN + "my master has added an recipe."));
+						}
+						if (args[1].equalsIgnoreCase("shaped")) {
+								RecipeCreator.addShapedRecipe(args, null, false);
+								player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "[Modpack]: " + EnumChatFormatting.DARK_GREEN + "my master has added an recipe."));
+						}
+						if (args[0].equalsIgnoreCase("removeRecipe") || args[0].equalsIgnoreCase("removeRec") || args[0].equalsIgnoreCase("remRec")) {
+								LogHandler.info("removeRecipe");
+								ItemStack stack = RecipeCreator.getStackFromString(args[1]);
+								List recipes = CraftingManager.getInstance().getRecipeList();
+								int index = 0;
+								for (Object recipe : recipes) {
+										if (recipe instanceof IRecipe) {
+												if (((IRecipe) recipe).getRecipeOutput() != null)
+														if (((IRecipe) recipe).getRecipeOutput().isItemEqual(stack))
+																CraftingManager.getInstance().getRecipeList().remove(index);
+										}
+										index++;
 								}
-								index++;
 						}
 				}
 		}
