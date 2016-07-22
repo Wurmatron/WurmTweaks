@@ -79,6 +79,7 @@ public class MobBiomeSpawn {
 						addBiome(EntityZombieTFC.class, 70, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntitySkeletonTFC.class, 60, 1, 1, EnumCreatureType.monster, biome);
 						addBiome(EntitySpiderTFC.class, 60, 1, 1, EnumCreatureType.monster, biome);
+						addBiome(EntityCreeperTFC.class, 55, 1, 1, EnumCreatureType.monster, biome);
 				}
 				for (BiomeGenBase biome : tfcWater) {
 						addBiome(EntityWaterGuardian.class, 5, 1, 2, EnumCreatureType.waterCreature, biome);
