@@ -70,6 +70,7 @@ public class ConfigHandler {
 		private static Property qCraft;
 		private static Property ElectroMagic;
 		private static Property ThaumicTinkerer;
+		private static Property explodingPig;
 
 		public static void init (FMLPreInitializationEvent e) {
 				config = new Configuration(e.getSuggestedConfigurationFile());
@@ -79,6 +80,8 @@ public class ConfigHandler {
 		public static void syncConfig () {
 				debug = config.get(Configuration.CATEGORY_GENERAL, Global.DEBUG, Defaults.DEBUG, "Enable debug mode");
 				Settings.debug = debug.getBoolean();
+				explodingPig = config.get(Configuration.CATEGORY_GENERAL, Global.EXPLODING_PIGS, Defaults.EXPLODINGPIGS, "Enable Pigs Exploding on Death");
+				Settings.explodingPig = explodingPig.getBoolean();
 				// Mods
 				Avaritia = config.get(Global.CATEGORY_MODS, "Avaritia", true);
 				Settings.Avaritia = Avaritia.getBoolean();
@@ -206,5 +209,6 @@ public class ConfigHandler {
 
 		private static class Defaults {
 				private static final boolean DEBUG = false;
+				private static final boolean EXPLODINGPIGS = true;
 		}
 }

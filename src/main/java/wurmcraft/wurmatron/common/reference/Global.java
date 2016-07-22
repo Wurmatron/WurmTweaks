@@ -15,6 +15,7 @@ public class Global {
 		// Config
 		public static final String CATEGORY_MODS = "Mods";
 		public static final String DEBUG = "Debug";
+		public static final String EXPLODING_PIGS = "Exploding_Pigs";
 
 		public static final ArrayList<String> GODS = new ArrayList<String>() {{
 				add("Wurmatron");

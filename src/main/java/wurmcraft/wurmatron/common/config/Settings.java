@@ -63,6 +63,7 @@ public class Settings {
 		public static boolean AcademyCraft;
 		public static boolean ElectroMagic;
 		public static boolean ThaumicTinkerer;
+		public static boolean explodingPig;
 
 		public static boolean isModEnabled (String modid) {
 				if (modid.equalsIgnoreCase("Minecraft")) return true;

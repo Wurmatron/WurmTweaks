@@ -13,9 +13,11 @@ import net.minecraftforge.common.MinecraftForge;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.commands.WTCommand;
 import wurmcraft.wurmatron.common.config.ConfigHandler;
+import wurmcraft.wurmatron.common.config.Settings;
 import wurmcraft.wurmatron.common.events.*;
 import wurmcraft.wurmatron.common.events.bloodmagic.KnifeHandler;
 import wurmcraft.wurmatron.common.fluid.WurmTweaksFluid;
+import wurmcraft.wurmatron.common.handler.ExplodingPigHandler;
 import wurmcraft.wurmatron.common.handler.LootHandler;
 import wurmcraft.wurmatron.common.handler.MobBiomeSpawn;
 import wurmcraft.wurmatron.common.items.WTItems;
@@ -62,6 +64,8 @@ public class WurmTweaks {
 				if (RecipeChecker.modExists("AWWayofTime"))
 						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
 				FMLCommonHandler.instance().bus().register(new PlayerClone());
+				if (Settings.explodingPig)
+						MinecraftForge.EVENT_BUS.register(new ExplodingPigHandler());
 				LootHandler.init();
 		}
 
