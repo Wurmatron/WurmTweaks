@@ -11,9 +11,12 @@ import mods.railcraft.common.blocks.RailcraftBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
+import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.nbt.NBTOpenComputers;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 
 public class OpenComputersRecipes {
 
@@ -35,7 +38,7 @@ public class OpenComputersRecipes {
 				r.addShaped(li.cil.oc.api.Items.get("keyboard").createItemStack(1), "BBB", "BAC", 'B', "oc:materialButtonGroup", 'A', "oc:materialArrowKey", 'C', "oc:materialNumPad");
 				r.addShaped(li.cil.oc.api.Items.get("screen1").createItemStack(1), "IRI", "RXG", "IRI", 'I', TFCItems.blackSteelSheet, 'R', Items.redstone, 'G', "packGlass", 'X', "oc:circuitChip1");
 				r.addShaped(li.cil.oc.api.Items.get("screen2").createItemStack(1), "IRI", "RXG", "IRI", 'I', TFCItems.blackSteelSheet, 'R', Items.redstone, 'G', "packGlass", 'X', "oc:screen1");
-				r.addShaped(li.cil.oc.api.Items.get("screen2").createItemStack(1), "IRI", "RXG", "IRI", 'I', TFCItems.blackSteelSheet, 'R', Items.redstone, 'G', "packGlass", 'X', "oc:screen2");
+				r.addShaped(li.cil.oc.api.Items.get("screen3").createItemStack(1), "IRI", "RXG", "IRI", 'I', TFCItems.blackSteelSheet, 'R', Items.redstone, 'G', "packGlass", 'X', "oc:screen2");
 				r.addShaped(li.cil.oc.api.Items.get("charger").createItemStack(1), "IGI", "CXC", "III", 'I', TFCItems.blackSteelSheet, 'G', TFCItems.goldSheet, 'C', "oc:capacitor", 'X', "oc:circuitChip2");
 				r.addShaped(li.cil.oc.api.Items.get("case1").createItemStack(1), "ICI", "BGB", "IAI", 'I', TFCItems.platinumSheet, 'C', "oc:circuitChip1", 'B', Blocks.iron_bars, 'G', "packChest", 'A', TFCItems.goldSheet);
 				r.addShaped(li.cil.oc.api.Items.get("case2").createItemStack(1), "ICI", "BGB", "IAI", 'I', TFCItems.platinumSheet, 'C', "oc:circuitChip1", 'B', Blocks.iron_bars, 'G', "oc:case1", 'A', TFCItems.goldSheet);
@@ -113,7 +116,6 @@ public class OpenComputersRecipes {
 				r.addBasicMachineRecipe(li.cil.oc.api.Items.get("nanomachines").createItemStack(1), WurmTweaksItems.itemAntiMatter, WurmTweaksItems.itemQuantumSingularity, WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemMachineFrame);
 				// TODO Creative Server
 				// TODO Creative PC Case
-				// TODO r.addShaped(li.cil.oc.api.Items.get("worldSensorCard").createItemStack(1), "I I", " B ", "I I", 'I', TFCItems.blackSteelSheet, 'B', WurmTweaksItems.itemSpaceModule);
 				r.addShaped(li.cil.oc.api.Items.get("tankControllerUpgrade").createItemStack(1), "PIP", "DXD", 'P', TFCItems.goldSheet, 'I', TFCItems.blackSteelSheet, 'B', Blocks.piston, 'D', Blocks.dispenser, 'X', Items.bucket);
 				r.addShaped(li.cil.oc.api.Items.get("arrowKeys").createItemStack(1), " B ", "BBB", 'B', Blocks.stone_button);
 				r.addShaped(li.cil.oc.api.Items.get("buttonGroup").createItemStack(1), "BBB", "BBB", 'B', Blocks.stone_button);
@@ -129,5 +131,40 @@ public class OpenComputersRecipes {
 				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 25), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 23), Items.redstone, TFCItems.platinumSheet, new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 24));
 				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 26), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 23), Items.redstone, TFCItems.blueSteelSheet2x, new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 25));
 				r.addCrossWCenter(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 23), Items.redstone, TFCItems.blackSteelSheet, Items.glowstone_dust);
+				r.addCrossWCenter(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 19), TFCItems.leadSheet, TFCItems.blackSteelSheet2x, Items.redstone);
+				r.add2X(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 22), Blocks.stone_button);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 28), WurmTweaksItems.itemComputationalCore, TFCItems.goldSheet, Items.redstone, TFCItems.blackSteelSheet2x);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 27), WurmTweaksItems.itemComputationalCore, TFCItems.platinumSheet, Items.redstone, TFCItems.blackSteelSheet);
+				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 101), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 29), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 8), WurmTweaksItems.itemComputationalCore);
+				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 102), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 30), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 9), WurmTweaksItems.itemComputationalCore);
+				r.addCrossWCenter(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 66), TFCItems.redSteelSheet, TFCItems.goldSheet, Items.redstone);
+				r.addShaped(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 89), "I I", " B ", "I I", 'I', TFCItems.blackSteelSheet, 'B', WurmTweaksItems.itemSpaceModule);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 11), WurmTweaksItems.itemComputationalCore, TFCItems.platinumSheet, Items.redstone, TFCItems.blackBronzeSheet2x);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 104), WurmTweaksBlocks.blockCompressedRedstone, Items.redstone, TFCItems.platinumSheet2x, TFCItems.goldSheet);
+				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 105), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 104), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 104));
+				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 106), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 105), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 105));
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findBlock("OpenComputers", "transposer")), "packChest", WurmTweaksItems.itemMagicChunk, WurmTweaksItems.ingotTitanium, Items.redstone);
+				r.addCrossWCenter(new ItemStack(GameRegistry.findBlock("OpenComputers", "waypoint")), "dye", TFCItems.blackSteelSheet, Blocks.redstone_lamp);
+				r.addCrossWCenter(new ItemStack(GameRegistry.findBlock("OpenComputers", "netSplitter")), TFCItems.goldSheet, Items.redstone, TFCItems.platinumSheet2x);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findBlock("OpenComputers", "microcontroller")), WurmTweaksBlocks.blockRedSteel, TFCItems.redSteelSheet2x, WurmTweaksItems.itemComputationalCore, WurmTweaksItems.itemMiningCore);
+				r.addShaped(new ItemStack(GameRegistry.findBlock("OpenComputers", "rack")), "SXS", "SBS", "SSS", 'S', WurmTweaksBlocks.blockBlueSteel, 'X', TFCItems.platinumSheet2x, 'B', TFCItems.blackSteelSheet2x);
+				r.addCrossWCenter(new ItemStack(GameRegistry.findBlock("OpenComputers", "relay")), WurmTweaksBlocks.blockBismuth, Items.redstone, TFCItems.platinumSheet);
+				r.addShaped(new ItemStack(GameRegistry.findBlock("OpenComputers", "diskDrive")), " X ", "XBX", "XXX", 'X', WurmTweaksBlocks.blockSilver, 'B', IC2Items.getItem("elemotor"));
+				r.addCrossWCenter(new ItemStack(GameRegistry.findBlock("OpenComputers", "accessPoint")), Items.redstone, TFCItems.goldSheet, WurmTweaksBlocks.blockCompressedRedstone);
+				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 108), TFCItems.blackSteelSheet2x, WurmTweaksBlocks.blockCompressedRedstone, ExtraUtils.bedrockium, TFCItems.platinumSheet2x);
+				if (RecipeChecker.modExists("techreborn"))
+						addAssemblerRecipes();
+				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 2), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1));
+				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 38), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 2), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 2));
+
+		}
+
+
+		@Optional.Method (modid = "techreborn")
+		private static void addAssemblerRecipes () {
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(TFCItems.blackSteelSheet, 16), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1), 800, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 50), 800, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 2), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 3), 800, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 38), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 39), 800, 32);
 		}
 }

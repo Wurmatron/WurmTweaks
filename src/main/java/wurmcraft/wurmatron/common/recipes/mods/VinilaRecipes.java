@@ -24,14 +24,14 @@ public class VinilaRecipes {
 
 		public static void addRecipes () {
 				MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.stone), new ItemStack(Blocks.cobblestone));
-				for (int c = 0; c < 2; c++)
-						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgIn, 1, c), new ItemStack(TFCBlocks.stoneIgInCobble, 1, c));
-				for (int c = 0; c < 3; c++)
-						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgEx, 1, c), new ItemStack(TFCBlocks.stoneIgExCobble, 1, c));
-				for (int c = 0; c < 7; c++)
-						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneSed, 1, c), new ItemStack(TFCBlocks.stoneSedCobble, 1, c));
-				for (int c = 0; c < 5; c++)
-						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneMM, 1, c), new ItemStack(TFCBlocks.stoneMM, 1, c));
+				for (int in = 0; in < 3; in++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgIn, 1, in), new ItemStack(TFCBlocks.stoneIgInCobble, 4, in));
+				for (int ex = 0; ex < 4; ex++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgEx, 1, ex), new ItemStack(TFCBlocks.stoneIgExCobble, 4, ex));
+				for (int sed = 0; sed < 8; sed++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneSed, 1, sed), new ItemStack(TFCBlocks.stoneSedCobble, 4, sed));
+				for (int mm = 0; mm < 6; mm++)
+						MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneMM, 1, mm), new ItemStack(TFCBlocks.stoneMMCobble, 4, mm));
 				r.addCircleWCenter(new ItemStack(Blocks.bedrock, 2), ExtraUtils.bedrockiumBlock, WurmTweaksItems.itemAntiMatter);
 				r.addShaped(Blocks.dispenser, "CCC", "CBC", "CRC", 'C', "packCobblestone", 'B', new ItemStack(TFCItems.bow, 1, OreDictionary.WILDCARD_VALUE), 'R', Items.redstone);
 				r.add2X(new ItemStack(Blocks.sandstone, 4, 0), "packSand");
@@ -137,6 +137,7 @@ public class VinilaRecipes {
 				r.addShapeless(new ItemStack(Items.iron_ingot), new ItemStack(TFCItems.wroughtIronIngot, 1, 0));
 				r.addShapeless(new ItemStack(Items.gold_ingot), new ItemStack(TFCItems.goldIngot, 1, 0));
 				r.addShapeless(new ItemStack(Items.arrow), TFCItems.arrow);
+				r.addShapeless(Items.writable_book, Items.book, "dyeBlack", Items.feather);
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();
