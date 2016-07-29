@@ -78,7 +78,7 @@ public class RecipeStorage {
 				}
 		}
 
-		private static List<String> readAndSplitToLines () {
+		public static List<String> readAndSplitToLines () {
 				try {
 						return Files.readAllLines(Paths.get(recipeLocation.toURI()));
 				} catch (IOException e) {
