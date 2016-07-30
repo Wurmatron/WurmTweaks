@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
@@ -27,6 +28,7 @@ import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeStorage;
 import wurmcraft.wurmatron.common.recipes.Recipes;
 import wurmcraft.wurmatron.common.reference.Global;
+import wurmcraft.wurmatron.common.utils.Helper;
 
 @Mod (modid = Global.MODID, name = Global.NAME, version = Global.VERSION, dependencies = Global.DEPENDENCIES, guiFactory = Global.GUIFACTORY)
 public class WurmTweaks {
@@ -82,6 +84,15 @@ public class WurmTweaks {
 				LootHandler.init();
 				e.registerServerCommand(new WTCommand());
 				RecipeStorage.loadRecipes();
+				Enchantment[] list = Enchantment.enchantmentsList;
+				list[8] = null;
+				list[101] = null;
+				try {
+						Helper.setFinalStatic(Enchantment.class.getField("enchantmentsList"), list);
+				} catch (NoSuchFieldException f) {
+						f.printStackTrace();
+				} catch (Exception f) {
+						f.printStackTrace();
+				}
 		}
-
 }
