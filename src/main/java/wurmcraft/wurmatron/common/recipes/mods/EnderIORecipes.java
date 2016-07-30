@@ -46,10 +46,10 @@ public class EnderIORecipes {
 				r.addShaped(new ItemStack(EnderIO.blockSolarPanel, 1, 1), "IGI", "GCG", "XAX", 'I', new ItemStack(EnderIO.itemAlloy, 1, 1), 'G', "packGlass", 'C', TFCItems.platinumSheet2x, 'X', new ItemStack(EnderIO.blockSolarPanel, 1, 0), 'A', new ItemStack(EnderIO.itemMaterial));
 				r.addBasicMachineRecipe(EnderIO.blockCrusher, "packGemExquisite", new ItemStack(EnderIO.itemAlloy, 1, 2), WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(EnderIO.blockAlloySmelter, TFCItems.wroughtIronSheet2x, IC2Items.getItem("inductionFurnace"), WurmTweaksBlocks.blockWroughtIron, WurmTweaksItems.itemMachineFrame);
-				r.addCrossWCenter(new ItemStack(EnderIO.blockCapacitorBank, 1, 0), new ItemStack(TEBlocks.blockCell), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.creativeCreativeParts);
-				r.addCrossWCenter(new ItemStack(EnderIO.blockCapacitorBank, 1, 1), WurmTweaksBlocks.blockCompressedRedstone, new ItemStack(EnderIO.blockCapacitorBank, 1, 1), WurmTweaksBlocks.blockGold);
-				r.addCrossWCenter(new ItemStack(EnderIO.blockCapacitorBank, 1, 2), new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), EnderIO.itemBasicCapacitor, WurmTweaksBlocks.blockGold);
-				r.addCrossWCenter(new ItemStack(EnderIO.blockCapacitorBank, 1, 3), new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), EnderIO.itemBasicCapacitor, new ItemStack(EnderIO.itemMaterial, 1, 6));
+				r.addCrossWCenter(new ItemStack(EnderIO.blockCapBank, 1, 0), new ItemStack(TEBlocks.blockCell), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.creativeCreativeParts);
+				r.addCrossWCenter(new ItemStack(EnderIO.blockCapBank, 1, 1), WurmTweaksBlocks.blockCompressedRedstone, new ItemStack(EnderIO.blockCapBank, 1, 1), WurmTweaksBlocks.blockGold);
+				r.addCrossWCenter(new ItemStack(EnderIO.blockCapBank, 1, 2), new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), EnderIO.itemBasicCapacitor, WurmTweaksBlocks.blockGold);
+				r.addCrossWCenter(new ItemStack(EnderIO.blockCapBank, 1, 3), new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), EnderIO.itemBasicCapacitor, new ItemStack(EnderIO.itemMaterial, 1, 6));
 				r.addBasicMachineRecipe(EnderIO.blockPainter, "packGemExquisite", EnderIO.itemAlloy, WurmTweaksItems.ingotPinkSteel, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(EnderIO.blockCrafter, "packCraftingTable", EnderIO.itemAlloy, "packIngot", WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(EnderIO.blockPowerMonitor, EnderIO.itemAlloy, EnderIO.itemPowerConduit, EnderIO.itemRedstoneConduit, EnderIO.itemConduitProbe);
@@ -72,14 +72,14 @@ public class EnderIORecipes {
 				r.addShaped(EnderIO.blockEnchanter, "GEG", "III", "I I", 'G', "packGemExquisite", 'E', Blocks.enchanting_table, 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addPressurePlate(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShapeless(new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 1), new ItemStack(EnderIO.blockDarkSteelPressurePlate, 1, 0), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE));
-				r.addShaped(EnderIO.blockDarkSteelAnvil, "BBB", " I ", "III", 'I', new ItemStack(EnderIO.itemMaterial, 1, 6), 'B', new ItemStack(EnderIO.blockIngotStorage, 1, 6));
-				r.addShaped(new ItemStack(EnderIO.blockDarkSteelLadder, 8), "III", " I ", "III", 'I', new ItemStack(EnderIO.itemMaterial, 1, 6));
-				r.addCross(new ItemStack(EnderIO.blockReinforcedObsidian, 4), Blocks.obsidian, new ItemStack(EnderIO.itemMaterial, 1, 6));
+				r.addShaped(EnderIO.blockDarkSteelAnvil, "BBB", " I ", "III", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6), 'B', new ItemStack(EnderIO.blockIngotStorage, 1, 6));
+				r.addShaped(new ItemStack(EnderIO.blockDarkSteelLadder, 8), "III", " I ", "III", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
+				r.addCross(new ItemStack(EnderIO.blockReinforcedObsidian, 4), Blocks.obsidian, new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShaped(EnderIO.blockEnderRail, "E E", " R ", "E E", 'E', Items.ender_pearl, 'R', Blocks.rail);
 				// Find a way to get nbt to work with enderio farmer
 				FarmersCommune.joinCommune(new TreeFarmer(TFCBlocks.sapling, TFCBlocks.logNatural));
 				FarmersCommune.joinCommune(new TreeFarmer(TFCBlocks.sapling2, TFCBlocks.logNatural2));
-				r.addSlabs(new ItemStack(EnderIO.blockDarkIronBars, 24), new ItemStack(EnderIO.itemMaterial, 1, 6));
+				r.addSlabs(new ItemStack(EnderIO.blockDarkIronBars, 24), new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addBasicMachineRecipe(EnderIO.itemFrankenSkull, new ItemStack(EnderIO.itemMaterial, 1, 2), new ItemStack(EnderIO.itemMaterial, 1, 6), new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), new ItemStack(Items.skull, 1, 2));
 				r.addShaped(new ItemStack(EnderIO.itemRedstoneConduit, 8, 0), "III", 'I', "ingotRedstoneAlloy");
 				r.addShapeless(new ItemStack(EnderIO.itemRedstoneConduit, 1, 1), new ItemStack(EnderIO.itemRedstoneConduit, 1, 0), Blocks.lever);
