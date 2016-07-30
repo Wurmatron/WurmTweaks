@@ -44,7 +44,6 @@ public class TerrafirmacraftRecipes {
 						ICHelper.addCompressorRecipe(new ItemStack(TFCItems.gemJasper, 4, g), new ItemStack(TFCItems.gemJasper, 1, g + 1));
 						ICHelper.addCompressorRecipe(new ItemStack(TFCItems.gemAmethyst, 4, g), new ItemStack(TFCItems.gemAmethyst, 1, g + 1));
 						ICHelper.addCompressorRecipe(new ItemStack(TFCItems.gemDiamond, 4, g), new ItemStack(TFCItems.gemDiamond, 1, g + 1));
-						ICHelper.addCompressorRecipe(new ItemStack(TFCItems.gemOpal, 4, g), new ItemStack(TFCItems.gemOpal, 1, g + 1));
 				}
 		}
 

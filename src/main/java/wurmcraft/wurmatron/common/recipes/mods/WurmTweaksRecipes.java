@@ -84,12 +84,6 @@ public class WurmTweaksRecipes {
 				r.addSimpleCirc(new ItemStack(WTItems.itemBasicFood, 5, 7), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1), new ItemStack(WurmTweaksItems.foodCheese.getItem(), 1, 4));
 				r.addSimpleCirc(new ItemStack(WTItems.itemBasicFood, 5, 8), new ItemStack(WurmTweaksItems.foodGrain.getItem(), 1, 1), new ItemStack(Items.skull, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(WTItems.itemBasicFood, 5, 9), WurmTweaksItems.foodFruit, WurmTweaksItems.foodGrain, WurmTweaksItems.foodMeat, WurmTweaksItems.foodVegtable, WurmTweaksItems.foodCheese);
-				r.addShaped(new ItemStack(WTItems.itemPill, 1, 0), "RX", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
-				r.addShaped(new ItemStack(WTItems.itemPill, 1, 1), " RX", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
-				r.addShaped(new ItemStack(WTItems.itemPill, 1, 2), "XR", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
-				r.addShaped(new ItemStack(WTItems.itemPill, 1, 3), " XR", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
-				r.addShaped(new ItemStack(WTItems.itemPill, 1, 4), "R X", 'X', new ItemStack(WTItems.itemBasicFood, 1, 9), 'R', "packRubber");
-				r.addShapeless(new ItemStack(WTItems.itemPill, 2, 5), new ItemStack(WTItems.itemPill, 1, 0), new ItemStack(WTItems.itemPill, 1, 1), new ItemStack(WTItems.itemPill, 1, 2), new ItemStack(WTItems.itemPill, 1, 3), new ItemStack(WTItems.itemPill, 1, 4));
 				r.addShapeless(new ItemStack(TFCItems.wroughtIronIngot, 32), new ItemStack(WurmTweaksBlocks.blockWroughtIron));
 				r.addShapeless(new ItemStack(TFCItems.platinumIngot, 32), new ItemStack(WurmTweaksBlocks.blockPlatinum));
 				r.addShapeless(new ItemStack(TFCItems.goldIngot, 32), new ItemStack(WurmTweaksBlocks.blockGold));
@@ -138,6 +132,13 @@ public class WurmTweaksRecipes {
 				r.addBasicMachineRecipe(WurmTweaksItems.creativeCreativeParts, new ItemStack(LudicrousBlocks.resource_block, 1, 1), WurmTweaksItems.itemAntiMatter, new ItemStack(LudicrousBlocks.resource_block, 1, 0), new ItemStack(BigReactors.blockMetal, 1, 4));
 				r.addCrossWCenter(WurmTweaksItems.creativeCreativePartsEnergy, WurmTweaksBlocks.blockCompressedRedstone, new ItemStack(LudicrousItems.resource, 1, 5), WurmTweaksItems.creativeCreativeParts);
 				r.addShapeless(new ItemStack(Blocks.redstone_block, 4), new ItemStack(WurmTweaksBlocks.blockCompressedRedstone));
+				r.addShaped(new ItemStack(WTItems.itemPill, 2, 0), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodFruit);
+				r.addShaped(new ItemStack(WTItems.itemPill, 2, 1), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodGrain);
+				r.addShaped(new ItemStack(WTItems.itemPill, 2, 2), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodMeat);
+				r.addShaped(new ItemStack(WTItems.itemPill, 2, 3), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodVegtable);
+				r.addShaped(new ItemStack(WTItems.itemPill, 2, 4), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodCheese);
+				r.addShaped(new ItemStack(WTItems.itemPill, 2, 5), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodGods);
+				r.addShapeless(new ItemStack(WTItems.itemPill, 5, 5), new ItemStack(WTItems.itemPill, 1, 0), new ItemStack(WTItems.itemPill, 1, 1), new ItemStack(WTItems.itemPill, 1, 2), new ItemStack(WTItems.itemPill, 1, 3), new ItemStack(WTItems.itemPill, 1, 4));
 				addCompressor();
 		}
 
