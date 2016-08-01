@@ -38,28 +38,44 @@ public class OreDict {
 				LogHandler.info("Adding custom ore dictionary values");
 				// Smooth Stone
 				add("packSmoothStone", Blocks.stone);
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgInSmooth, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgExSmooth, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneMMSmooth, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneSedSmooth, 1, OreDictionary.WILDCARD_VALUE));
+				for (int in = 0; in <= 2; in++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgInSmooth, 1, in));
+				for (int ex = 0; ex <= 3; ex++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgExSmooth, 1, ex));
+				for (int sed = 0; sed <= 7; sed++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneSedSmooth, 1, sed));
+				for (int mm = 0; mm <= 6; mm++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneMMSmooth, 1, mm));
 				// Stone
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgIn, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgEx, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneMM, 1, OreDictionary.WILDCARD_VALUE));
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneSed, 1, OreDictionary.WILDCARD_VALUE));
+				for (int in = 0; in <= 2; in++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgIn, 1, in));
+				for (int ex = 0; ex <= 3; ex++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgEx, 1, ex));
+				for (int sed = 0; sed <= 7; sed++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneSed, 1, sed));
+				for (int mm = 0; mm <= 6; mm++)
+						add("packSmoothStone", new ItemStack(TFCBlocks.stoneMM, 1, mm));
 				// Cobblestone
 				add("packCobblestone", Blocks.cobblestone);
-				add("packSmoothStone", new ItemStack(TFCBlocks.stoneIgInCobble, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCobblestone", new ItemStack(TFCBlocks.stoneIgExCobble, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCobblestone", new ItemStack(TFCBlocks.stoneMMCobble, 1, OreDictionary.WILDCARD_VALUE));
-				add("packCobblestone", new ItemStack(TFCBlocks.stoneSedCobble, 1, OreDictionary.WILDCARD_VALUE));
+				for (int in = 0; in <= 2; in++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneIgInCobble, 1, in));
+				for (int ex = 0; ex <= 3; ex++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneIgExCobble, 1, ex));
+				for (int sed = 0; sed <= 7; sed++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneSedCobble, 1, sed));
+				for (int mm = 0; mm <= 6; mm++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneMMSmooth, 1, mm));
 				// Brick
 				add("packBrick", Blocks.brick_block);
 				add("packBrick", Blocks.stonebrick);
-				add("packBrick", new ItemStack(TFCBlocks.stoneIgInBrick, 1, OreDictionary.WILDCARD_VALUE));
-				add("packBrick", new ItemStack(TFCBlocks.stoneIgExBrick, 1, OreDictionary.WILDCARD_VALUE));
-				add("packBrick", new ItemStack(TFCBlocks.stoneMMBrick, 1, OreDictionary.WILDCARD_VALUE));
-				add("packBrick", new ItemStack(TFCBlocks.stoneSedBrick, 1, OreDictionary.WILDCARD_VALUE));
+				for (int in = 0; in <= 2; in++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneIgInBrick, 1, in));
+				for (int ex = 0; ex <= 3; ex++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneIgExBrick, 1, ex));
+				for (int sed = 0; sed <= 7; sed++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneSedBrick, 1, sed));
+				for (int mm = 0; mm <= 6; mm++)
+						add("packCobblestone", new ItemStack(TFCBlocks.stoneMMBrick, 1, mm));
 				// Planks
 				add("packPlanks", new ItemStack(Blocks.planks, 1, OreDictionary.WILDCARD_VALUE));
 				for (int p = 0; p < 16; p++)
@@ -82,7 +98,10 @@ public class OreDict {
 						add("packGrass", new ItemStack(TFCBlocks.dryGrass2, 1, g));
 				}
 				// Saplings
-				add("packSapling", new ItemStack(Blocks.sapling, 1, OreDictionary.WILDCARD_VALUE));
+				add("packSapling", new ItemStack(Blocks.sapling, 1, 0));
+				add("packSapling", new ItemStack(Blocks.sapling, 1, 1));
+				add("packSapling", new ItemStack(Blocks.sapling, 1, 2));
+				add("packSapling", new ItemStack(Blocks.sapling, 1, 3));
 				for (int s = 0; s < 16; s++)
 						add("packSapling", new ItemStack(TFCBlocks.sapling, 1, s));
 				add("packSapling", new ItemStack(TFCBlocks.sapling2, 1, 0));

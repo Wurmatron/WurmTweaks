@@ -122,10 +122,11 @@ public class EnderIORecipes {
 				r.addShaped(DarkSteelItems.itemDarkSteelPickaxe, "XXX", " S ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				r.addShaped(DarkSteelItems.itemDarkSteelShears, "I ", " I", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
 				r.addShaped(DarkSteelItems.itemDarkSteelShears, " I", "I ", 'I', new ItemStack(EnderIO.itemAlloy, 1, 6));
+				r.addShaped(new ItemStack(EnderIO.itemOCConduit,3), "XXX", "CCC", "XXX", 'X', "packRubber", 'C', TFCItems.blackBronzeSheet);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(DarkSteelItems.itemDarkSteelSword), 600), " X ", " X ", " S ", 'X', new ItemStack(EnderIO.itemAlloy, 1, 6), 'S', "packStick");
 				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 4, 0), Items.redstone, TFCItems.blackSteelSheet, Items.glowstone_dust);
-				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 4, 1), new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), TFCItems.blackSteelSheet, Items.glowstone_dust);
-				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 4, 2), new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), TFCItems.blackSteelSheet, Items.glowstone_dust);
+				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), TFCItems.blackSteelSheet, Items.glowstone_dust);
+				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), TFCItems.blackSteelSheet, Items.glowstone_dust);
 				r.addBasicMachineRecipe(new ItemStack(EnderIO.itemMaterial, 4, 2), TFCItems.clayBall, new ItemStack(TFCItems.powder, 1, 2), new ItemStack(TFCItems.powder, 1, 1), Items.redstone);
 				MachineHelper.addFurnaceRecipes(new ItemStack(EnderIO.itemMaterial, 1, 1), new ItemStack(EnderIO.itemMaterial, 1, 2));
 				for (int m = 0; m < 7; m++)

@@ -1,5 +1,6 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
+import cofh.thermalfoundation.block.TFBlocks;
 import cofh.thermalfoundation.fluid.TFFluids;
 import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
@@ -30,9 +31,9 @@ import wurmcraft.wurmatron.common.items.ItemCredit;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
+import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
 import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
 import wurmcraft.wurmatron.common.utils.tconstruct.TConstructHelper;
-import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
 
 import java.util.ArrayList;
 
@@ -69,7 +70,7 @@ public class TConstructRecipes {
 				r.addShaped(new ItemStack(TinkerSmeltery.lavaTank, 1, 2), "IGI", "IGI", "IGI", 'G', "packGlass", 'I', (new ItemStack(TinkerTools.materials, 1, 2)));
 				r.addShaped(new ItemStack(TinkerSmeltery.smeltery, 1, 2), "II", "II", 'I', (new ItemStack(TinkerTools.materials, 1, 2)));
 				r.addShaped(new ItemStack(TinkerSmeltery.smeltery, 1, 1), "I I", "I I", "I I", 'I', (new ItemStack(TinkerTools.materials, 1, 2)));
-				r.addShaped(new ItemStack(TinkerSmeltery.smeltery, 1, 0), "CSC", "GXG", "CSC", 'C', WurmTweaksBlocks.blockRedSteel, 'S', WurmTweaksItems.itemMachineFrame, 'G', "packGemExquisite", 'X', TEHelper.getMagma("Resonant"));
+				r.addShaped(new ItemStack(TinkerSmeltery.smeltery, 1, 0), "CSC", "GXG", "CSC", 'C', WurmTweaksBlocks.blockRedSteel, 'S', WurmTweaksItems.itemMachineFrame, 'G', "packGemExquisite", 'X', new ItemStack(TFBlocks.blockStorage, 1, 12));
 				r.addShaped(new ItemStack(TinkerSmeltery.searedBlock, 1, 1), "I I", " I ", 'I', (new ItemStack(TinkerTools.materials, 1, 2)));
 				r.addShaped(new ItemStack(TinkerSmeltery.searedBlock, 1, 0), "III", "I I", "I I", 'I', (new ItemStack(TinkerTools.materials, 1, 2)));
 				r.addShaped(new ItemStack(TinkerSmeltery.searedBlock, 1, 2), "I I", "I I", "III", 'I', (new ItemStack(TinkerTools.materials, 1, 2)));
@@ -560,6 +561,7 @@ public class TConstructRecipes {
 				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 208), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), new ItemStack(TinkerTools.toolRod, 1, 208));
 				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 209), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), new ItemStack(TinkerTools.toolRod, 1, 209));
 				TConstructHelper.addCastingRecipe(new ItemStack(TinkerWeaponry.partBolt, 1, 210), new FluidStack(WurmTweaksFluid.fluidPlatinum, 1000), new ItemStack(TinkerTools.toolRod, 1, 210));
+				ICHelper.addCompressorRecipe(new ItemStack(TFItems.itemMaterial, 32, 76), new ItemStack(TFBlocks.blockStorage, 1, 12));
 		}
 
 		private static void addMoldCrafting () {

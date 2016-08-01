@@ -136,7 +136,7 @@ public class OpenComputersRecipes {
 				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 28), WurmTweaksItems.itemComputationalCore, TFCItems.goldSheet, Items.redstone, TFCItems.blackSteelSheet2x);
 				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 27), WurmTweaksItems.itemComputationalCore, TFCItems.platinumSheet, Items.redstone, TFCItems.blackSteelSheet);
 				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 101), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 29), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 8), WurmTweaksItems.itemComputationalCore);
-				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 102), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 30), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 9), WurmTweaksItems.itemComputationalCore);
+				r.addShapeless(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 102), WurmTweaksItems.itemMixedSheet, new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 9), WurmTweaksItems.itemComputationalCore);
 				r.addCrossWCenter(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 66), TFCItems.redSteelSheet, TFCItems.goldSheet, Items.redstone);
 				r.addShaped(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 89), "I I", " B ", "I I", 'I', TFCItems.blackSteelSheet, 'B', WurmTweaksItems.itemSpaceModule);
 				r.addBasicMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 11), WurmTweaksItems.itemComputationalCore, TFCItems.platinumSheet, Items.redstone, TFCItems.blackBronzeSheet2x);
