@@ -13,7 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
-import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
+import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
 
 public class ProjectRedRecipes {
 
@@ -210,6 +210,6 @@ public class ProjectRedRecipes {
 
 		@Optional.Method (modid = "techreborn")
 		private static void addAlloyRecipe () {
-				TechRebornHelper.addAlloySmelterRecipe(new ItemStack(TFCItems.steelIngot), new ItemStack(Items.redstone, 8), PartDefs.REDINGOT().makeStack(), 200, 32);
+				TEHelper.addSmelterRecipe(8000,new ItemStack(TFCItems.steelIngot), new ItemStack(Items.redstone, 8), PartDefs.REDINGOT().makeStack());
 		}
 }

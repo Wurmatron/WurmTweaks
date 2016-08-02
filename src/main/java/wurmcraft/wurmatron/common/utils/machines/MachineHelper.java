@@ -36,6 +36,8 @@ public class MachineHelper {
 				if (RecipeChecker.checkStack(output)) {
 						if (RecipeChecker.modExists("techreborn"))
 								TechRebornHelper.addAlloySmelterRecipe(input1, input2, output, euTick, timeinTicks);
+						if(RecipeChecker.modExists("ThermalExpansion"))
+								TEHelper.addSmelterRecipe(euTick*timeinTicks*20,input1,input2,output);
 				}
 		}
 
