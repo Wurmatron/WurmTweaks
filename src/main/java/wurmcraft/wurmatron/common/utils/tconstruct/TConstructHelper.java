@@ -13,7 +13,7 @@ import tconstruct.weaponry.TinkerWeaponry;
 
 public class TConstructHelper {
 
-		public static final Item[] TCTools = new Item[] {TinkerTools.toolRod, TinkerTools.pickaxeHead, TinkerTools.shovelHead, TinkerTools.hatchetHead, TinkerTools.swordBlade, TinkerTools.wideGuard, TinkerTools.handGuard, TinkerTools.crossbar, TinkerTools.binding, TinkerTools.frypanHead, TinkerTools.signHead, TinkerTools.knifeBlade, TinkerTools.chiselHead, TinkerTools.toughRod, TinkerTools.toughBinding, TinkerTools.largePlate, TinkerTools.broadAxeHead, TinkerTools.scytheBlade, TinkerTools.excavatorHead, TinkerTools.largeSwordBlade, TinkerTools.hammerHead, TinkerTools.fullGuard, TinkerWeaponry.arrowhead, TinkerWeaponry.shuriken, TinkerWeaponry.partCrossbowLimb, TinkerWeaponry.partCrossbowBody, TinkerWeaponry.partBowLimb};
+		public static final Item[] TCTools = new Item[] {TinkerTools.toolRod, TinkerTools.pickaxeHead, TinkerTools.shovelHead, TinkerTools.hatchetHead, TinkerTools.swordBlade, TinkerTools.wideGuard, TinkerTools.handGuard, TinkerTools.crossbar, TinkerTools.binding, TinkerTools.frypanHead, TinkerTools.signHead, TinkerTools.knifeBlade, TinkerTools.chiselHead, TinkerTools.toughRod, TinkerTools.toughBinding, TinkerTools.largePlate, TinkerTools.broadAxeHead, TinkerTools.scytheBlade, TinkerTools.excavatorHead, TinkerTools.largeSwordBlade, TinkerTools.hammerHead, TinkerTools.fullGuard, TinkerWeaponry.partCrossbowLimb, TinkerWeaponry.partCrossbowBody, TinkerWeaponry.partBowLimb};
 
 		public static void addCastingRecipe (ItemStack output, FluidStack fluid, ItemStack cast) {
 				TConstructRegistry.getTableCasting().addCastingRecipe(output, fluid,cast, 20);

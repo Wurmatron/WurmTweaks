@@ -338,16 +338,16 @@ public class TConstructRecipes {
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinSheet), WurmTweaksBlocks.blockTin, 1000, new FluidStack(WurmTweaksFluid.fluidTin, 2000));
 				TConstructHelper.addMelting(new ItemStack(TFCItems.tinSheet2x), WurmTweaksBlocks.blockTin, 1200, new FluidStack(WurmTweaksFluid.fluidTin, 4000));
 				for (int c = 0; c < ItemCredit.units.length; c++) {
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditBismuth, 1, c), WurmTweaksBlocks.blockBismuth, 400, new FluidStack(WurmTweaksFluid.fluidBismuth, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditGold, 1, c), WurmTweaksBlocks.blockGold, 400, new FluidStack(WurmTweaksFluid.fluidGold, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditLead, 1, c), WurmTweaksBlocks.blockLead, 400, new FluidStack(WurmTweaksFluid.fluidLead, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditNickel, 1, c), WurmTweaksBlocks.blockNickel, 400, new FluidStack(WurmTweaksFluid.fluidNickel, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditSilver, 1, c), WurmTweaksBlocks.blockSilver, 400, new FluidStack(WurmTweaksFluid.fluidSilver, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditCopper, 1, c), WurmTweaksBlocks.blockCopper, 400, new FluidStack(WurmTweaksFluid.fluidCopper, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditPlatinum, 1, c), WurmTweaksBlocks.blockPlatinum, 400, new FluidStack(WurmTweaksFluid.fluidPlatinum, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditZinc, 1, c), WurmTweaksBlocks.blockZinc, 400, new FluidStack(WurmTweaksFluid.fluidZinc, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditIron, 1, c), WurmTweaksBlocks.blockWroughtIron, 400, new FluidStack(WurmTweaksFluid.fluidWroughtIron, ItemCredit.units[c] * 100));
-						TConstructHelper.addMelting(new ItemStack(WTItems.creditTin, 1, c), WurmTweaksBlocks.blockTin, 400, new FluidStack(WurmTweaksFluid.fluidTin, ItemCredit.units[c] * 100));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditBismuth, 1, c), WurmTweaksBlocks.blockBismuth, 800, new FluidStack(WurmTweaksFluid.fluidBismuth, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditGold, 1, c), WurmTweaksBlocks.blockGold, 800, new FluidStack(WurmTweaksFluid.fluidGold, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditLead, 1, c), WurmTweaksBlocks.blockLead, 800, new FluidStack(WurmTweaksFluid.fluidLead, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditNickel, 1, c), WurmTweaksBlocks.blockNickel, 800, new FluidStack(WurmTweaksFluid.fluidNickel, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditSilver, 1, c), WurmTweaksBlocks.blockSilver, 800, new FluidStack(WurmTweaksFluid.fluidSilver, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditCopper, 1, c), WurmTweaksBlocks.blockCopper, 800, new FluidStack(WurmTweaksFluid.fluidCopper, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditPlatinum, 1, c), WurmTweaksBlocks.blockPlatinum, 800, new FluidStack(WurmTweaksFluid.fluidPlatinum, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditZinc, 1, c), WurmTweaksBlocks.blockZinc, 800, new FluidStack(WurmTweaksFluid.fluidZinc, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditIron, 1, c), WurmTweaksBlocks.blockWroughtIron, 800, new FluidStack(WurmTweaksFluid.fluidWroughtIron, ItemCredit.units[c] * 10));
+						TConstructHelper.addMelting(new ItemStack(WTItems.creditTin, 1, c), WurmTweaksBlocks.blockTin, 800, new FluidStack(WurmTweaksFluid.fluidTin, ItemCredit.units[c] * 10));
 				}
 		}
 
@@ -544,6 +544,26 @@ public class TConstructRecipes {
 				addCastingWithReverse(TFItems.ingotEnderium, new FluidStack(TFFluids.fluidEnder, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				addCastingWithReverse(TFItems.ingotSignalum, new FluidStack(TinkerSmeltery.moltenSignalumFluid, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				addCastingWithReverse(new ItemStack(ExtraUtils.bedrockium), new FluidStack(TConIntegration.bedrock, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 201), new FluidStack(WurmTweaksFluid.fluidCopper, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 202), new FluidStack(WurmTweaksFluid.fluidBronze, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 203), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 204), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 205), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 206), new FluidStack(WurmTweaksFluid.fluidSteel, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 207), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 208), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 209), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 210), new FluidStack(WurmTweaksFluid.fluidPlatinum, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 201), new FluidStack(WurmTweaksFluid.fluidCopper, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 202), new FluidStack(WurmTweaksFluid.fluidBronze, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 203), new FluidStack(WurmTweaksFluid.fluidBismuthBronze, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 204), new FluidStack(WurmTweaksFluid.fluidBlackBronze, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 205), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 206), new FluidStack(WurmTweaksFluid.fluidSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 207), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 208), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 209), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 210), new FluidStack(WurmTweaksFluid.fluidPlatinum, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
 				for (Item tool : TConstructHelper.TCTools)
 						for (int fluid = 0; fluid < TCFluid.length; fluid++)
 								TConstructRegistry.getTableCasting().addCastingRecipe(new ItemStack(tool, 1, 201 + fluid), new FluidStack(TCFluid[fluid], getSize(tool)), getPattern(tool), 40);
@@ -675,20 +695,14 @@ public class TConstructRecipes {
 
 		private static ItemStack getPattern (Item tool) {
 				int meta = 0;
-				if (tool == TinkerWeaponry.shuriken || tool == TinkerWeaponry.partCrossbowBody || tool == TinkerWeaponry.partBowLimb || tool == TinkerWeaponry.partCrossbowLimb) {
-						if (tool == TinkerWeaponry.shuriken) {
-								meta = 0;
-						} else if (tool == TinkerWeaponry.partCrossbowBody) {
+				if (tool == TinkerWeaponry.partCrossbowBody || tool == TinkerWeaponry.partBowLimb || tool == TinkerWeaponry.partCrossbowLimb) {
+						if (tool == TinkerWeaponry.partCrossbowBody) {
 								meta = 2;
 						} else if (tool == TinkerWeaponry.partBowLimb) {
 								meta = 3;
 						} else if (tool == TinkerWeaponry.partCrossbowLimb) {
 								meta = 1;
 						}
-						return new ItemStack(TinkerWeaponry.metalPattern, 1, meta);
-				}
-				if (tool == TinkerWeaponry.arrowhead) {
-						meta = 25;
 						return new ItemStack(TinkerWeaponry.metalPattern, 1, meta);
 				}
 				for (int m = 1; m < TConstructHelper.TCTools.length; m++) {

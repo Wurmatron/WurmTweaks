@@ -126,7 +126,7 @@ public class GalaticCraftRecipes {
 				r.addCircleWCenter(new ItemStack(MarsBlocks.machine, 1, 8), WurmTweaksBlocks.blockCompressedRedstone, new ItemStack(RailcraftBlocks.getBlockMachineAlpha(), 1, 0));
 				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2, 1, 0), WurmTweaksItems.ingotTitanium, TFCItems.redSteelBucketWater, WurmTweaksItems.itemSpaceModule);
 				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2, 1, 4), WurmTweaksItems.ingotTitanium, "dustCoal", WurmTweaksItems.itemSpaceModule);
-				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2, 1, 8), WurmTweaksItems.ingotTitanium, TFCItems.redSteelSheet, WurmTweaksItems.itemSpaceModule);
+				r.addCrossWCenter(new ItemStack(MarsBlocks.machineT2, 1, 8), WurmTweaksItems.ingotGraySteel, TFCItems.redSteelSheet, WurmTweaksItems.itemSpaceModule);
 				r.addShaped(new ItemStack(MarsBlocks.hydrogenPipe, 8), "GGG", "CCC", "GGG", 'G', Blocks.glass_pane, 'C', TFCItems.clayBall);
 				r.addShapeless(AsteroidsItems.grapple, "packCloth", TFCItems.bow, Items.string);
 				r.addArmorRecipes(new ItemStack(AsteroidsItems.thermalPadding, 1, 0), new ItemStack(AsteroidsItems.thermalPadding, 1, 1), new ItemStack(AsteroidsItems.thermalPadding, 1, 2), new ItemStack(AsteroidsItems.thermalPadding, 1, 3), new ItemStack(AsteroidsItems.basicItem, 1, 7));
