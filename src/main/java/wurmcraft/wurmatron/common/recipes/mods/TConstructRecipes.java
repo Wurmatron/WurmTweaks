@@ -45,6 +45,7 @@ public class TConstructRecipes {
 
 		@Optional.Method (modid = "TConstruct")
 		public static void addRecipes () {
+				TConstructRegistry.getTableCasting().getCastingRecipes().clear();
 				r.addShaped(new ItemStack(TinkerWorld.barricadeBirch, 4), " W ", "WWW", " W ", 'W', new ItemStack(TFCItems.logs, 1, 2));
 				r.addShaped(new ItemStack(TinkerWorld.barricadeSpruce, 4), " W ", "WWW", " W ", 'W', new ItemStack(TFCItems.logs, 1, 10));
 				r.addShaped(new ItemStack(TinkerWorld.barricadeJungle, 4), " W ", "WWW", " W ", 'W', new ItemStack(TFCItems.logs, 1, 15));

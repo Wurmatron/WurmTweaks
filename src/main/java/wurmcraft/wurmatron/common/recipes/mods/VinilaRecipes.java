@@ -138,6 +138,7 @@ public class VinilaRecipes {
 				r.addShapeless(new ItemStack(Items.gold_ingot), new ItemStack(TFCItems.goldIngot, 1, 0));
 				r.addShapeless(new ItemStack(Items.arrow), TFCItems.arrow);
 				r.addShapeless(Items.writable_book, Items.book, "dyeBlack", Items.feather);
+				r.addShapeless(new ItemStack(Items.glass_bottle), new ItemStack(TFCItems.glassBottle));
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();
