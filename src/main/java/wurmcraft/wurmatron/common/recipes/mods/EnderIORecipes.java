@@ -93,7 +93,7 @@ public class EnderIORecipes {
 				r.addShaped(new ItemStack(EnderIO.itemLiquidConduit, 3, 2), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemLiquidConduit, 1, 1));
 				r.addShaped(new ItemStack(EnderIO.itemItemConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', Items.redstone);
 				r.addShaped(new ItemStack(EnderIO.itemGasConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemMaterial, 1, 1));
-				r.addCircle(new ItemStack(EnderIO.blockConduitFacade, 8), new ItemStack(EnderIO.itemMaterial, 1, 1));
+				r.addCircle(new ItemStack(EnderIO.itemConduitFacade, 8), new ItemStack(EnderIO.itemMaterial, 1, 1));
 				r.addCircleWCenter(new ItemStack(EnderIO.blockConduitFacade, 8, 1), new ItemStack(EnderIO.itemMaterial, 1, 1), "dustObsidian");
 				r.addShaped(new ItemStack(EnderIO.itemMEConduit, 3, 0), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShaped(new ItemStack(EnderIO.itemMEConduit, 3, 1), "RRR", "III", "RRR", 'R', "packRubber", 'I', new ItemStack(EnderIO.itemMEConduit, 1, 0));
