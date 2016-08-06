@@ -139,6 +139,12 @@ public class VinilaRecipes {
 				r.addShapeless(new ItemStack(Items.arrow), TFCItems.arrow);
 				r.addShapeless(Items.writable_book, Items.book, "dyeBlack", Items.feather);
 				r.addShapeless(new ItemStack(Items.glass_bottle), new ItemStack(TFCItems.glassBottle));
+				r.addCircleWCenter(Items.golden_carrot, TFCItems.goldIngot, "packVegetable");
+				r.addShapeless(new ItemStack(Items.sugar,8), TFCHelper.getFood(TFCItems.sugar,160));
+				r.addShapeless(new ItemStack(Items.fermented_spider_eye), Items.spider_eye, Items.sugar, TFCHelper.getFood(TFCItems.sugarcane,80));
+				r.addCircleWCenter(new ItemStack(Items.speckled_melon,4,0), new ItemStack(TFCItems.goldSheet),WurmTweaksItems.foodMelonBread);
+				r.addShapeless(new ItemStack(Items.fish,16,0), TFCHelper.getFood(TFCItems.fishRaw,160));
+				r.addShapeless(new ItemStack(Items.fish,1,3), new ItemStack(Items.fish,1,0));
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();

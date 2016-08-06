@@ -111,7 +111,7 @@ public class EnderIORecipes {
 				r.addShapeless(new ItemStack(EnderIO.itemMaterial, 1, 8), "packGemExquisite", Items.ender_pearl);
 				r.addCrossWCenter(EnderIO.itemTravelStaff, new ItemStack(EnderIO.itemMaterial, 1, 5), new ItemStack(EnderIO.itemMaterial, 1, 1), "packGemExquisite");
 				r.addCrossWCenter(EnderIO.itemConduitProbe, new ItemStack(EnderIO.itemPowerConduit, 6, 2), new ItemStack(EnderIO.itemMaterial, 1, 1), Items.repeater);
-				r.addBasicMachineRecipe(DarkSteelItems.itemMagnet, "packIngot", WurmTweaksItems.ingotGreenSteel, TFCItems.redSteelSheet, "packChest");
+				r.addBasicMachineRecipe(DarkSteelItems.itemMagnet, "packIngot", WurmTweaksItems.ingotGraySteel, TFCItems.redSteelSheet, "packChest");
 				r.addArmorRecipes(DarkSteelItems.itemDarkSteelHelmet, DarkSteelItems.itemDarkSteelChestplate, DarkSteelItems.itemDarkSteelLeggings, DarkSteelItems.itemDarkSteelBoots, new ItemStack(EnderIO.itemAlloy, 1, 6));
 				ArmorHandler.addArmorProtection(DarkSteelItems.itemDarkSteelHelmet, 2800, 2800, 2800);
 				ArmorHandler.addArmorProtection(DarkSteelItems.itemDarkSteelChestplate, 2800, 2800, 2800);

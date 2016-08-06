@@ -2,6 +2,7 @@ package wurmcraft.wurmatron.common.recipes.mods;
 
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
+import mrtjp.projectred.ProjectRedCore;
 import mrtjp.projectred.ProjectRedIllumination;
 import mrtjp.projectred.core.PartDefs;
 import mrtjp.projectred.illumination.LightObjFallout;
@@ -199,6 +200,7 @@ public class ProjectRedRecipes {
 				r.addShapeless(new ItemStack(ProjectRedIllumination.itemPartIllumarButton(), 1, 13), new ItemStack(PartDefs.getItem(), 1, 32), new ItemStack(PartDefs.getItem(), 1, 32), Blocks.stone_button);
 				r.addShapeless(new ItemStack(ProjectRedIllumination.itemPartIllumarButton(), 1, 14), new ItemStack(PartDefs.getItem(), 1, 33), new ItemStack(PartDefs.getItem(), 1, 33), Blocks.stone_button);
 				r.addShapeless(new ItemStack(ProjectRedIllumination.itemPartIllumarButton(), 1, 15), new ItemStack(PartDefs.getItem(), 1, 34), new ItemStack(PartDefs.getItem(), 1, 34), Blocks.stone_button);
+				r.addWrenchRecipe(new ItemStack(ProjectRedCore.itemScrewdriver()), PartDefs.REDINGOT().makeStack());
 				for (int i = 0; i < 15; i++)
 						r.addShapeless(new ItemStack(ProjectRedIllumination.itemPartIllumarFButton(), 1, i), new ItemStack(ProjectRedIllumination.itemPartIllumarButton(), 1, i), Blocks.redstone_torch);
 				for (int i = 0; i < 15; i++)
@@ -210,6 +212,6 @@ public class ProjectRedRecipes {
 
 		@Optional.Method (modid = "techreborn")
 		private static void addAlloyRecipe () {
-				TEHelper.addSmelterRecipe(8000,new ItemStack(TFCItems.steelIngot), new ItemStack(Items.redstone, 8), PartDefs.REDINGOT().makeStack());
+				TEHelper.addSmelterRecipe(8000, new ItemStack(TFCItems.steelIngot), new ItemStack(Items.redstone, 8), PartDefs.REDINGOT().makeStack());
 		}
 }

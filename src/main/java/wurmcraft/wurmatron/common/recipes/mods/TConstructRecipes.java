@@ -1,7 +1,6 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
 import cofh.thermalfoundation.block.TFBlocks;
-import cofh.thermalfoundation.fluid.TFFluids;
 import cofh.thermalfoundation.item.TFItems;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
@@ -233,6 +232,13 @@ public class TConstructRecipes {
 		}
 
 		private static void addIngotMelting () {
+				TConstructHelper.addMelting(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0), ExtraUtils.cobblestoneCompr, 400, new FluidStack(TinkerSmeltery.moltenStoneFluid, 50));
+				TConstructHelper.addMelting(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1), ExtraUtils.cobblestoneCompr, 500, new FluidStack(TinkerSmeltery.moltenStoneFluid, 450));
+				TConstructHelper.addMelting(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 2), ExtraUtils.cobblestoneCompr, 600, new FluidStack(TinkerSmeltery.moltenStoneFluid, 4050));
+				TConstructHelper.addMelting(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 3), ExtraUtils.cobblestoneCompr, 700, new FluidStack(TinkerSmeltery.moltenStoneFluid, 36540));
+				TConstructHelper.addMelting(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 4), ExtraUtils.cobblestoneCompr, 800, new FluidStack(TinkerSmeltery.moltenStoneFluid, 328860));
+				TConstructHelper.addMelting(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 5), ExtraUtils.cobblestoneCompr, 900, new FluidStack(TinkerSmeltery.moltenStoneFluid, 2959740));
+				TConstructHelper.addMelting(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6), ExtraUtils.cobblestoneCompr, 1000, new FluidStack(TinkerSmeltery.moltenStoneFluid, 26637660));
 				TConstructHelper.addMelting(WurmTweaksBlocks.blockWroughtIron, 800, new FluidStack(WurmTweaksFluid.fluidWroughtIron, 32000));
 				TConstructHelper.addMelting(WurmTweaksBlocks.blockPlatinum, 800, new FluidStack(WurmTweaksFluid.fluidPlatinum, 32000));
 				TConstructHelper.addMelting(WurmTweaksBlocks.blockGold, 800, new FluidStack(WurmTweaksFluid.fluidGold, 32000));
@@ -542,7 +548,6 @@ public class TConstructRecipes {
 				addCastingWithReverse(new ItemStack(TFCItems.blackSteelAxeHead), new FluidStack(WurmTweaksFluid.fluidBlackSteel, 1000), WurmTweaksItems.itemAxeCast);
 				addCastingWithReverse(new ItemStack(TFCItems.redSteelAxeHead), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), WurmTweaksItems.itemAxeCast);
 				addCastingWithReverse(new ItemStack(TFCItems.blueSteelAxeHead), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), WurmTweaksItems.itemAxeCast);
-				addCastingWithReverse(TFItems.ingotEnderium, new FluidStack(TFFluids.fluidEnder, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				addCastingWithReverse(TFItems.ingotSignalum, new FluidStack(TinkerSmeltery.moltenSignalumFluid, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				addCastingWithReverse(new ItemStack(ExtraUtils.bedrockium), new FluidStack(TConIntegration.bedrock, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				addCastingWithReverse(new ItemStack(TinkerWeaponry.partShuriken, 1, 201), new FluidStack(WurmTweaksFluid.fluidCopper, 1000), new ItemStack(TinkerWeaponry.metalPattern, 1, 0));
@@ -565,8 +570,9 @@ public class TConstructRecipes {
 				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 208), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
 				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 209), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
 				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 210), new FluidStack(WurmTweaksFluid.fluidPlatinum, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
+				addCastingWithReverse(new ItemStack(TinkerTools.materials,1,2), new FluidStack(TinkerSmeltery.moltenStoneFluid,1000), new ItemStack(TinkerSmeltery.metalPattern,1,0));
 				for (Item tool : TConstructHelper.TCTools)
-						for (int fluid = 0; fluid < TCFluid.length; fluid++)
+								for (int fluid = 0; fluid < TCFluid.length; fluid++)
 								TConstructRegistry.getTableCasting().addCastingRecipe(new ItemStack(tool, 1, 201 + fluid), new FluidStack(TCFluid[fluid], getSize(tool)), getPattern(tool), 40);
 				for (Item tool : TConstructHelper.TCTools) {
 						TConstructHelper.addCastingRecipe(getPattern(tool), new FluidStack(WurmTweaksFluid.fluidBrass, 1000), new ItemStack(tool, 1, OreDictionary.WILDCARD_VALUE));

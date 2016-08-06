@@ -13,7 +13,7 @@ public class ThermalDynamicsRecipes {
 
 		private static RecipeHelper r = new RecipeHelper();
 
-		@Optional.Method(modid = "ThermalDynamics")
+		@Optional.Method (modid = "ThermalDynamics")
 		public static void addRecipes () {
 				r.addShaped(new ItemStack(TDDucts.energyBasic.itemStack.getItem(), 6, 0), "RRR", "LGL", "RRR", 'L', new ItemStack(TFCItems.leadSheet), 'G', "packGlass", 'R', new ItemStack(Items.redstone));
 				r.addShaped(new ItemStack(TDDucts.energyBasic.itemStack.getItem(), 6, 3), "IGI", 'G', "packGlass", 'I', new ItemStack(TFCItems.nickelSheet));
@@ -51,5 +51,7 @@ public class ThermalDynamicsRecipes {
 				r.addShapeless(new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 6, 4), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 0), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 0), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 0), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 0), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 0), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 0), TFItems.ingotEnderium);
 				r.addShapeless(new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 6, 5), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 4), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 4), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 4), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 4), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 4), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 4), new ItemStack(TFCItems.leadIngot));
 				r.addShapeless(new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 6, 4), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 5), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 5), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 5), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 5), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 5), new ItemStack(TDDucts.itemBasic.itemStack.getItem(), 1, 5), new ItemStack(TFCItems.leadIngot));
+				r.addShaped(new ItemStack(TDDucts.fluidSuper.itemStack.getItem(), 1, 7), "IGI", "ICI", "IGI", 'G', "packGlass", 'I', TFCItems.roseGoldIngot, 'C', new ItemStack(TDDucts.fluidBasic.itemStack.getItem(), 1, 2));
+				r.addShapeless(new ItemStack(TDDucts.fluidSuper.itemStack.getItem(), 1, 6), new ItemStack(TDDucts.fluidSuper.itemStack.getItem(), 1, 7));
 		}
 }
