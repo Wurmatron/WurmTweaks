@@ -3,7 +3,9 @@ package wurmcraft.wurmatron.common.items;
 import com.bioxx.tfc.api.Enums.EnumFoodGroup;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraftforge.common.util.EnumHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +58,18 @@ public class WTItems {
 		public static Item itemCrystal;
 		public static Item itemShard;
 		public static Item itemDirty;
+		// Dark Matter
+		public static Item helmetDarkMatter;
+		public static Item chestDarkMatter;
+		public static Item leggsDarkMatter;
+		public static Item bootsDarkMatter;
+		public static final ItemArmor.ArmorMaterial DARKMATTER = EnumHelper.addArmorMaterial("DARKMATTER", -1, new int[] {90, 90, 90, 90}, 500);
+		// Red Matter
+		public static Item helmetRedMatter;
+		public static Item chestRedMatter;
+		public static Item leggsRedMatter;
+		public static Item bootsRedMatter;
+		public static final ItemArmor.ArmorMaterial REDMATTER = EnumHelper.addArmorMaterial("REDMATTER", -1, new int[] {90, 90, 90, 90}, 500);
 
 		public static void registerItems () {
 				itemMaterialNames.add("solarCore");
@@ -255,6 +269,14 @@ public class WTItems {
 				itemTokenNames.add("token");
 				itemTokenColors.put("token", EnumChatFormatting.LIGHT_PURPLE);
 				registerItem(itemToken = new ItemToken(itemTokenNames, itemTokenColors).setUnlocalizedName("token"), "token");
+				registerItem(helmetDarkMatter = new ArmorDarkMatter(DARKMATTER, 0, 0).setUnlocalizedName("helmetDarkMatter"), "helmetDarkMatter");
+				registerItem(chestDarkMatter = new ArmorDarkMatter(DARKMATTER, 0, 1).setUnlocalizedName("chestDarkMatter"), "chestDarkMatter");
+				registerItem(leggsDarkMatter = new ArmorDarkMatter(DARKMATTER, 1, 2).setUnlocalizedName("leggingsDarkMatter"), "leggingsDarkMatter");
+				registerItem(bootsDarkMatter = new ArmorDarkMatter(DARKMATTER, 0, 3).setUnlocalizedName("bootsDarkMatter"), "bootDarkMatter");
+				registerItem(helmetRedMatter = new ArmorRedMatter(REDMATTER, 0, 0).setUnlocalizedName("helmetRedMatter"), "helmetRedMatter");
+				registerItem(chestRedMatter = new ArmorRedMatter(REDMATTER, 0, 1).setUnlocalizedName("chestRedMatter"), "chestRedMatter");
+				registerItem(leggsRedMatter = new ArmorRedMatter(REDMATTER, 1, 2).setUnlocalizedName("leggingsRedMatter"), "leggingsRedMatter");
+				registerItem(bootsRedMatter = new ArmorRedMatter(REDMATTER, 0, 3).setUnlocalizedName("bootsRedMatter"), "bootsRedMatter");
 		}
 
 		private static void registerItem (Item item, String name) {

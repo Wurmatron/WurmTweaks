@@ -2,7 +2,6 @@ package wurmcraft.wurmatron.common.items;
 
 import com.bioxx.tfc.Core.Player.FoodStatsTFC;
 import com.bioxx.tfc.Core.TFC_Core;
-import com.bioxx.tfc.api.Enums.EnumFoodGroup;
 import net.machinemuse.api.IModularItem;
 import net.machinemuse.api.ModuleManager;
 import net.machinemuse.api.moduletrigger.IPlayerTickModule;
@@ -37,16 +36,17 @@ public class TFCFoodModule extends PowerModuleBase implements IToggleableModule,
 						stats.setFoodLevel(stats.getMaxStomach(player));
 						stats.stomachLevel = stats.getMaxStomach(player);
 				}
-				if (stats.nutrDairy < 1f)
-						stats.addNutrition(EnumFoodGroup.Dairy, 1f);
-				if (stats.nutrFruit < 1f)
-						stats.addNutrition(EnumFoodGroup.Fruit, 1f);
-				if (stats.nutrGrain < 1f)
-						stats.addNutrition(EnumFoodGroup.Grain, 1f);
-				if (stats.nutrProtein < 1f)
-						stats.addNutrition(EnumFoodGroup.Protein, 1f);
-				if (stats.nutrVeg < 1f)
-						stats.addNutrition(EnumFoodGroup.Vegetable, 1f);
+				if (stats.nutrGrain != 1)
+						stats.nutrFruit = 1f;
+				if (stats.nutrVeg != 1)
+						stats.nutrVeg = 1f;
+				if (stats.nutrProtein != 1)
+						stats.nutrProtein = 1f;
+				if (stats.nutrDairy != 1)
+						stats.nutrDairy = 1f;
+				if (stats.nutrGrain != 1)
+						stats.nutrGrain = 1f;
+				TFC_Core.setPlayerFoodStats(player, stats);
 				ElectricItemUtils.drainPlayerEnergy(player, ModuleManager.computeModularProperty(stack, POWER_USAGE));
 		}
 

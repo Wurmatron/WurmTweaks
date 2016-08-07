@@ -68,6 +68,7 @@ public class WurmTweaks {
 				FMLCommonHandler.instance().bus().register(new PlayerClone());
 				if (Settings.explodingPig)
 						MinecraftForge.EVENT_BUS.register(new ExplodingPigHandler());
+				FMLCommonHandler.instance().bus().register(new ArmorTickEvent());
 				LootHandler.init();
 		}
 
