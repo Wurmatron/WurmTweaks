@@ -8,7 +8,7 @@ tile.blockBlueSteel.name=Block of Blue Steel
 tile.blockBlackSteel.name=Block of Black Steel
 tile.blockRedSteel.name=Block of Red Steel
 tile.blockCopper.name=Block of Copper
-tile.blockSteel.name=Block of Steel;
+tile.blockSteel.name=Block of Steel
 tile.blockBronze.name=Block of Bronze
 tile.blockBismuth.name=Block of Bismuth
 tile.blockBismuthBronze.name=Block of Bismuth Bronze
@@ -353,3 +353,16 @@ item.itemJug_6.name=6x Water Jug
 item.itemJug_12.name=12x Water Jug
 item.itemJug_24.name=24x Water Jug
 item.itemJug_48.name=48x Water Jug
+# Ore
+tile.oreHalfium.name=Halfium Ore
+tile.oreFrancium.name=Francium Ore
+tile.oreTitanium.name=Titanium Ore
+# Armor
+item.helmetDarkMatter.name=Dark Matter Helmet
+item.chestDarkMatter.name=Dark Matter Chestplate
+item.leggingsDarkMatter.name=Dark Matter Leggings
+item.bootsDarkMatter.name=Dark Matter Boots
+item.helmetRedMatter.name=Red Matter Helmet
+item.chestRedMatter.name=Red Matter Chestplate
+item.leggingsRedMatter.name=Red Matter Leggings
+item.bootsRedMatter.name=Red Matter Boots

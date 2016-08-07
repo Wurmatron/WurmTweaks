@@ -1,6 +1,8 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
+import advsolar.common.AdvancedSolarPanel;
 import buildcraft.BuildCraftCore;
+import cofh.thermalexpansion.block.TEBlocks;
 import cofh.thermalexpansion.block.cell.BlockCell;
 import cofh.thermalexpansion.item.TEItems;
 import cofh.thermalfoundation.item.TFItems;
@@ -139,6 +141,16 @@ public class WurmTweaksRecipes {
 				r.addShaped(new ItemStack(WTItems.itemPill, 2, 4), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodCheese);
 				r.addShaped(new ItemStack(WTItems.itemPill, 2, 5), "RFR", "RFR", "RFR", 'R', "packRubber", 'F', WurmTweaksItems.foodGods);
 				r.addShapeless(new ItemStack(WTItems.itemPill, 5, 5), new ItemStack(WTItems.itemPill, 1, 0), new ItemStack(WTItems.itemPill, 1, 1), new ItemStack(WTItems.itemPill, 1, 2), new ItemStack(WTItems.itemPill, 1, 3), new ItemStack(WTItems.itemPill, 1, 4));
+				r.addShaped(new ItemStack(WTItems.helmetDarkMatter), "MMM", "MHM", 'M', WurmTweaksItems.itemDarkMatter, 'H', LudicrousItems.infinity_helm);
+				r.addShaped(new ItemStack(WTItems.helmetRedMatter), "MMM", "MHM", 'M', WurmTweaksItems.itemRedMatter, 'H', WTItems.helmetDarkMatter);
+				r.addShaped(new ItemStack(WTItems.chestDarkMatter), "MCM", "MMM", "MMM", 'M', WurmTweaksItems.itemDarkMatter, 'C', LudicrousItems.infinity_armor);
+				r.addShaped(new ItemStack(WTItems.chestRedMatter), "MCM", "MMM", "MMM", 'M', WurmTweaksItems.itemRedMatter, 'C', WTItems.chestDarkMatter);
+				r.addShaped(new ItemStack(WTItems.leggsDarkMatter), "MMM", "MLM", "M M", 'M', WurmTweaksItems.itemDarkMatter, 'L', LudicrousItems.infinity_pants);
+				r.addShaped(new ItemStack(WTItems.leggsRedMatter), "MMM", "MLM", "M M", 'M', WurmTweaksItems.itemRedMatter, 'L', WTItems.leggsDarkMatter);
+				r.addShaped(new ItemStack(WTItems.bootsDarkMatter), "M M", "MBM", 'M', WurmTweaksItems.itemDarkMatter, 'B', LudicrousItems.infinity_shoes);
+				r.addShaped(new ItemStack(WTItems.bootsRedMatter), "M M", "MBM", 'M', WurmTweaksItems.itemRedMatter, 'B', WTItems.bootsDarkMatter);
+				r.addShaped9X9Recipe(WurmTweaksItems.itemDarkMatter, "ABBBBBBBA", "BXXXXXXXB","BXCCCCCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCCCCCXB", "BXXXXXXXB", "ABBBBBBBA", 'A', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(LudicrousBlocks.resource_block, 1, 1), 'X', "packGemBlock", 'C', new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 3), 'F', new ItemStack(TEBlocks.blockCell, 1, 0));
+				r.addShaped(WurmTweaksItems.itemRedMatter, "XAX", "AXA", "XAX", 'X', WurmTweaksItems.itemDarkMatter, 'A', WurmTweaksItems.creativeCreativeParts);
 				addCompressor();
 		}
 
