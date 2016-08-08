@@ -169,12 +169,12 @@ public class ExtraUtilsRecipes {
 				r.addShaped9X9Recipe(new ItemStack(ExtraUtils.angelRing, 1, 3), "  G   G  ", " DBISIBD ", " LXPPPXL ", "  FFGFF  ", "  FDJDF  ", "  FFGFF  ", "ABNPPPNBA", " CKCZCJC ", " H  U  H ", 'G', WurmTweaksBlocks.blockPlatinum, 'D', "packGemBlock", 'B', WurmTweaksBlocks.blockGold, 'S', new ItemStack(SEGameObjects.SolarPanelUltimate), 'I', WurmTweaksItems.gearMixedSheet, 'L', WurmTweaksItems.itemAntiMatter, 'X', tonius.simplyjetpacks.setup.ModItems.jetpackTE4Armored, 'P', IC2Items.getItem("iridiumPlate"), 'F', WurmTweaksItems.ingotRainbowSteel, 'G', "dyeRed", 'A', WurmTweaksItems.itemMixedSheet, 'B', WurmTweaksBlocks.blockCompressedRedstone, 'N', GraviSuite.gravitationEngine, 'C', new ItemStack(GraviSuite.advJetpack, 1, OreDictionary.WILDCARD_VALUE), 'K', new ItemStack(ItemEnum.STORAGECOMPONET.getItem(), 1, 3), 'C', WurmTweaksItems.ingotGreenSteel, 'Z', WurmTweaksItems.itemBloodInfused, 'H', TFItems.ingotEnderium, 'U', TFItems.ingotSignalum);
 				r.addShaped9X9Recipe(new ItemStack(ExtraUtils.angelRing, 1, 4), "  G   G  ", " DBISIBD ", " LXPPPXL ", "  FFGFF  ", "  FDJDF  ", "  FFGFF  ", "ABNPPPNBA", " CKCZCJC ", " H  U  H ", 'G', WurmTweaksBlocks.blockPlatinum, 'D', "packGemBlock", 'B', WurmTweaksBlocks.blockGold, 'S', new ItemStack(SEGameObjects.SolarPanelUltimate), 'I', WurmTweaksItems.gearMixedSheet, 'L', WurmTweaksItems.itemAntiMatter, 'X', tonius.simplyjetpacks.setup.ModItems.jetpackTE4Armored, 'P', IC2Items.getItem("iridiumPlate"), 'F', WurmTweaksItems.ingotRainbowSteel, 'G', TFCItems.goldSheet, 'A', WurmTweaksItems.itemMixedSheet, 'B', WurmTweaksBlocks.blockCompressedRedstone, 'N', GraviSuite.gravitationEngine, 'C', new ItemStack(GraviSuite.advJetpack, 1, OreDictionary.WILDCARD_VALUE), 'K', new ItemStack(ItemEnum.STORAGECOMPONET.getItem(), 1, 3), 'C', WurmTweaksItems.ingotGreenSteel, 'Z', WurmTweaksItems.itemBloodInfused, 'H', TFItems.ingotEnderium, 'U', TFItems.ingotSignalum);
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ExtraUtils.unstableIngot), "I", "S", "D", Character.valueOf('I'), TFCItems.redSteelSheet, Character.valueOf('S'), ItemDivisionSigil.newActiveSigil(), Character.valueOf('D'), "packGemExquisite"));
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ExtraUtils.unstableIngot, 1, 1), "g", "S", "D", Character.valueOf('g'),TFCItems.blueSteelSheet, Character.valueOf('S'), ItemDivisionSigil.newActiveSigil(), Character.valueOf('D'), "packGemExquisite"));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ExtraUtils.unstableIngot, 1, 1), "g", "S", "D", Character.valueOf('g'), TFCItems.blueSteelSheet, Character.valueOf('S'), ItemDivisionSigil.newActiveSigil(), Character.valueOf('D'), "packGemExquisite"));
 				ItemStack item = new ItemStack(ExtraUtils.unstableIngot);
 				NBTTagCompound tags = new NBTTagCompound();
 				tags.setBoolean("stable", true);
 				item.setTagCompound(tags);
-				GameRegistry.addRecipe(new ShapedOreRecipe(item,  "uuu", "uuu", "uuu", Character.valueOf('u'), new ItemStack(ExtraUtils.unstableIngot, 1, 1)));
+				GameRegistry.addRecipe(new ShapedOreRecipe(item, "uuu", "uuu", "uuu", Character.valueOf('u'), new ItemStack(ExtraUtils.unstableIngot, 1, 1)));
 				for (int b = 1; b < 7; b++)
 						r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, b), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b - 1));
 				r.addShapeless(new ItemStack(Blocks.cobblestone, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
@@ -185,6 +185,8 @@ public class ExtraUtilsRecipes {
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 4), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 5));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 5), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 6), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7));
+				r.addShaped(new ItemStack(ExtraUtils.drum, 1, 0), "SGS", "SGS", "SGS", 'S', TFCItems.steelSheet, 'G', "packGlass");
+				r.addCircleWCenter(new ItemStack(ExtraUtils.drum, 1, 1), ExtraUtils.bedrockium, new ItemStack(ExtraUtils.drum, 1, 0));
 				if (RecipeChecker.modExists("addCompressorRecipes"))
 						addCompressorRecipes();
 		}

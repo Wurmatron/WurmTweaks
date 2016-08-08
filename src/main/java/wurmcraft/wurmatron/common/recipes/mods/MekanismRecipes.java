@@ -161,6 +161,7 @@ public class MekanismRecipes {
 				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 9), WurmTweaksItems.gearMixedSheet, Items.book, Items.redstone, new ItemStack(MekanismItems.ControlCircuit, 1, 3));
 				r.addCrossWCenter(new ItemStack(MekanismBlocks.BasicBlock, 1, 8), TFCItems.steelSheet2x, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 5), WurmTweaksBlocks.blockCompressedRedstone, TFCItems.blueSteelBucketLava, WurmTweaksBlocks.blockGold, WurmTweaksItems.itemMachineFrame);
+				r.addBasicMachineRecipe(new ItemStack(MekanismItems.Robit,1,0), WurmTweaksItems.itemComputationalCore, WurmTweaksItems.itemAutoCore, WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotEnergyReactor);
 				MekanismRegistry.addGases();
 				addMetallurgicInfuserRecipe();
 				addPulversiverRecipes();
