@@ -145,6 +145,7 @@ public class VinilaRecipes {
 				r.addCircleWCenter(new ItemStack(Items.speckled_melon,4,0), new ItemStack(TFCItems.goldSheet),WurmTweaksItems.foodMelonBread);
 				r.addShapeless(new ItemStack(Items.fish,16,0), TFCHelper.getFood(TFCItems.fishRaw,160));
 				r.addShapeless(new ItemStack(Items.fish,1,3), new ItemStack(Items.fish,1,0));
+				r.add2X(new ItemStack(Items.wheat_seeds,8), "packSeed");
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();

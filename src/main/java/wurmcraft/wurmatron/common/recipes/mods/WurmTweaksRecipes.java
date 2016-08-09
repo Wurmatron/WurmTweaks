@@ -49,7 +49,7 @@ public class WurmTweaksRecipes {
 				r.addShapeless(WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.itemMixedSheet, "dyeCyan");
 				r.addCrossWCenter(WurmTweaksItems.ingotBrownSteel, "dyeBrown", WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemCraftingCore);
 				r.addBasicMachineRecipe(WurmTweaksItems.ingotGraySteel, TFCItems.blackSteelSheet2x, TFCItems.steelSheet2x, "packGemExquisite", WurmTweaksItems.itemMixedSheet);
-				r.addShapeless(WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.itemCraftingCore, new ItemStack(EnderIO.itemAlloy, 1, 2), TFItems.ingotEnderium, com.brandon3055.draconicevolution.common.ModItems.draconicIngot, new ItemStack(ModItems.manaResource, 1, 14), IC2Items.getItem("iridiumPlate"));
+				r.addShapeless(WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.itemCraftingCore, new ItemStack(EnderIO.itemAlloy, 1, 2), TFItems.ingotEnderium, WurmTweaksItems.ingotEnergyReactor, new ItemStack(ModItems.manaResource, 1, 14), IC2Items.getItem("iridiumPlate"));
 				r.addBasicMachineRecipe(WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemCraftingCore, Items.ghast_tear, Items.glowstone_dust, ExtraUtils.bedrockium);
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.itemQuantumSingularity);
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumSingularity, ExtraUtils.bedrockium, "packGemExquisite", WurmTweaksItems.itemMixedSheet);

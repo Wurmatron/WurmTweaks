@@ -18,6 +18,8 @@ import vazkii.botania.common.item.ItemManaTablet;
 import vazkii.botania.common.item.ItemSignalFlare;
 import vazkii.botania.common.item.ItemTwigWand;
 import vazkii.botania.common.item.ModItems;
+import vazkii.botania.common.item.block.ItemBlockSpecialFlower;
+import vazkii.botania.common.lib.LibBlockNames;
 import vazkii.botania.common.lib.LibOreDict;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.handler.ArmorHandler;
@@ -55,7 +57,7 @@ public class BotaniaRecipes {
 				r.add2X(new ItemStack(ModBlocks.livingwood, 4, 3), new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.addShaped(new ItemStack(ModBlocks.livingwood, 4, 4), " X ", "X X", " X ", 'X', new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.addShapeless(ModBlocks.livingwood, Items.glowstone_dust, ModBlocks.livingwood);
-				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 0), "WWW", "NX ", "WWW", 'W', ModBlocks.livingwood, 'N', WurmTweaksItems.itemNatureCore, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
+				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 0), "WWW", "NX ", "WWW", 'W', ModBlocks.livingwood, 'N', WurmTweaksItems.itemMagicChunk, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ModBlocks.spreader, 1, 1), ModBlocks.spreader, Items.redstone);
 				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 2), "WWW", "NX ", "WWW", 'W', ModBlocks.dreamwood, 'N', WurmTweaksItems.itemNatureCoreMK2, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ModBlocks.spreader, 1, 3), new ItemStack(ModBlocks.spreader, 1, 2), new ItemStack(ModItems.manaResource, 1, 5), new ItemStack(ModItems.manaResource, 1, 9));
@@ -144,7 +146,7 @@ public class BotaniaRecipes {
 				r.addShaped(ModItems.pestleAndMortar, "  S", "  X", "B  ", 'S', "packStick", 'X', "packLog", 'B', Items.bowl);
 				for (int i = 0; i < 16; i++)
 						for (int j = 0; j < 16; j++)
-								r.addShaped(ItemTwigWand.forColors(i, j), " AS", " SB", "X  ", 'A', new ItemStack(ModItems.petal, 1, i), 'B', new ItemStack(ModItems.petal, 1, i), 'S', new ItemStack(ModItems.manaResource, 1, 3), 'X', WurmTweaksItems.stableMagicEssence);
+								r.addShaped(ItemTwigWand.forColors(i, j), " AS", " SB", "X  ", 'A', new ItemStack(ModItems.petal, 1, i), 'B', new ItemStack(ModItems.petal, 1, i), 'S', new ItemStack(ModItems.manaResource, 1, 3), 'X', WurmTweaksItems.itemMagicChunk);
 				r.addShaped(new ItemStack(ModItems.manaResource, 1, 3), "X", "X", 'X', ModBlocks.livingwood);
 				r.addShapeless(new ItemStack(ModItems.manaResource, 1, 6), Blocks.grass, Items.redstone);
 				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 11), "packCraftingTable", ModBlocks.livingrock);
@@ -277,6 +279,7 @@ public class BotaniaRecipes {
 				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 7), new ItemStack(ModBlocks.storage, 1, 2));
 				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 2), new ItemStack(ModBlocks.storage, 1, 3));
 				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 9), new ItemStack(ModBlocks.storage, 1, 4));
+				r.addShapeless(ModItems.lexicon, Items.book, new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
 				if (RecipeChecker.modExists("IC2"))
 						addCompressorRecipes();
 				addManaPoolRecipes();
@@ -284,6 +287,7 @@ public class BotaniaRecipes {
 				addRunicAlterRecipes();
 				addConjurationRecipes();
 				addAlchemyRecipes();
+				addPetalRecipes();
 		}
 
 		@Optional.Method (modid = "IC2")
@@ -375,5 +379,50 @@ public class BotaniaRecipes {
 				for (int s = 0; s < OreDictionary.getOres("packSmoothStone").size() - 1; s++)
 						BotaniaHelper.addAlchemyRecipe(OreDictionary.getOres("packSmoothStone").get(s + 1), OreDictionary.getOres("packSmoothStone").get(s), 12000);
 				BotaniaHelper.addAlchemyRecipe(new ItemStack(ModItems.worldSeed), WurmTweaksItems.itemNatureCore, 28000);
+		}
+
+		@Optional.Method (modid = "Botania")
+		private static void addPetalRecipes () {
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_PUREDAISY), "petalWhite", "petalWhite", "petalWhite", "petalWhite");
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_MANASTAR), "petalLightBlue", "petalGreen", "petalRed", "petalCyan");
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_DAYBLOOM), "petalYellow", "petalYellow", "petalOrange", "petalLightBlue");
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_NIGHTSHADE), "petalBlack", "petalBlack", "petalPurple", "petalGray");
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ENDOFLAME), "petalBrown", "petalBrown", "petalRed", "petalLightGray", new ItemStack(ModItems.manaResource, 1, 23));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_HYDROANGEAS), "petalBlue", "petalBlue", "petalCyan", "petalCyan", new ItemStack(ModItems.manaResource, 1, 23));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_THERMALILY), "petalRed", "petalOrange", "petalOrange", new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.rune, 1, 1));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ARCANE_ROSE), "petalPink", "petalPink", "petalPurple", "petalPurple", "petalLime", new ItemStack(ModItems.rune, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_MUNCHDEW), "petalLime", "petalLime", "petalRed", "petalRed", "petalGreen", new ItemStack(ModItems.rune, 1, 10));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ENTROPINNYUM), "petalRed", "petalRed", "petalGray", "petalGray", "petalWhite", "petalWhite", new ItemStack(ModItems.rune, 1, 15), new ItemStack(ModItems.rune, 1, 1));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_KEKIMURUS), "petalWhite", "petalWhite", "petalOrange", "petalOrange", "petalBrown", "petalBrown", new ItemStack(ModItems.rune, 1, 10), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_GOURMARYLLIS), "petalLightGray", "petalLightGray", "petalYellow", "petalYellow", "petalRed", new ItemStack(ModItems.rune, 1, 1), new ItemStack(ModItems.rune, 1, 5));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_NARSLIMMUS), "petalLime", "petalLime", "petalGreen", "petalGreen", "petalBlack", new ItemStack(ModItems.rune, 1, 5), new ItemStack(ModItems.rune, 1, 0));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_SPECTROLUS), "petalRed", "petalRed", "petalGreen", "petalGreen", "petalBlue", "petalBlue", "petalWhite", "petalWhite", new ItemStack(ModItems.rune, 1, 7), new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_RAFFLOWSIA), "petalPurple", "petalPurple", "petalGreen", "petalGreen", "petalBlack", new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.rune, 1, 15), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_DANDELIFEON), "petalPurple", "petalPurple", "petalLime", "petalGreen", new ItemStack(ModItems.rune, 1, 0), new ItemStack(ModItems.rune, 1, 1), new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.rune, 1, 3), new ItemStack(ModItems.manaResource, 1, 5));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_JADED_AMARANTHUS), "petalPurple", "petalLime", "petalGreen", new ItemStack(ModItems.rune, 1, 4), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_BELLETHORN), "petalRed", "petalRed", "petalRed", "petalCyan", "petalCyan", new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_DREADTHORN), "petalBlack", "petalBlack", "petalBlack", "petalCyan", "petalCyan", new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_HEISEI_DREAM), "petalMagenta", "petalMagenta", "petalPurple", "petalPink", new ItemStack(ModItems.rune, 1, 13), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_TIGERSEYE), "petalYellow", "petalBrown", "petalOrange", "petalLime", new ItemStack(ModItems.rune, 1, 7));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ORECHID), "petalGray", "petalGray", "petalYellow", "petalGreen", "petalRed", new ItemStack(ModItems.rune, 1, 15), new ItemStack(ModItems.rune, 1, 11), new ItemStack(ModItems.manaResource, 1, 6), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_ORECHID_IGNEM), "petalRed", "petalRed", "petalWhite", "petalWhite", "petalPink", new ItemStack(ModItems.rune, 1, 15), new ItemStack(ModItems.rune, 1, 11), new ItemStack(ModItems.manaResource, 1, 6), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_FALLEN_KANADE), "petalWhite", "petalWhite", "petalWhite", "petalWhite", "petalOrange", new ItemStack(ModItems.rune, 1, 4));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_EXOFLAME), "petalRed", "petalRed", "petalGray", "petalLightGray", new ItemStack(ModItems.rune, 1, 1), new ItemStack(ModItems.rune, 1, 5));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_AGRICARNATION), "petalLime", "petalLime", "petalGreen", "petalYellow", new ItemStack(ModItems.rune, 1, 4), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_HOPPERHOCK), "petalGray", "petalGray", "petalLightGray", "petalLightGray", new ItemStack(ModItems.rune, 1, 3), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_TANGLEBERRIE), "petalCyan", "petalCyan", "petalGray", "petalLightGray", new ItemStack(ModItems.rune, 1, 3), new ItemStack(ModItems.rune, 1, 2));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_JIYUULIA), "petalPink", "petalPink", "petalPurple", "petalLightGray", new ItemStack(ModItems.rune, 1, 0), new ItemStack(ModItems.rune, 1, 3));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_RANNUNCARPUS), "petalOrange", "petalOrange", "petalYellow", new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_HYACIDUS), "petalPurple", "petalPurple", "petalMagenta", "petalMagenta", "petalGreen", new ItemStack(ModItems.rune, 1, 0), new ItemStack(ModItems.rune, 1, 7), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_POLLIDISIAC), "petalRed", "petalRed", "petalPink", "petalPink", "petalOrange", new ItemStack(ModItems.rune, 1, 9), new ItemStack(ModItems.rune, 1, 1));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_CLAYCONIA), "petalLightGray", "petalLightGray", "petalGray", "petalCyan", new ItemStack(ModItems.rune, 1, 2));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_LOONIUM), "petalGreen", "petalGreen", "petalGreen", "petalGreen", "petalGray", new ItemStack(ModItems.rune, 1, 12), new ItemStack(ModItems.rune, 1, 10), new ItemStack(ModItems.rune, 1, 14), new ItemStack(ModItems.manaResource, 1, 6), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_DAFFOMILL), "petalWhite", "petalWhite", "petalBrown", "petalYellow", new ItemStack(ModItems.rune, 1, 3), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_VINCULOTUS), "petalBlack", "petalBlack", "petalPurple", "petalPurple", "petalGreen", new ItemStack(ModItems.rune, 1, 0), new ItemStack(ModItems.rune, 1, 12), new ItemStack(ModItems.manaResource, 1, 8), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_SPECTRANTHEMUM), "petalWhite", "petalWhite", "petalLightGray", "petalLightGray", "petalCyan", new ItemStack(ModItems.rune, 1, 14), new ItemStack(ModItems.rune, 1, 0), new ItemStack(ModItems.manaResource, 1, 6), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_MEDUMONE), "petalBrown", "petalBrown", "petalGray", "petalGray", new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_MARIMORPHOSIS), "petalGray", "petalYellow", "petalGreen", "petalRed", new ItemStack(ModItems.rune, 1, 2), new ItemStack(ModItems.rune, 1, 1), new ItemStack(ModItems.manaResource, 1, 6));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_BUBBELL), "petalCyan", "petalCyan", "petalLightBlue", "petalLightBlue", "petalBlue", "petalBlue", new ItemStack(ModItems.rune, 1, 0), new ItemStack(ModItems.rune, 1, 5), new ItemStack(ModItems.manaResource, 1, 8));
+				BotaniaHelper.addPetalRecipe(ItemBlockSpecialFlower.ofType(LibBlockNames.SUBTILE_SOLEGNOLIA), "petalBrown", "petalBrown", "petalRed", "petalBlue", new ItemStack(ModItems.manaResource, 1, 6));
 		}
 }

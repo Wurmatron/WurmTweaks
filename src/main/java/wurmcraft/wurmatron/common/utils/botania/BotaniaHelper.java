@@ -9,7 +9,7 @@ import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 public class BotaniaHelper {
 
 		@Optional.Method (modid = "Botania")
-		public static void addPetalRecipee (ItemStack output, Object... items) {
+		public static void addPetalRecipe (ItemStack output, Object... items) {
 				if (RecipeChecker.checkStack(output))
 						BotaniaAPI.registerPetalRecipe(output, items);
 		}

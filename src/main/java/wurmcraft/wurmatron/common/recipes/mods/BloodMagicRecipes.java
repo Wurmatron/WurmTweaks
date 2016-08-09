@@ -83,7 +83,7 @@ public class BloodMagicRecipes {
 				r.addShapeless(ModBlocks.blockWritingTable, WurmTweaksItems.itemBloodInfused, Items.brewing_stand, WurmTweaksItems.ingotRainbowSteel);
 				for (Item sword : Recipes.swords)
 						r.addBasicMachineRecipe(ModBlocks.runeOfSacrifice, WurmTweaksItems.stableMagicEssence, TFItems.ingotEnderium, new ItemStack(sword, 1, OreDictionary.WILDCARD_VALUE), ModItems.reinforcedSlate);
-				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(ModBlocks.bloodRune, "XAX", "AOA", "XAX", 'X', ModItems.blankSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.apprenticeBloodOrb));
+				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(ModBlocks.bloodRune, "XAX", "AOA", "XAX", 'X', ModItems.blankSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 1), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 2), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 3), "XAX", "AOA", "XAX", 'X', ModItems.imbuedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.masterBloodOrb));
@@ -98,7 +98,7 @@ public class BloodMagicRecipes {
 				r.addBasicMachineRecipe(ModBlocks.blockAlchemicCalcinator, WurmTweaksItems.itemBloodInfused, WurmTweaksItems.itemMixedSheet, ModItems.demonicSlate, Blocks.furnace);
 				r.addCircleWCenter(ModItems.armourInhibitor, ModBlocks.ritualStone, ModItems.weakBloodShard);
 				r.addCircle(ModItems.itemDestinationClearer, "ingotThaumium");
-				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.sacrificialDagger, 1, 0), 425), "X", "S", 'S', "packStick", 'X', WurmTweaksItems.ingotRainbowSteel);
+				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.sacrificialDagger, 1, 0), 425), "X", "S", 'S', "packStick", 'X', WurmTweaksItems.ingotTitanium);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(ModItems.daggerOfSacrifice), 825), "X", "X", "S", 'X', WurmTweaksItems.itemBloodInfused, 'S', WurmTweaksItems.ingotTitanium);
 				r.addShaped(ModItems.itemTankSegmenter, " SS", "  S", "  S", 'S', TFCItems.redSteelSheet2x);
 				r.addCrossWCenter(ModItems.lavaCrystal, Items.blaze_rod, Blocks.obsidian, TFCItems.blueSteelBucketLava);
