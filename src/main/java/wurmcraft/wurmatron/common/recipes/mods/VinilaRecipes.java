@@ -211,5 +211,11 @@ public class VinilaRecipes {
 		@Optional.Method (modid = "techreborn")
 		private static void addElectrolizerRecipes () {
 				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(Blocks.cobblestone), null, new ItemStack(Blocks.netherrack, 16), null, null, null, 200, 32);
+				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(Blocks.sand), null, new ItemStack(Blocks.soul_sand, 16), null, null, null, 200, 32);
+ -				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(TFCItems.wroughtIronSheet), null, new ItemStack(Items.glowstone_dust, 64), null, null, null, 400, 8);
+ -				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(TFCItems.coal, 4, 1), null, new ItemStack(Items.ghast_tear, 1), null, null, null, 100, 128);
+ -				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(TFCItems.coal, 1, 0), null, new ItemStack(Items.blaze_rod, 4), null, null, null, 80, 512);
+ -				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(TFCItems.bismuthBronzeSheet), null, new ItemStack(Items.quartz, 64), null, null, null, 60, 32);
+			
 		}
 }
