@@ -1,6 +1,7 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
 import appeng.api.AEApi;
+import appeng.api.features.IInscriberRecipe;
 import appeng.api.util.AEColor;
 import appeng.core.Api;
 import appeng.recipes.game.FacadeRecipe;

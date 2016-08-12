@@ -123,6 +123,10 @@ item.electroMagneticShielding.name=Electro Magnetic Shielding
 item.electroShielding.name=Electro Shielding
 item.wandParts.name=Wand Parts
 item.pumpkinBits.name=Pumpkin Bits
+item.mixedGemFlawed.name=Flawed Mixed Gem
+item.mixedGem.name=Mixed Gem
+item.mixedGemFlawless.name=Flawless Mixed Gem
+item.mixedGemExquisite.name=Exquisite Mixed Gem
 # Special Items
 item.darkMatter.name=Dark Matter
 item.redMatter.name=Red Matter

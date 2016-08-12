@@ -150,17 +150,21 @@ public class WurmTweaksRecipes {
 				r.addShaped(new ItemStack(WTItems.leggsRedMatter), "MMM", "MLM", "M M", 'M', WurmTweaksItems.itemRedMatter, 'L', WTItems.leggsDarkMatter);
 				r.addShaped(new ItemStack(WTItems.bootsDarkMatter), "M M", "MBM", 'M', WurmTweaksItems.itemDarkMatter, 'B', LudicrousItems.infinity_shoes);
 				r.addShaped(new ItemStack(WTItems.bootsRedMatter), "M M", "MBM", 'M', WurmTweaksItems.itemRedMatter, 'B', WTItems.bootsDarkMatter);
-				r.addShaped9X9Recipe(WurmTweaksItems.itemDarkMatter, "ABBBBBBBA", "BXXXXXXXB","BXCCCCCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCCCCCXB", "BXXXXXXXB", "ABBBBBBBA", 'A', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(LudicrousBlocks.resource_block, 1, 1), 'X', "packGemBlock", 'C', new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 3), 'F', new ItemStack(TEBlocks.blockCell, 1, 0));
+				r.addShaped9X9Recipe(WurmTweaksItems.itemDarkMatter, "ABBBBBBBA", "BXXXXXXXB", "BXCCCCCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCCCCCXB", "BXXXXXXXB", "ABBBBBBBA", 'A', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(LudicrousBlocks.resource_block, 1, 1), 'X', "packGemBlock", 'C', new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 3), 'F', new ItemStack(TEBlocks.blockCell, 1, 0));
 				r.addShaped(WurmTweaksItems.itemRedMatter, "XAX", "AXA", "XAX", 'X', WurmTweaksItems.itemDarkMatter, 'A', WurmTweaksItems.creativeCreativeParts);
 				addCompressor();
-				ArmorHandler.addArmorProtection(WTItems.helmetDarkMatter, 20000,20000,20000);
-				ArmorHandler.addArmorProtection(WTItems.chestDarkMatter, 20000,20000,20000);
-				ArmorHandler.addArmorProtection(WTItems.leggsDarkMatter, 20000,20000,20000);
-				ArmorHandler.addArmorProtection(WTItems.bootsDarkMatter, 20000,20000,20000);
-				ArmorHandler.addArmorProtection(WTItems.helmetRedMatter, 80000,80000,80000);
-				ArmorHandler.addArmorProtection(WTItems.leggsRedMatter, 80000,80000,80000);
-				ArmorHandler.addArmorProtection(WTItems.chestRedMatter, 80000,80000,80000);
-				ArmorHandler.addArmorProtection(WTItems.bootsRedMatter, 80000,80000,80000);
+				ArmorHandler.addArmorProtection(WTItems.helmetDarkMatter, 20000, 20000, 20000);
+				ArmorHandler.addArmorProtection(WTItems.chestDarkMatter, 20000, 20000, 20000);
+				ArmorHandler.addArmorProtection(WTItems.leggsDarkMatter, 20000, 20000, 20000);
+				ArmorHandler.addArmorProtection(WTItems.bootsDarkMatter, 20000, 20000, 20000);
+				ArmorHandler.addArmorProtection(WTItems.helmetRedMatter, 80000, 80000, 80000);
+				ArmorHandler.addArmorProtection(WTItems.leggsRedMatter, 80000, 80000, 80000);
+				ArmorHandler.addArmorProtection(WTItems.chestRedMatter, 80000, 80000, 80000);
+				ArmorHandler.addArmorProtection(WTItems.bootsRedMatter, 80000, 80000, 80000);
+				r.addSimpleCirc(new ItemStack(WurmTweaksItems.gemMixedFlawed.getItem(), 2, 41), "packGemChipped", "packGemFlawedPure");
+				r.addSimpleCirc(new ItemStack(WurmTweaksItems.gemMixed.getItem(), 2, 42), "packGemFlawed", "packGemPure");
+				r.addSimpleCirc(new ItemStack(WurmTweaksItems.gemMixedFlawless.getItem(), 2, 43), "packGem", "packGemFlawlessPure");
+				r.addSimpleCirc(new ItemStack(WurmTweaksItems.gemMixedExquisite.getItem(), 2, 44), "packGemFlawless", "packGemExquisitePure");
 		}
 
 		private static void addCompressor () {
