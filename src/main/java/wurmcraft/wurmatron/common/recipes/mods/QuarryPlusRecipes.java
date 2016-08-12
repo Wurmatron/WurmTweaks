@@ -19,6 +19,7 @@ public class QuarryPlusRecipes {
 
 		@Optional.Method(modid = "QuarryPlus")
 		public static void addRecipes () {
+				WorkbenchRecipe.getRecipes().clear();
 				r.addShaped(new ItemStack(QuarryPlusI.blockPlacer, 1, 0), "SSS", "BBB", "SSS", 'S', Items.nether_star, 'B', "packGemBlock", 'S', WurmTweaksItems.itemQuarryCore);
 				WorkbenchRecipe.addRecipe(new ItemStack(QuarryPlusI.blockLaser), 400000, new ItemStack(BuildCraftSilicon.laserBlock, 200), new ItemStack(Items.redstone, 64 * 50), new ItemStack(WurmTweaksItems.gearMixedSheet.getItem(), 200, 29));
 				WorkbenchRecipe.addRecipe(new ItemStack(QuarryPlusI.blockMover), 100000, new ItemStack(Blocks.obsidian, 128 * 50), new ItemStack(TFCItems.redSteelSheet, 16 * 50), new ItemStack(TFCItems.blueSteelSheet, 16), new ItemStack(Blocks.anvil, 100), new ItemStack(Items.ender_pearl, 1024));

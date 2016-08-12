@@ -32,7 +32,7 @@ public class BigReactorRecipes {
 				LogHandler.info("Adding Big Reactor Recipes");
 				r.addShaped(new ItemStack(BigReactors.blockYelloriumFuelRod, 2), "SXS", "SXS", "SXS", 'S', WurmTweaksItems.itemRadiationShielding, 'X', WurmTweaksItems.ingotYellowSteel);
 				r.addShaped(new ItemStack(BigReactors.blockReactorPart, 6, 0), "SSS", "XAX", "SSS", 'S', WurmTweaksItems.itemRadiationShielding, 'X', WurmTweaksItems.ingotYellowSteel, 'A', WurmTweaksBlocks.blockBlueSteel);
-				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockReactorPart, 6, 1), WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.ingotYellowSteel, WurmTweaksBlocks.blockCompressedRedstone);
+				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockReactorPart, 1, 1), WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.itemRadiationShielding, WurmTweaksItems.ingotYellowSteel, WurmTweaksBlocks.blockCompressedRedstone);
 				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockReactorPart, 1, 2), new ItemStack(BigReactors.blockReactorPart, 1, 1), WurmTweaksItems.ingotYellowSteel, TFCItems.copperSheet2x, TFItems.ingotEnderium);
 				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockReactorPart, 1, 3), new ItemStack(BigReactors.blockReactorPart, 1, 1), WurmTweaksItems.ingotYellowSteel, TFCItems.copperSheet2x, new ItemStack(ExtraUtils.transferNode, 1, 12));
 				r.addBasicMachineRecipe(new ItemStack(BigReactors.blockReactorPart, 1, 4), new ItemStack(BigReactors.blockReactorPart, 1, 1), WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotGreenSteel, "packChest");

@@ -22,6 +22,7 @@ import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import vazkii.botania.common.item.ModItems;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
+import wurmcraft.wurmatron.common.handler.ArmorHandler;
 import wurmcraft.wurmatron.common.items.WTItems;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
@@ -49,7 +50,7 @@ public class WurmTweaksRecipes {
 				r.addShapeless(WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.itemMixedSheet, "dyeCyan");
 				r.addCrossWCenter(WurmTweaksItems.ingotBrownSteel, "dyeBrown", WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemCraftingCore);
 				r.addBasicMachineRecipe(WurmTweaksItems.ingotGraySteel, TFCItems.blackSteelSheet2x, TFCItems.steelSheet2x, "packGemExquisite", WurmTweaksItems.itemMixedSheet);
-				r.addShapeless(WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.itemCraftingCore, new ItemStack(EnderIO.itemAlloy, 1, 2), TFItems.ingotEnderium, WurmTweaksItems.ingotEnergyReactor, new ItemStack(ModItems.manaResource, 1, 14), IC2Items.getItem("iridiumPlate"));
+				r.addShapeless(WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.ingotYellowSteel, WurmTweaksItems.ingotGreenSteel, WurmTweaksItems.itemCraftingCore, new ItemStack(EnderIO.itemAlloy, 1, 2), TFItems.ingotEnderium, WurmTweaksItems.ingotEnergyReactor, WurmTweaksItems.itemComputationalCore, IC2Items.getItem("iridiumPlate"));
 				r.addBasicMachineRecipe(WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemCraftingCore, Items.ghast_tear, Items.glowstone_dust, ExtraUtils.bedrockium);
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.itemCraftingCore, WurmTweaksItems.itemQuantumSingularity);
 				r.addCrossWCenter(WurmTweaksItems.itemQuantumSingularity, ExtraUtils.bedrockium, "packGemExquisite", WurmTweaksItems.itemMixedSheet);
@@ -152,6 +153,14 @@ public class WurmTweaksRecipes {
 				r.addShaped9X9Recipe(WurmTweaksItems.itemDarkMatter, "ABBBBBBBA", "BXXXXXXXB","BXCCCCCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCFFFCXB", "BXCCCCCXB", "BXXXXXXXB", "ABBBBBBBA", 'A', new ItemStack(LudicrousItems.resource, 1, 5), 'B', new ItemStack(LudicrousBlocks.resource_block, 1, 1), 'X', "packGemBlock", 'C', new ItemStack(AdvancedSolarPanel.blockAdvSolarPanel, 1, 3), 'F', new ItemStack(TEBlocks.blockCell, 1, 0));
 				r.addShaped(WurmTweaksItems.itemRedMatter, "XAX", "AXA", "XAX", 'X', WurmTweaksItems.itemDarkMatter, 'A', WurmTweaksItems.creativeCreativeParts);
 				addCompressor();
+				ArmorHandler.addArmorProtection(WTItems.helmetDarkMatter, 20000,20000,20000);
+				ArmorHandler.addArmorProtection(WTItems.chestDarkMatter, 20000,20000,20000);
+				ArmorHandler.addArmorProtection(WTItems.leggsDarkMatter, 20000,20000,20000);
+				ArmorHandler.addArmorProtection(WTItems.bootsDarkMatter, 20000,20000,20000);
+				ArmorHandler.addArmorProtection(WTItems.helmetRedMatter, 80000,80000,80000);
+				ArmorHandler.addArmorProtection(WTItems.leggsRedMatter, 80000,80000,80000);
+				ArmorHandler.addArmorProtection(WTItems.chestRedMatter, 80000,80000,80000);
+				ArmorHandler.addArmorProtection(WTItems.bootsRedMatter, 80000,80000,80000);
 		}
 
 		private static void addCompressor () {

@@ -38,7 +38,7 @@ public class VinilaRecipes {
 				r.addCircleWCenter(Blocks.noteblock, "packLog", Items.redstone);
 				r.addShaped(Blocks.detector_rail, "S S", "SPS", "S S", 'S', Blocks.rail, 'P', Blocks.heavy_weighted_pressure_plate);
 				r.addShaped(Blocks.web, "S S", " S ", "S S", 'S', Items.string);
-				r.add2X(Blocks.wool, "packCloth");
+				r.addCircleWCenter(Blocks.wool, Items.string, "packCloth");
 				for (int d = 0; d < 16; d++) {
 						r.addShapeless(new ItemStack(Blocks.wool, 1, d), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
 						r.addCircleWCenter(new ItemStack(Blocks.wool, 8, d), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE), RecipeHelper.dye.get(d));
@@ -140,12 +140,18 @@ public class VinilaRecipes {
 				r.addShapeless(Items.writable_book, Items.book, "dyeBlack", Items.feather);
 				r.addShapeless(new ItemStack(Items.glass_bottle), new ItemStack(TFCItems.glassBottle));
 				r.addCircleWCenter(Items.golden_carrot, TFCItems.goldIngot, "packVegetable");
-				r.addShapeless(new ItemStack(Items.sugar,8), TFCHelper.getFood(TFCItems.sugar,160));
-				r.addShapeless(new ItemStack(Items.fermented_spider_eye), Items.spider_eye, Items.sugar, TFCHelper.getFood(TFCItems.sugarcane,80));
-				r.addCircleWCenter(new ItemStack(Items.speckled_melon,4,0), new ItemStack(TFCItems.goldSheet),WurmTweaksItems.foodMelonBread);
-				r.addShapeless(new ItemStack(Items.fish,16,0), TFCHelper.getFood(TFCItems.fishRaw,160));
-				r.addShapeless(new ItemStack(Items.fish,1,3), new ItemStack(Items.fish,1,0));
-				r.add2X(new ItemStack(Items.wheat_seeds,8), "packSeed");
+				r.addShapeless(new ItemStack(Items.sugar, 8), TFCHelper.getFood(TFCItems.sugar, 160));
+				r.addShapeless(new ItemStack(Items.fermented_spider_eye), Items.spider_eye, Items.sugar, TFCHelper.getFood(TFCItems.sugarcane, 80));
+				r.addCircleWCenter(new ItemStack(Items.speckled_melon, 4, 0), new ItemStack(TFCItems.goldSheet), WurmTweaksItems.foodMelonBread);
+				r.addShapeless(new ItemStack(Items.fish, 16, 0), TFCHelper.getFood(TFCItems.fishRaw, 160));
+				r.addShapeless(new ItemStack(Items.fish, 1, 3), new ItemStack(Items.fish, 1, 0));
+				r.add2X(new ItemStack(Items.wheat_seeds, 8), "packSeed");
+				r.addShapeless(new ItemStack(Blocks.sticky_piston,1,0), Blocks.piston, "packRubber");
+				r.addShapeless(new ItemStack(Items.emerald), new ItemStack(TFCItems.gemEmerald,1,2));
+				r.addShapeless(new ItemStack(TFCItems.gemDiamond,1,2), Items.emerald);
+				r.addShaped(new ItemStack(Items.bowl), "L L", " L ", 'L' ,"packLumber");
+				r.addShapeless(new ItemStack(Items.glowstone_dust, 32, 0), new ItemStack(Blocks.glowstone));
+				r.addShaped(new ItemStack(Blocks.anvil,1,0), "BBB", " I ", "I I", 'B', WurmTweaksBlocks.blockWroughtIron, 'I', TFCItems.wroughtIronIngot);
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();
@@ -190,7 +196,8 @@ public class VinilaRecipes {
 		private static void addCompressonRecipes () {
 				ICHelper.addCompressorRecipe(new ItemStack(Items.redstone, 32), new ItemStack(Blocks.redstone_block));
 				ICHelper.addCompressorRecipe(new ItemStack(Items.quartz, 32), new ItemStack(Blocks.quartz_block));
-				ICHelper.addCompressorRecipe(new ItemStack(TFCItems.powder, 32, 6), new ItemStack(Blocks.lapis_block));
+				ICHelper.addCompressorRecipe(new ItemStack(Items.dye, 32, 4), new ItemStack(Blocks.lapis_block));
+				ICHelper.addCompressorRecipe(new ItemStack(Items.glowstone_dust, 32, 0), new ItemStack(Blocks.glowstone));
 		}
 
 		@Optional.Method (modid = "techreborn")
@@ -213,7 +220,7 @@ public class VinilaRecipes {
 				TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(Blocks.cobblestone), null, new ItemStack(Blocks.netherrack, 16), null, null, null, 200, 32);
 				TechRebornHelper.addCentrifugeRecipe(new ItemStack(Blocks.sand), null, new ItemStack(Blocks.soul_sand, 16), null, null, null, 200, 32);
 				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.wroughtIronSheet), null, new ItemStack(Items.glowstone_dust, 64), null, null, null, 400, 8);
-				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.coal, 4, 1), null, new ItemStack(Items.ghast_tear, 1, 4), null, null, null, 100, 128);
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.coal, 4, 1), null, new ItemStack(Items.ghast_tear, 1), null, null, null, 100, 128);
 				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.coal, 1, 0), null, new ItemStack(Items.blaze_rod, 4), null, null, null, 80, 512);
 				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.bismuthBronzeSheet), null, new ItemStack(Items.quartz, 64), null, null, null, 60, 32);
 		}

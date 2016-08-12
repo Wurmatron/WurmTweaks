@@ -1,5 +1,8 @@
 package wurmcraft.wurmatron.common.recipes;
 
+import cofh.thermalexpansion.util.crafting.CrucibleManager;
+import cofh.thermalexpansion.util.crafting.PulverizerManager;
+import cofh.thermalexpansion.util.crafting.TransposerManager;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import mekanism.common.recipe.RecipeHandler;
 import net.minecraft.item.crafting.CraftingManager;
@@ -22,6 +25,16 @@ public class Recipes {
 				LogHandler.info("Removing all the games recipes and smelting recipes");
 				CraftingManager.getInstance().getRecipeList().clear();
 				FurnaceRecipes.smelting().getSmeltingList().clear();
+				if (RecipeChecker.modExists("ThermalExpansion")) {
+						for (int s = 0; s < CrucibleManager.getRecipeList().length; s++)
+								CrucibleManager.removeRecipe(CrucibleManager.getRecipeList()[s].getInput());
+						for (int s = 0; s <TransposerManager.getFillRecipeList().length; s++)
+								TransposerManager.removeFillRecipe(TransposerManager.getFillRecipeList()[s].getInput(), TransposerManager.getFillRecipeList()[s].getFluid());
+						for (int s = 0; s <TransposerManager.getExtractionRecipeList().length; s++)
+								TransposerManager.removeExtractionRecipe(TransposerManager.getExtractionRecipeList()[s].getInput());
+						for (int s = 0; s < PulverizerManager.getRecipeList().length; s++)
+								PulverizerManager.removeRecipe(PulverizerManager.getRecipeList()[s].getInput());
+				}
 				if (RecipeChecker.modExists("Avaritia"))
 						ExtremeCraftingManager.getInstance().getRecipeList().clear();
 				if (RecipeChecker.modExists("Botania")) {
@@ -80,6 +93,7 @@ public class Recipes {
 						BotaniaRecipes.addRecipes();
 				if (RecipeChecker.modExists("Buildcraft|Core"))
 						BuildcraftRecipes.addRecipes();
+
 				if (RecipeChecker.modExists("chisel"))
 						Chisel2Recipies.addRecipes();
 				if (RecipeChecker.modExists("ComputerCraft"))

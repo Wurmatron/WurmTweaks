@@ -113,7 +113,10 @@ public class WTItems {
 				itemMaterialNames.add("electroShielding");
 				itemMaterialNames.add("wandParts");
 				itemMaterialNames.add("pumpkinBits");
-				//itemMaterialNames.add("sheetCat");
+				itemMaterialNames.add("mixedGemFlawed");
+				itemMaterialNames.add("mixedGem");
+				itemMaterialNames.add("mixedGemFlawless");
+				itemMaterialNames.add("mixedGemExquisite");
 				registerItem(itemMaterial = new ItemMaterial(itemMaterialNames, "itemMaterial"), "itemMaterial");
 				itemSpecialColors.put("creativeParts", EnumChatFormatting.DARK_PURPLE);
 				itemSpecialColors.put("redMatter", EnumChatFormatting.DARK_RED);

@@ -213,10 +213,18 @@ public class OreDict {
 				for (Item gem : gems) {
 						add("packGemChipped", new ItemStack(gem, 1, 0));
 						add("packGemFlawed", new ItemStack(gem, 1, 1));
+						add("packGemFlawedPure", new ItemStack(gem, 1, 1));
 						add("packGem", new ItemStack(gem, 1, 2));
+						add("packGemPure", new ItemStack(gem, 1, 2));
 						add("packGemFlawless", new ItemStack(gem, 1, 3));
+						add("packGemFlawlessPure", new ItemStack(gem, 1, 3));
 						add("packGemExquisite", new ItemStack(gem, 1, 4));
+						add("packGemExquisitePure", new ItemStack(gem, 1, 4));
 				}
+				add("packGem", WurmTweaksItems.gemMixed);
+				add("packGemFlawed", WurmTweaksItems.gemMixedFlawed);
+				add("packGemFlawless", WurmTweaksItems.gemMixedFlawless);
+				add("packGemExquisite", WurmTweaksItems.gemMixedExquisite);
 				// Sand
 				add("packSand", Blocks.sand);
 				for (int o = 0; o < 16; o++)
@@ -314,6 +322,7 @@ public class OreDict {
 				// Rubber Ore Dict ("packRubber")
 				add("packRubber", IC2Items.getItem("rubber"));
 				add("packRubber", MFRThings.rawRubberItem);
+				add("packRubber", MFRThings.rubberBarItem);
 				for (int c = 0; c < 5; c++) {
 						add("packCredit", new ItemStack(WTItems.creditBismuth, 1, c));
 						add("packCredit", new ItemStack(WTItems.creditZinc, 1, c));

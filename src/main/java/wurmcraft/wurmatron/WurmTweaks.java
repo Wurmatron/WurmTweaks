@@ -1,5 +1,6 @@
 package wurmcraft.wurmatron;
 
+import buildcraft.api.recipes.BuildcraftRecipeRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -70,6 +71,8 @@ public class WurmTweaks {
 						MinecraftForge.EVENT_BUS.register(new ExplodingPigHandler());
 				FMLCommonHandler.instance().bus().register(new ArmorTickEvent());
 				LootHandler.init();
+				if (RecipeChecker.modExists("Buildcraft|Core"))
+						BuildcraftRecipeRegistry.assemblyTable.getRecipes().clear();
 		}
 
 		@Mod.EventHandler

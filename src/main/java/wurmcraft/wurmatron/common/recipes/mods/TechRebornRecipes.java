@@ -41,7 +41,7 @@ public class TechRebornRecipes {
 				r.addCrossWCenter(new ItemStack(ModBlocks.MachineCasing, 2, 0), WurmTweaksItems.gearMixedSheet, WurmTweaksItems.itemQuantumSingularity, new ItemStack(ModBlocks.machineframe, 1, 4));
 				r.addCrossWCenter(new ItemStack(ModBlocks.MachineCasing, 1, 1), WurmTweaksItems.itemCraftingCore, WurmTweaksItems.itemQuantumSingularity, new ItemStack(ModBlocks.MachineCasing, 1, 0));
 				r.addCrossWCenter(new ItemStack(ModBlocks.MachineCasing, 1, 2), WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.itemQuantumSingularity, new ItemStack(ModBlocks.MachineCasing, 1, 1));
-				r.addCrossWCenter(new ItemStack(ModBlocks.HighAdvancedMachineBlock), "packGemExquisite", WurmTweaksItems.ingotRainbowSteel, new ItemStack(ModBlocks.MachineCasing, 1, 2));
+				r.addCrossWCenter(new ItemStack(ModBlocks.HighAdvancedMachineBlock), "packGemExquisitePure", WurmTweaksItems.ingotRainbowSteel, new ItemStack(ModBlocks.MachineCasing, 1, 2));
 				r.addShaped(new ItemStack(ModBlocks.Magicenergeyconverter), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 5), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(ConfigItems.itemResource, 1, 2));
 				r.addShaped(new ItemStack(ModBlocks.AssemblyMachine), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 4), 'B', WurmTweaksItems.itemCraftingCore, 'A', IC2Items.getItem("electronicCircuit"));
 				r.addShaped(new ItemStack(ModBlocks.DieselGenerator), "XBX", "ACA", "XBX", 'X', WurmTweaksItems.gearMixedSheet, 'C', new ItemStack(ModBlocks.machineframe, 1, 4), 'B', WurmTweaksItems.itemCraftingCore, 'A', new ItemStack(BuildCraftEnergy.fuel));
@@ -66,7 +66,7 @@ public class TechRebornRecipes {
 				r.addCrossWCenter(new ItemStack(ModBlocks.Aesu), new ItemStack(techreborn.init.ModItems.parts, 1, 4), IC2Items.getItem("mfsUnit"), new ItemStack(ModBlocks.machineframe, 1, 5));
 				r.addCross(new ItemStack(techreborn.init.ModItems.parts, 4, 4), IC2Items.getItem("advancedCircuit"), IC2Items.getItem("carbonMesh"));
 				r.addCross(new ItemStack(techreborn.init.ModItems.parts, 1, 5), new ItemStack(TFCItems.blackSteelSheet), new ItemStack(techreborn.init.ModItems.parts, 1, 4));
-				r.addCross(new ItemStack(techreborn.init.ModItems.parts, 1, 6), "packGemExquisite", new ItemStack(techreborn.init.ModItems.parts, 1, 5));
+				r.addCross(new ItemStack(techreborn.init.ModItems.parts, 1, 6), "packGemExquisitePure", new ItemStack(techreborn.init.ModItems.parts, 1, 5));
 				r.addShaped(new ItemStack(techreborn.init.ModItems.parts, 1, 17), "XAX", "A A", "XAX", 'X', new ItemStack(TFCItems.goldSheet2x), 'A', new ItemStack(TFCItems.copperSheet2x));
 				r.addCrossWCenter(new ItemStack(techreborn.init.ModItems.parts, 1, 18), new ItemStack(TFCItems.platinumSheet2x), WurmTweaksItems.itemCraftingCore, new ItemStack(techreborn.init.ModItems.parts, 1, 17));
 				r.addCrossWCenter(new ItemStack(techreborn.init.ModItems.parts, 1, 19), AdvancedSolarPanel.itemSunnariumAlloy, WurmTweaksItems.itemCraftingCore, new ItemStack(techreborn.init.ModItems.parts, 1, 17));

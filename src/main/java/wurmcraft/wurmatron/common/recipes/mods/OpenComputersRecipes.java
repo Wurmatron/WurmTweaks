@@ -66,7 +66,6 @@ public class OpenComputersRecipes {
 				r.addShaped(li.cil.oc.api.Items.get("cardContainer2").createItemStack(1), "IMI", "PC ", "IMI", 'I', TFCItems.blackSteelIngot, 'M', "oc:circuitChip2", 'P', Blocks.piston, 'C', "oc:materialCard");
 				r.addShaped(li.cil.oc.api.Items.get("cardContainer3").createItemStack(1), "IMI", "PC ", "IMI", 'I', TFCItems.blackSteelIngot, 'M', "oc:circuitChip3", 'P', Blocks.piston, 'C', "oc:materialCard");
 				r.addShaped(li.cil.oc.api.Items.get("databaseUpgrade1").createItemStack(1), "IAI", "MDM", "III", 'I', TFCItems.bronzeSheet, 'A', "oc:analyzer", 'M', "oc:circuitChip1", 'D', "oc:hdd1");
-				// TODO MicroChip Recipes
 				r.addShaped(li.cil.oc.api.Items.get("databaseUpgrade2").createItemStack(1), "IAI", "MDM", "III", 'I', TFCItems.bronzeSheet, 'A', "oc:analyzer", 'M', "oc:circuitChip2", 'D', "oc:hdd2");
 				r.addShaped(li.cil.oc.api.Items.get("databaseUpgrade3").createItemStack(1), "IAI", "MDM", "III", 'I', TFCItems.bronzeSheet, 'A', "oc:analyzer", 'M', "oc:circuitChip3", 'D', "oc:hdd3");
 				r.addShaped(li.cil.oc.api.Items.get("server1").createItemStack(1), "OMO", "CXC", "OIO", 'O', Blocks.obsidian, 'I', TFCItems.steelSheet, 'C', "oc:circuitChip1", 'X', "oc:circuitChip2", 'M', "oc:ram4");

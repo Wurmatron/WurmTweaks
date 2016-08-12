@@ -30,7 +30,7 @@ public class IC2Recipes {
 				r.addCrossWCenter(new ItemStack(IC2Items.getItem("generator").getItem(), 2, 2), "packPlanks", "packStick", new ItemStack(IC2Items.getItem("generator").getItem(), 1, 0));
 				r.addBasicMachineRecipe(new ItemStack(IC2Items.getItem("generator").getItem(), 1, 3), "packGlass", TFCItems.wroughtIronSheet, TFCItems.platinumSheet2x, WurmTweaksItems.itemSolarCore);
 				r.addCrossWCenter(new ItemStack(IC2Items.getItem("generator").getItem(), 2, 4), "packPlanks", IC2Items.getItem("carbonPlate"), new ItemStack(IC2Items.getItem("generator").getItem(), 1, 0));
-				r.addCrossWCenter(new ItemStack(IC2Items.getItem("generator").getItem(), 1, 5), WurmTweaksItems.itemRadiationShielding, "packGemExquisite", new ItemStack(IC2Items.getItem("generator").getItem(), 1, 0));
+				r.addCrossWCenter(new ItemStack(IC2Items.getItem("generator").getItem(), 1, 5), WurmTweaksItems.itemRadiationShielding, "packGemExquisitePure", new ItemStack(IC2Items.getItem("generator").getItem(), 1, 0));
 				r.addShaped(IC2Items.getItem("semifluidGenerator"), "IFI", "FGF", "IFI", 'I', new ItemStack(TFCItems.wroughtIronSheet2x), 'F', IC2Items.getItem("FluidCell"), 'G', IC2Items.getItem("geothermalGenerator"));
 				r.addShaped(IC2Items.getItem("stirlingGenerator"), "IFI", "IGI", "III", 'I', new ItemStack(TFCItems.wroughtIronSheet2x), 'F', IC2Items.getItem("heatconductor"), 'G', IC2Items.getItem("generator"));
 				r.addShaped(IC2Items.getItem("kineticGenerator"), "III", "GMS", "III", 'I', new ItemStack(TFCItems.wroughtIronSheet2x), 'M', IC2Items.getItem("elemotor"), 'G', IC2Items.getItem("generator"), 'S', TFCItems.steelSheet2x);
@@ -53,7 +53,7 @@ public class IC2Recipes {
 				r.addShaped(IC2Items.getItem("machine"), "III", "ICI", "III", 'I', new ItemStack(TFCItems.steelSheet2x), 'C', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(IC2Items.getItem("ironFurnace"), "III", "I I", "IFI", 'I', new ItemStack(TFCItems.wroughtIronSheet2x), 'F', new ItemStack(Blocks.furnace));
 				r.addShaped(IC2Items.getItem("electroFurnace"), "III", "ICI", "EFE", 'I', new ItemStack(TFCItems.steelSheet2x), 'C', WurmTweaksItems.itemMachineFrame, 'F', new ItemStack(Blocks.furnace), 'E', IC2Items.getItem("reBattery"));
-				r.addShaped(IC2Items.getItem("macerator"), "GLG", "CBC", "RRR", 'G', "packGemExquisite", 'L', IC2Items.getItem("powerunit"), 'C', IC2Items.getItem("advancedCircuit"), 'B', WurmTweaksItems.itemMachineFrame, 'R', new ItemStack(TFCItems.redSteelSheet));
+				r.addShaped(IC2Items.getItem("macerator"), "GLG", "CBC", "RRR", 'G', "packGemExquisitePure", 'L', IC2Items.getItem("powerunit"), 'C', IC2Items.getItem("advancedCircuit"), 'B', WurmTweaksItems.itemMachineFrame, 'R', new ItemStack(TFCItems.redSteelSheet));
 				r.addShaped(IC2Items.getItem("extractor"), "GLG", "CBC", "RRR", 'G', IC2Items.getItem("treetap"), 'L', IC2Items.getItem("powerunit"), 'C', IC2Items.getItem("advancedCircuit"), 'B', IC2Items.getItem("machine"), 'R', new ItemStack(TFCItems.redSteelSheet));
 				r.addShaped(IC2Items.getItem("compressor"), "GLG", "CBC", "RRR", 'G', new ItemStack(TFCItems.leadSheet), 'L', IC2Items.getItem("powerunit"), 'C', IC2Items.getItem("advancedCircuit"), 'B', IC2Items.getItem("machine"), 'R', new ItemStack(TFCItems.redSteelSheet));
 				r.addShaped(IC2Items.getItem("canner"), "TUT", "TBT", "TTT", 'T', new ItemStack(TFCItems.tinSheet), 'U', IC2Items.getItem("powerunit"), 'B', IC2Items.getItem("machine"));
@@ -62,10 +62,10 @@ public class IC2Recipes {
 				r.addShaped(IC2Items.getItem("recycler"), "SSS", "CBC", "SSS", 'S', new ItemStack(TFCItems.blackBronzeSheet2x), 'C', IC2Items.getItem("compressor"), 'B', IC2Items.getItem("advancedMachine"));
 				r.addCrossWCenter(IC2Items.getItem("advancedMachine"), IC2Items.getItem("advancedAlloy"), IC2Items.getItem("carbonPlate"), IC2Items.getItem("machine"));
 				r.addShaped(IC2Items.getItem("inductionFurnace"), "CCC", "CFC", "CBC", 'F', IC2Items.getItem("electroFurnace"), 'B', IC2Items.getItem("advancedMachine"), 'C', new ItemStack(TFCItems.blackBronzeSheet2x));
-				r.addShaped(IC2Items.getItem("teleporter"), "CTC", "GBG", "CSC", 'C', IC2Items.getItem("advancedCircuit"), 'B', IC2Items.getItem("advancedMachine"), 'S', new ItemStack(TFCItems.blueSteelSheet2x), 'G', "packGemExquisite", 'T', IC2Items.getItem("frequencyTransmitter"));
+				r.addShaped(IC2Items.getItem("teleporter"), "CTC", "GBG", "CSC", 'C', IC2Items.getItem("advancedCircuit"), 'B', IC2Items.getItem("advancedMachine"), 'S', new ItemStack(TFCItems.blueSteelSheet2x), 'G', "packGemExquisitePure", 'T', IC2Items.getItem("frequencyTransmitter"));
 				r.addShaped(IC2Items.getItem("teslaCoil"), "RRR", "CBC", "SGS", 'C', IC2Items.getItem("advancedCircuit"), 'B', IC2Items.getItem("hvTransformer"), 'S', new ItemStack(TFCItems.goldSheet2x), 'R', new ItemStack(Blocks.redstone_block), 'G', "packGemBlock");
 				r.addShaped(IC2Items.getItem("metalformer"), " C ", "HBH", "SSS", 'C', WurmTweaksItems.ingotGraySteel, 'H', IC2Items.getItem("toolbox"), 'B', IC2Items.getItem("machine"), 'S', new ItemStack(TFCItems.steelSheet));
-				r.addShaped(IC2Items.getItem("patternstorage"), "GGG", "MGM", "LBL", 'B', IC2Items.getItem("reinforcedStone"), 'M', IC2Items.getItem("crystalmemory"), 'G', IC2Items.getItem("reinforcedGlass"), 'L', IC2Items.getItem("miningLaser"), 'B', IC2Items.getItem("advancedMachine"), 'G', "packGemExquisite");
+				r.addShaped(IC2Items.getItem("patternstorage"), "GGG", "MGM", "LBL", 'B', IC2Items.getItem("reinforcedStone"), 'M', IC2Items.getItem("crystalmemory"), 'G', IC2Items.getItem("reinforcedGlass"), 'L', IC2Items.getItem("miningLaser"), 'B', IC2Items.getItem("advancedMachine"), 'G', "packGemExquisitePure");
 				r.addShaped(IC2Items.getItem("scanner"), "SGS", "MLM", "CBC", 'M', IC2Items.getItem("elemotor"), 'C', IC2Items.getItem("advancedCircuit"), 'G', IC2Items.getItem("reinforcedGlass"), 'S', new ItemStack(TFCItems.blueSteelSheet2x), 'B', IC2Items.getItem("advancedMachine"), 'L', IC2Items.getItem("miningLaser"));
 				r.addShaped(IC2Items.getItem("replicator"), "GBG", "TTT", "VMV", 'G', "v", 'B', "packGemBlock", 'T', IC2Items.getItem("teleporter"), 'V', IC2Items.getItem("evTransformer"), 'M', IC2Items.getItem("advancedMachine"));
 				r.addShaped(IC2Items.getItem("solidcanner"), "TUT", "TBT", "TTT", 'T', new ItemStack(TFCItems.tinSheet), 'U', IC2Items.getItem("powerunit"), 'B', IC2Items.getItem("canner"));
@@ -73,7 +73,7 @@ public class IC2Recipes {
 				r.addShaped(IC2Items.getItem("personalSafe"), "GCG", "IBI", " S ", 'G', "packChippedGem", 'C', IC2Items.getItem("electronicCircuit"), 'B', WurmTweaksBlocks.blockWroughtIron, 'S', "packChest");
 				r.addShaped(IC2Items.getItem("nuke"), "RIR", "RBR", "RIR", 'R', IC2Items.getItem("reactorReflectorThick"), 'B', "packGemBlock", 'I', new ItemStack(TFCItems.redSteelSheet2x));
 				r.addShaped(IC2Items.getItem("coil"), "CCC", "CIC", "CCC", 'C', IC2Items.getItem("copperCableItem"), 'I', new ItemStack(TFCItems.steelIngot));
-				r.addShaped(IC2Items.getItem("elemotor"), " G ", "CIC", " G ", 'C', IC2Items.getItem("coil"), 'I', new ItemStack(TFCItems.blackSteelIngot), 'G', "packGemExquisite");
+				r.addShaped(IC2Items.getItem("elemotor"), " G ", "CIC", " G ", 'C', IC2Items.getItem("coil"), 'I', new ItemStack(TFCItems.blackSteelIngot), 'G', "packGemExquisitePure");
 				r.addShaped(IC2Items.getItem("powerunit"), "BCP", "BEM", "BCP", 'B', IC2Items.getItem("reBattery"), 'C', IC2Items.getItem("insulatedCopperCableItem"), 'P', new ItemStack(TFCItems.steelSheet), 'E', IC2Items.getItem("advancedCircuit"), 'M', IC2Items.getItem("elemotor"));
 				r.addShaped(IC2Items.getItem("powerunitsmall"), " CP", "BEM", " CP", 'B', IC2Items.getItem("reBattery"), 'C', IC2Items.getItem("insulatedCopperCableItem"), 'P', new ItemStack(TFCItems.steelSheet), 'E', IC2Items.getItem("advancedCircuit"), 'M', IC2Items.getItem("elemotor"));
 				r.addShaped(IC2Items.getItem("rawcrystalmemory"), "EOE", "OEO", "EOE", 'E', IC2Items.getItem("energiumDust"), 'O', "packIngot");
@@ -152,7 +152,7 @@ public class IC2Recipes {
 				r.addShapeless(IC2Items.getItem("insulatedIronCableItem"), "packRubber", IC2Items.getItem("ironCableItem"));
 				r.addShapeless(IC2Items.getItem("doubleInsulatedIronCableItem"), "packRubber", "packRubber", IC2Items.getItem("ironCableItem"));
 				r.addShapeless(IC2Items.getItem("trippleInsulatedIronCableItem"), "packRubber", "packRubber", "packRubber", IC2Items.getItem("ironCableItem"));
-				r.addShapeless(IC2Items.getItem("insulatedTinCableItem"), "itemRubber", IC2Items.getItem("tinCableItem"));
+				r.addShapeless(IC2Items.getItem("insulatedTinCableItem"), "packRubber", IC2Items.getItem("tinCableItem"));
 				r.addShapeless(IC2Items.getItem("copperCableItem"), TFCItems.copperIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(IC2Items.getItem("goldCableItem"), TFCItems.goldIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(IC2Items.getItem("tinCableItem"), TFCItems.tinIngot, new ItemStack(IC2Items.getItem("cutter").getItem(), 1, OreDictionary.WILDCARD_VALUE));

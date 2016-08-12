@@ -23,6 +23,6 @@ public class EnderStorageRecipes  {
 				LogHandler.info("Adding Ender Storage Recipes");
 				r.addCrossWCenter(new ItemStack(EnderStorage.blockEnderChest,1,0), TFItems.ingotEnderium, WurmTweaksItems.itemQuantumCore, "packChest");
 				r.addCrossWCenter(new ItemStack(EnderStorage.blockEnderChest,1,4096), TFItems.ingotEnderium, WurmTweaksItems.itemQuantumCore, BuildCraftFactory.tankBlock);
-				r.addCircleWCenter(EnderStorage.itemEnderPouch, TFCItems.leather, new ItemStack(EnderStorage.blockEnderChest,1,0));
+				r.addCircleWCenter(EnderStorage.itemEnderPouch, TFCItems.leather, TFItems.ingotEnderium);
 		}
 }

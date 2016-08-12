@@ -58,7 +58,7 @@ public class BuildcraftRecipes {
 				addFactoryRecipes();
 				addSiliconRecipes();
 				addTransportRecipes();
-				//addAssemblerRecipes();
+				addAssemblerRecipes();
 		}
 
 		@Optional.Method (modid = "BuildCraft|Builders")
@@ -78,7 +78,7 @@ public class BuildcraftRecipes {
 				r.addShaped(BuildCraftFactory.miningWellBlock, "SPS", "SCS", "SXS", 'X', Items.redstone, 'S', TFCItems.steelSheet, 'C', WurmTweaksItems.itemMiningCore, 'P', TFCItems.wroughtIronPick);
 				r.addCrossWCenter(new ItemStack(BuildCraftFactory.autoWorkbenchBlock, 4), "packCraftingTable", BuildCraftCore.woodenGearItem, "packChest");
 				r.addCircleWCenter(BuildCraftFactory.tankBlock, "packGlass", TFCItems.wroughtIronSheet);
-				r.addBasicMachineRecipe(BuildCraftFactory.pumpBlock, TFCItems.blackSteelSheet2x, BuildCraftFactory.tankBlock, BuildCraftCore.ironGearItem, new ItemStack(ExtraUtils.transferNode, 1, 8));
+				r.addBasicMachineRecipe(BuildCraftFactory.pumpBlock, TFCItems.blackSteelSheet2x, BuildCraftFactory.tankBlock, BuildCraftCore.ironGearItem, new ItemStack(ExtraUtils.transferNode, 1, 6));
 				r.addShaped(BuildCraftFactory.floodGateBlock, "FIF", "FCF", "FBF", 'F', Blocks.iron_bars, 'I', BuildCraftCore.ironGearItem, 'C', BuildCraftFactory.tankBlock, 'B', Items.bucket);
 				r.addShaped(BuildCraftFactory.refineryBlock, "GRG", "RCR", "GTG", 'G', BuildCraftCore.goldGearItem, 'R', BuildCraftFactory.tankBlock, 'R', WurmTweaksItems.ingotEnergyReactor, 'T', WurmTweaksItems.itemRefiningModule);
 				r.addShaped(BuildCraftFactory.hopperBlock, "ICI", " I ", 'I', TFCItems.wroughtIronIngot, 'C', "packChest");

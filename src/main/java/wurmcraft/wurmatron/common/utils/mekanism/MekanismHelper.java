@@ -140,7 +140,7 @@ public class MekanismHelper {
 		@Optional.Method (modid = "Mekanism")
 		public static void addOsmiumCompressorRecipe (ItemStack output, ItemStack input) {
 				if (RecipeChecker.checkStack(output))
-						RecipeHandler.addOsmiumCompressorRecipe(output, input);
+						RecipeHandler.addOsmiumCompressorRecipe(input, output);
 		}
 
 		@Optional.Method (modid = "Mekanism")

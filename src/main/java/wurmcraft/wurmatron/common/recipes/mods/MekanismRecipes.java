@@ -27,6 +27,7 @@ import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
 import wurmcraft.wurmatron.common.utils.mekanism.MekanismHelper;
 import wurmcraft.wurmatron.common.utils.mekanism.MekanismRegistry;
 import wurmcraft.wurmatron.common.utils.nbt.ItemNBT;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 
 public class MekanismRecipes {
 
@@ -55,12 +56,12 @@ public class MekanismRecipes {
 				r.addShaped(MekanismHelper.getAdvancedInduction(0), "XAX", "ACA", "XAX", 'X', new ItemStack(MekanismItems.OtherDust, 1, 4), 'A', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'C', MekanismHelper.getCubeStatic(0));
 				r.addShaped(MekanismHelper.getAdvancedInduction(1), "XAX", "ACA", "XAX", 'X', new ItemStack(MekanismItems.OtherDust, 1, 4), 'A', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'C', MekanismHelper.getCubeStatic(1));
 				r.addShaped(MekanismHelper.getAdvancedInduction(2), "XAX", "ACA", "XAX", 'X', new ItemStack(MekanismItems.OtherDust, 1, 4), 'A', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'C', MekanismHelper.getCubeStatic(3));
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 0), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', new ItemStack(Items.flint), 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisite");
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 3), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', TFCItems.blueSteelBucketLava, 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotGraySteel, 'X', "packGemExquisite");
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 8), "RRR", "BCB", "GXG", 'R', WurmTweaksItems.ingotPinkSteel, 'B', TFCItems.wroughtIronIngot, 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisite");
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 3), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', TFCItems.blueSteelBucketLava, 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotOrangeSteel, 'X', "packGemExquisite");
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 5), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', "wurmlog", 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisite");
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 10), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', IC2Items.getItem("inductionFurnace"), 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisite");
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 0), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', new ItemStack(Items.flint), 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisitePure");
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 3), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', TFCItems.blueSteelBucketLava, 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotGraySteel, 'X', "packGemExquisitePure");
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 8), "RRR", "BCB", "GXG", 'R', WurmTweaksItems.ingotPinkSteel, 'B', TFCItems.wroughtIronIngot, 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisitePure");
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 3), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', TFCItems.blueSteelBucketLava, 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotOrangeSteel, 'X', "packGemExquisitePure");
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 5), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', "wurmlog", 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisitePure");
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 10), "RRR", "BCB", "GXG", 'R', new ItemStack(MekanismItems.ReinforcedAlloy), 'B', IC2Items.getItem("inductionFurnace"), 'C', WurmTweaksItems.itemMachineFrame, 'G', WurmTweaksItems.ingotPinkSteel, 'X', "packGemExquisitePure");
 				r.addShaped(MekanismHelper.getBasic(0), "XAX", "ABA", "XAX", 'X', WurmTweaksItems.itemMachineFrame, 'A', new ItemStack(MekanismItems.ControlCircuit, 1, 0), 'B', new ItemStack(MekanismBlocks.MachineBlock, 1, 10));
 				r.addShaped(MekanismHelper.getBasic(1), "XAX", "ABA", "XAX", 'X', WurmTweaksItems.itemMachineFrame, 'A', new ItemStack(MekanismItems.ControlCircuit, 1, 0), 'B', new ItemStack(MekanismBlocks.MachineBlock, 1, 0));
 				r.addShaped(MekanismHelper.getBasic(2), "XAX", "ABA", "XAX", 'X', WurmTweaksItems.itemMachineFrame, 'A', new ItemStack(MekanismItems.ControlCircuit, 1, 0), 'B', new ItemStack(MekanismBlocks.MachineBlock, 1, 3));
@@ -95,7 +96,7 @@ public class MekanismRecipes {
 				r.addShaped(new ItemStack(MekanismItems.ControlCircuit, 1, 1), "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 0), 'A', new ItemStack(MekanismItems.EnrichedAlloy));
 				r.addShaped(new ItemStack(MekanismItems.ControlCircuit, 1, 2), "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 1), 'A', new ItemStack(MekanismItems.ReinforcedAlloy));
 				r.addShaped(new ItemStack(MekanismItems.ControlCircuit, 1, 3), "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 2), 'A', new ItemStack(MekanismItems.Ingot));
-				r.addShaped(new ItemStack(MekanismItems.TeleportationCore, 1, 0), "XGX", "AXA", "XGX", 'X', "packGemExquisite", 'G', WurmTweaksItems.itemBloodInfused, 'A', WurmTweaksItems.itemQuantumSingularity);
+				r.addShaped(new ItemStack(MekanismItems.TeleportationCore, 1, 0), "XGX", "AXA", "XGX", 'X', "packGemExquisitePure", 'G', WurmTweaksItems.itemBloodInfused, 'A', WurmTweaksItems.itemQuantumSingularity);
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 15), "ICI", "IPI", "III", 'I', WurmTweaksItems.itemQuantumSingularity, 'C', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'P', Blocks.piston);
 				r.addShaped(new ItemStack(MekanismItems.EnergyTablet, 1, 100), "RXR", "ACA", "RXR", 'R', Items.redstone, 'X', new ItemStack(MekanismItems.EnrichedAlloy), 'A', TFCItems.goldSheet, 'C', "dustSulfur");
 				r.addShaped(new ItemStack(MekanismItems.SpeedUpgrade, 1, 0), " R ", "XAX", " R ", 'R', Blocks.redstone_block, 'X', "packGlass", 'A', MekanismItems.EnrichedAlloy);
@@ -103,7 +104,7 @@ public class MekanismRecipes {
 				r.addShaped(new ItemStack(MekanismItems.GasUpgrade, 1, 0), " R ", "XAX", " R ", 'R', Blocks.redstone_block, 'X', "packGlass", 'A', MekanismItems.ReinforcedAlloy);
 				r.addShaped(new ItemStack(MekanismItems.FilterUpgrade, 1, 0), " R ", "XAX", " R ", 'R', Blocks.redstone_block, 'X', "packGlass", 'A', "dye");
 				r.addShaped(new ItemStack(MekanismItems.PortableTeleporter, 1, 100), "XXX", "BAB", "XXX", 'X', new ItemStack(MekanismItems.EnergyTablet, 1, OreDictionary.WILDCARD_VALUE), 'B', Items.redstone, 'A', MekanismItems.TeleportationCore);
-				r.addShaped(new ItemStack(MekanismItems.Configurator, 1, 100), " X ", "ABC", " S ", 'S', "packStick", 'X', "dyeBlue", 'A', "packGemExquisite", 'C', "packGemExquisite", 'B', new ItemStack(MekanismItems.EnergyTablet, 1, OreDictionary.WILDCARD_VALUE));
+				r.addShaped(new ItemStack(MekanismItems.Configurator, 1, 100), " X ", "ABC", " S ", 'S', "packStick", 'X', "dyeBlue", 'A', "packGemExquisitePure", 'C', "packGemExquisitePure", 'B', new ItemStack(MekanismItems.EnergyTablet, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShaped(new ItemStack(MekanismItems.Flamethrower, 1, 100), "III", "ICI", "BAB", 'I', TFCItems.bronzeSheet, 'C', new ItemStack(MekanismBlocks.GasTank, 1, OreDictionary.WILDCARD_VALUE), 'A', TFCItems.flintSteel);
 				r.addShapeless(new ItemStack(MekanismItems.ArmoredJetpack, 1, 100), new ItemStack(MekanismItems.Jetpack, 1, OreDictionary.WILDCARD_VALUE), WurmTweaksItems.itemMachineFrame, WurmTweaksItems.itemCraftingCore);
 				r.addShaped(new ItemStack(MekanismItems.GasMask, 1, 0), " G ", "GSG", "SSS", 'G', "packGlass", 'S', WurmTweaksItems.ingotPinkSteel);
@@ -131,11 +132,11 @@ public class MekanismRecipes {
 				r.addShaped(new ItemStack(MekanismItems.FreeRunners, 1, 100), "X X", "BAB", "C C", 'B', new ItemStack(MekanismItems.EnergyTablet, 1, OreDictionary.WILDCARD_VALUE), 'A', TFCItems.blueSteelBoots, 'X', new ItemStack(MekanismItems.AtomicAlloy, 1), 'C', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(ItemNBT.addDamage(new ItemStack(MekanismItems.AtomicDisassembler, 1, 4200), 400), " X ", "ABA", "ABA", 'X', WurmTweaksItems.itemAntiMatter, 'A', WurmTweaksItems.ingotTitanium, 'B', MekanismHelper.getCubeStatic(2));
 				r.addShaped(new ItemStack(GeneratorsBlocks.Generator, 1, 0), "III", "PLP", "CFC", 'I', TFCItems.redSteelIngot2x, 'P', "packPlanks", 'L', TFCItems.blueSteelBucketLava, 'G', IC2Items.getItem("inductionFurnace"), 'C', WurmTweaksItems.itemMachineFrame);
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 4), "IRI", "XCX", "IRI", 'I', WurmTweaksItems.ingotBrownSteel, 'R', "packGemExquisite", 'X', MekanismItems.AtomicAlloy, 'C', new ItemStack(MekanismItems.ElectrolyticCore));
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 4), "IRI", "XCX", "IRI", 'I', WurmTweaksItems.ingotBrownSteel, 'R', "packGemExquisitePure", 'X', MekanismItems.AtomicAlloy, 'C', new ItemStack(MekanismItems.ElectrolyticCore));
 				r.addShaped(new ItemStack(GeneratorsBlocks.Generator, 1, 5), "SXS", "SXS", "III", 'S', new ItemStack(GeneratorsBlocks.Generator, 1, 1), 'X', MekanismItems.AtomicAlloy, 'I', TFCItems.blackSteelSheet);
 				r.addShaped(new ItemStack(GeneratorsBlocks.Generator, 1, 6), " X ", "XAX", "IXI", 'X', TFCItems.blueSteelIngot, 'A', MekanismItems.ReinforcedAlloy, 'I', new ItemStack(MekanismItems.EnergyTablet, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 14), "PPP", "XEX", 'P', Blocks.stone_pressure_plate, 'X', TFCItems.blackSteelSheet, 'E', new ItemStack(MekanismItems.EnergyTablet, 1, OreDictionary.WILDCARD_VALUE));
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 2), "XAX", "GBG", "XAX", 'X', WurmTweaksItems.itemCraftingCore, 'A', "packGemExquisite", 'G', new ItemStack(MekanismBlocks.GasTank, 1, OreDictionary.WILDCARD_VALUE), 'B', WurmTweaksItems.itemMachineFrame);
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 2), "XAX", "GBG", "XAX", 'X', WurmTweaksItems.itemCraftingCore, 'A', "packGemExquisitePure", 'G', new ItemStack(MekanismBlocks.GasTank, 1, OreDictionary.WILDCARD_VALUE), 'B', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock3, 1, 1), "CXC", "EBE", "III", 'C', MekanismItems.AtomicAlloy, 'X', new ItemStack(MekanismItems.Polyethene, 1, 2), 'E', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'B', "packGemBlock", 'I', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 6), "XCX", "BAB", "XCX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'A', WurmTweaksItems.ingotRainbowSteel, 'C', MekanismItems.AtomicAlloy, 'B', MekanismHelper.getCubeStatic(3));
 				r.addShaped(new ItemStack(GeneratorsBlocks.Generator, 1, 3), "XAX", "BCB", "XAX", 'X', TFCItems.blueSteelSheet2x, 'A', WurmTweaksBlocks.blockSteel, 'B', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'C', MekanismItems.ElectrolyticCore);
@@ -143,7 +144,7 @@ public class MekanismRecipes {
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 1), "XAX", "ABC", "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 2), 'A', MekanismItems.AtomicAlloy, 'A', new ItemStack(MekanismBlocks.MachineBlock, 1, 13), 'B', WurmTweaksItems.itemMachineFrame, 'C', new ItemStack(MekanismBlocks.GasTank, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 7), "XAX", "ABC", "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 2), 'A', Items.bucket, 'A', new ItemStack(MekanismBlocks.MachineBlock, 1, 13), 'B', WurmTweaksItems.itemMachineFrame, 'C', new ItemStack(MekanismBlocks.GasTank, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 8), "XAX", "ABC", "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'A', MekanismItems.AtomicAlloy, 'A', new ItemStack(MekanismBlocks.MachineBlock, 1, 12), 'B', WurmTweaksItems.itemMachineFrame, 'C', new ItemStack(MekanismBlocks.GasTank, 1, OreDictionary.WILDCARD_VALUE));
-				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 3), "XAX", "CBC", "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 2), 'X', "packGemExquisite", 'C', WurmTweaksItems.itemCraftingCore, 'B', WurmTweaksItems.itemMachineFrame);
+				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 3), "XAX", "CBC", "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 2), 'X', "packGemExquisitePure", 'C', WurmTweaksItems.itemCraftingCore, 'B', WurmTweaksItems.itemMachineFrame);
 				r.addShapeless(new ItemStack(MekanismBlocks.MachineBlock2, 1, 12), TFCItems.blackBronzeSheet2x, new ItemStack(MekanismBlocks.MachineBlock, 1, 12));
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock2, 1, 14), "III", "IBC", "III", 'I', WurmTweaksItems.itemAutoCore, 'B', "packGemBlock", 'C', new ItemStack(TFCItems.gemDiamond, 1, 3));
 				r.addShapeless(new ItemStack(MekanismBlocks.MachineBlock2, 1, 15), new ItemStack(MekanismBlocks.MachineBlock2, 1, 14), WurmTweaksItems.itemAutoCore);
@@ -161,8 +162,9 @@ public class MekanismRecipes {
 				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 9), WurmTweaksItems.gearMixedSheet, Items.book, Items.redstone, new ItemStack(MekanismItems.ControlCircuit, 1, 3));
 				r.addCrossWCenter(new ItemStack(MekanismBlocks.BasicBlock, 1, 8), TFCItems.steelSheet2x, WurmTweaksItems.itemMixedSheet, WurmTweaksItems.itemMachineFrame);
 				r.addBasicMachineRecipe(new ItemStack(MekanismBlocks.BasicBlock2, 1, 5), WurmTweaksBlocks.blockCompressedRedstone, TFCItems.blueSteelBucketLava, WurmTweaksBlocks.blockGold, WurmTweaksItems.itemMachineFrame);
-				r.addBasicMachineRecipe(new ItemStack(MekanismItems.Robit,1,0), WurmTweaksItems.itemComputationalCore, WurmTweaksItems.itemAutoCore, WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotEnergyReactor);
+				r.addBasicMachineRecipe(new ItemStack(MekanismItems.Robit, 1, 0), WurmTweaksItems.itemComputationalCore, WurmTweaksItems.itemAutoCore, WurmTweaksItems.gearMixedSheet, WurmTweaksItems.ingotEnergyReactor);
 				MekanismRegistry.addGases();
+				TechRebornHelper.addCentrifugeRecipe(new ItemStack(TFCItems.blueSteelSheet2x), null, new ItemStack(MekanismItems.Ingot, 1, 1), null, null, null, 600, 32);
 				addMetallurgicInfuserRecipe();
 				addPulversiverRecipes();
 				addCrusherRecipes();
@@ -252,8 +254,8 @@ public class MekanismRecipes {
 				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditNickel100, WurmTweaksItems.dirtyNickel);
 				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditIron100, WurmTweaksItems.dirtyIron);
 				MekanismHelper.addEnrichmentChamberRecipe(WurmTweaksItems.creditZinc100, WurmTweaksItems.dirtyZinc);
-				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial,1,2), new ItemStack(TFCItems.coal,1,0),32,200,null,0);
-				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial,1,2), new ItemStack(TFCItems.coal,4,1),32,200,null,0);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial, 1, 2), new ItemStack(TFCItems.coal, 1, 0), 32, 200, null, 0);
+				MachineHelper.addPulveriserRecipes(new ItemStack(TFItems.itemMaterial, 1, 2), new ItemStack(TFCItems.coal, 4, 1), 32, 200, null, 0);
 		}
 
 		private static void addCrusherRecipes () {

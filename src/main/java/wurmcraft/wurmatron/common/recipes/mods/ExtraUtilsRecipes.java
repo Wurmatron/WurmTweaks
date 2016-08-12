@@ -56,7 +56,6 @@ public class ExtraUtilsRecipes {
 				r.addCrossWCenter(new ItemStack(ExtraUtils.decorative1, 1, 8), TFCItems.sterlingSilverSheet, Items.enchanted_book, Blocks.bookshelf);
 				r.addCrossWCenter(new ItemStack(ExtraUtils.decorative1, 1, 11), new ItemStack(ExtraUtils.decorative1, 4, 6), new ItemStack(ExtraUtils.decorative1, 1, 1), TFItems.bucketEnder);
 				r.addCrossWCenter(new ItemStack(ExtraUtils.decorative1, 1, 12), new ItemStack(ExtraUtils.decorative1, 1, 1), new ItemStack(ExtraUtils.decorative1, 1, 11), WurmTweaksBlocks.blockPlatinum);
-				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1), Blocks.cobblestone);
 				for (int b = 2; b < 7; b++)
 						r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, b), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b - 1));
 				r.addShaped(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 8), "DDD", "DDD", "DDD", 'D', new ItemStack(Blocks.dirt));
@@ -175,9 +174,15 @@ public class ExtraUtilsRecipes {
 				tags.setBoolean("stable", true);
 				item.setTagCompound(tags);
 				GameRegistry.addRecipe(new ShapedOreRecipe(item, "uuu", "uuu", "uuu", Character.valueOf('u'), new ItemStack(ExtraUtils.unstableIngot, 1, 1)));
-				for (int b = 1; b < 7; b++)
-						r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, b), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b - 1));
-				r.addShapeless(new ItemStack(Blocks.cobblestone, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0), Blocks.cobblestone);
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 2), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1));
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 3), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 2));
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 4), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 3));
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 5), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 4));
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 5));
+				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6));
+				r.addShapeless(new ItemStack(Blocks.cobblestone, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 2));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 2), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 3));
@@ -194,8 +199,12 @@ public class ExtraUtilsRecipes {
 		@Optional.Method (modid = "IC2")
 		private static void addCompressorRecipes () {
 				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.bedrockium, 32, 0), new ItemStack(ExtraUtils.bedrockiumBlock));
-				ICHelper.addCompressorRecipe(new ItemStack(Blocks.cobblestone, 9), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
-				for (int b = 1; b < 7; b++)
-						ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, b - 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, b));
+				ICHelper.addCompressorRecipe(new ItemStack(Blocks.cobblestone,9), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
+				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 2));
+				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 2), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 3));
+				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 3), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 4));
+				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 4), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 5));
+				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 5), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6));
+				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 6), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7));
 		}
 }

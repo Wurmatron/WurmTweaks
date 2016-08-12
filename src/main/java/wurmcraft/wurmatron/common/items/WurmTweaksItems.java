@@ -45,7 +45,10 @@ public class WurmTweaksItems {
 		public static final ItemStack itemElectroShielding = new ItemStack(WTItems.itemMaterial, 1, 38);
 		public static final ItemStack itemWandParts = new ItemStack(WTItems.itemMaterial, 1, 39);
 		public static final ItemStack itemPumpkinBits = new ItemStack(WTItems.itemMaterial, 1, 40);
-		public static final ItemStack itemSheetCat = new ItemStack(WTItems.itemMaterial, 1, 41);
+		public static final ItemStack gemMixedFlawed = new ItemStack(WTItems.itemMaterial, 1, 41);
+		public static final ItemStack gemMixed = new ItemStack(WTItems.itemMaterial, 1, 42);
+		public static final ItemStack gemMixedFlawless = new ItemStack(WTItems.itemMaterial, 1, 43);
+		public static final ItemStack gemMixedExquisite = new ItemStack(WTItems.itemMaterial, 1, 44);
 		// Credits (ItemCredit)
 		public static final ItemStack creditBismuth30 = new ItemStack(WTItems.creditBismuth, 1, 0);
 		public static final ItemStack creditBismuth50 = new ItemStack(WTItems.creditBismuth, 1, 1);

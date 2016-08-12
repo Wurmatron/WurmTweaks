@@ -12,6 +12,7 @@ import wurmcraft.wurmatron.common.recipes.RecipeChecker;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.ic2.ICHelper;
 import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
+import wurmcraft.wurmatron.common.utils.techreborn.TechRebornHelper;
 
 public class TerrafirmacraftRecipes {
 
@@ -26,6 +27,8 @@ public class TerrafirmacraftRecipes {
 				if (RecipeChecker.modExists("IC2"))
 						addCompressorRecipes();
 				addMaceratorRecipes();
+				if (RecipeChecker.modExists("techreborn"))
+						addIndustrialElectrolyzerRecipes();
 		}
 
 		@Optional.Method (modid = "IC2")
@@ -65,5 +68,10 @@ public class TerrafirmacraftRecipes {
 				}
 				for (ItemStack sand : OreDictionary.getOres("packSand"))
 						MachineHelper.addPulveriserRecipes(new ItemStack(EnderIO.itemMaterial, 1, 0), sand, 32, 200, null, 0);
+		}
+
+		private static void addIndustrialElectrolyzerRecipes () {
+				for (ItemStack sand : OreDictionary.getOres("packSand"))
+						TechRebornHelper.addIndustrialElectrolyzerRecipe(new ItemStack(sand.getItem(), 16, sand.getItemDamage()), new ItemStack(TFCItems.redSteelBucketWater), new ItemStack(TFCItems.redSteelBucketEmpty), new ItemStack(TFCItems.mortar, 8), null, null, 800, 128);
 		}
 }

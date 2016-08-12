@@ -9,9 +9,8 @@ public class KnifeHandler {
 		@SubscribeEvent
 		public void onKnifeUsed (SacrificeKnifeUsedEvent e) {
 				if (e.shouldDrainHealth) {
-						if (e.healthDrained < 20)
-								for (int i = 0; i < 49; i++)
-										PlayerSacrificeHandler.sacrificePlayerHealth(e.player);
+						for (int i = 0; i < 49; i++)
+								PlayerSacrificeHandler.sacrificePlayerHealth(e.player);
 				}
 		}
 }

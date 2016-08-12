@@ -68,9 +68,9 @@ public class BotaniaRecipes {
 				r.addBasicMachineRecipe(ModBlocks.runeAltar, ModBlocks.livingrock, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotCyanSteel, new ItemStack(ModItems.manaResource, 1, 2));
 				for (int d = 0; d <= 15; d++)
 						r.addCrossWCenter(new ItemStack(ModBlocks.unstableBlock, 1, d), WurmTweaksItems.itemNatureCore, new ItemStack(ModItems.petal, 1, d), new ItemStack(ModItems.manaResource, 1, 1));
-				r.addShaped(new ItemStack(ModBlocks.pylon, 1, 0), " X ", "BCB", " X ", 'X', WurmTweaksItems.itemNatureCoreMK2, 'B', new ItemStack(ModItems.manaResource, 1, 0), 'C', new ItemStack(ModItems.manaResource, 1, 2));
+				r.addShaped(new ItemStack(ModBlocks.pylon, 1, 0), " X ", "BCB", " X ", 'X', WurmTweaksItems.itemNatureCore, 'B', new ItemStack(ModItems.manaResource, 1, 0), 'C', new ItemStack(ModItems.manaResource, 1, 2));
 				r.addCrossWCenter(new ItemStack(ModBlocks.pylon, 1, 1), new ItemStack(ModItems.manaResource, 1, 4), WurmTweaksItems.itemNatureCore, new ItemStack(ModBlocks.pylon, 1, 0));
-				r.addCrossWCenter(new ItemStack(ModBlocks.pylon, 1, 2), new ItemStack(ModItems.manaResource, 1, 8), WurmTweaksItems.itemNatureCoreMK2, new ItemStack(ModBlocks.pylon, 1, 1));
+				r.addCrossWCenter(new ItemStack(ModBlocks.pylon, 1, 2), new ItemStack(ModItems.manaResource, 1, 8), WurmTweaksItems.itemNatureCore, new ItemStack(ModBlocks.pylon, 1, 1));
 				r.addShaped(new ItemStack(ModBlocks.distributor), "PPP", "N N", "PPP", 'P', ModBlocks.livingrock, 'N', WurmTweaksItems.itemNatureCore);
 				for (int d = 0; d <= 15; d++)
 						r.addCrossWCenter(new ItemStack(ModBlocks.manaBeacon, 1, d), WurmTweaksItems.itemNatureCore, new ItemStack(ModItems.petal, 1, d), new ItemStack(ModBlocks.unstableBlock, 1, d));
@@ -114,7 +114,7 @@ public class BotaniaRecipes {
 				r.addCircleWCenter(ModBlocks.starfield, ModBlocks.dreamwood, WurmTweaksItems.itemNatureCoreMK2);
 				r.addCrossWCenter(ModBlocks.rfGenerator, WurmTweaksBlocks.blockCompressedRedstone, ModItems.manaResource, PowerConverterCore.converterBlockCommon);
 				r.addBasicMachineRecipe(ModBlocks.brewery, WurmTweaksBlocks.blockPlatinum, WurmTweaksItems.itemNatureCoreMK2, Items.brewing_stand, new ItemStack(ModItems.rune, 1, 8));
-				r.addBasicMachineRecipe(ModBlocks.terraPlate, Blocks.lapis_block, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.stableMagicEssence);
+				r.addBasicMachineRecipe(ModBlocks.terraPlate, Blocks.lapis_block, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotCyanSteel, WurmTweaksItems.ingotEnergyReactor);
 				r.addShaped(ModBlocks.redStringContainer, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', "packChest", 'S', new ItemStack(ModItems.manaResource, 1, 10));
 				r.addShaped(ModBlocks.redStringDispenser, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', Blocks.dispenser, 'S', new ItemStack(ModItems.manaResource, 1, 10));
 				r.addShaped(ModBlocks.redStringFertilizer, "WWW", "WCS", "WWW", 'W', ModBlocks.dreamwood, 'C', ModItems.fertilizer, 'S', new ItemStack(ModItems.manaResource, 1, 10));

@@ -43,12 +43,6 @@ public class MachineHelper {
 
 		public static void addPulveriserRecipes (ItemStack output, ItemStack input, int euTick, int timeInTicks, ItemStack secendary, int chance) {
 				if (RecipeChecker.checkStack(output)) {
-						if (RecipeChecker.modExists("techreborn")) {
-								if (!(output.getItem() instanceof ItemCredit))
-										TechRebornHelper.addGrinderRecipe(input, null, null, output, secendary, null, null, timeInTicks, euTick);
-								else
-										TechRebornHelper.addGrinderRecipe(input, null, null, CreditHelper.getCreditsFromTypeAndUnits(output.getItem(), ItemCredit.units[output.getItemDamage()] * 2), null, null, null, timeInTicks, euTick);
-						}
 						if (RecipeChecker.modExists("ThermalExpansion")) {
 								if (!(output.getItem() instanceof ItemCredit))
 										TEHelper.addPulverizerRecipe(euTick * timeInTicks, input, output, secendary, chance);

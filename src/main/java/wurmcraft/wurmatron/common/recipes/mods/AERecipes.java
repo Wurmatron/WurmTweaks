@@ -3,6 +3,7 @@ package wurmcraft.wurmatron.common.recipes.mods;
 import appeng.api.AEApi;
 import appeng.api.util.AEColor;
 import appeng.core.Api;
+import appeng.recipes.game.FacadeRecipe;
 import cofh.thermaldynamics.ThermalDynamics;
 import cofh.thermaldynamics.duct.TDDucts;
 import cofh.thermalexpansion.block.TEBlocks;
@@ -16,6 +17,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.RecipeSorter;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
@@ -39,7 +41,7 @@ public class AERecipes {
 				r.addCross(Api.INSTANCE.blocks().blockQuartzGlass.stack(4), Blocks.glass, Items.quartz);
 				r.addShapeless(Api.INSTANCE.blocks().blockQuartzVibrantGlass.stack(1), Api.INSTANCE.blocks().blockQuartzGlass.stack(1), Items.glowstone_dust);
 				r.addShapeless(Api.INSTANCE.blocks().blockQuartzTorch.stack(1), Items.quartz, Items.glowstone_dust);
-				r.addBasicMachineRecipe(Api.INSTANCE.blocks().blockSecurity.stack(1), ExtraUtils.bedrockium, WurmTweaksItems.itemMixedSheet,"packGemExquisite", WurmTweaksItems.ingotPurpleSteel);
+				r.addBasicMachineRecipe(Api.INSTANCE.blocks().blockSecurity.stack(1), ExtraUtils.bedrockium, WurmTweaksItems.itemMixedSheet, "packGemExquisite", WurmTweaksItems.ingotPurpleSteel);
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockQuantumRing.stack(1), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemQuantumCore, WurmTweaksItems.itemQuantumSingularity);
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockQuantumLink.stack(1), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemQuantumCore, "packGlass");
 				r.addCrossWCenter(Api.INSTANCE.blocks().blockSpatialPylon.stack(1), WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.ingotEnergyReactor);
@@ -95,7 +97,7 @@ public class AERecipes {
 				r.addCrossWCenter(Api.INSTANCE.materials().materialLogicProcessor.stack(2), TFCItems.blackSteelSheet, TFCItems.redSteelSheet, IC2Items.getItem("electronicCircuit"));
 				r.addCrossWCenter(Api.INSTANCE.materials().materialEngProcessor.stack(2), TFCItems.blackSteelSheet, TFCItems.redSteelSheet, "packGemExquisite");
 				r.addShapeless(Api.INSTANCE.materials().materialCardCrafting.stack(1), Api.INSTANCE.materials().materialBasicCard.stack(1), "packCraftingTable");
-				r.addShapeless(Api.INSTANCE.materials().materialCardCapacity.stack(1), Api.INSTANCE.materials().materialBasicCard.stack(1), "packChest");
+				r.addShapeless(Api.INSTANCE.materials().materialCardCapacity.stack(1), Api.INSTANCE.materials().materialBasicCard.stack(1), Items.redstone);
 				r.addShapeless(Api.INSTANCE.materials().materialCardRedstone.stack(1), Api.INSTANCE.materials().materialBasicCard.stack(1), "packChest");
 				r.addShapeless(Api.INSTANCE.materials().materialCardRedstone.stack(1), Api.INSTANCE.materials().materialAdvCard.stack(1), "packChest");
 				r.addShapeless(Api.INSTANCE.materials().materialCardFuzzy.stack(1), Api.INSTANCE.materials().materialAdvCard.stack(1), new ItemStack(Blocks.wool, 1, OreDictionary.WILDCARD_VALUE));
@@ -160,5 +162,7 @@ public class AERecipes {
 				r.addShapeless(Api.INSTANCE.parts().partCableSmart.stack(AEColor.Transparent, 1), Api.INSTANCE.parts().partCableCovered.stack(AEColor.Transparent, 1), Items.glowstone_dust, TFCItems.blackSteelSheet);
 				r.addShaped(Api.INSTANCE.parts().partCableDense.stack(AEColor.Transparent, 24), "XXX", "AAA", "XXX", 'X', WurmTweaksItems.ingotEnergyReactor, 'A', TFCItems.platinumSheet);
 				r.addShaped(Api.INSTANCE.parts().partQuartzFiber.stack(8), "XXX", "GGG", "XXX", 'G', Items.quartz, 'X', "packGlass");
+				r.addShapeless(Api.INSTANCE.parts().partPatternTerminal.stack(1), Api.INSTANCE.parts().partCraftingTerminal.stack(1), Api.INSTANCE.materials().materialBlankPattern.stack(1), WurmTweaksItems.ingotGreenSteel);
+				RecipeSorter.register("AE2-Facade", FacadeRecipe.class, RecipeSorter.Category.SHAPED, "");
 		}
 }
