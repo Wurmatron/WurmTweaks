@@ -124,6 +124,8 @@ public class TConstructRecipes {
 		}
 
 		private static void addIngotCasting () {
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerSmeltery.metalPattern), new FluidStack(WurmTweaksFluid.fluidBrass, 1000), null);
+				TConstructHelper.addCastingRecipe(new ItemStack(TinkerSmeltery.metalPattern), new FluidStack(WurmTweaksFluid.fluidRoseGold, 1000), null);
 				TConstructHelper.addCastingRecipe(new ItemStack(TFCItems.wroughtIronIngot), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				addCastingWithReverse(new ItemStack(TFCItems.wroughtIronIngot2x), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 2000), WurmTweaksItems.itemDoubleIngotCast);
 				TConstructHelper.addCastingRecipe(new ItemStack(TFCItems.wroughtIronSheet), new FluidStack(WurmTweaksFluid.fluidWroughtIron, 1000), WurmTweaksItems.itemSheetCast);
@@ -570,9 +572,9 @@ public class TConstructRecipes {
 				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 208), new FluidStack(WurmTweaksFluid.fluidBlueSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
 				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 209), new FluidStack(WurmTweaksFluid.fluidRedSteel, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
 				addCastingWithReverse(new ItemStack(TinkerWeaponry.arrowhead, 1, 210), new FluidStack(WurmTweaksFluid.fluidPlatinum, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 25));
-				addCastingWithReverse(new ItemStack(TinkerTools.materials,1,2), new FluidStack(TinkerSmeltery.moltenStoneFluid,1000), new ItemStack(TinkerSmeltery.metalPattern,1,0));
+				addCastingWithReverse(new ItemStack(TinkerTools.materials, 1, 2), new FluidStack(TinkerSmeltery.moltenStoneFluid, 1000), new ItemStack(TinkerSmeltery.metalPattern, 1, 0));
 				for (Item tool : TConstructHelper.TCTools)
-								for (int fluid = 0; fluid < TCFluid.length; fluid++)
+						for (int fluid = 0; fluid < TCFluid.length; fluid++)
 								TConstructRegistry.getTableCasting().addCastingRecipe(new ItemStack(tool, 1, 201 + fluid), new FluidStack(TCFluid[fluid], getSize(tool)), getPattern(tool), 40);
 				for (Item tool : TConstructHelper.TCTools) {
 						TConstructHelper.addCastingRecipe(getPattern(tool), new FluidStack(WurmTweaksFluid.fluidBrass, 1000), new ItemStack(tool, 1, OreDictionary.WILDCARD_VALUE));

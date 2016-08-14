@@ -192,6 +192,7 @@ public class ExtraUtilsRecipes {
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 6), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7));
 				r.addShaped(new ItemStack(ExtraUtils.drum, 1, 0), "SGS", "SGS", "SGS", 'S', TFCItems.steelSheet, 'G', "packGlass");
 				r.addCircleWCenter(new ItemStack(ExtraUtils.drum, 1, 1), ExtraUtils.bedrockium, new ItemStack(ExtraUtils.drum, 1, 0));
+				r.addShapeless(new ItemStack(Blocks.cobblestone,9,0), new ItemStack(ExtraUtils.cobblestoneCompr,1,0));
 				if (RecipeChecker.modExists("addCompressorRecipes"))
 						addCompressorRecipes();
 		}

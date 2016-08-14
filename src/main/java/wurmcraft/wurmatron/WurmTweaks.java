@@ -91,7 +91,7 @@ public class WurmTweaks {
 				Enchantment[] list = Enchantment.enchantmentsList;
 				list[8] = null;
 				list[101] = null;
-				try {
+								try {
 						Helper.setFinalStatic(Enchantment.class.getField("enchantmentsList"), list);
 				} catch (NoSuchFieldException f) {
 						f.printStackTrace();

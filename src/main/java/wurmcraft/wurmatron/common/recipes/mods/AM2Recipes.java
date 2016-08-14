@@ -142,7 +142,7 @@ public class AM2Recipes {
 				r.addShapeless(new ItemStack(ItemsCommonProxy.manaPotionBundle, 1, 512), ItemsCommonProxy.greaterManaPotion, ItemsCommonProxy.greaterManaPotion, ItemsCommonProxy.greaterManaPotion, Items.string);
 				r.addShapeless(new ItemStack(ItemsCommonProxy.manaPotionBundle, 1, 771), ItemsCommonProxy.epicManaPotion, ItemsCommonProxy.epicManaPotion, ItemsCommonProxy.epicManaPotion, Items.string);
 				r.addShapeless(new ItemStack(ItemsCommonProxy.manaPotionBundle, 1, 1027), ItemsCommonProxy.legendaryManaPotion, ItemsCommonProxy.legendaryManaPotion, ItemsCommonProxy.legendaryManaPotion, Items.string);
-				r.addBasicMachineRecipe(new ItemStack(ItemsCommonProxy.rune, 1, 1), TFCItems.steelIngot, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotRainbowSteel);
+				r.addBasicMachineRecipe(new ItemStack(ItemsCommonProxy.rune, 1, 1), TFCItems.steelIngot, WurmTweaksItems.itemMagicChunk, WurmTweaksItems.itemNatureCore, WurmTweaksItems.ingotTitanium);
 				r.addCrossWCenter(new ItemStack(ItemsCommonProxy.standardFocus, 1, 0), WurmTweaksItems.itemMagicChunk, "packGlass", ItemsCommonProxy.lesserFocus);
 				r.addCrossWCenter(new ItemStack(ItemsCommonProxy.greaterFocus, 1, 0), WurmTweaksItems.itemMagicChunk, "packGlass", ItemsCommonProxy.standardFocus);
 				r.addShapeless(ItemsCommonProxy.chargeFocus, ItemsCommonProxy.standardFocus, Items.redstone);
