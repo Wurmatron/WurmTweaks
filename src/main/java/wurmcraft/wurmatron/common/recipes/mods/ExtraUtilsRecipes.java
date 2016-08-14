@@ -182,7 +182,6 @@ public class ExtraUtilsRecipes {
 				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 5), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 4));
 				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 5));
 				r.add3X(new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 6));
-				r.addShapeless(new ItemStack(Blocks.cobblestone, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 1));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 2));
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 2), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 3));

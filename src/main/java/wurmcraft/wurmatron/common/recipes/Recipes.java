@@ -93,7 +93,7 @@ public class Recipes {
 						BotaniaRecipes.addRecipes();
 				if (RecipeChecker.modExists("Buildcraft|Core"))
 						BuildcraftRecipes.addRecipes();
-
+				RemainInMotionRecipes.addRecipes();
 				if (RecipeChecker.modExists("chisel"))
 						Chisel2Recipies.addRecipes();
 				if (RecipeChecker.modExists("ComputerCraft"))
@@ -204,7 +204,7 @@ public class Recipes {
 						ThamicTinkersRecipes.addRecipes();
 				if (RecipeChecker.modExists("RefinedRelocation"))
 						RefinedRelocationRecipes.addRecipes();
-				VinilaRecipes.addRecipes();//Adding this to the end seems to let it load completly
+				VinilaRecipes.addRecipes();
 		}
 
 		public static void checkSettings () {
