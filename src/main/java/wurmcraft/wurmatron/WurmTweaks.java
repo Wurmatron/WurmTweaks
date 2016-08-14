@@ -64,6 +64,7 @@ public class WurmTweaks {
 				MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
 				MinecraftForge.EVENT_BUS.register(new HurtEvent());
 				MinecraftForge.EVENT_BUS.register(new PickupEvent());
+				MinecraftForge.EVENT_BUS.register(new FortuneEvent());
 				if (RecipeChecker.modExists("AWWayofTime"))
 						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
 				FMLCommonHandler.instance().bus().register(new PlayerClone());
@@ -91,7 +92,7 @@ public class WurmTweaks {
 				Enchantment[] list = Enchantment.enchantmentsList;
 				list[8] = null;
 				list[101] = null;
-								try {
+				try {
 						Helper.setFinalStatic(Enchantment.class.getField("enchantmentsList"), list);
 				} catch (NoSuchFieldException f) {
 						f.printStackTrace();
