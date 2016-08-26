@@ -56,56 +56,59 @@ public class ItemWaterJug extends Item implements ISize, IFluidContainerItem {
 
 		@Override
 		public ItemStack onItemRightClick (ItemStack stack, World world, EntityPlayer player) {
-				if (player.capabilities.isCreativeMode)
-						return stack;
-				if (getFluid(stack) == null && stack.getItemDamage() != (capacity * drainAmount))
-						stack.setItemDamage(capacity * drainAmount);
-				if (player.isSneaking()) {
-						drain(stack, (capacity * drainAmount), true);
-						player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "You seem to have dumped your jug"));
-						return stack;
-				}
-				MovingObjectPosition mop = getMovingObjectPositionFromPlayer(world, player, true);
-				if (mop == null) {
-						if (stack.getItemDamage() == (capacity * drainAmount))
-								player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "Seems to be empty"));
-						else
-								player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
-						return stack;
-				} else {
-						if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
-								WorldPos wp = findWater(world, mop.blockX, mop.blockY, mop.blockZ, mop.sideHit);
-								if (!world.canMineBlock(player, wp.getX(), wp.getY(), wp.getZ()))
-										return stack;
-								if (!player.canPlayerEdit(wp.getX(), wp.getY(), wp.getZ(), mop.sideHit, stack))
-										return stack;
-								if (wp.isWater()) {
-										if (stack.getItemDamage() > 0) {
-												fillJug(world, stack, wp.getX(), wp.getY(), wp.getZ(), (capacity * drainAmount));
-												double xHit = mop.hitVec.xCoord;
-												double yHit = mop.hitVec.yCoord;
-												if (world.getBlockMetadata(wp.getX(), wp.getY(), wp.getZ()) > 0 && mop.sideHit == 1) yHit += 1;
-												double zHit = mop.hitVec.zCoord;
-												for (int l = 0; l < 5; l++)
-														world.spawnParticle("splash", xHit, yHit, zHit, (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()));
-												world.playSoundAtEntity(player, "random.splash", 0.2F, world.rand.nextFloat() * 0.1F + 0.9F);
-										} else {
-												player.setItemInUse(stack, stack.getMaxItemUseDuration());
-										}
-								} else if (!(stack.getItemDamage() == (capacity * drainAmount)))
-										player.setItemInUse(stack, getMaxItemUseDuration(stack));
-						} else if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.MISS) {
+				if (!world.isRemote) {
+						if (player.capabilities.isCreativeMode)
+								return stack;
+						if (getFluid(stack) == null && stack.getItemDamage() != (capacity * drainAmount))
+								stack.setItemDamage(capacity * drainAmount);
+						if (player.isSneaking()) {
+								drain(stack, (capacity * drainAmount), true);
+								player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.AQUA + "You seem to have dumped your jug"));
+								return stack;
+						}
+						MovingObjectPosition mop = getMovingObjectPositionFromPlayer(world, player, true);
+						if (mop == null) {
 								if (stack.getItemDamage() == (capacity * drainAmount))
 										player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "Seems to be empty"));
 								else
 										player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
 								return stack;
-						} else if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
-								if (stack.getItemDamage() == (capacity * drainAmount))
-										player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "Seems to be empty"));
-								else
-										player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
-								return stack;
+						} else {
+								if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
+										WorldPos wp = findWater(world, mop.blockX, mop.blockY, mop.blockZ, mop.sideHit);
+										if (!world.canMineBlock(player, wp.getX(), wp.getY(), wp.getZ()))
+												return stack;
+										if (!player.canPlayerEdit(wp.getX(), wp.getY(), wp.getZ(), mop.sideHit, stack))
+												return stack;
+										if (wp.isWater()) {
+												if (stack.getItemDamage() > 0) {
+														fillJug(world, stack, wp.getX(), wp.getY(), wp.getZ(), (capacity * drainAmount));
+														double xHit = mop.hitVec.xCoord;
+														double yHit = mop.hitVec.yCoord;
+														if (world.getBlockMetadata(wp.getX(), wp.getY(), wp.getZ()) > 0 && mop.sideHit == 1)
+																yHit += 1;
+														double zHit = mop.hitVec.zCoord;
+														for (int l = 0; l < 5; l++)
+																world.spawnParticle("splash", xHit, yHit, zHit, (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()), (-0.5F + world.rand.nextFloat()));
+														world.playSoundAtEntity(player, "random.splash", 0.2F, world.rand.nextFloat() * 0.1F + 0.9F);
+												} else {
+														player.setItemInUse(stack, stack.getMaxItemUseDuration());
+												}
+										} else if (!(stack.getItemDamage() == (capacity * drainAmount)))
+												player.setItemInUse(stack, getMaxItemUseDuration(stack));
+								} else if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.MISS) {
+										if (stack.getItemDamage() == (capacity * drainAmount))
+												player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "Seems to be empty"));
+										else
+												player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
+										return stack;
+								} else if (mop.typeOfHit == MovingObjectPosition.MovingObjectType.ENTITY) {
+										if (stack.getItemDamage() == (capacity * drainAmount))
+												player.addChatComponentMessage(new ChatComponentText(EnumChatFormatting.RED + "Seems to be empty"));
+										else
+												player.setItemInUse(stack, this.getMaxItemUseDuration(stack));
+										return stack;
+								}
 						}
 				}
 				return stack;

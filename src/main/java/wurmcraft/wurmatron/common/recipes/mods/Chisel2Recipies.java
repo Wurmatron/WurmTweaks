@@ -49,7 +49,8 @@ public class Chisel2Recipies {
 						r.addShaped(new ItemStack(ChiselBlocks.carpet, 6, d), "WWW", 'W', new ItemStack(ChiselBlocks.carpet_block, 1, d));
 						r.addShapeless(new ItemStack(ChiselBlocks.present, 1, d), Blocks.chest, RecipeHelper.dye.get(d));
 				}
-				r.addShaped(ChiselBlocks.autoChisel, "SSS", " X ", "III", 'S', "packSmoothStone", 'X', Blocks.piston, 'I', TFCItems.steelSheet);
+				// Disabled till its fixed
+				// r.addShaped(ChiselBlocks.autoChisel, "SSS", " X ", "III", 'S', "packSmoothStone", 'X', Blocks.piston, 'I', TFCItems.steelSheet);
 				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 0), "XAX", "ACA", "BBB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', TFCHelper.getFood(TFCItems.sugar, 160), 'B', Items.redstone);
 				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 1), "XAX", "ACA", "BBB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', Blocks.hopper, 'B', Items.redstone);
 				r.addShaped(new ItemStack(ChiselItems.upgrade, 1, 2), "XAX", "ACA", "BBB", 'X', "packGemFlawless", 'A', TFCItems.blackSteelSheet, 'C', "packCraftingTable", 'B', Items.redstone);
@@ -58,5 +59,10 @@ public class Chisel2Recipies {
 				r.addShaped(new ItemStack(ChiselItems.diamondChisel), " I", "S ", 'I', "packGem", 'S', "packStick");
 				r.addShaped(new ItemStack(ChiselItems.obsidianChisel), " I", "S ", 'I', Blocks.obsidian, 'S', "packStick");
 				r.addShaped(ChiselItems.cloudinabottle, "X X", "XAX", " X ", 'X', "packGlass", 'A', Items.quartz);
+				r.addShapeless(new ItemStack(ChiselBlocks.templeblock,16,0), "packSmoothStone", "dyeBlue");
+				r.addShapeless(new ItemStack(ChiselBlocks.granite,2,0), new ItemStack(ChiselBlocks.andesite), "packStone");
+				r.addShaped(new ItemStack(ChiselBlocks.grimstone,16,0), "XAX", "BBB", "XAX", 'X', new ItemStack(TFCItems.coal,1,1), 'A', "packStone", 'B', "packSmoothStone");
+				r.addCircleWCenter(new ItemStack(ChiselBlocks.voidstone,8,0), "packSmoothStone", Items.ender_pearl);
+				r.addSimpleCirc(new ItemStack(ChiselBlocks.paperwall_block,2,0), Items.paper, "packLog");
 		}
 }

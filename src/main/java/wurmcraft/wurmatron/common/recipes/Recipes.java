@@ -3,16 +3,26 @@ package wurmcraft.wurmatron.common.recipes;
 import cofh.thermalexpansion.util.crafting.CrucibleManager;
 import cofh.thermalexpansion.util.crafting.PulverizerManager;
 import cofh.thermalexpansion.util.crafting.TransposerManager;
+import cofh.thermalfoundation.item.TFItems;
+import com.bioxx.tfc.api.TFCItems;
+import com.brandon3055.draconicevolution.common.ModItems;
+import crazypants.enderio.EnderIO;
 import fox.spiteful.avaritia.crafting.ExtremeCraftingManager;
 import mekanism.common.recipe.RecipeHandler;
+import mrtjp.projectred.core.PartDefs;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import tconstruct.library.TConstructRegistry;
 import vazkii.botania.api.BotaniaAPI;
+import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.mods.*;
 import wurmcraft.wurmatron.common.utils.LogHandler;
+import wurmcraft.wurmatron.common.utils.thermalexpansion.TEHelper;
 
 import java.util.ArrayList;
 
@@ -25,16 +35,8 @@ public class Recipes {
 				LogHandler.info("Removing all the games recipes and smelting recipes");
 				CraftingManager.getInstance().getRecipeList().clear();
 				FurnaceRecipes.smelting().getSmeltingList().clear();
-				if (RecipeChecker.modExists("ThermalExpansion")) {
-						for (int s = 0; s < CrucibleManager.getRecipeList().length; s++)
-								CrucibleManager.removeRecipe(CrucibleManager.getRecipeList()[s].getInput());
-						for (int s = 0; s <TransposerManager.getFillRecipeList().length; s++)
-								TransposerManager.removeFillRecipe(TransposerManager.getFillRecipeList()[s].getInput(), TransposerManager.getFillRecipeList()[s].getFluid());
-						for (int s = 0; s <TransposerManager.getExtractionRecipeList().length; s++)
-								TransposerManager.removeExtractionRecipe(TransposerManager.getExtractionRecipeList()[s].getInput());
-						for (int s = 0; s < PulverizerManager.getRecipeList().length; s++)
-								PulverizerManager.removeRecipe(PulverizerManager.getRecipeList()[s].getInput());
-				}
+				TConstructRegistry.getTableCasting().getCastingRecipes().clear();
+				TConstructRegistry.getBasinCasting().getCastingRecipes().clear();
 				if (RecipeChecker.modExists("Avaritia"))
 						ExtremeCraftingManager.getInstance().getRecipeList().clear();
 				if (RecipeChecker.modExists("Botania")) {
@@ -207,6 +209,27 @@ public class Recipes {
 				VinilaRecipes.addRecipes();
 		}
 
+		public static void onServerLoad () {
+				if (RecipeChecker.modExists("ThermalExpansion")) {
+						for (int s = 0; s < CrucibleManager.getRecipeList().length; s++)
+								CrucibleManager.removeRecipe(CrucibleManager.getRecipeList()[s].getInput());
+						for (int s = 0; s < TransposerManager.getFillRecipeList().length; s++)
+								TransposerManager.removeFillRecipe(TransposerManager.getFillRecipeList()[s].getInput(), TransposerManager.getFillRecipeList()[s].getFluid());
+						for (int s = 0; s < TransposerManager.getExtractionRecipeList().length; s++)
+								TransposerManager.removeExtractionRecipe(TransposerManager.getExtractionRecipeList()[s].getInput());
+						for (int s = 0; s < PulverizerManager.getRecipeList().length; s++)
+								PulverizerManager.removeRecipe(PulverizerManager.getRecipeList()[s].getInput());
+				}
+				TEHelper.addSmelterRecipe(8000, new ItemStack(TFCItems.wroughtIronIngot, 1, 0), new ItemStack(TFCItems.coal, 4, 1), new ItemStack(TFCItems.steelIngot, 1, 0));
+				TEHelper.addSmelterRecipe(8000, new ItemStack(TFCItems.steelIngot, 1, 0), new ItemStack(Items.redstone, 8, 0), PartDefs.REDINGOT().makeStack());
+				TEHelper.addSmelterRecipe(12000, TFItems.dustPyrotheum, new ItemStack(TFItems.dustEnderium.getItem(), 1, 44), TFItems.ingotEnderium);
+				TEHelper.addSmelterRecipe(8000, new ItemStack(TFCItems.wroughtIronSheet, 1, 0), new ItemStack(TFCItems.coal, 8, 1), new ItemStack(TFCItems.steelSheet));
+				TEHelper.addSmelterRecipe(8000, new ItemStack(TFCItems.wroughtIronSheet2x, 1, 0), new ItemStack(TFCItems.coal, 8, 1), new ItemStack(TFCItems.steelSheet2x));
+				TEHelper.addSmelterRecipe(12000, WurmTweaksItems.ingotTitanium, WurmTweaksItems.itemCraftingCore, new ItemStack(ModItems.draconiumIngot));
+				TEHelper.addSmelterRecipe(6000, new ItemStack(TFCItems.steelIngot, 1, 0), OreDictionary.getOres("dustCoal").get(0), new ItemStack(EnderIO.itemAlloy, 1, 0));
+				TEHelper.addSmelterRecipe(8000, new ItemStack(EnderIO.itemAlloy, 1, 1), new ItemStack(Items.ender_pearl, 1, 0), new ItemStack(EnderIO.itemAlloy, 1, 2));
+		}
+
 		public static void checkSettings () {
 				LogHandler.info("Checking Recipes for issues");
 				for (ShapedOreRecipe r : shapedRecipes)
@@ -216,5 +239,6 @@ public class Recipes {
 						if (!CraftingManager.getInstance().getRecipeList().contains(r))
 								new RecipeHelper().addShapeless(r.getRecipeOutput(), r.getInput());
 				LogHandler.info("Done checking recipes");
+				onServerLoad();
 		}
 }

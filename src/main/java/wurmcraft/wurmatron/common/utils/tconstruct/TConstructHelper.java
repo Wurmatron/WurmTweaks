@@ -35,6 +35,10 @@ public class TConstructHelper {
 				Smeltery.addMelting(input,display,0, temp,output);
 		}
 
+		public static void addMelting(ItemStack input, Block display,int meta, int temp, FluidStack output ) {
+				Smeltery.addMelting(input,display,meta, temp,output);
+		}
+
 		public static void addMelting(Block input, int temp, FluidStack output ) {
 				Smeltery.addMelting(input,0, temp,output);
 		}

@@ -46,7 +46,7 @@ public class BotaniaRecipes {
 				for (int d = 0; d < 15; d++)
 						r.add3X(new ItemStack(ModBlocks.petalBlock, 1, d), new ItemStack(ModItems.petal, 1, d));
 				for (int i = 0; i <= 15; i++)
-						r.addShapeless(new ItemStack(ModBlocks.flower, 32, i), WurmTweaksItems.itemBloodInfused, RecipeHelper.dye.get(i));
+						r.addShapeless(new ItemStack(ModBlocks.flower, 48, i), WurmTweaksItems.ingotGreenSteel, RecipeHelper.dye.get(i));
 				r.addShaped(ModBlocks.altar, "XAX", " B ", "BBB", 'X', WurmTweaksItems.itemMagicChunk, 'A', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE), 'B', "packCobblestone");
 				r.add2X(new ItemStack(ModBlocks.livingrock, 4, 1), new ItemStack(ModBlocks.livingrock));
 				r.addShapeless(new ItemStack(ModBlocks.livingrock, 1, 2), ModBlocks.livingrock, TFCBlocks.vine);
@@ -56,7 +56,7 @@ public class BotaniaRecipes {
 				r.addShapeless(new ItemStack(ModBlocks.livingwood, 1, 2), new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.add2X(new ItemStack(ModBlocks.livingwood, 4, 3), new ItemStack(ModBlocks.livingwood, 1, 1));
 				r.addShaped(new ItemStack(ModBlocks.livingwood, 4, 4), " X ", "X X", " X ", 'X', new ItemStack(ModBlocks.livingwood, 1, 1));
-				r.addShapeless(ModBlocks.livingwood, Items.glowstone_dust, ModBlocks.livingwood);
+				r.addShapeless(new ItemStack(ModBlocks.livingwood, 1, 5), Items.glowstone_dust, ModBlocks.livingwood);
 				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 0), "WWW", "NX ", "WWW", 'W', ModBlocks.livingwood, 'N', WurmTweaksItems.itemMagicChunk, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ModBlocks.spreader, 1, 1), ModBlocks.spreader, Items.redstone);
 				r.addShaped(new ItemStack(ModBlocks.spreader, 1, 2), "WWW", "NX ", "WWW", 'W', ModBlocks.dreamwood, 'N', WurmTweaksItems.itemNatureCoreMK2, 'X', new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
@@ -280,6 +280,10 @@ public class BotaniaRecipes {
 				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 2), new ItemStack(ModBlocks.storage, 1, 3));
 				r.addShapeless(new ItemStack(ModItems.manaResource, 32, 9), new ItemStack(ModBlocks.storage, 1, 4));
 				r.addShapeless(ModItems.lexicon, Items.book, new ItemStack(ModItems.petal, 1, OreDictionary.WILDCARD_VALUE));
+				r.addShapeless(new ItemStack(ModItems.aesirRing), ModItems.lokiRing, ModItems.odinRing, ModItems.thorRing);
+				for (int i = 0; i < 4; i++)
+						r.addShapeless(new ItemStack(ModItems.sparkUpgrade, 1, i),
+										LibOreDict.PIXIE_DUST, WurmTweaksItems.ingotGreenSteel, LibOreDict.RUNE[i]);
 				if (RecipeChecker.modExists("IC2"))
 						addCompressorRecipes();
 				addManaPoolRecipes();
@@ -307,8 +311,6 @@ public class BotaniaRecipes {
 				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 1), new ItemStack(Items.ender_pearl), 6000);
 				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 2), "packGemExquisite", 12000);
 				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 2), "packGemBlock", 38400);
-				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(Items.redstone), 500);
-				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(Items.glowstone_dust), 500);
 				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), new ItemStack(Items.gunpowder), 500);
 				BotaniaHelper.addPoolRecipe(new ItemStack(ModItems.manaResource, 1, 23), "dustSulfur", 500);
 				BotaniaHelper.addPoolRecipe(new ItemStack(ModBlocks.pistonRelay), new ItemStack(Blocks.piston), 15000);

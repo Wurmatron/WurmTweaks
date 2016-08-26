@@ -86,6 +86,7 @@ public class ExtraUtilsRecipes {
 				r.addShaped(new ItemStack(ExtraUtils.transferPipe, 8, 13), " R ", "RPR", " R ", 'R', Items.redstone, 'P', new ItemStack(ExtraUtils.transferPipe, 1, 8));
 				r.addShaped(new ItemStack(ExtraUtils.transferPipe, 8, 12), " R ", "RPR", " R ", 'R', Items.redstone, 'P', new ItemStack(ExtraUtils.transferPipe, 1, 0));
 				r.addShaped(ExtraUtils.trashCan, "SSS", "CBC", "CCC", 'S', "packSmoothStone", 'C', "packCobblestone", 'B', "packChest");
+				r.addShapeless(new ItemStack(ExtraUtils.trashCan, 1, 1), new ItemStack(ExtraUtils.trashCan, 1, 0));
 				r.addBasicMachineRecipe(ExtraUtils.enderThermicPump, new ItemStack(ExtraUtils.decorative1, 1, 11), "packGemExquisite", Items.bucket, WurmTweaksItems.itemMachineFrame);
 				r.addShaped(ExtraUtils.enderQuarry, "XAX", "BCB", "DGD", 'X', WurmTweaksItems.gearMixedSheet, 'C', TFCItems.blueSteelPick, 'B', new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7), 'A', WurmTweaksItems.itemQuarryCore, 'D', "packGemExquisite", 'G', WurmTweaksBlocks.blockCompressedRedstone);
 				ExtraUtilsHelper.addQEDRecipe(new ItemStack(ExtraUtils.enderQuarryUpgrade, 1, 0), "XAX", "ACA", "XAX", 'X', WurmTweaksBlocks.blockBlueSteel, 'A', WurmTweaksBlocks.blockRedSteel, 'C', WurmTweaksBlocks.blockCompressedRedstone);
@@ -191,7 +192,7 @@ public class ExtraUtilsRecipes {
 				r.addShapeless(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 6), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 7));
 				r.addShaped(new ItemStack(ExtraUtils.drum, 1, 0), "SGS", "SGS", "SGS", 'S', TFCItems.steelSheet, 'G', "packGlass");
 				r.addCircleWCenter(new ItemStack(ExtraUtils.drum, 1, 1), ExtraUtils.bedrockium, new ItemStack(ExtraUtils.drum, 1, 0));
-				r.addShapeless(new ItemStack(Blocks.cobblestone,9,0), new ItemStack(ExtraUtils.cobblestoneCompr,1,0));
+				r.addShapeless(new ItemStack(Blocks.cobblestone, 9, 0), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
 				if (RecipeChecker.modExists("addCompressorRecipes"))
 						addCompressorRecipes();
 		}
@@ -199,7 +200,7 @@ public class ExtraUtilsRecipes {
 		@Optional.Method (modid = "IC2")
 		private static void addCompressorRecipes () {
 				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.bedrockium, 32, 0), new ItemStack(ExtraUtils.bedrockiumBlock));
-				ICHelper.addCompressorRecipe(new ItemStack(Blocks.cobblestone,9), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
+				ICHelper.addCompressorRecipe(new ItemStack(Blocks.cobblestone, 9), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 0));
 				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 1), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 2));
 				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 2), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 3));
 				ICHelper.addCompressorRecipe(new ItemStack(ExtraUtils.cobblestoneCompr, 9, 3), new ItemStack(ExtraUtils.cobblestoneCompr, 1, 4));

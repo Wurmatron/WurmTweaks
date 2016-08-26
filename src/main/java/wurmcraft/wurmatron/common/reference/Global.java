@@ -8,7 +8,7 @@ public class Global {
 		public static final String NAME = "WurmTweaks";
 		public static final String VERSION = "@VERSION@";
 		public static final String GUIFACTORY = "wurmcraft.wurmatron.common.config.GuiFactory";
-		public static final String DEPENDENCIES = "required-after:terrafirmacraft";
+		public static final String DEPENDENCIES = "required-after:terrafirmacraft;required-after:ThermalExpansion;after:forestry;after:ThermalFoundation";
 		// Proxy
 		public static final String COMMONPROXY = "wurmcraft.wurmatron.common.proxy.CommonProxy";
 		public static final String CLIENTPROXY = "wurmcraft.wurmatron.client.proxy.ClientProxy";
@@ -19,7 +19,7 @@ public class Global {
 
 		public static final ArrayList<String> GODS = new ArrayList<String>() {{
 				add("Wurmatron");
-				add("Ficisism");
+				add("Troykoffeman");
 				// Not an Modpack dev just server owner
 				add("NinjaDjay ");
 		}};

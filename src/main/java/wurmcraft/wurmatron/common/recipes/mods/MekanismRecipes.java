@@ -98,7 +98,7 @@ public class MekanismRecipes {
 				r.addShaped(new ItemStack(MekanismItems.ControlCircuit, 1, 3), "XAX", 'X', new ItemStack(MekanismItems.ControlCircuit, 1, 2), 'A', new ItemStack(MekanismItems.Ingot));
 				r.addShaped(new ItemStack(MekanismItems.TeleportationCore, 1, 0), "XGX", "AXA", "XGX", 'X', "packGemExquisitePure", 'G', WurmTweaksItems.itemBloodInfused, 'A', WurmTweaksItems.itemQuantumSingularity);
 				r.addShaped(new ItemStack(MekanismBlocks.MachineBlock, 1, 15), "ICI", "IPI", "III", 'I', WurmTweaksItems.itemQuantumSingularity, 'C', new ItemStack(MekanismItems.ControlCircuit, 1, 3), 'P', Blocks.piston);
-				r.addShaped(new ItemStack(MekanismItems.EnergyTablet, 1, 100), "RXR", "ACA", "RXR", 'R', Items.redstone, 'X', new ItemStack(MekanismItems.EnrichedAlloy), 'A', TFCItems.goldSheet, 'C', "dustSulfur");
+				r.addShaped(new ItemStack(MekanismItems.EnergyTablet), "RXR", "ACA", "RXR", 'R', Items.redstone, 'X', new ItemStack(MekanismItems.EnrichedAlloy), 'A', TFCItems.goldSheet, 'C', "dustSulfur");
 				r.addShaped(new ItemStack(MekanismItems.SpeedUpgrade, 1, 0), " R ", "XAX", " R ", 'R', Blocks.redstone_block, 'X', "packGlass", 'A', MekanismItems.EnrichedAlloy);
 				r.addShaped(new ItemStack(MekanismItems.EnergyUpgrade, 1, 0), " R ", "XAX", " R ", 'R', Blocks.redstone_block, 'X', "packGlass", 'A', new ItemStack(MekanismItems.EnergyTablet, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShaped(new ItemStack(MekanismItems.GasUpgrade, 1, 0), " R ", "XAX", " R ", 'R', Blocks.redstone_block, 'X', "packGlass", 'A', MekanismItems.ReinforcedAlloy);

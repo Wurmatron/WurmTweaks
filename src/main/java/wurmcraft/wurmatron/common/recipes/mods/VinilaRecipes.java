@@ -146,12 +146,15 @@ public class VinilaRecipes {
 				r.addShapeless(new ItemStack(Items.fish, 16, 0), TFCHelper.getFood(TFCItems.fishRaw, 160));
 				r.addShapeless(new ItemStack(Items.fish, 1, 3), new ItemStack(Items.fish, 1, 0));
 				r.add2X(new ItemStack(Items.wheat_seeds, 8), "packSeed");
-				r.addShapeless(new ItemStack(Blocks.sticky_piston,1,0), Blocks.piston, "packRubber");
-				r.addShapeless(new ItemStack(Items.emerald), new ItemStack(TFCItems.gemEmerald,1,2));
-				r.addShapeless(new ItemStack(TFCItems.gemDiamond,1,2), Items.emerald);
-				r.addShaped(new ItemStack(Items.bowl), "L L", " L ", 'L' ,"packLumber");
+				r.addShapeless(new ItemStack(Blocks.sticky_piston, 1, 0), Blocks.piston, "packRubber");
+				r.addShapeless(new ItemStack(Items.emerald), new ItemStack(TFCItems.gemEmerald, 1, 2));
+				r.addShapeless(new ItemStack(TFCItems.gemDiamond, 1, 2), Items.emerald);
+				r.addShaped(new ItemStack(Items.bowl), "L L", " L ", 'L', "packLumber");
 				r.addShapeless(new ItemStack(Items.glowstone_dust, 32, 0), new ItemStack(Blocks.glowstone));
-				r.addShaped(new ItemStack(Blocks.anvil,1,0), "BBB", " I ", "I I", 'B', WurmTweaksBlocks.blockWroughtIron, 'I', TFCItems.wroughtIronIngot);
+				r.addShaped(new ItemStack(Blocks.anvil, 1, 0), "BBB", " I ", "I I", 'B', WurmTweaksBlocks.blockWroughtIron, 'I', TFCItems.wroughtIronIngot);
+				r.addShapeless(Blocks.iron_block, WurmTweaksBlocks.blockWroughtIron);
+				r.addShapeless(new ItemStack(Blocks.double_stone_slab, 1, 8), new ItemStack(Blocks.stone_slab, 1, 0), new ItemStack(Blocks.stone_slab, 1, 0));
+				r.addShaped(Blocks.bookshelf, "WWW", "BBB", "WWW", 'W', "packPlanks", 'B', Items.book);
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();

@@ -17,6 +17,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import techreborn.init.ModBlocks;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.handler.ArmorHandler;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
@@ -128,7 +129,10 @@ public class EnderIORecipes {
 				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), new ItemStack(EnderIO.itemBasicCapacitor, 1, 0), TFCItems.blackSteelSheet, Items.glowstone_dust);
 				r.addCrossWCenter(new ItemStack(EnderIO.itemBasicCapacitor, 1, 2), new ItemStack(EnderIO.itemBasicCapacitor, 1, 1), TFCItems.blackSteelSheet, Items.glowstone_dust);
 				r.addBasicMachineRecipe(new ItemStack(EnderIO.itemMaterial, 4, 2), TFCItems.clayBall, new ItemStack(TFCItems.powder, 1, 2), new ItemStack(TFCItems.powder, 1, 1), Items.redstone);
+				r.addShaped(new ItemStack(EnderIO.itemSoulVessel,1,0), " I ","G G", " G ",'I', new ItemStack(EnderIO.itemAlloy,1,7), 'G', "packGlass");
+				r.addBasicMachineRecipe(new ItemStack(EnderIO.blockSoulFuser,1,0), WurmTweaksItems.itemCraftingCore, new ItemStack(EnderIO.itemAlloy,1,7), WurmTweaksItems.gearMixedSheet, new ItemStack(ModBlocks.machineframe, 1, 5));
 				MachineHelper.addFurnaceRecipes(new ItemStack(EnderIO.itemMaterial, 1, 1), new ItemStack(EnderIO.itemMaterial, 1, 2));
+				r.addBasicMachineRecipe(new ItemStack(EnderIO.itemCoordSelector,1,0), WurmTweaksItems.itemCraftingCore, TFItems.ingotEnderium, WurmTweaksItems.gearMixedSheet,  IC2Items.getItem("frequencyTransmitter"));
 				for (int m = 0; m < 7; m++)
 						r.addShapeless(new ItemStack(EnderIO.itemAlloy, 32, m), new ItemStack(EnderIO.blockIngotStorage, 1, m));
 				if (RecipeChecker.modExists("addCompressorRecipes"))

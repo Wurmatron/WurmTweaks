@@ -37,7 +37,7 @@ public class MinefactoryReloadedRecipes {
 				r.addShaped(Machine.Ejector.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', Blocks.piston, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.ItemRouter.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', TFCItems.blackSteelSheet, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.LiquidRouter.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', TFCItems.blueSteelSheet, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
-				r.addShaped(Machine.DeepStorageUnit.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', ExtraUtils.bedrockiumBlock, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
+				r.addShaped(new ItemStack(Machine.DeepStorageUnit.getItemStack().getItem(), 2, 3), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', ExtraUtils.bedrockiumBlock, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.LavaFabricator.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', Blocks.obsidian, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.AutoJukebox.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', Blocks.jukebox, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);
 				r.addShaped(Machine.AutoDisenchanter.getItemStack(), "CXC", "BAB", "CXC", 'C', WurmTweaksItems.itemAutoCore, 'X', Items.book, 'B', "packGemExquisite", 'A', WurmTweaksItems.itemMachineFrame);

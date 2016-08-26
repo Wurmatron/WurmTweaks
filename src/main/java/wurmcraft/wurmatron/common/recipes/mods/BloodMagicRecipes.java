@@ -85,8 +85,8 @@ public class BloodMagicRecipes {
 						r.addBasicMachineRecipe(ModBlocks.runeOfSacrifice, WurmTweaksItems.stableMagicEssence, TFItems.ingotEnderium, new ItemStack(sword, 1, OreDictionary.WILDCARD_VALUE), ModItems.reinforcedSlate);
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(ModBlocks.bloodRune, "XAX", "AOA", "XAX", 'X', ModItems.blankSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 1), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
-				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 2), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
-				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 3), "XAX", "AOA", "XAX", 'X', ModItems.imbuedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.masterBloodOrb));
+				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 2), "XAX", "AOA", "XAX", 'X', ModItems.imbuedSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.weakBloodOrb));
+				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 3), "XAX", "AOA", "XAX", 'X', ModItems.demonicSlate, 'A', WurmTweaksItems.itemMagicChunk, 'O', ModItems.masterBloodOrb));
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 4), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', new ItemStack(ModBlocks.bloodRune, 1, 1), 'O', ModItems.weakBloodOrb));
 				GameRegistry.addRecipe(new ShapedBloodOrbRecipe(new ItemStack(ModBlocks.bloodRune, 1, 5), "XAX", "AOA", "XAX", 'X', ModItems.reinforcedSlate, 'A', ModBlocks.speedRune, 'O', ModItems.weakBloodOrb));
 				r.addShaped(ModBlocks.blockCrucible, "SSS", "XAX", "SSS", 'S', TFCItems.redSteelSheet2x, 'X', WurmTweaksItems.itemMagicChunk, 'A', WurmTweaksItems.itemBloodInfused);

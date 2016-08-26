@@ -59,12 +59,12 @@ public class WurmTweaks {
 				WurmTweaksFluid.registerFluids();
 				PacketHandler.registerPackets();
 				FMLCommonHandler.instance().bus().register(new JoinGameEvent());
-				FMLCommonHandler.instance().bus().register(new MiningWorldFix());
 				MinecraftForge.EVENT_BUS.register(new EntityInteract());
 				MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
 				MinecraftForge.EVENT_BUS.register(new HurtEvent());
 				MinecraftForge.EVENT_BUS.register(new PickupEvent());
 				MinecraftForge.EVENT_BUS.register(new FortuneEvent());
+				MinecraftForge.EVENT_BUS.register(new QuarryFixEvent());
 				if (RecipeChecker.modExists("AWWayofTime"))
 						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
 				FMLCommonHandler.instance().bus().register(new PlayerClone());

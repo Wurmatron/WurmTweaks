@@ -1,7 +1,6 @@
 package wurmcraft.wurmatron.common.recipes.mods;
 
 import appeng.api.AEApi;
-import appeng.api.features.IInscriberRecipe;
 import appeng.api.util.AEColor;
 import appeng.core.Api;
 import appeng.recipes.game.FacadeRecipe;
@@ -11,6 +10,7 @@ import cofh.thermalexpansion.block.TEBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import com.rwtema.extrautils.ExtraUtils;
 import cpw.mods.fml.common.Optional;
+import cpw.mods.fml.common.registry.GameRegistry;
 import extracells.registries.ItemEnum;
 import fox.spiteful.avaritia.items.LudicrousItems;
 import ic2.api.item.IC2Items;
@@ -18,11 +18,11 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.RecipeSorter;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeHelper;
 import wurmcraft.wurmatron.common.utils.LogHandler;
+import wurmcraft.wurmatron.common.utils.machines.MachineHelper;
 import wurmcraft.wurmatron.common.utils.tfc.TFCHelper;
 
 /**
@@ -114,6 +114,7 @@ public class AERecipes {
 				r.addCircleWCenter(Api.INSTANCE.materials().materialWireless.stack(1), WurmTweaksItems.itemQuantumFoam, WurmTweaksItems.ingotPinkSteel);
 				r.addShaped(Api.INSTANCE.materials().materialWirelessBooster.stack(2), "SSS", "XAX", "SSS", 'S', WurmTweaksItems.itemQuantumFoam, 'X', Items.ender_pearl, 'A', WurmTweaksItems.itemMixedSheet);
 				r.addShaped(Api.INSTANCE.parts().partAnnihilationPlane.stack(1), "SSS", "XXX", 'S', WurmTweaksItems.itemQuantumSingularity, 'X', TFCItems.redSteelSheet);
+				r.addShaped(Api.INSTANCE.parts().partFormationPlane.stack(1), "SSS", "XXX", 'S', WurmTweaksItems.itemQuantumSingularity, 'X', TFCItems.blueSteelSheet);
 				r.addShaped(Api.INSTANCE.parts().partCableAnchor.stack(12), "SSS", "XXX", "SSS", 'S', Items.quartz, 'X', WurmTweaksItems.ingotYellowSteel);
 				for (int i = 0; i < 15; i++)
 						r.addCircleWCenter(new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 8, i), new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, 16), RecipeHelper.dye.get(i));
@@ -146,6 +147,8 @@ public class AERecipes {
 				r.addBasicMachineRecipe(new ItemStack(AEApi.instance().parts().partAnnihilationPlane.item(), 1, 466), "packCloth", TFCItems.leather, Items.redstone, new ItemStack(TDDucts.energyBasic.itemStack.getItem(), 1, 7));
 				r.addBasicMachineRecipe(new ItemStack(AEApi.instance().parts().partAnnihilationPlane.item(), 1, 461), "packCloth", TFCItems.leather, Items.redstone, WurmTweaksBlocks.blockCompressedRedstone);
 				r.addBasicMachineRecipe(new ItemStack(AEApi.instance().parts().partAnnihilationPlane.item(), 1, 466), "packCloth", TFCItems.leather, Items.redstone, new ItemStack(TDDucts.energyBasic.itemStack.getItem(), 1, 7));
+				r.addBasicMachineRecipe(new ItemStack(AEApi.instance().parts().partAnnihilationPlane.item(), 1, 467), "packCloth", TFCItems.leather, Items.redstone, Blocks.glowstone);
+				r.addBasicMachineRecipe(new ItemStack(AEApi.instance().parts().partAnnihilationPlane.item(), 1, 468), "packCloth", TFCItems.leather, Items.redstone, li.cil.oc.api.Items.get("cable").createItemStack(1));
 				r.addShapeless(Api.INSTANCE.parts().partStorageMonitor.stack(1), Api.INSTANCE.blocks().blockInterface.stack(1), WurmTweaksItems.itemQuantumFoam);
 				r.addShapeless(Api.INSTANCE.parts().partTerminal.stack(1), WurmTweaksItems.itemQuantumSingularity, new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(Api.INSTANCE.parts().partToggleBus.stack(1), new ItemStack(Api.INSTANCE.parts().partCableGlass.item(AEColor.Black), 1, OreDictionary.WILDCARD_VALUE), Items.redstone, Blocks.lever);
@@ -164,6 +167,11 @@ public class AERecipes {
 				r.addShaped(Api.INSTANCE.parts().partCableDense.stack(AEColor.Transparent, 24), "XXX", "AAA", "XXX", 'X', WurmTweaksItems.ingotEnergyReactor, 'A', TFCItems.platinumSheet);
 				r.addShaped(Api.INSTANCE.parts().partQuartzFiber.stack(8), "XXX", "GGG", "XXX", 'G', Items.quartz, 'X', "packGlass");
 				r.addShapeless(Api.INSTANCE.parts().partPatternTerminal.stack(1), Api.INSTANCE.parts().partCraftingTerminal.stack(1), Api.INSTANCE.materials().materialBlankPattern.stack(1), WurmTweaksItems.ingotGreenSteel);
-				RecipeSorter.register("AE2-Facade", FacadeRecipe.class, RecipeSorter.Category.SHAPED, "");
+				GameRegistry.addRecipe(new FacadeRecipe());
+				addMaceratorRecipes();
+		}
+
+		private static void addMaceratorRecipes () {
+				MachineHelper.addPulveriserRecipes(Api.INSTANCE.materials().materialEnderDust.stack(1), new ItemStack(Items.ender_pearl, 2, 0), 32, 200, null, 0);
 		}
 }

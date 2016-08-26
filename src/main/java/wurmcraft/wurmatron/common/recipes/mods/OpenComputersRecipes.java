@@ -11,6 +11,7 @@ import mods.railcraft.common.blocks.RailcraftBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
 import wurmcraft.wurmatron.common.recipes.RecipeChecker;
@@ -161,9 +162,9 @@ public class OpenComputersRecipes {
 
 		@Optional.Method (modid = "techreborn")
 		private static void addAssemblerRecipes () {
-				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(TFCItems.blackSteelSheet, 16), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1), 800, 32);
-				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 50), 800, 32);
-				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 2), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 3), 800, 32);
-				TechRebornHelper.adAssemblingMachineRecipe(new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 8, 23), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 38), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 39), 800, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(OreDictionary.getOres("oc:materialTransistor").get(0), new ItemStack(TFCItems.blackSteelSheet, 16), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1), 800, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(OreDictionary.getOres("oc:materialTransistor").get(0), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 1), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 50), 800, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(OreDictionary.getOres("oc:materialTransistor").get(0), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 2), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 3), 800, 32);
+				TechRebornHelper.adAssemblingMachineRecipe(OreDictionary.getOres("oc:materialTransistor").get(0), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 38), new ItemStack(GameRegistry.findItem("OpenComputers", "item"), 1, 39), 800, 32);
 		}
 }
