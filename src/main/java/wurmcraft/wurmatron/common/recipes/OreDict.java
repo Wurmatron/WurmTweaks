@@ -387,6 +387,9 @@ public class OreDict {
 				addOre("oreIron", new ItemStack(TFCBlocks.ore3, 1, 15));
 				addOre("oreZinc", new ItemStack(TFCBlocks.ore3, 1, 16));
 				addOre("oreCopper", new ItemStack(TFCBlocks.ore3, 1, 17));
+				addOre("oreTitanium", new ItemStack(WurmTweaksBlocks.oreTitanium, 1, 0));
+				addOre("oreFrancium", new ItemStack(WurmTweaksBlocks.oreFrancium, 1, 0));
+				addOre("oreHalfium", new ItemStack(WurmTweaksBlocks.oreHalfium, 1, 0));
 				if (RecipeChecker.modExists("arsmagica2"))
 						addAM2();
 				if (RecipeChecker.modExists("Avaritia"))

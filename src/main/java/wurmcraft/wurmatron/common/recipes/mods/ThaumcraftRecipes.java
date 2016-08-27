@@ -56,6 +56,7 @@ public class ThaumcraftRecipes {
 				r.addShapeless(new ItemStack(ConfigItems.itemInkwell, 1, 0), "dyeBlack", new ItemStack(ConfigItems.itemInkwell, 1, OreDictionary.WILDCARD_VALUE));
 				r.addShapeless(new ItemStack(ConfigBlocks.blockMagicalLog, 1, 0), new ItemStack(ConfigBlocks.blockWoodenDevice, 4, 6));
 				r.addShapeless(new ItemStack(ConfigBlocks.blockMagicalLog, 1, 1), new ItemStack(ConfigBlocks.blockWoodenDevice, 4, 7));
+				r.addShapeless(new ItemStack(ConfigBlocks.blockMagicalLog,4,0), new ItemStack(ConfigBlocks.blockMagicalLog,1,6));
 				ThaumcraftApi.getCraftingRecipes().clear();
 				addInfoRecipes();
 				addThamRecipes();

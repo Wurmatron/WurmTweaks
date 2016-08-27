@@ -155,6 +155,7 @@ public class VinilaRecipes {
 				r.addShapeless(Blocks.iron_block, WurmTweaksBlocks.blockWroughtIron);
 				r.addShapeless(new ItemStack(Blocks.double_stone_slab, 1, 8), new ItemStack(Blocks.stone_slab, 1, 0), new ItemStack(Blocks.stone_slab, 1, 0));
 				r.addShaped(Blocks.bookshelf, "WWW", "BBB", "WWW", 'W', "packPlanks", 'B', Items.book);
+				r.add2X(Blocks.crafting_table, "packPlanks");
 				if (RecipeChecker.modExists("IC2")) {
 						addExtractorRecipes();
 						addCompressonRecipes();
