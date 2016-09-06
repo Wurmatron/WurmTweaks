@@ -65,6 +65,7 @@ public class WurmTweaks {
 				MinecraftForge.EVENT_BUS.register(new PickupEvent());
 				MinecraftForge.EVENT_BUS.register(new FortuneEvent());
 				MinecraftForge.EVENT_BUS.register(new QuarryFixEvent());
+				MinecraftForge.EVENT_BUS.register(new RightClickEvent());
 				if (RecipeChecker.modExists("AWWayofTime"))
 						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
 				FMLCommonHandler.instance().bus().register(new PlayerClone());
