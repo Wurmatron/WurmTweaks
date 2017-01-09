@@ -206,7 +206,7 @@ public class Recipes {
 						ThamicTinkersRecipes.addRecipes();
 				if (RecipeChecker.modExists("RefinedRelocation"))
 						RefinedRelocationRecipes.addRecipes();
-				VinilaRecipes.addRecipes();
+				VanillaRecipes.addRecipes();
 		}
 
 		public static void onServerLoad () {

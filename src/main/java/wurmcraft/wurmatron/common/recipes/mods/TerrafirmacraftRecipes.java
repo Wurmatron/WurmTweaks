@@ -5,6 +5,7 @@ import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.TFCItems;
 import cpw.mods.fml.common.Optional;
 import crazypants.enderio.EnderIO;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import wurmcraft.wurmatron.common.items.WurmTweaksItems;
@@ -24,6 +25,8 @@ public class TerrafirmacraftRecipes {
 				// Recipe created by koolcrafter5 on 6/12/16
 				r.addCircleWCenter(WurmTweaksItems.itemPumpkinBits, WurmTweaksItems.itemMixedSheet, "packSeed");
 				r.addCircleWCenter(TFCBlocks.pumpkin, WurmTweaksItems.itemPumpkinBits, WurmTweaksItems.itemCraftingCore);
+				r.addShapeless(new ItemStack(TFCBlocks.thatch,9), new ItemStack(Blocks.hay_block));
+				r.addShaped(new ItemStack(Blocks.cauldron), "S S", "S S", "SSS", 'S', TFCItems.steelSheet);
 				if (RecipeChecker.modExists("IC2"))
 						addCompressorRecipes();
 				addMaceratorRecipes();
