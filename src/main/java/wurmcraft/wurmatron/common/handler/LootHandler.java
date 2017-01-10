@@ -18,6 +18,7 @@ import powercrystals.minefactoryreloaded.setup.MFRThings;
 import thaumcraft.api.internal.WeightedRandomLoot;
 import thaumcraft.common.config.ConfigItems;
 
+
 import java.util.Random;
 
 public class LootHandler {
