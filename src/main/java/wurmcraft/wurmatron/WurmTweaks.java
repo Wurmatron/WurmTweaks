@@ -31,74 +31,74 @@ import wurmcraft.wurmatron.common.recipes.Recipes;
 import wurmcraft.wurmatron.common.reference.Global;
 import wurmcraft.wurmatron.common.utils.Helper;
 
-@Mod (modid = Global.MODID, name = Global.NAME, version = Global.VERSION, dependencies = Global.DEPENDENCIES, guiFactory = Global.GUIFACTORY)
+@Mod(modid = Global.MODID, name = Global.NAME, version = Global.VERSION, dependencies = Global.DEPENDENCIES, guiFactory = Global.GUIFACTORY)
 public class WurmTweaks {
 
-		@Mod.Instance (Global.MODID)
-		public static WurmTweaks instance;
+    @Mod.Instance(Global.MODID)
+    public static WurmTweaks instance;
 
-		@SidedProxy (serverSide = Global.COMMONPROXY, clientSide = Global.CLIENTPROXY)
-		public static CommonProxy proxy;
+    @SidedProxy(serverSide = Global.COMMONPROXY, clientSide = Global.CLIENTPROXY)
+    public static CommonProxy proxy;
 
-		public static final CreativeTabs tabWurmTweaks = new CreativeTabs("tabWurmTweaks") {
-				@Override
-				public Item getTabIconItem () {
-						return WTItems.itemSpecial;
-				}
-		};
+    public static final CreativeTabs tabWurmTweaks = new CreativeTabs("tabWurmTweaks") {
+        @Override
+        public Item getTabIconItem() {
+            return WTItems.itemSpecial;
+        }
+    };
 
-		@Mod.EventHandler
-		public void preInit (FMLPreInitializationEvent e) {
-				ConfigHandler.init(e);
-		}
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent e) {
+        ConfigHandler.init(e);
+    }
 
-		@Mod.EventHandler
-		public void init (FMLInitializationEvent e) {
-				WTItems.registerItems();
-				WurmTweaksBlocks.registerBlocks();
-				WurmTweaksFluid.registerFluids();
-				PacketHandler.registerPackets();
-				FMLCommonHandler.instance().bus().register(new JoinGameEvent());
-				MinecraftForge.EVENT_BUS.register(new EntityInteract());
-				MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
-				MinecraftForge.EVENT_BUS.register(new HurtEvent());
-				MinecraftForge.EVENT_BUS.register(new PickupEvent());
-				MinecraftForge.EVENT_BUS.register(new FortuneEvent());
-				MinecraftForge.EVENT_BUS.register(new QuarryFixEvent());
-				MinecraftForge.EVENT_BUS.register(new RightClickEvent());
-				if (RecipeChecker.modExists("AWWayofTime"))
-						MinecraftForge.EVENT_BUS.register(new KnifeHandler());
-				FMLCommonHandler.instance().bus().register(new PlayerClone());
-				if (Settings.explodingPig)
-						MinecraftForge.EVENT_BUS.register(new ExplodingPigHandler());
-				FMLCommonHandler.instance().bus().register(new ArmorTickEvent());
-				LootHandler.init();
-				if (RecipeChecker.modExists("Buildcraft|Core"))
-						BuildcraftRecipeRegistry.assemblyTable.getRecipes().clear();
-		}
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent e) {
+        WTItems.registerItems();
+        WurmTweaksBlocks.registerBlocks();
+        WurmTweaksFluid.registerFluids();
+        PacketHandler.registerPackets();
+        FMLCommonHandler.instance().bus().register(new JoinGameEvent());
+        MinecraftForge.EVENT_BUS.register(new EntityInteract());
+        MinecraftForge.EVENT_BUS.register(new ToolTipEvent());
+        MinecraftForge.EVENT_BUS.register(new HurtEvent());
+        MinecraftForge.EVENT_BUS.register(new PickupEvent());
+        MinecraftForge.EVENT_BUS.register(new FortuneEvent());
+        MinecraftForge.EVENT_BUS.register(new QuarryFixEvent());
+        MinecraftForge.EVENT_BUS.register(new RightClickEvent());
+        if (RecipeChecker.modExists("AWWayofTime"))
+            MinecraftForge.EVENT_BUS.register(new KnifeHandler());
+        FMLCommonHandler.instance().bus().register(new PlayerClone());
+        if (Settings.explodingPig)
+            MinecraftForge.EVENT_BUS.register(new ExplodingPigHandler());
+        FMLCommonHandler.instance().bus().register(new ArmorTickEvent());
+        LootHandler.init();
+        if (RecipeChecker.modExists("Buildcraft|Core"))
+            BuildcraftRecipeRegistry.assemblyTable.getRecipes().clear();
+    }
 
-		@Mod.EventHandler
-		public void postInit (FMLPostInitializationEvent e) {
-				Recipes.init();
-				MobBiomeSpawn.init();
-				LootHandler.init();
-		}
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent e) {
+        Recipes.init();
+        MobBiomeSpawn.init();
+        LootHandler.init();
+    }
 
-		@Mod.EventHandler
-		public void serverStarting (FMLServerStartingEvent e) {
-				Recipes.checkSettings();
-				LootHandler.init();
-				e.registerServerCommand(new WTCommand());
-				RecipeStorage.loadRecipes();
-				Enchantment[] list = Enchantment.enchantmentsList;
-				list[8] = null;
-				list[101] = null;
-				try {
-						Helper.setFinalStatic(Enchantment.class.getField("enchantmentsList"), list);
-				} catch (NoSuchFieldException f) {
-						f.printStackTrace();
-				} catch (Exception f) {
-						f.printStackTrace();
-				}
-		}
+    @Mod.EventHandler
+    public void serverStarting(FMLServerStartingEvent e) {
+        Recipes.checkSettings();
+        LootHandler.init();
+        e.registerServerCommand(new WTCommand());
+        RecipeStorage.loadRecipes();
+        Enchantment[] list = Enchantment.enchantmentsList;
+        list[8] = null;
+        list[101] = null;
+        try {
+            Helper.setFinalStatic(Enchantment.class.getField("enchantmentsList"), list);
+        } catch (NoSuchFieldException f) {
+            f.printStackTrace();
+        } catch (Exception f) {
+            f.printStackTrace();
+        }
+    }
 }

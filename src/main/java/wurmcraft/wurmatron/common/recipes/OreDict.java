@@ -24,6 +24,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import powercrystals.minefactoryreloaded.setup.MFRThings;
 import tconstruct.tools.TinkerTools;
 import terramisc.TerraMisc;
+import terramisc.core.TFCMItems;
 import vazkii.botania.common.block.ModBlocks;
 import wurmcraft.wurmatron.common.blocks.WurmTweaksBlocks;
 import wurmcraft.wurmatron.common.items.WTItems;
@@ -393,8 +394,8 @@ public class OreDict {
         addOre("oreHalfium", new ItemStack(WurmTweaksBlocks.oreHalfium, 1, 0));
         add("packBow", new ItemStack(Items.bow));
         add("packBow", new ItemStack(TFCItems.bow));
-        add("packBow", new ItemStack(terramisc.core.ModItems.itemLongBow));
-        add("packBow", new ItemStack(terramisc.core.ModItems.itemCrossBow));
+        add("packBow", new ItemStack(TFCMItems.itemLongBow));
+        add("packBow", new ItemStack(TFCMItems.itemCrossBow));
         if (RecipeChecker.modExists("arsmagica2"))
             addAM2();
         if (RecipeChecker.modExists("Avaritia"))

@@ -29,18 +29,12 @@ public class VanillaRecipes {
             ICHelper.addCompressorRecipe(new ItemStack(TFCBlocks.stoneIgIn, 1, in), new ItemStack(Blocks.stone));
             MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgIn, 1, in), new ItemStack(TFCBlocks.stoneIgInCobble, 4, in));
         }
-        for (int ex = 0; ex < 4; ex++) {
-            ICHelper.addCompressorRecipe(new ItemStack(TFCBlocks.stoneIgEx), new ItemStack(Blocks.stone));
+        for (int ex = 0; ex < 4; ex++)
             MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneIgEx, 1, ex), new ItemStack(TFCBlocks.stoneIgExCobble, 4, ex));
-        }
-        for (int sed = 0; sed < 8; sed++) {
-            ICHelper.addCompressorRecipe(new ItemStack(TFCBlocks.stoneSed, 1, sed), new ItemStack(Blocks.stone));
+        for (int sed = 0; sed < 8; sed++)
             MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneSed, 1, sed), new ItemStack(TFCBlocks.stoneSedCobble, 4, sed));
-        }
-        for (int mm = 0; mm < 6; mm++) {
-            ICHelper.addCompressorRecipe(new ItemStack(TFCBlocks.stoneMM, 1, mm), new ItemStack(Blocks.stone));
+        for (int mm = 0; mm < 6; mm++)
             MachineHelper.addFurnaceRecipes(new ItemStack(TFCBlocks.stoneMM, 1, mm), new ItemStack(TFCBlocks.stoneMMCobble, 4, mm));
-        }
         for (ItemStack sand : TFCHelper.sand)
             MachineHelper.addFurnaceRecipes(new ItemStack(Blocks.glass), sand);
         r.addCircleWCenter(new ItemStack(Blocks.bedrock, 2), ExtraUtils.bedrockiumBlock, WurmTweaksItems.itemAntiMatter);
@@ -180,9 +174,8 @@ public class VanillaRecipes {
         r.addSlabs(new ItemStack(Blocks.cobblestone_wall, 6, 1), Blocks.mossy_cobblestone);
         r.addShapeless(Blocks.emerald_block, WurmTweaksBlocks.blockEmerald);
         r.addShapeless(WurmTweaksBlocks.blockEmerald, Blocks.emerald_block);
-        r.addCrossWCenter(new ItemStack(Items.fire_charge,4), "gemCharcoal", Items.redstone, "packLog");
+        r.addCrossWCenter(new ItemStack(Items.fire_charge, 4), "gemCharcoal", Items.redstone, "packLog");
         if (RecipeChecker.modExists("IC2")) {
-            addExtractorRecipes();
             addCompressonRecipes();
         }
         addFurnaceRecipes();
@@ -190,25 +183,6 @@ public class VanillaRecipes {
             addCentrifugeRecipes();
             addElectrolizerRecipes();
         }
-    }
-
-    private static void addExtractorRecipes() {
-        for (int c = 0; c < 15; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.grass), new ItemStack(TFCBlocks.grass, 1, c));
-        for (int c = 0; c < 4; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.grass), new ItemStack(TFCBlocks.grass2, 1, c));
-        for (int c = 0; c < 15; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.gravel), new ItemStack(TFCBlocks.gravel, 1, c));
-        for (int c = 0; c < 4; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.gravel), new ItemStack(TFCBlocks.gravel2, 1, c));
-        for (int c = 0; c < 15; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.sand), new ItemStack(TFCBlocks.sand, 1, c));
-        for (int c = 0; c < 4; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.sand), new ItemStack(TFCBlocks.sand2, 1, c));
-        for (int c = 0; c < 15; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.dirt), new ItemStack(TFCBlocks.dirt, 1, c));
-        for (int c = 0; c < 4; c++)
-            ICHelper.addCompressorRecipe(new ItemStack(Blocks.dirt), new ItemStack(TFCBlocks.dirt2, 1, c));
     }
 
     private static void addFurnaceRecipes() {
