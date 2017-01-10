@@ -84,7 +84,7 @@ public class DraconicEvolutionRecipes {
         r.addShaped(new ItemStack(ModItems.draconicFluxCapacitor.getItem(), 1, 1), "SCS", "CBC", "SCS", 'S', WurmTweaksItems.ingotTitanium, 'C', ModItems.draconicEnergyCore, 'B', ModItems.draconicCore);
         r.addShapeless(new ItemStack(ModItems.draconiumIngot, 32, 0), new ItemStack(ModBlocks.draconiumBlock, 1, 0));
         r.addShapeless(new ItemStack(ModItems.draconicIngot, 32, 0), new ItemStack(ModBlocks.draconicBlock, 1, 0));
-        r.addCrossWCenter(new ItemStack(ModItems.draconiumIngot, 1, 0), new ItemStack(ModItems.draconicIngot), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemUnstableMatter);
+        r.addCrossWCenter(new ItemStack(ModItems.draconicIngot, 1, 0), new ItemStack(ModItems.draconiumIngot), WurmTweaksItems.ingotRainbowSteel, WurmTweaksItems.itemUnstableMatter);
         if (RecipeChecker.modExists("IC2"))
             addCompressorRecipes();
         addAlloySmelterRecipes();
